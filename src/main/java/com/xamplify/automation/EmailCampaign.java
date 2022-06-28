@@ -9,6 +9,8 @@ import java.util.concurrent.TimeUnit;
 
 import javax.swing.text.Keymap;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
@@ -29,7 +31,7 @@ public class EmailCampaign {
 
 	Properties properties = PropertiesFile.readPropertyFile("D:\\git\\xAmplify-Automation\\src\\main\\resources\\Campaign.properties");
 	
-	
+	final Logger logger = LogManager.getLogger(EmailCampaign.class);
 	
 	@Test
 	public void ecampaign() throws InterruptedException, SQLException {
@@ -88,6 +90,8 @@ public class EmailCampaign {
 				ExpectedConditions.visibilityOfElementLocated(By.xpath(properties.getProperty("e_through_partner"))));  //toggle through partner
 		w2.click();
 		// through partner//
+		
+		
 		driver.findElement(By.xpath(properties.getProperty("esubjectline"))).sendKeys("subjectLine***");    //subjectline 
 		//Thread.sleep(3000); 
 		

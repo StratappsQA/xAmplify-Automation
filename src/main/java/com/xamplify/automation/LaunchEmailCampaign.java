@@ -3,6 +3,8 @@ package com.xamplify.automation;
 import java.sql.SQLException;
 import java.util.Properties;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterMethod;
@@ -19,6 +21,9 @@ public class LaunchEmailCampaign  {
 	WebDriver driver = Instance.getInstance();
 
 	Properties properties = PropertiesFile.readPropertyFile("D:\\git\\xAmplify-Automation\\src\\main\\resources\\Campaign.properties");
+	
+	
+	final Logger logger = LogManager.getLogger(LaunchEmailCampaign.class);
 	
 	@Test
 			
@@ -43,6 +48,8 @@ public class LaunchEmailCampaign  {
 	driver.findElement(By.xpath(properties.getProperty("now_emaillaunch"))).click();				//click LAUNCH
 	
 	Thread.sleep(8000);
+	
+	logger.info("Email Campaign Launched Successfully");
 	
 	
 	String e_launch = driver.findElement(By.xpath(properties.getProperty("e_response_msg"))).getText(); // response
@@ -71,7 +78,7 @@ if (expectedtitle.equals(e_launch)) {
 	
 	
 	
-	
+//logger.info("Email Campaign Launched Successfully");
 	
 	
 	
