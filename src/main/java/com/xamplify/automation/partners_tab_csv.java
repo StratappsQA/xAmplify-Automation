@@ -178,7 +178,7 @@ public class partners_tab_csv {
 							
 	}
 */
-	@Test(priority=8,enabled=true)
+	@Test(priority=8,enabled=false)
 	public void upload_csv() throws Throwable
 	{
 		String fileToUpdate = "D:\\Selenium\\files\\Data.csv", replace = "@mail-hub.info";
@@ -289,6 +289,20 @@ public class partners_tab_csv {
 		
 		
 		
+	}
+	@Test(priority=9,enabled=true)
+	public void onboarding_section () throws Throwable
+	
+	{
+		Thread.sleep(3000);
+		Select sortby = new Select(driver.findElement(By.xpath(properties.getProperty("sort"))));
+		sortby.selectByVisibleText("Email(A-Z)");
+		Thread.sleep(2000);
+		driver.findElement(By.xpath(properties.getProperty("search1"))).click();
+		Thread.sleep(1000);
+		driver.findElement(By.xpath(properties.getProperty("search1"))).sendKeys("gayatri");
+		Thread.sleep(1000);
+		driver.findElement(By.xpath(properties.getProperty("search1"))).sendKeys(Keys.ENTER);
 	}
 }
 	
