@@ -149,7 +149,7 @@ public class VideoCampaign {
 		Thread.sleep(5000);
 
 		JavascriptExecutor js = (JavascriptExecutor) driver;
-		js.executeScript("window.scrollTo(0,document.body.scrollHeight)");
+		js.executeScript("window.scrollTo(500,document.body.scrollHeight)");
 		Thread.sleep(3000);
 		driver.findElement(By.xpath(properties.getProperty("v_search_video"))).sendKeys("po3412CHANDRAYAAN2TEASE");// enter
 																													// data
@@ -170,14 +170,24 @@ public class VideoCampaign {
 
 		searchBox1.clear();
 		
+		logger.info("Clear the data");
 		//Thread.sleep(2000);
+		
 		
 		searchBox1.sendKeys(Keys.ENTER);
 		
-		//driver.findElement(By.xpath(properties.getProperty("v_search_video_click_clear"))).click();// clear the data
+		Thread.sleep(3000);
+		
+		logger.info("Click on Cross Icon");
+		
+		//driver.findElement(By.xpath(properties.getProperty("v_search_cross_click"))).click();// clear the data
 
 		Thread.sleep(3000);
-		driver.findElement(By.xpath(properties.getProperty("v_search_video_click_clear_search"))).click();// clear the
+		
+		logger.info("Click on Search Icon");
+		
+		searchBox1.sendKeys(Keys.ENTER);
+		//driver.findElement(By.xpath(properties.getProperty("v_search_video_click_clear_search"))).click();// clear the
 																											// searched
 																											// data
         
@@ -185,10 +195,13 @@ public class VideoCampaign {
 
 		WebElement vdropdown = driver.findElement(By.xpath(properties.getProperty("video_category")));// select category
 		Thread.sleep(3000);
+		driver.findElement(By.xpath(properties.getProperty("v_search_video_click_clear_search"))).click();
+		Thread.sleep(3000);
+		searchBox1.sendKeys(Keys.ENTER);
 
 		Select vd = new Select(vdropdown);
 		Thread.sleep(3000);
-		vd.selectByValue("1");
+		vd.selectByValue("2");
 
 		Thread.sleep(3000);
 
