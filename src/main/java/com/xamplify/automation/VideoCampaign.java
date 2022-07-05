@@ -6,8 +6,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
@@ -27,7 +25,6 @@ public class VideoCampaign {
 	WebDriver driver = Instance.getInstance();
 	Properties properties = PropertiesFile.readPropertyFile("D:\\git\\xAmplify-Automation\\src\\main\\resources\\Campaign.properties");
 
-	final Logger logger = LogManager.getLogger(VideoCampaign.class);
 	@Test(priority = 8, enabled = true)
 
 	public void vdecampaign() throws InterruptedException, SQLException {
@@ -146,62 +143,49 @@ public class VideoCampaign {
 		 * 
 		 */
 
-		Thread.sleep(5000);
+		Thread.sleep(7000);
 
-		JavascriptExecutor js = (JavascriptExecutor) driver;
-		js.executeScript("window.scrollTo(500,document.body.scrollHeight)");
-		Thread.sleep(3000);
+		driver.findElement(By.xpath(properties.getProperty("goto_top"))).click();// go to top arrow
+		Thread.sleep(5000);
+		
+		/*
+		         * JavascriptExecutor js = (JavascriptExecutor) driver;
+		         * js.executeScript("window.scrollTo(document.body.scrollHeight,600)");
+		         * Thread.sleep(7000);
+
+
+
+		/*
+		 * JavascriptExecutor js = (JavascriptExecutor) driver;
+		 * js.executeScript("window.scrollTo(document.body.scrollHeight,500)");
+		 * Thread.sleep(3000);
+		 */
 		driver.findElement(By.xpath(properties.getProperty("v_search_video"))).sendKeys("po3412CHANDRAYAAN2TEASE");// enter
 																													// data
 																													// in
 																													// the
-		logger.info("click on search Icon");																						// search
+																													// search
 																													// bar
-		Thread.sleep(5000); 
-		
-		WebElement searchBox1 = driver.findElement(By.xpath(properties.getProperty("v_search_video")));
-		searchBox1.sendKeys(Keys.ENTER);
-		
-		//driver.findElement(By.xpath(properties.getProperty("v_search_video_click"))).click();// after data entered click
-
-		Thread.sleep(5000);
-		
-		logger.info("Clicked");
-
-		searchBox1.clear();
-		
-		logger.info("Clear the data");
-		//Thread.sleep(2000);
-		
-		
-		searchBox1.sendKeys(Keys.ENTER);
-		
 		Thread.sleep(3000);
-		
-		logger.info("Click on Cross Icon");
-		
-		//driver.findElement(By.xpath(properties.getProperty("v_search_cross_click"))).click();// clear the data
+		driver.findElement(By.xpath(properties.getProperty("v_search_video_click"))).click();// after data entered click
 
 		Thread.sleep(3000);
-		
-		logger.info("Click on Search Icon");
-		
-		searchBox1.sendKeys(Keys.ENTER);
-		//driver.findElement(By.xpath(properties.getProperty("v_search_video_click_clear_search"))).click();// clear the
+
+		driver.findElement(By.xpath(properties.getProperty("v_search_video_click_clear"))).click();// clear the data
+
+		Thread.sleep(3000);
+		driver.findElement(By.xpath(properties.getProperty("v_search_video_click_clear_search"))).click();// clear the
 																											// searched
 																											// data
-        
+
 		Thread.sleep(3000);
 
 		WebElement vdropdown = driver.findElement(By.xpath(properties.getProperty("video_category")));// select category
 		Thread.sleep(3000);
-		driver.findElement(By.xpath(properties.getProperty("v_search_video_click_clear_search"))).click();
-		Thread.sleep(3000);
-		searchBox1.sendKeys(Keys.ENTER);
 
 		Select vd = new Select(vdropdown);
 		Thread.sleep(3000);
-		vd.selectByValue("2");
+		vd.selectByValue("1");
 
 		Thread.sleep(3000);
 
