@@ -26,7 +26,7 @@ public class SchedulePageCampaign {
 	WebDriver driver = Instance.getInstance();
 	Properties properties = PropertiesFile.readPropertyFile("D:\\git\\xAmplify-Automation\\src\\main\\resources\\Campaign.properties");// properties file
 
-	 final Logger logger = LogManager.getLogger(SchedulePageCampaign.class);
+final Logger logger = LogManager.getLogger(SchedulePageCampaign.class);
 	 
 	@Test
 
@@ -87,7 +87,7 @@ public class SchedulePageCampaign {
 		
 		
 		
-		logger.info("Page Campaign Scheduled Successfully");
+logger.info("Page Campaign Scheduled Successfully");
 		
 		
 		

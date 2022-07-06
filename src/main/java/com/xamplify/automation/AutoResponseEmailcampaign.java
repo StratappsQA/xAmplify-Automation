@@ -3,6 +3,8 @@ package com.xamplify.automation;
 
 import java.util.Properties;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
@@ -19,6 +21,7 @@ public class AutoResponseEmailcampaign {
 
 	Properties properties = PropertiesFile.readPropertyFile("D:\\git\\xAmplify-Automation\\src\\main\\resources\\Campaign.properties");
 
+final Logger logger = LogManager.getLogger(AutoResponseEmailcampaign.class);
 	@Test
 
 	public void autoResponsesEmail() throws InterruptedException {
@@ -233,6 +236,6 @@ public class AutoResponseEmailcampaign {
 
 		driver.findElement(By.xpath(properties.getProperty("e_arv_selecttemplate"))).click();
 		Thread.sleep(5000);
-
+logger.info("Auto responses selected");
 	}
 }

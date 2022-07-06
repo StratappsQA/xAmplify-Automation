@@ -27,7 +27,8 @@ public class PageCampaign {
 
 	 WebDriver driver = Instance.getInstance();
 	 Properties properties = PropertiesFile.readPropertyFile("D:\\git\\xAmplify-Automation\\src\\main\\resources\\Campaign.properties");//properties file
-	 final Logger logger = LogManager.getLogger(PageCampaign.class);
+	 
+final Logger logger = LogManager.getLogger(PageCampaign.class);
 	 
 
 	 @Test
@@ -53,6 +54,7 @@ public class PageCampaign {
 		WebElement popncamp = waitc1.until(
 				ExpectedConditions.visibilityOfElementLocated(By.xpath(properties.getProperty("page_opencampaign")))); //select page campaign
 		popncamp.click();
+logger.info("click on the page campaign");
 		List<String> campaignNames = new ArrayList<String>();
 		String query = properties.getProperty("query.getCampaignNamesByOrganizationId").replaceAll(":emailId",
 				properties.getProperty("user.name"));
@@ -88,7 +90,7 @@ public class PageCampaign {
 		    
 		    driver.findElement(By.xpath(properties.getProperty("p_Notify_Me_link_opened"))).click();//notify me when link opened
 		 	Thread.sleep(2000);
-
+logger.info("Given all the data in Campaign details page");
 
 		 	JavascriptExecutor js = (JavascriptExecutor) driver;
 			js.executeScript("window.scrollTo(document.body.scrollHeight,0)");//to scroll down the page
@@ -124,6 +126,7 @@ public class PageCampaign {
 
 		    driver.findElement(By.xpath(properties.getProperty("p_next2"))).click();//next page
 		 	Thread.sleep(5000);
+logger.info("Selected the Partner List");
 		 	
 		 	 WebElement p_search=driver.findElement(By.xpath(properties.getProperty("p_search_template")));//search bar
 		 	 p_search.sendKeys("Manual");
@@ -143,6 +146,7 @@ public class PageCampaign {
 
 		    driver.findElement(By.xpath(properties.getProperty("p_next3"))).click();   //click on the next button
 		 	Thread.sleep(4000);
+logger.info("Selected the Template");
 
 		   
 }
