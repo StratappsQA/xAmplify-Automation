@@ -158,7 +158,8 @@ public class partners_tab_csv {
 
 	/*
 	 * @Test(priority=8,enabled=true) public void copy_from_clipboard3() throws
-	 * InterruptedException, SQLException, IOException { setcsvdata();
+	 * InterruptedException, SQLException, IOException { 
+	 * setcsvdata();
 	 * Thread.sleep(2000);
 	 * driver.findElement(By.xpath(properties.getProperty("uploadcsv1"))).sendKeys(
 	 * "D:\\Selenium\\files\\Data.csv"); }
@@ -179,7 +180,9 @@ public class partners_tab_csv {
 	 * 
 	 * writer.writeNext(line1); writer.writeNext(line2);
 	 * 
-	 * writer.flush(); writer.close(); }
+	 * writer.flush(); 
+	 * writer.close();
+	 *  }
 	 * 
 	 * @Test(priority = 9, enabled=false) public void act() throws
 	 * InterruptedException, SQLException, IOException{
@@ -308,7 +311,7 @@ public class partners_tab_csv {
 		Thread.sleep(2000);
 	}
 
-	@Test(priority = 10, enabled = true)
+	@Test(priority = 10, enabled = false)
 	public void pagination() throws Throwable
 
 	{
@@ -316,25 +319,25 @@ public class partners_tab_csv {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 
 		js.executeScript("scroll(0, 2000)");
-		
+
 		Thread.sleep(3000);
-		
+
 		List<WebElement> pagination1 = driver.findElements(By.xpath("//ul[@class='pagination']/li/a"));
 		System.out.println(pagination1.size());
-		for (int i = 3; i <= pagination1.size()-2; i++) {
-			//Thread.sleep(10000);
+		for (int i = 3; i <= pagination1.size() - 2; i++) {
+			// Thread.sleep(10000);
 			pagination1.get(i).click();
 			Thread.sleep(5000);
 		}
-			//driver.findElement(By.xpath(properties.getProperty("pagenation_last"))).click();
-			//Thread.sleep(3000);
-			//driver.findElement(By.xpath(properties.getProperty("pagenation_first"))).click();
+		// driver.findElement(By.xpath(properties.getProperty("pagenation_last"))).click();
+		// Thread.sleep(3000);
+		// driver.findElement(By.xpath(properties.getProperty("pagenation_first"))).click();
 
 	}
 
 	@Test(priority = 11, enabled = false)
 	public void pagenation() throws Throwable
-	
+
 	{
 		Thread.sleep(3000);
 		JavascriptExecutor js = (JavascriptExecutor) driver;
@@ -345,21 +348,108 @@ public class partners_tab_csv {
 		driver.findElement(By.xpath(properties.getProperty("pagenation_last"))).click();
 		Thread.sleep(3000);
 		driver.findElement(By.xpath(properties.getProperty("pagenation_first"))).click();
-		
+
 	}
+
 	@Test(priority = 12, enabled = false)
-	public void restall_icons() throws Throwable{
+	public void restall_icons() throws Throwable {
 		Thread.sleep(3000);
 		driver.findElement(By.xpath(properties.getProperty("resendemail"))).click();
 		Thread.sleep(3000);
 		driver.findElement(By.xpath(properties.getProperty("editpartner"))).click();
 		Thread.sleep(3000);
-		
-		
-		
-		
-	
+		driver.findElement(By.xpath(properties.getProperty("companyid"))).clear();
+		Thread.sleep(3000);
+		driver.findElement(By.xpath(properties.getProperty("companyid")))
+				.sendKeys("newcompany name" + "_" + System.currentTimeMillis());
+		Thread.sleep(3000);
+		driver.findElement(By.xpath(properties.getProperty("updatepartner"))).click();
+		Thread.sleep(3000);
+		driver.findElement(By.xpath(properties.getProperty("deletepartner"))).click();
+		Thread.sleep(3000);
+		driver.findElement(By.xpath(properties.getProperty("yesdeleteit"))).click();
+		Thread.sleep(3000);
+		driver.findElement(By.xpath(properties.getProperty("sharecampaigns"))).click();
+		Thread.sleep(3000);
+		driver.findElement(By.xpath(properties.getProperty("checkallcampaigns"))).click();
+		Thread.sleep(3000);
+		driver.findElement(By.xpath(properties.getProperty("sharecampaigns2"))).click();
+		Thread.sleep(3000);
+		driver.findElement(By.xpath(properties.getProperty("closing"))).click();
+		Thread.sleep(3000);
+		driver.findElement(By.xpath(properties.getProperty("partneranalytics"))).click();
+		Thread.sleep(3000);
+        driver.findElement(By.xpath(properties.getProperty("closeanalytics"))).click();
+        
 	}
-	
-	
+        
+    	@Test(priority = 13, enabled = true)
+    	public void Managepartners() throws Throwable
+
+    	{
+        
+    		WebElement partners = driver.findElement(By.xpath(properties.getProperty("hoverpartner")));//hover to partners module in left menu
+    		Actions actions = new Actions(driver);
+    		actions.moveToElement(partners).perform();
+    		Thread.sleep(3000);
+    		driver.findElement(By.xpath(properties.getProperty("managepartner"))).click();
+    		
+        
+    	}
+    	@Test(priority = 14, enabled = true)
+    	public void Managepartners_icons() throws Throwable
+    	
+    	{
+    		Thread.sleep(3000);
+    		Select sortby1 = new Select(driver.findElement(By.xpath(properties.getProperty("sortbymanagepartners"))));
+    		sortby1.selectByIndex(2);
+    		Thread.sleep(2000);
+    		driver.findElement(By.xpath(properties.getProperty("searchmanage"))).click();
+    		Thread.sleep(2000);
+    		driver.findElement(By.xpath(properties.getProperty("searchmanage"))).sendKeys("Active Master Partner List");
+    		Thread.sleep(1000);
+    		driver.findElement(By.xpath(properties.getProperty("searchmanage"))).sendKeys(Keys.ENTER);
+    		Thread.sleep(5000);
+    		driver.findElement(By.xpath(properties.getProperty("editlist"))).click();
+        Thread.sleep(2000);
+        driver.findElement(By.xpath(properties.getProperty("editinglist"))).click();
+        Thread.sleep(2000);
+        driver.findElement(By.xpath(properties.getProperty("cname"))).clear();
+        Thread.sleep(2000);
+        driver.findElement(By.xpath(properties.getProperty("cname"))).sendKeys("cname"+" "+System.currentTimeMillis());
+        Thread.sleep(2000);
+       /* WebElement textbox3 = driver.findElement(By.xpath(properties.getProperty("dropp")));
+		Thread.sleep(1000);
+        driver.findElement(By.xpath(properties.getProperty("dropp"))).sendKeys("Legitimate interest - prospect/lead");
+		textbox3.sendKeys(Keys.ENTER);// click enter in the keyboard
+
+		Thread.sleep(1000);
+*/
+        driver.findElement(By.xpath(properties.getProperty("updated"))).click();
+        Thread.sleep(2000);
+        
+       // driver.findElement(By.xpath(properties.getProperty("campaignlist"))).click();
+        driver.findElement(By.xpath(properties.getProperty("campaignanalytics"))).click();
+        Thread.sleep(5000);
+        driver.findElement(By.xpath(properties.getProperty("closes"))).click();
+        Thread.sleep(2000);
+        driver.findElement(By.xpath(properties.getProperty("copyandsave"))).click();
+        Thread.sleep(2000);
+        driver.findElement(By.xpath(properties.getProperty("copyandsavename"))).clear();
+        Thread.sleep(2000);
+        driver.findElement(By.xpath(properties.getProperty("copyandsavename"))).sendKeys("automated list"+"_"+System.currentTimeMillis());
+	    Thread.sleep(2000);
+        driver.findElement(By.xpath(properties.getProperty("savenamechanges"))).click();
+	    Thread.sleep(2000);
+	    driver.findElement(By.xpath(properties.getProperty("downloadlist"))).click();
+	    Thread.sleep(2000);
+	    driver.findElement(By.xpath(properties.getProperty("campain"))).click();
+	    Thread.sleep(2000);
+	    driver.findElement(By.xpath(properties.getProperty("entinfo"))).click();
+    	Thread.sleep(2000);
+    	driver.findElement(By.xpath(properties.getProperty("sharingcampaigns"))).click();
+    	Thread.sleep(2000);
+    	driver.findElement(By.xpath(properties.getProperty("closing"))).click();
+    	}
+
 }
