@@ -26,8 +26,8 @@ public class VideoCampaign {
 	
 	WebDriver driver = Instance.getInstance();
 	Properties properties = PropertiesFile.readPropertyFile("D:\\git\\xAmplify-Automation\\src\\main\\resources\\Campaign.properties");
-
-	final Logger logger = LogManager.getLogger(VideoCampaign.class);
+final Logger logger = LogManager.getLogger(VideoCampaign.class);
+	
 	@Test(priority = 8, enabled = true)
 
 	public void vdecampaign() throws InterruptedException, SQLException {
@@ -46,7 +46,8 @@ public class VideoCampaign {
 		Thread.sleep(5000);
 		WebElement create_campele = driver.findElement(By.xpath(properties.getProperty("vcreatecampaign"))); // click on
 																												// create
-																												// campaign
+logger.info("Click on create Campaign");																										// campaign
+		
 		camp_action.moveToElement(create_campele);
 		camp_action.click();
 		camp_action.perform();
@@ -114,7 +115,7 @@ public class VideoCampaign {
 		WebElement wvnext1 = waitv2.until(ExpectedConditions
 				.visibilityOfElementLocated(By.xpath(properties.getProperty("vcampaign_next_button1"))));
 		wvnext1.click();
-
+logger.info("Given the data in Campaign details page");
 		/*
 		 * for (int i = 0; i <= 8; i++) {
 		 * driver.findElement(By.xpath(properties.getProperty("v_pagenation_nxt"))).
@@ -146,41 +147,41 @@ public class VideoCampaign {
 		 * 
 		 */
 
-		Thread.sleep(5000);
+		Thread.sleep(7000);
 
-		JavascriptExecutor js = (JavascriptExecutor) driver;
-		js.executeScript("window.scrollTo(0,document.body.scrollHeight)");
-		Thread.sleep(3000);
+		driver.findElement(By.xpath(properties.getProperty("goto_top"))).click();// go to top arrow
+		Thread.sleep(5000);
+		
+		/*
+		         * JavascriptExecutor js = (JavascriptExecutor) driver;
+		         * js.executeScript("window.scrollTo(document.body.scrollHeight,600)");
+		         * Thread.sleep(7000);
+
+
+
+		/*
+		 * JavascriptExecutor js = (JavascriptExecutor) driver;
+		 * js.executeScript("window.scrollTo(document.body.scrollHeight,500)");
+		 * Thread.sleep(3000);
+		 */
 		driver.findElement(By.xpath(properties.getProperty("v_search_video"))).sendKeys("po3412CHANDRAYAAN2TEASE");// enter
 																													// data
 																													// in
 																													// the
-		logger.info("click on search Icon");																						// search
+																													// search
 																													// bar
-		Thread.sleep(5000); 
-		
-		WebElement searchBox1 = driver.findElement(By.xpath(properties.getProperty("v_search_video")));
-		searchBox1.sendKeys(Keys.ENTER);
-		
-		//driver.findElement(By.xpath(properties.getProperty("v_search_video_click"))).click();// after data entered click
+		Thread.sleep(3000);
+		driver.findElement(By.xpath(properties.getProperty("v_search_video_click"))).click();// after data entered click
 
-		Thread.sleep(5000);
-		
-		logger.info("Clicked");
+		Thread.sleep(3000);
 
-		searchBox1.clear();
-		
-		//Thread.sleep(2000);
-		
-		searchBox1.sendKeys(Keys.ENTER);
-		
-		//driver.findElement(By.xpath(properties.getProperty("v_search_video_click_clear"))).click();// clear the data
+		driver.findElement(By.xpath(properties.getProperty("v_search_video_click_clear"))).click();// clear the data
 
 		Thread.sleep(3000);
 		driver.findElement(By.xpath(properties.getProperty("v_search_video_click_clear_search"))).click();// clear the
 																											// searched
 																											// data
-        
+
 		Thread.sleep(3000);
 
 		WebElement vdropdown = driver.findElement(By.xpath(properties.getProperty("video_category")));// select category
@@ -200,6 +201,9 @@ public class VideoCampaign {
 
 		driver.findElement(By.xpath(properties.getProperty("goto_top"))).click();// go to top arrow
 		Thread.sleep(5000);
+logger.info("Selected the Video");		
+		
+		
 
 		driver.findElement(By.xpath(properties.getProperty("search_select_partnerlist"))).sendKeys("Master");// send
 																												// data
@@ -233,7 +237,7 @@ public class VideoCampaign {
 
 		driver.findElement(By.xpath(properties.getProperty("select_next3"))).click();// click next
 		Thread.sleep(5000);
-
+logger.info("Selected the Partnerlist");
 		/*
 		 * driver.findElement(By.xpath(properties.getProperty("clck_tmplt2"))).click();
 		 * Thread.sleep(7000);
@@ -274,6 +278,7 @@ public class VideoCampaign {
 
 		driver.findElement(By.xpath(properties.getProperty("email_template_next"))).click();
 		Thread.sleep(5000);
+logger.info("Selected the Template");		
 	}
 
 }

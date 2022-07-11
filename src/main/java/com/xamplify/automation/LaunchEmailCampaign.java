@@ -36,8 +36,8 @@ public class LaunchEmailCampaign  {
 	 	e1.ecampaign();
 	 	Thread.sleep(5000);
 	 	 
-		  //AutoResponseEmailCampaign ar_e=new AutoResponseEmailCampaign();
-		  //ar_e.autoResponsesEmail();
+		  AutoResponseEmailcampaign ar_e=new AutoResponseEmailcampaign();
+		  ar_e.autoResponsesEmail();
 		  
 		 Thread.sleep(3000);
 	 	
@@ -48,8 +48,6 @@ public class LaunchEmailCampaign  {
 	driver.findElement(By.xpath(properties.getProperty("now_emaillaunch"))).click();				//click LAUNCH
 	
 	Thread.sleep(8000);
-	
-	logger.info("Email Campaign Launched Successfully");
 	
 	
 	String e_launch = driver.findElement(By.xpath(properties.getProperty("e_response_msg"))).getText(); // response
@@ -78,7 +76,7 @@ if (expectedtitle.equals(e_launch)) {
 	
 	
 	
-//logger.info("Email Campaign Launched Successfully");
+logger.info("Email Campaign Launched Successfully");
 	
 	
 	

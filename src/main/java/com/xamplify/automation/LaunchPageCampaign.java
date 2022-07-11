@@ -16,7 +16,8 @@ public class LaunchPageCampaign {
 
 	WebDriver driver = Instance.getInstance();
 	Properties properties = PropertiesFile.readPropertyFile("D:\\git\\xAmplify-Automation\\src\\main\\resources\\Campaign.properties");// properties file
-	 final Logger logger = LogManager.getLogger(LaunchPageCampaign.class);
+final Logger logger = LogManager.getLogger(LaunchPageCampaign.class);
+
 	@Test
 	public void page_launch() throws InterruptedException, SQLException {
 		Thread.sleep(4000);
@@ -43,7 +44,7 @@ public class LaunchPageCampaign {
 		}
 		
 		
-		logger.info("Page Campaign Launched Successfully");
+logger.info("Page Campaign Launched Successfully");
 		
 		
 		

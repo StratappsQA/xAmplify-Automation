@@ -30,7 +30,7 @@ public class ScheduleEmailCampaign{
 	Properties properties = PropertiesFile.readPropertyFile("D:\\git\\xAmplify-Automation\\src\\main\\resources\\Campaign.properties");
 	
 	
-	final Logger logger = LogManager.getLogger(ScheduleEmailCampaign.class);
+final Logger logger = LogManager.getLogger(ScheduleEmailCampaign.class);
 	
 	
 	@Test
@@ -43,8 +43,8 @@ public class ScheduleEmailCampaign{
 		  Thread.sleep(5000);
 		 
 		  
-		 // AutoResponseEmailCampaign ar_e12=new AutoResponseEmailCampaign();
-		 // ar_e12.autoResponsesEmail();
+		 AutoResponseEmailcampaign ar_e12=new AutoResponseEmailcampaign();
+		  ar_e12.autoResponsesEmail();
 		  
 		  
 		 //Thread.sleep(3000);
@@ -119,7 +119,7 @@ public class ScheduleEmailCampaign{
 		System.out.println(" Email Campaign schedule failed");
 	}
 
-			logger.info("Email Campaign Scheduled Successfully");
+logger.info("Email Campaign Scheduled Successfully");
 			
 		}
 	

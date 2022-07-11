@@ -23,7 +23,7 @@ public class SaveEmailCampaign   {
 	Properties properties = PropertiesFile.readPropertyFile("D:\\git\\xAmplify-Automation\\src\\main\\resources\\Campaign.properties");
 	
 	
-	final Logger logger = LogManager.getLogger(SaveEmailCampaign.class);
+final Logger logger = LogManager.getLogger(SaveEmailCampaign.class);
 	
 	@Test
 	public void esave() throws InterruptedException, SQLException
@@ -91,12 +91,12 @@ public class SaveEmailCampaign   {
 String expectedtitle = "Campaign saved successfully";
 Thread.sleep(5000);
 
-if (expectedtitle.equals(e_save)) {
-System.out.println(" email  Campaign saved successfully");
-Thread.sleep(5000);
+    if (expectedtitle.equals(e_save)) {
+    	System.out.println(" email  Campaign saved successfully");
+   	Thread.sleep(5000);
 
-} else {
-System.out.println(" email Campaign failed");
+} 	else {
+	System.out.println(" email Campaign failed");
 }
 
 logger.info("Email Campaign saved Successfully");

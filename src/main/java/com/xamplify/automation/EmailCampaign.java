@@ -31,7 +31,7 @@ public class EmailCampaign {
 
 	Properties properties = PropertiesFile.readPropertyFile("D:\\git\\xAmplify-Automation\\src\\main\\resources\\Campaign.properties");
 	
-	final Logger logger = LogManager.getLogger(EmailCampaign.class);
+final Logger logger = LogManager.getLogger(EmailCampaign.class);
 	
 	@Test
 	public void ecampaign() throws InterruptedException, SQLException {
@@ -61,6 +61,8 @@ public class EmailCampaign {
 		WebElement opncamp = waitc.until(
 				ExpectedConditions.visibilityOfElementLocated(By.xpath(properties.getProperty("e_openecampaign")))); //select email campaign
 		opncamp.click();
+		
+logger.info("Choose the Email campaign");
 
 		List<String> campaignNames = new ArrayList<String>();
 		String query = properties.getProperty("query.getCampaignNamesByOrganizationId").replaceAll(":emailId",
@@ -119,7 +121,7 @@ public class EmailCampaign {
 		WebElement w5 = wait5
 				.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(properties.getProperty("enext1"))));			//next page
 		w5.click();
-		
+logger.info("Given all the data in the Campaign details page");		
 		/*JavascriptExecutor js1 = (JavascriptExecutor) driver;
 		js1.executeScript("window.scrollTo(0,document.body.scrollHeight)");*/
 		
@@ -157,6 +159,7 @@ public class EmailCampaign {
 		driver.findElement(By.xpath(properties.getProperty("eselect_partnerlist"))).click();							//select the partner list
 		Thread.sleep(5000);
 
+logger.info("Selected the Partner list");
 		/*
 		 * WebElement
 		 * c1=driver.findElement(By.xpath(properties.getProperty("eprtnr_prvwpagenation"
@@ -246,7 +249,7 @@ public class EmailCampaign {
 		driver.findElement(By.xpath(properties.getProperty("etemplate_preview_close"))).click();
 		Thread.sleep(5000);
 		
-
+logger.info("Selected the Email Template");
 		driver.findElement(By.xpath(properties.getProperty("enext3"))).click();							//next page
 		Thread.sleep(5000);
 		/*driver.findElement(By.xpath(properties.getProperty("now_campaign"))).click();			//click NOW
