@@ -258,14 +258,9 @@ public class partners_onboard_comma {
 			}
 
 		
-		@Test(priority = 8, enabled=true)
-		public void act() throws InterruptedException, SQLException, IOException{
-			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-			WebElement search  =driver.findElement(By.xpath(properties.getProperty("searchbar")));
-			 search.sendKeys(Keys.ENTER);
+		
 	
 		}
 
-}
 
 
