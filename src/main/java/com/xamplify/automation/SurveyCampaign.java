@@ -146,7 +146,11 @@ logger.info("Goto Email_Template_Section");
 	Thread.sleep(3000);
 	driver.findElement(By.xpath(properties.getProperty("s_template_edit"))).click();  // click on Edit template Icon
 	Thread.sleep(4000);
-	driver.findElement(By.xpath(properties.getProperty("s_template_edit_close"))).click();
+	WebDriverWait edit = new WebDriverWait(driver, 60); 
+	WebElement edit1 = edit.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(properties.getProperty
+			  ("s_template_edit_close")))); 
+	edit1.click();
+	//driver.findElement(By.xpath(properties.getProperty("s_template_edit_close"))).click();
 	Thread.sleep(3000);
 	driver.findElement(By.xpath(properties.getProperty("s_next2"))).click(); // click on Next
 	Thread.sleep(3000);
