@@ -81,7 +81,7 @@ logger.info("Select Through campaign");
 	driver.findElement(By.xpath(properties.getProperty("s_through"))).click();
 	Thread.sleep(2000);
 logger.info("send the data into Subject filed");
-	driver.findElement(By.xpath(properties.getProperty("s_subject"))).sendKeys("subject for survey");
+	driver.findElement(By.xpath(properties.getProperty("s_subject"))).sendKeys("subject for survey - ");
 	Thread.sleep(2000);
 logger.info("send the data into pre-header filed");	
 	driver.findElement(By.xpath(properties.getProperty("s_pre-header"))).sendKeys("pre-Header for Survey");	
@@ -103,8 +103,8 @@ logger.info("Goto Partner section");
 			.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(properties.getProperty("s_select_dropdown"))));  //select dropdown
 	Thread.sleep(2000);
 	
- 	Select pdropdown = new Select(w_dropdown); 
- 	pdropdown.selectByVisibleText("Count(ASC)");  //select count Asc
+ 	Select sdropdown = new Select(w_dropdown); 
+ 	sdropdown.selectByVisibleText("Count(ASC)");  //select count Asc
  	
  	Thread.sleep(4000);
 
@@ -144,20 +144,22 @@ logger.info("Goto Email_Template_Section");
 	Thread.sleep(3000);
 	driver.findElement(By.xpath(properties.getProperty("s_template_preview_close"))).click(); 
 	Thread.sleep(3000);
-	driver.findElement(By.xpath(properties.getProperty("s_template_edit"))).click();  // click on Edit template Icon
-	Thread.sleep(4000);
-	WebDriverWait edit = new WebDriverWait(driver, 60); 
-	WebElement edit1 = edit.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(properties.getProperty
-			  ("s_template_edit_close")))); 
+	//driver.findElement(By.xpath(properties.getProperty("s_template_edit"))).click();  // click on Edit template Icon
+	//Thread.sleep(9000);
+	WebDriverWait edit = new WebDriverWait(driver, 80); 
+	WebElement edit1 = edit.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(properties.getProperty("s_template_edit"))));		
 	edit1.click();
-	//driver.findElement(By.xpath(properties.getProperty("s_template_edit_close"))).click();
-	Thread.sleep(3000);
+	Thread.sleep(15000);
+	driver.findElement(By.xpath(properties.getProperty("s_template_edit_close"))).click();
+	Thread.sleep(4000);
 	driver.findElement(By.xpath(properties.getProperty("s_next2"))).click(); // click on Next
 	Thread.sleep(3000);
 	
 logger.info("Goto Launch_Section");
 	
-}
+
+
+	}
 	
 }
 
