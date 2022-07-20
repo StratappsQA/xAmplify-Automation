@@ -28,6 +28,12 @@ final Logger logger = LogManager.getLogger(LaunchSurveyCampaign.class);
 	 	s1.scampaign();
 	 	Thread.sleep(5000);
 	 	
+	 	
+	 	// AutoResponsesSurveyCampaign ar_s=new AutoResponsesSurveyCampaign();
+		 //ar_s.autoResponsesSurvey();
+		  
+		 Thread.sleep(3000);
+	 	
 	 	driver.findElement(By.xpath(properties.getProperty("s_now"))).click(); //Click Now
 	 	Thread.sleep(3000);
 	 	

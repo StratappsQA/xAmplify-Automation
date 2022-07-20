@@ -32,6 +32,9 @@ final Logger logger = LogManager.getLogger(ScheduleSurveyCampaign.class);
 	 	s1.scampaign();// method calling
 	 	Thread.sleep(5000);
 	 	
+	 // AutoResponsesSurveyCampaign ar_s=new AutoResponsesSurveyCampaign();
+	 		 //ar_s.autoResponsesSurvey();
+	 	
 	 	driver.findElement(By.xpath(properties.getProperty("s_schedule"))).click(); //Click on Schedule
 	 	Thread.sleep(3000);
 	 	

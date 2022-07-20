@@ -53,6 +53,7 @@ public void scampaign() throws InterruptedException, SQLException {
 	 js.executeScript("window.scrollTo(0,document.body.scrollHeight)");
 	Thread.sleep(5000);
 	
+	
 	WebDriverWait waitc = new WebDriverWait(driver, 50);
 	
 	WebElement openscamp = waitc.until(

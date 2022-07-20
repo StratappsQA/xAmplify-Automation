@@ -33,6 +33,9 @@ public void sSave() throws InterruptedException, SQLException
  	s1.scampaign();
  	Thread.sleep(5000);
  	
+ // AutoResponsesSurveyCampaign ar_s=new AutoResponsesSurveyCampaign();
+ 		 //ar_s.autoResponsesSurvey();
+ 	
  	driver.findElement(By.xpath(properties.getProperty("s_save"))).click(); //Click on Save
  	Thread.sleep(3000);
  	

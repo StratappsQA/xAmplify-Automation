@@ -186,7 +186,7 @@ public class AutoResponsesSurveyCampaign {
 		WebElement rdrpdwn2 = driver.findElement(By.xpath(properties.getProperty("e_aresponse_drpdwn3"))); // select
 																											// drop
 																											// down
-		// rdrpdwn.click();
+		//rdrpdwn.click();
 		Select reason1 = new Select(rdrpdwn2);
 		Thread.sleep(5000);
 		reason1.selectByValue("16");
