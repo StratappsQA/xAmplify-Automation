@@ -87,15 +87,41 @@ logger.info("campaign copied successfully");
 	driver.findElement(By.xpath(properties.getProperty("save_changes"))).click();
 	Thread.sleep(3000);
 	
-//	JavascriptExecutor js1 = (JavascriptExecutor) driver;
-//	js1.executeScript("window.scrollTo(0,document.body.scrollHeight)");
-//	Thread.sleep(5000);
+
 	driver.findElement(By.xpath(properties.getProperty("gear_icon_t"))).click(); //Click on gear icon
 	Thread.sleep(3000);
 	//driver.findElement(By.xpath(properties.getProperty("preview&delete_partner"))).click();
 	//Thread.sleep(3000);
 	driver.findElement(By.xpath(properties.getProperty("preview"))).click();
+	Thread.sleep(5000);
+//	JavascriptExecutor js1 = (JavascriptExecutor) driver;
+//	js1.executeScript("window.scrollTo(0,document.body.scrollHeight)");
+//	Thread.sleep(5000);
+	driver.findElement(By.xpath(properties.getProperty("preview_close"))).click();
+	Thread.sleep(5000);
+	driver.findElement(By.xpath(properties.getProperty("gear_icon_t"))).click(); //Click on gear icon
 	Thread.sleep(3000);
+	driver.findElement(By.cssSelector(properties.getProperty("archieve_campaign"))).click();
+	Thread.sleep(3000);
+	driver.findElement(By.xpath(properties.getProperty("archieved_campaign_button"))).click();//click on archieved campaigns button
+	Thread.sleep(4000);
+	driver.findElement(By.xpath(properties.getProperty("archieved_gear_icon"))).click();
+	Thread.sleep(3000);
+	driver.findElement(By.cssSelector(properties.getProperty("unarchieved_option"))).click();
+	Thread.sleep(3000);
+	driver.findElement(By.xpath(properties.getProperty("active_campaigns_botton"))).click();//click on active campaigns button
+	Thread.sleep(4000);
+	
+	
+	driver.findElement(By.xpath(properties.getProperty("grid_view"))).click();// click on grid view
+	Thread.sleep(4000);
+	driver.findElement(By.xpath(properties.getProperty("folder_grid_view"))).click(); //click on folder grid view
+	Thread.sleep(4000);
+	driver.findElement(By.xpath(properties.getProperty("fgv_search"))).sendKeys("automatedvendor"); // click on search bar under folder grid view
+	Thread.sleep(4000);
+	driver.findElement(By.xpath(properties.getProperty("search_click"))).click();// click on search icon
+	Thread.sleep(4000);
+	
 	
 }
 
