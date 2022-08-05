@@ -7,6 +7,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -90,8 +91,54 @@ logger.info("campaign copied successfully");
 
 	driver.findElement(By.xpath(properties.getProperty("gear_icon_t"))).click(); //Click on gear icon
 	Thread.sleep(3000);
-	//driver.findElement(By.xpath(properties.getProperty("preview&delete_partner"))).click();
-	//Thread.sleep(3000);
+	driver.findElement(By.xpath(properties.getProperty("preview&delete_partner"))).click(); //Click on Preview and delete
+	Thread.sleep(3000);
+	JavascriptExecutor js_down = (JavascriptExecutor) driver;
+	js_down.executeScript("window.scrollTo(0,100)");
+	Thread.sleep(5000);
+	
+	WebDriverWait wait_sortby = new WebDriverWait(driver, 50);
+	WebElement w_sort = wait_sortby
+			.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(properties.getProperty("s_sortby"))));  //select dropdown
+	Thread.sleep(2000);
+
+
+	new Select(driver.findElement(By.xpath(properties.getProperty("survey_previewdelete_select_dropdown"))))
+			.selectByVisibleText("Email ID(A-Z)");// sort email id A to Z
+
+	Thread.sleep(3000);
+	new Select(driver.findElement(By.xpath(properties.getProperty("survey_previewdelete_select_dropdown"))))
+			.selectByVisibleText("Email ID(Z-A)");// sort email id Z to A
+	Thread.sleep(3000);
+
+	new Select(driver.findElement(By.xpath(properties.getProperty("survey_previewdelete_select_dropdown"))))
+			.selectByVisibleText("First Name(ASC)");// sort First name ascending
+	Thread.sleep(3000);
+
+	new Select(driver.findElement(By.xpath(properties.getProperty("survey_previewdelete_select_dropdown"))))
+			.selectByVisibleText("First Name(DESC)");// sort First name descending
+	Thread.sleep(3000);
+
+	new Select(driver.findElement(By.xpath(properties.getProperty("survey_previewdelete_select_dropdown"))))
+			.selectByVisibleText("Last Name(ASC)");// sort Last name ascending
+	Thread.sleep(3000);
+
+	new Select(driver.findElement(By.xpath(properties.getProperty("survey_previewdelete_select_dropdown"))))
+			.selectByVisibleText("Last Name(DESC)");// sort Last name descending
+	Thread.sleep(3000);
+
+	driver.findElement(By.xpath(properties.getProperty("survey_previewdelete_search"))).click();// search
+	Thread.sleep(3000);
+
+	driver.findElement(By.xpath(properties.getProperty("survey_previewdelete_search"))).sendKeys("Automate");// data sent in search bar
+	Thread.sleep(3000);
+	driver.findElement(By.xpath(properties.getProperty("survey_previewdelete_search"))).sendKeys(Keys.ENTER);// click
+																											// enter
+	Thread.sleep(3000);
+	
+	driver.findElement(By.xpath(properties.getProperty("gear_icon_t"))).click(); //Click on gear icon
+	Thread.sleep(3000);
+
 	driver.findElement(By.xpath(properties.getProperty("preview"))).click();
 	Thread.sleep(5000);
 //	JavascriptExecutor js1 = (JavascriptExecutor) driver;
@@ -121,6 +168,7 @@ logger.info("campaign copied successfully");
 	Thread.sleep(4000);
 	driver.findElement(By.xpath(properties.getProperty("search_click"))).click();// click on search icon
 	Thread.sleep(4000);
+	//driver.findElement(By.xpath(properties.getProperty("")))
 	
 	
 }
