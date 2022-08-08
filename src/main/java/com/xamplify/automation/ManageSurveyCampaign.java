@@ -1,6 +1,9 @@
 package com.xamplify.automation;
 
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 import java.util.Properties;
 
 import org.apache.logging.log4j.LogManager;
@@ -99,39 +102,40 @@ logger.info("campaign copied successfully");
 	
 	WebDriverWait wait_sortby = new WebDriverWait(driver, 50);
 	WebElement w_sort = wait_sortby
-			.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(properties.getProperty("s_sortby"))));  //select dropdown
+			.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(properties.getProperty("ms_sortby"))));  //select dropdown
 	Thread.sleep(2000);
-
-
-	new Select(driver.findElement(By.xpath(properties.getProperty("survey_previewdelete_select_dropdown"))))
-			.selectByVisibleText("Email ID(A-Z)");// sort email id A to Z
-
+	
+	Select sort1 = new Select(w_sort);
+	
+	sort1.selectByVisibleText("Email ID(A-Z)");
 	Thread.sleep(3000);
-	new Select(driver.findElement(By.xpath(properties.getProperty("survey_previewdelete_select_dropdown"))))
-			.selectByVisibleText("Email ID(Z-A)");// sort email id Z to A
+	
+	sort1.selectByVisibleText("Email ID(Z-A)");
 	Thread.sleep(3000);
-
-	new Select(driver.findElement(By.xpath(properties.getProperty("survey_previewdelete_select_dropdown"))))
-			.selectByVisibleText("First Name(ASC)");// sort First name ascending
+	
+	sort1.selectByVisibleText("First Name(ASC)");
 	Thread.sleep(3000);
-
-	new Select(driver.findElement(By.xpath(properties.getProperty("survey_previewdelete_select_dropdown"))))
-			.selectByVisibleText("First Name(DESC)");// sort First name descending
+	
+	sort1.selectByVisibleText("First Name(DESC)");
 	Thread.sleep(3000);
-
-	new Select(driver.findElement(By.xpath(properties.getProperty("survey_previewdelete_select_dropdown"))))
-			.selectByVisibleText("Last Name(ASC)");// sort Last name ascending
+	
+	sort1.selectByVisibleText("Last Name(ASC)");
 	Thread.sleep(3000);
-
-	new Select(driver.findElement(By.xpath(properties.getProperty("survey_previewdelete_select_dropdown"))))
-			.selectByVisibleText("Last Name(DESC)");// sort Last name descending
+	
+	sort1.selectByVisibleText("Last Name(DESC)");
 	Thread.sleep(3000);
-
-	driver.findElement(By.xpath(properties.getProperty("survey_previewdelete_search"))).click();// search
+	
+	sort1.selectByVisibleText("Company Name (Z-A)");
 	Thread.sleep(3000);
-
-	driver.findElement(By.xpath(properties.getProperty("survey_previewdelete_search"))).sendKeys("Automate");// data sent in search bar
+	
+	sort1.selectByVisibleText("Company Name (A-Z)");
 	Thread.sleep(3000);
+	
+		WebDriverWait search1 = new WebDriverWait(driver, 50); 
+	WebElement sr1 = search1.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(properties.getProperty("survey_previewdelete_search"))));
+	sr1.sendKeys("Automate");// data sent in search bar
+	Thread.sleep(3000);
+	
 	driver.findElement(By.xpath(properties.getProperty("survey_previewdelete_search"))).sendKeys(Keys.ENTER);// click
 																											// enter
 	Thread.sleep(3000);
