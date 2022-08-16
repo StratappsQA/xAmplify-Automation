@@ -46,8 +46,8 @@ final Logger logger = LogManager.getLogger(SurveyCampaign.class);
 	Thread.sleep(4000);
 
 	
-//	driver.findElement(By.xpath(properties.getProperty("survey_tab"))).click(); //Click on Survey Tab
-//	Thread.sleep(3000);
+	driver.findElement(By.xpath(properties.getProperty("survey_tab"))).click(); //Click on Survey Tab
+	Thread.sleep(3000);
 logger.info("Clicked on the Survey tab");
 	driver.findElement(By.xpath(properties.getProperty("gear_icon"))).click(); //Click on gear icon
 	Thread.sleep(3000);
@@ -88,10 +88,21 @@ logger.info("campaign copied successfully");
 	Thread.sleep(3000);
 	//driver.findElement(By.xpath(properties.getProperty("select_date"))).click();
 	//Thread.sleep(3000);
+//	List<WebElement> dates= driver.findElements(By.className("flatpickr-day"));
+//	//select common attribute // list and iterate
+//	int count=driver.findElements(By.className("flatpickr-day selected")).size();
+//	for(int i=0; i<count; i++)
+//	{
+//		String text=driver.findElements(By.className("flatpickr-day selected")).get(i).getText();
+//		if(text.equalsIgnoreCase("4"))
+//		{
+//		driver.findElements(By.className("flatpickr-day selected")).get(i).click();
+//		break;
+//		}
+//	}
 	driver.findElement(By.xpath(properties.getProperty("save_changes"))).click();
 	Thread.sleep(3000);
 	
-
 	driver.findElement(By.xpath(properties.getProperty("gear_icon_t"))).click(); //Click on gear icon
 	Thread.sleep(3000);
 	driver.findElement(By.xpath(properties.getProperty("preview&delete_partner"))).click(); //Click on Preview and delete
@@ -222,6 +233,7 @@ logger.info("campaign copied successfully");
 	f_sort1.selectByVisibleText("Count (DESC)");
 	Thread.sleep(3000);
 	
+	
 	driver.findElement(By.xpath(properties.getProperty("folder_list_view"))).click(); // Click on folder list view
 	Thread.sleep(4000);
 	driver.findElement(By.xpath(properties.getProperty("flv_search"))).sendKeys("automatedvendor"); // click on search bar under folder grid view
@@ -285,7 +297,16 @@ logger.info("campaign copied successfully");
 	driver.findElement(By.xpath(properties.getProperty("mc_click"))).click();
 	Thread.sleep(3000);
 	
+	driver.findElement(By.xpath(properties.getProperty("show_download_history"))).click();
+	Thread.sleep(3000);
 	
+	driver.findElement(By.xpath(properties.getProperty("mc1_click"))).click();
+	Thread.sleep(3000);
+	
+	driver.findElement(By.xpath(properties.getProperty("no_red_camp"))).click();
+	Thread.sleep(3000);
+	driver.findElement(By.xpath(properties.getProperty("mc1_click"))).click();
+	Thread.sleep(3000);
 	
 	
 }
