@@ -7,6 +7,8 @@ import java.util.Properties;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -63,7 +65,17 @@ public void event_campaign() throws InterruptedException, SQLException {
 			.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(properties.getProperty("eve_through"))));		//notify me email is opened
 	
 	w3.click();
+	Thread.sleep(3000);
 	
+	driver.findElement(By.xpath("//span[contains(text(),'Private')]")).click();
+	
+	Thread.sleep(3000);
+	
+	
+	driver.findElement(By.xpath(properties.getProperty("eve_configurepipeline"))).click();
+	
+	
+	Thread.sleep(3000);
 	
 	driver.findElement(By.xpath(properties.getProperty("eve_selectdate"))).click();   //select calendar
 	Thread.sleep(3000);
@@ -77,7 +89,7 @@ public void event_campaign() throws InterruptedException, SQLException {
 	for(int i=0; i<count; i++)
 	{
 		String text=driver.findElements(By.className("flatpickr-day")).get(i).getText();
-		if(text.equalsIgnoreCase("4"))
+		if(text.equalsIgnoreCase("20"))
 		{
 		driver.findElements(By.className("flatpickr-day")).get(i).click();
 		break;
@@ -86,11 +98,42 @@ public void event_campaign() throws InterruptedException, SQLException {
 	
 	Thread.sleep(3000);
 	driver.findElement(By.id("allDay")).click();
+	logger.info("Selected the Event date ");
+
+	Thread.sleep(5000);
+	Actions a = new Actions(driver);
+	//scroll down a page
+	a.sendKeys(Keys.PAGE_DOWN).build().perform();
 	
-	Thread.sleep(3000);
+	/*
+	 * JavascriptExecutor js = (JavascriptExecutor) driver; //
+	 * js.executeScript("window.scrollTo(0,500)");
+	 * js.executeScript("window.scrollTo(0,document.body.scrollHeight)");
+	 * 
+	 */
+	logger.info("Page scrolled");
+
+	Thread.sleep(15000);
+
+
+	Select drpCountry = new Select(driver.findElement(By.xpath("//div[@class=\"col-sm-6\"]//select[@class=\"form-control ng-pristine ng-valid has-error ng-touched\"]")));
 	
-		
+	drpCountry.selectByVisibleText("India"); 
+	
+	
+	
+	
+	
+	
+	
+	
+	   
+	   
+	   
 }
-	
+
+
+
+
 	
 }
