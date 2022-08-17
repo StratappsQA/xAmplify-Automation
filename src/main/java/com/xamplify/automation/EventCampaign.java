@@ -21,119 +21,163 @@ public class EventCampaign {
 
 	WebDriver driver = Instance.getInstance();
 
-	Properties properties = PropertiesFile.readPropertyFile("D:\\git\\xAmplify-Automation\\xAmplify-Automation\\src\\main\\resources\\EventCampaign.properties");
-	
-final Logger logger = LogManager.getLogger(EventCampaign.class);
-	
-	
-@Test
-public void event_campaign() throws InterruptedException, SQLException {
-	
-	WebDriverWait wait = new WebDriverWait(driver, 50); // Wait till the element is not visible
+	Properties properties = PropertiesFile.readPropertyFile(
+			"D:\\git\\xAmplify-Automation\\xAmplify-Automation\\src\\main\\resources\\EventCampaign.properties");
 
-	WebElement eve_campele = wait.until(
-			ExpectedConditions.visibilityOfElementLocated(By.xpath(properties.getProperty("event_campaignhover"))));
-	eve_campele.click(); // hover on campaign
+	final Logger logger = LogManager.getLogger(EventCampaign.class);
 
-	Actions camp_action = new Actions(driver);
-	camp_action.moveToElement(eve_campele).perform();
-	Thread.sleep(5000);
-	WebElement create_campele = driver.findElement(By.xpath(properties.getProperty("event_createcampaign"))); //click on create campaign
-	camp_action.moveToElement(create_campele);
-	camp_action.click();
-	camp_action.perform();
-	Thread.sleep(5000);
-	WebDriverWait waitc = new WebDriverWait(driver, 40);
-	WebElement opencamp = waitc.until(
-			ExpectedConditions.visibilityOfElementLocated(By.xpath(properties.getProperty("event_opencampaign")))); //select event campaign
-	opencamp.click();
-	
-	logger.info("Selected the Event campaign");
-	Thread.sleep(5000);
+	@Test
+	public void event_campaign() throws InterruptedException, SQLException {
 
-	WebElement eve_campaignName = 	driver.findElement(By.id(properties.getProperty("event_tittle")));
-	eve_campaignName.sendKeys("Eventcampaign");
-	Thread.sleep(3000);
+		WebDriverWait wait = new WebDriverWait(driver, 50); // Wait till the element is not visible
+
+		WebElement eve_campele = wait.until(
+				ExpectedConditions.visibilityOfElementLocated(By.xpath(properties.getProperty("event_campaignhover"))));
+		eve_campele.click(); // hover on campaign
+
+		Actions camp_action = new Actions(driver);
+		camp_action.moveToElement(eve_campele).perform();
+		Thread.sleep(5000);
+		WebElement create_campele = driver.findElement(By.xpath(properties.getProperty("event_createcampaign"))); // click
+																													// on
+																													// create
+																													// campaign
+		camp_action.moveToElement(create_campele);
+		camp_action.click();
+		camp_action.perform();
+		Thread.sleep(5000);
+		WebDriverWait waitc = new WebDriverWait(driver, 40);
+		WebElement opencamp = waitc.until(
+				ExpectedConditions.visibilityOfElementLocated(By.xpath(properties.getProperty("event_opencampaign")))); // select
+																														// event
+																														// campaign
+		opencamp.click();
+
+		logger.info("Selected the Event campaign");
+		Thread.sleep(5000);
+
+		WebElement eve_campaignName = driver.findElement(By.id(properties.getProperty("event_tittle")));
+		eve_campaignName.sendKeys("Eventcampaign");
+		Thread.sleep(3000);
+
+		driver.findElement(By.xpath(properties.getProperty("eve_subjectline"))).sendKeys("subjectLine_eve"); // subjectline
+		Thread.sleep(3000);
+
+		Actions a = new Actions(driver); // scroll down a page
+		a.sendKeys(Keys.PAGE_DOWN).build().perform();
+
+		Thread.sleep(3000);
+
+		WebDriverWait wait3 = new WebDriverWait(driver, 50);
+		WebElement w3 = wait3
+				.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(properties.getProperty("eve_through")))); // notify
+																														// me
+																														// email
+																														// is
+																														// opened
+
+		w3.click();
+		Thread.sleep(3000);
+
+		driver.findElement(By.xpath(properties.getProperty("eve_selectpublic"))).click(); //select public toggle
+
+		Thread.sleep(3000);
+
+		driver.findElement(By.xpath(properties.getProperty("eve_configurepipeline"))).click(); //Toggle configure pipeline ON
 
 	
-	driver.findElement(By.xpath(properties.getProperty("eve_subjectline"))).sendKeys("subjectLine_eve");    //subjectline 
-	Thread.sleep(3000);
+		Thread.sleep(7000);
 
-	
-	WebDriverWait wait3 = new WebDriverWait(driver, 50);
-	WebElement w3 = wait3
-			.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(properties.getProperty("eve_through"))));		//notify me email is opened
-	
-	w3.click();
-	Thread.sleep(3000);
-	
-	driver.findElement(By.xpath("//span[contains(text(),'Private')]")).click();
-	
-	Thread.sleep(3000);
-	
-	
-	driver.findElement(By.xpath(properties.getProperty("eve_configurepipeline"))).click();
-	
-	
-	Thread.sleep(3000);
-	
-	driver.findElement(By.xpath(properties.getProperty("eve_selectdate"))).click();   //select calendar
-	Thread.sleep(3000);
-	
-	
-	
-	
-	List<WebElement> dates= driver.findElements(By.className("flatpickr-day"));
-	//select common attribute // list and iterate
-	int count=driver.findElements(By.className("flatpickr-day")).size();
-	for(int i=0; i<count; i++)
-	{
-		String text=driver.findElements(By.className("flatpickr-day")).get(i).getText();
-		if(text.equalsIgnoreCase("20"))
-		{
-		driver.findElements(By.className("flatpickr-day")).get(i).click();
-		break;
+		driver.findElement(By.xpath(properties.getProperty("eve_selectdate"))).click(); // select calendar
+
+		Thread.sleep(3000);
+
+		List<WebElement> dates = driver.findElements(By.className("flatpickr-day")); // select common attribute list and iterate
+		                                     
+		int count = driver.findElements(By.className("flatpickr-day")).size();
+		for (int i = 0; i < count; i++) {
+			String text = driver.findElements(By.className("flatpickr-day")).get(i).getText();
+			if (text.equalsIgnoreCase("28")) {
+				driver.findElements(By.className("flatpickr-day")).get(i).click();
+				break;
+			}
 		}
+
+		Thread.sleep(3000);
+		driver.findElement(By.id("allDay")).click();
+		logger.info("Selected the Event date ");
+
+		Thread.sleep(4000);
+
+		WebElement drpCountry = driver.findElement(By.xpath(properties.getProperty("timezone_select_country"))); //select the country
+		drpCountry.click();
+
+		drpCountry.sendKeys("India");
+		Thread.sleep(2000);
+		logger.info("Selected India in the country dropdown ");
+		drpCountry.sendKeys(Keys.ENTER);
+		Thread.sleep(5000);
+		
+		
+		driver.findElement(By.xpath(properties.getProperty("eve_showformsbutton"))).click(); //click on the showformsbutton
+		
+		
+		Thread.sleep(4000);
+		
+		driver.findElement(By.xpath(properties.getProperty("eve_form_preview"))).click(); //preview the form
+		
+		Thread.sleep(4000);
+		driver.findElement(By.xpath(properties.getProperty("eve_form_preview_close"))).click(); //close the form
+		Thread.sleep(3000);
+
+		driver.findElement(By.xpath(properties.getProperty("eve_selectform"))).click(); //select the form
+		
+		Thread.sleep(4000);
+		driver.findElement(By.xpath(properties.getProperty("eve_closeform"))).click(); //close the form
+		Thread.sleep(3000);
+
+		Actions a2 = new Actions(driver); 
+		a2.sendKeys(Keys.PAGE_DOWN).build().perform(); // scroll down a page
+		
+		
+		driver.findElement(By.xpath(properties.getProperty("eve_nextpage"))).click();  //click for the next page
+		Thread.sleep(3000);
+		
+		
+		Actions a3 = new Actions(driver); 
+		a3.sendKeys(Keys.PAGE_UP).build().perform(); // scroll up the page
+		
+		
+		
+		WebDriverWait wait_evedropdown = new WebDriverWait(driver, 50);
+		WebElement w_evedropdown = wait_evedropdown
+				.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(properties.getProperty("eve_select_dropdown"))));
+		Thread.sleep(2000);
+		
+	 	Select eve_dropdown1 = new Select(w_evedropdown); 
+	 	eve_dropdown1.selectByVisibleText("Created On(ASC)");
+		
+		
+		WebDriverWait wait_search = new WebDriverWait(driver, 50);
+		WebElement waitsearch_partner = wait_search
+				.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(properties.getProperty("eve_search_select_partnerlist_click")))); //Search for partner list
+		waitsearch_partner.sendKeys("Master");
+		
+		waitsearch_partner.sendKeys(Keys.ENTER);  //Click on search
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 	}
-	
-	Thread.sleep(3000);
-	driver.findElement(By.id("allDay")).click();
-	logger.info("Selected the Event date ");
 
-	Thread.sleep(5000);
-	Actions a = new Actions(driver);
-	//scroll down a page
-	a.sendKeys(Keys.PAGE_DOWN).build().perform();
-	
-	/*
-	 * JavascriptExecutor js = (JavascriptExecutor) driver; //
-	 * js.executeScript("window.scrollTo(0,500)");
-	 * js.executeScript("window.scrollTo(0,document.body.scrollHeight)");
-	 * 
-	 */
-	logger.info("Page scrolled");
-
-	Thread.sleep(15000);
-
-
-	Select drpCountry = new Select(driver.findElement(By.xpath("//div[@class=\"col-sm-6\"]//select[@class=\"form-control ng-pristine ng-valid has-error ng-touched\"]")));
-	
-	drpCountry.selectByVisibleText("India"); 
-	
-	
-	
-	
-	
-	
-	
-	
-	   
-	   
-	   
-}
-
-
-
-
-	
 }
