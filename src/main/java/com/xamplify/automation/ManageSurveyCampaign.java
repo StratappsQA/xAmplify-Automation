@@ -47,7 +47,7 @@ final Logger logger = LogManager.getLogger(SurveyCampaign.class);
 
 	
 	driver.findElement(By.xpath(properties.getProperty("survey_tab"))).click(); //Click on Survey Tab
-	Thread.sleep(3000);
+	Thread.sleep(5000);
 logger.info("Clicked on the Survey tab");
 	driver.findElement(By.xpath(properties.getProperty("gear_icon"))).click(); //Click on gear icon
 	Thread.sleep(3000);
@@ -88,18 +88,7 @@ logger.info("campaign copied successfully");
 	Thread.sleep(3000);
 	//driver.findElement(By.xpath(properties.getProperty("select_date"))).click();
 	//Thread.sleep(3000);
-//	List<WebElement> dates= driver.findElements(By.className("flatpickr-day"));
-//	//select common attribute // list and iterate
-//	int count=driver.findElements(By.className("flatpickr-day selected")).size();
-//	for(int i=0; i<count; i++)
-//	{
-//		String text=driver.findElements(By.className("flatpickr-day selected")).get(i).getText();
-//		if(text.equalsIgnoreCase("4"))
-//		{
-//		driver.findElements(By.className("flatpickr-day selected")).get(i).click();
-//		break;
-//		}
-//	}
+
 	driver.findElement(By.xpath(properties.getProperty("save_changes"))).click();
 	Thread.sleep(3000);
 	
@@ -151,27 +140,7 @@ logger.info("campaign copied successfully");
 	Thread.sleep(3000);
 	
 	
-//		String s = driver.findElement(By.xpath(properties.getProperty("survey_aftersearch_getext"))).getText();// get the text
-//	System.out.println(s);
-//	
-//	String Excepted = "No Data Found.";
-//	
-//	if (s.equals(Excepted)) {
-//	Thread.sleep(3000);
-//	System.out.println("unable to delete the partner because already it is deleted/not there in the list");
-//	driver.findElement(By.xpath(properties.getProperty("managecampaigns"))).click();// click on manage campaigns
-//	
-//	}
-//	
-//	else {
-//	
-//		driver.findElement(By.xpath(properties.getProperty("s_previewdelete_delete"))).click(); // click on Delete
-//		Thread.sleep(3000);
-//		driver.findElement(By.xpath(properties.getProperty("s_yes_delete"))).click(); // Click on Yes_delete
-//		Thread.sleep(3000);
-//	
-//	System.out.println("Deleted Partner successfully from the campaign");
-//	}
+//		
 
 	driver.findElement(By.xpath(properties.getProperty("ManageCamp_breadcrump"))).click();// click on manage campaigns
 	Thread.sleep(3000);
@@ -247,7 +216,19 @@ logger.info("campaign copied successfully");
 	Thread.sleep(5000);
 	driver.findElement(By.xpath(properties.getProperty("analytics_icon_click"))).click();
 	Thread.sleep(3000);
-	
+	driver.findElement(By.xpath(properties.getProperty("recepients_click"))).click();
+	Thread.sleep(4000);
+	driver.findElement(By.xpath(properties.getProperty("total_recepients_search_box"))).sendKeys("mounika");
+	Thread.sleep(4000);
+	driver.findElement(By.xpath(properties.getProperty("total_recepients_search"))).click();
+	Thread.sleep(4000);
+	driver.findElement(By.xpath(properties.getProperty("export_excel_icon_click"))).click();
+	Thread.sleep(4000);
+	driver.findElement(By.xpath(properties.getProperty("export_excel_click"))).click();
+	Thread.sleep(4000);
+	driver.findElement(By.xpath(properties.getProperty("total_recepients_cross_click"))).click();
+	Thread.sleep(4000);
+
 	JavascriptExecutor js1 = (JavascriptExecutor) driver;
 	js1.executeScript("window.scrollTo(0,document.body.scrollHeight)");
 	Thread.sleep(5000);
