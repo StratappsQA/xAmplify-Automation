@@ -1,13 +1,14 @@
 package com.xamplify.automation;
 
 import java.sql.SQLException;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 import java.util.Properties;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -54,11 +55,10 @@ public class EventCampaign {
 		opencamp.click();
 
 		logger.info("Selected the Event campaign");
-		Thread.sleep(5000);
+		Thread.sleep(4000);
 
-		WebElement eve_campaignName = driver.findElement(By.id(properties.getProperty("event_tittle")));
-		eve_campaignName.sendKeys("Eventcampaign");
-		Thread.sleep(3000);
+		driver.findElement(By.id(properties.getProperty("event_tittle")))
+				.sendKeys(properties.getProperty("eve_name") + "_" + System.currentTimeMillis());
 
 		driver.findElement(By.xpath(properties.getProperty("eve_subjectline"))).sendKeys("subjectLine_eve"); // subjectline
 		Thread.sleep(3000);
@@ -79,24 +79,26 @@ public class EventCampaign {
 		w3.click();
 		Thread.sleep(3000);
 
-		driver.findElement(By.xpath(properties.getProperty("eve_selectpublic"))).click(); //select public toggle
+		driver.findElement(By.xpath(properties.getProperty("eve_selectpublic"))).click(); // select public toggle
 
 		Thread.sleep(3000);
 
-		driver.findElement(By.xpath(properties.getProperty("eve_configurepipeline"))).click(); //Toggle configure pipeline ON
+		driver.findElement(By.xpath(properties.getProperty("eve_configurepipeline"))).click(); // Toggle configure
+																								// pipeline ON
 
-	
 		Thread.sleep(7000);
 
 		driver.findElement(By.xpath(properties.getProperty("eve_selectdate"))).click(); // select calendar
 
 		Thread.sleep(3000);
 
-		List<WebElement> dates = driver.findElements(By.className("flatpickr-day")); // select common attribute list and iterate
-		                                     
+		List<WebElement> dates = driver.findElements(By.className("flatpickr-day")); // select common attribute list and
+																						// iterate
+
 		int count = driver.findElements(By.className("flatpickr-day")).size();
 		for (int i = 0; i < count; i++) {
 			String text = driver.findElements(By.className("flatpickr-day")).get(i).getText();
+
 			if (text.equalsIgnoreCase("28")) {
 				driver.findElements(By.className("flatpickr-day")).get(i).click();
 				break;
@@ -109,75 +111,114 @@ public class EventCampaign {
 
 		Thread.sleep(4000);
 
-		WebElement drpCountry = driver.findElement(By.xpath(properties.getProperty("timezone_select_country"))); //select the country
+		WebElement drpCountry = driver.findElement(By.xpath(properties.getProperty("timezone_select_country"))); // select
+																													// the
+																													// country
 		drpCountry.click();
 
 		drpCountry.sendKeys("India");
 		Thread.sleep(2000);
 		logger.info("Selected India in the country dropdown ");
 		drpCountry.sendKeys(Keys.ENTER);
-		Thread.sleep(5000);
-		
-		
-		driver.findElement(By.xpath(properties.getProperty("eve_showformsbutton"))).click(); //click on the showformsbutton
-		
-		
 		Thread.sleep(4000);
-		
-		driver.findElement(By.xpath(properties.getProperty("eve_form_preview"))).click(); //preview the form
-		
-		Thread.sleep(4000);
-		driver.findElement(By.xpath(properties.getProperty("eve_form_preview_close"))).click(); //close the form
+
+		driver.findElement(By.xpath(properties.getProperty("eve_showformsbutton"))).click(); // click on the
+																								// showformsbutton
+
 		Thread.sleep(3000);
 
-		driver.findElement(By.xpath(properties.getProperty("eve_selectform"))).click(); //select the form
-		
-		Thread.sleep(4000);
-		driver.findElement(By.xpath(properties.getProperty("eve_closeform"))).click(); //close the form
+		driver.findElement(By.xpath(properties.getProperty("eve_form_preview"))).click(); // preview the form
+
+		Thread.sleep(3000);
+		driver.findElement(By.xpath(properties.getProperty("eve_form_preview_close"))).click(); // close the form
 		Thread.sleep(3000);
 
-		Actions a2 = new Actions(driver); 
+		driver.findElement(By.xpath(properties.getProperty("eve_selectform"))).click(); // select the form
+
+		Thread.sleep(3000);
+		driver.findElement(By.xpath(properties.getProperty("eve_closeform"))).click(); // close the form
+		Thread.sleep(3000);
+
+		Actions a2 = new Actions(driver);
 		a2.sendKeys(Keys.PAGE_DOWN).build().perform(); // scroll down a page
-		
-		
-		driver.findElement(By.xpath(properties.getProperty("eve_nextpage"))).click();  //click for the next page
+
+		driver.findElement(By.xpath(properties.getProperty("eve_nextpage"))).click(); // click for the next page
 		Thread.sleep(3000);
-		
-		
-		Actions a3 = new Actions(driver); 
+
+		Actions a3 = new Actions(driver);
 		a3.sendKeys(Keys.PAGE_UP).build().perform(); // scroll up the page
-		
-		
-		
+
 		WebDriverWait wait_evedropdown = new WebDriverWait(driver, 50);
-		WebElement w_evedropdown = wait_evedropdown
-				.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(properties.getProperty("eve_select_dropdown"))));
+		WebElement w_evedropdown = wait_evedropdown.until(
+				ExpectedConditions.visibilityOfElementLocated(By.xpath(properties.getProperty("eve_select_dropdown"))));
 		Thread.sleep(2000);
-		
-	 	Select eve_dropdown1 = new Select(w_evedropdown); 
-	 	eve_dropdown1.selectByVisibleText("Created On(ASC)");
-		
-		
+
+		Select eve_dropdown1 = new Select(w_evedropdown);
+		eve_dropdown1.selectByVisibleText("Created On(ASC)");
+
 		WebDriverWait wait_search = new WebDriverWait(driver, 50);
-		WebElement waitsearch_partner = wait_search
-				.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(properties.getProperty("eve_search_select_partnerlist_click")))); //Search for partner list
+		WebElement waitsearch_partner = wait_search.until(ExpectedConditions
+				.visibilityOfElementLocated(By.xpath(properties.getProperty("eve_search_select_partnerlist_click")))); // Search
+																														// for
+																														// partner
+																														// list
 		waitsearch_partner.sendKeys("Master");
-		
-		waitsearch_partner.sendKeys(Keys.ENTER);  //Click on search
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
+
+		waitsearch_partner.sendKeys(Keys.ENTER); // Click on search
+		Thread.sleep(2000);
+
+		driver.findElement(By.xpath(properties.getProperty("eve_selectpartnerlist_checkbox"))).click(); // select 1st
+																										// checkbox
+
+		Thread.sleep(2000);
+
+		driver.findElement(By.xpath(properties.getProperty("eve_partnerlist_preview"))).click(); // preview the partner
+																									// list
+
+		Thread.sleep(2000);
+
+		driver.findElement(By.xpath(properties.getProperty("eve_close_partnerlist_preview"))).click(); // close the
+																										// partner list
+
+		Thread.sleep(2000);
+		driver.findElement(By.xpath(properties.getProperty("eve_nextpage2"))).click(); // click for the next page
+
+		Thread.sleep(2000);
+
+		WebElement search = driver.findElement(By.xpath(properties.getProperty("eve_template_search"))); // click on the
+																											// searchbar
+		search.sendKeys("Event");
+		search.sendKeys(Keys.ENTER);
+
+		Thread.sleep(4000);
+
+		driver.findElement(By.xpath(properties.getProperty("eve_select_template"))).click(); // select the template
+
+		Thread.sleep(2000);
+		driver.findElement(By.xpath(properties.getProperty("eve_select_template_preview"))).click(); // preview the
+																										// template
+
+		Thread.sleep(2000);
+		driver.findElement(By.xpath(properties.getProperty("eve_select_template_preview_close"))).click(); // close the
+																											// preview
+																											// of the
+																											// template
+
+		Thread.sleep(2000);
+
+		driver.findElement(By.xpath(properties.getProperty("eve_template_editicon"))).click(); // click on the edit icon
+																								// of the template
+
+		Thread.sleep(5000);
+
+		driver.findElement(By.xpath(properties.getProperty("eve_template_editicon_close"))).click(); // close the
+																										// template
+
+		Thread.sleep(5000);
+		driver.findElement(By.xpath(properties.getProperty("eve_nextpage3"))).click(); // click on the next page
+
+		// driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-home//app-event-campaign[1]//ul[1]//div[1]/span[1]/a[2]/i[1]")).click();
+
 	}
 
 }
