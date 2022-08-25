@@ -1,17 +1,17 @@
 package com.xamplify.automation;
 
 import java.io.IOException;
+import java.sql.Date;
 import java.sql.SQLException;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.Select;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
@@ -219,8 +219,8 @@ public class Templates {
 		driver.findElement(By.xpath("//*[@id='save']")).click();
 	}
 	
-	@Test(priority = 10, enabled = true)
-	public void event() throws InterruptedException {
+	@Test(priority = 10, enabled = false)
+	public void eventco() throws InterruptedException {
 		Thread.sleep(3000);
 		driver.findElement(By.xpath("/html/body/app-root/app-home/div/app-leftsidebar/div/div/ul/li[5]/a/span[1]"))
 				.click();
@@ -230,12 +230,12 @@ public class Templates {
 		driver.findElement(By.xpath("(//li[@class='filter'])[6]")).click();
 	}
 
-	@Test(priority = 11, enabled = true)
-	public void event1() throws InterruptedException {
+	@Test(priority = 11, enabled = false)
+	public void eventco1() throws InterruptedException {
 
 		driver.findElement(By.xpath("//input[@placeholder='Search for a template']")).click();
 		Thread.sleep(2000);
-		driver.findElement(By.xpath("//input[@placeholder='Search for a template']")).sendKeys("video");
+		driver.findElement(By.xpath("//input[@placeholder='Search for a template']")).sendKeys("event");
 		Thread.sleep(2000);
 		driver.findElement(By.xpath("//button[@class='search-box-item-click']")).click();
 		Thread.sleep(2000);
@@ -264,5 +264,52 @@ public class Templates {
 		Thread.sleep(2000);
 		driver.findElement(By.xpath("//*[@id='save']")).click();
 	}
+
+	@Test(priority = 12, enabled = false)
+	public void survey() throws InterruptedException {
+		Thread.sleep(3000);
+		driver.findElement(By.xpath("/html/body/app-root/app-home/div/app-leftsidebar/div/div/ul/li[5]/a/span[1]"))
+				.click();
+		Thread.sleep(3000);
+		driver.findElement(By.xpath("/html/body/app-root/app-home/div/div/app-design/div/div[2]/div/div/div[2]/div/div[1]/div/div/div[3]/h5/a/span")).click();
+		Thread.sleep(3000);
+		driver.findElement(By.xpath("(//li[@class='filter'])[7]")).click();
+	}
+
+	@Test(priority = 13, enabled = false)
+	public void survey1() throws InterruptedException {
+
+		driver.findElement(By.xpath("//input[@placeholder='Search for a template']")).click();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//input[@placeholder='Search for a template']")).sendKeys("survey");
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//button[@class='search-box-item-click']")).click();
+		Thread.sleep(2000);
+		WebElement ele = driver.findElement(By.xpath(
+				"/html/body/app-root/app-home/div/div/app-select-template/div[1]/div[2]/div/div/div[2]/div/div[2]/div/div"));
+
+		// Creating object of an Actions class
+		Actions action = new Actions(driver);
+
+		// Performing the mouse hover action on the target element.
+		action.moveToElement(ele).perform();
+		driver.findElement(By.xpath(
+				"/html/body/app-root/app-home/div/div/app-select-template/div[1]/div[2]/div/div/div[2]/div/div[2]/div/div/a/i"))
+				.click();
+		Thread.sleep(15000);
+		driver.switchTo().frame(0);
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//span[contains(text(),'SAVE')]/..")).click();
+		Thread.sleep(2000);
+		
+		driver.switchTo().defaultContent();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//*[@id='templateNameId']")).click();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//*[@id='templateNameId']")).sendKeys("harish" + System.currentTimeMillis());
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//*[@id='save']")).click();
+	}
+
 
 }
