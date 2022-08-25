@@ -62,41 +62,42 @@ public class SurveyToCampaign {
 		}
 		String campaignNameFromProp = properties.getProperty("swrite_to_campaigname").toLowerCase();
 		
-		driver.findElement(By.id(properties.getProperty("scampaignName")))
+		driver.findElement(By.id(properties.getProperty("s_to_campaignName")))
 		.sendKeys(properties.getProperty("swrite_to_campaigname"));
 		Thread.sleep(5000);
 
 		if (campaignNames.indexOf(campaignNameFromProp) > -1) {
-		driver.findElement(By.id(properties.getProperty("scampaignName"))).clear();
-		driver.findElement(By.id(properties.getProperty("scampaignName")))
+		driver.findElement(By.id(properties.getProperty("s_to_campaignName"))).clear();
+		driver.findElement(By.id(properties.getProperty("s_to_campaignName")))
 				.sendKeys(properties.getProperty("swrite_to_campaigname") + "_" + System.currentTimeMillis());
 		}
 	logger.info("Selected TO campaign");	
 
 		logger.info("send the data into Subject filed");
-		driver.findElement(By.xpath(properties.getProperty("s_subject"))).sendKeys("subject for Survey To-campaign - ");
+		driver.findElement(By.xpath(properties.getProperty("s_to_camp_subject"))).sendKeys("subject for Survey To-campaign - ");
 		Thread.sleep(2000);
 	logger.info("send the data into pre-header filed");	
-		driver.findElement(By.xpath(properties.getProperty("s_pre-header"))).sendKeys("pre-Header for Survey To-campaign");	
+		driver.findElement(By.xpath(properties.getProperty("s_to_camp_pre-header"))).sendKeys("pre-Header for Survey To-campaign");	
 		Thread.sleep(2000);
 		
 		Actions a = new Actions(driver); // scroll down a page
 		a.sendKeys(Keys.PAGE_DOWN).build().perform();
 	logger.info("Select ON");
-		driver.findElement(By.xpath(properties.getProperty("s_to_notify_me_email_opened"))).click();
-		Thread.sleep(2000);
+		Thread.sleep(3000);
+		driver.findElement(By.xpath(properties.getProperty("s_to_camp_notify_me_email_opened"))).click();
+		Thread.sleep(3000);
 		logger.info("Select ON");
-		driver.findElement(By.xpath(properties.getProperty("s_to_notify_me_link_opened"))).click();
-		Thread.sleep(2000);
+		driver.findElement(By.xpath(properties.getProperty("s_to_camp_notify_me_link_opened"))).click();
+		Thread.sleep(3000);
 	logger.info("Click on Next button");
-		driver.findElement(By.xpath(properties.getProperty("s_next"))).click();
+		driver.findElement(By.xpath(properties.getProperty("s_to_camp_next"))).click();
 		Thread.sleep(4000);
 	logger.info("Goto Partner section");	
-		driver.findElement(By.xpath(properties.getProperty("p_gototop"))).click();
+		driver.findElement(By.xpath(properties.getProperty("s_to_camp_gototop"))).click();
 	 	
 	 	WebDriverWait wait_dropdown = new WebDriverWait(driver, 50);
 		WebElement w_dropdown = wait_dropdown
-				.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(properties.getProperty("s_select_dropdown"))));  //select dropdown
+				.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(properties.getProperty("s_to_camp_select_dropdown"))));  //select dropdown
 		Thread.sleep(2000);
 		
 	 	Select sdropdown = new Select(w_dropdown); 
@@ -106,49 +107,49 @@ public class SurveyToCampaign {
 
 
 	logger.info("give the invalid text");
-		driver.findElement(By.xpath(properties.getProperty("s_search_data"))).sendKeys("mnmnmnmnmn"); // give invalid text
+		driver.findElement(By.xpath(properties.getProperty("s_to_camp_search_data"))).sendKeys("mnmnmnmnmn"); // give invalid text
 		Thread.sleep(3000);
-		driver.findElement(By.xpath(properties.getProperty("s_search_click"))).click();
+		driver.findElement(By.xpath(properties.getProperty("s_to_camp_search_click"))).click();
 		Thread.sleep(3000);
-		driver.findElement(By.xpath(properties.getProperty("s_cross_click"))).click();
+		driver.findElement(By.xpath(properties.getProperty("s_to_camp_cross_click"))).click();
 		Thread.sleep(3000);
 	logger.info("Search for active Master partner list");
 
-		driver.findElement(By.xpath(properties.getProperty("s_search_Valid_data"))).sendKeys("Active Master Partner list"); // give Valid text
+		driver.findElement(By.xpath(properties.getProperty("s_to_camp_search_Valid_data"))).sendKeys("Active Master Partner list"); // give Valid text
 		Thread.sleep(3000);
-		driver.findElement(By.xpath(properties.getProperty("s_searchButton_click"))).click(); //click on Search button
+		driver.findElement(By.xpath(properties.getProperty("s_to_camp_searchButton_click"))).click(); //click on Search button
 		Thread.sleep(3000);
-		driver.findElement(By.xpath(properties.getProperty("s_select_partnerlist"))).click(); // Slect the Partner list
+		driver.findElement(By.xpath(properties.getProperty("s_to_camp_select_partnerlist"))).click(); // Slect the Partner list
 		Thread.sleep(3000);
 	logger.info("click on preview_Partner_list ");
-		driver.findElement(By.xpath(properties.getProperty("s_preview_partner_list"))).click(); //click on Preview Icon
+		driver.findElement(By.xpath(properties.getProperty("s_to_camp_preview_partner_list"))).click(); //click on Preview Icon
 		Thread.sleep(3000);
-		driver.findElement(By.xpath(properties.getProperty("s_close_preview_partner_list"))).click();
+		driver.findElement(By.xpath(properties.getProperty("s_to_camp_close_preview_partner_list"))).click();
 		Thread.sleep(3000);
-		driver.findElement(By.xpath(properties.getProperty("s_next1"))).click(); // click on Next
+		driver.findElement(By.xpath(properties.getProperty("s_to_camp_next1"))).click(); // click on Next
 		Thread.sleep(3000);
 		
 	logger.info("Goto Email_Template_Section");
-		WebElement s_search=driver.findElement(By.xpath(properties.getProperty("s_search_template")));//search bar
+		WebElement s_search=driver.findElement(By.xpath(properties.getProperty("s_to_camp_search_template")));//search bar
 		s_search.sendKeys("Survey");
 		s_search.sendKeys(Keys.ENTER);
 		Thread.sleep(4000);
 
-		driver.findElement(By.xpath(properties.getProperty("s_select_temp"))).click(); // Select template
+		driver.findElement(By.xpath(properties.getProperty("s_to_camp_select_temp"))).click(); // Select template
 		Thread.sleep(3000);
-		driver.findElement(By.xpath(properties.getProperty("s_template_preview"))).click(); // click on Preview icon
+		driver.findElement(By.xpath(properties.getProperty("s_to_camp_template_preview"))).click(); // click on Preview icon
 		Thread.sleep(3000);
-		driver.findElement(By.xpath(properties.getProperty("s_template_preview_close"))).click(); 
+		driver.findElement(By.xpath(properties.getProperty("s_to_camp_template_preview_close"))).click(); 
 		Thread.sleep(3000);
-		//driver.findElement(By.xpath(properties.getProperty("s_template_edit"))).click();  // click on Edit template Icon
+		//driver.findElement(By.xpath(properties.getProperty("s_to_camp_template_edit"))).click();  // click on Edit template Icon
 		//Thread.sleep(9000);
 		WebDriverWait edit = new WebDriverWait(driver, 80); 
-		WebElement edit1 = edit.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(properties.getProperty("s_template_edit"))));		
+		WebElement edit1 = edit.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(properties.getProperty("s_to_camp_template_edit"))));		
 		edit1.click();
 		Thread.sleep(15000);
-		driver.findElement(By.xpath(properties.getProperty("s_template_edit_close"))).click();
+		driver.findElement(By.xpath(properties.getProperty("s_to_camp_template_edit_close"))).click();
 		Thread.sleep(4000);
-		driver.findElement(By.xpath(properties.getProperty("s_next2"))).click(); // click on Next
+		driver.findElement(By.xpath(properties.getProperty("s_to_camp_next2"))).click(); // click on Next
 		Thread.sleep(3000);
 		
 	logger.info("Goto Launch_Section");
