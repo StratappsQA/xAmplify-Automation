@@ -86,24 +86,15 @@ public class EventCampaign {
 		driver.findElement(By.xpath(properties.getProperty("eve_configurepipeline"))).click(); // Toggle configure
 																								// pipeline ON
 
-		Thread.sleep(7000);
+		Thread.sleep(6000);
 
 		driver.findElement(By.xpath(properties.getProperty("eve_selectdate"))).click(); // select calendar
 
-		Thread.sleep(3000);
+		Thread.sleep(5000);
 
-		List<WebElement> dates = driver.findElements(By.className("flatpickr-day")); // select common attribute list and
-																						// iterate
+		WebElement w = driver.findElement(By.xpath(properties.getProperty("eve_selected_date")));
 
-		int count = driver.findElements(By.className("flatpickr-day")).size();
-		for (int i = 0; i < count; i++) {
-			String text = driver.findElements(By.className("flatpickr-day")).get(i).getText();
-
-			if (text.equalsIgnoreCase("28")) {
-				driver.findElements(By.className("flatpickr-day")).get(i).click();
-				break;
-			}
-		}
+		w.click();
 
 		Thread.sleep(3000);
 		driver.findElement(By.id("allDay")).click();
@@ -125,19 +116,19 @@ public class EventCampaign {
 		driver.findElement(By.xpath(properties.getProperty("eve_showformsbutton"))).click(); // click on the
 																								// showformsbutton
 
-		Thread.sleep(3000);
+		Thread.sleep(2000);
 
 		driver.findElement(By.xpath(properties.getProperty("eve_form_preview"))).click(); // preview the form
 
-		Thread.sleep(3000);
+		Thread.sleep(2000);
 		driver.findElement(By.xpath(properties.getProperty("eve_form_preview_close"))).click(); // close the form
-		Thread.sleep(3000);
+		Thread.sleep(2000);
 
 		driver.findElement(By.xpath(properties.getProperty("eve_selectform"))).click(); // select the form
 
-		Thread.sleep(3000);
+		Thread.sleep(2000);
 		driver.findElement(By.xpath(properties.getProperty("eve_closeform"))).click(); // close the form
-		Thread.sleep(3000);
+		Thread.sleep(2000);
 
 		Actions a2 = new Actions(driver);
 		a2.sendKeys(Keys.PAGE_DOWN).build().perform(); // scroll down a page
