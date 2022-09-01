@@ -46,45 +46,44 @@ public class ManageSurveyToCampaign {
 	Thread.sleep(5000);
 logger.info("Clicked on the Survey tab");
 	
-	driver.findElement(By.xpath(properties.getProperty("tocamp_gearicon"))).click(); 
-	Thread.sleep(3000);
-	driver.findElement(By.xpath(properties.getProperty("Click_edit"))).click();
-	Thread.sleep(3000);
-	WebDriverWait folder_dropdown = new WebDriverWait(driver, 50);
-	WebElement f_dropdown = folder_dropdown
-			.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(properties.getProperty("s_select_folder_dropdown"))));  //select folder dropdown
-	Thread.sleep(2000);
-	
- 	Select fdropdown = new Select(f_dropdown); 
- 	fdropdown.selectByValue("1106");  //select by value
- 	
- 	Thread.sleep(4000);
- 	driver.findElement(By.xpath(properties.getProperty("update_button"))).click();//click on update
- 	Thread.sleep(2000);
- 	driver.findElement(By.xpath(properties.getProperty("click_close"))).click();//click on close button
- 	Thread.sleep(4000);
- 	
- logger.info("click on Gear icon");
- 	driver.findElement(By.xpath(properties.getProperty("tocamp_gearicon"))).click();  	
- 	Thread.sleep(3000);
- 	driver.findElement(By.xpath(properties.getProperty("click_copy_campaign"))).click();
- 	Thread.sleep(3000);
- 	driver.findElement(By.xpath(properties.getProperty("click_save_changes"))).click();//click on Save Changes.
-	Thread.sleep(2000);
-logger.info("campaign copied successfully");
-	
-	Actions a = new Actions(driver); // scroll down a page
-	a.sendKeys(Keys.PAGE_DOWN).build().perform();
+//	driver.findElement(By.xpath(properties.getProperty("tocamp_gearicon"))).click(); 
+//	Thread.sleep(3000);
+//	driver.findElement(By.xpath(properties.getProperty("Click_edit"))).click();
+//	Thread.sleep(3000);
+//	WebDriverWait folder_dropdown = new WebDriverWait(driver, 50);
+//	WebElement f_dropdown = folder_dropdown
+//			.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(properties.getProperty("s_select_folder_dropdown"))));  //select folder dropdown
+//	Thread.sleep(2000);
+//	
+// 	Select fdropdown = new Select(f_dropdown); 
+// 	fdropdown.selectByValue("1106");  //select by value
+// 	
+// 	Thread.sleep(4000);
+// 	driver.findElement(By.xpath(properties.getProperty("update_button"))).click();//click on update
+// 	Thread.sleep(2000);
+// 	driver.findElement(By.xpath(properties.getProperty("click_close"))).click();//click on close button
+// 	Thread.sleep(4000);
+// 	
+// logger.info("click on Gear icon");
+// 	driver.findElement(By.xpath(properties.getProperty("tocamp_gearicon"))).click();  	
+// 	Thread.sleep(3000);
+// 	driver.findElement(By.xpath(properties.getProperty("click_copy_campaign"))).click();
+// 	Thread.sleep(3000);
+// 	driver.findElement(By.xpath(properties.getProperty("click_save_changes"))).click();//click on Save Changes.
+//	Thread.sleep(2000);
+//logger.info("campaign copied successfully");
+//	
 	
 logger.info("click on Gear icon");	
 	driver.findElement(By.xpath(properties.getProperty("tocamp_gearicon1"))).click();  	
 	Thread.sleep(3000);
 	driver.findElement(By.xpath(properties.getProperty("click_Preview"))).click();
-	Thread.sleep(3000);
-	Actions a1 = new Actions(driver); // scroll down a page
-	a1.sendKeys(Keys.PAGE_DOWN).build().perform();
+	Thread.sleep(5000);
+	
 	driver.findElement(By.xpath(properties.getProperty("click_close_preview"))).click();
-	Thread.sleep(3000);
+	Thread.sleep(5000);
+	
+	
 logger.info("click on Gear icon");
 	driver.findElement(By.xpath(properties.getProperty("tocamp_gearicon1"))).click();  	
 	Thread.sleep(3000);
@@ -92,9 +91,14 @@ logger.info("click on Gear icon");
 	Thread.sleep(3000);
 	driver.findElement(By.xpath(properties.getProperty("click_archieved_campaigns"))).click();  	
 	Thread.sleep(3000);
+	driver.findElement(By.xpath(properties.getProperty("t_gearicon"))).click();
+	Thread.sleep(3000);
+	driver.findElement(By.xpath(properties.getProperty("click_unarchieve_camp"))).click();
+	Thread.sleep(3000);
+	driver.findElement(By.xpath(properties.getProperty("click_active_campaigns"))).click();
+	Thread.sleep(3000);
 	
+	
+		}
 
-	
-	
-}
 }
