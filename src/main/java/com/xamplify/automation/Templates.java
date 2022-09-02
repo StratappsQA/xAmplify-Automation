@@ -339,7 +339,7 @@ public class Templates {
 		driver.findElement(By.xpath("//input[@placeholder='Search for a template']")).sendKeys(Keys.ENTER);
 		Thread.sleep(2000);
 		driver.findElement(By.xpath("//a/i[@class='fa fa-inbox']")).click();
-		Thread.sleep(2000);
+		Thread.sleep(3000);
 		driver.findElement(By.xpath("//*[@id='email_spam_check']/div/div/div[3]/a")).click();
 
 	}
