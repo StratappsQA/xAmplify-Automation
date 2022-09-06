@@ -341,6 +341,7 @@ public class Templates {
 		driver.findElement(By.xpath("//a/i[@class='fa fa-inbox']")).click();
 		Thread.sleep(3000);
 		driver.findElement(By.xpath("//*[@id='email_spam_check']/div/div/div[3]/a")).click();
+		Thread.sleep(2000);
 
 	}
 
