@@ -1,8 +1,12 @@
 package com.xamplify.automation;
 			
+
 import java.sql.SQLException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Collections;
+import java.util.Date;
 import java.util.List;
 import java.util.Properties;		
 import org.apache.logging.log4j.LogManager;
@@ -73,21 +77,30 @@ public class ManageSurveyCampaign {
 			driver.findElement(By.xpath(properties.getProperty("copy_campaign"))).click();//Click on Copy Campaign
 			Thread.sleep(2000);
 			driver.findElement(By.xpath(properties.getProperty("click_save_changes"))).click();//click on Save Changes.
-			Thread.sleep(2000);
+			Thread.sleep(5000);
 		logger.info("campaign copied successfully");
 		
 			Actions a = new Actions(driver); // scroll down a page
 			a.sendKeys(Keys.PAGE_DOWN).build().perform();
-		
-		//	JavascriptExecutor js = (JavascriptExecutor) driver;
-		//	js.executeScript("window.scrollTo(0,document.body.scrollHeight)");
-		//	Thread.sleep(5000);
+			Thread.sleep(5000);
+	
 			driver.findElement(By.xpath(properties.getProperty("gear_icon_t"))).click(); //Click on gear icon
 			Thread.sleep(3000);
 			driver.findElement(By.xpath(properties.getProperty("update_end_date"))).click(); //click on update end date
 			Thread.sleep(3000);
 			driver.findElement(By.xpath(properties.getProperty("campaign_end_date"))).click();
 			Thread.sleep(3000);
+			
+			WebElement wd = driver.findElement(By.xpath(properties.getProperty("selected_date")));
+
+	        wd.click();
+
+	        Thread.sleep(4000);
+	        //driver.findElement(By.id("allDay")).click();
+logger.info("Selected the End date ");
+
+//	        Thread.sleep(4000);
+
 			//driver.findElement(By.xpath(properties.getProperty("select_date"))).click();
 			//Thread.sleep(3000);
 		
@@ -352,7 +365,7 @@ public class ManageSurveyCampaign {
 			{
 				System.out.println("activerecepients count is zero");
 			}
-		logger.info("Click on the Clicked URL tile");
+	logger.info("Click on the Clicked URL tile");
 		
 			WebElement clickedurl = driver.findElement(By.xpath(properties.getProperty("clicked_URL")));
 			if(clickedurl.isEnabled())
@@ -654,7 +667,8 @@ public class ManageSurveyCampaign {
 				Thread.sleep(3000);
 			logger.info("Manage Survey Campaign completed");
 				
-			}
+		
+		}
 			 
 			
 			
