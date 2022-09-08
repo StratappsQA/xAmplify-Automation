@@ -16,7 +16,9 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 
 public class ScheduleEventCampaign {
@@ -38,61 +40,30 @@ public class ScheduleEventCampaign {
 		eve1.event_campaign();
 		Thread.sleep(5000);
 
-		driver.findElement(By.xpath(properties.getProperty("eve_schedule"))).click();
+		driver.findElement(By.xpath(properties.getProperty("eve_schedule"))).click(); //click on the schedule button
 		Thread.sleep(7000);
 
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("window.scrollTo(0,document.body.scrollHeight)");// scroll down
 		Thread.sleep(5000);
 
-		WebElement dateTable = driver.findElement(By.xpath(properties.getProperty("eve_sch_click")));
+		WebElement dateTable = driver.findElement(By.xpath(properties.getProperty("eve_sch_click"))); // click on the
+																										// calendar
 		dateTable.click();
 
-		Thread.sleep(8000);
-		
-		
+		Thread.sleep(7000);
 
-		logger.info("Clicked the date");
+		logger.info("Clicked the date section");
 
-		
-		
-		
-		SimpleDateFormat df = new SimpleDateFormat("MM/dd/yyyy");
-		Date dt = new Date();
-
-		Calendar cl = Calendar.getInstance();
-		cl.setTime(dt);;
-		cl.add(Calendar.DAY_OF_YEAR, 2);
-		dt=cl.getTime();
-
-		String str = df.format(dt);
-
-		System.out.println("the date today is "+ str);
-		WebElement el = driver.findElement(By.xpath("//div[@class='dayContainer']"));
-		System.out.println("ag");
-		el.sendKeys(str);
-		
-		
-		
-		
-		
-		
-		
-		
-		
-			Thread.sleep(9000);
-
-		  
-		  
-		  
-		  
-		
+		driver.findElement(By.xpath(properties.getProperty("eve_sch_date_click"))).click(); // clicked the date
+		Thread.sleep(7000);
+		logger.info("selected the date");
 		WebElement pcountry_drpdwn = driver.findElement(By.xpath(properties.getProperty("eve_sch_select_country")));// select
 																													// country
 		Select pcountry1 = new Select(pcountry_drpdwn);
 		Thread.sleep(5000);
 		pcountry1.selectByValue("103");
-		Thread.sleep(7000);
+		Thread.sleep(9000);
 		driver.findElement(By.xpath(properties.getProperty("eve_schedulelast"))).click();// schedule
 		Thread.sleep(5000);
 

@@ -2,42 +2,48 @@
 <testng-results ignored="0" total="3" passed="2" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-06-27T18:47:12 IST" name="Suite" finished-at="2022-06-27T18:48:52 IST" duration-ms="100149">
+  <suite started-at="2022-09-08T16:53:29 IST" name="Suite" finished-at="2022-09-08T16:57:02 IST" duration-ms="212910">
     <groups>
     </groups>
-    <test started-at="2022-06-27T18:47:12 IST" name="Test" finished-at="2022-06-27T18:48:52 IST" duration-ms="100149">
-      <class name="com.xamplify.automation.LaunchVideoCampaign">
-        <test-method signature="vlaunch()[pri:0, instance:com.xamplify.automation.LaunchVideoCampaign@4bb003e9]" started-at="2022-06-27T18:47:38 IST" name="vlaunch" finished-at="2022-06-27T18:48:52 IST" duration-ms="73703" status="FAIL">
+    <test started-at="2022-09-08T16:53:29 IST" name="Test" finished-at="2022-09-08T16:57:02 IST" duration-ms="212910">
+      <class name="com.xamplify.automation.LaunchEventCampaign">
+        <test-method signature="event_launch()[pri:0, instance:com.xamplify.automation.LaunchEventCampaign@2ca6546f]" started-at="2022-09-08T16:54:11 IST" name="event_launch" finished-at="2022-09-08T16:57:02 IST" duration-ms="170930" status="FAIL">
           <exception class="org.openqa.selenium.NoSuchElementException">
             <message>
-              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"//*[@id="imagePath2890"]"}
-  (Session info: chrome=103.0.5060.53)
+              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"//div//input[@class='form-control ng-pristine ng-valid ng-touched']"}
+  (Session info: chrome=105.0.5195.102)
+  (Driver info: chromedriver=2.43.600210 (68dcf5eebde37173d4027fa8635e332711d2874a),platform=Windows NT 10.0.19044 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 0 milliseconds
 For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
 Build info: version: '3.11.0', revision: 'e59cfb3', time: '2018-03-11T20:26:55.152Z'
-System info: host: 'CHMOUNIKA-SA', ip: '192.168.56.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.2'
+System info: host: 'AGAYATRI-SA', ip: '192.168.56.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.1'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 103.0.5060.53, chrome: {chromedriverVersion: 103.0.5060.53 (a1711811edd7..., userDataDir: C:\Users\CHMOUN~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:62218}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: c1c77a3af97f9442062848a49e2ac18f
-*** Element info: {Using=xpath, value=//*[@id="imagePath2890"]}]]>
+Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.43.600210 (68dcf5eebde371..., userDataDir: C:\Users\agayatri\AppData\L...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:60442}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, unexpectedAlertBehaviour: , unhandledPromptBehavior: , version: 105.0.5195.102, webStorageEnabled: true}
+Session ID: ec8086d94096af7231444a21d40fc4e9
+*** Element info: {Using=xpath, value=//div//input[@class='form-control ng-pristine ng-valid ng-touched']}]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//*[@id="imagePath2890"]"}
-  (Session info: chrome=103.0.5060.53)
+              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//div//input[@class='form-control ng-pristine ng-valid ng-touched']"}
+  (Session info: chrome=105.0.5195.102)
+  (Driver info: chromedriver=2.43.600210 (68dcf5eebde37173d4027fa8635e332711d2874a),platform=Windows NT 10.0.19044 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 0 milliseconds
 For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
 Build info: version: '3.11.0', revision: 'e59cfb3', time: '2018-03-11T20:26:55.152Z'
-System info: host: 'CHMOUNIKA-SA', ip: '192.168.56.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.2'
+System info: host: 'AGAYATRI-SA', ip: '192.168.56.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.1'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 103.0.5060.53, chrome: {chromedriverVersion: 103.0.5060.53 (a1711811edd7..., userDataDir: C:\Users\CHMOUN~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:62218}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: c1c77a3af97f9442062848a49e2ac18f
-*** Element info: {Using=xpath, value=//*[@id="imagePath2890"]}
+Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.43.600210 (68dcf5eebde371..., userDataDir: C:\Users\agayatri\AppData\L...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:60442}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, unexpectedAlertBehaviour: , unhandledPromptBehavior: , version: 105.0.5195.102, webStorageEnabled: true}
+Session ID: ec8086d94096af7231444a21d40fc4e9
+*** Element info: {Using=xpath, value=//div//input[@class='form-control ng-pristine ng-valid ng-touched']}
 at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
 at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
 at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
 at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:214)
+at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:166)
+at org.openqa.selenium.remote.http.JsonHttpResponseCodec.reconstructValue(JsonHttpResponseCodec.java:40)
+at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:80)
+at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:44)
 at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
 at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
 at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
@@ -45,8 +51,8 @@ at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:3
 at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:421)
 at org.openqa.selenium.By$ByXPath.findElement(By.java:361)
 at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:311)
-at com.xamplify.automation.VideoCampaign.vdecampaign(VideoCampaign.java:195)
-at com.xamplify.automation.LaunchVideoCampaign.vlaunch(LaunchVideoCampaign.java:28)
+at com.xamplify.automation.AutoResponsesEventcampaign.autoResponsesevent(AutoResponsesEventcampaign.java:74)
+at com.xamplify.automation.LaunchEventCampaign.event_launch(LaunchEventCampaign.java:31)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -80,14 +86,14 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           </exception> <!-- org.openqa.selenium.NoSuchElementException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- vlaunch -->
-      </class> <!-- com.xamplify.automation.LaunchVideoCampaign -->
+        </test-method> <!-- event_launch -->
+      </class> <!-- com.xamplify.automation.LaunchEventCampaign -->
       <class name="com.xamplify.automation.Login">
-        <test-method signature="Openingthebrowser()[pri:1, instance:com.xamplify.automation.Login@64b70919]" started-at="2022-06-27T18:47:12 IST" name="Openingthebrowser" finished-at="2022-06-27T18:47:29 IST" duration-ms="16956" status="PASS">
+        <test-method signature="Openingthebrowser()[pri:1, instance:com.xamplify.automation.Login@77ee25f1]" started-at="2022-09-08T16:53:29 IST" name="Openingthebrowser" finished-at="2022-09-08T16:54:01 IST" duration-ms="31695" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Openingthebrowser -->
-        <test-method signature="Signinprocess()[pri:2, instance:com.xamplify.automation.Login@64b70919]" started-at="2022-06-27T18:47:29 IST" name="Signinprocess" finished-at="2022-06-27T18:47:38 IST" duration-ms="9425" status="PASS">
+        <test-method signature="Signinprocess()[pri:2, instance:com.xamplify.automation.Login@77ee25f1]" started-at="2022-09-08T16:54:01 IST" name="Signinprocess" finished-at="2022-09-08T16:54:11 IST" duration-ms="10153" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Signinprocess -->

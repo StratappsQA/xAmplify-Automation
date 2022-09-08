@@ -27,6 +27,11 @@ public class LaunchEventCampaign {
 		eve1.event_campaign();
 		Thread.sleep(5000);
 
+		AutoResponsesEventcampaign ar_eve=new AutoResponsesEventcampaign();
+		ar_eve.autoResponsesevent();
+		
+		  Thread.sleep(5000);
+		
 		driver.findElement(By.xpath(properties.getProperty("eve_now"))).click(); // click NOW
 		Thread.sleep(3000);
 

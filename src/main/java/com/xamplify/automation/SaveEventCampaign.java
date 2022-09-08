@@ -15,7 +15,8 @@ public class SaveEventCampaign {
 	Properties properties = PropertiesFile.readPropertyFile(
 			"D:\\git\\xAmplify-Automation\\xAmplify-Automation\\src\\main\\resources\\EventCampaign.properties");
 
-final Logger logger = LogManager.getLogger(SaveEventCampaign.class);
+	final Logger logger = LogManager.getLogger(SaveEventCampaign.class);
+
 	@Test
 	public void event_save() throws InterruptedException, SQLException {
 		Thread.sleep(4000);
@@ -24,13 +25,18 @@ final Logger logger = LogManager.getLogger(SaveEventCampaign.class);
 		eve12.event_campaign();
 		Thread.sleep(5000);
 
+		AutoResponsesEventcampaign ar_eve1 = new AutoResponsesEventcampaign();
+		ar_eve1.autoResponsesevent();
+
+		Thread.sleep(3000);
+
 		driver.findElement(By.xpath(properties.getProperty("eve_save"))).click();// click on save
 		Thread.sleep(4000);
 
 		driver.findElement(By.xpath(properties.getProperty("eve_saved"))).click(); // click on save last button
 		Thread.sleep(6000);
 		String ev_save = driver.findElement(By.xpath(properties.getProperty("eve_save_response_msg"))).getText(); // response
-																											// message
+		// message
 
 		String expectedtitle = "Campaign saved successfully";
 
@@ -39,18 +45,9 @@ final Logger logger = LogManager.getLogger(SaveEventCampaign.class);
 		} else {
 			System.out.println(" Event Campaign failed");
 		}
-		
-logger.info("Event Campaign saved successfully");
-	
-	
-	
-	
-	
-	
-	
+
+		logger.info("Event Campaign saved successfully");
+
 	}
-	
-	
-	
-	
+
 }

@@ -81,7 +81,7 @@ public class EventCampaign {
 
 		driver.findElement(By.xpath(properties.getProperty("eve_selectpublic"))).click(); // select public toggle
 
-		Thread.sleep(3000);
+		Thread.sleep(4000);
 
 		driver.findElement(By.xpath(properties.getProperty("eve_configurepipeline"))).click(); // Toggle configure
 																								// pipeline ON
@@ -92,7 +92,7 @@ public class EventCampaign {
 
 		Thread.sleep(5000);
 
-		WebElement w = driver.findElement(By.xpath(properties.getProperty("eve_selected_date")));
+		WebElement w = driver.findElement(By.xpath(properties.getProperty("eve_selected_date"))); //selected date in the calendar
 
 		w.click();
 
@@ -208,8 +208,7 @@ public class EventCampaign {
 		Thread.sleep(5000);
 		driver.findElement(By.xpath(properties.getProperty("eve_nextpage3"))).click(); // click on the next page
 
-		// driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-home//app-event-campaign[1]//ul[1]//div[1]/span[1]/a[2]/i[1]")).click();
-
+		
 	}
 
 }
