@@ -342,6 +342,26 @@ public class Templates {
 		Thread.sleep(3000);
 		driver.findElement(By.xpath("//*[@id='email_spam_check']/div/div/div[3]/a")).click();
 		Thread.sleep(2000);
+		driver.findElement(By.xpath("//a/i[@class='fa fa-pencil-square-o mDisableColor']")).click();
+		Thread.sleep(10000);
+		driver.switchTo().frame(0);
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//span[contains(text(),'SAVE')]/..")).click();
+		Thread.sleep(2000);
+
+		driver.switchTo().defaultContent();
+		Thread.sleep(3000);
+		driver.findElement(By.xpath("//div/input[@value='Update']")).click();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//*[@id='manage-email-template-list']/tbody/tr[1]/td[5]/div/div[2]/a[2]/i"))
+				.click();
+		driver.findElement(By.xpath("//*[@id='show_email_template_preivew']/div/div/div[1]/button")).click();
+	}
+		@Test(priority = 15, enabled = true)
+		public void managetemplates1() throws InterruptedException {
+
+		
+		
 
 	}
 
