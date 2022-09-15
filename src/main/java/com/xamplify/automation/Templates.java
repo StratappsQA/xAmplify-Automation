@@ -37,14 +37,14 @@ public class Templates {
 		driver.findElement(By.cssSelector("button[type*='submit']")).click();
 	}
 
-	@Test(priority = 2, enabled = true)
+	@Test(priority = 2, enabled = false)
 	public void design() throws InterruptedException {
 		Thread.sleep(3000);
 		driver.findElement(By.xpath("/html/body/app-root/app-home/div/app-leftsidebar/div/div/ul/li[5]/a/span[1]"))
 				.click();
 		Thread.sleep(3000);
 		driver.findElement(By.xpath("(//span[@class='design-name mDisableColor'])[1]")).click();
-		
+
 	}
 
 	@Test(priority = 3, enabled = false)
@@ -331,7 +331,11 @@ public class Templates {
 				.click();
 		Thread.sleep(2000);
 		driver.findElement(By.xpath("//span[@class='design-name']")).click();
-		Thread.sleep(2000);
+	}
+
+	@Test(priority = 15, enabled = false)
+	public void managetemplates_Email() throws InterruptedException {
+
 		driver.findElement(By.xpath("//ul/li[@class='filter'][1]")).click();
 		Thread.sleep(2000);
 		driver.findElement(By.xpath("//input[@placeholder='Search for a template']")).click();
@@ -360,21 +364,16 @@ public class Templates {
 		Thread.sleep(2000);
 		driver.findElement(By.xpath("(//i[@class='fa fa-times'])[2]")).click();
 		Thread.sleep(2000);
-		Select dropdown = new Select(driver. findElement(By.xpath("/html/body/app-root/app-home/div/div/app-manage-template/div/div[3]/div/div/div[1]/div/div[2]/div/div/div[1]/select")));
-		dropdown. selectByVisibleText("Name (A-Z)");
-		
-	}
-	
-	
-	
-	@Test(priority = 14, enabled = false)
-	public void managetemplates_1() throws InterruptedException {
+		Select dropdown = new Select(driver.findElement(By.xpath(
+				"/html/body/app-root/app-home/div/div/app-manage-template/div/div[3]/div/div/div[1]/div/div[2]/div/div/div[1]/select")));
+		dropdown.selectByVisibleText("Name (A-Z)");
 
+	}
+
+	@Test(priority = 16, enabled = false)
+	public void managetemplates_video() throws InterruptedException {
 		Thread.sleep(3000);
-		driver.findElement(By.xpath("/html/body/app-root/app-home/div/app-leftsidebar/div/div/ul/li[5]/a/span[1]"))
-				.click();
-		Thread.sleep(2000);
-		driver.findElement(By.xpath("//span[@class='design-name']")).click();
+		managetemplates();
 		Thread.sleep(2000);
 		driver.findElement(By.xpath("//ul/li[@class='filter'][2]")).click();
 		Thread.sleep(2000);
@@ -403,46 +402,14 @@ public class Templates {
 				.click();
 		Thread.sleep(2000);
 		driver.findElement(By.xpath("(//i[@class='fa fa-times'])[2]")).click();
-		
-	
-	
-	
-	
-	
-		/*@Test(priority = 15, enabled = true)
-		public void uplod_custom() throws InterruptedException {
-			Thread.sleep(2000);
-			
-			driver.findElement(By.xpath("(//li[@class='filter'])[5]")).click();
-			Thread.sleep(3000);
-
-			WebElement ele = driver.findElement(By.xpath("/html/body/app-root/app-home/div/div/app-select-template/div[1]/div[2]/div/div/div[2]/div/div[2]/div/div"));
-
-			// Creating object of an Actions class
-			Actions action = new Actions(driver);
-
-			// Performing the mouse hover action on the target element.
-			action.moveToElement(ele).perform();
-			driver.findElement(By.xpath("(//a/i[@class='fa fa-plus-circle'])[1]"))
-					.click();
-Thread.sleep(2000);
-driver.findElement(By.xpath("//div/input[@id='name']")).sendKeys("harish");
-
-
-*/
-
 
 	}
-	
-	
-	@Test(priority = 15, enabled = false)
+
+	@Test(priority = 17, enabled = false)
 	public void managetemplates_2() throws InterruptedException {
 
 		Thread.sleep(3000);
-		driver.findElement(By.xpath("/html/body/app-root/app-home/div/app-leftsidebar/div/div/ul/li[5]/a/span[1]"))
-				.click();
-		Thread.sleep(2000);
-		driver.findElement(By.xpath("//span[@class='design-name']")).click();
+		managetemplates();
 		Thread.sleep(2000);
 		driver.findElement(By.xpath("//ul/li[@class='filter'][4]")).click();
 		Thread.sleep(2000);
@@ -472,8 +439,8 @@ driver.findElement(By.xpath("//div/input[@id='name']")).sendKeys("harish");
 		Thread.sleep(2000);
 		driver.findElement(By.xpath("(//i[@class='fa fa-times'])[2]")).click();
 	}
-	
-	@Test(priority = 15, enabled = false)
+
+	@Test(priority = 18, enabled = false)
 	public void managetemplates_3() throws InterruptedException {
 
 		Thread.sleep(3000);
@@ -510,7 +477,8 @@ driver.findElement(By.xpath("//div/input[@id='name']")).sendKeys("harish");
 		Thread.sleep(2000);
 		driver.findElement(By.xpath("(//i[@class='fa fa-times'])[2]")).click();
 	}
-	@Test(priority = 16, enabled = false)
+
+	@Test(priority = 19, enabled = false)
 	public void managetemplates_5() throws InterruptedException {
 
 		Thread.sleep(3000);
@@ -547,7 +515,8 @@ driver.findElement(By.xpath("//div/input[@id='name']")).sendKeys("harish");
 		Thread.sleep(2000);
 		driver.findElement(By.xpath("(//i[@class='fa fa-times'])[2]")).click();
 	}
-	@Test(priority = 17, enabled = true)
+
+	@Test(priority = 20, enabled = false)
 	public void managetemplates_4() throws InterruptedException {
 
 		Thread.sleep(3000);
@@ -584,4 +553,355 @@ driver.findElement(By.xpath("//div/input[@id='name']")).sendKeys("harish");
 		Thread.sleep(2000);
 		driver.findElement(By.xpath("(//i[@class='fa fa-times'])[2]")).click();
 	}
+
+	@Test(priority = 21, enabled = false)
+	public void gridview() throws InterruptedException {
+		Thread.sleep(3000);
+		driver.findElement(By.xpath("/html/body/app-root/app-home/div/app-leftsidebar/div/div/ul/li[5]/a/span[1]"))
+				.click();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath(
+				"/html/body/app-root/app-home/div/div/app-design/div/div[2]/div/div/div[2]/div/div[1]/div/div/div[4]/h5/a/span"))
+				.click();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath(
+				"/html/body/app-root/app-home/div/div/app-manage-template/div/div[3]/div/div/div[1]/div/div[2]/div/span[2]/i"))
+				.click();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath(
+				"/html/body/app-root/app-home/div/div/app-manage-template/div/div[3]/div/div/div[1]/div/div[1]/div/ul/li[2]"))
+				.click();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//div/input[@placeholder='Search for a template']")).click();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//div/input[@placeholder='Search for a template']")).sendKeys("Email");
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//button[@class='search-box-item-click']")).click();
+		Thread.sleep(2000);
+		WebElement ele = driver.findElement(By.xpath("(//div[@class='bar'])[1]"));
+
+		// Creating object of an Actions class
+		Actions action = new Actions(driver);
+
+		// Performing the mouse hover action on the target element.
+		action.moveToElement(ele).perform();
+		driver.findElement(By.xpath("//*[@id='emailTemplateListDiv_27706']/div/div[2]/a[1]/i")).click();
+		Thread.sleep(3000);
+		driver.findElement(By.xpath("//*[@id='email_spam_check']/div/div/div[1]/button/i")).click();
+		Thread.sleep(2000);
+		action.moveToElement(ele).perform();
+		driver.findElement(By.xpath("//*[@id='emailTemplateListDiv_27706']/div/div[2]/a[2]/i")).click();
+		Thread.sleep(20000);
+		driver.switchTo().frame(0);
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//span[contains(text(),'SAVE')]/..")).click();
+		Thread.sleep(2000);
+
+		driver.switchTo().defaultContent();
+		Thread.sleep(3000);
+		driver.findElement(By.xpath("//div/input[@value='Update']")).click();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//*[@id='manage-email-template-list']/tbody/tr[1]/td[5]/div/div[2]/a[2]/i"))
+				.click();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("(//i[@class='fa fa-times'])[2]")).click();
+
+	}
+
+	@Test(priority = 22, enabled = false)
+	public void gridview2() throws InterruptedException {
+		Thread.sleep(3000);
+		driver.findElement(By.xpath("/html/body/app-root/app-home/div/app-leftsidebar/div/div/ul/li[5]/a/span[1]"))
+				.click();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath(
+				"/html/body/app-root/app-home/div/div/app-design/div/div[2]/div/div/div[2]/div/div[1]/div/div/div[4]/h5/a/span"))
+				.click();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath(
+				"/html/body/app-root/app-home/div/div/app-manage-template/div/div[3]/div/div/div[1]/div/div[2]/div/span[2]/i"))
+				.click();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath(
+				"/html/body/app-root/app-home/div/div/app-manage-template/div/div[3]/div/div/div[1]/div/div[1]/div/ul/li[3]"))
+				.click();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//div/input[@placeholder='Search for a template']")).click();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//div/input[@placeholder='Search for a template']")).sendKeys("video1");
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//button[@class='search-box-item-click']")).click();
+		Thread.sleep(2000);
+		WebElement ele = driver.findElement(By.xpath("(//div[@class='bar'])[1]"));
+
+		// Creating object of an Actions class
+		Actions action = new Actions(driver);
+
+		// Performing the mouse hover action on the target element.
+		action.moveToElement(ele).perform();
+		driver.findElement(By.xpath("//*[@id='emailTemplateListDiv_150216']/div/div[2]/a[1]/i")).click();
+		Thread.sleep(3000);
+		driver.findElement(By.xpath("//*[@id='email_spam_check']/div/div/div[1]/button/i")).click();
+		Thread.sleep(2000);
+		action.moveToElement(ele).perform();
+		driver.findElement(By.xpath("//*[@id='emailTemplateListDiv_150216']/div/div[2]/a[2]/i")).click();
+		Thread.sleep(20000);
+		driver.switchTo().frame(0);
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//span[contains(text(),'SAVE')]/..")).click();
+		Thread.sleep(2000);
+
+		driver.switchTo().defaultContent();
+		Thread.sleep(3000);
+		driver.findElement(By.xpath("//div/input[@value='Update']")).click();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//*[@id='manage-email-template-list']/tbody/tr[1]/td[5]/div/div[2]/a[2]/i"))
+				.click();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("(//i[@class='fa fa-times'])[2]")).click();
+	}
+
+	@Test(priority = 23, enabled = false)
+	public void gridview3() throws InterruptedException {
+		Thread.sleep(3000);
+		driver.findElement(By.xpath("/html/body/app-root/app-home/div/app-leftsidebar/div/div/ul/li[5]/a/span[1]"))
+				.click();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath(
+				"/html/body/app-root/app-home/div/div/app-design/div/div[2]/div/div/div[2]/div/div[1]/div/div/div[4]/h5/a/span"))
+				.click();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath(
+				"/html/body/app-root/app-home/div/div/app-manage-template/div/div[3]/div/div/div[1]/div/div[2]/div/span[2]/i"))
+				.click();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath(
+				"/html/body/app-root/app-home/div/div/app-manage-template/div/div[3]/div/div/div[1]/div/div[1]/div/ul/li[5]"))
+				.click();
+
+		Thread.sleep(2000);
+		WebElement ele = driver.findElement(By.xpath("(//div[@class='bar'])[1]"));
+
+		// Creating object of an Actions class
+		Actions action = new Actions(driver);
+
+		// Performing the mouse hover action on the target element.
+		action.moveToElement(ele).perform();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//*[@id='emailTemplateListDiv_150217']/div/div[2]/a[1]/i")).click();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//*[@id='email_spam_check']/div/div/div[1]/button")).click();
+		Thread.sleep(2000);
+		action.moveToElement(ele).perform();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//*[@id='emailTemplateListDiv_150217']/div/div[2]/a[2]/i")).click();
+
+		Thread.sleep(20000);
+		driver.switchTo().frame(0);
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//span[contains(text(),'SAVE')]/..")).click();
+		Thread.sleep(2000);
+
+		driver.switchTo().defaultContent();
+		Thread.sleep(3000);
+		driver.findElement(By.xpath("//div/input[@value='Update']")).click();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//*[@id='manage-email-template-list']/tbody/tr[1]/td[5]/div/div[2]/a[2]/i"))
+				.click();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("(//i[@class='fa fa-times'])[2]")).click();
+	}
+
+	@Test(priority = 24, enabled = false)
+	public void gridview4() throws InterruptedException {
+		Thread.sleep(3000);
+		driver.findElement(By.xpath("/html/body/app-root/app-home/div/app-leftsidebar/div/div/ul/li[5]/a/span[1]"))
+				.click();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath(
+				"/html/body/app-root/app-home/div/div/app-design/div/div[2]/div/div/div[2]/div/div[1]/div/div/div[4]/h5/a/span"))
+				.click();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath(
+				"/html/body/app-root/app-home/div/div/app-manage-template/div/div[3]/div/div/div[1]/div/div[2]/div/span[2]/i"))
+				.click();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath(
+				"/html/body/app-root/app-home/div/div/app-manage-template/div/div[3]/div/div/div[1]/div/div[1]/div/ul/li[6]"))
+				.click();
+
+		Thread.sleep(2000);
+		WebElement ele = driver.findElement(By.xpath("(//div[@class='bar'])[1]"));
+
+		// Creating object of an Actions class
+		Actions action = new Actions(driver);
+
+		// Performing the mouse hover action on the target element.
+		action.moveToElement(ele).perform();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//*[@id='emailTemplateListDiv_150218']/div/div[2]/a[1]")).click();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//*[@id='email_spam_check']/div/div/div[1]/button")).click();
+		Thread.sleep(2000);
+		action.moveToElement(ele).perform();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//*[@id='emailTemplateListDiv_150218']/div/div[2]/a[2]/i")).click();
+
+		Thread.sleep(20000);
+		driver.switchTo().frame(0);
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//span[contains(text(),'SAVE')]/..")).click();
+		Thread.sleep(2000);
+
+		driver.switchTo().defaultContent();
+		Thread.sleep(3000);
+		driver.findElement(By.xpath("//div/input[@value='Update']")).click();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//*[@id='manage-email-template-list']/tbody/tr[1]/td[5]/div/div[2]/a[2]/i"))
+				.click();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("(//i[@class='fa fa-times'])[2]")).click();
+	}
+
+	@Test(priority = 25, enabled = false)
+	public void gridview5() throws InterruptedException {
+		Thread.sleep(3000);
+		driver.findElement(By.xpath("/html/body/app-root/app-home/div/app-leftsidebar/div/div/ul/li[5]/a/span[1]"))
+				.click();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath(
+				"/html/body/app-root/app-home/div/div/app-design/div/div[2]/div/div/div[2]/div/div[1]/div/div/div[4]/h5/a/span"))
+				.click();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath(
+				"/html/body/app-root/app-home/div/div/app-manage-template/div/div[3]/div/div/div[1]/div/div[2]/div/span[2]/i"))
+				.click();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath(
+				"/html/body/app-root/app-home/div/div/app-manage-template/div/div[3]/div/div/div[1]/div/div[1]/div/ul/li[7]"))
+				.click();
+
+		Thread.sleep(2000);
+		WebElement ele = driver.findElement(By.xpath("(//div[@class='bar'])[1]"));
+
+		// Creating object of an Actions class
+		Actions action = new Actions(driver);
+
+		// Performing the mouse hover action on the target element.
+		action.moveToElement(ele).perform();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//*[@id='emailTemplateListDiv_150222']/div/div[2]/a[1]/i")).click();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//*[@id='email_spam_check']/div/div/div[1]/button")).click();
+		Thread.sleep(2000);
+		action.moveToElement(ele).perform();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//*[@id='emailTemplateListDiv_150222']/div/div[2]/a[2]/i")).click();
+
+		Thread.sleep(20000);
+		driver.switchTo().frame(0);
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//span[contains(text(),'SAVE')]/..")).click();
+		Thread.sleep(2000);
+
+		driver.switchTo().defaultContent();
+		Thread.sleep(3000);
+		driver.findElement(By.xpath("//div/input[@value='Update']")).click();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//*[@id='manage-email-template-list']/tbody/tr[1]/td[5]/div/div[2]/a[2]/i"))
+				.click();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("(//i[@class='fa fa-times'])[2]")).click();
+	}
+
+	@Test(priority = 26, enabled = false)
+	public void gridview6() throws InterruptedException {
+		Thread.sleep(3000);
+		driver.findElement(By.xpath("/html/body/app-root/app-home/div/app-leftsidebar/div/div/ul/li[5]/a/span[1]"))
+				.click();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath(
+				"/html/body/app-root/app-home/div/div/app-design/div/div[2]/div/div/div[2]/div/div[1]/div/div/div[4]/h5/a/span"))
+				.click();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath(
+				"/html/body/app-root/app-home/div/div/app-manage-template/div/div[3]/div/div/div[1]/div/div[2]/div/span[2]/i"))
+				.click();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath(
+				"/html/body/app-root/app-home/div/div/app-manage-template/div/div[3]/div/div/div[1]/div/div[1]/div/ul/li[8]"))
+				.click();
+
+		Thread.sleep(2000);
+		WebElement ele = driver.findElement(By.xpath("(//div[@class='bar'])[1]"));
+
+		// Creating object of an Actions class
+		Actions action = new Actions(driver);
+
+		// Performing the mouse hover action on the target element.
+		action.moveToElement(ele).perform();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//*[@id='emailTemplateListDiv_150223']/div/div[2]/a[1]/i")).click();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//*[@id='email_spam_check']/div/div/div[1]/button")).click();
+		Thread.sleep(2000);
+		action.moveToElement(ele).perform();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//*[@id='emailTemplateListDiv_150223']/div/div[2]/a[2]/i")).click();
+
+		Thread.sleep(20000);
+		driver.switchTo().frame(0);
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//span[contains(text(),'SAVE')]/..")).click();
+		Thread.sleep(2000);
+
+		driver.switchTo().defaultContent();
+		Thread.sleep(3000);
+		driver.findElement(By.xpath("//div/input[@value='Update']")).click();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//*[@id='manage-email-template-list']/tbody/tr[1]/td[5]/div/div[2]/a[2]/i"))
+				.click();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("(//i[@class='fa fa-times'])[2]")).click();
+	}
+
+	@Test(priority = 27, enabled = true)
+	public void folder_gridview() throws InterruptedException {
+		Thread.sleep(3000);
+		driver.findElement(By.xpath("/html/body/app-root/app-home/div/app-leftsidebar/div/div/ul/li[5]/a/span[1]"))
+				.click();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath(
+				"/html/body/app-root/app-home/div/div/app-design/div/div[2]/div/div/div[2]/div/div[1]/div/div/div[4]/h5/a/span"))
+				.click();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath(
+				"/html/body/app-root/app-home/div/div/app-manage-template/div/div[3]/div/div/div[1]/div/div[2]/div/span[3]/i"))
+				.click();
+		Thread.sleep(2000);
+		WebElement ele = driver.findElement(By.xpath(
+				"/html/body/app-root/app-home/div/div/app-manage-template/div/div[3]/div/div/app-category-folder-view-util/div/div[2]/div/div/div/div[2]"));
+
+		// Creating object of an Actions class
+		Actions action = new Actions(driver);
+
+		// Performing the mouse hover action on the target element.
+		action.moveToElement(ele).perform();
+
+		driver.findElement(By.xpath(
+				"/html/body/app-root/app-home/div/div/app-manage-template/div/div[3]/div/div/app-category-folder-view-util/div/div[2]/div/div/div/div[2]/a/i"))
+				.click();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("(//ul/li[@class='filter'])[1]")).click();
+		managetemplates_Email();
+		managetemplates_video();
+		managetemplates_2();
+		managetemplates_3();
+		managetemplates_4();
+		managetemplates_5();
+		
+		
+		
+	}
+
 }
