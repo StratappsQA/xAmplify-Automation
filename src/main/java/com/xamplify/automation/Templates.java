@@ -347,9 +347,9 @@ public class Templates {
 		driver.findElement(By.xpath("//a/i[@class='fa fa-inbox']")).click();
 		Thread.sleep(3000);
 		driver.findElement(By.xpath("//*[@id='email_spam_check']/div/div/div[3]/a")).click();
-		Thread.sleep(2000);
+		Thread.sleep(3000);
 		driver.findElement(By.xpath("//a/i[@class='fa fa-pencil-square-o mDisableColor']")).click();
-		Thread.sleep(10000);
+		Thread.sleep(15000);
 		driver.switchTo().frame(0);
 		Thread.sleep(2000);
 		driver.findElement(By.xpath("//span[contains(text(),'SAVE')]/..")).click();
@@ -555,7 +555,7 @@ public class Templates {
 	}
 
 	@Test(priority = 21, enabled = false)
-	public void gridview() throws InterruptedException {
+	public void gridview_email() throws InterruptedException {
 		Thread.sleep(3000);
 		driver.findElement(By.xpath("/html/body/app-root/app-home/div/app-leftsidebar/div/div/ul/li[5]/a/span[1]"))
 				.click();
@@ -609,7 +609,7 @@ public class Templates {
 	}
 
 	@Test(priority = 22, enabled = false)
-	public void gridview2() throws InterruptedException {
+	public void gridview_video() throws InterruptedException {
 		Thread.sleep(3000);
 		driver.findElement(By.xpath("/html/body/app-root/app-home/div/app-leftsidebar/div/div/ul/li[5]/a/span[1]"))
 				.click();
@@ -662,7 +662,7 @@ public class Templates {
 	}
 
 	@Test(priority = 23, enabled = false)
-	public void gridview3() throws InterruptedException {
+	public void gridview_Email_cobranding() throws InterruptedException {
 		Thread.sleep(3000);
 		driver.findElement(By.xpath("/html/body/app-root/app-home/div/app-leftsidebar/div/div/ul/li[5]/a/span[1]"))
 				.click();
@@ -713,7 +713,7 @@ public class Templates {
 	}
 
 	@Test(priority = 24, enabled = false)
-	public void gridview4() throws InterruptedException {
+	public void gridview_video_cobranding() throws InterruptedException {
 		Thread.sleep(3000);
 		driver.findElement(By.xpath("/html/body/app-root/app-home/div/app-leftsidebar/div/div/ul/li[5]/a/span[1]"))
 				.click();
@@ -764,7 +764,7 @@ public class Templates {
 	}
 
 	@Test(priority = 25, enabled = false)
-	public void gridview5() throws InterruptedException {
+	public void gridview_Event() throws InterruptedException {
 		Thread.sleep(3000);
 		driver.findElement(By.xpath("/html/body/app-root/app-home/div/app-leftsidebar/div/div/ul/li[5]/a/span[1]"))
 				.click();
@@ -815,7 +815,7 @@ public class Templates {
 	}
 
 	@Test(priority = 26, enabled = false)
-	public void gridview6() throws InterruptedException {
+	public void gridview_Event_Cobranding() throws InterruptedException {
 		Thread.sleep(3000);
 		driver.findElement(By.xpath("/html/body/app-root/app-home/div/app-leftsidebar/div/div/ul/li[5]/a/span[1]"))
 				.click();
@@ -865,7 +865,7 @@ public class Templates {
 		driver.findElement(By.xpath("(//i[@class='fa fa-times'])[2]")).click();
 	}
 
-	@Test(priority = 27, enabled = true)
+	@Test(priority = 27, enabled = false)
 	public void folder_gridview() throws InterruptedException {
 		Thread.sleep(3000);
 		driver.findElement(By.xpath("/html/body/app-root/app-home/div/app-leftsidebar/div/div/ul/li[5]/a/span[1]"))
@@ -899,9 +899,503 @@ public class Templates {
 		managetemplates_3();
 		managetemplates_4();
 		managetemplates_5();
-		
-		
-		
 	}
 
+	@Test(priority = 28, enabled = false)
+	public void folder_grid_view_grid() throws InterruptedException {
+		Thread.sleep(3000);
+		driver.findElement(By.xpath("/html/body/app-root/app-home/div/app-leftsidebar/div/div/ul/li[5]/a/span[1]"))
+				.click();
+		Thread.sleep(2000);
+
+		driver.findElement(By.xpath(
+				"/html/body/app-root/app-home/div/div/app-design/div/div[2]/div/div/div[2]/div/div[1]/div/div/div[4]/h5/a/span"))
+				.click();
+		gridview_email();
+		gridview_video();
+		gridview_Email_cobranding();
+		gridview_video_cobranding();
+		gridview_Event();
+		gridview_Event_Cobranding();
+	}
+
+	@Test(priority = 28, enabled = false)
+	public void folder_list_view_list() throws InterruptedException {
+		managetemplates();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath(
+				"/html/body/app-root/app-home/div/div/app-manage-template/div/div[3]/div/div/div[1]/div/div[2]/div/span[4]"))
+				.click();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//*[@id='fa-folder-custom-size']")).click();
+		Thread.sleep(2000);
+
+		/*
+		 * driver.findElement(By.xpath("//ul/li[@class='filter'][1]")).click();
+		 * Thread.sleep(2000);
+		 * driver.findElement(By.xpath("//input[@placeholder='Search for a template']"))
+		 * .click(); Thread.sleep(2000);
+		 * driver.findElement(By.xpath("//input[@placeholder='Search for a template']"))
+		 * .sendKeys("Basic"); Thread.sleep(2000);
+		 * driver.findElement(By.xpath("//input[@placeholder='Search for a template']"))
+		 * .sendKeys(Keys.ENTER); Thread.sleep(2000);
+		 * driver.findElement(By.xpath("//a/i[@class='fa fa-inbox']")).click();
+		 * Thread.sleep(3000);
+		 * driver.findElement(By.xpath("//*[@id='email_spam_check']/div/div/div[3]/a")).
+		 * click(); Thread.sleep(3000);
+		 * driver.findElement(By.xpath("//a/i[@class='fa fa-pencil-square-o']")).click()
+		 * ; Thread.sleep(10000); driver.switchTo().frame(0); Thread.sleep(2000);
+		 * driver.findElement(By.xpath("//span[contains(text(),'SAVE')]/..")).click();
+		 * Thread.sleep(2000);
+		 * 
+		 * driver.switchTo().defaultContent(); Thread.sleep(3000);
+		 * driver.findElement(By.xpath("//div/input[@value='Update']")).click();
+		 * Thread.sleep(2000); driver.findElement(By.xpath(
+		 * "//*[@id='manage-email-template-list']/tbody/tr[1]/td[5]/div/div[2]/a[2]/i"))
+		 * .click(); Thread.sleep(2000);
+		 * driver.findElement(By.xpath("(//i[@class='fa fa-times'])[2]")).click();
+		 * Thread.sleep(2000); Select dropdown = new Select(driver.findElement(By.xpath(
+		 * "/html/body/app-root/app-home/div/div/app-manage-template/div/div[3]/div/div/div[1]/div/div[2]/div/div/div[1]/select"
+		 * ))); dropdown.selectByVisibleText("Name (A-Z)"); Thread.sleep(3000);
+		 * driver.findElement(By.xpath("//ul/li[@class='filter'][2]")).click();
+		 * Thread.sleep(2000);
+		 * driver.findElement(By.xpath("//input[@placeholder='Search for a template']"))
+		 * .click(); Thread.sleep(2000);
+		 * driver.findElement(By.xpath("//input[@placeholder='Search for a template']"))
+		 * .sendKeys("video1"); Thread.sleep(2000);
+		 * driver.findElement(By.xpath("//input[@placeholder='Search for a template']"))
+		 * .sendKeys(Keys.ENTER); Thread.sleep(2000);
+		 * driver.findElement(By.xpath("//a/i[@class='fa fa-inbox']")).click();
+		 * Thread.sleep(3000);
+		 * driver.findElement(By.xpath("//*[@id='email_spam_check']/div/div/div[3]/a")).
+		 * click(); Thread.sleep(2000); driver.findElement(By.
+		 * xpath("//a/i[@class='fa fa-pencil-square-o mDisableColor']")).click();
+		 * Thread.sleep(15000); driver.switchTo().frame(0); Thread.sleep(2000);
+		 * driver.findElement(By.xpath("//span[contains(text(),'SAVE')]/..")).click();
+		 * Thread.sleep(2000);
+		 * 
+		 * driver.switchTo().defaultContent(); Thread.sleep(3000);
+		 * driver.findElement(By.xpath("//div/input[@value='Update']")).click();
+		 * Thread.sleep(2000); driver.findElement(By.xpath(
+		 * "//*[@id='manage-email-template-list']/tbody/tr[1]/td[5]/div/div[2]/a[2]/i"))
+		 * .click(); Thread.sleep(2000);
+		 * driver.findElement(By.xpath("(//i[@class='fa fa-times'])[2]")).click();
+		 * Thread.sleep(3000);
+		 * driver.findElement(By.xpath("//ul/li[@class='filter'][4]")).click();
+		 * Thread.sleep(2000);
+		 * driver.findElement(By.xpath("//input[@placeholder='Search for a template']"))
+		 * .click(); Thread.sleep(2000);
+		 * driver.findElement(By.xpath("//input[@placeholder='Search for a template']"))
+		 * .sendKeys("email"); Thread.sleep(2000);
+		 * driver.findElement(By.xpath("//input[@placeholder='Search for a template']"))
+		 * .sendKeys(Keys.ENTER); Thread.sleep(2000);
+		 * driver.findElement(By.xpath("//a/i[@class='fa fa-inbox']")).click();
+		 * Thread.sleep(3000);
+		 * driver.findElement(By.xpath("//*[@id='email_spam_check']/div/div/div[3]/a")).
+		 * click(); Thread.sleep(2000); driver.findElement(By.
+		 * xpath("//a/i[@class='fa fa-pencil-square-o mDisableColor']")).click();
+		 * Thread.sleep(20000); driver.switchTo().frame(0); Thread.sleep(2000);
+		 * driver.findElement(By.xpath("//span[contains(text(),'SAVE')]/..")).click();
+		 * Thread.sleep(2000);
+		 * 
+		 * driver.switchTo().defaultContent(); Thread.sleep(3000);
+		 * driver.findElement(By.xpath("//div/input[@value='Update']")).click();
+		 * Thread.sleep(2000); driver.findElement(By.xpath(
+		 * "//*[@id='manage-email-template-list']/tbody/tr[1]/td[5]/div/div[2]/a[2]/i"))
+		 * .click(); Thread.sleep(2000);
+		 * driver.findElement(By.xpath("(//i[@class='fa fa-times'])[2]")).click();
+		 * 
+		 * 
+		 * Thread.sleep(3000);
+		 * driver.findElement(By.xpath("//ul/li[@class='filter'][5]")).click();
+		 * Thread.sleep(2000);
+		 * driver.findElement(By.xpath("//input[@placeholder='Search for a template']"))
+		 * .click(); Thread.sleep(2000);
+		 * driver.findElement(By.xpath("//input[@placeholder='Search for a template']"))
+		 * .sendKeys("vid"); Thread.sleep(2000);
+		 * driver.findElement(By.xpath("//input[@placeholder='Search for a template']"))
+		 * .sendKeys(Keys.ENTER); Thread.sleep(2000);
+		 * driver.findElement(By.xpath("//a/i[@class='fa fa-inbox']")).click();
+		 * Thread.sleep(3000);
+		 * driver.findElement(By.xpath("//*[@id='email_spam_check']/div/div/div[3]/a")).
+		 * click(); Thread.sleep(2000); driver.findElement(By.
+		 * xpath("//a/i[@class='fa fa-pencil-square-o mDisableColor']")).click();
+		 * Thread.sleep(20000); driver.switchTo().frame(0); Thread.sleep(2000);
+		 * driver.findElement(By.xpath("//span[contains(text(),'SAVE')]/..")).click();
+		 * Thread.sleep(2000);
+		 * 
+		 * driver.switchTo().defaultContent(); Thread.sleep(3000);
+		 * driver.findElement(By.xpath("//div/input[@value='Update']")).click();
+		 * Thread.sleep(2000); driver.findElement(By.xpath(
+		 * "//*[@id='manage-email-template-list']/tbody/tr[1]/td[5]/div/div[2]/a[2]/i"))
+		 * .click(); Thread.sleep(2000);
+		 * driver.findElement(By.xpath("(//i[@class='fa fa-times'])[2]")).click();
+		 * 
+		 * Thread.sleep(3000);
+		 * driver.findElement(By.xpath("//ul/li[@class='filter'][6]")).click();
+		 * Thread.sleep(2000);
+		 * driver.findElement(By.xpath("//input[@placeholder='Search for a template']"))
+		 * .click(); Thread.sleep(2000);
+		 * driver.findElement(By.xpath("//input[@placeholder='Search for a template']"))
+		 * .sendKeys("event"); Thread.sleep(2000);
+		 * driver.findElement(By.xpath("//input[@placeholder='Search for a template']"))
+		 * .sendKeys(Keys.ENTER); Thread.sleep(2000);
+		 * driver.findElement(By.xpath("//a/i[@class='fa fa-inbox']")).click();
+		 * Thread.sleep(3000);
+		 * driver.findElement(By.xpath("//*[@id='email_spam_check']/div/div/div[3]/a")).
+		 * click(); Thread.sleep(2000); driver.findElement(By.
+		 * xpath("//a/i[@class='fa fa-pencil-square-o mDisableColor']")).click();
+		 * Thread.sleep(20000); driver.switchTo().frame(0); Thread.sleep(2000);
+		 * driver.findElement(By.xpath("//span[contains(text(),'SAVE')]/..")).click();
+		 * Thread.sleep(2000);
+		 * 
+		 * driver.switchTo().defaultContent(); Thread.sleep(3000);
+		 * driver.findElement(By.xpath("//div/input[@value='Update']")).click();
+		 * Thread.sleep(2000); driver.findElement(By.xpath(
+		 * "//*[@id='manage-email-template-list']/tbody/tr[1]/td[5]/div/div[2]/a[2]/i"))
+		 * .click(); Thread.sleep(2000);
+		 * driver.findElement(By.xpath("(//i[@class='fa fa-times'])[2]")).click();
+		 * 
+		 * Thread.sleep(3000);
+		 * driver.findElement(By.xpath("//ul/li[@class='filter'][7]")).click();
+		 * Thread.sleep(2000);
+		 * driver.findElement(By.xpath("//input[@placeholder='Search for a template']"))
+		 * .click(); Thread.sleep(2000);
+		 * driver.findElement(By.xpath("//input[@placeholder='Search for a template']"))
+		 * .sendKeys("eventco"); Thread.sleep(2000);
+		 * driver.findElement(By.xpath("//input[@placeholder='Search for a template']"))
+		 * .sendKeys(Keys.ENTER); Thread.sleep(2000);
+		 * driver.findElement(By.xpath("//a/i[@class='fa fa-inbox']")).click();
+		 * Thread.sleep(3000);
+		 * driver.findElement(By.xpath("//*[@id='email_spam_check']/div/div/div[3]/a")).
+		 * click(); Thread.sleep(2000); driver.findElement(By.
+		 * xpath("//a/i[@class='fa fa-pencil-square-o mDisableColor']")).click();
+		 * Thread.sleep(20000); driver.switchTo().frame(0); Thread.sleep(2000);
+		 * driver.findElement(By.xpath("//span[contains(text(),'SAVE')]/..")).click();
+		 * Thread.sleep(2000);
+		 * 
+		 * driver.switchTo().defaultContent(); Thread.sleep(3000);
+		 * driver.findElement(By.xpath("//div/input[@value='Update']")).click();
+		 * Thread.sleep(2000); driver.findElement(By.xpath(
+		 * "//*[@id='manage-email-template-list']/tbody/tr[1]/td[5]/div/div[2]/a[2]/i"))
+		 * .click(); Thread.sleep(2000);
+		 * driver.findElement(By.xpath("(//i[@class='fa fa-times'])[2]")).click();
+		 */
+		/*
+		 * Thread.sleep(3000); driver.findElement(By.xpath(
+		 * "//*[@id='list-folder-items']/td/app-email-templates-list-view-util/div[2]/div/div/div[1]/div/div[2]/div/span[2]/i"
+		 * )) .click();
+		 * 
+		 * Thread.sleep(3000);
+		 * 
+		 * driver.findElement(By.xpath(
+		 * "//*[@id='list-folder-items']/td/app-email-templates-list-view-util/div[2]/div/div/div[1]/div/div[1]/div/ul/li[2]"
+		 * )) .click(); Thread.sleep(2000);
+		 * 
+		 * driver.findElement(By.
+		 * xpath("//div/input[@placeholder='Search for a template']")).click();
+		 * Thread.sleep(2000); driver.findElement(By.
+		 * xpath("//div/input[@placeholder='Search for a template']")).sendKeys("Basic")
+		 * ; Thread.sleep(2000); driver.findElement(By.
+		 * xpath("//div/input[@placeholder='Search for a template']")).sendKeys(Keys.
+		 * ENTER);
+		 * 
+		 * Thread.sleep(2000); WebElement ele = driver.findElement(By.xpath(
+		 * "//*[@id='emailTemplateListDiv_27706']/div/div[2]"));
+		 * 
+		 * // Creating object of an Actions class Actions action = new Actions(driver);
+		 * 
+		 * // Performing the mouse hover action on the target element.
+		 * action.moveToElement(ele).perform(); driver.findElement(By.xpath(
+		 * "//*[@id='emailTemplateListDiv_27706']/div/div[2]/a[1]/i")).click();
+		 * Thread.sleep(3000); driver.findElement(By.xpath(
+		 * "//*[@id='email_spam_check']/div/div/div[1]/button/i")).click();
+		 * Thread.sleep(2000);
+		 * 
+		 * action.moveToElement(ele).perform(); driver.findElement(By.xpath(
+		 * "//*[@id='emailTemplateListDiv_27706']/div/div[2]/a[3]/i")).click();
+		 * Thread.sleep(2000); driver.findElement(By.xpath(
+		 * "//*[@id='show_email_template_preivew']/div/div/div[1]/button")).click();
+		 * 
+		 * action.moveToElement(ele).perform(); driver.findElement(By.xpath(
+		 * "//*[@id='emailTemplateListDiv_27706']/div/div[2]/a[2]/i")).click();
+		 * Thread.sleep(20000); driver.switchTo().frame(0); Thread.sleep(2000);
+		 * driver.findElement(By.xpath("//span[contains(text(),'SAVE')]/..")).click();
+		 * Thread.sleep(2000); driver.switchTo().defaultContent(); Thread.sleep(3000);
+		 * 
+		 * driver.findElement(By.xpath("//*[@id='update']")).click();
+		 * Thread.sleep(3000);
+		 */
+
+		driver.findElement(By.xpath(
+				"//*[@id='list-folder-items']/td/app-email-templates-list-view-util/div[2]/div/div/div[1]/div/div[1]/div/ul/li[3]"))
+				.click();
+
+		Thread.sleep(3000);
+		driver.findElement(By.xpath(
+				"//*[@id='list-folder-items']/td/app-email-templates-list-view-util/div[2]/div/div/div[1]/div/div[2]/div/span[2]/i"))
+				.click();
+
+		driver.findElement(By.xpath("//div/input[@placeholder='Search for a template']")).click();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//div/input[@placeholder='Search for a template']")).sendKeys("video");
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//div/input[@placeholder='Search for a template']")).sendKeys(Keys.ENTER);
+
+		Thread.sleep(2000);
+		WebElement ele1 = driver.findElement(By.xpath("//*[@id='emailTemplateListDiv_150216']/div/div[2]"));
+
+// Creating object of an Actions class
+		Actions actions = new Actions(driver);
+
+// Performing the mouse hover action on the target element.
+		actions.moveToElement(ele1).perform();
+		driver.findElement(By.xpath("//*[@id='emailTemplateListDiv_150216']/div/div[2]/a[1]/i")).click();
+		Thread.sleep(3000);
+		driver.findElement(By.xpath("//*[@id='email_spam_check']/div/div/div[1]/button/i")).click();
+		Thread.sleep(2000);
+		actions.moveToElement(ele1).perform();
+		driver.findElement(By.xpath("//*[@id='emailTemplateListDiv_150216']/div/div[2]/a[3]/i")).click();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//*[@id='show_email_template_preivew']/div/div/div[1]/button/i")).click();
+		Thread.sleep(2000);
+		actions.moveToElement(ele1).perform();
+		driver.findElement(By.xpath("//*[@id='emailTemplateListDiv_150216']/div/div[2]/a[2]/i")).click();
+		Thread.sleep(20000);
+		driver.switchTo().frame(0);
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//span[contains(text(),'SAVE')]/..")).click();
+		Thread.sleep(2000);
+		driver.switchTo().defaultContent();
+		Thread.sleep(3000);
+
+		driver.findElement(By.xpath("//*[@id='update']")).click();
+	}
+
+	@Test(priority = 29, enabled = false)
+	public void folder_list_view_list_Emailcobranding() throws InterruptedException {
+		managetemplates();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath(
+				"/html/body/app-root/app-home/div/div/app-manage-template/div/div[3]/div/div/div[1]/div/div[2]/div/span[4]"))
+				.click();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//*[@id='fa-folder-custom-size']")).click();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath(
+				"//*[@id='list-folder-items']/td/app-email-templates-list-view-util/div[2]/div/div/div[1]/div/div[2]/div/span[2]/i"))
+				.click();
+		Thread.sleep(3000);
+		driver.findElement(By.xpath(
+				"//*[@id='list-folder-items']/td/app-email-templates-list-view-util/div[2]/div/div/div[1]/div/div[1]/div/ul/li[4]"))
+				.click();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath(
+				"//*[@id='list-folder-items']/td/app-email-templates-list-view-util/div[2]/div/div/div[1]/div/div[2]/div/div/div[2]/div/input"))
+				.click();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath(
+				"//*[@id='list-folder-items']/td/app-email-templates-list-view-util/div[2]/div/div/div[1]/div/div[2]/div/div/div[2]/div/input"))
+				.sendKeys("email");
+		Thread.sleep(2000);
+		driver.findElement(By.xpath(
+				"//*[@id='list-folder-items']/td/app-email-templates-list-view-util/div[2]/div/div/div[1]/div/div[2]/div/div/div[2]/div/input"))
+				.sendKeys(Keys.ENTER);
+		Thread.sleep(2000);
+		WebElement ele2 = driver.findElement(By.xpath("//*[@id='emailTemplateListDiv_27705']/div/div[2]"));
+
+		Actions actions = new Actions(driver);
+
+		actions.moveToElement(ele2).perform();
+		driver.findElement(By.xpath("//*[@id='emailTemplateListDiv_27705']/div/div[2]/a[1]/i")).click();
+		Thread.sleep(3000);
+		driver.findElement(By.xpath("(//*[@id='email_spam_check']/div/div/div[1]/button)[1]")).click();
+		Thread.sleep(2000);
+		
+		actions.moveToElement(ele2).perform();
+		driver.findElement(By.xpath("//*[@id='emailTemplateListDiv_27705']/div/div[2]/a[3]/i")).click();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("(//*[@id='show_email_template_preivew']/div/div/div[1]/button/i)[1]")).click();
+		Thread.sleep(2000);
+		actions.moveToElement(ele2).perform();
+		driver.findElement(By.xpath("//*[@id='emailTemplateListDiv_27705']/div/div[2]/a[2]/i")).click();
+		Thread.sleep(20000);
+		driver.switchTo().frame(0);
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//span[contains(text(),'SAVE')]/..")).click();
+		Thread.sleep(2000);
+		driver.switchTo().defaultContent();
+		Thread.sleep(3000);
+		driver.findElement(By.xpath("//*[@id='update']")).click();
+
+	}
+	@Test(priority = 30, enabled = false)
+	public void folder_list_view_list_Video_cobranding() throws InterruptedException {
+		managetemplates();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath(
+				"/html/body/app-root/app-home/div/div/app-manage-template/div/div[3]/div/div/div[1]/div/div[2]/div/span[4]"))
+				.click();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//*[@id='fa-folder-custom-size']")).click();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath(
+				"//*[@id='list-folder-items']/td/app-email-templates-list-view-util/div[2]/div/div/div[1]/div/div[2]/div/span[2]/i"))
+				.click();
+		Thread.sleep(3000);
+		driver.findElement(By.xpath(
+				"//*[@id='list-folder-items']/td/app-email-templates-list-view-util/div[2]/div/div/div[1]/div/div[1]/div/ul/li[5]"))
+				.click();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath(
+				"//*[@id='list-folder-items']/td/app-email-templates-list-view-util/div[2]/div/div/div[1]/div/div[2]/div/div/div[2]/div/input"))
+				.click();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath(
+				"//*[@id='list-folder-items']/td/app-email-templates-list-view-util/div[2]/div/div/div[1]/div/div[2]/div/div/div[2]/div/input"))
+				.sendKeys("video");
+		Thread.sleep(2000);
+		driver.findElement(By.xpath(
+				"//*[@id='list-folder-items']/td/app-email-templates-list-view-util/div[2]/div/div/div[1]/div/div[2]/div/div/div[2]/div/input"))
+				.sendKeys(Keys.ENTER);
+		Thread.sleep(2000);
+		WebElement ele2 = driver.findElement(By.xpath("//*[@id='emailTemplateListDiv_27595']/div/div[2]"));
+
+		Actions actions = new Actions(driver);
+
+		actions.moveToElement(ele2).perform();
+		driver.findElement(By.xpath("//*[@id='emailTemplateListDiv_27595']/div/div[2]/a[1]")).click();
+		Thread.sleep(3000);
+		driver.findElement(By.xpath("(//*[@id='email_spam_check']/div/div/div[1]/button)[1]")).click();
+		Thread.sleep(2000);
+		
+		actions.moveToElement(ele2).perform();
+		driver.findElement(By.xpath("//*[@id='emailTemplateListDiv_27595']/div/div[2]/a[3]/i")).click();
+		Thread.sleep(3000);
+		driver.findElement(By.xpath("(//*[@id='show_email_template_preivew']/div/div/div[1]/button)[1]")).click();
+		Thread.sleep(2000);
+		actions.moveToElement(ele2).perform();
+		driver.findElement(By.xpath("//*[@id='emailTemplateListDiv_27595']/div/div[2]/a[2]/i")).click();
+		Thread.sleep(20000);
+		driver.switchTo().frame(0);
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//span[contains(text(),'SAVE')]/..")).click();
+		Thread.sleep(2000);
+		driver.switchTo().defaultContent();
+		Thread.sleep(3000);
+		driver.findElement(By.xpath("//*[@id='update']")).click();
+	
+	}
+	@Test(priority = 31, enabled = false)
+	public void folder_list_view_list_Event() throws InterruptedException {
+		managetemplates();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath(
+				"/html/body/app-root/app-home/div/div/app-manage-template/div/div[3]/div/div/div[1]/div/div[2]/div/span[4]"))
+				.click();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//*[@id='fa-folder-custom-size']")).click();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath(
+				"//*[@id='list-folder-items']/td/app-email-templates-list-view-util/div[2]/div/div/div[1]/div/div[2]/div/span[2]/i"))
+				.click();
+		Thread.sleep(3000);
+		driver.findElement(By.xpath(
+				"//*[@id='list-folder-items']/td/app-email-templates-list-view-util/div[2]/div/div/div[1]/div/div[1]/div/ul/li[7]"))
+				.click();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath(
+				"//*[@id='list-folder-items']/td/app-email-templates-list-view-util/div[2]/div/div/div[1]/div/div[2]/div/div/div[2]/div/input"))
+				.click();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath(
+				"//*[@id='list-folder-items']/td/app-email-templates-list-view-util/div[2]/div/div/div[1]/div/div[2]/div/div/div[2]/div/input"))
+				.sendKeys("event");
+		Thread.sleep(2000);
+		driver.findElement(By.xpath(
+				"//*[@id='list-folder-items']/td/app-email-templates-list-view-util/div[2]/div/div/div[1]/div/div[2]/div/div/div[2]/div/input"))
+				.sendKeys(Keys.ENTER);
+		Thread.sleep(2000);
+		WebElement ele2 = driver.findElement(By.xpath("//*[@id='emailTemplateListDiv_150222']/div/div[2]"));
+
+		Actions actions = new Actions(driver);
+
+		actions.moveToElement(ele2).perform();
+		driver.findElement(By.xpath("//*[@id='emailTemplateListDiv_150222']/div/div[2]/a[1]/i")).click();
+		Thread.sleep(3000);
+		driver.findElement(By.xpath("(//*[@id='email_spam_check']/div/div/div[1]/button)[1]")).click();
+		Thread.sleep(2000);
+		
+		actions.moveToElement(ele2).perform();
+		driver.findElement(By.xpath("//*[@id='emailTemplateListDiv_150222']/div/div[2]/a[3]/i")).click();
+		Thread.sleep(3000);
+		driver.findElement(By.xpath("(//*[@id='show_email_template_preivew']/div/div/div[1]/button)[1]")).click();
+		Thread.sleep(2000);
+		actions.moveToElement(ele2).perform();
+		driver.findElement(By.xpath("//*[@id='emailTemplateListDiv_150222']/div/div[2]/a[2]")).click();
+		Thread.sleep(20000);
+		driver.switchTo().frame(0);
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//span[contains(text(),'SAVE')]/..")).click();
+		Thread.sleep(2000);
+		driver.switchTo().defaultContent();
+		Thread.sleep(3000);
+		driver.findElement(By.xpath("//*[@id='update']")).click();
+	}
+	@Test(priority = 32, enabled = true)
+	public void folder_list_view_list_Event_Cobranding() throws InterruptedException {
+		managetemplates();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath(
+				"/html/body/app-root/app-home/div/div/app-manage-template/div/div[3]/div/div/div[1]/div/div[2]/div/span[4]"))
+				.click();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//*[@id='fa-folder-custom-size']")).click();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath(
+				"//*[@id='list-folder-items']/td/app-email-templates-list-view-util/div[2]/div/div/div[1]/div/div[2]/div/span[2]/i"))
+				.click();
+		Thread.sleep(3000);
+		driver.findElement(By.xpath(
+				"//*[@id='list-folder-items']/td/app-email-templates-list-view-util/div[2]/div/div/div[1]/div/div[1]/div/ul/li[8]"))
+				.click();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath(
+				"//*[@id='list-folder-items']/td/app-email-templates-list-view-util/div[2]/div/div/div[1]/div/div[2]/div/div/div[2]/div/input"))
+				.click();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath(
+				"//*[@id='list-folder-items']/td/app-email-templates-list-view-util/div[2]/div/div/div[1]/div/div[2]/div/div/div[2]/div/input"))
+				.sendKeys("event");
+		Thread.sleep(2000);
+		driver.findElement(By.xpath(
+				"//*[@id='list-folder-items']/td/app-email-templates-list-view-util/div[2]/div/div/div[1]/div/div[2]/div/div/div[2]/div/input"))
+				.sendKeys(Keys.ENTER);
+		Thread.sleep(2000);
+		WebElement ele2 = driver.findElement(By.xpath("//*[@id='emailTemplateListDiv_149914']/div/div[2]"));
+
+		Actions actions = new Actions(driver);
+
+		actions.moveToElement(ele2).perform();
+		driver.findElement(By.xpath("//*[@id='emailTemplateListDiv_149914']/div/div[2]/a[1]/i")).click();
+		Thread.sleep(3000);
+		driver.findElement(By.xpath("(//*[@id='email_spam_check']/div/div/div[1]/button)[1]")).click();
+		Thread.sleep(2000);
+		
+		actions.moveToElement(ele2).perform();
+		driver.findElement(By.xpath("//*[@id='emailTemplateListDiv_149914']/div/div[2]/a[3]/i")).click();
+		Thread.sleep(3000);
+		driver.findElement(By.xpath("(//*[@id='show_email_template_preivew']/div/div/div[1]/button/i)[1]")).click();
+		Thread.sleep(2000);
+		actions.moveToElement(ele2).perform();
+		driver.findElement(By.xpath("//*[@id='emailTemplateListDiv_149914']/div/div[2]/a[2]/i")).click();
+		Thread.sleep(20000);
+		driver.switchTo().frame(0);
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//span[contains(text(),'SAVE')]/..")).click();
+		Thread.sleep(2000);
+		driver.switchTo().defaultContent();
+		Thread.sleep(3000);
+		driver.findElement(By.xpath("//*[@id='update']")).click();
+	}
 }
