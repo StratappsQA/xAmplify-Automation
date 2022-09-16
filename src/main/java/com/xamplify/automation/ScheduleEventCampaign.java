@@ -36,9 +36,14 @@ public class ScheduleEventCampaign {
 
 		Thread.sleep(4000);
 
-		EventCampaign eve1 = new EventCampaign();
-		eve1.event_campaign();
-		Thread.sleep(5000);
+		EventCampaign eve123 = new EventCampaign(); 
+		eve123.event_campaign();  
+		Thread.sleep(4000);
+		
+		AutoResponsesEventcampaign ar_eve123 = new AutoResponsesEventcampaign(); //method call for autoresponses
+		ar_eve123.autoResponsesevent();
+
+		Thread.sleep(4000);
 
 		driver.findElement(By.xpath(properties.getProperty("eve_schedule"))).click(); //click on the schedule button
 		Thread.sleep(7000);
@@ -68,9 +73,15 @@ public class ScheduleEventCampaign {
 		Thread.sleep(5000);
 
 		String s = driver.findElement(By.xpath(properties.getProperty("eve_sch_response_msg"))).getText(); // response
-																											// message
-		System.out.println(s);
+		
+		String expectedtitle = "Campaign Scheduled successfully";
 
+		if (expectedtitle.equals(s)) {
+			System.out.println(" Event Campaign saved successfully");
+		} else {
+			System.out.println(" Event Campaign failed");
+		}
+		
 		logger.info("Event Campaign Scheduled Successfully");
 
 	}

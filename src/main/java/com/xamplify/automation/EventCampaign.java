@@ -22,8 +22,8 @@ public class EventCampaign {
 
 	WebDriver driver = Instance.getInstance();
 
-	Properties properties = PropertiesFile.readPropertyFile(
-			"D:\\git\\xAmplify-Automation\\src\\main\\resources\\EventCampaign.properties");
+	Properties properties = PropertiesFile
+			.readPropertyFile("D:\\git\\xAmplify-Automation\\src\\main\\resources\\EventCampaign.properties");
 
 	final Logger logger = LogManager.getLogger(EventCampaign.class);
 
@@ -83,38 +83,15 @@ public class EventCampaign {
 
 		Thread.sleep(4000);
 
-		driver.findElement(By.xpath(properties.getProperty("eve_configurepipeline"))).click(); // Toggle configure
-																								// pipeline ON
+		/*
+		 * driver.findElement(By.xpath(properties.getProperty("eve_configurepipeline")))
+		 * .click(); // Toggle configure // pipeline ON
+		 * 
+		 * Thread.sleep(6000);
+		 */
 
-		Thread.sleep(6000);
-
-		driver.findElement(By.xpath(properties.getProperty("eve_selectdate"))).click(); // select calendar
-
-		Thread.sleep(5000);
-
-		WebElement w = driver.findElement(By.xpath(properties.getProperty("eve_selected_date"))); //selected date in the calendar
-
-		w.click();
-
-		Thread.sleep(3000);
-		driver.findElement(By.id("allDay")).click();
-		logger.info("Selected the Event date ");
-
-		Thread.sleep(4000);
-
-		WebElement drpCountry = driver.findElement(By.xpath(properties.getProperty("timezone_select_country"))); // select
-																													// the
-																													// country
-		drpCountry.click();
-
-		drpCountry.sendKeys("India");
-		Thread.sleep(2000);
-		logger.info("Selected India in the country dropdown ");
-		drpCountry.sendKeys(Keys.ENTER);
-		Thread.sleep(4000);
-
-		driver.findElement(By.xpath(properties.getProperty("eve_showformsbutton"))).click(); // click on the
-																								// showformsbutton
+		driver.findElement(By.xpath(properties.getProperty("eve_showformsbutton"))).click(); // click on the showforms
+																								// button
 
 		Thread.sleep(2000);
 
@@ -128,7 +105,35 @@ public class EventCampaign {
 
 		Thread.sleep(2000);
 		driver.findElement(By.xpath(properties.getProperty("eve_closeform"))).click(); // close the form
-		Thread.sleep(2000);
+		Thread.sleep(5000);
+
+		driver.findElement(By.xpath(properties.getProperty("eve_selectdate"))).click(); // select calendar
+
+		Thread.sleep(5000);
+
+		WebElement w = driver.findElement(By.xpath(properties.getProperty("eve_selected_date"))); // selected date in
+																									// the calendar
+
+		w.click();
+
+		Thread.sleep(3000);
+		driver.findElement(By.id("allDay")).click();
+		logger.info("Selected the Event date ");
+
+		Thread.sleep(4000);
+
+		WebElement drpCountry = driver.findElement(By.xpath(properties.getProperty("timezone_select_country"))); // select
+																													// the
+																													// country
+		drpCountry.click();
+		Select eve_select_country = new Select(drpCountry); // select drop down
+		Thread.sleep(5000);
+		eve_select_country.selectByValue("103");
+		Thread.sleep(4000);
+
+		logger.info("Selected India in the country dropdown ");
+		drpCountry.sendKeys(Keys.ENTER);
+		Thread.sleep(4000);
 
 		Actions a2 = new Actions(driver);
 		a2.sendKeys(Keys.PAGE_DOWN).build().perform(); // scroll down a page
@@ -139,10 +144,8 @@ public class EventCampaign {
 		Actions a3 = new Actions(driver);
 		a3.sendKeys(Keys.PAGE_UP).build().perform(); // scroll up the page
 
-		WebDriverWait wait_evedropdown = new WebDriverWait(driver, 50);
-		WebElement w_evedropdown = wait_evedropdown.until(
-				ExpectedConditions.visibilityOfElementLocated(By.xpath(properties.getProperty("eve_select_dropdown"))));
-		Thread.sleep(2000);
+		WebElement w_evedropdown = driver.findElement(By.xpath(properties.getProperty("eve_select_dropdown"))); // drop
+																												// down
 
 		Select eve_dropdown1 = new Select(w_evedropdown);
 		eve_dropdown1.selectByVisibleText("Created On(ASC)");
@@ -208,7 +211,6 @@ public class EventCampaign {
 		Thread.sleep(5000);
 		driver.findElement(By.xpath(properties.getProperty("eve_nextpage3"))).click(); // click on the next page
 
-		
 	}
 
 }
