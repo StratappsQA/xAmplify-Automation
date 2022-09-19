@@ -1,0 +1,44 @@
+package com.xamplify.automation;
+
+import java.sql.SQLException;
+import java.util.Properties;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.testng.annotations.Test;
+
+public class SaveRedistributionSurveyCampaign {
+	WebDriver driver = Instance.getInstance();
+	Properties properties = PropertiesFile.readPropertyFile("D:\\git\\xAmplify-Automation\\src\\main\\resources\\RedistributionCampaign.properties");
+	final Logger logger = 	LogManager.getLogger(SaveRedistributionSurveyCampaign.class);
+	
+	@Test
+	
+	public void re_surveysave() throws InterruptedException, SQLException {
+		Thread.sleep(3000);
+		RedistributeSurveyCampaign rs1 = new RedistributeSurveyCampaign();
+		rs1.redistribute_scampaign();
+		Thread.sleep(3000);
+		
+		driver.findElement(By.xpath(properties.getProperty("click_on_save_re_survey"))).click();
+		Thread.sleep(3000);
+		
+	driver.findElement(By.xpath(properties.getProperty("click_sendtestmail_re_survey"))).click();
+	Thread.sleep(3000);
+	driver.findElement(By.xpath(properties.getProperty("sendtest_emailid"))).sendKeys("chmounika@stratapps.com");
+	Thread.sleep(3000);
+		
+	driver.findElement(By.xpath(properties.getProperty("sendtest_emailid_submit"))).click();
+	Thread.sleep(3000);
+	driver.findElement(By.xpath(properties.getProperty("sendtest_emailid_ok"))).click();
+	Thread.sleep(3000);
+	logger.info("Click on Save for Redistribution survey campaign");
+	driver.findElement(By.xpath(properties.getProperty("rs_save_click"))).click();
+	Thread.sleep(3000);
+		
+
+	
+	}
+}
