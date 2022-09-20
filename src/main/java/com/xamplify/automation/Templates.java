@@ -30,14 +30,15 @@ public class Templates {
 	}
 
 	@Test(priority = 1, enabled = true)
-	public void login() {
+	public void login() throws InterruptedException {
+	Thread.sleep(2000);
 
 		driver.findElement(By.xpath("//input[@placeholder='Email']")).sendKeys("automated_vendor@analytify.com");
 		driver.findElement(By.xpath("//input[@placeholder='Password']")).sendKeys("Xamplify@11");
 		driver.findElement(By.cssSelector("button[type*='submit']")).click();
 	}
 
-	@Test(priority = 2, enabled = false)
+	@Test(priority = 2, enabled = true)
 	public void design() throws InterruptedException {
 		Thread.sleep(3000);
 		driver.findElement(By.xpath("/html/body/app-root/app-home/div/app-leftsidebar/div/div/ul/li[5]/a/span[1]"))
@@ -47,7 +48,7 @@ public class Templates {
 
 	}
 
-	@Test(priority = 3, enabled = false)
+	@Test(priority = 3, enabled = true)
 	public void design1() throws InterruptedException {
 		Thread.sleep(3000);
 		driver.findElement(By.xpath("(//li[@class='filter'])[1]")).click();
@@ -82,12 +83,35 @@ public class Templates {
 		driver.findElement(By.xpath("//*[@id='templateNameId']")).sendKeys("harish" + System.currentTimeMillis());
 		Thread.sleep(2000);
 		driver.findElement(By.xpath("//*[@id='save']")).click();
+		Thread.sleep(3000);
+		driver.findElement(By.xpath(
+				"/html/body/app-root/app-home/div/div/app-manage-template/div/div[3]/div/div/div[1]/div/div[1]/div/ul/li[2]"))
+				.click();
+		Thread.sleep(3000);
+		driver.findElement(By.xpath(
+				"/html/body/app-root/app-home/div/div/app-manage-template/div/div[3]/div/div/div[1]/div/div[2]/div/div/div[2]/div/input"))
+				.click();
+		Thread.sleep(3000);
+		driver.findElement(By.xpath(
+				"/html/body/app-root/app-home/div/div/app-manage-template/div/div[3]/div/div/div[1]/div/div[2]/div/div/div[2]/div/input"))
+				.sendKeys("harish");
+		Thread.sleep(3000);
+		driver.findElement(By.xpath(
+				"/html/body/app-root/app-home/div/div/app-manage-template/div/div[3]/div/div/div[1]/div/div[2]/div/div/div[2]/div/button[2]"))
+				.click();
 
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//a/i[@class='fa fa-trash-o']")).click();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("/html/body/div[1]/div[2]/button[1]")).click();
 	}
 
-	@Test(priority = 4, enabled = false)
+	@Test(priority = 4, enabled = true)
 	public void video() throws InterruptedException {
 		Thread.sleep(3000);
+		driver.findElement(By.xpath("/html/body/app-root/app-home/div/div/app-manage-template/div/div[1]/ul/li[3]/a"))
+				.click();
+		Thread.sleep(5000);
 		driver.findElement(By.xpath("/html/body/app-root/app-home/div/app-leftsidebar/div/div/ul/li[5]/a/span[1]"))
 				.click();
 		Thread.sleep(3000);
@@ -96,11 +120,7 @@ public class Templates {
 				.click();
 		Thread.sleep(3000);
 		driver.findElement(By.xpath("(//li[@class='filter'])[2]")).click();
-	}
-
-	@Test(priority = 5, enabled = false)
-	public void video1() throws InterruptedException {
-
+		Thread.sleep(3000);
 		driver.findElement(By.xpath("//input[@placeholder='Search for a template']")).click();
 		Thread.sleep(2000);
 		driver.findElement(By.xpath("//input[@placeholder='Search for a template']")).sendKeys("simple");
@@ -130,11 +150,37 @@ public class Templates {
 		driver.findElement(By.xpath("//*[@id='templateNameId']")).sendKeys("harish" + System.currentTimeMillis());
 		Thread.sleep(2000);
 		driver.findElement(By.xpath("//*[@id='save']")).click();
+		Thread.sleep(3000);
+		driver.findElement(By.xpath(
+				"/html/body/app-root/app-home/div/div/app-manage-template/div/div[3]/div/div/div[1]/div/div[1]/div/ul/li[3]"))
+				.click();
+		Thread.sleep(3000);
+		driver.findElement(By.xpath(
+				"/html/body/app-root/app-home/div/div/app-manage-template/div/div[3]/div/div/div[1]/div/div[2]/div/div/div[2]/div/input"))
+				.click();
+		Thread.sleep(3000);
+		driver.findElement(By.xpath(
+				"/html/body/app-root/app-home/div/div/app-manage-template/div/div[3]/div/div/div[1]/div/div[2]/div/div/div[2]/div/input"))
+				.sendKeys("harish");
+		Thread.sleep(3000);
+		driver.findElement(By.xpath(
+				"/html/body/app-root/app-home/div/div/app-manage-template/div/div[3]/div/div/div[1]/div/div[2]/div/div/div[2]/div/button[2]"))
+				.click();
+
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//a/i[@class='fa fa-trash-o']")).click();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("/html/body/div[1]/div[2]/button[1]")).click();
 	}
 
-	@Test(priority = 6, enabled = false)
+	@Test(priority = 5, enabled = true)
 	public void emailcobranding() throws InterruptedException {
 		Thread.sleep(3000);
+
+		driver.findElement(By.xpath("/html/body/app-root/app-home/div/div/app-manage-template/div/div[1]/ul/li[3]/a"))
+				.click();
+		Thread.sleep(3000);
+
 		driver.findElement(By.xpath("/html/body/app-root/app-home/div/app-leftsidebar/div/div/ul/li[5]/a/span[1]"))
 				.click();
 		Thread.sleep(3000);
@@ -143,11 +189,7 @@ public class Templates {
 				.click();
 		Thread.sleep(3000);
 		driver.findElement(By.xpath("(//li[@class='filter'])[3]")).click();
-	}
-
-	@Test(priority = 7, enabled = false)
-	public void emailcobranding1() throws InterruptedException {
-
+		Thread.sleep(3000);
 		driver.findElement(By.xpath("//input[@placeholder='Search for a template']")).click();
 		Thread.sleep(2000);
 		driver.findElement(By.xpath("//input[@placeholder='Search for a template']")).sendKeys("NewsLetter2");
@@ -177,9 +219,31 @@ public class Templates {
 		driver.findElement(By.xpath("//*[@id='templateNameId']")).sendKeys("harish" + System.currentTimeMillis());
 		Thread.sleep(2000);
 		driver.findElement(By.xpath("//*[@id='save']")).click();
+		
+		Thread.sleep(3000);
+		driver.findElement(By.xpath(
+				"/html/body/app-root/app-home/div/div/app-manage-template/div/div[3]/div/div/div[1]/div/div[1]/div/ul/li[5]"))
+				.click();
+		Thread.sleep(3000);
+		driver.findElement(By.xpath(
+				"/html/body/app-root/app-home/div/div/app-manage-template/div/div[3]/div/div/div[1]/div/div[2]/div/div/div[2]/div/input"))
+				.click();
+		Thread.sleep(3000);
+		driver.findElement(By.xpath(
+				"/html/body/app-root/app-home/div/div/app-manage-template/div/div[3]/div/div/div[1]/div/div[2]/div/div/div[2]/div/input"))
+				.sendKeys("harish");
+		Thread.sleep(3000);
+		driver.findElement(By.xpath(
+				"/html/body/app-root/app-home/div/div/app-manage-template/div/div[3]/div/div/div[1]/div/div[2]/div/div/div[2]/div/button[2]"))
+				.click();
+
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//a/i[@class='fa fa-trash-o']")).click();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("/html/body/div[1]/div[2]/button[1]")).click();
 	}
 
-	@Test(priority = 8, enabled = false)
+	@Test(priority = 6, enabled = true)
 	public void videocobranding() throws InterruptedException {
 		Thread.sleep(3000);
 		driver.findElement(By.xpath("/html/body/app-root/app-home/div/app-leftsidebar/div/div/ul/li[5]/a/span[1]"))
@@ -190,11 +254,7 @@ public class Templates {
 				.click();
 		Thread.sleep(3000);
 		driver.findElement(By.xpath("(//li[@class='filter'])[4]")).click();
-	}
-
-	@Test(priority = 9, enabled = false)
-	public void videocobranding1() throws InterruptedException {
-
+		Thread.sleep(3000);
 		driver.findElement(By.xpath("//input[@placeholder='Search for a template']")).click();
 		Thread.sleep(2000);
 		driver.findElement(By.xpath("//input[@placeholder='Search for a template']")).sendKeys("video");
@@ -224,11 +284,33 @@ public class Templates {
 		Thread.sleep(2000);
 		driver.findElement(By.xpath("//*[@id='templateNameId']")).sendKeys("harish" + System.currentTimeMillis());
 		Thread.sleep(2000);
-		driver.findElement(By.xpath("//*[@id='save']")).click();
+		driver.findElement(By.xpath("//*[@id='save']")).click();		
+		Thread.sleep(3000);
+		driver.findElement(By.xpath(
+				"/html/body/app-root/app-home/div/div/app-manage-template/div/div[3]/div/div/div[1]/div/div[1]/div/ul/li[6]"))
+				.click();
+		Thread.sleep(3000);
+		driver.findElement(By.xpath(
+				"/html/body/app-root/app-home/div/div/app-manage-template/div/div[3]/div/div/div[1]/div/div[2]/div/div/div[2]/div/input"))
+				.click();
+		Thread.sleep(3000);
+		driver.findElement(By.xpath(
+				"/html/body/app-root/app-home/div/div/app-manage-template/div/div[3]/div/div/div[1]/div/div[2]/div/div/div[2]/div/input"))
+				.sendKeys("harish");
+		Thread.sleep(3000);
+		driver.findElement(By.xpath(
+				"/html/body/app-root/app-home/div/div/app-manage-template/div/div[3]/div/div/div[1]/div/div[2]/div/div/div[2]/div/button[2]"))
+				.click();
+
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//a/i[@class='fa fa-trash-o']")).click();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("/html/body/div[1]/div[2]/button[1]")).click();		
+		
 	}
 
-	@Test(priority = 10, enabled = false)
-	public void eventco() throws InterruptedException {
+	@Test(priority =7, enabled = true)
+	public void event() throws InterruptedException {
 		Thread.sleep(3000);
 		driver.findElement(By.xpath("/html/body/app-root/app-home/div/app-leftsidebar/div/div/ul/li[5]/a/span[1]"))
 				.click();
@@ -238,11 +320,7 @@ public class Templates {
 				.click();
 		Thread.sleep(3000);
 		driver.findElement(By.xpath("(//li[@class='filter'])[6]")).click();
-	}
-
-	@Test(priority = 11, enabled = false)
-	public void eventco1() throws InterruptedException {
-
+		Thread.sleep(2000);
 		driver.findElement(By.xpath("//input[@placeholder='Search for a template']")).click();
 		Thread.sleep(2000);
 		driver.findElement(By.xpath("//input[@placeholder='Search for a template']")).sendKeys("event");
@@ -273,10 +351,34 @@ public class Templates {
 		driver.findElement(By.xpath("//*[@id='templateNameId']")).sendKeys("harish" + System.currentTimeMillis());
 		Thread.sleep(2000);
 		driver.findElement(By.xpath("//*[@id='save']")).click();
+		Thread.sleep(3000);
+		driver.findElement(By.xpath(
+				"/html/body/app-root/app-home/div/div/app-manage-template/div/div[3]/div/div/div[1]/div/div[1]/div/ul/li[7]"))
+				.click();
+		Thread.sleep(3000);
+		driver.findElement(By.xpath(
+				"/html/body/app-root/app-home/div/div/app-manage-template/div/div[3]/div/div/div[1]/div/div[2]/div/div/div[2]/div/input"))
+				.click();
+		Thread.sleep(3000);
+		driver.findElement(By.xpath(
+				"/html/body/app-root/app-home/div/div/app-manage-template/div/div[3]/div/div/div[1]/div/div[2]/div/div/div[2]/div/input"))
+				.sendKeys("harish");
+		Thread.sleep(3000);
+		driver.findElement(By.xpath(
+				"/html/body/app-root/app-home/div/div/app-manage-template/div/div[3]/div/div/div[1]/div/div[2]/div/div/div[2]/div/button[2]"))
+				.click();
+
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//a/i[@class='fa fa-trash-o']")).click();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("/html/body/div[1]/div[2]/button[1]")).click();	
+		
+		
+		
 	}
 
-	@Test(priority = 12, enabled = false)
-	public void survey() throws InterruptedException {
+	@Test(priority = 8, enabled = true)
+	public void eveco() throws InterruptedException {
 		Thread.sleep(3000);
 		driver.findElement(By.xpath("/html/body/app-root/app-home/div/app-leftsidebar/div/div/ul/li[5]/a/span[1]"))
 				.click();
@@ -285,15 +387,11 @@ public class Templates {
 				"/html/body/app-root/app-home/div/div/app-design/div/div[2]/div/div/div[2]/div/div[1]/div/div/div[3]/h5/a/span"))
 				.click();
 		Thread.sleep(3000);
-		driver.findElement(By.xpath("(//li[@class='filter'])[7]")).click();
-	}
-
-	@Test(priority = 13, enabled = false)
-	public void survey1() throws InterruptedException {
+		driver.findElement(By.xpath("/html/body/app-root/app-home/div/div/app-select-template/div[1]/div[2]/div/div/div[1]/div/div[1]/div/ul/li[8]")).click();
 
 		driver.findElement(By.xpath("//input[@placeholder='Search for a template']")).click();
 		Thread.sleep(2000);
-		driver.findElement(By.xpath("//input[@placeholder='Search for a template']")).sendKeys("survey");
+		driver.findElement(By.xpath("//input[@placeholder='Search for a template']")).sendKeys("eve");
 		Thread.sleep(2000);
 		driver.findElement(By.xpath("//button[@class='search-box-item-click']")).click();
 		Thread.sleep(2000);
@@ -321,9 +419,33 @@ public class Templates {
 		driver.findElement(By.xpath("//*[@id='templateNameId']")).sendKeys("harish" + System.currentTimeMillis());
 		Thread.sleep(2000);
 		driver.findElement(By.xpath("//*[@id='save']")).click();
+		
+		
+		Thread.sleep(3000);
+		driver.findElement(By.xpath(
+				"/html/body/app-root/app-home/div/div/app-manage-template/div/div[3]/div/div/div[1]/div/div[1]/div/ul/li[8]"))
+				.click();
+		Thread.sleep(3000);
+		driver.findElement(By.xpath(
+				"/html/body/app-root/app-home/div/div/app-manage-template/div/div[3]/div/div/div[1]/div/div[2]/div/div/div[2]/div/input"))
+				.click();
+		Thread.sleep(3000);
+		driver.findElement(By.xpath(
+				"/html/body/app-root/app-home/div/div/app-manage-template/div/div[3]/div/div/div[1]/div/div[2]/div/div/div[2]/div/input"))
+				.sendKeys("harish");
+		Thread.sleep(3000);
+		driver.findElement(By.xpath(
+				"/html/body/app-root/app-home/div/div/app-manage-template/div/div[3]/div/div/div[1]/div/div[2]/div/div/div[2]/div/button[2]"))
+				.click();
+
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//a/i[@class='fa fa-trash-o']")).click();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("/html/body/div[1]/div[2]/button[1]")).click();		
+		
 	}
 
-	@Test(priority = 14, enabled = false)
+	@Test(priority = 9, enabled = true)
 	public void managetemplates() throws InterruptedException {
 
 		Thread.sleep(3000);
@@ -333,7 +455,7 @@ public class Templates {
 		driver.findElement(By.xpath("//span[@class='design-name']")).click();
 	}
 
-	@Test(priority = 15, enabled = false)
+	@Test(priority = 10, enabled = true)
 	public void managetemplates_Email() throws InterruptedException {
 
 		driver.findElement(By.xpath("//ul/li[@class='filter'][1]")).click();
@@ -370,7 +492,7 @@ public class Templates {
 
 	}
 
-	@Test(priority = 16, enabled = false)
+	@Test(priority = 11, enabled =true )
 	public void managetemplates_video() throws InterruptedException {
 		Thread.sleep(3000);
 		managetemplates();
@@ -405,7 +527,7 @@ public class Templates {
 
 	}
 
-	@Test(priority = 17, enabled = false)
+	@Test(priority = 12, enabled = true)
 	public void managetemplates_2() throws InterruptedException {
 
 		Thread.sleep(3000);
@@ -440,7 +562,7 @@ public class Templates {
 		driver.findElement(By.xpath("(//i[@class='fa fa-times'])[2]")).click();
 	}
 
-	@Test(priority = 18, enabled = false)
+	@Test(priority = 13, enabled = true)
 	public void managetemplates_3() throws InterruptedException {
 
 		Thread.sleep(3000);
@@ -478,7 +600,7 @@ public class Templates {
 		driver.findElement(By.xpath("(//i[@class='fa fa-times'])[2]")).click();
 	}
 
-	@Test(priority = 19, enabled = false)
+	@Test(priority = 14, enabled = true)
 	public void managetemplates_5() throws InterruptedException {
 
 		Thread.sleep(3000);
@@ -516,7 +638,7 @@ public class Templates {
 		driver.findElement(By.xpath("(//i[@class='fa fa-times'])[2]")).click();
 	}
 
-	@Test(priority = 20, enabled = false)
+	@Test(priority = 15, enabled = true)
 	public void managetemplates_4() throws InterruptedException {
 
 		Thread.sleep(3000);
@@ -554,7 +676,7 @@ public class Templates {
 		driver.findElement(By.xpath("(//i[@class='fa fa-times'])[2]")).click();
 	}
 
-	@Test(priority = 21, enabled = false)
+	@Test(priority = 16, enabled = true)
 	public void gridview_email() throws InterruptedException {
 		Thread.sleep(3000);
 		driver.findElement(By.xpath("/html/body/app-root/app-home/div/app-leftsidebar/div/div/ul/li[5]/a/span[1]"))
@@ -608,7 +730,7 @@ public class Templates {
 
 	}
 
-	@Test(priority = 22, enabled = false)
+	@Test(priority = 17, enabled = true)
 	public void gridview_video() throws InterruptedException {
 		Thread.sleep(3000);
 		driver.findElement(By.xpath("/html/body/app-root/app-home/div/app-leftsidebar/div/div/ul/li[5]/a/span[1]"))
@@ -661,7 +783,7 @@ public class Templates {
 		driver.findElement(By.xpath("(//i[@class='fa fa-times'])[2]")).click();
 	}
 
-	@Test(priority = 23, enabled = false)
+	@Test(priority = 18, enabled = true)
 	public void gridview_Email_cobranding() throws InterruptedException {
 		Thread.sleep(3000);
 		driver.findElement(By.xpath("/html/body/app-root/app-home/div/app-leftsidebar/div/div/ul/li[5]/a/span[1]"))
@@ -712,7 +834,7 @@ public class Templates {
 		driver.findElement(By.xpath("(//i[@class='fa fa-times'])[2]")).click();
 	}
 
-	@Test(priority = 24, enabled = false)
+	@Test(priority = 19, enabled = true)
 	public void gridview_video_cobranding() throws InterruptedException {
 		Thread.sleep(3000);
 		driver.findElement(By.xpath("/html/body/app-root/app-home/div/app-leftsidebar/div/div/ul/li[5]/a/span[1]"))
@@ -763,7 +885,7 @@ public class Templates {
 		driver.findElement(By.xpath("(//i[@class='fa fa-times'])[2]")).click();
 	}
 
-	@Test(priority = 25, enabled = false)
+	@Test(priority = 20, enabled = true)
 	public void gridview_Event() throws InterruptedException {
 		Thread.sleep(3000);
 		driver.findElement(By.xpath("/html/body/app-root/app-home/div/app-leftsidebar/div/div/ul/li[5]/a/span[1]"))
@@ -814,7 +936,7 @@ public class Templates {
 		driver.findElement(By.xpath("(//i[@class='fa fa-times'])[2]")).click();
 	}
 
-	@Test(priority = 26, enabled = false)
+	@Test(priority = 21, enabled = true)
 	public void gridview_Event_Cobranding() throws InterruptedException {
 		Thread.sleep(3000);
 		driver.findElement(By.xpath("/html/body/app-root/app-home/div/app-leftsidebar/div/div/ul/li[5]/a/span[1]"))
@@ -865,7 +987,7 @@ public class Templates {
 		driver.findElement(By.xpath("(//i[@class='fa fa-times'])[2]")).click();
 	}
 
-	@Test(priority = 27, enabled = false)
+	@Test(priority = 22, enabled = true)
 	public void folder_gridview() throws InterruptedException {
 		Thread.sleep(3000);
 		driver.findElement(By.xpath("/html/body/app-root/app-home/div/app-leftsidebar/div/div/ul/li[5]/a/span[1]"))
@@ -901,7 +1023,7 @@ public class Templates {
 		managetemplates_5();
 	}
 
-	@Test(priority = 28, enabled = false)
+	@Test(priority = 23, enabled = true)
 	public void folder_grid_view_grid() throws InterruptedException {
 		Thread.sleep(3000);
 		driver.findElement(By.xpath("/html/body/app-root/app-home/div/app-leftsidebar/div/div/ul/li[5]/a/span[1]"))
@@ -919,7 +1041,7 @@ public class Templates {
 		gridview_Event_Cobranding();
 	}
 
-	@Test(priority = 28, enabled = false)
+	@Test(priority = 24, enabled = true)
 	public void folder_list_view_list() throws InterruptedException {
 		managetemplates();
 		Thread.sleep(2000);
@@ -1172,7 +1294,7 @@ public class Templates {
 		driver.findElement(By.xpath("//*[@id='update']")).click();
 	}
 
-	@Test(priority = 29, enabled = false)
+	@Test(priority = 25, enabled = true)
 	public void folder_list_view_list_Emailcobranding() throws InterruptedException {
 		managetemplates();
 		Thread.sleep(2000);
@@ -1211,7 +1333,7 @@ public class Templates {
 		Thread.sleep(3000);
 		driver.findElement(By.xpath("(//*[@id='email_spam_check']/div/div/div[1]/button)[1]")).click();
 		Thread.sleep(2000);
-		
+
 		actions.moveToElement(ele2).perform();
 		driver.findElement(By.xpath("//*[@id='emailTemplateListDiv_27705']/div/div[2]/a[3]/i")).click();
 		Thread.sleep(2000);
@@ -1229,7 +1351,8 @@ public class Templates {
 		driver.findElement(By.xpath("//*[@id='update']")).click();
 
 	}
-	@Test(priority = 30, enabled = false)
+
+	@Test(priority = 26, enabled =true)
 	public void folder_list_view_list_Video_cobranding() throws InterruptedException {
 		managetemplates();
 		Thread.sleep(2000);
@@ -1268,7 +1391,7 @@ public class Templates {
 		Thread.sleep(3000);
 		driver.findElement(By.xpath("(//*[@id='email_spam_check']/div/div/div[1]/button)[1]")).click();
 		Thread.sleep(2000);
-		
+
 		actions.moveToElement(ele2).perform();
 		driver.findElement(By.xpath("//*[@id='emailTemplateListDiv_27595']/div/div[2]/a[3]/i")).click();
 		Thread.sleep(3000);
@@ -1284,9 +1407,10 @@ public class Templates {
 		driver.switchTo().defaultContent();
 		Thread.sleep(3000);
 		driver.findElement(By.xpath("//*[@id='update']")).click();
-	
+
 	}
-	@Test(priority = 31, enabled = false)
+
+	@Test(priority = 27, enabled = true)
 	public void folder_list_view_list_Event() throws InterruptedException {
 		managetemplates();
 		Thread.sleep(2000);
@@ -1325,7 +1449,7 @@ public class Templates {
 		Thread.sleep(3000);
 		driver.findElement(By.xpath("(//*[@id='email_spam_check']/div/div/div[1]/button)[1]")).click();
 		Thread.sleep(2000);
-		
+
 		actions.moveToElement(ele2).perform();
 		driver.findElement(By.xpath("//*[@id='emailTemplateListDiv_150222']/div/div[2]/a[3]/i")).click();
 		Thread.sleep(3000);
@@ -1342,7 +1466,8 @@ public class Templates {
 		Thread.sleep(3000);
 		driver.findElement(By.xpath("//*[@id='update']")).click();
 	}
-	@Test(priority = 32, enabled = true)
+
+	@Test(priority = 28, enabled = true)
 	public void folder_list_view_list_Event_Cobranding() throws InterruptedException {
 		managetemplates();
 		Thread.sleep(2000);
@@ -1381,7 +1506,7 @@ public class Templates {
 		Thread.sleep(3000);
 		driver.findElement(By.xpath("(//*[@id='email_spam_check']/div/div/div[1]/button)[1]")).click();
 		Thread.sleep(2000);
-		
+
 		actions.moveToElement(ele2).perform();
 		driver.findElement(By.xpath("//*[@id='emailTemplateListDiv_149914']/div/div[2]/a[3]/i")).click();
 		Thread.sleep(3000);
