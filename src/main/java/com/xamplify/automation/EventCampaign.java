@@ -70,11 +70,7 @@ public class EventCampaign {
 
 		WebDriverWait wait3 = new WebDriverWait(driver, 50);
 		WebElement w3 = wait3
-				.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(properties.getProperty("eve_through")))); // notify
-																														// me
-																														// email
-																														// is
-																														// opened
+				.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(properties.getProperty("eve_through")))); // toggle  through on
 
 		w3.click();
 		Thread.sleep(3000);
@@ -125,19 +121,20 @@ public class EventCampaign {
 		WebElement drpCountry = driver.findElement(By.xpath(properties.getProperty("timezone_select_country"))); // select
 																													// the
 																													// country
-		drpCountry.click();
+		// drpCountry.click();
 		Select eve_select_country = new Select(drpCountry); // select drop down
 		Thread.sleep(5000);
 		eve_select_country.selectByValue("103");
 		Thread.sleep(4000);
-
-		logger.info("Selected India in the country dropdown ");
-		drpCountry.sendKeys(Keys.ENTER);
-		Thread.sleep(4000);
-
-		Actions a2 = new Actions(driver);
-		a2.sendKeys(Keys.PAGE_DOWN).build().perform(); // scroll down a page
-
+		
+		  logger.info("Selected India in the country dropdown ");
+		 
+		  
+		 
+			/*
+			 * Actions a2 = new Actions(driver);
+			 * a2.sendKeys(Keys.PAGE_DOWN).build().perform(); // scroll down a page
+			 */
 		driver.findElement(By.xpath(properties.getProperty("eve_nextpage"))).click(); // click for the next page
 		Thread.sleep(3000);
 

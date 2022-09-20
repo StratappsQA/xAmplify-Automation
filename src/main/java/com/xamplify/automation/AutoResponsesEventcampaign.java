@@ -32,17 +32,19 @@ public class AutoResponsesEventcampaign {
 		js.executeScript("window.scrollTo(0,document.body.scrollHeight)"); // scroll down the page
 
 		Thread.sleep(4000);
-
+		
 		driver.findElement(By.xpath(properties.getProperty("eve_are_subject"))).sendKeys("_" + "Email is not Opened"); // subject
-																														// line
-																														// field
-		Thread.sleep(3000);
+		Thread.sleep(3000);																								// line
+
+		driver.findElement(By.xpath(properties.getProperty("eve_rplyindays_1"))).sendKeys("1");
+		Thread.sleep(4000);																							
+		
 
 		driver.switchTo().defaultContent();
 		driver.switchTo().frame(driver.findElement(By.xpath(properties.getProperty("eve_ar_frame1")))); // switch to the
 																										// frame
 		driver.findElement(By.xpath("html/body")).click();
-		driver.switchTo().activeElement().sendKeys("Hello:email is not opened please open the mail"+ "eve_name");
+		driver.switchTo().activeElement().sendKeys("Hello:email is not opened please open the mail");
 		driver.switchTo().defaultContent();
 		Thread.sleep(4000);
 
@@ -64,11 +66,16 @@ public class AutoResponsesEventcampaign {
 		Thread.sleep(5000);
 		eve_when_to_send_email2.selectByValue("13");
 		Thread.sleep(5000);
-
+		
 		driver.findElement(By.xpath(properties.getProperty("eve_are_subject2"))).sendKeys(" _ " + "Email is Opened"); // subject
 																														// line
 																														// field
 		Thread.sleep(3000);
+		
+		driver.findElement(By.xpath(properties.getProperty("eve_rplyindays_2"))).sendKeys("1");
+		Thread.sleep(4000);																							// field
+		
+
 
 		driver.switchTo().defaultContent();
 		driver.switchTo().frame(driver.findElement(By.xpath(properties.getProperty("eve_ar_frame2"))));
@@ -161,7 +168,7 @@ public class AutoResponsesEventcampaign {
 		driver.switchTo().defaultContent();
 		driver.switchTo().frame(driver.findElement(By.xpath(properties.getProperty("eve_ar_frame5"))));
 		driver.findElement(By.xpath("html/body")).click();
-		driver.switchTo().activeElement().sendKeys("Hello:plz share to the partner");
+		driver.switchTo().activeElement().sendKeys("Hello: Thanks for responded its a remainder email for yes");
 
 		driver.switchTo().defaultContent();
 		Thread.sleep(6000);
@@ -191,7 +198,7 @@ public class AutoResponsesEventcampaign {
 		driver.switchTo().defaultContent(); // switch to the frame
 		driver.switchTo().frame(driver.findElement(By.xpath(properties.getProperty("eve_ar_frame6"))));
 		driver.findElement(By.xpath("html/body")).click();
-		driver.switchTo().activeElement().sendKeys("Hello:plz share to the partner");
+		driver.switchTo().activeElement().sendKeys("Hello: Thanks for giving rsvp YES");
 
 		driver.switchTo().defaultContent();
 		Thread.sleep(6000);
@@ -223,7 +230,7 @@ public class AutoResponsesEventcampaign {
 		driver.switchTo().defaultContent(); // switch to the frame
 		driver.switchTo().frame(driver.findElement(By.xpath(properties.getProperty("eve_ar_frame7"))));
 		driver.findElement(By.xpath("html/body")).click();
-		driver.switchTo().activeElement().sendKeys("Hello:plz share to the partner");
+		driver.switchTo().activeElement().sendKeys("Hello: Event was done");
 
 		driver.switchTo().defaultContent();
 		Thread.sleep(6000);
