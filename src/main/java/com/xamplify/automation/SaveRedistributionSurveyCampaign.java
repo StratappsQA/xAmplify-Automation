@@ -37,6 +37,20 @@ public class SaveRedistributionSurveyCampaign {
 	logger.info("Click on Save for Redistribution survey campaign");
 	driver.findElement(By.xpath(properties.getProperty("rs_save_click"))).click();
 	Thread.sleep(3000);
+	
+	String rs_save = driver.findElement(By.xpath(properties.getProperty("rs_response_msg"))).getText(); // response
+	// message
+	logger.info("Survey Redistribution Campaign Saved Successfully");
+	String Result = "Campaign saved successfully";
+
+	if (Result.equals(rs_save)) {
+		// Thread.sleep(2000);
+		System.out.println("Survey Campaign Saved Successfully");
+	} else {
+		Thread.sleep(2000);
+
+		System.out.println("Survey Campaign Saved failed");
+	}
 		
 
 	
