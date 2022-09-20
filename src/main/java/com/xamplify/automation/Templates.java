@@ -1221,24 +1221,27 @@ public class Templates {
 		  xpath("//div/input[@placeholder='Search for a template']")).sendKeys(Keys.
 		  ENTER);
 		  
-		  Thread.sleep(2000); WebElement ele = driver.findElement(By.xpath(
+		  Thread.sleep(2000); 
+		  WebElement ele = driver.findElement(By.xpath(
 		  "//*[@id='emailTemplateListDiv_27706']/div/div[2]"));
 		  
-		  // Creating object of an Actions class Actions action = new Actions(driver);
+		  // Creating object of an Actions class Actions
+		 Actions action3 = new Actions(driver);
 		  
 		  // Performing the mouse hover action on the target element.
-		  action.moveToElement(ele).perform(); driver.findElement(By.xpath(
+		  action3.moveToElement(ele).perform();
+		  driver.findElement(By.xpath(
 		  "//*[@id='emailTemplateListDiv_27706']/div/div[2]/a[1]/i")).click();
 		  Thread.sleep(3000); driver.findElement(By.xpath(
 		  "//*[@id='email_spam_check']/div/div/div[1]/button/i")).click();
 		  Thread.sleep(2000);
 		  
-		  action.moveToElement(ele).perform(); driver.findElement(By.xpath(
+		  action3.moveToElement(ele).perform(); driver.findElement(By.xpath(
 		  "//*[@id='emailTemplateListDiv_27706']/div/div[2]/a[3]/i")).click();
 		  Thread.sleep(2000); driver.findElement(By.xpath(
 		  "//*[@id='show_email_template_preivew']/div/div/div[1]/button")).click();
 		  
-		  action.moveToElement(ele).perform(); driver.findElement(By.xpath(
+		  action3.moveToElement(ele).perform(); driver.findElement(By.xpath(
 		  "//*[@id='emailTemplateListDiv_27706']/div/div[2]/a[2]/i")).click();
 		  Thread.sleep(20000); driver.switchTo().frame(0); Thread.sleep(2000);
 		  driver.findElement(By.xpath("//span[contains(text(),'SAVE')]/..")).click();
