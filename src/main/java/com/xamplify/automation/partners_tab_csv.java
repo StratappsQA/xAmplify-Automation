@@ -14,7 +14,6 @@ import java.util.Properties;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
-import org.apache.commons.lang3.RandomStringUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.apache.poi.xssf.usermodel.XSSFCell;
@@ -33,7 +32,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 
 import com.google.common.collect.Table.Cell;
-import com.opencsv.CSVWriter;
+//import com.opencsv.CSVWriter;
 
 public class partners_tab_csv {
 	private static final TimeUnit Seconds = null;
@@ -201,94 +200,116 @@ public class partners_tab_csv {
 	 * 
 	 * }
 	 */
-	@Test(priority = 8, enabled = false)
-	public void upload_csv() throws Throwable {
-		String fileToUpdate = "D:\\Selenium\\files\\Data.csv", replace = "@mail-hub.info";
-		String str = "mharish";
-		int row = 2, col = 5;
-
-		File inputFile = new File(fileToUpdate);
-
-//Read existing file 
-
-		CSVReader reader = new CSVReader(new FileReader(inputFile), ',');
-
-		List<String[]> csvBody = reader.readAll();
-
-//get CSV row column  and replace with by using row and column
-
-		Thread.sleep(7000);
-
-		csvBody.get(row)[col] = str + System.currentTimeMillis() + replace;
-
-		reader.close();
-
-//Write to CSV file which is open
-
-		CSVWriter writer = new CSVWriter(new FileWriter(inputFile), ',');
-
-		writer.writeAll(csvBody);
-
-		writer.flush();
-
-		writer.close();
-
-		Actions actions111 = new Actions(driver);
-
-		WebElement partners111 = driver.findElement(By.xpath(properties.getProperty("hoverpartner")));
-
-		actions111.moveToElement(partners111).build().perform();
-
-		Thread.sleep(3000);
-
-		System.out.println("partners");
-
-		// driver.findElement(By.xpath(properties.getProperty("onboardingpartners"))).click();
-
-		// //onboardingpartners
-
-		driver.get("https://release.xamplify.io/home/partners/add");
-
-		Thread.sleep(5000);
-
-		driver.findElement(By.id("uploadCSV")).sendKeys("D:\\Selenium\\files\\Data.csv");
-
-		// driver.findElement(By.xpath("//*[@id=\"uploadCSV\"]/input")).click();
-
-		// driver.findElement(By.partialLinkText("Upload a CSV")).click();
-
-		// driver.findElement(By.xpath("//*[@id=\"uploadCSV\"]/span")).click();
-
-		Thread.sleep(7000);
-
-		// Runtime.getRuntime().exec("D:\\Selenium\\Files\\uploadcsv.exe");
-
-		Thread.sleep(7000);
-
-		driver.findElement(By.xpath(
-
-				"/html[1]/body[1]/app-root[1]/app-home[1]/div[1]/div[1]/app-add-partners[1]/div[1]/div[3]/div[2]/button[1]/span[1]"))
-
-				.click();
-
-		Thread.sleep(3000);
-
-		driver.findElement(By.xpath(
-
-				"/html[1]/body[1]/app-root[1]/app-home[1]/div[1]/div[1]/app-add-partners[1]/div[1]/div[3]/div[2]/ul[1]/li[1]/a[1]"))
-
-				.click();
-
-		Thread.sleep(8000);
-
-		driver.findElement(By.xpath(
-
-				"/html[1]/body[1]/app-root[1]/app-home[1]/div[1]/div[1]/app-add-partners[1]/div[3]/app-contacts-campaigns-mails[1]/div[1]/div[1]/div[1]/div[1]/button[1]"))
-
-				.click();
-
-	}
-
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	/*
+	 * @Test(priority = 8, enabled = false) public void upload_csv() throws
+	 * Throwable { String fileToUpdate = "D:\\Selenium\\files\\Data.csv", replace =
+	 * "@mail-hub.info"; String str = "mharish"; int row = 2, col = 5;
+	 * 
+	 * File inputFile = new File(fileToUpdate);
+	 * 
+	 * //Read existing file
+	 * 
+	 * CSVReader reader = new CSVReader(new FileReader(inputFile), ',');
+	 * 
+	 * List<String[]> csvBody = reader.readAll();
+	 * 
+	 * //get CSV row column and replace with by using row and column
+	 * 
+	 * Thread.sleep(7000);
+	 * 
+	 * csvBody.get(row)[col] = str + System.currentTimeMillis() + replace;
+	 * 
+	 * reader.close();
+	 * 
+	 * //Write to CSV file which is open
+	 * 
+	 * CSVWriter writer = new CSVWriter(new FileWriter(inputFile), ',');
+	 * 
+	 * writer.writeAll(csvBody);
+	 * 
+	 * writer.flush();
+	 * 
+	 * writer.close();
+	 * 
+	 * Actions actions111 = new Actions(driver);
+	 * 
+	 * WebElement partners111 =
+	 * driver.findElement(By.xpath(properties.getProperty("hoverpartner")));
+	 * 
+	 * actions111.moveToElement(partners111).build().perform();
+	 * 
+	 * Thread.sleep(3000);
+	 * 
+	 * System.out.println("partners");
+	 * 
+	 * //
+	 * driver.findElement(By.xpath(properties.getProperty("onboardingpartners"))).
+	 * click();
+	 * 
+	 * // //onboardingpartners
+	 * 
+	 * driver.get("https://release.xamplify.io/home/partners/add");
+	 * 
+	 * Thread.sleep(5000);
+	 * 
+	 * driver.findElement(By.id("uploadCSV")).sendKeys(
+	 * "D:\\Selenium\\files\\Data.csv");
+	 * 
+	 * // driver.findElement(By.xpath("//*[@id=\"uploadCSV\"]/input")).click();
+	 * 
+	 * // driver.findElement(By.partialLinkText("Upload a CSV")).click();
+	 * 
+	 * // driver.findElement(By.xpath("//*[@id=\"uploadCSV\"]/span")).click();
+	 * 
+	 * Thread.sleep(7000);
+	 * 
+	 * // Runtime.getRuntime().exec("D:\\Selenium\\Files\\uploadcsv.exe");
+	 * 
+	 * Thread.sleep(7000);
+	 * 
+	 * driver.findElement(By.xpath(
+	 * 
+	 * "/html[1]/body[1]/app-root[1]/app-home[1]/div[1]/div[1]/app-add-partners[1]/div[1]/div[3]/div[2]/button[1]/span[1]"
+	 * ))
+	 * 
+	 * .click();
+	 * 
+	 * Thread.sleep(3000);
+	 * 
+	 * driver.findElement(By.xpath(
+	 * 
+	 * "/html[1]/body[1]/app-root[1]/app-home[1]/div[1]/div[1]/app-add-partners[1]/div[1]/div[3]/div[2]/ul[1]/li[1]/a[1]"
+	 * ))
+	 * 
+	 * .click();
+	 * 
+	 * Thread.sleep(8000);
+	 * 
+	 * driver.findElement(By.xpath(
+	 * 
+	 * "/html[1]/body[1]/app-root[1]/app-home[1]/div[1]/div[1]/app-add-partners[1]/div[3]/app-contacts-campaigns-mails[1]/div[1]/div[1]/div[1]/div[1]/button[1]"
+	 * ))
+	 * 
+	 * .click();
+	 * 
+	 * }
+	 */
 	@Test(priority = 9, enabled = false)
 	public void onboarding_section() throws Throwable
 

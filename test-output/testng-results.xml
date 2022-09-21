@@ -2,34 +2,30 @@
 <testng-results ignored="0" total="3" passed="2" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-06-27T18:47:12 IST" name="Suite" finished-at="2022-06-27T18:48:52 IST" duration-ms="100149">
+  <suite started-at="2022-09-20T16:06:23 IST" name="Suite" finished-at="2022-09-20T16:07:48 IST" duration-ms="85238">
     <groups>
     </groups>
-    <test started-at="2022-06-27T18:47:12 IST" name="Test" finished-at="2022-06-27T18:48:52 IST" duration-ms="100149">
-      <class name="com.xamplify.automation.LaunchVideoCampaign">
-        <test-method signature="vlaunch()[pri:0, instance:com.xamplify.automation.LaunchVideoCampaign@4bb003e9]" started-at="2022-06-27T18:47:38 IST" name="vlaunch" finished-at="2022-06-27T18:48:52 IST" duration-ms="73703" status="FAIL">
-          <exception class="org.openqa.selenium.NoSuchElementException">
+    <test started-at="2022-09-20T16:06:23 IST" name="Test" finished-at="2022-09-20T16:07:48 IST" duration-ms="85238">
+      <class name="com.xamplify.automation.EventToCampagin">
+        <test-method signature="event_Tocampaign()[pri:0, instance:com.xamplify.automation.EventToCampagin@6ad16c5d]" started-at="2022-09-20T16:06:54 IST" name="event_Tocampaign" finished-at="2022-09-20T16:07:48 IST" duration-ms="53769" status="FAIL">
+          <exception class="org.openqa.selenium.ElementClickInterceptedException">
             <message>
-              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"//*[@id="imagePath2890"]"}
-  (Session info: chrome=103.0.5060.53)
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+              <![CDATA[element click intercepted: Element <div _ngcontent-c62="" class="col-xs-12 col-sm-7">...</div> is not clickable at point (550, 254). Other element would receive the click: <div class="dayContainer">...</div>
+  (Session info: chrome=105.0.5195.127)
 Build info: version: '3.11.0', revision: 'e59cfb3', time: '2018-03-11T20:26:55.152Z'
-System info: host: 'CHMOUNIKA-SA', ip: '192.168.56.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.2'
+System info: host: 'AGAYATRI1-SA', ip: '172.16.16.78', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.4.1'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 103.0.5060.53, chrome: {chromedriverVersion: 103.0.5060.53 (a1711811edd7..., userDataDir: C:\Users\CHMOUN~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:62218}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: c1c77a3af97f9442062848a49e2ac18f
-*** Element info: {Using=xpath, value=//*[@id="imagePath2890"]}]]>
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 105.0.5195.127, chrome: {chromedriverVersion: 105.0.5195.52 (412c95e51883..., userDataDir: C:\Users\agayatri\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:54025}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: d24a5c5f7cd26eb05bd8c79fdd806981]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//*[@id="imagePath2890"]"}
-  (Session info: chrome=103.0.5060.53)
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+              <![CDATA[org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element <div _ngcontent-c62="" class="col-xs-12 col-sm-7">...</div> is not clickable at point (550, 254). Other element would receive the click: <div class="dayContainer">...</div>
+  (Session info: chrome=105.0.5195.127)
 Build info: version: '3.11.0', revision: 'e59cfb3', time: '2018-03-11T20:26:55.152Z'
-System info: host: 'CHMOUNIKA-SA', ip: '192.168.56.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.2'
+System info: host: 'AGAYATRI1-SA', ip: '172.16.16.78', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.4.1'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 103.0.5060.53, chrome: {chromedriverVersion: 103.0.5060.53 (a1711811edd7..., userDataDir: C:\Users\CHMOUN~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:62218}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: c1c77a3af97f9442062848a49e2ac18f
-*** Element info: {Using=xpath, value=//*[@id="imagePath2890"]}
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 105.0.5195.127, chrome: {chromedriverVersion: 105.0.5195.52 (412c95e51883..., userDataDir: C:\Users\agayatri\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:54025}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: d24a5c5f7cd26eb05bd8c79fdd806981
 at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
 at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -41,12 +37,9 @@ at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCo
 at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
 at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
 at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:319)
-at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:421)
-at org.openqa.selenium.By$ByXPath.findElement(By.java:361)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:311)
-at com.xamplify.automation.VideoCampaign.vdecampaign(VideoCampaign.java:195)
-at com.xamplify.automation.LaunchVideoCampaign.vlaunch(LaunchVideoCampaign.java:28)
+at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:279)
+at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:83)
+at com.xamplify.automation.EventToCampagin.event_Tocampaign(EventToCampagin.java:112)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -77,17 +70,17 @@ at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
+          </exception> <!-- org.openqa.selenium.ElementClickInterceptedException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- vlaunch -->
-      </class> <!-- com.xamplify.automation.LaunchVideoCampaign -->
+        </test-method> <!-- event_Tocampaign -->
+      </class> <!-- com.xamplify.automation.EventToCampagin -->
       <class name="com.xamplify.automation.Login">
-        <test-method signature="Openingthebrowser()[pri:1, instance:com.xamplify.automation.Login@64b70919]" started-at="2022-06-27T18:47:12 IST" name="Openingthebrowser" finished-at="2022-06-27T18:47:29 IST" duration-ms="16956" status="PASS">
+        <test-method signature="Openingthebrowser()[pri:1, instance:com.xamplify.automation.Login@2630dbc4]" started-at="2022-09-20T16:06:23 IST" name="Openingthebrowser" finished-at="2022-09-20T16:06:45 IST" duration-ms="21710" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Openingthebrowser -->
-        <test-method signature="Signinprocess()[pri:2, instance:com.xamplify.automation.Login@64b70919]" started-at="2022-06-27T18:47:29 IST" name="Signinprocess" finished-at="2022-06-27T18:47:38 IST" duration-ms="9425" status="PASS">
+        <test-method signature="Signinprocess()[pri:2, instance:com.xamplify.automation.Login@2630dbc4]" started-at="2022-09-20T16:06:45 IST" name="Signinprocess" finished-at="2022-09-20T16:06:54 IST" duration-ms="9663" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Signinprocess -->
