@@ -101,11 +101,11 @@ public class EventCampaign {
 
 		Thread.sleep(2000);
 		driver.findElement(By.xpath(properties.getProperty("eve_closeform"))).click(); // close the form
-		Thread.sleep(5000);
+		Thread.sleep(6000);
 
 		driver.findElement(By.xpath(properties.getProperty("eve_selectdate"))).click(); // select calendar
 
-		Thread.sleep(5000);
+		Thread.sleep(7000);
 
 		WebElement w = driver.findElement(By.xpath(properties.getProperty("eve_selected_date"))); // selected date in
 																									// the calendar
