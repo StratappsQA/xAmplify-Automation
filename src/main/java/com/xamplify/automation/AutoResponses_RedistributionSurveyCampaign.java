@@ -29,7 +29,7 @@ public class AutoResponses_RedistributionSurveyCampaign {
 		Thread.sleep(5000);
 		logger.info("clicked on Autorespones for Website");
 		JavascriptExecutor js = (JavascriptExecutor) driver;
-		js.executeScript("window.scrollTo(0,document.body.scrollHeight)");
+		js.executeScript("window.scrollTo(document.body.scrollHeight,300)");
 
 		Thread.sleep(4000);
 		WebElement responses_drpdwn = driver.findElement(By.xpath(properties.getProperty("click_ar_website_drp"))); // select dropdown
@@ -62,10 +62,10 @@ public class AutoResponses_RedistributionSurveyCampaign {
 				.sendKeys("Hello:send immediately after clicked,thanku for clicking immediately");
 		logger.info("Message given");
 		driver.switchTo().defaultContent();
-		Thread.sleep(6000);
+		Thread.sleep(4000);
 
 		JavascriptExecutor js2 = (JavascriptExecutor) driver;
-		js2.executeScript("window.scrollTo(document.body.scrollHeight,0)");
+		js2.executeScript("window.scrollTo(document.body.scrollHeight,300)");
 
 		Thread.sleep(5000);
 		
@@ -75,7 +75,7 @@ public class AutoResponses_RedistributionSurveyCampaign {
 		Thread.sleep(4000);
 
 		JavascriptExecutor js3 = (JavascriptExecutor) driver;
-		js3.executeScript("window.scrollTo(0,document.body.scrollHeight)");
+		js3.executeScript("window.scrollTo(document.body.scrollHeight,300)");
 		Thread.sleep(4000);
 		driver.findElement(By.xpath(properties.getProperty("ar_subject2"))).sendKeys("send if not clicked"); // subject
 		Thread.sleep(4000);
@@ -92,14 +92,14 @@ public class AutoResponses_RedistributionSurveyCampaign {
 		Thread.sleep(3000);
 
 		JavascriptExecutor js21 = (JavascriptExecutor) driver;
-		js21.executeScript("window.scrollTo(document.body.scrollHeight,0)");
+		js21.executeScript("window.scrollTo(document.body.scrollHeight,300)");
 
 		Thread.sleep(5000);
 
 		driver.findElement(By.xpath(properties.getProperty("click_autores_website3"))).click(); // auto response
 		Thread.sleep(5000);
 		JavascriptExecutor js31 = (JavascriptExecutor) driver;
-		js31.executeScript("window.scrollTo(0,document.body.scrollHeight)");
+		js31.executeScript("window.scrollTo(document.body.scrollHeight,300)");
 		Thread.sleep(5000);
 		WebElement responses_drpdwn2 = driver.findElement(By.xpath(properties.getProperty("click_ar_website_drp3"))); // drop down
 		// ele_drpdwn4.click(); // click
@@ -121,39 +121,33 @@ public class AutoResponses_RedistributionSurveyCampaign {
 		driver.switchTo().defaultContent();
 		Thread.sleep(5000);
 
-		WebElement avble_drpdwn3 = driver.findElement(By.xpath(properties.getProperty("click_available_URL's_3"))); // select
-																														// drop
-																														// down
-		avble_drpdwn3.click();
-		Select url3 = new Select(avble_drpdwn3);
-		Thread.sleep(5000);
-		url3.selectByValue("3: https://twitter.com/"); // select twitter link
-		
-		Thread.sleep(4000);
+		logger.info("Auto responses to Website visit Completed");
 
 		JavascriptExecutor js211 = (JavascriptExecutor) driver;
-		js211.executeScript("window.scrollTo(document.body.scrollHeight,0)");
+		js211.executeScript("window.scrollTo(document.body.scrollHeight,300)");
 
 		Thread.sleep(5000);
 
-		driver.findElement(By.xpath(properties.getProperty("email_ar_visit"))).click(); // autoresponse
+		logger.info("click on the Auto responses to your email");
+		driver.findElement(By.xpath(properties.getProperty("click_autoresponse_email"))).click(); //click email autoresponse
 		Thread.sleep(5000);
 
-		WebElement rdrpdwn = driver.findElement(By.xpath(properties.getProperty("e_aresponse_drpdwn"))); // select drop
-																											// down
+		logger.info("click on the Auto responses reason dropdown");
+
+		WebElement reason_drpdwn = driver.findElement(By.xpath(properties.getProperty("email_ar_response_reason_drpdwn"))); // select drop down
 		// rdrpdwn.click();
 
-		Select reason = new Select(rdrpdwn);
+		Select reason = new Select(reason_drpdwn);
 		Thread.sleep(5000);
 		reason.selectByValue("13");
 		Thread.sleep(7000);
-		driver.findElement(By.xpath(properties.getProperty("e_arv_xdays"))).sendKeys("1"); // select x days
+		driver.findElement(By.xpath(properties.getProperty("email_ar_xdays"))).sendKeys("1"); // select x days
 		Thread.sleep(4000);
-		driver.findElement(By.xpath(properties.getProperty("e_arvsubject1"))).sendKeys("email is opened"); // subject
+		driver.findElement(By.xpath(properties.getProperty("email_ar_subject1"))).sendKeys("email is opened"); // subject
 		Thread.sleep(5000);
 
 		driver.switchTo().defaultContent();
-		driver.switchTo().frame(driver.findElement(By.xpath(properties.getProperty("e_ar_frame4")))); // switch
+		driver.switchTo().frame(driver.findElement(By.xpath(properties.getProperty("ar_message_body4")))); // switch
 																										// to
 																										// frame
 		driver.findElement(By.xpath("html/body")).click();
@@ -162,21 +156,21 @@ public class AutoResponses_RedistributionSurveyCampaign {
 		driver.switchTo().defaultContent();
 		Thread.sleep(5000);
 
-		driver.findElement(By.xpath(properties.getProperty("email_ar_visit2"))).click(); // autoresponse
+		driver.findElement(By.xpath(properties.getProperty("click_autoresponse_email2"))).click(); // autoresponse
 		Thread.sleep(5000);
 
 		JavascriptExecutor js13 = (JavascriptExecutor) driver;
-		js13.executeScript("window.scrollTo(0,document.body.scrollHeight)");
+		js13.executeScript("window.scrollTo(300,document.body.scrollHeight)");
 
 		Thread.sleep(5000);
-		driver.findElement(By.xpath(properties.getProperty("e_arv2_xdays"))).sendKeys("1"); // select x days
+		driver.findElement(By.xpath(properties.getProperty("email_ar_xdays2"))).sendKeys("1"); // select x days
 		Thread.sleep(4000);
 
-		driver.findElement(By.xpath(properties.getProperty("e_arvsubject2"))).sendKeys("email not opened---)"); // subject
+		driver.findElement(By.xpath(properties.getProperty("email_ar_subject2"))).sendKeys("email not opened---)"); // subject
 		Thread.sleep(5000);
 
 		driver.switchTo().defaultContent();
-		driver.switchTo().frame(driver.findElement(By.xpath(properties.getProperty("e_ar_frame5")))); // switch the
+		driver.switchTo().frame(driver.findElement(By.xpath(properties.getProperty("ar_message_body5")))); // switch the
 																										// frame
 
 		driver.findElement(By.xpath("html/body")).click();
@@ -185,15 +179,15 @@ public class AutoResponses_RedistributionSurveyCampaign {
 		driver.switchTo().defaultContent();
 		Thread.sleep(5000);
 
-		JavascriptExecutor js14 = (JavascriptExecutor) driver;
-		js14.executeScript("window.scrollTo(document.body.scrollHeight,0)");
+//		JavascriptExecutor js14 = (JavascriptExecutor) driver;
+//		js14.executeScript("window.scrollTo(document.body.scrollHeight,300)");
 
-		driver.findElement(By.xpath(properties.getProperty("email_ar_visit3"))).click(); // auto response
+		driver.findElement(By.xpath(properties.getProperty("click_autoresponse_email3"))).click(); // auto response
 		Thread.sleep(5000);
 
 		JavascriptExecutor js15 = (JavascriptExecutor) driver;
-		js15.executeScript("window.scrollTo(0,document.body.scrollHeight)");
-		WebElement rdrpdwn2 = driver.findElement(By.xpath(properties.getProperty("e_aresponse_drpdwn3"))); // select
+		js15.executeScript("window.scrollTo(200,document.body.scrollHeight)");
+		WebElement rdrpdwn2 = driver.findElement(By.xpath(properties.getProperty("email_ar_response_reason_drpdwn2"))); // select
 																											// drop
 																											// down
 		// rdrpdwn.click();
@@ -202,12 +196,12 @@ public class AutoResponses_RedistributionSurveyCampaign {
 		reason1.selectByValue("16");
 		Thread.sleep(8000);
 
-		driver.findElement(By.xpath(properties.getProperty("e_arvsubject3")))
+		driver.findElement(By.xpath(properties.getProperty("email_ar_subject3")))
 				.sendKeys("send immediately after email is opend"); // subject
 		Thread.sleep(5000);
 
 		driver.switchTo().defaultContent();
-		driver.switchTo().frame(driver.findElement(By.xpath(properties.getProperty("e_ar_frame6")))); // switch the
+		driver.switchTo().frame(driver.findElement(By.xpath(properties.getProperty("ar_message_body6")))); // switch the
 																										// frame
 		driver.findElement(By.xpath("html/body")).click();
 		driver.switchTo().activeElement().sendKeys("Hello:send immediately after email is opend,thanku for opening");
