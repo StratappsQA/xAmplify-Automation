@@ -23,7 +23,7 @@ public class EventToCampagin {
 	Properties properties = PropertiesFile
 			.readPropertyFile("D:\\git\\xAmplify-Automation\\src\\main\\resources\\EventCampaign.properties");
 
-	final Logger logger = LogManager.getLogger(EventCampaign.class);
+	final Logger logger = LogManager.getLogger(EventToCampagin.class);
 	
 	
 	
@@ -69,20 +69,6 @@ public class EventToCampagin {
 		  
 		  Thread.sleep(3000);
 		  
-			/*
-			 * WebDriverWait wait3 = new WebDriverWait(driver, 50); WebElement w3 = wait3
-			 * .until(ExpectedConditions.visibilityOfElementLocated(By.xpath(properties.
-			 * getProperty("eve_to")))); // toggle through on
-			 * 
-			 * 
-			 * w3.click(); Thread.sleep(3000);
-			 */
-		  
-		  
-		
-
-			
-
 		driver.findElement(By.xpath(properties.getProperty("eve_selectpublic"))).click(); // select public toggle
 
 		Thread.sleep(4000);
@@ -117,30 +103,13 @@ public class EventToCampagin {
 																									// the calendar
 
 		w.click();
-		Thread.sleep(3000);
-		
-		/*
-		 * WebElement w1 =
-		 * driver.findElement(By.xpath("//*[@id=\"event-tabs\"]/div/fieldset/div[1]"));
-		 * w1.click();
-		 */
-		
-		/*
-		 * Actions a21 = new Actions(driver); // scroll down a page
-		 * a21.sendKeys(Keys.PAGE_UP).build().perform();
-		 * 
-		 * //driver.switchTo().alert().dismiss(); Thread.sleep(4000);
-		 * 
-		 * Actions a2 = new Actions(driver); // scroll down a page
-		 * a2.sendKeys(Keys.PAGE_DOWN).build().perform();
-		 */
-		  
+		 
 			Thread.sleep(4000);
 		
 		
 		logger.info("Selected the Event date ");
 
-		driver.findElement(By.xpath("//*[@id=\"event-tabs\"]/div/fieldset")).click();
+		driver.findElement(By.xpath(properties.getProperty("eve_click"))).click();
 		
 		
 		Thread.sleep(6000);
@@ -148,7 +117,7 @@ public class EventToCampagin {
 		WebElement drpCountry = driver.findElement(By.xpath(properties.getProperty("timezone_to_select_country"))); // select
 																													// the
 																													// country
-		// drpCountry.click();
+	
 		Select eve_select_country = new Select(drpCountry); // select drop down
 		Thread.sleep(5000);
 		eve_select_country.selectByValue("103");
@@ -156,12 +125,6 @@ public class EventToCampagin {
 		
 		  logger.info("Selected India in the country dropdown ");
 		 
-		  
-		 
-		  /*
-			 * Actions a2 = new Actions(driver);
-			 * a2.sendKeys(Keys.PAGE_DOWN).build().perform(); // scroll down a page
-			 */
 		driver.findElement(By.xpath(properties.getProperty("eve_nextpage"))).click(); // click for the next page
 		Thread.sleep(3000);
 
@@ -237,9 +200,5 @@ public class EventToCampagin {
 	
 	
 	}
-	
-	
-	
-	
 	
 }
