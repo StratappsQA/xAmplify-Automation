@@ -383,7 +383,7 @@ public class UploadAssetFile {
 						driver.findElement(By.xpath(properties.getProperty("Descriptionclick"))).sendKeys("Asset_Description");
 						Thread.sleep(5000);
 						driver.switchTo().defaultContent();
-						driver.findElement(By.xpath(properties.getProperty("Submit"))).click();
+						driver.findElement(By.xpath(properties.getProperty("Submit"))).click();//click ob submit button
 						Thread.sleep(5000);
 						logger.info("Asset html uploaded succesfully");
 						WebElement success = driver.findElement(By.xpath(properties.getProperty("Success")));	
