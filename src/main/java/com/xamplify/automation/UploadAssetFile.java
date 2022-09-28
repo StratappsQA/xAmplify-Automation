@@ -372,7 +372,7 @@ public class UploadAssetFile {
 						driver.findElement(By.xpath(properties.getProperty("Thumbnail"))).click();//upload thumbnail
 						logger.info("thumbnail uploaded");
 						Thread.sleep(5000);
-						Runtime.getRuntime().exec("D:\\Selenium\\Thumbnail.exe");
+						Runtime.getRuntime().exec("D:\\Selenium\\Thumbnail.exe");//upload thumbnail
 						Thread.sleep(5000);
 						driver.findElement(By.xpath(properties.getProperty("Savechanges"))).click(); //click on save change button
 						Thread.sleep(5000);
