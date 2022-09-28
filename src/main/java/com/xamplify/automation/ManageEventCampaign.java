@@ -25,8 +25,6 @@ final Logger logger = LogManager.getLogger(ManageEventCampaign.class);
 @Test
 public void manage_event_editdelete() throws InterruptedException, SQLException {
 
-	
-
 	WebDriverWait wait = new WebDriverWait(driver, 50);// Wait till the element is not visible
 
 	WebElement mevecam = wait
@@ -36,11 +34,8 @@ public void manage_event_editdelete() throws InterruptedException, SQLException 
 	mevecamp_action.moveToElement(mevecam).perform();
 	Thread.sleep(5000);
 
-	WebElement managepage_cam = driver.findElement(By.xpath(properties.getProperty("manage_eventcampaign")));
-
-	// manage
-	// campaign
-	mevecamp_action.moveToElement(managepage_cam);
+	WebElement manage_eve_cam = driver.findElement(By.xpath(properties.getProperty("manage_eventcampaign"))); // manage campaign
+	mevecamp_action.moveToElement(manage_eve_cam);
 	mevecamp_action.click();
 	mevecamp_action.perform();
 	Thread.sleep(5000);
@@ -51,6 +46,13 @@ public void manage_event_editdelete() throws InterruptedException, SQLException 
 	driver.findElement(By.xpath(properties.getProperty("meve_gear_icon"))).click(); //gear icon
 
 	Thread.sleep(3000);
+	
+	
+	
+	
+	
+	
+	
 
 	driver.findElement(By.xpath(properties.getProperty("meve_copycampaign"))).click(); //copy campaign icon
 
@@ -64,7 +66,6 @@ public void manage_event_editdelete() throws InterruptedException, SQLException 
 
 	Thread.sleep(3000);
 	
-
 	driver.findElement(By.xpath(properties.getProperty("meve_delete"))).click(); //delete  icon
 
 	Thread.sleep(3000);
