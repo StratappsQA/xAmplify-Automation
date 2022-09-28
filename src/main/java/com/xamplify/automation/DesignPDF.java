@@ -21,7 +21,7 @@ public class DesignPDF {
 	public void designpdf() throws InterruptedException
 	{
 		Thread.sleep(3000);
-		driver.findElement(By.xpath(properties.getProperty("Content_leftmenu"))).click();
+		driver.findElement(By.xpath(properties.getProperty("Content_leftmenu"))).click(); //click on content left menu
 		Thread.sleep(5000);
 		driver.findElement(By.xpath(properties.getProperty("DesignUpload"))).click();
 		Thread.sleep(5000);

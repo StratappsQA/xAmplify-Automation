@@ -159,7 +159,7 @@ public class ManageAssetPNG {
 			logger.info("Assetfile downloaded succesfully");
 			
 			//publish asset to partner
-			driver.findElement(By.xpath(properties.getProperty("publish_click"))).click();
+			driver.findElement(By.xpath(properties.getProperty("publish_click"))).click(); //click on publish link
 			driver.findElement(By.xpath(properties.getProperty("arrow_click"))).click();
 			driver.findElement(By.xpath(properties.getProperty("partner_select"))).click();
 			driver.findElement(By.xpath(properties.getProperty("submit_button"))).click();

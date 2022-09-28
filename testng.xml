@@ -3,8 +3,8 @@
 <suite name="Suite">
   <test thread-count="5" name="Test">
     <classes>
-    <class name="com.xamplify.automation.Login"/>
-    <class name="com.xamplify.automation.UploadAssetFile"/>
+    <class name="com.xamplify.automation.Login"/> 
+    <class name="com.xamplify.automation.UploadAssetFile"/> 
 <!--         <class name="com.xamplify.automation.UploadAssetVideo"/> -->
 <!--                 <class name="com.xamplify.automation.DesignPDF"/> -->
 
