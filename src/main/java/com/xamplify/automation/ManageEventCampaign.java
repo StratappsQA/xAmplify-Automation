@@ -48,19 +48,33 @@ public void manage_event_editdelete() throws InterruptedException, SQLException 
 	Thread.sleep(3000);
 	
 	
+	driver.findElement(By.xpath(properties.getProperty("meve_editicon"))).click();
+	Thread.sleep(3000);
 	
 	
+	WebElement meve_drop=driver.findElement(By.xpath(properties.getProperty("meve_edit_selectfolder")));
+	meve_drop.click();
+	driver.findElement(By.xpath(properties.getProperty("meve_edit_selectedfolder"))).click();
+	Thread.sleep(3000);
+	driver.findElement(By.xpath(properties.getProperty("meve_updatefolder"))).click();
+	Thread.sleep(3000);
 	
 	
+	driver.findElement(By.xpath(properties.getProperty("meve_close"))).click();
+	Thread.sleep(5000);
 	
+	
+	driver.findElement(By.xpath(properties.getProperty("meve_gear_icon"))).click(); //gear icon
 
+	Thread.sleep(3000);
+	
 	driver.findElement(By.xpath(properties.getProperty("meve_copycampaign"))).click(); //copy campaign icon
 
 	Thread.sleep(3000);
 
 	driver.findElement(By.xpath(properties.getProperty("meve_copy_saveas"))).click(); //save the copycampaign
 
-	Thread.sleep(3000);
+	Thread.sleep(5000);
 
 	driver.findElement(By.xpath(properties.getProperty("meve_gear_icon2"))).click(); //gear  icon
 
@@ -72,10 +86,25 @@ public void manage_event_editdelete() throws InterruptedException, SQLException 
 	
 	driver.findElement(By.xpath(properties.getProperty("meve_delete_yes"))).click(); //yes delete  icon
 
+	Thread.sleep(5000);
+	
+	driver.findElement(By.xpath(properties.getProperty("meve_gear_icon"))).click(); //gear icon
+
 	Thread.sleep(3000);
 	
+	driver.findElement(By.xpath(properties.getProperty("meve_sendpreviewemail"))).click(); //
+
+	Thread.sleep(3000);
 	
+
+	WebElement snddata=driver.findElement(By.xpath(properties.getProperty("meve_senddata")));
+	snddata.sendKeys("agayatri@stratapps.com");
+	snddata.sendKeys(Keys.ENTER);
 	
+
+	Thread.sleep(3000);
+
+
 	
 }
 
