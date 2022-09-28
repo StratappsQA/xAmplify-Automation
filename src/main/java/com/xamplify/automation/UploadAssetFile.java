@@ -369,7 +369,7 @@ public class UploadAssetFile {
 						Runtime.getRuntime().exec("D:\\Selenium\\asset_html.exe");
 						logger.info("asset mp3 file uploaded");
 						Thread.sleep(5000);
-						driver.findElement(By.xpath(properties.getProperty("Thumbnail"))).click();
+						driver.findElement(By.xpath(properties.getProperty("Thumbnail"))).click();//upload thumbnail
 						logger.info("thumbnail uploaded");
 						Thread.sleep(5000);
 						Runtime.getRuntime().exec("D:\\Selenium\\Thumbnail.exe");
