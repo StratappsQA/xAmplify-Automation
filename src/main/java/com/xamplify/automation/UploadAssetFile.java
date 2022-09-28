@@ -374,7 +374,7 @@ public class UploadAssetFile {
 						Thread.sleep(5000);
 						Runtime.getRuntime().exec("D:\\Selenium\\Thumbnail.exe");
 						Thread.sleep(5000);
-						driver.findElement(By.xpath(properties.getProperty("Savechanges"))).click();
+						driver.findElement(By.xpath(properties.getProperty("Savechanges"))).click(); //click on save change button
 						Thread.sleep(5000);
 						driver.findElement(By.xpath(properties.getProperty("Name"))).sendKeys(properties.getProperty("html_name"));
 						Thread.sleep(5000);
@@ -431,7 +431,7 @@ public class UploadAssetFile {
 						String actualresult = success.getText();
 						String expectedresult = "Uploaded Successfully";
 						Assert.assertEquals(actualresult, expectedresult);
-						logger.info("Assertion for uploadsucess message");
+					logger.info("Assertion for uploadsucess message");
 						Thread.sleep(5000);
 						driver.findElement(By.xpath(properties.getProperty("Refresh"))).click();
 				
