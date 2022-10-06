@@ -11,8 +11,6 @@ import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-
-
 public class UploadAssetVideo {
 	
 	WebDriver driver = Instance.getInstance();
@@ -20,8 +18,52 @@ public class UploadAssetVideo {
 			.readPropertyFile("D:\\git\\xAmplify-Automation\\src\\main\\resources\\AssetLibrary.properties");
 	final Logger logger = LogManager.getLogger(UploadAssetFile.class);
 	
-	@Test
-	 public void uploadassetvideo() throws InterruptedException, IOException {	
+			@Test (priority = 0)
+	        public void uploadMP4() throws InterruptedException, IOException {	
+			Thread.sleep(3000);
+			driver.findElement(By.xpath(properties.getProperty("Content_leftmenu"))).click(); //click on left side content menu
+			Thread.sleep(5000);
+			driver.findElement(By.xpath(properties.getProperty("DesignUpload"))).click(); //click on design/upload
+			Thread.sleep(3000);
+			driver.findElement(By.xpath(properties.getProperty("Upload"))).click(); // click on upload
+			Thread.sleep(5000);
+			driver.findElement(By.xpath(properties.getProperty("BrowseButton"))).click(); //click on Browse
+			Thread.sleep(5000);
+			Runtime.getRuntime().exec("D:\\Selenium\\asset_MP4.exe");
+			logger.info("asset mp4 file uploaded");
+			Thread.sleep(5000);
+			driver.findElement(By.xpath(properties.getProperty("Thumbnail"))).click();
+			logger.info("thumbnail uploaded");
+			Thread.sleep(5000);
+			Runtime.getRuntime().exec("D:\\Selenium\\Thumbnail.exe");
+			Thread.sleep(5000);
+			driver.findElement(By.xpath(properties.getProperty("Savechanges"))).click();
+			Thread.sleep(5000);
+			driver.findElement(By.xpath(properties.getProperty("Name"))).sendKeys(properties.getProperty("mp4_name"));
+			Thread.sleep(5000);
+			driver.switchTo().frame(0);
+			driver.findElement(By.xpath(properties.getProperty("Descriptionclick"))).click();
+			driver.findElement(By.xpath(properties.getProperty("Descriptionclick"))).sendKeys("Asset_Description");
+			Thread.sleep(5000);
+			driver.switchTo().defaultContent();
+			driver.findElement(By.xpath(properties.getProperty("Submit"))).click();
+			Thread.sleep(15000);
+			logger.info("Asset mp4 uploaded succesfully");
+//			driver.findElement(By.xpath(properties.getProperty("Refresh"))).click();			
+//			Thread.sleep(5000);
+//			WebElement success = driver.findElement(By.xpath(properties.getProperty("Success")));	
+//			String actualresult = success.getText();
+//			String expectedresult = "Uploaded Successfully";
+//			Assert.assertEquals(actualresult, expectedresult);
+//			logger.info("Assertion succesfull for success message ");
+	}
+	
+			
+			
+			
+			
+			@Test (priority = 1)
+			public void uploadaAVI() throws InterruptedException, IOException {	
 			Thread.sleep(3000);
 			driver.findElement(By.xpath(properties.getProperty("Content_leftmenu"))).click(); //click on content left menu
 			Thread.sleep(5000);
@@ -31,7 +73,7 @@ public class UploadAssetVideo {
 			Thread.sleep(5000);
 			driver.findElement(By.xpath(properties.getProperty("BrowseButton"))).click();
 			Thread.sleep(5000);
-			Runtime.getRuntime().exec("D:\\Selenium\\VideoFile.exe");
+			Runtime.getRuntime().exec("D:\\Selenium\\asset_AVI.exe");
 			logger.info("asset file uploaded");
 			Thread.sleep(5000);
 			driver.findElement(By.xpath(properties.getProperty("Thumbnail"))).click();
@@ -41,7 +83,7 @@ public class UploadAssetVideo {
 			Thread.sleep(5000);
 			driver.findElement(By.xpath(properties.getProperty("Savechanges"))).click();
 			Thread.sleep(5000);
-			driver.findElement(By.xpath(properties.getProperty("Name"))).sendKeys(properties.getProperty("Name_text2"));
+			driver.findElement(By.xpath(properties.getProperty("Name"))).sendKeys(properties.getProperty("avi_name"));
 			Thread.sleep(5000);
 			driver.switchTo().frame(0);
 			driver.findElement(By.xpath(properties.getProperty("Descriptionclick"))).click();
@@ -49,49 +91,107 @@ public class UploadAssetVideo {
 			Thread.sleep(5000);
 			driver.switchTo().defaultContent();
 			driver.findElement(By.xpath(properties.getProperty("Submit"))).click();
+			Thread.sleep(10000);
+			logger.info("Asset AVI uploaded succesfully");
+//			Thread.sleep(10000);
+//
+//			WebElement success = driver.findElement(By.xpath(properties.getProperty("Success")));	
+//			String actualresult = success.getText();
+//			String expectedresult = "Uploaded Successfully";
+//			Thread.sleep(10000);
+//
+//			Assert.assertEquals(actualresult, expectedresult);
+//			logger.info("Assertion for uploadsucess message");
+//			Thread.sleep(10000);
+//			driver.findElement(By.xpath(properties.getProperty("Refresh"))).click();
+	}
+	
+			
+	@Test (priority = 2)
+	 public void uploadMOV() throws InterruptedException, IOException {	
+			Thread.sleep(3000);
+			driver.findElement(By.xpath(properties.getProperty("Content_leftmenu"))).click(); //click on content left menu
 			Thread.sleep(5000);
-			logger.info("Asset uploaded succesfully");
+			driver.findElement(By.xpath(properties.getProperty("DesignUpload"))).click();
+			Thread.sleep(3000);
+			driver.findElement(By.xpath(properties.getProperty("Upload"))).click();
+			Thread.sleep(5000);
+			driver.findElement(By.xpath(properties.getProperty("BrowseButton"))).click();
+			Thread.sleep(5000);
+			Runtime.getRuntime().exec("D:\\Selenium\\asset_MOV.exe");
+			logger.info("asset file uploaded");
+			Thread.sleep(5000);
+			driver.findElement(By.xpath(properties.getProperty("Thumbnail"))).click();
+			logger.info("thumbnail uploaded");
+			Thread.sleep(5000);
+			Runtime.getRuntime().exec("D:\\Selenium\\Thumbnail.exe");
+			Thread.sleep(5000);
+			driver.findElement(By.xpath(properties.getProperty("Savechanges"))).click();
+			Thread.sleep(5000);
+			driver.findElement(By.xpath(properties.getProperty("Name"))).sendKeys(properties.getProperty("mov_name"));
+			Thread.sleep(5000);
+			driver.switchTo().frame(0);
+			driver.findElement(By.xpath(properties.getProperty("Descriptionclick"))).click();
+			driver.findElement(By.xpath(properties.getProperty("Descriptionclick"))).sendKeys("Asset_Description");
+			Thread.sleep(5000);
+			driver.switchTo().defaultContent();
+			driver.findElement(By.xpath(properties.getProperty("Submit"))).click();
 			Thread.sleep(10000);
-
-			WebElement success = driver.findElement(By.xpath(properties.getProperty("Success")));	
-			String actualresult = success.getText();
-			String expectedresult = "Uploaded Successfully";
+			logger.info("Asset MOV uploaded succesfully");
+//			Thread.sleep(10000);
+//
+//			WebElement success = driver.findElement(By.xpath(properties.getProperty("Success")));	
+//			String actualresult = success.getText();
+//			String expectedresult = "Uploaded Successfully";
+//			Thread.sleep(10000);
+//
+//			Assert.assertEquals(actualresult, expectedresult);
+//			logger.info("Assertion for uploadsucess message");
+//			Thread.sleep(10000);
+//			driver.findElement(By.xpath(properties.getProperty("Refresh"))).click();
+	}			
+			
+	@Test (priority = 3)
+	 public void uploadMKV() throws InterruptedException, IOException {	
+			Thread.sleep(3000);
+			driver.findElement(By.xpath(properties.getProperty("Content_leftmenu"))).click(); //click on content left menu
+			Thread.sleep(5000);
+			driver.findElement(By.xpath(properties.getProperty("DesignUpload"))).click();
+			Thread.sleep(3000);
+			driver.findElement(By.xpath(properties.getProperty("Upload"))).click();
+			Thread.sleep(5000);
+			driver.findElement(By.xpath(properties.getProperty("BrowseButton"))).click();
+			Thread.sleep(5000);
+			Runtime.getRuntime().exec("D:\\Selenium\\asset_MKV.exe");
+			logger.info("asset file uploaded");
+			Thread.sleep(5000);
+			driver.findElement(By.xpath(properties.getProperty("Thumbnail"))).click();
+			logger.info("thumbnail uploaded");
+			Thread.sleep(5000);
+			Runtime.getRuntime().exec("D:\\Selenium\\Thumbnail.exe");
+			Thread.sleep(5000);
+			driver.findElement(By.xpath(properties.getProperty("Savechanges"))).click();
+			Thread.sleep(5000);
+			driver.findElement(By.xpath(properties.getProperty("Name"))).sendKeys(properties.getProperty("mkv_name"));
+			Thread.sleep(5000);
+			driver.switchTo().frame(0);
+			driver.findElement(By.xpath(properties.getProperty("Descriptionclick"))).click();
+			driver.findElement(By.xpath(properties.getProperty("Descriptionclick"))).sendKeys("Asset_Description");
+			Thread.sleep(5000);
+			driver.switchTo().defaultContent();
+			driver.findElement(By.xpath(properties.getProperty("Submit"))).click();
 			Thread.sleep(10000);
-
-			Assert.assertEquals(actualresult, expectedresult);
-			logger.info("Assertion for uploadsucess message");
-			Thread.sleep(10000);
-			driver.findElement(By.xpath(properties.getProperty("Refresh"))).click();
-			
-			
-			//Manage asset - video (MP4) file
-			//search asset
-			Thread.sleep(3000);
-			driver.findElement(By.xpath(properties.getProperty("Searchbar"))).sendKeys(properties.getProperty("Name_text2"));
-			Thread.sleep(3000);
-			driver.findElement(By.xpath(properties.getProperty("Searchclick"))).click();
-			
-			//click on create compaign
-			Thread.sleep(3000);
-			driver.findElement(By.xpath(properties.getProperty("createcompaign_click"))).click();	
-			Thread.sleep(3000);
-	        // need to ask compaign should be created or not 
-			
-  
-
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-
-}
+			logger.info("Asset MKV uploaded succesfully");
+//			Thread.sleep(10000);
+//
+//			WebElement success = driver.findElement(By.xpath(properties.getProperty("Success")));	
+//			String actualresult = success.getText();
+//			String expectedresult = "Uploaded Successfully";
+//			Thread.sleep(10000);
+//
+//			Assert.assertEquals(actualresult, expectedresult);
+//			logger.info("Assertion for uploadsucess message");
+//			Thread.sleep(10000);
+//			driver.findElement(By.xpath(properties.getProperty("Refresh"))).click();
+	}			
 }
