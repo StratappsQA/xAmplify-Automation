@@ -97,7 +97,7 @@ public class ManageEventCampaign {
 	}
 
 	@Test(priority = 2, enabled = true)
-	public void manage_eve_sndpreview_update() throws InterruptedException, SQLException {
+	public void manage_eve_sndpreview_previewdelete() throws InterruptedException, SQLException {
 
 		Thread.sleep(5000);
 
@@ -133,11 +133,11 @@ public class ManageEventCampaign {
 
 		Thread.sleep(3000);
 
-		driver.findElement(By.xpath(properties.getProperty("meve_preview&delete"))).click();
+		driver.findElement(By.xpath(properties.getProperty("meve_preview&delete"))).click(); //click on the preview&delete icon
 
 		Thread.sleep(3000);
 
-		WebElement we = driver.findElement(By.xpath("//div[@class='portlet-title']//select[1]"));
+		WebElement we = driver.findElement(By.xpath(properties.getProperty("meve_preview&delete_sortby"))); //click for sortby
 		we.click();
 		Thread.sleep(3000);
 
@@ -169,21 +169,16 @@ public class ManageEventCampaign {
 
 		Thread.sleep(5000);
 
-		driver.findElement(
-				By.xpath("//div[@class='portlet-title']//input[@class='form-control ng-pristine ng-valid ng-touched']"))
-				.sendKeys("gmail");
+		
+		driver.findElement(By.xpath(properties.getProperty("meve_preview&delete_del"))).click();  //delete icon for one of the partner 
 
 		Thread.sleep(3000);
 
-		driver.findElement(By.xpath(properties.getProperty("meve_preview&delete_del"))).click();
+		driver.findElement(By.xpath(properties.getProperty("meve_preview&del_yesdel"))).click(); //click for the yes delete button
 
 		Thread.sleep(3000);
 
-		driver.findElement(By.xpath(properties.getProperty("meve_preview&del_yesdel"))).click();
-
-		Thread.sleep(3000);
-
-		driver.findElement(By.xpath(properties.getProperty("meve_navigate_mcam"))).click();
+		driver.findElement(By.xpath(properties.getProperty("meve_navigate_mcam"))).click();  //navigate to manage campaign
 
 		Thread.sleep(6000);
 
@@ -225,25 +220,9 @@ public class ManageEventCampaign {
 	@Test(priority = 3, enabled = true)
 	public void manage_eve_grid_cancel() throws InterruptedException, SQLException {
 
-		/*
-		 * WebDriverWait wait = new WebDriverWait(driver, 50);// Wait till the element
-		 * is not visible
-		 * 
-		 * WebElement mevecam = wait
-		 * .until(ExpectedConditions.visibilityOfElementLocated(By.xpath(properties.
-		 * getProperty("manage_eve_campaignhover")))); mevecam.click(); // hover on
-		 * campaign Actions mevecamp_action = new Actions(driver);
-		 * mevecamp_action.moveToElement(mevecam).perform(); Thread.sleep(5000);
-		 * 
-		 * WebElement manage_eve_cam =
-		 * driver.findElement(By.xpath(properties.getProperty("manage_eventcampaign")));
-		 * // manage campaign mevecamp_action.moveToElement(manage_eve_cam);
-		 * mevecamp_action.click(); mevecamp_action.perform(); Thread.sleep(5000);
-		 */
-
 		Thread.sleep(7000);
 		driver.findElement(By.xpath(properties.getProperty("meve_gridview"))).click(); // click on the grid view
-		Thread.sleep(3000);
+		Thread.sleep(5000);
 
 		WebElement w = driver.findElement(By.xpath(properties.getProperty("meve_hover_canceleventicon"))); // hover to
 																											// cancelevent
@@ -255,16 +234,41 @@ public class ManageEventCampaign {
 		driver.findElement(By.xpath(properties.getProperty("meve_hover_canceleventicon"))).click();
 		Thread.sleep(5000);
 		driver.findElement(By.xpath(properties.getProperty("meve_cancel_emailsubject")))
-				.sendKeys("event cancelled subject"); // click on the Thread.sleep(3000);
+				.sendKeys("event cancelled subject"); // enter the data for the subject field
+		Thread.sleep(3000);
 		driver.findElement(By.xpath(properties.getProperty("meve_cancel_message")))
-				.sendKeys("event cancelled due to some reasons"); // click on the
+				.sendKeys("event cancelled due to some reasons"); 
 		Thread.sleep(3000);
 		driver.findElement(By.xpath(properties.getProperty("meve_cancel_event"))).click(); // click on the cancel event
 																							// button
-																							// Thread.sleep(58000);
+	     Thread.sleep(58000);
 		logger.info("Event has been cancelled successfully");
 
+	}
+
+	@Test(priority = 4, enabled = true)
+	public void manage_eve_archieve() throws InterruptedException, SQLException {
+
+		WebDriverWait wait = new WebDriverWait(driver, 50);// Wait till the element
+
+		WebElement mevecam = wait.until(ExpectedConditions
+				.visibilityOfElementLocated(By.xpath(properties.getProperty("manage_eve_campaignhover"))));
+		mevecam.click(); // hover on campaigns
+
+		Actions mevecamp_action = new Actions(driver);
+		mevecamp_action.moveToElement(mevecam).perform();
 		Thread.sleep(5000);
+
+		WebElement manage_eve_cam = driver.findElement(By.xpath(properties.getProperty("manage_eventcampaign")));
+		// manage campaign
+		mevecamp_action.moveToElement(manage_eve_cam);
+		mevecamp_action.click();
+		mevecamp_action.perform();
+		Thread.sleep(5000);
+		driver.findElement(By.xpath(properties.getProperty("meve_gridview"))).click(); // click on the grid view
+		Thread.sleep(5000);
+
+		Thread.sleep(11000);
 
 		WebElement w2 = driver.findElement(By.xpath(properties.getProperty("meve_hover_archieve_icon"))); // hover to
 																											// cancelevent
@@ -272,18 +276,18 @@ public class ManageEventCampaign {
 
 		Actions action2 = new Actions(driver);
 		action2.moveToElement(w2).perform();
-		Thread.sleep(7000);
-		driver.findElement(By.xpath(properties.getProperty("meve_hover_archieve_icon"))).click();
+		Thread.sleep(11000);
+		driver.findElement(By.xpath(properties.getProperty("meve_hover_archieve_icon"))).click();  
 		Thread.sleep(5000);
 
-		driver.findElement(By.xpath(properties.getProperty("meve_archievecampaigns_button"))).click();
+		driver.findElement(By.xpath(properties.getProperty("meve_archievecampaigns_button"))).click(); //clcik on the archieve button
 		Thread.sleep(6000);
-		logger.info("archieved button clicked successfully");
+		logger.info("archived campaigns button clicked successfully");
 
 		driver.findElement(By.xpath(properties.getProperty("meve_gridview"))).click(); // click on the grid view
-		Thread.sleep(6000);
 
-		logger.info("grid view");
+		logger.info("clicked on the grid view");
+		Thread.sleep(15000);
 
 		WebElement w3 = driver.findElement(By.xpath(properties.getProperty("meve_hover_grid_delete_active"))); // hover
 																												// to
@@ -291,17 +295,19 @@ public class ManageEventCampaign {
 
 		Actions action3 = new Actions(driver);
 		action3.moveToElement(w3).perform();
-		Thread.sleep(8000);
+		Thread.sleep(14000);
+		
 		driver.findElement(By.xpath(properties.getProperty("meve_hover_grid_delete_active"))).click();
 		Thread.sleep(5000);
 
 		driver.findElement(By.xpath(properties.getProperty("meve_hover_grid_delete_yes"))).click();
 
 		Thread.sleep(7000);
-
+		logger.info("Deleted archived campaign ");
 		driver.findElement(By.xpath(properties.getProperty("meve_hover_grid_activecam_button"))).click();
 
 		Thread.sleep(7000);
+		logger.info("Back to active campaigns page ");
 
 	}
 }
