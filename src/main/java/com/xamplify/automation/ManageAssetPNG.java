@@ -1,5 +1,6 @@
 package com.xamplify.automation;
 
+import java.io.IOException;
 import java.util.Properties;
 
 import org.apache.logging.log4j.LogManager;
@@ -21,18 +22,17 @@ public class ManageAssetPNG {
 	final Logger logger = LogManager.getLogger(UploadAssetFile.class);
 	
 	
-	@Test
-	public void manageassets() throws InterruptedException
-	{
-		driver.findElement(By.xpath(properties.getProperty("Content_leftmenu"))).click();
+		//sorting order for assets
+	    @Test(priority = 0)
+	    public void assetsorting() throws InterruptedException, IOException {	
+	    	   
+			Thread.sleep(5000);
+	driver.findElement(By.xpath(properties.getProperty("Content_leftmenu"))).click(); //click on left side content menu
 		Thread.sleep(5000);
-		driver.findElement(By.xpath(properties.getProperty("ManageMyAssets"))).click();
-		
-		Thread.sleep(5000);
-
-		
+		driver.findElement(By.xpath(properties.getProperty("ManageMyAssets"))).click();		
+		Thread.sleep(5000);		
 		// click on sorting dropdown and sort by values
-	   /* Select values = new Select(driver.findElement(By.xpath(properties.getProperty("Clickondropdown"))));
+	    Select values = new Select(driver.findElement(By.xpath(properties.getProperty("Clickondropdown"))));
 		Thread.sleep(5000);
 		values.selectByVisibleText("Name(A-Z)");
 		Thread.sleep(5000);
@@ -40,10 +40,21 @@ public class ManageAssetPNG {
 		Thread.sleep(5000);
 		values.selectByVisibleText("Created On(DESC)");
 		Thread.sleep(5000);
-		values.selectByVisibleText("Created On(ASC)");*/
-		
+		values.selectByVisibleText("Created On(ASC)");
+     	logger.info("sorting succesfully completed");
+
+	    }
+	
 		//grid and list view 
-		/*WebElement gridview = driver.findElement(By.xpath(properties.getProperty("gridclick")));
+     	@Test(enabled = false)
+	    public void gridlistview() throws InterruptedException
+	    {
+		Thread.sleep(5000);
+		driver.findElement(By.xpath(properties.getProperty("Content_leftmenu"))).click(); //click on left side content menu
+		Thread.sleep(5000);
+		driver.findElement(By.xpath(properties.getProperty("ManageMyAssets"))).click();		
+		Thread.sleep(5000);		
+		WebElement gridview = driver.findElement(By.xpath(properties.getProperty("gridclick")));
 		if(gridview.isEnabled())
 		{
 			gridview.click();
@@ -61,61 +72,24 @@ public class ManageAssetPNG {
 		else
 		{
 			System.out.println("list view icon is disabled");
-		}*/
+		}
+		
+	    }
+     	
 		
 		
-		//search assset  -
-		driver.findElement(By.xpath(properties.getProperty("Searchbar"))).sendKeys(properties.getProperty("Name_text1"));
+		
+		//search assset and edit png
+     	@Test(enabled = false)
+	    public void editasset() throws InterruptedException
+	    {
+		Thread.sleep(5000);
+		driver.findElement(By.xpath(properties.getProperty("Content_leftmenu"))).click(); //click on left side content menu
+		Thread.sleep(5000);
+		driver.findElement(By.xpath(properties.getProperty("ManageMyAssets"))).click();		
+		driver.findElement(By.xpath(properties.getProperty("Searchbar"))).sendKeys("png");
 		Thread.sleep(3000);
-		driver.findElement(By.xpath(properties.getProperty("Searchclick"))).click();
-		
-		
-		
-
-		
-		//Manage asset - for uploaded file asset (png,txt,pdf....) 
-		// click on sorting dropdown and sort by values
-		   /* Select values = new Select(driver.findElement(By.xpath(properties.getProperty("Clickondropdown"))));
-			Thread.sleep(5000);
-			values.selectByVisibleText("Name(A-Z)");
-			Thread.sleep(5000);
-			values.selectByVisibleText("Name(Z-A)");
-			Thread.sleep(5000);
-			values.selectByVisibleText("Created On(DESC)");
-			Thread.sleep(5000);
-			values.selectByVisibleText("Created On(ASC)");
-	     	logger.info("sorting succesfully completed");*/
-
-		
-		
-			//grid and list view 
-			/*WebElement gridview = driver.findElement(By.xpath(properties.getProperty("gridclick")));
-			if(gridview.isEnabled())
-			{
-				gridview.click();
-			}
-			else
-			{
-				System.out.println("grid view icon is disabled");
-			}
-			
-			WebElement listview = driver.findElement(By.xpath(properties.getProperty("listclick")));
-			if(listview.isEnabled())
-			{
-				listview.click();
-			}
-			else
-			{
-				System.out.println("list view icon is disabled");
-			}*/
-			
-
-			//search assset  -
-						 
-			driver.findElement(By.xpath(properties.getProperty("Searchbar"))).sendKeys(properties.getProperty("Name_text1"));
-			Thread.sleep(3000);
-			driver.findElement(By.xpath(properties.getProperty("Searchclick"))).click();
-			
+		driver.findElement(By.xpath(properties.getProperty("Searchclick"))).click();		
 			//clicking on edit icon against to asset file (png)
 			Thread.sleep(3000);
 			driver.findElement(By.xpath(properties.getProperty("editicon_click"))).click();
@@ -130,35 +104,49 @@ public class ManageAssetPNG {
 			driver.switchTo().defaultContent();
 			driver.findElement(By.xpath(properties.getProperty("Update"))).click();
 			logger.info("Assetfile updated succesfully");
-//			WebElement success1 = driver.findElement(By.xpath(properties.getProperty("Success")));	
-//			String actualresult1 = success1.getText();
-//			String expectedresult1 = "Details Updated Successfully";
-//			Assert.assertEquals(actualresult1, expectedresult1);
-//			logger.info("update assertion succesfull");
+			WebElement success1 = driver.findElement(By.xpath(properties.getProperty("Success")));	
+			String actualresult1 = success1.getText();
+			String expectedresult1 = "Details Updated Successfully";
+			Assert.assertEquals(actualresult1, expectedresult1);
+			logger.info("update assertion succesfull");
 
-			
-			//search asset
+	    }
+			//search asset and view asset and download asset
+			@Test(enabled = false)
+		    public void viewasset() throws InterruptedException
+		    {
+			Thread.sleep(5000);
+			driver.findElement(By.xpath(properties.getProperty("Content_leftmenu"))).click(); //click on left side content menu
+			Thread.sleep(5000);
+			driver.findElement(By.xpath(properties.getProperty("ManageMyAssets"))).click();		
 			Thread.sleep(3000);
 			driver.findElement(By.xpath(properties.getProperty("Searchbar"))).sendKeys(properties.getProperty("Name_text1"));
 			Thread.sleep(3000);
 			driver.findElement(By.xpath(properties.getProperty("Searchclick"))).click();
-			
-			//clicking on preview icon
 			Thread.sleep(3000);
-
-			driver.findElement(By.xpath(properties.getProperty("viewicon_click"))).click();
+			driver.findElement(By.xpath(properties.getProperty("viewicon_click"))).click(); //click on preview icon
 			Thread.sleep(3000);
 			driver.findElement(By.xpath(properties.getProperty("closebutton_click"))).click();
-			logger.info("Assetfile previewed succesfully");
-			
+			logger.info("Assetfile previewed succesfully");			
 			//download asset
 			Thread.sleep(3000);
-
-			driver.findElement(By.xpath(properties.getProperty("download_click"))).click();
+			driver.findElement(By.xpath(properties.getProperty("download_click"))).click(); //click on download icon
 			Thread.sleep(3000);
 			logger.info("Assetfile downloaded succesfully");
+		    }
 			
-			//publish asset to partner
+			
+			//search asset and publish asset to partner
+			@Test(enabled = false)
+		    public void publishasset() throws InterruptedException
+		    {
+			Thread.sleep(5000);
+			driver.findElement(By.xpath(properties.getProperty("Content_leftmenu"))).click(); //click on left side content menu
+			Thread.sleep(5000);
+			driver.findElement(By.xpath(properties.getProperty("ManageMyAssets"))).click();		
+			Thread.sleep(3000);
+			driver.findElement(By.xpath(properties.getProperty("Searchbar"))).sendKeys("png");
+			
 			driver.findElement(By.xpath(properties.getProperty("publish_click"))).click(); //click on publish link
 			driver.findElement(By.xpath(properties.getProperty("arrow_click"))).click();
 			driver.findElement(By.xpath(properties.getProperty("partner_select"))).click();
@@ -169,34 +157,63 @@ public class ManageAssetPNG {
 			String actualresult2 = published.getText();
 			String expectedresult2 = "Published Successfully";				
 			Assert.assertEquals(actualresult2, expectedresult2);
-			logger.info("Assertion for published succesfull");			
+			logger.info("Assertion for published succesfull");	
+			
 			//Assertion 2nd way for published asset
-			String publish = driver.findElement(By.xpath(properties.getProperty("published_page"))).getText(); // success message
-			System.out.println(publish);			
-			String expectedtitle ="Published Successfully";
+//			String publish = driver.findElement(By.xpath(properties.getProperty("published_page"))).getText(); // success message
+//			System.out.println(publish);			
+//			String expectedtitle ="Published Successfully";
+//			
+//			if(expectedtitle.equals(publish))
+//			{
+//				System.out.println("Asset Published to partner succesfully");
+//			}
+//			else {
+//				System.out.println("Asset is not published");
+//			}
 			
-			if(expectedtitle.equals(publish))
-			{
-				System.out.println("Asset Published to partner succesfully");
-			}
-			else {
-				System.out.println("Asset is not published");
-			}
+		    }
 			
 			
-			//Delete asset
+			
+//			search asset and Delete asset
+			@Test(enabled = false)
+		    public void deleteasset() throws InterruptedException
+		    {
+			Thread.sleep(5000);
+			driver.findElement(By.xpath(properties.getProperty("Content_leftmenu"))).click(); //click on left side content menu
+			Thread.sleep(5000);
+			driver.findElement(By.xpath(properties.getProperty("ManageMyAssets"))).click();		
+			Thread.sleep(3000);
+			driver.findElement(By.xpath(properties.getProperty("Searchbar"))).sendKeys("png");	
 			driver.findElement(By.xpath(properties.getProperty("Searchbar"))).sendKeys(properties.getProperty("Name_text1"));
 			Thread.sleep(3000);
 			driver.findElement(By.xpath(properties.getProperty("Searchclick"))).click();
 			driver.findElement(By.xpath(properties.getProperty("deleteicon_click"))).click();
 			driver.findElement(By.xpath(properties.getProperty("yes_on_deletepopup"))).click();
 			logger.info("Assetfile deleted succesfully");
-
 			
+		    }
 			
-
-	
 }
+			
+			//Manage asset - video (MP4) file
+			//search asset
+//			Thread.sleep(3000);
+//			driver.findElement(By.xpath(properties.getProperty("Searchbar"))).sendKeys(properties.getProperty("Name_text2"));
+//			Thread.sleep(3000);
+//			driver.findElement(By.xpath(properties.getProperty("Searchclick"))).click();
+			
+			//click on create compaign
+//			Thread.sleep(3000);
+//			driver.findElement(By.xpath(properties.getProperty("createcompaign_click"))).click();	
+//			Thread.sleep(3000);
+	        // need to ask compaign should be created or not 
+			
+			
+
+	
+
 
 
 		
@@ -212,9 +229,9 @@ public class ManageAssetPNG {
 	
 		
 		
-				
 		
 		
-	}
+		
+	
 	
 
