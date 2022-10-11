@@ -23,14 +23,14 @@ public class DesignPDF {
 		Thread.sleep(3000);
 		driver.findElement(By.xpath(properties.getProperty("Content_leftmenu"))).click(); //click on content left menu
 		Thread.sleep(5000);
-		driver.findElement(By.xpath(properties.getProperty("DesignUpload"))).click();
+		driver.findElement(By.xpath(properties.getProperty("DesignUpload"))).click(); //click on design/upload
 		Thread.sleep(5000);
 
-		driver.findElement(By.xpath(properties.getProperty("DesignPDF"))).click();
+		driver.findElement(By.xpath(properties.getProperty("DesignPDF"))).click(); //click on design under design pdf grid
 		Thread.sleep(10000);
 		driver.switchTo().frame(0);
 		Thread.sleep(10000);
-		driver.findElement(By.xpath(properties.getProperty("Savebutton"))).click();
+		driver.findElement(By.xpath(properties.getProperty("Savebutton"))).click(); // click on  save button
 		Thread.sleep(10000);
 		driver.switchTo().defaultContent();
 
@@ -52,9 +52,9 @@ public class DesignPDF {
 		String expectedresult = "Template Added Successfully";
 
 		Assert.assertEquals(actualresult, expectedresult);
-		logger.info("Assertion for uploadsucess message");
+		logger.info("Assertion succesfull for success message");
 		Thread.sleep(5000);
-		driver.findElement(By.xpath(properties.getProperty("Refresh"))).click();
+		driver.findElement(By.xpath(properties.getProperty("Refresh"))).click(); //click on refresh icon
 
 
 

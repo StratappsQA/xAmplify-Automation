@@ -18,7 +18,9 @@ public class UploadAssetVideo {
 			.readPropertyFile("D:\\git\\xAmplify-Automation\\src\\main\\resources\\AssetLibrary.properties");
 	final Logger logger = LogManager.getLogger(UploadAssetFile.class);
 	
-			@Test (priority = 0)
+	
+			//uploading MP4 file -- succussful
+			@Test (enabled = false)
 	        public void uploadMP4() throws InterruptedException, IOException {	
 			Thread.sleep(3000);
 			driver.findElement(By.xpath(properties.getProperty("Content_leftmenu"))).click(); //click on left side content menu
@@ -49,30 +51,31 @@ public class UploadAssetVideo {
 			driver.findElement(By.xpath(properties.getProperty("Submit"))).click();
 			Thread.sleep(15000);
 			logger.info("Asset mp4 uploaded succesfully");
-//			driver.findElement(By.xpath(properties.getProperty("Refresh"))).click();			
-//			Thread.sleep(5000);
-//			WebElement success = driver.findElement(By.xpath(properties.getProperty("Success")));	
-//			String actualresult = success.getText();
-//			String expectedresult = "Uploaded Successfully";
-//			Assert.assertEquals(actualresult, expectedresult);
-//			logger.info("Assertion succesfull for success message ");
+			driver.findElement(By.xpath(properties.getProperty("Refresh"))).click();			
+			Thread.sleep(5000);
+			
+			WebElement success = driver.findElement(By.xpath(properties.getProperty("Success")));	
+			String actualresult = success.getText();
+			String expectedresult = "Uploaded Successfully";
+			Assert.assertEquals(actualresult, expectedresult);
+			logger.info("Assertion succesfull for success message ");
 	}
 	
 			
 			
 			
-			
-			@Test (priority = 1)
+			//uploading AVI file -- succesfull
+			@Test (enabled = false)
 			public void uploadaAVI() throws InterruptedException, IOException {	
 			Thread.sleep(3000);
-			driver.findElement(By.xpath(properties.getProperty("Content_leftmenu"))).click(); //click on content left menu
+			driver.findElement(By.xpath(properties.getProperty("Content_leftmenu"))).click(); //click on left side content menu
 			Thread.sleep(5000);
-			driver.findElement(By.xpath(properties.getProperty("DesignUpload"))).click();
+			driver.findElement(By.xpath(properties.getProperty("DesignUpload"))).click(); //click on design/upload
 			Thread.sleep(3000);
-			driver.findElement(By.xpath(properties.getProperty("Upload"))).click();
+			driver.findElement(By.xpath(properties.getProperty("Upload"))).click(); // click on upload
 			Thread.sleep(5000);
-			driver.findElement(By.xpath(properties.getProperty("BrowseButton"))).click();
-			Thread.sleep(5000);
+			driver.findElement(By.xpath(properties.getProperty("BrowseButton"))).click(); //click on Browse
+		    Thread.sleep(5000);
 			Runtime.getRuntime().exec("D:\\Selenium\\asset_AVI.exe");
 			logger.info("asset file uploaded");
 			Thread.sleep(5000);
@@ -93,31 +96,26 @@ public class UploadAssetVideo {
 			driver.findElement(By.xpath(properties.getProperty("Submit"))).click();
 			Thread.sleep(10000);
 			logger.info("Asset AVI uploaded succesfully");
-//			Thread.sleep(10000);
-//
-//			WebElement success = driver.findElement(By.xpath(properties.getProperty("Success")));	
-//			String actualresult = success.getText();
-//			String expectedresult = "Uploaded Successfully";
-//			Thread.sleep(10000);
-//
-//			Assert.assertEquals(actualresult, expectedresult);
-//			logger.info("Assertion for uploadsucess message");
-//			Thread.sleep(10000);
-//			driver.findElement(By.xpath(properties.getProperty("Refresh"))).click();
+			Thread.sleep(10000);
+			WebElement success = driver.findElement(By.xpath(properties.getProperty("Success")));	
+			String actualresult = success.getText();
+			String expectedresult = "Uploaded Successfully";
+			Assert.assertEquals(actualresult, expectedresult);
+			logger.info("Assertion for uploadsucess message");
+			driver.findElement(By.xpath(properties.getProperty("Refresh"))).click();
 	}
 	
-			
-	@Test (priority = 2)
+		//upload MOV file	-- successful
+	@Test (enabled = false)
 	 public void uploadMOV() throws InterruptedException, IOException {	
+			driver.findElement(By.xpath(properties.getProperty("Content_leftmenu"))).click(); //click on left side content menu
+			Thread.sleep(5000);
+			driver.findElement(By.xpath(properties.getProperty("DesignUpload"))).click(); //click on design/upload
 			Thread.sleep(3000);
-			driver.findElement(By.xpath(properties.getProperty("Content_leftmenu"))).click(); //click on content left menu
+			driver.findElement(By.xpath(properties.getProperty("Upload"))).click(); // click on upload
 			Thread.sleep(5000);
-			driver.findElement(By.xpath(properties.getProperty("DesignUpload"))).click();
-			Thread.sleep(3000);
-			driver.findElement(By.xpath(properties.getProperty("Upload"))).click();
-			Thread.sleep(5000);
-			driver.findElement(By.xpath(properties.getProperty("BrowseButton"))).click();
-			Thread.sleep(5000);
+			driver.findElement(By.xpath(properties.getProperty("BrowseButton"))).click(); //click on Browse
+	Thread.sleep(5000);
 			Runtime.getRuntime().exec("D:\\Selenium\\asset_MOV.exe");
 			logger.info("asset file uploaded");
 			Thread.sleep(5000);
@@ -138,29 +136,27 @@ public class UploadAssetVideo {
 			driver.findElement(By.xpath(properties.getProperty("Submit"))).click();
 			Thread.sleep(10000);
 			logger.info("Asset MOV uploaded succesfully");
-//			Thread.sleep(10000);
-//
-//			WebElement success = driver.findElement(By.xpath(properties.getProperty("Success")));	
-//			String actualresult = success.getText();
-//			String expectedresult = "Uploaded Successfully";
-//			Thread.sleep(10000);
-//
-//			Assert.assertEquals(actualresult, expectedresult);
-//			logger.info("Assertion for uploadsucess message");
-//			Thread.sleep(10000);
-//			driver.findElement(By.xpath(properties.getProperty("Refresh"))).click();
+			Thread.sleep(10000);
+
+			WebElement success = driver.findElement(By.xpath(properties.getProperty("Success")));	
+			String actualresult = success.getText();
+			String expectedresult = "Uploaded Successfully";
+
+			Assert.assertEquals(actualresult, expectedresult);
+			logger.info("Assertion succesfull for uploadsucess message");
+			driver.findElement(By.xpath(properties.getProperty("Refresh"))).click();
 	}			
-			
-	@Test (priority = 3)
+		
+	//upload MKV file -- successfull
+	@Test 
 	 public void uploadMKV() throws InterruptedException, IOException {	
-			Thread.sleep(3000);
-			driver.findElement(By.xpath(properties.getProperty("Content_leftmenu"))).click(); //click on content left menu
+			driver.findElement(By.xpath(properties.getProperty("Content_leftmenu"))).click(); //click on left side content menu
 			Thread.sleep(5000);
-			driver.findElement(By.xpath(properties.getProperty("DesignUpload"))).click();
+			driver.findElement(By.xpath(properties.getProperty("DesignUpload"))).click(); //click on design/upload
 			Thread.sleep(3000);
-			driver.findElement(By.xpath(properties.getProperty("Upload"))).click();
+			driver.findElement(By.xpath(properties.getProperty("Upload"))).click(); // click on upload
 			Thread.sleep(5000);
-			driver.findElement(By.xpath(properties.getProperty("BrowseButton"))).click();
+			driver.findElement(By.xpath(properties.getProperty("BrowseButton"))).click(); //click on Browse
 			Thread.sleep(5000);
 			Runtime.getRuntime().exec("D:\\Selenium\\asset_MKV.exe");
 			logger.info("asset file uploaded");
@@ -182,16 +178,14 @@ public class UploadAssetVideo {
 			driver.findElement(By.xpath(properties.getProperty("Submit"))).click();
 			Thread.sleep(10000);
 			logger.info("Asset MKV uploaded succesfully");
-//			Thread.sleep(10000);
-//
-//			WebElement success = driver.findElement(By.xpath(properties.getProperty("Success")));	
-//			String actualresult = success.getText();
-//			String expectedresult = "Uploaded Successfully";
-//			Thread.sleep(10000);
-//
-//			Assert.assertEquals(actualresult, expectedresult);
-//			logger.info("Assertion for uploadsucess message");
-//			Thread.sleep(10000);
-//			driver.findElement(By.xpath(properties.getProperty("Refresh"))).click();
+			Thread.sleep(10000);
+			WebElement success = driver.findElement(By.xpath(properties.getProperty("Success")));	
+			String actualresult = success.getText();
+			String expectedresult = "Uploaded Successfully";
+			Thread.sleep(10000);
+			Assert.assertEquals(actualresult, expectedresult);
+			logger.info("Assertion for uploadsucess message");
+			Thread.sleep(10000);
+			driver.findElement(By.xpath(properties.getProperty("Refresh"))).click();
 	}			
 }
