@@ -9,11 +9,11 @@
 <!--      <class name="com.xamplify.automation.LaunchVideoCampaign"/> 
  -->   
  
-  <!--><class name="com.xamplify.automation.LaunchEventCampaign"/> -->
-<!--    <class name="com.xamplify.automation.SaveEventCampaign"/> -->
+<!--  <class name="com.xamplify.automation.LaunchEventCampaign"/> 
+  <class name="com.xamplify.automation.SaveEventCampaign"/> -->
     
-<!--     <class name="com.xamplify.automation.ScheduleEventCampaign"/> -->
-   <class name="com.xamplify.automation.EventToCampagin"/>
+ <!--    <class name="com.xamplify.automation.ScheduleEventCampaign"/> -->
+  <class name="com.xamplify.automation.EventToCampagin"/> 
    
     </classes>
   </test> <!-- Test -->
