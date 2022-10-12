@@ -17,11 +17,9 @@
 <!--      <class name="com.xamplify.automation.LaunchVideoCampaign"/> 
  -->   
  
-  <!--><class name="com.xamplify.automation.LaunchEventCampaign"/> -->
-<!--    <class name="com.xamplify.automation.SaveEventCampaign"/> -->
+<!--  <class name="com.xamplify.automation.LaunchEventCampaign"/> 
+  <class name="com.xamplify.automation.SaveEventCampaign"/> -->
     
-<!--     <class name="com.xamplify.automation.ScheduleEventCampaign"/> -->
-   
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

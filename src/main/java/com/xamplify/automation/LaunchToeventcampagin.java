@@ -9,28 +9,28 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.Test;
 
-public class LaunchEventCampaign {
+public class LaunchToeventcampagin {
 
 	WebDriver driver = Instance.getInstance();
 
 	Properties properties = PropertiesFile.readPropertyFile(
 			"D:\\git\\xAmplify-Automation\\src\\main\\resources\\EventCampaign.properties");
 
-	final Logger logger = LogManager.getLogger(LaunchEventCampaign.class);
+	final Logger logger = LogManager.getLogger(LaunchToeventcampagin.class);
 
 	@Test
-	public void event_launch() throws InterruptedException, SQLException
+	public void event_to_launch() throws InterruptedException, SQLException
 
 	{
 		Thread.sleep(4000);
-		EventCampaign eve1 = new EventCampaign();
-		eve1.event_campaign();
+		EventToCampagin eve_to = new EventToCampagin();
+		eve_to.event_Tocampaign();
 		Thread.sleep(4000);
 
-		/*
-		 * AutoResponsesEventcampaign ar_eve1=new AutoResponsesEventcampaign(); //method
-		 * call for autoresponses ar_eve1.autoResponsesevent();
-		 */
+		
+		  AutoResponsesEventcampaign ar_eve1=new AutoResponsesEventcampaign(); //method call for autoresponses 
+		  ar_eve1.autoResponsesevent();
+		 
 		  Thread.sleep(4000);
 		
 		driver.findElement(By.xpath(properties.getProperty("eve_now"))).click(); // click NOW
@@ -55,7 +55,9 @@ public class LaunchEventCampaign {
 
 		logger.info("Event Campaign Launched Successfully");
 		driver.navigate().refresh();
-		Thread.sleep(6000);
+		Thread.sleep(8000);
 
 	}
+	
+	
 }

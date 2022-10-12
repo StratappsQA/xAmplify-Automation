@@ -9,25 +9,27 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.Test;
 
-public class SaveEventCampaign {
+public class SaveToeventcampaign {
 
 	WebDriver driver = Instance.getInstance();
 	Properties properties = PropertiesFile.readPropertyFile(
 			"D:\\git\\xAmplify-Automation\\src\\main\\resources\\EventCampaign.properties");
 
-	final Logger logger = LogManager.getLogger(SaveEventCampaign.class);
+	final Logger logger = LogManager.getLogger(SaveToeventcampaign.class);
+	
+	
 
 	@Test
-	public void event_save() throws InterruptedException, SQLException {
+	public void event_to_save() throws InterruptedException, SQLException {
 		Thread.sleep(4000);
 
-		EventCampaign eve12 = new EventCampaign();
-		eve12.event_campaign();
+		EventToCampagin eve12 = new EventToCampagin();
+		eve12.event_Tocampaign();
 		Thread.sleep(5000);
 
 		/*
-		 * AutoResponsesEventcampaign ar_eve12 = new AutoResponsesEventcampaign();
-		 * //method call for autoresponses ar_eve12.autoResponsesevent();
+		 * AutoResponsesEventcampaign ar_eve12 = new AutoResponsesEventcampaign(); //method call for autoresponses
+		 *  ar_eve12.autoResponsesevent();
 		 */
 
 		Thread.sleep(3000);
@@ -52,4 +54,6 @@ public class SaveEventCampaign {
 
 	}
 
+	
+	
 }
