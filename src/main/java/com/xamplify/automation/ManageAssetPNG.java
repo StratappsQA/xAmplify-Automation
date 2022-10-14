@@ -19,7 +19,7 @@ public class ManageAssetPNG {
 	WebDriver driver = Instance.getInstance();
 	Properties properties = PropertiesFile
 			.readPropertyFile("D:\\git\\xAmplify-Automation\\src\\main\\resources\\AssetLibrary.properties");
-	final Logger logger = LogManager.getLogger(UploadAssetFile.class);
+	final Logger logger = LogManager.getLogger(ManageAssetPNG.class);
 	
 	
 		//sorting order for assets - successfull

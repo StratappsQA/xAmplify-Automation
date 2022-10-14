@@ -16,11 +16,11 @@ public class UploadAssetVideo {
 	WebDriver driver = Instance.getInstance();
 	Properties properties = PropertiesFile
 			.readPropertyFile("D:\\git\\xAmplify-Automation\\src\\main\\resources\\AssetLibrary.properties");
-	final Logger logger = LogManager.getLogger(UploadAssetFile.class);
+	final Logger logger = LogManager.getLogger(UploadAssetVideo.class);
 	
 	
 			//uploading MP4 file -- succussful
-			@Test (enabled = false)
+			@Test (priority=1)
 	        public void uploadMP4() throws InterruptedException, IOException {	
 			Thread.sleep(3000);
 			driver.findElement(By.xpath(properties.getProperty("Content_leftmenu"))).click(); //click on left side content menu
@@ -65,7 +65,7 @@ public class UploadAssetVideo {
 			
 			
 			//uploading AVI file -- succesfull
-			@Test (enabled = false)
+			@Test (priority=2)
 			public void uploadaAVI() throws InterruptedException, IOException {	
 			Thread.sleep(3000);
 			driver.findElement(By.xpath(properties.getProperty("Content_leftmenu"))).click(); //click on left side content menu
@@ -106,7 +106,7 @@ public class UploadAssetVideo {
 	}
 	
 		//upload MOV file	-- successful
-	@Test (enabled = false)
+	@Test (priority=3)
 	 public void uploadMOV() throws InterruptedException, IOException {	
 			driver.findElement(By.xpath(properties.getProperty("Content_leftmenu"))).click(); //click on left side content menu
 			Thread.sleep(5000);
@@ -148,7 +148,7 @@ public class UploadAssetVideo {
 	}			
 		
 	//upload MKV file -- successfull
-	@Test 
+	@Test (priority=4)
 	 public void uploadMKV() throws InterruptedException, IOException {	
 			driver.findElement(By.xpath(properties.getProperty("Content_leftmenu"))).click(); //click on left side content menu
 			Thread.sleep(5000);
@@ -166,7 +166,7 @@ public class UploadAssetVideo {
 			Thread.sleep(5000);
 			Runtime.getRuntime().exec("D:\\Selenium\\Thumbnail.exe");
 			Thread.sleep(5000);
-			driver.findElement(By.xpath(properties.getProperty("Savechanges"))).click();
+			driver.findElement(By.xpath(properties.getProperty("Savechanges"))).click(); //click on save changes
 			Thread.sleep(5000);
 			driver.findElement(By.xpath(properties.getProperty("Name"))).sendKeys(properties.getProperty("mkv_name"));
 			Thread.sleep(5000);

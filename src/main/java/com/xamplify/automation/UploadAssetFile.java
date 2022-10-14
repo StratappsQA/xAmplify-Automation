@@ -300,7 +300,7 @@ public class UploadAssetFile {
 						Thread.sleep(5000);
 						driver.switchTo().frame(0);
 						driver.findElement(By.xpath(properties.getProperty("Descriptionclick"))).click();
-						driver.findElement(By.xpath(properties.getProperty("Descriptionclick"))).sendKeys("Asset_Description");
+						driver.findElement(By.xpath(properties.getProperty("Descriptionclick"))).sendKeys("Asset_Description"); //enter description
 						Thread.sleep(5000);
 						driver.switchTo().defaultContent();
 						driver.findElement(By.xpath(properties.getProperty("Submit"))).click();

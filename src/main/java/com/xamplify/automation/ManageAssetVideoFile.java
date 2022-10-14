@@ -6,6 +6,7 @@ import java.util.Properties;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
@@ -18,7 +19,7 @@ public class ManageAssetVideoFile {
 	WebDriver driver = Instance.getInstance();
 	Properties properties = PropertiesFile
 			.readPropertyFile("D:\\git\\xAmplify-Automation\\src\\main\\resources\\AssetLibrary.properties");
-	final Logger logger = LogManager.getLogger(UploadAssetFile.class);
+	final Logger logger = LogManager.getLogger(ManageAssetVideoFile.class);
 	
 	
 	//sorting order for assets  -- successfull
@@ -81,6 +82,26 @@ public class ManageAssetVideoFile {
 
     }
  	
+ 	//search asset and view asset  -- succesfull
+ 		@Test (enabled = false)
+ 	    public void viewassetvideo() throws InterruptedException 	
+ 		{
+ 		Thread.sleep(5000);
+ 		driver.findElement(By.xpath(properties.getProperty("Content_leftmenu"))).click(); //click on left side content menu
+ 		Thread.sleep(5000);
+ 		driver.findElement(By.xpath(properties.getProperty("ManageMyAssets"))).click();		
+ 		Thread.sleep(3000);
+ 		driver.findElement(By.xpath(properties.getProperty("Searchbar"))).sendKeys("mp4");
+ 		Thread.sleep(3000);
+ 		driver.findElement(By.xpath(properties.getProperty("Searchclick"))).click();
+ 		Thread.sleep(3000);
+ 		driver.findElement(By.xpath(properties.getProperty("viewicon_click"))).click(); //click on preview icon
+ 		Thread.sleep(3000);
+ 		logger.info("Assetvideofile viewed succesfully");
+
+ 		 
+ 		 
+ 		}
  	
 	//search assset and edit video - need to check
  	@Test
@@ -100,16 +121,14 @@ public class ManageAssetVideoFile {
 		driver.findElement(By.xpath(properties.getProperty("editicon_click"))).click();
 		Thread.sleep(5000);
 		driver.findElement(By.xpath(properties.getProperty("calltoaction_click"))).click();
-		//driver.switchTo().frame(0);
-		driver.findElement(By.xpath(properties.getProperty("enable_on"))).click();
-		Thread.sleep(5000);
-		driver.findElement(By.xpath(properties.getProperty("start_video"))).click();
 		Thread.sleep(5000);
 
-		driver.findElement(By.xpath(properties.getProperty("fname&lname"))).click();
+		driver.findElement(By.xpath(properties.getProperty("enable_on"))).click(); //click on enable on
+		Thread.sleep(5000);
+		driver.findElement(By.xpath(properties.getProperty("fname&lname"))).click(); //uncheck first and last name 
 		Thread.sleep(5000);
 
-		driver.findElement(By.xpath(properties.getProperty("skip"))).click();
+		driver.findElement(By.xpath(properties.getProperty("skip"))).click(); //uncheck skip option
 		Thread.sleep(5000);
 
 		driver.findElement(By.xpath(properties.getProperty("uppertext"))).sendKeys("upper_text");
@@ -117,37 +136,24 @@ public class ManageAssetVideoFile {
 
 		driver.findElement(By.xpath(properties.getProperty("lowertext"))).sendKeys("lower_text");
 		Thread.sleep(5000);
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("window.scrollBy(0,-700)");
+		Thread.sleep(5000);
+
 		driver.findElement(By.xpath(properties.getProperty("updatebutton"))).click();
+		Thread.sleep(5000);
+
 		logger.info("Assetvideofile updated succesfully");
 		WebElement success1 = driver.findElement(By.xpath(properties.getProperty("Success")));	
 		String actualresult1 = success1.getText();
 		String expectedresult1 = "Details Updated Successfully";
 		Assert.assertEquals(actualresult1, expectedresult1);
-		logger.info("update assertion succesfull");
+		logger.info("update assertion succesfull for video");
 
     }
  	
  	
- 	//search asset and view asset  -- succesfull
-	@Test (enabled = false)
-    public void viewassetvideo() throws InterruptedException 	
-	{
-	Thread.sleep(5000);
-	driver.findElement(By.xpath(properties.getProperty("Content_leftmenu"))).click(); //click on left side content menu
-	Thread.sleep(5000);
-	driver.findElement(By.xpath(properties.getProperty("ManageMyAssets"))).click();		
-	Thread.sleep(3000);
-	driver.findElement(By.xpath(properties.getProperty("Searchbar"))).sendKeys("mp4");
-	Thread.sleep(3000);
-	driver.findElement(By.xpath(properties.getProperty("Searchclick"))).click();
-	Thread.sleep(3000);
-	driver.findElement(By.xpath(properties.getProperty("viewicon_click"))).click(); //click on preview icon
-	Thread.sleep(3000);
-	logger.info("Assetvideofile viewed succesfully");
-
-	 
-	 
-	}
+ 	
 	
 	
 	//search asset and download asset -- succesfull
