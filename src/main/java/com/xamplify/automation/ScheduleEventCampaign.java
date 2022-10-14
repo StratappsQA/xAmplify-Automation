@@ -74,7 +74,7 @@ public class ScheduleEventCampaign {
 
 		String s = driver.findElement(By.xpath(properties.getProperty("eve_sch_response_msg"))).getText(); // response
 		
-		String expectedtitle = "Campaign Scheduled successfully";
+		String expectedtitle = "Campaign scheduled successfully";
 		Thread.sleep(5000);
 		if (expectedtitle.equals(s)) {
 			System.out.println(" Event Campaign Scheduled successfully");
