@@ -21,7 +21,7 @@ public class LaunchRedistributeVideoCampaign {
 	Properties properties = PropertiesFile.readPropertyFile(
 			"D:\\Workspace2\\xAmplify-Automation\\src\\main\\resources\\RedistributionCampaign.properties");// properties
 																											// file
-	final Logger logger = LogManager.getLogger(RedistributeVideoCampaign.class);
+	final Logger logger = LogManager.getLogger(LaunchRedistributeVideoCampaign.class);
 
 
 	@Test
@@ -181,7 +181,7 @@ public class LaunchRedistributeVideoCampaign {
 		Thread.sleep(3000);
 		
 		driver.findElement(By.xpath(properties.getProperty("mvc_oppo_mleads_rdeal_calendar"))).click();  //select calendar
-		Thread.sleep(5000); 
+		Thread.sleep(7000); 
 		
 	
 
