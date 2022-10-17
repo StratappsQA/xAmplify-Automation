@@ -183,13 +183,13 @@ public class ManageSurveyCampaign {
 		Thread.sleep(5000);
 
 		driver.findElement(By.xpath(properties.getProperty("preview_close"))).click();
-		Thread.sleep(5000);
-		driver.findElement(By.xpath(properties.getProperty("survey_tab"))).click(); // Click on Survey Tab
-		Thread.sleep(3000);
-		
-		JavascriptExecutor jsp1 = (JavascriptExecutor) driver;
-		jsp1.executeScript("window.scrollTo(document.body.scrollHeight,200)");
-		Thread.sleep(5000);
+		Thread.sleep(8000);
+//		driver.findElement(By.xpath(properties.getProperty("survey_tab"))).click(); // Click on Survey Tab
+//		Thread.sleep(7000);
+//		
+//		JavascriptExecutor jsp1 = (JavascriptExecutor) driver;
+//		jsp1.executeScript("window.scrollTo(document.body.scrollHeight,200)");
+//		Thread.sleep(5000);
 	
 		driver.findElement(By.xpath(properties.getProperty("gear_icon_t"))).click(); // Click on gear icon
 		Thread.sleep(3000);
@@ -695,11 +695,26 @@ public class ManageSurveyCampaign {
 																					// redistributed campaign icon
 		Thread.sleep(3000);
 		logger.info("Clicked on Number of redistributed campaign icon");
-		driver.findElement(By.xpath(properties.getProperty("red_camp_analytics"))).click();
-		Thread.sleep(3000);
+		
+		WebElement rdc = driver.findElement(By.xpath(properties.getProperty("red_camp_analytics")));
+		if(rdc.isEnabled())
+		{
+			rdc.click();
+			Thread.sleep(3000);
+		}
+		
+		else
+		{
+			System.out.println("redistribution campaign icon is disabled");
+			Thread.sleep(3000);
+		}
+		
 		driver.findElement(By.xpath(properties.getProperty("mcamp2_click"))).click();
 		Thread.sleep(3000);
 		logger.info("Manage Survey Campaign completed");
+		
+		
+		
 
 	}
 
