@@ -22,16 +22,16 @@ public class ManageTracks {
 	
 	//clicking on preview&dit and performing actions -- successfull
 	@Test (priority=0)
-	public void preview_edit() throws InterruptedException, IOException {	
+	public void preview_edit_track() throws InterruptedException, IOException {	
 		Thread.sleep(3000);
 		driver.findElement(By.xpath(properties.getProperty("Content_leftmenu1"))).click(); //click on left side content menu
 		Thread.sleep(5000);
-		driver.findElement(By.xpath(properties.getProperty("manage_tracks"))).click(); //click on add tracks
+		driver.findElement(By.xpath(properties.getProperty("manage_tracks"))).click(); //click on manage tracks
 		Thread.sleep(5000);
 		driver.findElement(By.xpath(properties.getProperty("search_track"))).sendKeys("Track"); //search with track
 		Thread.sleep(5000);
 		driver.findElement(By.xpath(properties.getProperty("click_searchh"))).click(); //click on search icon	
-		Thread.sleep(5000);
+		Thread.sleep(8000);
 		driver.findElement(By.xpath(properties.getProperty("preview&edit_click"))).click(); //click on preview&edit
 		Thread.sleep(5000);
 		//updating title
@@ -51,12 +51,11 @@ public class ManageTracks {
 		driver.findElement(By.xpath(properties.getProperty("next_button"))).click();
 		Thread.sleep(5000);
 		logger.info("track description updated");	
-//		selecting second asset
-//		Thread.sleep(10000);
-//		mp4 selection is not working
-//		driver.findElement(By.xpath(properties.getProperty("txt"))).sendKeys("mp4"); //search with mp4 in search box
-//		driver.findElement(By.xpath(properties.getProperty("Search_click"))).click();	
-//		Thread.sleep(3000);
+		Thread.sleep(10000);
+		driver.findElement(By.xpath(properties.getProperty("search_txt"))).click(); //search with mp4 in search box
+		driver.findElement(By.xpath(properties.getProperty("search_txt"))).sendKeys("mp4"); //search with mp4 in search box
+		driver.findElement(By.xpath(properties.getProperty("Search_click"))).click();	
+		Thread.sleep(5000);
 		driver.findElement(By.xpath(properties.getProperty("second_asset_selection"))).click(); //selecting second asset
 		Thread.sleep(5000);
 		logger.info("second asset selected");   
@@ -75,9 +74,69 @@ public class ManageTracks {
 		Thread.sleep(5000);	
 	}
 	
+	//clicking on view -- succesfull
+	@Test (priority=1)
+	public void view_track() throws InterruptedException, IOException {	
+		Thread.sleep(3000);
+		driver.findElement(By.xpath(properties.getProperty("Content_leftmenu1"))).click(); //click on left side content menu
+		Thread.sleep(5000);
+		driver.findElement(By.xpath(properties.getProperty("manage_tracks"))).click(); //click on add tracks
+		Thread.sleep(5000);
+		driver.findElement(By.xpath(properties.getProperty("search_track"))).sendKeys("Track"); //search with track
+		Thread.sleep(5000);
+		driver.findElement(By.xpath(properties.getProperty("click_searchh"))).click(); //click on search icon	
+		Thread.sleep(5000);
+		driver.findElement(By.xpath(properties.getProperty("view_click"))).click(); //click on view icon
+		Thread.sleep(5000);
+		
+		//add track to playbook
+		driver.findElement(By.xpath(properties.getProperty("add_to_playbooks"))).click(); //click on add to playbooks button
+		Thread.sleep(5000);	
+		logger.info("track added to playbooks succesfully");			
+		WebElement success = driver.findElement(By.xpath(properties.getProperty("playbook_success_grid")));	
+		String actualresult = success.getText();
+		String expectedresult = "Saved to play books successfully.";
+		Assert.assertEquals(actualresult, expectedresult);
+		logger.info("Assertion succesfull for add to playbook ");
+		
+		//asset view
+		driver.findElement(By.xpath(properties.getProperty("asset_viewicon_click"))).click(); //click on view icon of asset
+		Thread.sleep(5000);
+		driver.findElement(By.xpath(properties.getProperty("asset_view_button"))).click(); //click on view icon of asset
+		Thread.sleep(5000);
+		driver.findElement(By.xpath(properties.getProperty("asset_crossicon"))).click(); //click on view button of asset
+		Thread.sleep(5000);
+		logger.info("asset viewed succesfully");			
+		
+		//download asset
+		driver.findElement(By.xpath(properties.getProperty("asset_download_button"))).click(); //click on download button of asset
+		Thread.sleep(5000);
+		logger.info("asset downloaded succesfully");	
+		
+					
+	}
+	
+	//clicking on analytics - succesfull
+	@Test (priority=2)
+	public void analytics_track() throws InterruptedException, IOException {	
+		Thread.sleep(3000);
+		driver.findElement(By.xpath(properties.getProperty("Content_leftmenu1"))).click(); //click on left side content menu
+		Thread.sleep(5000);
+		driver.findElement(By.xpath(properties.getProperty("manage_tracks"))).click(); //click on add tracks
+		Thread.sleep(5000);
+		driver.findElement(By.xpath(properties.getProperty("search_track"))).sendKeys("Track"); //search with track
+		Thread.sleep(5000);
+		driver.findElement(By.xpath(properties.getProperty("click_searchh"))).click(); //click on search icon	
+		Thread.sleep(5000);
+		driver.findElement(By.xpath(properties.getProperty("analytics_icon"))).click(); //click on view icon
+		Thread.sleep(5000);
+		logger.info("analytics page viewed successfully");															
+	}
+
+
 	//unpublishing published track - succesfull
-		@Test (priority=1)
-		public void unpublish() throws InterruptedException, IOException {	
+		@Test (priority=3)
+		public void unpublish_track() throws InterruptedException, IOException {	
 			Thread.sleep(3000);
 			driver.findElement(By.xpath(properties.getProperty("Content_leftmenu1"))).click(); //click on left side content menu
 			Thread.sleep(5000);
@@ -95,69 +154,12 @@ public class ManageTracks {
 		}
 
 
-		//clicking on view -- succesfull
-				@Test (priority=2)
-				public void view() throws InterruptedException, IOException {	
-					Thread.sleep(3000);
-					driver.findElement(By.xpath(properties.getProperty("Content_leftmenu1"))).click(); //click on left side content menu
-					Thread.sleep(5000);
-					driver.findElement(By.xpath(properties.getProperty("manage_tracks"))).click(); //click on add tracks
-					Thread.sleep(5000);
-					driver.findElement(By.xpath(properties.getProperty("search_track"))).sendKeys("Track"); //search with track
-					Thread.sleep(5000);
-					driver.findElement(By.xpath(properties.getProperty("click_searchh"))).click(); //click on search icon	
-					Thread.sleep(5000);
-					driver.findElement(By.xpath(properties.getProperty("view_click"))).click(); //click on view icon
-					Thread.sleep(5000);
-					
-					//add track to playbook
-					driver.findElement(By.xpath(properties.getProperty("add_to_playbooks"))).click(); //click on add to playbooks button
-					Thread.sleep(5000);	
-					logger.info("track added to playbooks succesfully");			
-					WebElement success = driver.findElement(By.xpath(properties.getProperty("playbook_success_grid")));	
-					String actualresult = success.getText();
-					String expectedresult = "Saved to play books successfully.";
-					Assert.assertEquals(actualresult, expectedresult);
-					logger.info("Assertion succesfull for add to playbook ");
-					
-					//asset view
-					driver.findElement(By.xpath(properties.getProperty("asset_viewicon_click"))).click(); //click on view icon of asset
-					Thread.sleep(5000);
-					driver.findElement(By.xpath(properties.getProperty("asset_view_button"))).click(); //click on view icon of asset
-					Thread.sleep(5000);
-					driver.findElement(By.xpath(properties.getProperty("asset_crossicon"))).click(); //click on view button of asset
-					Thread.sleep(5000);
-					logger.info("asset viewed succesfully");			
-					
-					//download asset
-					driver.findElement(By.xpath(properties.getProperty("asset_download_button"))).click(); //click on download button of asset
-					Thread.sleep(5000);
-					logger.info("asset downloaded succesfully");	
-					
-								
-				}
-
-				
-				//clicking on analytics - succesfull
-				@Test (priority=3)
-				public void analytics() throws InterruptedException, IOException {	
-					Thread.sleep(3000);
-					driver.findElement(By.xpath(properties.getProperty("Content_leftmenu1"))).click(); //click on left side content menu
-					Thread.sleep(5000);
-					driver.findElement(By.xpath(properties.getProperty("manage_tracks"))).click(); //click on add tracks
-					Thread.sleep(5000);
-					driver.findElement(By.xpath(properties.getProperty("search_track"))).sendKeys("Track"); //search with track
-					Thread.sleep(5000);
-					driver.findElement(By.xpath(properties.getProperty("click_searchh"))).click(); //click on search icon	
-					Thread.sleep(5000);
-					driver.findElement(By.xpath(properties.getProperty("analytics_icon"))).click(); //click on view icon
-					Thread.sleep(5000);
-					logger.info("analytics page viewed successfully");															
-				}
 		
+				
+				
 				//clicking on delete - succesfull
 				@Test (priority=4)
-				public void delete() throws InterruptedException, IOException {	
+				public void delete_track() throws InterruptedException, IOException {	
 					Thread.sleep(3000);
 					driver.findElement(By.xpath(properties.getProperty("Content_leftmenu1"))).click(); //click on left side content menu
 					Thread.sleep(5000);
