@@ -18,7 +18,7 @@ public class SaveRedistributeVideoCampaign {
 	@Test
 	public void savevideo_Redistributecampaign() throws InterruptedException {
 
-		Thread.sleep(4000);
+		Thread.sleep(7000);
 		RedistributeVideoCampaign save_rvsc = new RedistributeVideoCampaign();
 		save_rvsc.hoverRedistributecampaigns();
 		Thread.sleep(4000);
