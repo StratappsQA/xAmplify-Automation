@@ -25,7 +25,6 @@ public class DesignPDF {
 		Thread.sleep(5000);
 		driver.findElement(By.xpath(properties.getProperty("DesignUpload"))).click(); //click on design/upload
 		Thread.sleep(5000);
-
 		driver.findElement(By.xpath(properties.getProperty("DesignPDF"))).click(); //click on design under design pdf grid
 		Thread.sleep(10000);
 		driver.switchTo().frame(0);
@@ -33,26 +32,25 @@ public class DesignPDF {
 		driver.findElement(By.xpath(properties.getProperty("Savebutton"))).click(); // click on  save button
 		Thread.sleep(10000);
 		driver.switchTo().defaultContent();
-
-		driver.findElement(By.xpath(properties.getProperty("PDFName"))).sendKeys(properties.getProperty("PDFName_txt"));
+		driver.findElement(By.xpath(properties.getProperty("PDFName"))).sendKeys(properties.getProperty("PDFName_txt")+ "_" + System.currentTimeMillis());
 		Thread.sleep(10000);
-
 		driver.switchTo().frame(1);
 		driver.findElement(By.xpath(properties.getProperty("PDFDescription"))).click();
-		driver.findElement(By.xpath(properties.getProperty("PDFDescription"))).sendKeys(properties.getProperty("PDFDescription_txt"));
+		driver.findElement(By.xpath(properties.getProperty("PDFDescription"))).sendKeys(properties.getProperty("PDFDescription_txt")); //enter description
 		Thread.sleep(5000);
 		driver.switchTo().defaultContent();
-		driver.findElement(By.xpath(properties.getProperty("SavePDF"))).click();
-
+		driver.findElement(By.xpath(properties.getProperty("tag_select"))).click();
+		Thread.sleep(5000);
+		driver.findElement(By.xpath(properties.getProperty("SavePDF"))).click(); //click on savepdf
 		logger.info("pdf saved succesfully");
 		Thread.sleep(10000);
-
+		
+		//assertion for success message
 		WebElement success = driver.findElement(By.xpath(properties.getProperty("Success")));	
 		String actualresult = success.getText();
 		String expectedresult = "Template Added Successfully";
-
 		Assert.assertEquals(actualresult, expectedresult);
-		logger.info("Assertion succesfull for success message");
+		logger.info("Assertion succesfull for success message of uploading pdf file");
 		Thread.sleep(5000);
 		driver.findElement(By.xpath(properties.getProperty("Refresh"))).click(); //click on refresh icon
 

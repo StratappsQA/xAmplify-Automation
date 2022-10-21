@@ -20,7 +20,7 @@ public class ManageTracks {
 	final Logger logger = LogManager.getLogger(ManageTracks.class);
 
 	
-	//clicking on preview&dit and performing actions -- successfull
+	//clicking on preview&dit and performing actions 
 	@Test (priority=0)
 	public void preview_edit_track() throws InterruptedException, IOException {	
 		Thread.sleep(3000);
@@ -74,7 +74,7 @@ public class ManageTracks {
 		Thread.sleep(5000);	
 	}
 	
-	//clicking on view -- succesfull
+	//clicking on view 
 	@Test (priority=1)
 	public void view_track() throws InterruptedException, IOException {	
 		Thread.sleep(3000);
@@ -116,7 +116,7 @@ public class ManageTracks {
 					
 	}
 	
-	//clicking on analytics - succesfull
+	//clicking on analytics
 	@Test (priority=2)
 	public void analytics_track() throws InterruptedException, IOException {	
 		Thread.sleep(3000);
@@ -134,7 +134,7 @@ public class ManageTracks {
 	}
 
 
-	//unpublishing published track - succesfull
+	//unpublishing published track 
 		@Test (priority=3)
 		public void unpublish_track() throws InterruptedException, IOException {	
 			Thread.sleep(3000);
@@ -157,7 +157,7 @@ public class ManageTracks {
 		
 				
 				
-				//clicking on delete - succesfull
+				//clicking on delete 
 				@Test (priority=4)
 				public void delete_track() throws InterruptedException, IOException {	
 					Thread.sleep(3000);

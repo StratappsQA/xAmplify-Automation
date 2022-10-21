@@ -6,6 +6,7 @@ import java.util.Properties;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -13,7 +14,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class AddPlaybooks {
-	
+
 	WebDriver driver = Instance.getInstance();
 	Properties properties = PropertiesFile
 			.readPropertyFile("D:\\git\\xAmplify-Automation\\src\\main\\resources\\TrackBuilder.properties");
@@ -43,12 +44,24 @@ public class AddPlaybooks {
 		driver.findElement(By.xpath(properties.getProperty("save_changes"))).click(); //click on savechanges after selecting featured image
 		Thread.sleep(5000);
 		logger.info("image uploaded");
+		driver.findElement(By.xpath(properties.getProperty("tag_plusicon_tp"))).click();
+		Thread.sleep(5000);
+		driver.findElement(By.xpath(properties.getProperty("tag_text_click_tp"))).click();
+		//	driver.findElement(By.xpath(properties.getProperty("tag_text_click_pb"))).sendKeys(properties.getProperty("tag_name_pb"));
+		WebElement enter=driver.findElement(By.xpath(properties.getProperty("tag_text_click_tp")));
+		enter.sendKeys(properties.getProperty("tag_name_tp")+ "_" + System.currentTimeMillis());
+		enter.sendKeys(Keys.ENTER);
+		driver.findElement(By.xpath(properties.getProperty("tag_savebutton_tp"))).click();
+		Thread.sleep(5000);
+		driver.findElement(By.xpath(properties.getProperty("tag_select_tp"))).click();
+		Thread.sleep(5000);
+		logger.info("tag selected");
 		driver.findElement(By.xpath(properties.getProperty("next_button"))).click(); //click on next button
 		logger.info("playbook details provided"); //details provided
 		Thread.sleep(60000);
-		
-	
-		
+
+
+
 		//selecting first asset
 		driver.findElement(By.xpath(properties.getProperty("add_media_playbook"))).click();//click on add media
 		Thread.sleep(5000);
@@ -56,7 +69,7 @@ public class AddPlaybooks {
 
 		WebElement firstasset = driver.findElement(By.xpath(properties.getProperty("firstasset_click_pb")));
 		if(firstasset.isDisplayed()) {
-			driver.findElement(By.xpath(properties.getProperty("firstasset_click_pb"))).click();
+			driver.findElement(By.xpath(properties.getProperty("firstasset_click_pb"))).click(); //select first asset
 			Thread.sleep(5000);
 			driver.findElement(By.xpath(properties.getProperty("display_text"))).sendKeys("Asset");
 			Thread.sleep(5000);
@@ -77,7 +90,7 @@ public class AddPlaybooks {
 		WebElement firstform = driver.findElement(By.xpath(properties.getProperty("firstform_click_pb")));
 
 		if(firstform.isDisplayed()) {
-			driver.findElement(By.xpath(properties.getProperty("firstform_click_pb"))).click();
+			driver.findElement(By.xpath(properties.getProperty("firstform_click_pb"))).click(); //select first form
 			logger.info("form selected");
 		}else {
 			driver.findElement(By.xpath(properties.getProperty("close_popup_form"))).click();
@@ -127,7 +140,8 @@ public class AddPlaybooks {
 		Assert.assertEquals(actualresult2, expectedresult2);
 		logger.info("Assertion for published succesfull");	
 		Thread.sleep(5000);	
-
 	}	
+	
+	
 
 }

@@ -6,6 +6,7 @@ import java.util.Properties;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -42,10 +43,21 @@ public class AddTracks {
 		driver.findElement(By.xpath(properties.getProperty("save_changes"))).click(); //click on savechanges after selecting featured image
 		Thread.sleep(5000);
 		logger.info("image uploaded");
+		driver.findElement(By.xpath(properties.getProperty("tag_plusicon_tc"))).click();
+		Thread.sleep(5000);
+		driver.findElement(By.xpath(properties.getProperty("tag_text_click_tp"))).click();
+		//	driver.findElement(By.xpath(properties.getProperty("tag_text_click"))).sendKeys(properties.getProperty("tag_name_tp"));
+		WebElement enter=driver.findElement(By.xpath(properties.getProperty("tag_text_click_tp")));
+		enter.sendKeys(properties.getProperty("tag_name_tp")+ "_" + System.currentTimeMillis());
+		enter.sendKeys(Keys.ENTER);
+		driver.findElement(By.xpath(properties.getProperty("tag_savebutton_tp"))).click();
+		Thread.sleep(5000);
+		driver.findElement(By.xpath(properties.getProperty("tag_select_tp"))).click();
+		Thread.sleep(5000);
+		logger.info("tag selected");
 		driver.findElement(By.xpath(properties.getProperty("next_button"))).click(); //click on next button
 		logger.info("track details provided"); //details provided
-	    Thread.sleep(60000);
-		
+	    Thread.sleep(60000);	
 		//selecting first asset
 		driver.findElement(By.xpath(properties.getProperty("add_media"))).click();//click on add media
 		Thread.sleep(5000);
@@ -55,7 +67,6 @@ public class AddTracks {
 			Thread.sleep(5000);
 			driver.findElement(By.xpath(properties.getProperty("display_text"))).sendKeys("Asset");
 			Thread.sleep(5000);
-
 			driver.findElement(By.xpath(properties.getProperty("confirm_button"))).click();
 			logger.info("asset selected");  	 
 		}else {
