@@ -818,15 +818,17 @@ public class ManageVideoCampaign {
 
 		eml_downloadhistory__sort1.selectByValue("3: Object");
 		Thread.sleep(2000);
+		eml_downloadhistory__sort1.selectByValue("5: Object");
+		Thread.sleep(2000);
 
 		driver.findElement(By.xpath(properties.getProperty("mv_email_open_search_click"))).sendKeys("Automated");
 		Thread.sleep(3000);
 		driver.findElement(By.xpath(properties.getProperty("mv_email_open_search_icon_click"))).click();
 		Thread.sleep(3000);
-		driver.findElement(By.xpath(properties.getProperty("mv_email_open_search_data_clear"))).click();
+		driver.findElement(By.xpath(properties.getProperty("mv_email_open_search_data_clear"))).click(); //clear data
 		Thread.sleep(5000);
-		logger.info("Clicked on the Show download history icon");
-		driver.findElement(By.xpath(properties.getProperty("mv_camp1_click"))).click();
+		logger.info("Clicked on the Show download history icon"); 
+		driver.findElement(By.xpath(properties.getProperty("mv_camp1_click"))).click(); //click on Manage Campaigns
 		Thread.sleep(3000);
 		driver.findElement(By.xpath(properties.getProperty("video_tab"))).click(); // Click on Video Tab
 		Thread.sleep(5000);
@@ -836,14 +838,15 @@ public class ManageVideoCampaign {
 		Thread.sleep(5000);
 		logger.info("Clicked on Number of redistributed campaign icon");
 
-		WebElement rdc = driver.findElement(By.xpath(properties.getProperty("red_camp_analytics")));
+		WebElement rdc = driver.findElement(By.xpath(properties.getProperty("red_camp_analytics"))); // Click on redistribution campaign analytics icon
 		if (rdc.isEnabled()) {
 			rdc.click();
 			Thread.sleep(5000);
-			driver.findElement(By.xpath(properties.getProperty("mv_red_camp_based_reports_download"))).click();
+			logger.info("Download the redistribution campaign Analytics");
+			driver.findElement(By.xpath(properties.getProperty("mv_red_camp_based_reports_download"))).click(); //Download redistribution campaign analytics
 			Thread.sleep(5000);
 
-			driver.findElement(By.xpath(properties.getProperty("mv_camp2_click"))).click();
+			driver.findElement(By.xpath(properties.getProperty("mv_camp2_click"))).click(); //Click on Manage Campaigns
 			Thread.sleep(3000);
 
 		}
