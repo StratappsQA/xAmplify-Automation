@@ -22,9 +22,9 @@ public class Partner_ManageVideoCampaign {
 			.readPropertyFile("D:\\Workspace2\\xAmplify-Automation\\src\\main\\resources\\Partner_ManageCampaigns.properties");
 	final Logger logger = LogManager.getLogger(Partner_ManageVideoCampaign.class);
 
-	@Test
+	@Test(priority=1, enabled=true)
 
-	public void partner_manage_vdecampaign() throws InterruptedException, SQLException {
+	public void partner_manage_vdecampaign_draft_delete() throws InterruptedException, SQLException {
 
 	
 		
@@ -49,7 +49,51 @@ public class Partner_ManageVideoCampaign {
 		Thread.sleep(6000);
 		driver.findElement(By.xpath(properties.getProperty("partneracc_manage_video_tab"))).click();
 		Thread.sleep(4000);
-		
-		
+		logger.info("Video tab clicked successfully");
+		/*
+		 * driver.findElement(By.xpath(properties.getProperty(
+		 * "partneracc_manage_video_gearicon"))).click(); Thread.sleep(4000);
+		 * 
+		 * driver.findElement(By.xpath(properties.getProperty(
+		 * "partneracc_manage_video_preview"))).click(); Thread.sleep(4000);
+		 * 
+		 * driver.findElement(By.xpath(properties.getProperty(
+		 * "partneracc_m_video_preview_delete"))).click(); Thread.sleep(4000);
+		 * 
+		 * driver.findElement(By.xpath(properties.getProperty(
+		 * "partneracc_m_video_preview_delete_yes"))).click(); Thread.sleep(4000);
+		 * logger.info("Draft campagin deleted successfully from preview option");
+		 */
+
 	}
+	
+	@Test(priority=2)
+
+	public void partner_manage_vdecampaign_() throws InterruptedException, SQLException {
+
+	
+		Thread.sleep(4000);
+		driver.findElement(By.xpath(properties.getProperty("partneracc_manage_video_gearicon"))).click();
+		Thread.sleep(4000);
+		
+		driver.findElement(By.xpath(properties.getProperty("partneracc_m_video_edit"))).click();
+		Thread.sleep(4000);
+		
+		driver.findElement(By.xpath(properties.getProperty("partneracc_m_video_edit_folder"))).click();
+Thread.sleep(4000);
+		
+		driver.findElement(By.xpath(properties.getProperty("partneracc_m_video_edit_updatefolder"))).click();
+Thread.sleep(4000);
+		
+		driver.findElement(By.xpath(properties.getProperty("partneracc_m_video_edit_update"))).click();
+	
+		Thread.sleep(4000);
+	
+		
+	
+	
+	
+	
+	}
+	
 }
