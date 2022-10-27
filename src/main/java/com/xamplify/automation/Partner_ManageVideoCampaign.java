@@ -6,6 +6,7 @@ import java.util.Properties;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -24,7 +25,7 @@ public class Partner_ManageVideoCampaign {
 
 	@Test(priority=1, enabled=true)
 
-	public void partner_manage_vdecampaign_draft_delete() throws InterruptedException, SQLException {
+	public void partneracc_manage_vdecampaign_draft_delete() throws InterruptedException, SQLException {
 
 	
 		
@@ -69,7 +70,7 @@ public class Partner_ManageVideoCampaign {
 	
 	@Test(priority=2)
 
-	public void partner_manage_vdecampaign_() throws InterruptedException, SQLException {
+	public void partneracc_manage_vdecampaign_() throws InterruptedException, SQLException {
 
 	
 		Thread.sleep(4000);
@@ -89,11 +90,67 @@ Thread.sleep(4000);
 	
 		Thread.sleep(4000);
 	
+		driver.findElement(By.xpath(properties.getProperty("partneracc_m_video_edit_update_close"))).click();
 		
+		Thread.sleep(4000);
 	
 	
 	
+	}
+	@Test(priority=3)
+
+	public void partneracc_manage_vdecampaign_analytics() throws InterruptedException, SQLException {
+
 	
+
+	driver.findElement(By.xpath(properties.getProperty("partneracc_m_video_analyticsicon"))).click();
+	
+	Thread.sleep(4000);
+	
+driver.findElement(By.xpath(properties.getProperty("partneracc_m_video_analyticsicon_vdeinfo"))).click();
+Thread.sleep(4000);
+logger.info("Video Info Clicked Successfully");
+
+driver.findElement(By.xpath(properties.getProperty("partneracc_m_video_analyticsicon_vdeinfo_cls"))).click();
+logger.info("Video Info popup closed Successfully");
+Thread.sleep(4000);
+
+
+driver.findElement(By.xpath(properties.getProperty("partneracc_m_video_analyticsicon_Emailinfo"))).click();
+logger.info("Email Info Clicked  Successfully");
+Thread.sleep(4000);
+driver.findElement(By.xpath(properties.getProperty("partneracc_m_video_analyticsicon_Emailinfo_cls"))).click();
+logger.info("Email Info popup closed Successfully");
+Thread.sleep(4000);
+
+driver.findElement(By.xpath(properties.getProperty("partneracc_m_video_analyticsicon_listinfo"))).click();
+logger.info("List Info Clicked  Successfully");
+Thread.sleep(4000);	
+
+
+driver.findElement(By.xpath(properties.getProperty("partneracc_m_video_analyticsicon_Listinfo_cls"))).click();
+logger.info("List Info popup closed Successfully");
+Thread.sleep(4000);
+
+driver.findElement(By.xpath(properties.getProperty("partneracc_m_video_analyticsicon_RecipientsClick"))).click();
+logger.info("Recipient tile clicked Successfully");
+Thread.sleep(4000);
+
+driver.findElement(By.xpath(properties.getProperty("partneracc_m_video_analyticsicon_Recipients_search"))).sendKeys("gayatri");
+Thread.sleep(4000);
+
+
+
+WebElement rec_search=driver.findElement(By.xpath(properties.getProperty("partneracc_m_video_analyticsicon_Recipients_search")));
+rec_search.sendKeys(Keys.ENTER);
+logger.info("In Recipient tile data searched Successfully");
+Thread.sleep(4000);
+
+
+
+
+
+
 	}
 	
 }
