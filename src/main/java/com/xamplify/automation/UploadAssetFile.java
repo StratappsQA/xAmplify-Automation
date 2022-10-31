@@ -515,7 +515,7 @@ public class UploadAssetFile {
 	}
 	
 	
-	//uploading asset to view&downlod in partner account
+	//uploading asset to view&downlod in partner account 
 	@Test (priority = 1,enabled = true)
 	public void assetpng() throws InterruptedException, IOException {	
 		Thread.sleep(3000);

@@ -58,28 +58,56 @@ public class ManageAssetVideoFile {
 		driver.findElement(By.xpath(properties.getProperty("ManageMyAssets"))).click(); //click on manage assets
 		Thread.sleep(5000);		
 
-		WebElement gridview = driver.findElement(By.xpath(properties.getProperty("gridclick")));
-		if(gridview.isEnabled())
-		{
-			gridview.click();
-			Thread.sleep(5000);		
-		}
-		else
-		{
-			System.out.println("grid view icon is disabled");
-		}
+		//clicking on grid view
+				WebElement gridview = driver.findElement(By.xpath(properties.getProperty("gridclick")));
+				if(gridview.isEnabled())
+				{
+					gridview.click();
+					Thread.sleep(5000);		
+				}
+				else
+				{
+					System.out.println("grid view icon is disabled");
+				}
+				logger.info("assets viewed in grid view");
 
-		WebElement listview = driver.findElement(By.xpath(properties.getProperty("listclick")));
-		if(listview.isEnabled())
-		{
-			listview.click();
-		}
-		else
-		{
-			System.out.println("list view icon is disabled");
-		}
-		logger.info("assets viewed in list and grid view");
 
+				//clickng on list view
+				WebElement listview = driver.findElement(By.xpath(properties.getProperty("listclick")));
+				if(listview.isEnabled())
+				{
+					listview.click();
+				}
+				else
+				{
+					System.out.println("list view icon is disabled");
+				}
+				logger.info("assets viewed in list view");
+
+
+				//clickng on folder list view
+				WebElement folderlistview = driver.findElement(By.xpath(properties.getProperty("folderlistclick")));
+				if(folderlistview.isEnabled())
+				{
+					folderlistview.click();
+				}
+				else
+				{
+					System.out.println(" folder list view icon is disabled");
+				}
+				logger.info("assets viewed in folderlist view");
+
+				//clickng on folder grid view
+				WebElement foldergridview = driver.findElement(By.xpath(properties.getProperty("foldergridclick")));
+				if(foldergridview.isEnabled())
+				{
+					foldergridview.click();
+				}
+				else
+				{
+					System.out.println(" folder grid view icon is disabled");
+				}
+				logger.info("assets viewed in foldergrid view");
 	}
 
 	//search asset and view asset  -- succesfull
