@@ -18,6 +18,7 @@ public class SaveEmailToCampaign {
 
 	Properties properties = PropertiesFile
 			.readPropertyFile("D:\\git\\xAmplify-Automation\\src\\main\\resources\\Campaign.properties");
+	
 
 	final Logger logger = LogManager.getLogger(SaveEmailToCampaign.class);
 

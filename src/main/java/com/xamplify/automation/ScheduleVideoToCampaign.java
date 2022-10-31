@@ -31,8 +31,8 @@ final Logger logger = LogManager.getLogger(ScheduleVideoToCampaign.class);
 		Thread.sleep(3000);
 		//for autoresponses remove the comments
 		 
-		  AutoresponsesVideoCampaign arv3=new AutoresponsesVideoCampaign();
-		   arv3.autoResponsesVideo();
+		AutoResponsesVideoToCampaign arv3=new AutoResponsesVideoToCampaign();
+		   arv3.autoResponsesVideo2camp();
 		  Thread.sleep(4000);
 		 
 		driver.findElement(By.xpath(properties.getProperty("video_to_camp_schedule_click"))).click();// click on schedule
