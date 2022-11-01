@@ -587,7 +587,7 @@ public class UploadAssetFile {
 		Thread.sleep(5000);
 		driver.findElement(By.xpath(properties.getProperty("submit_button"))).click();
 		Thread.sleep(5000);
-		logger.info("Assetfile published succesfully");
+		logger.info("Assetfile-png published succesfully");
 		//Assertion 1st way for published asset
 		Thread.sleep(5000);
 		WebElement published = driver.findElement(By.xpath(properties.getProperty("published_page")));	

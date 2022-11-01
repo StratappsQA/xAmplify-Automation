@@ -17,6 +17,7 @@ public class DesignPDF {
 			.readPropertyFile("D:\\git\\xAmplify-Automation\\src\\main\\resources\\AssetLibrary.properties");
 	final Logger logger = LogManager.getLogger(DesignPDF.class);
 
+	//create pdf asset and publish to partner
 	@Test
 	public void designpdf() throws InterruptedException
 	{
@@ -54,14 +55,36 @@ public class DesignPDF {
 		Thread.sleep(5000);
 		driver.findElement(By.xpath(properties.getProperty("Refresh"))).click(); //click on refresh icon
 
-
-
-
-
-
-
-
-
+		//search with the created partnerasset and publish to partner
+				Thread.sleep(5000);
+				driver.findElement(By.xpath(properties.getProperty("Searchbar"))).sendKeys("pdf");
+				Thread.sleep(5000);	
+				driver.findElement(By.xpath(properties.getProperty("Searchclick"))).click(); 
+				Thread.sleep(5000);	
+				driver.findElement(By.xpath(properties.getProperty("publish_click"))).click(); //click on publish link
+				Thread.sleep(5000);
+				driver.findElement(By.xpath(properties.getProperty("Searchbar_publish"))).sendKeys("automatedPartner");
+				Thread.sleep(5000);
+				driver.findElement(By.xpath(properties.getProperty("Searchclick_publish"))).click();		
+				Thread.sleep(5000);		
+				driver.findElement(By.xpath(properties.getProperty("arrow_click"))).click(); //select arrow of partner company
+				Thread.sleep(5000);
+				driver.findElement(By.xpath(properties.getProperty("partner_select"))).click(); //select partner
+				Thread.sleep(5000);
+				driver.findElement(By.xpath(properties.getProperty("submit_button"))).click();
+				Thread.sleep(5000);
+				logger.info("Assetfile pdf published succesfully");
+				//Assertion 1st way for published asset
+				Thread.sleep(5000);
+				WebElement published = driver.findElement(By.xpath(properties.getProperty("published_page")));	
+				String actualresult2 = published.getText();
+				String expectedresult2 = "Published Successfully";				
+				Assert.assertEquals(actualresult2, expectedresult2);
+				logger.info("Assertion for published succesfull");	
+				Thread.sleep(5000);
+				driver.findElement(By.xpath(properties.getProperty("cross_icon_publish"))).click();
+				logger.info("cross icon clicked");		
+				
 
 
 

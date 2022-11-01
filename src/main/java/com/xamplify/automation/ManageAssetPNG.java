@@ -8,6 +8,7 @@ import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -89,6 +90,11 @@ public class ManageAssetPNG {
 		if(folderlistview.isEnabled())
 		{
 			folderlistview.click();
+			Thread.sleep(5000);
+			driver.findElement(By.xpath(properties.getProperty("listview_items"))).click(); //to view all items in folder list view
+			Thread.sleep(5000);
+			logger.info("all items viewed under folder list view");
+			
 		}
 		else
 		{
@@ -101,6 +107,16 @@ public class ManageAssetPNG {
 		if(foldergridview.isEnabled())
 		{
 			foldergridview.click();
+			Thread.sleep(5000);
+			WebElement ele = driver.findElement(By.xpath("//div[@id='category-icon-div']"));
+			Actions action = new Actions(driver);
+			action.moveToElement(ele).perform();
+			Thread.sleep(5000);
+			driver.findElement(By.xpath(properties.getProperty("gridview_items"))).click(); //to view all items in folder gird view
+			Thread.sleep(5000);
+			driver.findElement(By.xpath(properties.getProperty("go_back"))).click(); //click on go back
+			Thread.sleep(5000);
+			logger.info("all items viewed under folder grid view");
 		}
 		else
 		{

@@ -9,6 +9,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -71,6 +72,43 @@ public class ManageAssetVideoFile {
 				}
 				logger.info("assets viewed in grid view");
 
+				//clickng on folder list view
+				WebElement folderlistview = driver.findElement(By.xpath(properties.getProperty("folderlistclick")));
+				if(folderlistview.isEnabled())
+				{
+					folderlistview.click();
+					Thread.sleep(5000);
+					driver.findElement(By.xpath(properties.getProperty("listview_items"))).click(); //to view all items in folder list view
+					Thread.sleep(5000);
+					logger.info("all items viewed under folder list view");
+				}
+				else
+				{
+					System.out.println(" folder list view icon is disabled");
+				}
+				logger.info("assets viewed in folderlist view");
+
+				//clickng on folder grid view
+				WebElement foldergridview = driver.findElement(By.xpath(properties.getProperty("foldergridclick")));
+				if(foldergridview.isEnabled())
+				{
+					foldergridview.click();
+					Thread.sleep(5000);
+					WebElement ele = driver.findElement(By.xpath("//div[@id='category-icon-div']"));
+					Actions action = new Actions(driver);
+					action.moveToElement(ele).perform();
+					Thread.sleep(5000);
+					driver.findElement(By.xpath(properties.getProperty("gridview_items"))).click(); //to view all items in folder gird view
+					Thread.sleep(5000);
+					driver.findElement(By.xpath(properties.getProperty("go_back"))).click(); //click on go back
+					Thread.sleep(5000);
+					logger.info("all items viewed under folder grid view");
+				}
+				else
+				{
+					System.out.println(" folder grid view icon is disabled");
+				}
+				logger.info("assets viewed in foldergrid view");
 
 				//clickng on list view
 				WebElement listview = driver.findElement(By.xpath(properties.getProperty("listclick")));
@@ -84,33 +122,9 @@ public class ManageAssetVideoFile {
 				}
 				logger.info("assets viewed in list view");
 
-
-				//clickng on folder list view
-				WebElement folderlistview = driver.findElement(By.xpath(properties.getProperty("folderlistclick")));
-				if(folderlistview.isEnabled())
-				{
-					folderlistview.click();
-				}
-				else
-				{
-					System.out.println(" folder list view icon is disabled");
-				}
-				logger.info("assets viewed in folderlist view");
-
-				//clickng on folder grid view
-				WebElement foldergridview = driver.findElement(By.xpath(properties.getProperty("foldergridclick")));
-				if(foldergridview.isEnabled())
-				{
-					foldergridview.click();
-				}
-				else
-				{
-					System.out.println(" folder grid view icon is disabled");
-				}
-				logger.info("assets viewed in foldergrid view");
 	}
 
-	//search asset and view asset  -- succesfull
+	//search asset and view asset  
 	@Test (priority=2)
 	public void viewassetvideo() throws InterruptedException 	
 	{
@@ -131,7 +145,7 @@ public class ManageAssetVideoFile {
 
 	}
 
-	//search assset and edit video - need to check
+	//search assset and edit video 
 	@Test (priority=3)
 	public void editassetvideo() throws InterruptedException
 	{
@@ -184,7 +198,7 @@ public class ManageAssetVideoFile {
 
 
 
-	//search asset and download asset -- succesfull
+	//search asset and download asset 
 	@Test (priority=4)
 	public void downloadassetvideo() throws InterruptedException 	
 	{
