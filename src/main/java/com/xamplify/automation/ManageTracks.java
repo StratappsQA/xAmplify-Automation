@@ -28,7 +28,7 @@ public class ManageTracks {
 		Thread.sleep(5000);
 		driver.findElement(By.xpath(properties.getProperty("manage_tracks"))).click(); //click on manage tracks
 		Thread.sleep(5000);
-		driver.findElement(By.xpath(properties.getProperty("search_track"))).sendKeys("Track"); //search with track
+		driver.findElement(By.xpath(properties.getProperty("search_track"))).sendKeys("VenTrack"); //search with track
 		Thread.sleep(5000);
 		driver.findElement(By.xpath(properties.getProperty("click_searchh"))).click(); //click on search icon	
 		Thread.sleep(8000);
@@ -74,7 +74,7 @@ public class ManageTracks {
 		Thread.sleep(5000);	
 	}
 	
-	//clicking on view 
+	//clicking on view against to track 
 	@Test (priority=1)
 	public void view_track() throws InterruptedException, IOException {	
 		Thread.sleep(3000);
@@ -82,7 +82,7 @@ public class ManageTracks {
 		Thread.sleep(5000);
 		driver.findElement(By.xpath(properties.getProperty("manage_tracks"))).click(); //click on add tracks
 		Thread.sleep(5000);
-		driver.findElement(By.xpath(properties.getProperty("search_track"))).sendKeys("Track"); //search with track
+		driver.findElement(By.xpath(properties.getProperty("search_track"))).sendKeys("VenTrack"); //search with track
 		Thread.sleep(5000);
 		driver.findElement(By.xpath(properties.getProperty("click_searchh"))).click(); //click on search icon	
 		Thread.sleep(5000);
@@ -124,11 +124,11 @@ public class ManageTracks {
 		Thread.sleep(5000);
 		driver.findElement(By.xpath(properties.getProperty("manage_tracks"))).click(); //click on add tracks
 		Thread.sleep(5000);
-		driver.findElement(By.xpath(properties.getProperty("search_track"))).sendKeys("Track"); //search with track
+		driver.findElement(By.xpath(properties.getProperty("search_track"))).sendKeys("VenTrack"); //search with track
 		Thread.sleep(5000);
 		driver.findElement(By.xpath(properties.getProperty("click_searchh"))).click(); //click on search icon	
 		Thread.sleep(5000);
-		driver.findElement(By.xpath(properties.getProperty("analytics_icon"))).click(); //click on view icon
+		driver.findElement(By.xpath(properties.getProperty("analytics_icon"))).click(); //click on analytics icon
 		Thread.sleep(5000);
 		logger.info("analytics page viewed successfully");															
 	}
@@ -142,7 +142,7 @@ public class ManageTracks {
 			Thread.sleep(5000);
 			driver.findElement(By.xpath(properties.getProperty("manage_tracks"))).click(); //click on add tracks
 			Thread.sleep(5000);
-			driver.findElement(By.xpath(properties.getProperty("search_track"))).sendKeys("Track"); //search with track
+			driver.findElement(By.xpath(properties.getProperty("search_track"))).sendKeys("VenTrack"); //search with track
 			Thread.sleep(5000);
 			driver.findElement(By.xpath(properties.getProperty("click_searchh"))).click(); //click on search icon	
 			Thread.sleep(5000);
@@ -165,7 +165,7 @@ public class ManageTracks {
 					Thread.sleep(5000);
 					driver.findElement(By.xpath(properties.getProperty("manage_tracks"))).click(); //click on add tracks
 					Thread.sleep(5000);
-					driver.findElement(By.xpath(properties.getProperty("search_track"))).sendKeys("Track"); //search with track
+					driver.findElement(By.xpath(properties.getProperty("search_track"))).sendKeys("VenTrack"); //search with track
 					Thread.sleep(5000);
 					driver.findElement(By.xpath(properties.getProperty("click_searchh"))).click(); //click on search icon	
 					Thread.sleep(5000);

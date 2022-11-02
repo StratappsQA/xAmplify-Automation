@@ -132,9 +132,11 @@ public class AddTracks {
 		logger.info("mp4 first asset selected");
 		Thread.sleep(5000);
 		driver.findElement(By.xpath(properties.getProperty("Search_publish"))).sendKeys("automatedPartner"); //select automatedPartner in search field
-		Thread.sleep(6000);
-		driver.findElement(By.xpath(properties.getProperty("searchicon_click"))).click();	//click on search icon	
-		Thread.sleep(5000);		
+		Thread.sleep(5000);
+		driver.findElement(By.xpath(properties.getProperty("Search_publish"))).sendKeys(Keys.ENTER);
+		Thread.sleep(5000);
+		//driver.findElement(By.xpath(properties.getProperty("searchicon_click"))).click();	//click on search icon	
+		//Thread.sleep(5000);		
 		driver.findElement(By.xpath(properties.getProperty("arrow_click_track"))).click(); //select arrow of partner company
 		Thread.sleep(5000);
 		driver.findElement(By.xpath(properties.getProperty("partner_select_track"))).click(); //select partner
@@ -174,7 +176,7 @@ public class AddTracks {
 		//Thread.sleep(5000);
 		driver.findElement(By.xpath(properties.getProperty("save_changes"))).click(); //click on savechanges after selecting featured image
 		Thread.sleep(5000);
-		logger.info("image uploaded");
+		logger.info("image uploaded-partner track");
 		driver.findElement(By.xpath(properties.getProperty("tag_plusicon_tc"))).click();
 		Thread.sleep(5000);
 		driver.findElement(By.xpath(properties.getProperty("tag_text_click_tp"))).click();
@@ -186,9 +188,9 @@ public class AddTracks {
 		Thread.sleep(5000);
 		driver.findElement(By.xpath(properties.getProperty("tag_select_tp"))).click();
 		Thread.sleep(5000);
-		logger.info("tag selected");
+		logger.info("tag selected-partner track");
 		driver.findElement(By.xpath(properties.getProperty("next_button"))).click(); //click on next button
-		logger.info("track details provided"); //details provided
+		logger.info("track details provided-partner track"); //details provided
 	    Thread.sleep(60000);	
 		//selecting first asset
 		driver.findElement(By.xpath(properties.getProperty("add_media"))).click();//click on add media
@@ -200,10 +202,10 @@ public class AddTracks {
 			driver.findElement(By.xpath(properties.getProperty("display_text"))).sendKeys("Asset");
 			Thread.sleep(5000);
 			driver.findElement(By.xpath(properties.getProperty("confirm_button"))).click();
-			logger.info("asset selected");  	 
+			logger.info("asset selected-partner track");  	 
 		}else {
 			driver.findElement(By.xpath(properties.getProperty("close_popup_media"))).click();
-			logger.info("no asset selected");
+			logger.info("no asset selected-partner track");
 		}
 
 		Thread.sleep(5000);
@@ -216,7 +218,7 @@ public class AddTracks {
 
 		if(firstform.isDisplayed()) {
 			driver.findElement(By.xpath(properties.getProperty("firstform_click"))).click();
-			logger.info("form selected");
+			logger.info("form selected-partner track");
 		}else {
 			driver.findElement(By.xpath(properties.getProperty("close_popup_form"))).click();
 			logger.info("no form selected");
@@ -232,7 +234,7 @@ public class AddTracks {
 		driver.switchTo().defaultContent();
 		driver.findElement(By.xpath(properties.getProperty("next_button"))).click();
 		Thread.sleep(5000);
-		logger.info("description entered");
+		logger.info("description entered-partner track");
 		
 
 		//selecting first quiz
@@ -245,7 +247,7 @@ public class AddTracks {
 			Thread.sleep(5000);
 
 			driver.findElement(By.xpath(properties.getProperty("close_popup_quiz"))).click(); 	 
-			logger.info("quiz form selected");
+			logger.info("quiz form selected-partner track");
 		}else {
 			driver.findElement(By.xpath(properties.getProperty("close_popup_quiz"))).click();
 			logger.info("no quiz form selected");
@@ -260,19 +262,21 @@ public class AddTracks {
 		driver.findElement(By.xpath(properties.getProperty("first_asset_selection"))).click();	//select first asset
 		Thread.sleep(3000);
 		driver.findElement(By.xpath(properties.getProperty("next_button"))).click(); //click on next button  
-		logger.info("mp4 first asset selected");
+		logger.info("mp4 first asset selected-partner track");
 		Thread.sleep(3000);
 		driver.findElement(By.xpath(properties.getProperty("Search_publish"))).sendKeys("automatedPartner"); //select automatedPartner in search field
 		Thread.sleep(5000);
-		driver.findElement(By.xpath(properties.getProperty("searchicon_click"))).click();		
-		Thread.sleep(5000);		
+		driver.findElement(By.xpath(properties.getProperty("Search_publish"))).sendKeys(Keys.ENTER);
+		Thread.sleep(5000);
+		//driver.findElement(By.xpath(properties.getProperty("searchicon_click"))).click();		
+		//Thread.sleep(5000);		
 		driver.findElement(By.xpath(properties.getProperty("arrow_click_track"))).click(); //select arrow of partner company
 		Thread.sleep(5000);
 		driver.findElement(By.xpath(properties.getProperty("partner_select_track"))).click(); //select partner
 		Thread.sleep(5000);
 		driver.findElement(By.xpath(properties.getProperty("save&publish_button"))).click(); //click on save&publish button
 		Thread.sleep(5000);
-		logger.info("track published to partner succesfully");	
+		logger.info("track published to partner succesfully-partner track");	
 	}
 }
 
