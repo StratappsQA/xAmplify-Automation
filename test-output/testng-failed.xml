@@ -3,11 +3,11 @@
 <suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Test(failed)">
     <classes>
-      <class name="com.xamplify.automation.Login">
+      <class name="com.xamplify.automation.LaunchVideoCampaign">
         <methods>
-          <include name="Signinprocess"/>
+          <include name="vlaunch"/>
         </methods>
-      </class> <!-- com.xamplify.automation.Login -->
+      </class> <!-- com.xamplify.automation.LaunchVideoCampaign -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->
