@@ -1,13 +1,11 @@
 package com.xamplify.automation;
 
 import java.sql.SQLException;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.List;
 import java.util.Properties;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -18,17 +16,19 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 
-public class EventCampaign {
+public class EventToCampagin {
 
 	WebDriver driver = Instance.getInstance();
 
 	Properties properties = PropertiesFile
 			.readPropertyFile("D:\\git\\xAmplify-Automation\\src\\main\\resources\\EventCampaign.properties");
 
-	final Logger logger = LogManager.getLogger(EventCampaign.class);
-
+	final Logger logger = LogManager.getLogger(EventToCampagin.class);
+	
+	
+	
 	@Test
-	public void event_campaign() throws InterruptedException, SQLException {
+	public void event_Tocampaign() throws InterruptedException, SQLException {
 
 		WebDriverWait wait = new WebDriverWait(driver, 50); // Wait till the element is not visible
 
@@ -63,28 +63,16 @@ public class EventCampaign {
 		driver.findElement(By.xpath(properties.getProperty("eve_subjectline"))).sendKeys("subjectLine_eve"); // subjectline
 		Thread.sleep(3000);
 
-		Actions a = new Actions(driver); // scroll down a page
-		a.sendKeys(Keys.PAGE_DOWN).build().perform();
-
-		Thread.sleep(3000);
-
-		WebDriverWait wait3 = new WebDriverWait(driver, 50);
-		WebElement w3 = wait3
-				.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(properties.getProperty("eve_through")))); // toggle  through on
-
-		w3.click();
-		Thread.sleep(3000);
-
+		
+		  Actions a = new Actions(driver); // scroll down a page
+		  a.sendKeys(Keys.PAGE_DOWN).build().perform();
+		  
+		  Thread.sleep(3000);
+		  
 		driver.findElement(By.xpath(properties.getProperty("eve_selectpublic"))).click(); // select public toggle
 
 		Thread.sleep(4000);
 
-		/*
-		 * driver.findElement(By.xpath(properties.getProperty("eve_configurepipeline")))
-		 * .click(); // Toggle configure // pipeline ON
-		 * 
-		 * Thread.sleep(6000);
-		 */
 
 		driver.findElement(By.xpath(properties.getProperty("eve_showformsbutton"))).click(); // click on the showforms
 																								// button
@@ -101,27 +89,35 @@ public class EventCampaign {
 
 		Thread.sleep(2000);
 		driver.findElement(By.xpath(properties.getProperty("eve_closeform"))).click(); // close the form
-		Thread.sleep(6000);
+		Thread.sleep(5000);
 
+		
+		driver.findElement(By.id("allDay")).click();
+		Thread.sleep(5000);
 		driver.findElement(By.xpath(properties.getProperty("eve_selectdate"))).click(); // select calendar
 
-		Thread.sleep(7000);
+		Thread.sleep(5000);
+		
 
 		WebElement w = driver.findElement(By.xpath(properties.getProperty("eve_selected_date"))); // selected date in
 																									// the calendar
 
 		w.click();
-
-		Thread.sleep(3000);
-		driver.findElement(By.id("allDay")).click();
+		 
+			Thread.sleep(4000);
+		
+		
 		logger.info("Selected the Event date ");
 
-		Thread.sleep(4000);
+		driver.findElement(By.xpath(properties.getProperty("eve_click"))).click();
+		
+		
+		Thread.sleep(6000);
 
-		WebElement drpCountry = driver.findElement(By.xpath(properties.getProperty("timezone_select_country"))); // select
+		WebElement drpCountry = driver.findElement(By.xpath(properties.getProperty("timezone_to_select_country"))); // select
 																													// the
 																													// country
-		// drpCountry.click();
+	
 		Select eve_select_country = new Select(drpCountry); // select drop down
 		Thread.sleep(5000);
 		eve_select_country.selectByValue("103");
@@ -129,12 +125,6 @@ public class EventCampaign {
 		
 		  logger.info("Selected India in the country dropdown ");
 		 
-		  
-		 
-			/*
-			 * Actions a2 = new Actions(driver);
-			 * a2.sendKeys(Keys.PAGE_DOWN).build().perform(); // scroll down a page
-			 */
 		driver.findElement(By.xpath(properties.getProperty("eve_nextpage"))).click(); // click for the next page
 		Thread.sleep(3000);
 
@@ -207,7 +197,8 @@ public class EventCampaign {
 
 		Thread.sleep(5000);
 		driver.findElement(By.xpath(properties.getProperty("eve_nextpage3"))).click(); // click on the next page
-
+	
+	
 	}
-
+	
 }

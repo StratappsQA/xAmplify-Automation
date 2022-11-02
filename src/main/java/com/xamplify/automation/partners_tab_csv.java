@@ -13,8 +13,6 @@ import java.util.List;
 import java.util.Properties;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
-
-//import org.apache.commons.lang3.RandomStringUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.apache.poi.xssf.usermodel.XSSFCell;
@@ -79,65 +77,6 @@ public class partners_tab_csv {
 
 	}
 
-	
-
-	@Test(priority = 9, enabled = true)
-	public void onboard_icons() throws Throwable {
-		Thread.sleep(8000);
-		partners_onboard_comma onboard= new partners_onboard_comma();
-		onboard.Signinprocess();
-		Thread.sleep(5000);
-		
-		driver.findElement(By.xpath(properties.getProperty("resendemail"))).click();
-		Thread.sleep(3000);
-		
-		driver.findElement(By.xpath(properties.getProperty("editpartner"))).click();
-		Thread.sleep(3000);
-		driver.findElement(By.xpath(properties.getProperty("companyid"))).clear();
-		Thread.sleep(3000);
-		driver.findElement(By.xpath(properties.getProperty("companyid")))
-				.sendKeys("newcompany name" + "_" + System.currentTimeMillis());
-		Thread.sleep(3000);
-		driver.findElement(By.xpath(properties.getProperty("updatepartner"))).click();
-		
-		Thread.sleep(5000);
-
-		driver.findElement(By.xpath(properties.getProperty("deletepartneronboard"))).click();
-		Thread.sleep(3000);
-		driver.findElement(By.xpath(properties.getProperty("yesdeleteit"))).click();
-		Thread.sleep(3000);
-		driver.findElement(By.xpath(properties.getProperty("sharecampaigns"))).click();
-		Thread.sleep(3000);
-		driver.findElement(By.xpath(properties.getProperty("checkallcampaigns"))).click();
-		Thread.sleep(3000);
-		driver.findElement(By.xpath(properties.getProperty("sharecampaigns2"))).click();
-		Thread.sleep(3000);
-		driver.findElement(By.xpath(properties.getProperty("closing"))).click();
-		Thread.sleep(3000);
-		driver.findElement(By.xpath(properties.getProperty("partneranalytics"))).click();
-		Thread.sleep(10000);
-		driver.findElement(By.xpath(properties.getProperty("closeanalytics"))).click();
-		Thread.sleep(5000);
-
-	}
-
-	@Test(priority = 10, enabled = true)
-	public void Managepartners() throws Throwable
-
-	{
-
-		WebElement partners = driver.findElement(By.xpath(properties.getProperty("hoverpartner")));// hover to partners
-																									// module in left
-																									// menu
-		Actions actions = new Actions(driver);
-		actions.moveToElement(partners).perform();
-		Thread.sleep(3000);
-		driver.findElement(By.xpath(properties.getProperty("managepartner"))).click();
-
-	}
-
-	@Test(priority = 11, enabled = true)
-	public void Managepartners_icons() throws Throwable
 
 	{
 		Thread.sleep(3000);
