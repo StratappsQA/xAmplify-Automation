@@ -25,18 +25,19 @@ public class ManageVideoCampaign {
 
 	@Test
 
-	public void manage_scampaign() throws InterruptedException, SQLException {
+	public void manage_videocampaign() throws InterruptedException, SQLException {
 
-		WebDriverWait wait = new WebDriverWait(driver, 50); // Wait till the element is not visible
+		WebDriverWait wait = new WebDriverWait(driver, 80); // Wait till the element is not visible
 
 		WebElement mvcamp = wait.until(
-				ExpectedConditions.visibilityOfElementLocated(By.xpath(properties.getProperty("campaignhover"))));
+				ExpectedConditions.visibilityOfElementLocated(By.xpath(properties.getProperty("mv_campaignhover"))));
 		mvcamp.click(); // hover on campaign
 
 		Actions mcamp_action = new Actions(driver);
 		mcamp_action.moveToElement(mvcamp).perform();
 		Thread.sleep(5000);
-		WebElement manage_campele = driver.findElement(By.xpath(properties.getProperty("managecampaigns"))); // click on
+		WebElement manage_campele = driver.findElement(By.xpath(properties.getProperty("mv_managecampaigns"))); // click
+																												// on
 																												// manage
 																												// campaign
 		mcamp_action.moveToElement(manage_campele);
@@ -45,32 +46,32 @@ public class ManageVideoCampaign {
 
 		Thread.sleep(4000);
 
-		driver.findElement(By.xpath(properties.getProperty("video_tab"))).click(); // Click on Video Tab
+		driver.findElement(By.xpath(properties.getProperty("mv_video_tab"))).click(); // Click on Video Tab
 		Thread.sleep(5000);
 		logger.info("Clicked on the Video tab");
 
-		driver.findElement(By.xpath(properties.getProperty("video_gear_icon"))).click(); // click on Gear icon
+		driver.findElement(By.xpath(properties.getProperty("mv_video_gear_icon"))).click(); // click on Gear icon
 		Thread.sleep(3000);
-		driver.findElement(By.xpath(properties.getProperty("video_edit"))).click(); // click on edit
+		driver.findElement(By.xpath(properties.getProperty("mv_video_edit"))).click(); // click on edit
 		Thread.sleep(3000);
 		logger.info("Click on the Edit Icon");
 		WebDriverWait folder_dropdown = new WebDriverWait(driver, 50);
 		WebElement f_dropdown = folder_dropdown.until(ExpectedConditions
-				.visibilityOfElementLocated(By.xpath(properties.getProperty("v_select_folder_dropdown")))); // select
-																											// folder
-																											// dropdown
+				.visibilityOfElementLocated(By.xpath(properties.getProperty("mv_select_folder_dropdown")))); // select
+																												// folder
+																												// dropdown
 		Thread.sleep(2000);
 
 		Select fdropdown = new Select(f_dropdown);
 		fdropdown.selectByValue("1106"); // select by value
 
 		Thread.sleep(4000);
-		driver.findElement(By.xpath(properties.getProperty("update_button"))).click();// click on update
+		driver.findElement(By.xpath(properties.getProperty("mv_update_button"))).click();// click on update
 		Thread.sleep(2000);
-		driver.findElement(By.xpath(properties.getProperty("click_close"))).click();// click on close button
+		driver.findElement(By.xpath(properties.getProperty("mv_click_close"))).click();// click on close button
 		Thread.sleep(4000);
 		logger.info("click on Gear icon");
-		driver.findElement(By.xpath(properties.getProperty("video_gear_icon1"))).click(); // Click on gear icon
+		driver.findElement(By.xpath(properties.getProperty("mv_video_gear_icon1"))).click(); // Click on gear icon
 		Thread.sleep(3000);
 		logger.info("click on copy");
 
@@ -84,7 +85,7 @@ public class ManageVideoCampaign {
 		a.sendKeys(Keys.PAGE_DOWN).build().perform();
 		Thread.sleep(5000);
 
-		driver.findElement(By.xpath(properties.getProperty("video_gear_icon2"))).click(); // Click on gear icon
+		driver.findElement(By.xpath(properties.getProperty("mv_video_gear_icon2"))).click(); // Click on gear icon
 		Thread.sleep(3000);
 		driver.findElement(By.xpath(properties.getProperty("mv_update_end_date"))).click(); // click on update end date
 		Thread.sleep(3000);
@@ -102,7 +103,7 @@ public class ManageVideoCampaign {
 		driver.findElement(By.xpath(properties.getProperty("mv_save_changes"))).click();
 		Thread.sleep(3000);
 
-		driver.findElement(By.xpath(properties.getProperty("video_gear_icon2"))).click(); // Click on gear icon
+		driver.findElement(By.xpath(properties.getProperty("mv_video_gear_icon2"))).click(); // Click on gear icon
 		Thread.sleep(3000);
 
 		logger.info("Click on Preview & Delete");
@@ -145,13 +146,13 @@ public class ManageVideoCampaign {
 		// campaigns
 		Thread.sleep(3000);
 
-		driver.findElement(By.xpath(properties.getProperty("video_tab"))).click(); // Click on Survey Tab
+		driver.findElement(By.xpath(properties.getProperty("mv_video_tab"))).click(); // Click on Survey Tab
 		Thread.sleep(5000);
 
 		JavascriptExecutor jsp = (JavascriptExecutor) driver;
 		jsp.executeScript("window.scrollTo(document.body.scrollHeight,200)");
 		Thread.sleep(5000);
-		driver.findElement(By.xpath(properties.getProperty("video_gear_icon2"))).click(); // Click on gear icon
+		driver.findElement(By.xpath(properties.getProperty("mv_video_gear_icon2"))).click(); // Click on gear icon
 		Thread.sleep(3000);
 		logger.info("Click on Preview");
 
@@ -171,7 +172,7 @@ public class ManageVideoCampaign {
 //		Thread.sleep(7000);
 		logger.info("click on gear icon");
 
-		driver.findElement(By.xpath(properties.getProperty("video_gear_icon2"))).click(); // Click on gear icon
+		driver.findElement(By.xpath(properties.getProperty("mv_video_gear_icon2"))).click(); // Click on gear icon
 		Thread.sleep(3000);
 		logger.info("Click on Archieve Campaigns");
 		driver.findElement(By.xpath(properties.getProperty("mv_archieve_campaign"))).click();
@@ -190,7 +191,7 @@ public class ManageVideoCampaign {
 		Thread.sleep(4000);
 		logger.info("click on video tab");
 
-		driver.findElement(By.xpath(properties.getProperty("video_tab"))).click(); // Click on Video Tab
+		driver.findElement(By.xpath(properties.getProperty("mv_video_tab"))).click(); // Click on Video Tab
 		Thread.sleep(5000);
 		logger.info("click on gear icon");
 
@@ -261,7 +262,7 @@ public class ManageVideoCampaign {
 		driver.findElement(By.xpath(properties.getProperty("list_view"))).click(); // Click on List View
 		Thread.sleep(5000);
 
-		driver.findElement(By.xpath(properties.getProperty("video_gear_icon2"))).click(); // Click on gear icon
+		driver.findElement(By.xpath(properties.getProperty("mv_video_gear_icon2"))).click(); // Click on gear icon
 		Thread.sleep(3000);
 
 		logger.info("Click on the campaign based reports");
@@ -748,12 +749,12 @@ public class ManageVideoCampaign {
 		eml_sort1.selectByValue("6: Object");
 		Thread.sleep(2000);
 
-		WebElement s_analytics_search = driver.findElement(By.xpath(properties.getProperty("mv_analytics_search")));
-		s_analytics_search.sendKeys("mounika");
-		s_analytics_search.sendKeys(Keys.ENTER);
+		WebElement mv_analytics_search = driver.findElement(By.xpath(properties.getProperty("mv_analytics_search")));
+		mv_analytics_search.sendKeys("mounika");
+		mv_analytics_search.sendKeys(Keys.ENTER);
 		Thread.sleep(3000);
 
-		s_analytics_search.clear();
+		mv_analytics_search.clear();
 		Thread.sleep(2000);
 		driver.findElement(By.xpath(properties.getProperty("mv_analytics_cross"))).click();
 		Thread.sleep(3000);
@@ -768,9 +769,9 @@ public class ManageVideoCampaign {
 		Thread.sleep(5000);
 
 		driver.findElement(By.xpath(properties.getProperty("mv_ManageCamp_click"))).click();// click on manage campaigns
-		Thread.sleep(3000);
+		Thread.sleep(7000);
 
-		driver.findElement(By.xpath(properties.getProperty("video_tab"))).click(); // Click on Video Tab
+		driver.findElement(By.xpath(properties.getProperty("mv_video_tab"))).click(); // Click on Video Tab
 		Thread.sleep(5000);
 		logger.info("Clicked on the Video tab");
 
@@ -800,9 +801,9 @@ public class ManageVideoCampaign {
 		logger.info("Clicked on email_open_history_by_template icon");
 		driver.findElement(By.xpath(properties.getProperty("mv_camp_click"))).click();
 		Thread.sleep(3000);
-		driver.findElement(By.xpath(properties.getProperty("video_tab"))).click(); // Click on Video Tab
+		driver.findElement(By.xpath(properties.getProperty("mv_video_tab"))).click(); // Click on Video Tab
 		Thread.sleep(5000);
-		logger.info("Clicked on the Survey tab");
+		logger.info("Clicked on the Video tab");
 		driver.findElement(By.xpath(properties.getProperty("mv_show_download_history"))).click(); // click on Show
 																									// download
 																									// history icon
@@ -825,37 +826,47 @@ public class ManageVideoCampaign {
 		Thread.sleep(3000);
 		driver.findElement(By.xpath(properties.getProperty("mv_email_open_search_icon_click"))).click();
 		Thread.sleep(3000);
-		driver.findElement(By.xpath(properties.getProperty("mv_email_open_search_data_clear"))).click(); //clear data
+		driver.findElement(By.xpath(properties.getProperty("mv_email_open_search_data_clear"))).click(); // clear data
 		Thread.sleep(5000);
-		logger.info("Clicked on the Show download history icon"); 
-		driver.findElement(By.xpath(properties.getProperty("mv_camp1_click"))).click(); //click on Manage Campaigns
-		Thread.sleep(3000);
-		driver.findElement(By.xpath(properties.getProperty("video_tab"))).click(); // Click on Video Tab
+		logger.info("Clicked on the Show download history icon");
+		driver.findElement(By.xpath(properties.getProperty("mv_camp1_click"))).click(); // click on Manage Campaigns
 		Thread.sleep(5000);
-		logger.info("Clicked on the Survey tab");
-		driver.findElement(By.xpath(properties.getProperty("no_red_camp"))).click();// Clicked on Number of
-																					// redistributed campaign icon
+		driver.findElement(By.xpath(properties.getProperty("mv_video_tab"))).click(); // Click on Video Tab
 		Thread.sleep(5000);
-		logger.info("Clicked on Number of redistributed campaign icon");
+		logger.info("Clicked on the Video tab");
 
-		WebElement rdc = driver.findElement(By.xpath(properties.getProperty("red_camp_analytics"))); // Click on redistribution campaign analytics icon
-		if (rdc.isEnabled()) {
-			rdc.click();
-			Thread.sleep(5000);
-			logger.info("Download the redistribution campaign Analytics");
-			driver.findElement(By.xpath(properties.getProperty("mv_red_camp_based_reports_download"))).click(); //Download redistribution campaign analytics
-			Thread.sleep(5000);
+		logger.info("Click on number of redistribution campaign icon");
+		WebElement redistributionicon = driver.findElement(By.xpath(properties.getProperty("mv_no_red_camp"))); // redistributed
+		redistributionicon.click(); // campaign
+		Thread.sleep(7000); // icon
 
-			driver.findElement(By.xpath(properties.getProperty("mv_camp2_click"))).click(); //Click on Manage Campaigns
-			Thread.sleep(3000);
-
-		}
-
-		else {
-			System.out.println("redistribution campaign icon is disabled");
-			Thread.sleep(3000);
-		}
-
+		/*
+		 * if (redistributionicon.isEnabled()) {
+		 * 
+		 * 
+		 * Thread.sleep(3000); redistributionicon.click();// Clicked on Number of
+		 * redistributed campaigns
+		 * 
+		 * Thread.sleep(5000);
+		 * logger.info("Clicked on Number of redistributed campaign icon");
+		 * 
+		 * driver.findElement(By.xpath(properties.getProperty("mv_red_camp_analytics")))
+		 * .click(); // Click on // redistribution // campaign // analytics // icon
+		 * Thread.sleep(7000);
+		 * logger.info("Download the redistribution campaign Analytics");
+		 * driver.findElement(By.xpath(properties.getProperty(
+		 * "mv_red_camp_based_reports_download"))).click(); // Download //
+		 * redistribution // campaign // analytics Thread.sleep(5000);
+		 * 
+		 * }
+		 * 
+		 * else { System.out.println("redistribution campaign icon is disabled");
+		 * Thread.sleep(3000); }
+		 */
+		/*
+		 * driver.findElement(By.xpath(properties.getProperty("mv_click_alltile"))).
+		 * click(); // Click on Manage Campaigns Thread.sleep(3000);
+		 */
 		logger.info("Manage Video Campaign completed");
 
 	}
