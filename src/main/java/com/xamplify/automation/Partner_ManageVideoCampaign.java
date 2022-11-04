@@ -11,6 +11,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.ISelect;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
@@ -99,7 +100,8 @@ public class Partner_ManageVideoCampaign {
 		driver.findElement(By.xpath(properties.getProperty("partneracc_m_video_analyticsicon"))).click();
 
 		Thread.sleep(4000);
-
+		
+		
 		driver.findElement(By.xpath(properties.getProperty("partneracc_m_video_analyticsicon_vdeinfo"))).click();
 		Thread.sleep(4000);
 		logger.info("Video Info Clicked Successfully");
@@ -263,95 +265,261 @@ public class Partner_ManageVideoCampaign {
 		}
  */
 		
-		WebElement OpenRate = driver
-				.findElement(By.xpath(properties.getProperty("partneracc_m_video_analyticsicon_OpenRateClick")));
-		if (OpenRate.isEnabled()) {
-			OpenRate.click();
+		/*
+		 * WebElement OpenRate = driver .findElement(By.xpath(properties.getProperty(
+		 * "partneracc_m_video_analyticsicon_OpenRateClick"))); if
+		 * (OpenRate.isEnabled()) { OpenRate.click();
+		 * 
+		 * logger.info("OpenRate tile clicked Successfully"); Thread.sleep(5000);
+		 * 
+		 * WebElement OpenRatedrpdwn = driver.findElement(
+		 * By.xpath(properties.getProperty(
+		 * "partneracc_m_video_analyticsicon_OpenRate_dropdown")));
+		 * logger.info("In OpenRate tile dropdown clicked Successfully"); Select
+		 * or_drpdwn = new Select(OpenRatedrpdwn); or_drpdwn.selectByValue("1: Object");
+		 * 
+		 * Thread.sleep(4000); or_drpdwn.selectByValue("2: Object");
+		 * 
+		 * Thread.sleep(4000); or_drpdwn.selectByValue("3: Object"); Thread.sleep(4000);
+		 * or_drpdwn.selectByValue("4: Object"); Thread.sleep(4000);
+		 * 
+		 * logger.info("In OpenRate tile dropdown functionality done Successfully");
+		 * 
+		 * driver.findElement(By.xpath(properties.getProperty(
+		 * "partneracc_m_video_analyticsicon_OpenRate_search"))) .sendKeys("gayatri");
+		 * Thread.sleep(4000);
+		 * 
+		 * WebElement OpenRate_search = driver
+		 * .findElement(By.xpath(properties.getProperty(
+		 * "partneracc_m_video_analyticsicon_OpenRate_search")));
+		 * OpenRate_search.sendKeys(Keys.ENTER);
+		 * logger.info("In OpenRate tile data searched Successfully");
+		 * Thread.sleep(4000); driver.findElement( By.xpath(properties.getProperty(
+		 * "partneracc_m_video_analyticsicon_OpenRate_search_exporticon"))) .click();
+		 * Thread.sleep(4000);
+		 * logger.info("In OpenRate tile Export to excel Clicked Successfully");
+		 * driver.findElement( By.xpath(properties.getProperty(
+		 * "partneracc_m_video_analyticsicon_OpenRate_search_excel"))).click();
+		 * Thread.sleep(4000);
+		 * logger.info("In OpenRate tile Excel data downloaded Successfully");
+		 * driver.findElement(By.xpath(properties.getProperty(
+		 * "partneracc_m_video_analyticsicon_OpenRate_cls"))) .click();
+		 * Thread.sleep(4000); logger.info(" OpenRate tile popup closed Successfully");
+		 * 
+		 * } else { logger.info(" OpenRate tile count is zero so unable to Click"); }
+		 */
+		
+		
+		
+		/*
+		 * WebElement ClickedURL= driver.findElement(By.xpath(properties.getProperty(
+		 * "partneracc_m_video_analyticsicon_ClickedURLClick"))); if
+		 * (ClickedURL.isEnabled()) { ClickedURL.click();
+		 * 
+		 * logger.info("ClickedURL tile clicked Successfully");
+		 * 
+		 * 
+		 * Thread.sleep(4000);
+		 * 
+		 * 
+		 * } else { logger.info(" ClickedURL tile count is zero so unable to Click"); }
+		 * 
+		 * 
+		 * 
+		 * 
+		 * 
+		 * WebElement Clickthoughrate=
+		 * driver.findElement(By.xpath(properties.getProperty(
+		 * "partneracc_m_video_analyticsicon_ClickthoughrateClick"))); if
+		 * (Clickthoughrate.isEnabled()) { Clickthoughrate.click();
+		 * 
+		 * logger.info("Clickthoughrate tile clicked Successfully");
+		 * 
+		 * 
+		 * Thread.sleep(4000);
+		 * 
+		 * 
+		 * } else {
+		 * logger.info(" Clickthoughrate tile count is zero so unable to Click"); }
+		 * 
+		 * 
+		 * 
+		 * WebElement Views= driver.findElement(By.xpath(properties.getProperty(
+		 * "partneracc_m_video_analyticsicon_ViewsClick"))); if (Views.isEnabled()) {
+		 * Views.click();
+		 * 
+		 * logger.info("Views tile clicked Successfully");
+		 * 
+		 * 
+		 * Thread.sleep(4000);
+		 * 
+		 * 
+		 * } else { logger.info(" Views tile count is zero so unable to Click"); }
+		 * 
+		 * WebElement Hardbounce= driver.findElement(By.xpath(properties.getProperty(
+		 * "partneracc_m_video_analyticsicon_HardbounceClick"))); if
+		 * (Hardbounce.isEnabled()) { Hardbounce.click();
+		 * 
+		 * logger.info("Hardbounce tile clicked Successfully");
+		 * 
+		 * 
+		 * Thread.sleep(4000);
+		 * 
+		 * 
+		 * } else { logger.info(" Hardbounce tile count is zero so unable to Click"); }
+		 
+	
+		
+	
+	
+	WebElement Softbounce= driver.findElement(By.xpath(properties.getProperty("partneracc_m_video_analyticsicon_SoftbounceClick")));
+	if (Softbounce.isEnabled()) {
+		Softbounce.click();
 
-			logger.info("OpenRate tile clicked Successfully");
-			Thread.sleep(5000);
+		logger.info("Softbounce tile clicked Successfully");
+		
+		
+		Thread.sleep(4000);
+		
 
-			WebElement OpenRatedrpdwn = driver.findElement(
-					By.xpath(properties.getProperty("partneracc_m_video_analyticsicon_OpenRate_dropdown")));
-			logger.info("In OpenRate tile dropdown clicked Successfully");
-			Select or_drpdwn = new Select(OpenRatedrpdwn);
-			or_drpdwn.selectByValue("1: Object");
+	} else {
+		logger.info(" Softbounce tile count is zero so unable to Click");
+	}
+	
+		
+	//
+	
+	
 
-			Thread.sleep(4000);
-			or_drpdwn.selectByValue("2: Object");
+	WebElement Unsubscribe= driver.findElement(By.xpath(properties.getProperty("partneracc_m_video_analyticsicon_UnsubscribeClick")));
+	if (Unsubscribe.isEnabled()) {
+		Unsubscribe.click();
 
-			Thread.sleep(4000);
-			or_drpdwn.selectByValue("3: Object");
-			Thread.sleep(4000);
-			or_drpdwn.selectByValue("4: Object");
-			Thread.sleep(4000);
+		logger.info("Unsubscribe tile clicked Successfully");
+		
+		
+		Thread.sleep(4000);
+		
 
-			logger.info("In OpenRate tile dropdown functionality done Successfully");
+	} else {
+		logger.info(" Unsubscribe tile count is zero so unable to Click");
+	}
+	
+		
+*/
+	WebElement Leads= driver.findElement(By.xpath(properties.getProperty("partneracc_m_video_analyticsicon_LeadsClick")));
+	if (Leads.isEnabled()) {
+		Leads.click();
 
-			driver.findElement(By.xpath(properties.getProperty("partneracc_m_video_analyticsicon_OpenRate_search")))
-					.sendKeys("gayatri");
-			Thread.sleep(4000);
-
-			WebElement OpenRate_search = driver
-					.findElement(By.xpath(properties.getProperty("partneracc_m_video_analyticsicon_OpenRate_search")));
-			OpenRate_search.sendKeys(Keys.ENTER);
-			logger.info("In OpenRate tile data searched Successfully");
-			Thread.sleep(4000);
-			driver.findElement(
-					By.xpath(properties.getProperty("partneracc_m_video_analyticsicon_OpenRate_search_exporticon")))
-					.click();
-			Thread.sleep(4000);
-			logger.info("In OpenRate tile Export to excel Clicked Successfully");
-			driver.findElement(
-					By.xpath(properties.getProperty("partneracc_m_video_analyticsicon_OpenRate_search_excel"))).click();
-			Thread.sleep(4000);
-			logger.info("In OpenRate tile Excel data downloaded Successfully");
-			driver.findElement(By.xpath(properties.getProperty("partneracc_m_video_analyticsicon_OpenRate_cls")))
-					.click();
-			Thread.sleep(4000);
-			logger.info(" OpenRate tile popup closed Successfully");
-
-		} else {
-			logger.info(" OpenRate tile count is zero so unable to Click");
-		}
-
+		logger.info("Leads tile clicked Successfully");
+		
+		
+		Thread.sleep(4000);
+		
+		driver.findElement(By.xpath(properties.getProperty("partneracc_m_video_analyticsicon_Leads_dwnload"))).click();
+		Thread.sleep(4000);
+		
+		
+		
+		logger.info("In Leads tile  download icon clicked Successfully");
+		
+		
+		
+		WebElement leadsearch=driver.findElement(By.xpath(properties.getProperty("partneracc_m_video_analyticsicon_Leads_search")));
+		leadsearch.sendKeys("gayatri");
+		Thread.sleep(4000);
+		leadsearch.sendKeys(Keys.ENTER);
+		logger.info("In Leads tile data searched Successfully");
+		
+		Thread.sleep(7000);
+		
+		
+		
+		driver.findElement(By.xpath(properties.getProperty("partneracc_m_video_analyticsicon_Leads_search_clr"))).click();
+		
+		Thread.sleep(4000);
+		driver.findElement(By.xpath(properties.getProperty("partneracc_m_video_analyticsicon_Leads_close"))).click();
+		Thread.sleep(4000);
 		
 		
 		
 		
-		WebElement ClickedURL= driver.findElement(By.xpath(properties.getProperty("partneracc_m_video_analyticsicon_ClickedURLClick")));
-		if (ClickedURL.isEnabled()) {
-			ClickedURL.click();
 
-			logger.info("ClickedURL tile clicked Successfully");
+	} else {
+		logger.info(" Leads tile count is zero so unable to Click");
+	}
+	
+		
+	WebElement Deals= driver.findElement(By.xpath(properties.getProperty("partneracc_m_video_analyticsicon_DealsClick")));
+	if (Deals.isEnabled()) {
+		Deals.click();
+
+		logger.info("Deals tile clicked Successfully");
+		
+		Thread.sleep(4000);
+		
+		
+		driver.findElement(By.xpath(properties.getProperty("partneracc_m_video_analyticsicon_Deals_dwnload"))).click();
+		Thread.sleep(4000);
+		
+		
+		logger.info("In Deals tile  download icon clicked Successfully");
+		
+		WebElement Dealsearch=driver.findElement(By.xpath(properties.getProperty("partneracc_m_video_analyticsicon_Deals_search")));
+		Dealsearch.sendKeys("gayatri");
+		Thread.sleep(4000);
+		Dealsearch.sendKeys(Keys.ENTER);
+		logger.info("In Deals tile data searched Successfully");
+		
+		Thread.sleep(7000);
+		
+		driver.findElement(By.xpath(properties.getProperty("partneracc_m_video_analyticsicon_Deals_search_clr"))).click();
+		
+		Thread.sleep(4000);
+		driver.findElement(By.xpath(properties.getProperty("partneracc_m_video_analyticsicon_Deals_close"))).click();
+		Thread.sleep(4000);
+		
+	} else {
+		logger.info(" Deals tile count is zero so unable to Click");
+	}
+	
 			
-			
-			Thread.sleep(4000);
-			
+		
+	WebElement sortby_drpdwn=driver.findElement(By.xpath(properties.getProperty("partneracc_mvideo_analyticsicon_tot_view_for_campaign_sortdrpdwn")));
+	
+	Select dropdwn=new Select(sortby_drpdwn);
+	
+	dropdwn.selectByValue("1: Object");
+	Thread.sleep(4000);
 
-		} else {
-			logger.info(" ClickedURL tile count is zero so unable to Click");
-		}
+	dropdwn.selectByValue("2: Object");	
+	Thread.sleep(4000);
+
+	dropdwn.selectByValue("3: Object");
+	Thread.sleep(4000);
+
+	dropdwn.selectByValue("4: Object");
+
+	Thread.sleep(4000);
+	
+	
+	dropdwn.selectByValue("5: Object");
+
+	Thread.sleep(4000);
+	dropdwn.selectByValue("6: Object");
+
+	Thread.sleep(4000);
+	
+	logger.info(" Sortby done successfully");
+
+		WebElement vanalytics_search=driver.findElement(By.xpath(properties.getProperty("partneracc_mvideo_analyticsicon_tot_view_for_campaign_search")));
+		vanalytics_search.sendKeys("gayatri");
+		vanalytics_search.sendKeys(Keys.ENTER);
+		
+		Thread.sleep(4000);
 		
 		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
+		driver.findElement(By.xpath(properties.getProperty("partneracc_mvideo_analyticsicon_tot_view_for_campaign_export"))).click();
 		
 		
 		
