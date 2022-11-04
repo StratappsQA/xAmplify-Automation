@@ -21,7 +21,7 @@ public class ManageVideoCampaign {
 	WebDriver driver = Instance.getInstance();
 	Properties properties = PropertiesFile
 			.readPropertyFile("D:\\git\\xAmplify-Automation\\src\\main\\resources\\ManageCampaigns.properties");
-	final Logger logger = LogManager.getLogger(SurveyCampaign.class);
+	final Logger logger = LogManager.getLogger(ManageVideoCampaign.class);
 
 	@Test
 
@@ -33,16 +33,16 @@ public class ManageVideoCampaign {
 				ExpectedConditions.visibilityOfElementLocated(By.xpath(properties.getProperty("mv_campaignhover"))));
 		mvcamp.click(); // hover on campaign
 
-		Actions mcamp_action = new Actions(driver);
-		mcamp_action.moveToElement(mvcamp).perform();
+		Actions mvcamp_action = new Actions(driver);
+		mvcamp_action.moveToElement(mvcamp).perform();
 		Thread.sleep(5000);
 		WebElement manage_campele = driver.findElement(By.xpath(properties.getProperty("mv_managecampaigns"))); // click
 																												// on
 																												// manage
 																												// campaign
-		mcamp_action.moveToElement(manage_campele);
-		mcamp_action.click();
-		mcamp_action.perform();
+		mvcamp_action.moveToElement(manage_campele);
+		mvcamp_action.click();
+		mvcamp_action.perform();
 
 		Thread.sleep(4000);
 
@@ -81,9 +81,9 @@ public class ManageVideoCampaign {
 		Thread.sleep(5000);
 		logger.info("campaign copied successfully");
 
-		Actions a = new Actions(driver); // scroll down a page
-		a.sendKeys(Keys.PAGE_DOWN).build().perform();
-		Thread.sleep(5000);
+//		Actions a = new Actions(driver); // scroll down a page
+//		a.sendKeys(Keys.PAGE_DOWN).build().perform();
+//		Thread.sleep(5000);
 
 		driver.findElement(By.xpath(properties.getProperty("mv_video_gear_icon2"))).click(); // Click on gear icon
 		Thread.sleep(3000);
@@ -92,11 +92,11 @@ public class ManageVideoCampaign {
 		driver.findElement(By.xpath(properties.getProperty("mv_campaign_end_date"))).click();
 		Thread.sleep(3000);
 
-		WebElement wd = driver.findElement(By.xpath(properties.getProperty("mv_selected_date")));
+		WebElement ed = driver.findElement(By.xpath(properties.getProperty("mv_selected_date")));
 
-		wd.click();
+		ed.click();
 
-		Thread.sleep(4000);
+		Thread.sleep(6000);
 
 		logger.info("Selected the End date ");
 
@@ -305,6 +305,7 @@ public class ManageVideoCampaign {
 		driver.findElement(By.xpath(properties.getProperty("mv_total_emailsent_cross_click"))).click();
 		Thread.sleep(3000);
 
+		logger.info("Click on the Deliverability tile");
 		driver.findElement(By.xpath(properties.getProperty("mv_deliverability"))).click();
 		Thread.sleep(3000);
 		driver.findElement(By.xpath(properties.getProperty("mv_delivered_email_search_box"))).sendKeys("mounika");
@@ -822,13 +823,15 @@ public class ManageVideoCampaign {
 		eml_downloadhistory__sort1.selectByValue("5: Object");
 		Thread.sleep(2000);
 
-		driver.findElement(By.xpath(properties.getProperty("mv_email_open_search_click"))).sendKeys("Automated");
+		driver.findElement(By.xpath(properties.getProperty("mv_show_download_search_click"))).sendKeys("Automated");
 		Thread.sleep(3000);
-		driver.findElement(By.xpath(properties.getProperty("mv_email_open_search_icon_click"))).click();
+		driver.findElement(By.xpath(properties.getProperty("mv_show_download_search_icon_click"))).click();
 		Thread.sleep(3000);
-		driver.findElement(By.xpath(properties.getProperty("mv_email_open_search_data_clear"))).click(); // clear data
+		driver.findElement(By.xpath(properties.getProperty("mv_show_download_search_data_clear"))).click(); // clear
+																											// data
 		Thread.sleep(5000);
 		logger.info("Clicked on the Show download history icon");
+
 		driver.findElement(By.xpath(properties.getProperty("mv_camp1_click"))).click(); // click on Manage Campaigns
 		Thread.sleep(5000);
 		driver.findElement(By.xpath(properties.getProperty("mv_video_tab"))).click(); // Click on Video Tab
@@ -867,6 +870,9 @@ public class ManageVideoCampaign {
 		 * driver.findElement(By.xpath(properties.getProperty("mv_click_alltile"))).
 		 * click(); // Click on Manage Campaigns Thread.sleep(3000);
 		 */
+
+		driver.findElement(By.xpath(properties.getProperty("mv_camp2_click"))).click(); // click on Manage Campaigns
+		Thread.sleep(9000);
 		logger.info("Manage Video Campaign completed");
 
 	}
