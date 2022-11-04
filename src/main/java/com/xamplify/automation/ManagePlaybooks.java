@@ -13,7 +13,7 @@ import org.testng.annotations.Test;
 
 public class ManagePlaybooks {
 
-
+    //This class need to run in vendor account
 	WebDriver driver = Instance.getInstance();
 	Properties properties = PropertiesFile
 			.readPropertyFile("D:\\git\\xAmplify-Automation\\src\\main\\resources\\TrackBuilder.properties");
@@ -28,7 +28,7 @@ public class ManagePlaybooks {
 		Thread.sleep(5000);
 		driver.findElement(By.xpath(properties.getProperty("manage_playbooks"))).click(); //click on manage playbooks
 		Thread.sleep(5000);
-		driver.findElement(By.xpath(properties.getProperty("search_track"))).sendKeys("Playbook"); //search with playbook
+		driver.findElement(By.xpath(properties.getProperty("search_track"))).sendKeys("VendorPlaybook"); //search with playbook
 		Thread.sleep(5000);
 		driver.findElement(By.xpath(properties.getProperty("click_searchh"))).click(); //click on search icon	
 		Thread.sleep(8000);
@@ -82,7 +82,7 @@ public class ManagePlaybooks {
 		Thread.sleep(5000);
 		driver.findElement(By.xpath(properties.getProperty("manage_playbooks"))).click(); //click on manage playbooks
 		Thread.sleep(5000);
-		driver.findElement(By.xpath(properties.getProperty("search_track"))).sendKeys("Playbook"); //search with playbook
+		driver.findElement(By.xpath(properties.getProperty("search_track"))).sendKeys("VendorPlaybook"); //search with playbook
 		Thread.sleep(5000);
 		driver.findElement(By.xpath(properties.getProperty("click_searchh"))).click(); //click on search icon	
 		Thread.sleep(5000);
@@ -112,7 +112,7 @@ public class ManagePlaybooks {
 		Thread.sleep(5000);
 		driver.findElement(By.xpath(properties.getProperty("manage_playbooks"))).click(); //click on manage playbooks
 		Thread.sleep(5000);
-		driver.findElement(By.xpath(properties.getProperty("search_track"))).sendKeys("Playbook"); //search with playbook
+		driver.findElement(By.xpath(properties.getProperty("search_track"))).sendKeys("VendorPlaybook"); //search with playbook
 		Thread.sleep(5000);
 		driver.findElement(By.xpath(properties.getProperty("click_searchh"))).click(); //click on search icon	
 		Thread.sleep(5000);
@@ -122,15 +122,15 @@ public class ManagePlaybooks {
 	}
 
 
-	//unpublishing published track 
-	@Test (priority=3)
+	//unpublishing published playbook 
+	@Test (priority=3,enabled=false)
 	public void unpublish_pb() throws InterruptedException, IOException {	
 		Thread.sleep(3000);
 		driver.findElement(By.xpath(properties.getProperty("Content_leftmenu1"))).click(); //click on left side content menu
 		Thread.sleep(5000);
 		driver.findElement(By.xpath(properties.getProperty("manage_playbooks"))).click(); //click on manage playbook
 		Thread.sleep(5000);
-		driver.findElement(By.xpath(properties.getProperty("search_track"))).sendKeys("Playbook"); //search with playbook
+		driver.findElement(By.xpath(properties.getProperty("search_track"))).sendKeys("VendorPlaybook"); //search with playbook
 		Thread.sleep(5000);
 		driver.findElement(By.xpath(properties.getProperty("click_searchh"))).click(); //click on search icon	
 		Thread.sleep(5000);
@@ -143,14 +143,14 @@ public class ManagePlaybooks {
 
 
 	//clicking on delete 
-	@Test (priority=4)
+	@Test (priority=3)
 	public void delete() throws InterruptedException, IOException {	
 		Thread.sleep(3000);
 		driver.findElement(By.xpath(properties.getProperty("Content_leftmenu1"))).click(); //click on left side content menu
 		Thread.sleep(5000);
 		driver.findElement(By.xpath(properties.getProperty("manage_playbooks"))).click(); //click on manage playbooks
 		Thread.sleep(5000);
-		driver.findElement(By.xpath(properties.getProperty("search_track"))).sendKeys("Playbook"); //search with track
+		driver.findElement(By.xpath(properties.getProperty("search_track"))).sendKeys("VendorPlaybook"); //search with track
 		Thread.sleep(5000);
 		driver.findElement(By.xpath(properties.getProperty("click_searchh"))).click(); //click on search icon	
 		Thread.sleep(5000);
@@ -166,6 +166,40 @@ public class ManagePlaybooks {
 		Assert.assertEquals(actualresult, expectedresult);
 		logger.info("Assertion succesfull for delete playbook");
 
-	}				
+	}		
+	
+	
+	//to view analytics in vendor account after track is been viewed and downloaded in partner account
+	@Test (priority=4)
+	public void analytics_playbook_vendor() throws InterruptedException, IOException {	
+		Thread.sleep(3000);
+		driver.findElement(By.xpath(properties.getProperty("Content_leftmenu1"))).click(); //click on left side content menu
+		Thread.sleep(5000);
+		driver.findElement(By.xpath(properties.getProperty("manage_playbooks"))).click(); //click on add tracks
+		Thread.sleep(5000);
+		driver.findElement(By.xpath(properties.getProperty("search_track"))).sendKeys("PartnerPlaybook"); //search with VendorPlaybook
+		Thread.sleep(5000);
+		driver.findElement(By.xpath(properties.getProperty("click_searchh"))).click(); //click on search icon	
+		Thread.sleep(5000);
+		driver.findElement(By.xpath(properties.getProperty("analytics_icon_pb"))).click(); //click on analytics icon
+		Thread.sleep(5000);
+		logger.info("redirected to partner view analytics page ");
+		driver.findElement(By.xpath(properties.getProperty("partner_analytics_icon"))).click(); //click on analytics icon agaisnt to partner
+		Thread.sleep(5000);
+		driver.findElement(By.xpath(properties.getProperty("partner_analytics_icon"))).click(); //click on analytics icon 
+		Thread.sleep(5000);
+		logger.info("deatiled analytics page is opened");
+		driver.findElement(By.xpath(properties.getProperty("cross_icon_analytics"))).click(); //click on cross icon detailed analytics view
+		Thread.sleep(5000);
+		driver.findElement(By.xpath(properties.getProperty("cross_icon_partnerview"))).click(); //click on cross icon in partner view
+		Thread.sleep(5000);
+		driver.findElement(By.xpath(properties.getProperty("cross_icon_partnerview"))).click(); //click on cross icon in partner view
+		Thread.sleep(5000);
+		logger.info("clicked on cross icons");
+		logger.info("page is redirected to all playbooks");		
+
+	}
+	
+
 
 }
