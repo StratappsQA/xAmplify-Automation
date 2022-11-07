@@ -27,7 +27,7 @@ public class ManageSurveyToCampaign {
 
 	public void manage_surveyTocampaign() throws InterruptedException, SQLException {
 
-		WebDriverWait wait = new WebDriverWait(driver, 50); // Wait till the element is not visible
+		WebDriverWait wait = new WebDriverWait(driver, 80); // Wait till the element is not visible
 
 		WebElement mscamp = wait.until(
 				ExpectedConditions.visibilityOfElementLocated(By.xpath(properties.getProperty("campaignhover"))));

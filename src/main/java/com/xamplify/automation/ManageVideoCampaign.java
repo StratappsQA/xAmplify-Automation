@@ -92,13 +92,16 @@ public class ManageVideoCampaign {
 		driver.findElement(By.xpath(properties.getProperty("mv_campaign_end_date"))).click();
 		Thread.sleep(3000);
 
-		WebElement ed = driver.findElement(By.xpath(properties.getProperty("mv_selected_date")));
-
-		ed.click();
-
-		Thread.sleep(6000);
-
-		logger.info("Selected the End date ");
+		/*
+		 * WebElement ed =
+		 * driver.findElement(By.xpath(properties.getProperty("mv_selected_date")));
+		 * 
+		 * ed.click();
+		 * 
+		 * Thread.sleep(6000);
+		 * 
+		 * logger.info("Selected the End date ");
+		 */
 
 		driver.findElement(By.xpath(properties.getProperty("mv_save_changes"))).click();
 		Thread.sleep(3000);
@@ -841,7 +844,7 @@ public class ManageVideoCampaign {
 		logger.info("Click on number of redistribution campaign icon");
 		WebElement redistributionicon = driver.findElement(By.xpath(properties.getProperty("mv_no_red_camp"))); // redistributed
 		redistributionicon.click(); // campaign
-		Thread.sleep(7000); // icon
+		Thread.sleep(5000); // icon
 
 		/*
 		 * if (redistributionicon.isEnabled()) {
@@ -866,13 +869,12 @@ public class ManageVideoCampaign {
 		 * else { System.out.println("redistribution campaign icon is disabled");
 		 * Thread.sleep(3000); }
 		 */
-		/*
-		 * driver.findElement(By.xpath(properties.getProperty("mv_click_alltile"))).
-		 * click(); // Click on Manage Campaigns Thread.sleep(3000);
-		 */
+		
+	
+		 
 
-		driver.findElement(By.xpath(properties.getProperty("mv_camp2_click"))).click(); // click on Manage Campaigns
-		Thread.sleep(9000);
+	
+		
 		logger.info("Manage Video Campaign completed");
 
 	}

@@ -32,7 +32,7 @@ public class ManageSurveyCampaign {
 
 	public void manage_scampaign() throws InterruptedException, SQLException {
 
-		WebDriverWait wait = new WebDriverWait(driver, 50); // Wait till the element is not visible
+		WebDriverWait wait = new WebDriverWait(driver, 90); // Wait till the element is not visible
 
 		WebElement mscamp = wait.until(
 				ExpectedConditions.visibilityOfElementLocated(By.xpath(properties.getProperty("campaignhover"))));
@@ -93,15 +93,16 @@ public class ManageSurveyCampaign {
 		Thread.sleep(3000);
 		driver.findElement(By.xpath(properties.getProperty("campaign_end_date"))).click();
 		Thread.sleep(3000);
-
-		WebElement wd = driver.findElement(By.xpath(properties.getProperty("selected_date")));
-
-		wd.click();
-
-		Thread.sleep(4000);
-
-		logger.info("Selected the End date ");
-
+		/*
+		 * WebElement wd =
+		 * driver.findElement(By.xpath(properties.getProperty("selected_date")));
+		 * 
+		 * wd.click();
+		 * 
+		 * Thread.sleep(4000);
+		 * 
+		 * logger.info("Selected the End date ");
+		 */
 		driver.findElement(By.xpath(properties.getProperty("save_changes"))).click();
 		Thread.sleep(3000);
 
@@ -693,7 +694,7 @@ public class ManageSurveyCampaign {
 		logger.info("Clicked on the Survey tab");
 		driver.findElement(By.xpath(properties.getProperty("no_red_camp"))).click();// Clicked on Number of
 																					// redistributed campaign icon
-		Thread.sleep(3000);
+		Thread.sleep(5000);
 		logger.info("Clicked on Number of redistributed campaign icon");
 		
 		WebElement rdc = driver.findElement(By.xpath(properties.getProperty("red_camp_analytics")));
@@ -709,11 +710,10 @@ public class ManageSurveyCampaign {
 			Thread.sleep(3000);
 		}
 		
-		driver.findElement(By.xpath(properties.getProperty("mcamp2_click"))).click();
-		Thread.sleep(3000);
+	
 		logger.info("Manage Survey Campaign completed");
 		
-		
+		Thread.sleep(6000);
 		
 
 	}

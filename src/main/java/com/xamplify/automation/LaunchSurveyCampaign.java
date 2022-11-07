@@ -56,6 +56,8 @@ public class LaunchSurveyCampaign {
 
 			System.out.println("Survey Campaign Launched failed");
 		}
+
+		Thread.sleep(10000);
 	}
 
 }

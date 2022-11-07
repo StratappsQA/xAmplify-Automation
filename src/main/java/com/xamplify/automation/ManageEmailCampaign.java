@@ -108,15 +108,14 @@ public class ManageEmailCampaign {
 																									// field
 		Thread.sleep(3000);
 
-		WebElement ed_email = driver.findElement(By.xpath(properties.getProperty("manage_email_camp_selected_date"))); // Select
-																														// date
-																														// on
-																														// Calendar
-
-		ed_email.click();
-
-		Thread.sleep(6000);
-
+		/*
+		 * WebElement ed_email = driver.findElement(By.xpath(properties.getProperty(
+		 * "manage_email_camp_selected_date"))); // Select // date // on // Calendar
+		 * 
+		 * ed_email.click();
+		 * 
+		 * Thread.sleep(6000);
+		 */
 		logger.info("Selected the End date ");
 
 		driver.findElement(By.xpath(properties.getProperty("manage_email_camp_save_changes"))).click();
@@ -742,7 +741,7 @@ public class ManageEmailCampaign {
 		Thread.sleep(3000);
 
 		logger.info("Clicked on email_open_history_by_template icon");
-		driver.findElement(By.xpath(properties.getProperty("e_managecamp_click"))).click();
+		driver.findElement(By.xpath(properties.getProperty("e_managecamp1_click"))).click();
 		Thread.sleep(3000);
 		driver.findElement(By.xpath(properties.getProperty("manage_email_tab"))).click(); // Click on Email Tab
 		Thread.sleep(5000);
@@ -778,7 +777,7 @@ public class ManageEmailCampaign {
 				.click(); // clear data
 		Thread.sleep(5000);
 		logger.info("Clicked on the Show download history icon");
-		driver.findElement(By.xpath(properties.getProperty("e_managecamp_click"))).click(); // click on Manage Campaigns
+		driver.findElement(By.xpath(properties.getProperty("e_managecamp2_click"))).click(); // click on Manage Campaigns
 		Thread.sleep(5000);
 		driver.findElement(By.xpath(properties.getProperty("manage_email_tab"))).click(); // Click on email Tab
 		Thread.sleep(5000);
@@ -789,8 +788,10 @@ public class ManageEmailCampaign {
 		WebElement email_camp_redistributionicon = driver
 				.findElement(By.xpath(properties.getProperty("number_of_email_Camp_redistribution_camp"))); // redistributed
 		email_camp_redistributionicon.click(); // campaign
-		Thread.sleep(7000);
-		driver.findElement(By.xpath(properties.getProperty("e_managecamp_click"))).click(); // click on Manage Campaigns
+		Thread.sleep(4000);
+
+
+		driver.findElement(By.xpath(properties.getProperty("goto_home"))).click(); // Click on HOME
 		Thread.sleep(5000);
 		logger.info("Manage Email Campaign completed");
 	}

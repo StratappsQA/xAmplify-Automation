@@ -1,6 +1,7 @@
 package com.xamplify.automation;
 
 import java.sql.SQLException;
+
 import java.util.Properties;
 
 import org.apache.logging.log4j.LogManager;
