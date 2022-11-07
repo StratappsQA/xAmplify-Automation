@@ -38,43 +38,52 @@ public class Partner_ManageVideoCampaign {
 		p_mvcamp_action.moveToElement(mvcamp).perform();
 		Thread.sleep(5000);
 		WebElement manage_pvcampele = driver
-				.findElement(By.xpath(properties.getProperty("partneracc_manage_campaign"))); // click on
-		Thread.sleep(5000); // manage
-		// campaign
+				.findElement(By.xpath(properties.getProperty("partneracc_manage_campaign"))); // click on manage
+																								// campaign
+		Thread.sleep(5000);
 		p_mvcamp_action.moveToElement(manage_pvcampele);
 		p_mvcamp_action.click();
 		p_mvcamp_action.perform();
 
 		Thread.sleep(6000);
-		driver.findElement(By.xpath(properties.getProperty("partneracc_manage_video_tab"))).click();
+		driver.findElement(By.xpath(properties.getProperty("partneracc_manage_video_tab"))).click(); // click on video
+																										// tab
 		Thread.sleep(4000);
 		logger.info("Video tab clicked successfully");
-		/*
-		 * driver.findElement(By.xpath(properties.getProperty(
-		 * "partneracc_manage_video_gearicon"))).click(); Thread.sleep(4000);
-		 * 
-		 * driver.findElement(By.xpath(properties.getProperty(
-		 * "partneracc_manage_video_preview"))).click(); Thread.sleep(4000);
-		 * 
-		 * driver.findElement(By.xpath(properties.getProperty(
-		 * "partneracc_m_video_preview_delete"))).click(); Thread.sleep(4000);
-		 * 
-		 * driver.findElement(By.xpath(properties.getProperty(
-		 * "partneracc_m_video_preview_delete_yes"))).click(); Thread.sleep(4000);
-		 * logger.info("Draft campagin deleted successfully from preview option");
-		 */
+
+		driver.findElement(By.xpath(properties.getProperty("partneracc_manage_video_gearicon"))).click(); // click on
+																											// gear icon
+		Thread.sleep(4000);
+
+		driver.findElement(By.xpath(properties.getProperty("partneracc_manage_video_preview"))).click(); // click on the
+																											// preview
+		Thread.sleep(4000);
+
+		driver.findElement(By.xpath(properties.getProperty("partneracc_m_video_preview_delete"))).click(); // click on
+																											// the
+																											// delete
+		Thread.sleep(4000);
+
+		driver.findElement(By.xpath(properties.getProperty("partneracc_m_video_preview_delete_yes"))).click(); // click
+																												// on
+																												// the
+																												// yes
+																												// delete
+		Thread.sleep(4000);
+		logger.info("Draft campagin deleted successfully from preview option");
 
 	}
 
-	@Test(priority = 2)
+	@Test(priority = 2, enabled = true)
 
 	public void partneracc_manage_vdecampaign_() throws InterruptedException, SQLException {
 
 		Thread.sleep(4000);
-		driver.findElement(By.xpath(properties.getProperty("partneracc_manage_video_gearicon"))).click();
+		driver.findElement(By.xpath(properties.getProperty("partneracc_manage_video_gearicon"))).click(); // click on
+																											// gear icon
 		Thread.sleep(4000);
 
-		driver.findElement(By.xpath(properties.getProperty("partneracc_m_video_edit"))).click();
+		driver.findElement(By.xpath(properties.getProperty("partneracc_m_video_edit"))).click(); // click on edit icon
 		Thread.sleep(4000);
 
 		driver.findElement(By.xpath(properties.getProperty("partneracc_m_video_edit_folder"))).click();
@@ -83,11 +92,16 @@ public class Partner_ManageVideoCampaign {
 		driver.findElement(By.xpath(properties.getProperty("partneracc_m_video_edit_updatefolder"))).click();
 		Thread.sleep(4000);
 
-		driver.findElement(By.xpath(properties.getProperty("partneracc_m_video_edit_update"))).click();
+		driver.findElement(By.xpath(properties.getProperty("partneracc_m_video_edit_update"))).click(); // click on the
+																										// update
 
 		Thread.sleep(4000);
 
-		driver.findElement(By.xpath(properties.getProperty("partneracc_m_video_edit_update_close"))).click();
+		driver.findElement(By.xpath(properties.getProperty("partneracc_m_video_edit_update_close"))).click(); // click
+																												// on
+																												// the
+																												// close
+																												// button
 
 		Thread.sleep(4000);
 
@@ -97,116 +111,124 @@ public class Partner_ManageVideoCampaign {
 
 	public void partneracc_manage_vdecampaign_analytics() throws InterruptedException, SQLException {
 
-		driver.findElement(By.xpath(properties.getProperty("partneracc_m_video_analyticsicon"))).click();
+		driver.findElement(By.xpath(properties.getProperty("partneracc_m_video_analyticsicon"))).click(); // click on
+																											// analytics
+																											// icon
 
 		Thread.sleep(4000);
-		
-		
-		driver.findElement(By.xpath(properties.getProperty("partneracc_m_video_analyticsicon_vdeinfo"))).click();
+
+		driver.findElement(By.xpath(properties.getProperty("partneracc_m_video_analyticsicon_vdeinfo"))).click(); // click
+																													// on
+																													// video
+																													// info
 		Thread.sleep(4000);
 		logger.info("Video Info Clicked Successfully");
 
 		driver.findElement(By.xpath(properties.getProperty("partneracc_m_video_analyticsicon_vdeinfo_cls"))).click();
 		logger.info("Video Info popup closed Successfully");
 		Thread.sleep(4000);
-		/*
-		 * driver.findElement(By.xpath(properties.getProperty(
-		 * "partneracc_m_video_analyticsicon_Emailinfo"))).click();
-		 * logger.info("Email Info Clicked  Successfully"); Thread.sleep(4000);
-		 * driver.findElement(By.xpath(properties.getProperty(
-		 * "partneracc_m_video_analyticsicon_Emailinfo_cls"))).click();
-		 * logger.info("Email Info popup closed Successfully"); Thread.sleep(4000);
-		 * 
-		 * driver.findElement(By.xpath(properties.getProperty(
-		 * "partneracc_m_video_analyticsicon_listinfo"))).click();
-		 * logger.info("List Info Clicked  Successfully"); Thread.sleep(4000);
-		 * 
-		 * driver.findElement(By.xpath(properties.getProperty(
-		 * "partneracc_m_video_analyticsicon_Listinfo_cls"))).click();
-		 * logger.info("List Info popup closed Successfully");
-		 * 
-		 * Thread.sleep(4000);
-		 * 
-		 * driver.findElement(By.xpath(properties.getProperty(
-		 * "partneracc_m_video_analyticsicon_RecipientsClick"))) .click();
-		 * logger.info("Recipient tile clicked Successfully"); Thread.sleep(4000);
-		 * 
-		 * driver.findElement(By.xpath(properties.getProperty(
-		 * "partneracc_m_video_analyticsicon_Recipients_search"))) .sendKeys("gayatri");
-		 * Thread.sleep(4000);
-		 * 
-		 * WebElement rec_search = driver .findElement(By.xpath(properties.getProperty(
-		 * "partneracc_m_video_analyticsicon_Recipients_search")));
-		 * rec_search.sendKeys(Keys.ENTER);
-		 * logger.info("In Recipient tile data searched Successfully");
-		 * Thread.sleep(4000); driver.findElement( By.xpath(properties.getProperty(
-		 * "partneracc_m_video_analyticsicon_Recipients_search_exporticon"))) .click();
-		 * Thread.sleep(4000);
-		 * logger.info("In Recipient tile Export to excel Clicked Successfully");
-		 * driver.findElement(By.xpath(properties.getProperty(
-		 * "partneracc_m_video_analyticsicon_Recipients_search_excel"))) .click();
-		 * Thread.sleep(4000);
-		 * logger.info("In Recipient tile Excel data downloaded Successfully");
-		 * driver.findElement(By.xpath(properties.getProperty(
-		 * "partneracc_m_video_analyticsicon_Recipients_cls"))).click();
-		 * Thread.sleep(4000); logger.info(" Recipient tile popup closed Successfully");
-		 * 
-		 * driver.findElement(By.xpath(properties.getProperty(
-		 * "partneracc_m_video_analyticsicon_TotalEmailsSentClick"))) .click();
-		 * logger.info("TotalEmailsSent tile clicked Successfully"); Thread.sleep(4000);
-		 * 
-		 * driver.findElement(By.xpath(properties.getProperty(
-		 * "partneracc_m_video_analyticsicon_TotalEmailsSent_search")))
-		 * .sendKeys("gayatri"); Thread.sleep(4000);
-		 * 
-		 * WebElement TotalEmailsSent_search = driver.findElement(
-		 * By.xpath(properties.getProperty(
-		 * "partneracc_m_video_analyticsicon_TotalEmailsSent_search")));
-		 * TotalEmailsSent_search.sendKeys(Keys.ENTER);
-		 * logger.info("In TotalEmailsSent tile data searched Successfully");
-		 * Thread.sleep(4000); driver.findElement( By.xpath(properties.getProperty(
-		 * "partneracc_m_video_analyticsicon_TotalEmailsSent_search_exporticon")))
-		 * .click(); Thread.sleep(4000);
-		 * logger.info("In TotalEmailsSent tile Export to excel Clicked Successfully");
-		 * driver.findElement( By.xpath(properties.getProperty(
-		 * "partneracc_m_video_analyticsicon_TotalEmailsSent_search_excel"))) .click();
-		 * Thread.sleep(4000);
-		 * logger.info("In TotalEmailsSent tile Excel data downloaded Successfully");
-		 * Thread.sleep(4000); driver.findElement(By.xpath(properties.getProperty(
-		 * "partneracc_m_video_analyticsicon_TotalEmailsSent_cls"))) .click();
-		 * Thread.sleep(4000);
-		 * logger.info(" TotalEmailsSent tile popup closed Successfully");
-		 * 
-		 * driver.findElement(By.xpath(properties.getProperty(
-		 * "partneracc_m_video_analyticsicon_DeliverabilityClick"))) .click();
-		 * logger.info("Recipient tile  clicked Successfully"); Thread.sleep(4000);
-		 * 
-		 * driver.findElement(By.xpath(properties.getProperty(
-		 * "partneracc_m_video_analyticsicon_Deliverability_search")))
-		 * .sendKeys("gayatri"); Thread.sleep(4000);
-		 * 
-		 * WebElement Deliverability_search = driver.findElement(
-		 * By.xpath(properties.getProperty(
-		 * "partneracc_m_video_analyticsicon_Deliverability_search")));
-		 * Deliverability_search.sendKeys(Keys.ENTER);
-		 * logger.info("In Deliverability tile data searched Successfully");
-		 * Thread.sleep(4000); driver.findElement( By.xpath(properties.getProperty(
-		 * "partneracc_m_video_analyticsicon_Deliverability_search_exporticon")))
-		 * .click(); Thread.sleep(4000);
-		 * logger.info("In Deliverability tile Export to excel Clicked Successfully");
-		 * driver.findElement( By.xpath(properties.getProperty(
-		 * "partneracc_m_video_analyticsicon_Deliverability_search_excel"))) .click();
-		 * Thread.sleep(4000);
-		 * logger.info("In Deliverability tile Excel data downloaded Successfully");
-		 * driver.findElement(By.xpath(properties.getProperty(
-		 * "partneracc_m_video_analyticsicon_Deliverability_cls"))) .click();
-		 * Thread.sleep(4000);
-		 * logger.info(" Deliverability tile popup closed Successfully");
-		
-		
-		
-		
-		
+
+		driver.findElement(By.xpath(properties.getProperty("partneracc_m_video_analyticsicon_Emailinfo"))).click(); // click on email info
+		logger.info("Email Info Clicked  Successfully");
+		Thread.sleep(4000);
+		driver.findElement(By.xpath(properties.getProperty("partneracc_m_video_analyticsicon_Emailinfo_cls"))).click();
+		logger.info("Email Info popup closed Successfully");
+		Thread.sleep(4000);
+
+		driver.findElement(By.xpath(properties.getProperty("partneracc_m_video_analyticsicon_listinfo"))).click(); // click on list info
+		logger.info("List Info Clicked  Successfully");
+		Thread.sleep(4000);
+
+		driver.findElement(By.xpath(properties.getProperty("partneracc_m_video_analyticsicon_Listinfo_cls"))).click();
+		logger.info("List Info popup closed Successfully");
+
+		Thread.sleep(4000);
+
+		driver.findElement(By.xpath(properties.getProperty("partneracc_m_video_analyticsicon_RecipientsClick"))) // click on recipients tile
+				.click();
+		logger.info("Recipient tile clicked Successfully");
+		Thread.sleep(4000);
+
+		driver.findElement(By.xpath(properties.getProperty("partneracc_m_video_analyticsicon_Recipients_search"))) //click for the search
+				.sendKeys("gayatri");
+		Thread.sleep(4000);
+
+		WebElement rec_search = driver
+				.findElement(By.xpath(properties.getProperty("partneracc_m_video_analyticsicon_Recipients_search")));  ////click on the enter
+		rec_search.sendKeys(Keys.ENTER);
+		logger.info("In Recipient tile data searched Successfully");
+		Thread.sleep(4000);
+		driver.findElement(
+				By.xpath(properties.getProperty("partneracc_m_video_analyticsicon_Recipients_search_exporticon"))) //click on the export to excel
+				.click();
+		Thread.sleep(4000);
+		logger.info("In Recipient tile Export to excel Clicked Successfully");
+		driver.findElement(By.xpath(properties.getProperty("partneracc_m_video_analyticsicon_Recipients_search_excel"))) //clicked on the export to excel
+				.click();
+		Thread.sleep(4000);
+		logger.info("In Recipient tile Excel data downloaded Successfully");
+		driver.findElement(By.xpath(properties.getProperty("partneracc_m_video_analyticsicon_Recipients_cls"))).click(); //click on the close
+		Thread.sleep(4000);
+		logger.info(" Recipient tile popup closed Successfully");
+
+		driver.findElement(By.xpath(properties.getProperty("partneracc_m_video_analyticsicon_TotalEmailsSentClick")))
+				.click();
+		logger.info("TotalEmailsSent tile clicked Successfully");
+		Thread.sleep(4000);
+
+		driver.findElement(By.xpath(properties.getProperty("partneracc_m_video_analyticsicon_TotalEmailsSent_search"))) //click on the search
+				.sendKeys("gayatri");
+		Thread.sleep(4000);
+
+		WebElement TotalEmailsSent_search = driver.findElement(
+				By.xpath(properties.getProperty("partneracc_m_video_analyticsicon_TotalEmailsSent_search")));
+		TotalEmailsSent_search.sendKeys(Keys.ENTER);
+		logger.info("In TotalEmailsSent tile data searched Successfully");
+		Thread.sleep(4000);
+		driver.findElement(
+				By.xpath(properties.getProperty("partneracc_m_video_analyticsicon_TotalEmailsSent_search_exporticon")))//click on the export to excel
+				.click();
+		Thread.sleep(4000);
+		logger.info("In TotalEmailsSent tile Export to excel Clicked Successfully");
+		driver.findElement(
+				By.xpath(properties.getProperty("partneracc_m_video_analyticsicon_TotalEmailsSent_search_excel"))) //clicked on the export to excel
+				.click();
+		Thread.sleep(4000);
+		logger.info("In TotalEmailsSent tile Excel data downloaded Successfully");
+		Thread.sleep(4000);
+		driver.findElement(By.xpath(properties.getProperty("partneracc_m_video_analyticsicon_TotalEmailsSent_cls"))) //click on the close
+				.click();
+		Thread.sleep(4000);
+		logger.info(" TotalEmailsSent tile popup closed Successfully");
+
+		driver.findElement(By.xpath(properties.getProperty("partneracc_m_video_analyticsicon_DeliverabilityClick")))
+				.click();
+		logger.info("Recipient tile  clicked Successfully");
+		Thread.sleep(4000);
+
+		driver.findElement(By.xpath(properties.getProperty("partneracc_m_video_analyticsicon_Deliverability_search")))//click on the search
+				.sendKeys("gayatri");
+		Thread.sleep(4000);
+
+		WebElement Deliverability_search = driver.findElement(
+				By.xpath(properties.getProperty("partneracc_m_video_analyticsicon_Deliverability_search")));
+		Deliverability_search.sendKeys(Keys.ENTER);
+		logger.info("In Deliverability tile data searched Successfully");
+		Thread.sleep(4000);
+		driver.findElement(
+				By.xpath(properties.getProperty("partneracc_m_video_analyticsicon_Deliverability_search_exporticon"))).click(); //click on the export to excel
+		Thread.sleep(4000);
+		logger.info("In Deliverability tile Export to excel Clicked Successfully");
+		driver.findElement(
+				By.xpath(properties.getProperty("partneracc_m_video_analyticsicon_Deliverability_search_excel")))//clicked on the export to excel
+				.click();
+		Thread.sleep(4000);
+		logger.info("In Deliverability tile Excel data downloaded Successfully");
+		driver.findElement(By.xpath(properties.getProperty("partneracc_m_video_analyticsicon_Deliverability_cls"))) //click on the close
+				.click();
+		Thread.sleep(4000);
+		logger.info(" Deliverability tile popup closed Successfully");
+
 		WebElement ActiveRecipients = driver.findElement(
 				By.xpath(properties.getProperty("partneracc_m_video_analyticsicon_ActiveRecipientsClick")));
 		if (ActiveRecipients.isEnabled()) {
@@ -215,10 +237,8 @@ public class Partner_ManageVideoCampaign {
 			logger.info("ActiveRecipients tile clicked Successfully");
 			Thread.sleep(4000);
 
-		
-
 			WebElement ActiveRecipientsdrpdwn = driver.findElement(
-					By.xpath(properties.getProperty("partneracc_m_video_analyticsicon_OpenRate_dropdown")));
+					By.xpath(properties.getProperty("partneracc_m_video_analyticsicon_OpenRate_dropdown")));  //click on the sortby dropdown
 			logger.info("In OpenRate tile dropdown clicked Successfully");
 			Select ar_drpdwn = new Select(ActiveRecipientsdrpdwn);
 			ar_drpdwn.selectByValue("1: Object");
@@ -233,10 +253,9 @@ public class Partner_ManageVideoCampaign {
 			Thread.sleep(4000);
 
 			logger.info("In ActiveRecipients tile dropdown functionality done Successfully");
-			
-			
+
 			driver.findElement(
-					By.xpath(properties.getProperty("partneracc_m_video_analyticsicon_ActiveRecipients_search")))
+					By.xpath(properties.getProperty("partneracc_m_video_analyticsicon_ActiveRecipients_search"))) //click on the search
 					.sendKeys("gayatri");
 			Thread.sleep(4000);
 
@@ -246,283 +265,360 @@ public class Partner_ManageVideoCampaign {
 			logger.info("In ActiveRecipients tile data searched Successfully");
 			Thread.sleep(4000);
 			driver.findElement(By.xpath(
-					properties.getProperty("partneracc_m_video_analyticsicon_ActiveRecipients_search_exporticon")))
+					properties.getProperty("partneracc_m_video_analyticsicon_ActiveRecipients_search_exporticon")))//click on the export to excel
 					.click();
 			Thread.sleep(4000);
 			logger.info("In ActiveRecipients tile Export to excel Clicked Successfully");
 			driver.findElement(
-					By.xpath(properties.getProperty("partneracc_m_video_analyticsicon_ActiveRecipients_search_excel")))
+					By.xpath(properties.getProperty("partneracc_m_video_analyticsicon_ActiveRecipients_search_excel"))) //clicked on the export to excel
 					.click();
 			Thread.sleep(4000);
 			logger.info("In ActiveRecipients tile Excel data downloaded Successfully");
 			driver.findElement(
-					By.xpath(properties.getProperty("partneracc_m_video_analyticsicon_ActiveRecipients_cls"))).click();
+					By.xpath(properties.getProperty("partneracc_m_video_analyticsicon_ActiveRecipients_cls"))).click(); //click on the close
 			Thread.sleep(4000);
 			logger.info(" ActiveRecipients tile popup closed Successfully");
 
 		} else {
 			logger.info(" ActiveRecipients tile count is zero so unable to Click");
 		}
- */
-		
-		/*
-		 * WebElement OpenRate = driver .findElement(By.xpath(properties.getProperty(
-		 * "partneracc_m_video_analyticsicon_OpenRateClick"))); if
-		 * (OpenRate.isEnabled()) { OpenRate.click();
-		 * 
-		 * logger.info("OpenRate tile clicked Successfully"); Thread.sleep(5000);
-		 * 
-		 * WebElement OpenRatedrpdwn = driver.findElement(
-		 * By.xpath(properties.getProperty(
-		 * "partneracc_m_video_analyticsicon_OpenRate_dropdown")));
-		 * logger.info("In OpenRate tile dropdown clicked Successfully"); Select
-		 * or_drpdwn = new Select(OpenRatedrpdwn); or_drpdwn.selectByValue("1: Object");
-		 * 
-		 * Thread.sleep(4000); or_drpdwn.selectByValue("2: Object");
-		 * 
-		 * Thread.sleep(4000); or_drpdwn.selectByValue("3: Object"); Thread.sleep(4000);
-		 * or_drpdwn.selectByValue("4: Object"); Thread.sleep(4000);
-		 * 
-		 * logger.info("In OpenRate tile dropdown functionality done Successfully");
-		 * 
-		 * driver.findElement(By.xpath(properties.getProperty(
-		 * "partneracc_m_video_analyticsicon_OpenRate_search"))) .sendKeys("gayatri");
-		 * Thread.sleep(4000);
-		 * 
-		 * WebElement OpenRate_search = driver
-		 * .findElement(By.xpath(properties.getProperty(
-		 * "partneracc_m_video_analyticsicon_OpenRate_search")));
-		 * OpenRate_search.sendKeys(Keys.ENTER);
-		 * logger.info("In OpenRate tile data searched Successfully");
-		 * Thread.sleep(4000); driver.findElement( By.xpath(properties.getProperty(
-		 * "partneracc_m_video_analyticsicon_OpenRate_search_exporticon"))) .click();
-		 * Thread.sleep(4000);
-		 * logger.info("In OpenRate tile Export to excel Clicked Successfully");
-		 * driver.findElement( By.xpath(properties.getProperty(
-		 * "partneracc_m_video_analyticsicon_OpenRate_search_excel"))).click();
-		 * Thread.sleep(4000);
-		 * logger.info("In OpenRate tile Excel data downloaded Successfully");
-		 * driver.findElement(By.xpath(properties.getProperty(
-		 * "partneracc_m_video_analyticsicon_OpenRate_cls"))) .click();
-		 * Thread.sleep(4000); logger.info(" OpenRate tile popup closed Successfully");
-		 * 
-		 * } else { logger.info(" OpenRate tile count is zero so unable to Click"); }
-		 */
-		
-		
-		
-		/*
-		 * WebElement ClickedURL= driver.findElement(By.xpath(properties.getProperty(
-		 * "partneracc_m_video_analyticsicon_ClickedURLClick"))); if
-		 * (ClickedURL.isEnabled()) { ClickedURL.click();
-		 * 
-		 * logger.info("ClickedURL tile clicked Successfully");
-		 * 
-		 * 
-		 * Thread.sleep(4000);
-		 * 
-		 * 
-		 * } else { logger.info(" ClickedURL tile count is zero so unable to Click"); }
-		 * 
-		 * 
-		 * 
-		 * 
-		 * 
-		 * WebElement Clickthoughrate=
-		 * driver.findElement(By.xpath(properties.getProperty(
-		 * "partneracc_m_video_analyticsicon_ClickthoughrateClick"))); if
-		 * (Clickthoughrate.isEnabled()) { Clickthoughrate.click();
-		 * 
-		 * logger.info("Clickthoughrate tile clicked Successfully");
-		 * 
-		 * 
-		 * Thread.sleep(4000);
-		 * 
-		 * 
-		 * } else {
-		 * logger.info(" Clickthoughrate tile count is zero so unable to Click"); }
-		 * 
-		 * 
-		 * 
-		 * WebElement Views= driver.findElement(By.xpath(properties.getProperty(
-		 * "partneracc_m_video_analyticsicon_ViewsClick"))); if (Views.isEnabled()) {
-		 * Views.click();
-		 * 
-		 * logger.info("Views tile clicked Successfully");
-		 * 
-		 * 
-		 * Thread.sleep(4000);
-		 * 
-		 * 
-		 * } else { logger.info(" Views tile count is zero so unable to Click"); }
-		 * 
-		 * WebElement Hardbounce= driver.findElement(By.xpath(properties.getProperty(
-		 * "partneracc_m_video_analyticsicon_HardbounceClick"))); if
-		 * (Hardbounce.isEnabled()) { Hardbounce.click();
-		 * 
-		 * logger.info("Hardbounce tile clicked Successfully");
-		 * 
-		 * 
-		 * Thread.sleep(4000);
-		 * 
-		 * 
-		 * } else { logger.info(" Hardbounce tile count is zero so unable to Click"); }
-		 
-	
-		
-	
-	
-	WebElement Softbounce= driver.findElement(By.xpath(properties.getProperty("partneracc_m_video_analyticsicon_SoftbounceClick")));
-	if (Softbounce.isEnabled()) {
-		Softbounce.click();
+		Thread.sleep(3000);
 
-		logger.info("Softbounce tile clicked Successfully");
-		
-		
+		WebElement ClickedURL = driver
+				.findElement(By.xpath(properties.getProperty("partneracc_m_video_analyticsicon_ClickedURLClick")));
+		if (ClickedURL.isEnabled()) {
+			ClickedURL.click();
+
+			logger.info("ClickedURL tile clicked Successfully");
+
+			Thread.sleep(4000);
+
+			WebElement ClickedURLdrpdwn = driver.findElement(
+					By.xpath(properties.getProperty("partneracc_m_video_analyticsicon_ClickedURL_dropdown")));  //click on the sortby dropdown
+			logger.info("In ClickedURL tile dropdown clicked Successfully");
+			Select ar_drpdwn = new Select(ClickedURLdrpdwn);
+			ar_drpdwn.selectByValue("1: Object");
+
+			Thread.sleep(4000);
+			ar_drpdwn.selectByValue("2: Object");
+
+			Thread.sleep(4000);
+			ar_drpdwn.selectByValue("3: Object");
+			Thread.sleep(4000);
+			ar_drpdwn.selectByValue("4: Object");
+			Thread.sleep(4000);
+
+			logger.info("In ClickedURL tile dropdown functionality done Successfully");
+
+			driver.findElement(By.xpath(properties.getProperty("partneracc_m_video_analyticsicon_ClickedURL_search")))
+					.sendKeys("gayatri");
+			Thread.sleep(4000);
+
+			WebElement ClickedURL_search = driver.findElement(
+					By.xpath(properties.getProperty("partneracc_m_video_analyticsicon_ClickedURL_search")));
+			ClickedURL_search.sendKeys(Keys.ENTER);
+			logger.info("In ClickedURL tile data searched Successfully");
+			Thread.sleep(4000);
+			driver.findElement(
+					By.xpath(properties.getProperty("partneracc_m_video_analyticsicon_ClickedURL_search_exporticon"))) //click on the export to excel
+					.click();
+			Thread.sleep(4000);
+			logger.info("In ClickedURL tile Export to excel Clicked Successfully");
+			driver.findElement(
+					By.xpath(properties.getProperty("partneracc_m_video_analyticsicon_ClickedURL_search_excel"))) //clicked on the export to excel
+					.click();
+			Thread.sleep(4000);
+			logger.info("In ClickedURL tile Excel data downloaded Successfully");
+			driver.findElement(By.xpath(properties.getProperty("partneracc_m_video_analyticsicon_ClickedURL_cls"))) //click on the close
+					.click();
+			Thread.sleep(4000);
+			logger.info(" ClickedURL tile popup closed Successfully");
+
+		} else {
+			logger.info(" ClickedURL tile count is zero so unable to Click");
+		}
+
+		Thread.sleep(3000);
+		WebElement Clickthoughrate = driver.findElement(
+				By.xpath(properties.getProperty("partneracc_m_video_analyticsicon_ClickthroughrateClick")));
+		if (Clickthoughrate.isEnabled()) {
+			Clickthoughrate.click();
+
+			logger.info("Clickthroughrate tile clicked Successfully");
+
+			Thread.sleep(4000);
+
+			WebElement Clickthroughratedrpdwn = driver.findElement(
+					By.xpath(properties.getProperty("partneracc_m_video_analyticsicon_Clickthroughrate_dropdown"))); //click on the sortby dropdown
+			logger.info("In Clickthroughrate tile dropdown clicked Successfully");
+			Select ar_drpdwn = new Select(Clickthroughratedrpdwn);
+			ar_drpdwn.selectByValue("1: Object");
+
+			Thread.sleep(4000);
+			ar_drpdwn.selectByValue("2: Object");
+
+			Thread.sleep(4000);
+			ar_drpdwn.selectByValue("3: Object");
+			Thread.sleep(4000);
+			ar_drpdwn.selectByValue("4: Object");
+			Thread.sleep(4000);
+
+			logger.info("In Clickthroughrate tile dropdown functionality done Successfully");
+
+			driver.findElement(
+					By.xpath(properties.getProperty("partneracc_m_video_analyticsicon_Clickthroughrate_search")))//click on the search
+					.sendKeys("gayatri");
+			Thread.sleep(4000);
+
+			WebElement Clickthroughrate_search = driver.findElement(
+					By.xpath(properties.getProperty("partneracc_m_video_analyticsicon_Clickthroughrate_search")));
+			Clickthroughrate_search.sendKeys(Keys.ENTER);
+			logger.info("In Clickthroughrate tile data searched Successfully");
+			Thread.sleep(4000);
+			driver.findElement(By.xpath(
+					properties.getProperty("partneracc_m_video_analyticsicon_Clickthroughrate_search_exporticon"))) //click on the export to excel
+					.click();
+			Thread.sleep(4000);
+			logger.info("In Clickthroughrate tile Export to excel Clicked Successfully");
+			driver.findElement(
+					By.xpath(properties.getProperty("partneracc_m_video_analyticsicon_Clickthroughrate_search_excel")))//clicked on the export to excel
+					.click();
+			Thread.sleep(4000);
+			logger.info("In Clickthroughrate tile Excel data downloaded Successfully");
+			driver.findElement(
+					By.xpath(properties.getProperty("partneracc_m_video_analyticsicon_Clickthroughrate_cls"))).click(); //click on the close
+			Thread.sleep(4000);
+			logger.info(" Clickthroughrate tile popup closed Successfully");
+
+		} else {
+			logger.info(" Clickthoughrate tile count is zero so unable to Click");
+		}
+		Thread.sleep(3000);
+
+		WebElement Views = driver
+				.findElement(By.xpath(properties.getProperty("partneracc_m_video_analyticsicon_ViewsClick")));
+		if (Views.isEnabled()) {
+			Views.click();
+
+			logger.info("Views tile clicked Successfully");
+
+			Thread.sleep(4000);
+
+			driver.findElement(By.xpath(properties.getProperty("partneracc_m_video_analyticsicon_Views_search")))//click on the search
+					.sendKeys("gayatri");
+			Thread.sleep(4000);
+
+			WebElement Views_search = driver
+					.findElement(By.xpath(properties.getProperty("partneracc_m_video_analyticsicon_Views_search")));
+			Views_search.sendKeys(Keys.ENTER);
+			logger.info("In Views tile data searched Successfully");
+			Thread.sleep(4000);
+			driver.findElement(
+					By.xpath(properties.getProperty("partneracc_m_video_analyticsicon_Views_search_exporticon"))) //click on the export to excel
+					.click();
+			Thread.sleep(4000);
+			logger.info("In Views tile Export to excel Clicked Successfully");
+			driver.findElement(By.xpath(properties.getProperty("partneracc_m_video_analyticsicon_Views_search_excel"))) //clicked on the export to excel
+					.click();
+			Thread.sleep(4000);
+			logger.info("In Views tile Excel data downloaded Successfully");
+			driver.findElement(By.xpath(properties.getProperty("partneracc_m_video_analyticsicon_Views_cls"))).click();//click on the close
+			Thread.sleep(4000);
+			logger.info(" Views tile popup closed Successfully");
+
+		} else {
+			logger.info(" Views tile count is zero so unable to Click");
+		}
+		Thread.sleep(3000);
+
+		WebElement Hardbounce = driver
+				.findElement(By.xpath(properties.getProperty("partneracc_m_video_analyticsicon_HardbounceClick")));
+		if (Hardbounce.isEnabled()) {
+			Hardbounce.click();
+
+			logger.info("Hardbounce tile clicked Successfully");
+
+			Thread.sleep(4000);
+
+		} else {
+			logger.info(" Hardbounce tile count is zero so unable to Click");
+		}
+		Thread.sleep(3000);
+
+		WebElement Softbounce = driver
+				.findElement(By.xpath(properties.getProperty("partneracc_m_video_analyticsicon_SoftbounceClick")));
+		if (Softbounce.isEnabled()) {
+			Softbounce.click();
+
+			logger.info("Softbounce tile clicked Successfully");
+
+			Thread.sleep(4000);
+
+		} else {
+			logger.info(" Softbounce tile count is zero so unable to Click");
+		}
+		Thread.sleep(3000);
+
+		WebElement Unsubscribe = driver
+				.findElement(By.xpath(properties.getProperty("partneracc_m_video_analyticsicon_UnsubscribeClick")));
+		if (Unsubscribe.isEnabled()) {
+			Unsubscribe.click();
+
+			logger.info("Unsubscribe tile clicked Successfully");
+
+			Thread.sleep(4000);
+
+			driver.findElement(By.xpath(properties.getProperty("partneracc_m_video_analyticsicon_Unsubscribe_search")))  //click on the search
+					.sendKeys("gayatri");
+			Thread.sleep(4000);
+
+			WebElement Unsubscribe_search = driver.findElement(
+					By.xpath(properties.getProperty("partneracc_m_video_analyticsicon_Unsubscribe_search")));
+			Unsubscribe_search.sendKeys(Keys.ENTER);
+			logger.info("In Unsubscribe tile data searched Successfully");
+			Thread.sleep(4000);
+			driver.findElement(
+					By.xpath(properties.getProperty("partneracc_m_video_analyticsicon_Unsubscribe_search_exporticon")))  //click on the export to excel
+					.click();
+			Thread.sleep(4000);
+			logger.info("In Unsubscribe tile Export to excel Clicked Successfully");
+			driver.findElement(
+					By.xpath(properties.getProperty("partneracc_m_video_analyticsicon_Unsubscribe_search_excel")))  //clicked on the export to excel
+					.click();
+			Thread.sleep(4000);
+			logger.info("In Unsubscribe tile Excel data downloaded Successfully");
+			driver.findElement(By.xpath(properties.getProperty("partneracc_m_video_analyticsicon_Unsubscribe_cls")))//click on the close
+					.click();
+			Thread.sleep(4000);
+			logger.info(" Unsubscribe tile popup closed Successfully");
+
+		} else {
+			logger.info(" Unsubscribe tile count is zero so unable to Click");
+		}
+		Thread.sleep(3000);
+
+		WebElement Leads = driver
+				.findElement(By.xpath(properties.getProperty("partneracc_m_video_analyticsicon_LeadsClick")));
+		if (Leads.isEnabled()) {
+			Leads.click();
+
+			logger.info("Leads tile clicked Successfully");
+
+			Thread.sleep(4000);
+
+			driver.findElement(By.xpath(properties.getProperty("partneracc_m_video_analyticsicon_Leads_dwnload"))) //click on the download icon
+					.click();
+			Thread.sleep(4000);
+
+			logger.info("In Leads tile  download icon clicked Successfully");
+
+			WebElement leadsearch = driver
+					.findElement(By.xpath(properties.getProperty("partneracc_m_video_analyticsicon_Leads_search")));  //click on the search
+			leadsearch.sendKeys("gayatri");
+			Thread.sleep(4000);
+			leadsearch.sendKeys(Keys.ENTER);
+			logger.info("In Leads tile data searched Successfully");
+
+			Thread.sleep(7000);
+
+			driver.findElement(By.xpath(properties.getProperty("partneracc_m_video_analyticsicon_Leads_search_clr")))//click on the x for the search
+					.click();
+
+			Thread.sleep(4000);
+			driver.findElement(By.xpath(properties.getProperty("partneracc_m_video_analyticsicon_Leads_close")))//click on the close
+					.click();
+			Thread.sleep(4000);
+
+		} else {
+			logger.info(" Leads tile count is zero so unable to Click");
+		}
+		Thread.sleep(3000);
+
+		WebElement Deals = driver
+				.findElement(By.xpath(properties.getProperty("partneracc_m_video_analyticsicon_DealsClick")));
+		if (Deals.isEnabled()) {
+			Deals.click();
+
+			logger.info("Deals tile clicked Successfully");
+
+			Thread.sleep(4000);
+
+			driver.findElement(By.xpath(properties.getProperty("partneracc_m_video_analyticsicon_Deals_dwnload"))) //click on the download icon
+					.click();
+			Thread.sleep(4000);
+
+			logger.info("In Deals tile  download icon clicked Successfully");
+			Thread.sleep(3000);
+
+			WebElement Dealsearch = driver
+					.findElement(By.xpath(properties.getProperty("partneracc_m_video_analyticsicon_Deals_search")));  //click on the search
+			Dealsearch.sendKeys("gayatri");
+			Thread.sleep(4000);
+			Dealsearch.sendKeys(Keys.ENTER);
+			logger.info("In Deals tile data searched Successfully");
+
+			Thread.sleep(7000);
+
+			driver.findElement(By.xpath(properties.getProperty("partneracc_m_video_analyticsicon_Deals_search_clr"))) //click on the x for the search
+					.click();
+
+			Thread.sleep(4000);
+			driver.findElement(By.xpath(properties.getProperty("partneracc_m_video_analyticsicon_Deals_close")))//click on the close
+					.click();
+			Thread.sleep(4000);
+
+		} else {
+			logger.info(" Deals tile count is zero so unable to Click");
+		}
+		Thread.sleep(3000);
+
+		WebElement sortby_drpdwn = driver.findElement(
+				By.xpath(properties.getProperty("partneracc_mvideo_analyticsicon_tot_view_for_campaign_sortdrpdwn"))); //click on the sortby dropdown
+
+		Select dropdwn = new Select(sortby_drpdwn);
+
+		dropdwn.selectByValue("1: Object");
 		Thread.sleep(4000);
-		
 
-	} else {
-		logger.info(" Softbounce tile count is zero so unable to Click");
-	}
-	
-		
-	//
-	
-	
-
-	WebElement Unsubscribe= driver.findElement(By.xpath(properties.getProperty("partneracc_m_video_analyticsicon_UnsubscribeClick")));
-	if (Unsubscribe.isEnabled()) {
-		Unsubscribe.click();
-
-		logger.info("Unsubscribe tile clicked Successfully");
-		
-		
+		dropdwn.selectByValue("2: Object");
 		Thread.sleep(4000);
-		
 
-	} else {
-		logger.info(" Unsubscribe tile count is zero so unable to Click");
-	}
-	
-		
-*/
-	WebElement Leads= driver.findElement(By.xpath(properties.getProperty("partneracc_m_video_analyticsicon_LeadsClick")));
-	if (Leads.isEnabled()) {
-		Leads.click();
-
-		logger.info("Leads tile clicked Successfully");
-		
-		
+		dropdwn.selectByValue("3: Object");
 		Thread.sleep(4000);
-		
-		driver.findElement(By.xpath(properties.getProperty("partneracc_m_video_analyticsicon_Leads_dwnload"))).click();
-		Thread.sleep(4000);
-		
-		
-		
-		logger.info("In Leads tile  download icon clicked Successfully");
-		
-		
-		
-		WebElement leadsearch=driver.findElement(By.xpath(properties.getProperty("partneracc_m_video_analyticsicon_Leads_search")));
-		leadsearch.sendKeys("gayatri");
-		Thread.sleep(4000);
-		leadsearch.sendKeys(Keys.ENTER);
-		logger.info("In Leads tile data searched Successfully");
-		
-		Thread.sleep(7000);
-		
-		
-		
-		driver.findElement(By.xpath(properties.getProperty("partneracc_m_video_analyticsicon_Leads_search_clr"))).click();
-		
-		Thread.sleep(4000);
-		driver.findElement(By.xpath(properties.getProperty("partneracc_m_video_analyticsicon_Leads_close"))).click();
-		Thread.sleep(4000);
-		
-		
-		
-		
 
-	} else {
-		logger.info(" Leads tile count is zero so unable to Click");
-	}
-	
-		
-	WebElement Deals= driver.findElement(By.xpath(properties.getProperty("partneracc_m_video_analyticsicon_DealsClick")));
-	if (Deals.isEnabled()) {
-		Deals.click();
+		dropdwn.selectByValue("4: Object");
 
-		logger.info("Deals tile clicked Successfully");
-		
 		Thread.sleep(4000);
-		
-		
-		driver.findElement(By.xpath(properties.getProperty("partneracc_m_video_analyticsicon_Deals_dwnload"))).click();
+
+		dropdwn.selectByValue("5: Object");
+
 		Thread.sleep(4000);
-		
-		
-		logger.info("In Deals tile  download icon clicked Successfully");
-		
-		WebElement Dealsearch=driver.findElement(By.xpath(properties.getProperty("partneracc_m_video_analyticsicon_Deals_search")));
-		Dealsearch.sendKeys("gayatri");
+		dropdwn.selectByValue("6: Object");
+
 		Thread.sleep(4000);
-		Dealsearch.sendKeys(Keys.ENTER);
-		logger.info("In Deals tile data searched Successfully");
-		
-		Thread.sleep(7000);
-		
-		driver.findElement(By.xpath(properties.getProperty("partneracc_m_video_analyticsicon_Deals_search_clr"))).click();
-		
-		Thread.sleep(4000);
-		driver.findElement(By.xpath(properties.getProperty("partneracc_m_video_analyticsicon_Deals_close"))).click();
-		Thread.sleep(4000);
-		
-	} else {
-		logger.info(" Deals tile count is zero so unable to Click");
-	}
-	
-			
-		
-	WebElement sortby_drpdwn=driver.findElement(By.xpath(properties.getProperty("partneracc_mvideo_analyticsicon_tot_view_for_campaign_sortdrpdwn")));
-	
-	Select dropdwn=new Select(sortby_drpdwn);
-	
-	dropdwn.selectByValue("1: Object");
-	Thread.sleep(4000);
 
-	dropdwn.selectByValue("2: Object");	
-	Thread.sleep(4000);
+		logger.info(" Sortby done successfully");
+		Thread.sleep(3000);
 
-	dropdwn.selectByValue("3: Object");
-	Thread.sleep(4000);
-
-	dropdwn.selectByValue("4: Object");
-
-	Thread.sleep(4000);
-	
-	
-	dropdwn.selectByValue("5: Object");
-
-	Thread.sleep(4000);
-	dropdwn.selectByValue("6: Object");
-
-	Thread.sleep(4000);
-	
-	logger.info(" Sortby done successfully");
-
-		WebElement vanalytics_search=driver.findElement(By.xpath(properties.getProperty("partneracc_mvideo_analyticsicon_tot_view_for_campaign_search")));
+		WebElement vanalytics_search = driver.findElement(
+				By.xpath(properties.getProperty("partneracc_mvideo_analyticsicon_tot_view_for_campaign_search")));  //click on the search
 		vanalytics_search.sendKeys("gayatri");
 		vanalytics_search.sendKeys(Keys.ENTER);
-		
+
 		Thread.sleep(4000);
-		
-		
-		driver.findElement(By.xpath(properties.getProperty("partneracc_mvideo_analyticsicon_tot_view_for_campaign_export"))).click();
-		
-		
-		
+
+		driver.findElement(
+				By.xpath(properties.getProperty("partneracc_mvideo_analyticsicon_tot_view_for_campaign_export"))) //click on the export to excel
+				.click();
+
+		Thread.sleep(4000);
+
+		driver.findElement(
+				By.xpath(properties.getProperty("partneracc_mvideo_analyticsicon_tot_view_for_campaign_export_click"))) //clicked on the export to excel
+				.click();
+
+		logger.info(" Export to excel done successfully in 'total views for this campaign' section ");
+
 	}
 
 }
