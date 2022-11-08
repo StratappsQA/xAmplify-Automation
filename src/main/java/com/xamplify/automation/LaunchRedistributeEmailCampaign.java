@@ -171,15 +171,23 @@ public class LaunchRedistributeEmailCampaign {
 		driver.findElement(By.xpath(properties.getProperty("mec_oppo_mleads_rdeal_amount"))).sendKeys("2345"); //amount
 		Thread.sleep(3000);
 		
-		driver.findElement(By.xpath(properties.getProperty("mec_oppo_mleads_rdeal_calendar"))).click();  //select calendar
-		Thread.sleep(7000); 
 		
-	
+		
+		driver.findElement(By.xpath(properties.getProperty("mec_oppo_mleads_rdeal_calendar"))).click(); //select calendar
+		
+		Thread.sleep(7000); 
 
-WebElement cal=driver.findElement(By.xpath(properties.getProperty("mec_oppo_mleads_rdeal_selectdate")));
-cal.click(); //select current date
+		
+		WebElement recalendar=driver.findElement(By.xpath(properties.getProperty("mec_oppo_mleads_rdeal_selectdate")));
+		
+		if(recalendar.isDisplayed()){
+		
+		recalendar.click();  //select current date
+		
+
 Thread.sleep(4000);
 logger.info("Selected Date in Calendar Successfully");
+				
 
 
 driver.findElement(By.xpath(properties.getProperty("mec_oppo_mleads_rdeal_addcomments"))).click(); //add comments button
@@ -201,13 +209,12 @@ Thread.sleep(5000);
 String s=driver.findElement(By.xpath(properties.getProperty("mec_registerdeal_msg"))).getText();
 System.out.println(s);
 
+				}
+		else {
+			logger.info("Unable to Select Date in Calendar for Email Deal Registration[Failed to register deal for Email]");
 
-	
-	
-	
-	
+		}
+
 	}
-	
-	
 	
 }

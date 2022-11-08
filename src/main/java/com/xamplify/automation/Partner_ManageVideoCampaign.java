@@ -76,7 +76,7 @@ public class Partner_ManageVideoCampaign {
 
 	@Test(priority = 2, enabled = true)
 
-	public void partneracc_manage_vdecampaign_() throws InterruptedException, SQLException {
+	public void partneracc_manage_vdecampaign_edit_updatefolder() throws InterruptedException, SQLException {
 
 		Thread.sleep(4000);
 		driver.findElement(By.xpath(properties.getProperty("partneracc_manage_video_gearicon"))).click(); // click on
@@ -107,7 +107,7 @@ public class Partner_ManageVideoCampaign {
 
 	}
 
-	@Test(priority = 3)
+	@Test(priority = 3, enabled=true)
 
 	public void partneracc_manage_vdecampaign_analytics() throws InterruptedException, SQLException {
 
