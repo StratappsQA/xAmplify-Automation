@@ -33,5 +33,4 @@ public class PropertiesFile {
 		}
 		return prop;
 		}
-	
 }
