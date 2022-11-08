@@ -159,7 +159,7 @@ public class AccessSharedAssetInPartner {
 		Thread.sleep(5000);	
 		driver.findElement(By.xpath(properties.getProperty("partner_editicon_pdf"))).click(); //click on edit icon against to shared pdf
 		Thread.sleep(10000);
-		logger.info("pdf edit icon has been clicked ");
+		logger.info("pdf edit icon has been clicked");
 		driver.switchTo().frame(0);
 		driver.findElement(By.xpath(properties.getProperty("partner_save_button"))).click(); //click on save button pdf
 		Thread.sleep(5000);

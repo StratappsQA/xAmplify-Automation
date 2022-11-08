@@ -21,8 +21,8 @@ public class AddPlaybooks {
 	final Logger logger = LogManager.getLogger(AddPlaybooks.class);
 
 
-	//playbook to edit and delete in vendor account
-	@Test (priority=0,enabled=false)
+	//playbook creation to edit and delete in vendor account
+	@Test (priority=0)
 	public void add_playbook_vendor() throws InterruptedException, IOException {	
 		Thread.sleep(3000);
 		driver.findElement(By.xpath(properties.getProperty("Content_leftmenu1"))).click(); //click on left side content menu

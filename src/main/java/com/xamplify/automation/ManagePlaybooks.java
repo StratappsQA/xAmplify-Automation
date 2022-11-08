@@ -20,10 +20,10 @@ public class ManagePlaybooks {
 	final Logger logger = LogManager.getLogger(ManagePlaybooks.class);
 
 
-	//clicking on preview&dit and performing actions 
+	//clicking on preview&edit and performing actions 
 	@Test (priority=0)
 	public void preview_edit_pb() throws InterruptedException, IOException {	
-		Thread.sleep(3000);
+		Thread.sleep(5000);
 		driver.findElement(By.xpath(properties.getProperty("Content_leftmenu1"))).click(); //click on left side content menu
 		Thread.sleep(5000);
 		driver.findElement(By.xpath(properties.getProperty("manage_playbooks"))).click(); //click on manage playbooks
@@ -77,7 +77,7 @@ public class ManagePlaybooks {
 	//clicking on view 
 	@Test (priority=1)
 	public void view_pb() throws InterruptedException, IOException {	
-		Thread.sleep(3000);
+		Thread.sleep(5000);
 		driver.findElement(By.xpath(properties.getProperty("Content_leftmenu1"))).click(); //click on left side content menu
 		Thread.sleep(5000);
 		driver.findElement(By.xpath(properties.getProperty("manage_playbooks"))).click(); //click on manage playbooks
@@ -125,7 +125,7 @@ public class ManagePlaybooks {
 	//unpublishing published playbook 
 	@Test (priority=3,enabled=false)
 	public void unpublish_pb() throws InterruptedException, IOException {	
-		Thread.sleep(3000);
+		Thread.sleep(5000);
 		driver.findElement(By.xpath(properties.getProperty("Content_leftmenu1"))).click(); //click on left side content menu
 		Thread.sleep(5000);
 		driver.findElement(By.xpath(properties.getProperty("manage_playbooks"))).click(); //click on manage playbook
@@ -145,7 +145,7 @@ public class ManagePlaybooks {
 	//clicking on delete 
 	@Test (priority=3)
 	public void delete() throws InterruptedException, IOException {	
-		Thread.sleep(3000);
+		Thread.sleep(5000);
 		driver.findElement(By.xpath(properties.getProperty("Content_leftmenu1"))).click(); //click on left side content menu
 		Thread.sleep(5000);
 		driver.findElement(By.xpath(properties.getProperty("manage_playbooks"))).click(); //click on manage playbooks
@@ -183,12 +183,12 @@ public class ManagePlaybooks {
 		Thread.sleep(5000);
 		driver.findElement(By.xpath(properties.getProperty("analytics_icon_pb"))).click(); //click on analytics icon
 		Thread.sleep(5000);
-		logger.info("redirected to partner view analytics page ");
+		logger.info("redirected to partner view analytics page in vendor account");
 		driver.findElement(By.xpath(properties.getProperty("partner_analytics_icon"))).click(); //click on analytics icon agaisnt to partner
 		Thread.sleep(5000);
 		driver.findElement(By.xpath(properties.getProperty("partner_analytics_icon"))).click(); //click on analytics icon 
 		Thread.sleep(5000);
-		logger.info("deatiled analytics page is opened");
+		logger.info("deatiled analytics page is opened and viewed the analytics");
 		driver.findElement(By.xpath(properties.getProperty("cross_icon_analytics"))).click(); //click on cross icon detailed analytics view
 		Thread.sleep(5000);
 		driver.findElement(By.xpath(properties.getProperty("cross_icon_partnerview"))).click(); //click on cross icon in partner view

@@ -20,7 +20,7 @@ public class AccessSharedPlaybookInPartner {
 
 
 	//view and download playbook in partner account
-	@Test (priority=0)
+	@Test 
 	public void view_playbook_partner() throws InterruptedException, IOException {	
 		Thread.sleep(3000);
 		driver.findElement(By.xpath(properties.getProperty("Content_leftmenu1"))).click(); //click on left side content menu in partner account

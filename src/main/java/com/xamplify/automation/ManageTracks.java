@@ -21,7 +21,7 @@ public class ManageTracks {
 	final Logger logger = LogManager.getLogger(ManageTracks.class);
 
 	
-	//clicking on preview&dit and performing actions -done
+	//clicking on preview&dit and performing actions 
 	@Test (priority=0) 
 	public void preview_edit_track() throws InterruptedException, IOException {	
 		Thread.sleep(3000);
@@ -143,7 +143,7 @@ public class ManageTracks {
 
 
 	//unpublishing published track - done
-		@Test (priority=3)
+		@Test (priority=3,enabled=false)
 		public void unpublish_track() throws InterruptedException, IOException {	
 			Thread.sleep(3000);
 			driver.findElement(By.xpath(properties.getProperty("Content_leftmenu1"))).click(); //click on left side content menu
@@ -164,7 +164,7 @@ public class ManageTracks {
 
 
 				//grid and list view , folder view 
-				@Test (priority=4)
+				@Test (priority=3)
 				public void gridlistview_track() throws InterruptedException
 				{
 					Thread.sleep(3000);
@@ -243,7 +243,7 @@ public class ManageTracks {
 				}
 
 				//clicking on delete 
-				@Test (priority=5)
+				@Test (priority=4)
 				public void delete_track() throws InterruptedException, IOException {	
 					Thread.sleep(3000);
 					driver.findElement(By.xpath(properties.getProperty("Content_leftmenu1"))).click(); //click on left side content menu

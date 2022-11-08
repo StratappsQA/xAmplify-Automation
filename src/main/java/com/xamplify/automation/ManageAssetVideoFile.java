@@ -23,7 +23,7 @@ public class ManageAssetVideoFile {
 	final Logger logger = LogManager.getLogger(ManageAssetVideoFile.class);
 
 
-	//sorting order for assets  -- successfull
+	//sorting order for assets  
 	@Test (priority=0)
 	public void assetsorting() throws InterruptedException, IOException {	    	   
 		Thread.sleep(5000);
@@ -131,13 +131,13 @@ public class ManageAssetVideoFile {
 		Thread.sleep(5000);
 		driver.findElement(By.xpath(properties.getProperty("Content_leftmenu"))).click(); //click on left side content menu
 		Thread.sleep(5000);
-		driver.findElement(By.xpath(properties.getProperty("ManageMyAssets"))).click();		
-		Thread.sleep(3000);
+		driver.findElement(By.xpath(properties.getProperty("ManageMyAssets"))).click();
+		Thread.sleep(5000);
 		driver.findElement(By.xpath(properties.getProperty("Searchbar"))).sendKeys("mp4");
 		Thread.sleep(3000);
-		driver.findElement(By.xpath(properties.getProperty("Searchclick"))).click();
-		Thread.sleep(3000);
-		driver.findElement(By.xpath(properties.getProperty("viewicon_click"))).click(); //click on preview icon
+		driver.findElement(By.xpath(properties.getProperty("Searchclick"))).click();	
+		Thread.sleep(5000);
+		driver.findElement(By.xpath(properties.getProperty("viewicon_click_mp4"))).click(); //click on preview icon of mp4
 		Thread.sleep(3000);
 		logger.info("Assetvideofile viewed succesfully");
 
@@ -146,7 +146,7 @@ public class ManageAssetVideoFile {
 	}
 
 	//search assset and edit video 
-	@Test (priority=3)
+	@Test (priority=3,enabled=false)
 	public void editassetvideo() throws InterruptedException
 	{
 		Thread.sleep(5000);
@@ -154,7 +154,6 @@ public class ManageAssetVideoFile {
 		Thread.sleep(5000);
 		driver.findElement(By.xpath(properties.getProperty("ManageMyAssets"))).click();
 		Thread.sleep(5000);
-
 		driver.findElement(By.xpath(properties.getProperty("Searchbar"))).sendKeys("mp4");
 		Thread.sleep(3000);
 		driver.findElement(By.xpath(properties.getProperty("Searchclick"))).click();		
@@ -175,9 +174,10 @@ public class ManageAssetVideoFile {
 
 		driver.findElement(By.xpath(properties.getProperty("uppertext"))).sendKeys("upper_text");
 		Thread.sleep(5000);
-
+		logger.info("upper text updated succesfully");
 		driver.findElement(By.xpath(properties.getProperty("lowertext"))).sendKeys("lower_text");
 		Thread.sleep(5000);
+		logger.info("lower text updated succesfully");
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("window.scrollBy(0,-750)");
 		Thread.sleep(5000);
@@ -205,13 +205,14 @@ public class ManageAssetVideoFile {
 		Thread.sleep(5000);
 		driver.findElement(By.xpath(properties.getProperty("Content_leftmenu"))).click(); //click on left side content menu
 		Thread.sleep(5000);
-		driver.findElement(By.xpath(properties.getProperty("ManageMyAssets"))).click();		
-		Thread.sleep(3000);
+		driver.findElement(By.xpath(properties.getProperty("ManageMyAssets"))).click();
+		Thread.sleep(5000);
 		driver.findElement(By.xpath(properties.getProperty("Searchbar"))).sendKeys("mp4");
 		Thread.sleep(3000);
-		driver.findElement(By.xpath(properties.getProperty("Searchclick"))).click();
-		Thread.sleep(3000);
-		driver.findElement(By.xpath(properties.getProperty("download_click"))).click(); //click on download of first mp4
+		driver.findElement(By.xpath(properties.getProperty("Searchclick"))).click();		
+		//clicking on download icon against to first asset file (mp4)
+		Thread.sleep(5000);
+		driver.findElement(By.xpath(properties.getProperty("download_click_mp4"))).click(); //click on download of first mp4
 		Thread.sleep(2000);
 		logger.info("Assetvideofile downloaded succesfully");
 
@@ -220,19 +221,19 @@ public class ManageAssetVideoFile {
 	}
 
 	//search asset and publish asset to partner -- successfull
-	@Test (priority=5)
+	@Test (priority=5,enabled=false)
 	public void publishassetvideo() throws InterruptedException
 	{
 		Thread.sleep(5000);
 		driver.findElement(By.xpath(properties.getProperty("Content_leftmenu"))).click(); //click on left side content menu
 		Thread.sleep(5000);
-		driver.findElement(By.xpath(properties.getProperty("ManageMyAssets"))).click();		
+		driver.findElement(By.xpath(properties.getProperty("ManageMyAssets"))).click();
 		Thread.sleep(5000);
 		driver.findElement(By.xpath(properties.getProperty("Searchbar"))).sendKeys("mp4");
-		Thread.sleep(5000);	
-		driver.findElement(By.xpath(properties.getProperty("Searchclick"))).click(); 
-		Thread.sleep(5000);	
-		driver.findElement(By.xpath(properties.getProperty("publish_click"))).click(); //click on publish link
+		Thread.sleep(3000);
+		driver.findElement(By.xpath(properties.getProperty("Searchclick"))).click();		
+		//clicking on publish icon against to first asset file (mp4)
+		driver.findElement(By.xpath(properties.getProperty("publish_click_mp4"))).click(); //click on publish link
 		Thread.sleep(5000);
 		driver.findElement(By.xpath(properties.getProperty("Searchbar_publish"))).sendKeys("automatedPartner");
 		Thread.sleep(5000);
@@ -272,16 +273,15 @@ public class ManageAssetVideoFile {
 		Thread.sleep(3000);	
 		driver.findElement(By.xpath(properties.getProperty("Searchclick"))).click();
 		Thread.sleep(5000);	
-		driver.findElement(By.xpath(properties.getProperty("createcompaign_icon"))).click();
+		driver.findElement(By.xpath(properties.getProperty("createcompaign_icon_mp4"))).click();
 		Thread.sleep(3000);	
-		logger.info("Redirected to create compaign page");
+		logger.info("Redirected to create compaign page-not creaing campaign");
 		driver.findElement(By.xpath(properties.getProperty("Content_leftmenu"))).click();
-		Thread.sleep(3000);	
+		Thread.sleep(5000);	
 
 		driver.findElement(By.xpath(properties.getProperty("unsave_compaign"))).click();
-		Thread.sleep(3000);	
+		Thread.sleep(5000);	
 		logger.info("compaign page closed");
-
 
 	}
 
@@ -299,7 +299,7 @@ public class ManageAssetVideoFile {
 		Thread.sleep(3000);	
 		driver.findElement(By.xpath(properties.getProperty("Searchclick"))).click();
 		Thread.sleep(5000);
-		driver.findElement(By.xpath(properties.getProperty("viewanalytics_icon"))).click();
+		driver.findElement(By.xpath(properties.getProperty("viewanalytics_icon_mp4"))).click();
 		Thread.sleep(10000);
 		driver.findElement(By.xpath(properties.getProperty("cross_icon"))).click();	
 		logger.info("able to view analytics of assetvideo");		
@@ -308,7 +308,7 @@ public class ManageAssetVideoFile {
 
 	//	search asset and Delete asset video -- succesfull
 	@Test (priority=8)
-	public void deleteassetvide() throws InterruptedException
+	public void deleteassetvideo() throws InterruptedException
 	{
 		Thread.sleep(5000);
 		driver.findElement(By.xpath(properties.getProperty("Content_leftmenu"))).click(); //click on left side content menu
@@ -319,15 +319,12 @@ public class ManageAssetVideoFile {
 		Thread.sleep(3000);
 		driver.findElement(By.xpath(properties.getProperty("Searchclick"))).click();
 		Thread.sleep(5000);
-		driver.findElement(By.xpath(properties.getProperty("deleteicon_click"))).click();
+		driver.findElement(By.xpath(properties.getProperty("deleteicon_click_mp4"))).click();
 		Thread.sleep(5000);
 		driver.findElement(By.xpath(properties.getProperty("yes_on_deletepopup"))).click();
 		Thread.sleep(5000);
 		logger.info("Assetfile deleted succesfully");
 
 	}
-
-
-
 
 }

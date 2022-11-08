@@ -22,7 +22,7 @@ public class UploadAssetVideo {
 	
 	
 	
-	//uploading MP4 file
+	//uploading MP4 file - video asset
 	@Test (priority=0)
 	public void uploadMP4() throws InterruptedException, IOException {	
 		Thread.sleep(3000);
@@ -83,7 +83,7 @@ public class UploadAssetVideo {
 
 
 	//uploading AVI file 
-	@Test (priority=1)
+	@Test (priority=1,enabled=false)
 	public void uploadaAVI() throws InterruptedException, IOException {	
 		Thread.sleep(3000);
 		driver.findElement(By.xpath(properties.getProperty("Content_leftmenu"))).click(); //click on left side content menu
@@ -130,7 +130,7 @@ public class UploadAssetVideo {
 	}
 
 	//upload MOV file	
-	@Test (priority=2)
+	@Test (priority=2,enabled=false)
 	public void uploadMOV() throws InterruptedException, IOException {	
 		driver.findElement(By.xpath(properties.getProperty("Content_leftmenu"))).click(); //click on left side content menu
 		Thread.sleep(5000);
@@ -178,7 +178,7 @@ public class UploadAssetVideo {
 	}			
 
 	//upload MKV file -
-	@Test (priority=3)
+	@Test (priority=3,enabled=false)
 	public void uploadMKV() throws InterruptedException, IOException {	
 		driver.findElement(By.xpath(properties.getProperty("Content_leftmenu"))).click(); //click on left side content menu
 		Thread.sleep(5000);

@@ -19,7 +19,7 @@ public class AccessSharedTrackInPartner {
 
 
 	//view and download track in partner account
-	@Test (priority=0)
+	@Test 
 	public void view_track_partner() throws InterruptedException, IOException {	
 		Thread.sleep(3000);
 		driver.findElement(By.xpath(properties.getProperty("Content_leftmenu1"))).click(); //click on left side content menu in partner account
@@ -32,12 +32,7 @@ public class AccessSharedTrackInPartner {
 		Thread.sleep(5000);
 		driver.findElement(By.xpath(properties.getProperty("view_click"))).click(); //click on view icon against to track
 		Thread.sleep(5000);
-		logger.info("view icon has been clicked agaisnt to partner track");	
-		driver.findElement(By.xpath(properties.getProperty("form_view_icon"))).click(); //click on view icon of form
-		Thread.sleep(5000);
-		driver.findElement(By.xpath(properties.getProperty("form_cross_icon"))).click(); //click on cross icon after form viewed
-		Thread.sleep(5000);
-		logger.info("form viewed succesfully");
+		logger.info("view icon has been clicked agaisnt to partner track");			
 		driver.findElement(By.xpath(properties.getProperty("asset_viewicon_click"))).click(); //click on view icon of track
 		Thread.sleep(5000);
 		driver.findElement(By.xpath(properties.getProperty("asset_view_button"))).click(); //click on view icon of asset
@@ -45,10 +40,18 @@ public class AccessSharedTrackInPartner {
 		driver.findElement(By.xpath(properties.getProperty("asset_crossicon"))).click(); //click on view button of asset
 		Thread.sleep(5000);
 		logger.info("asset viewed succesfully");	
+		driver.findElement(By.xpath(properties.getProperty("form_view_icon"))).click(); //click on view icon of form
+		Thread.sleep(5000);
+		driver.findElement(By.xpath(properties.getProperty("form_cross_icon"))).click(); //click on cross icon after form viewed
+		Thread.sleep(5000);
+		logger.info("form viewed succesfully");
+		driver.findElement(By.xpath(properties.getProperty("asset_viewicon_click"))).click(); //click on view icon of track
+		Thread.sleep(5000);
 		//click on download
 		driver.findElement(By.xpath(properties.getProperty("asset_download_button"))).click(); //click on download button of track
 		Thread.sleep(5000);
 		logger.info("asset downloaded succesfully");
+		
 		logger.info("track has been viewed and downloaded in partner account");
 		
 	}

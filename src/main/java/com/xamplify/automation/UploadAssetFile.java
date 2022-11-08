@@ -26,8 +26,8 @@ public class UploadAssetFile {
 	final Logger logger = LogManager.getLogger(UploadAssetFile.class);
 
 
-	//uploading png file
-	@Test (priority = 0,enabled = false)
+	//uploading png file asset 
+	@Test (priority = 0)
 	public void uploadasset_png() throws InterruptedException, IOException {	
 		Thread.sleep(3000);
 		driver.findElement(By.xpath(properties.getProperty("Content_leftmenu"))).click(); //click on left side content menu
@@ -84,7 +84,7 @@ public class UploadAssetFile {
 
 
 	//uploading mp3 file
-	@Test (priority = 1,enabled = false)
+	@Test (priority = 1,enabled=false)
 	public void uploadasset_mp3() throws InterruptedException, IOException {	
 		Thread.sleep(3000);
 		driver.findElement(By.xpath(properties.getProperty("Content_leftmenu"))).click(); //click on left side content menu
@@ -132,7 +132,7 @@ public class UploadAssetFile {
 
 
 	//uploading ppt file
-	@Test (priority = 2,enabled = false)
+	@Test (priority = 2,enabled=false)
 	public void uploadasset_ppt() throws InterruptedException, IOException {	
 		Thread.sleep(3000);
 		driver.findElement(By.xpath(properties.getProperty("Content_leftmenu"))).click(); //click on left side content menu
@@ -180,7 +180,7 @@ public class UploadAssetFile {
 
 
 	//uploading doc file
-	@Test (priority = 3,enabled = false)
+	@Test (priority = 3,enabled=false)
 	public void uploadasset_doc() throws InterruptedException, IOException {	
 		Thread.sleep(3000);
 		driver.findElement(By.xpath(properties.getProperty("Content_leftmenu"))).click(); //click on left side content menu
@@ -228,7 +228,7 @@ public class UploadAssetFile {
 
 
 	//uploading xls file
-	@Test (priority = 4,enabled = false)
+	@Test (priority = 4,enabled=false)
 	public void uploadasset_xls() throws InterruptedException, IOException {	
 		Thread.sleep(3000);
 		driver.findElement(By.xpath(properties.getProperty("Content_leftmenu"))).click(); //click on left side content menu
@@ -278,7 +278,7 @@ public class UploadAssetFile {
 
 
 	//uploading gif file
-	@Test (priority = 5,enabled = false)
+	@Test (priority = 5,enabled=false)
 	public void uploadasset_gif() throws InterruptedException, IOException {	
 		Thread.sleep(3000);
 		driver.findElement(By.xpath(properties.getProperty("Content_leftmenu"))).click(); //click on left side content menu
@@ -325,7 +325,7 @@ public class UploadAssetFile {
 	}
 
 	//uploading jpg file
-	@Test (priority = 6,enabled = false)
+	@Test (priority = 6,enabled=false)
 	public void uploadasset_jpg() throws InterruptedException, IOException {	
 		Thread.sleep(3000);
 		driver.findElement(By.xpath(properties.getProperty("Content_leftmenu"))).click(); //click on left side content menu
@@ -373,7 +373,7 @@ public class UploadAssetFile {
 	}
 
 	//uploading zip file
-	@Test (priority = 7,enabled = false)
+	@Test (priority = 7,enabled=false)
 	public void uploadasset_zip() throws InterruptedException, IOException {	
 		Thread.sleep(3000);
 		driver.findElement(By.xpath(properties.getProperty("Content_leftmenu"))).click(); //click on left side content menu
@@ -420,7 +420,7 @@ public class UploadAssetFile {
 	}
 
 	//uploading html file
-	@Test (priority = 8,enabled = false)
+	@Test (priority = 8,enabled=false)
 	public void uploadasset_html() throws InterruptedException, IOException {	
 		Thread.sleep(3000);
 		driver.findElement(By.xpath(properties.getProperty("Content_leftmenu"))).click(); //click on left side content menu
@@ -468,7 +468,7 @@ public class UploadAssetFile {
 
 
 	//uploading svg file
-	@Test (priority = 9,enabled = false)
+	@Test (priority = 9,enabled=false)
 	public void uploadasset_svg() throws InterruptedException, IOException {	
 		Thread.sleep(3000);
 		driver.findElement(By.xpath(properties.getProperty("Content_leftmenu"))).click(); //click on left side content menu
@@ -516,9 +516,9 @@ public class UploadAssetFile {
 	
 	
 	//uploading asset to view&downlod in partner account 
-	@Test (priority = 1,enabled = true)
+	@Test (priority = 1)
 	public void assetpng() throws InterruptedException, IOException {	
-		Thread.sleep(3000);
+		Thread.sleep(5000);
 		driver.findElement(By.xpath(properties.getProperty("Content_leftmenu"))).click(); //click on left side content menu
 		Thread.sleep(5000);
 		driver.findElement(By.xpath(properties.getProperty("DesignUpload"))).click(); //click on design/upload
@@ -561,7 +561,7 @@ public class UploadAssetFile {
 		driver.switchTo().defaultContent();
 		driver.findElement(By.xpath(properties.getProperty("Submit"))).click(); //click on submit 
 		Thread.sleep(5000);
-		logger.info("Asset png uploaded succesfully");
+		logger.info("Asset png uploaded succesfully-partner");
 		WebElement success = driver.findElement(By.xpath(properties.getProperty("Success")));	
 		String actualresult = success.getText();
 		String expectedresult = "Uploaded Successfully";
@@ -587,7 +587,7 @@ public class UploadAssetFile {
 		Thread.sleep(5000);
 		driver.findElement(By.xpath(properties.getProperty("submit_button"))).click();
 		Thread.sleep(5000);
-		logger.info("Assetfile-png published succesfully");
+		logger.info("Assetfile-png published succesfully to view in partner account");
 		//Assertion 1st way for published asset
 		Thread.sleep(5000);
 		WebElement published = driver.findElement(By.xpath(properties.getProperty("published_page")));	

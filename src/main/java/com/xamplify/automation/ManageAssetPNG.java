@@ -23,10 +23,11 @@ public class ManageAssetPNG {
 	final Logger logger = LogManager.getLogger(ManageAssetPNG.class);
 
 
-	//sorting order of assets - successfull
+	//sorting order of assets 
 	@Test (priority=0)
 	public void assetsorting() throws InterruptedException, IOException 
-	{	    	   
+	{	    	
+		Thread.sleep(5000);
 		driver.findElement(By.xpath(properties.getProperty("Content_leftmenu"))).click(); //click on left side content menu
 		Thread.sleep(5000);
 		driver.findElement(By.xpath(properties.getProperty("ManageMyAssets"))).click(); //click on manage assets
@@ -49,94 +50,92 @@ public class ManageAssetPNG {
 	}
 
 
-	//grid and list view  -- succesfull
+	//grid and list view  
 	@Test (priority=1)
 	public void gridlistview() throws InterruptedException
 	{
+		Thread.sleep(5000);
 		driver.findElement(By.xpath(properties.getProperty("Content_leftmenu"))).click(); //click on left side content menu
 		Thread.sleep(5000);
 		driver.findElement(By.xpath(properties.getProperty("ManageMyAssets"))).click(); //click on manage assets
 		Thread.sleep(5000);		
 
 		//clicking on grid view
-		WebElement gridview = driver.findElement(By.xpath(properties.getProperty("gridclick")));
-		if(gridview.isEnabled())
-		{
-			gridview.click();
-			Thread.sleep(5000);		
-		}
-		else
-		{
-			System.out.println("grid view icon is disabled");
-		}
-		logger.info("assets viewed in grid view");
+				WebElement gridview = driver.findElement(By.xpath(properties.getProperty("gridclick")));
+				if(gridview.isEnabled())
+				{
+					gridview.click();
+					Thread.sleep(5000);		
+				}
+				else
+				{
+					System.out.println("grid view icon is disabled");
+				}
+				logger.info("assets viewed in grid view");
 
+				//clickng on folder list view
+				WebElement folderlistview = driver.findElement(By.xpath(properties.getProperty("folderlistclick")));
+				if(folderlistview.isEnabled())
+				{
+					folderlistview.click();
+					Thread.sleep(5000);
+					driver.findElement(By.xpath(properties.getProperty("listview_items"))).click(); //to view all items in folder list view
+					Thread.sleep(5000);
+					logger.info("all items viewed under folder list view");			
+				}	
+				else
+				{
+					System.out.println(" folder list view icon is disabled");
+				}
+				logger.info("assets viewed in folderlist view");
+				
+				//clickng on folder grid view
+				WebElement foldergridview = driver.findElement(By.xpath(properties.getProperty("foldergridclick")));
+				if(foldergridview.isEnabled())
+				{
+					foldergridview.click();
+					Thread.sleep(5000);
+					WebElement ele = driver.findElement(By.xpath("//div[@id='category-icon-div']"));
+					Actions action = new Actions(driver);
+					action.moveToElement(ele).perform();
+					Thread.sleep(5000);
+					driver.findElement(By.xpath(properties.getProperty("gridview_items"))).click(); //to view all items in folder gird view
+					Thread.sleep(5000);
+					driver.findElement(By.xpath(properties.getProperty("go_back"))).click(); //click on go back
+					Thread.sleep(5000);
+					logger.info("all items viewed under folder grid view");
+				}
+				else
+				{
+					System.out.println(" folder grid view icon is disabled");
+				}
+				logger.info("assets viewed in foldergrid view");
 
-		//clickng on list view
-		WebElement listview = driver.findElement(By.xpath(properties.getProperty("listclick")));
-		if(listview.isEnabled())
-		{
-			listview.click();
-		}
-		else
-		{
-			System.out.println("list view icon is disabled");
-		}
-		logger.info("assets viewed in list view");
-
-
-		//clickng on folder list view
-		WebElement folderlistview = driver.findElement(By.xpath(properties.getProperty("folderlistclick")));
-		if(folderlistview.isEnabled())
-		{
-			folderlistview.click();
-			Thread.sleep(5000);
-			driver.findElement(By.xpath(properties.getProperty("listview_items"))).click(); //to view all items in folder list view
-			Thread.sleep(5000);
-			logger.info("all items viewed under folder list view");
-			
-		}
-		else
-		{
-			System.out.println(" folder list view icon is disabled");
-		}
-		logger.info("assets viewed in folderlist view");
-
-		//clickng on folder grid view
-		WebElement foldergridview = driver.findElement(By.xpath(properties.getProperty("foldergridclick")));
-		if(foldergridview.isEnabled())
-		{
-			foldergridview.click();
-			Thread.sleep(5000);
-			WebElement ele = driver.findElement(By.xpath("//div[@id='category-icon-div']"));
-			Actions action = new Actions(driver);
-			action.moveToElement(ele).perform();
-			Thread.sleep(5000);
-			driver.findElement(By.xpath(properties.getProperty("gridview_items"))).click(); //to view all items in folder gird view
-			Thread.sleep(5000);
-			driver.findElement(By.xpath(properties.getProperty("go_back"))).click(); //click on go back
-			Thread.sleep(5000);
-			logger.info("all items viewed under folder grid view");
-		}
-		else
-		{
-			System.out.println(" folder grid view icon is disabled");
-		}
-		logger.info("assets viewed in foldergrid view");
-
+				//clickng on list view
+				WebElement listview = driver.findElement(By.xpath(properties.getProperty("listclick")));
+				if(listview.isEnabled())
+				{
+					listview.click();
+				}
+				else
+				{
+					System.out.println("list view icon is disabled");
+				}
+				logger.info("assets viewed in list view");
 	}
 
 
 	//search asset and view asset and download asset --succesfull
-	@Test (priority=2)
+	@Test (priority=3)
 	public void viewasset() throws InterruptedException 	
 	{
 
+		Thread.sleep(5000);
 		driver.findElement(By.xpath(properties.getProperty("Content_leftmenu"))).click(); //click on left side content menu
 		Thread.sleep(5000);
 		driver.findElement(By.xpath(properties.getProperty("ManageMyAssets"))).click();		
 		Thread.sleep(3000);
-		driver.findElement(By.xpath(properties.getProperty("Searchbar"))).sendKeys("png");
+		driver.findElement(By.xpath(properties.getProperty("Searchbar"))).sendKeys("asset_png");
 		Thread.sleep(3000);
 		driver.findElement(By.xpath(properties.getProperty("Searchclick"))).click();
 		Thread.sleep(3000);
@@ -151,23 +150,26 @@ public class ManageAssetPNG {
 		logger.info("Assetfile downloaded succesfully");
 	}
 
-
+	
 
 	//search asset and click on analytics -- succesfull
-	@Test (priority=3)
+	@Test (priority=2)
 	public void viewanalytics() throws InterruptedException
 	{
+		Thread.sleep(5000);
 		driver.findElement(By.xpath(properties.getProperty("Content_leftmenu"))).click(); //click on left side content menu
 		Thread.sleep(5000);
 		driver.findElement(By.xpath(properties.getProperty("ManageMyAssets"))).click();		
 		Thread.sleep(3000);
-		driver.findElement(By.xpath(properties.getProperty("Searchbar"))).sendKeys("png");
+		driver.findElement(By.xpath(properties.getProperty("Searchbar"))).sendKeys("asset_png");
 		Thread.sleep(3000);	
 		driver.findElement(By.xpath(properties.getProperty("Searchclick"))).click(); 
 		Thread.sleep(3000);	
 
 		driver.findElement(By.xpath(properties.getProperty("viewanalytics_icon"))).click();
 		Thread.sleep(3000);	
+		
+		logger.info("analytics icon has been clicked");	
 
 		driver.findElement(By.xpath(properties.getProperty("cross_icon"))).click();	
 		Thread.sleep(3000);	
@@ -180,11 +182,12 @@ public class ManageAssetPNG {
 	@Test (priority=4)
 	public void publishasset() throws InterruptedException
 	{
+		Thread.sleep(5000);
 		driver.findElement(By.xpath(properties.getProperty("Content_leftmenu"))).click(); //click on left side content menu
 		Thread.sleep(5000);
 		driver.findElement(By.xpath(properties.getProperty("ManageMyAssets"))).click();		
 		Thread.sleep(5000);
-		driver.findElement(By.xpath(properties.getProperty("Searchbar"))).sendKeys("png");
+		driver.findElement(By.xpath(properties.getProperty("Searchbar"))).sendKeys("asset_png");
 		Thread.sleep(5000);	
 		driver.findElement(By.xpath(properties.getProperty("Searchclick"))).click(); 
 		Thread.sleep(5000);	
@@ -233,12 +236,13 @@ public class ManageAssetPNG {
 	@Test (priority=5)
 	public void editasset() throws InterruptedException
 	{
-
+		
+		Thread.sleep(5000);
 		driver.findElement(By.xpath(properties.getProperty("Content_leftmenu"))).click(); //click on left side content menu
 		Thread.sleep(5000);
 		driver.findElement(By.xpath(properties.getProperty("ManageMyAssets"))).click();	
 		Thread.sleep(5000);		
-		driver.findElement(By.xpath(properties.getProperty("Searchbar"))).sendKeys("png");
+		driver.findElement(By.xpath(properties.getProperty("Searchbar"))).sendKeys("asset_png");
 		Thread.sleep(3000);
 		driver.findElement(By.xpath(properties.getProperty("Searchclick"))).click();		
 		//clicking on edit icon against to first asset file (png)
@@ -268,11 +272,12 @@ public class ManageAssetPNG {
 	public void deleteasset() throws InterruptedException
 	{
 
+		Thread.sleep(5000);
 		driver.findElement(By.xpath(properties.getProperty("Content_leftmenu"))).click(); //click on left side content menu
 		Thread.sleep(5000);
 		driver.findElement(By.xpath(properties.getProperty("ManageMyAssets"))).click();		
 		Thread.sleep(3000);
-		driver.findElement(By.xpath(properties.getProperty("Searchbar"))).sendKeys("png");	
+		driver.findElement(By.xpath(properties.getProperty("Searchbar"))).sendKeys("asset_png");	
 		Thread.sleep(3000);
 		driver.findElement(By.xpath(properties.getProperty("Searchclick"))).click();
 		Thread.sleep(3000);
@@ -280,10 +285,85 @@ public class ManageAssetPNG {
 		Thread.sleep(3000);
 		driver.findElement(By.xpath(properties.getProperty("yes_on_deletepopup"))).click();
 		logger.info("Assetfile deleted succesfully");
-
 	}
+	
+	
+	//view detailed anaytics of png asset in vendor account after partner viewed and downloaded the asset in partner account
+	@Test (priority = 7)
+	public void viewanalyticsvendorpng() throws InterruptedException, IOException {	
+		
+		Thread.sleep(5000);
+		driver.findElement(By.xpath(properties.getProperty("Content_leftmenu"))).click(); //click on left side content menu
+		Thread.sleep(5000);
+		driver.findElement(By.xpath(properties.getProperty("ManageMyAssets"))).click();	//click on managemyasset
+		Thread.sleep(5000);		
+		driver.findElement(By.xpath(properties.getProperty("Searchbar"))).sendKeys("partnerasset"); //search with partnerasset
+		Thread.sleep(3000);
+		driver.findElement(By.xpath(properties.getProperty("Searchclick"))).click();
+		Thread.sleep(5000);
+		driver.findElement(By.xpath(properties.getProperty("viewanalytics_icon_partnerasset"))).click(); //click on analytics icon agaisnt to asset
+		Thread.sleep(3000);	
+		logger.info("analytics icon has been clicked against to asset-png");
+		driver.findElement(By.xpath(properties.getProperty("viewanalytics_partner"))).click(); // click analytics of partner
+		Thread.sleep(3000);
+		logger.info("analytics icon has been clicked against to partner");
 
-
+		driver.findElement(By.xpath(properties.getProperty("partner_only_view"))).click(); //click on view button in analytics
+		Thread.sleep(5000);	
+		logger.info("displayed only viewed assets");	
+		driver.findElement(By.xpath(properties.getProperty("partner_only_download"))).click(); //click on download button in analytics
+		Thread.sleep(5000);	
+		logger.info("displayed only downloaded assets");
+		driver.findElement(By.xpath(properties.getProperty("searchloc"))).sendKeys("India"); //search with India
+		Thread.sleep(3000);
+		driver.findElement(By.xpath(properties.getProperty("Searchclick"))).click();
+		Thread.sleep(5000);
+		logger.info("searched with India");
+		driver.findElement(By.xpath(properties.getProperty("crossicon_click"))).click(); //click on cross icon in detailed anayltics page
+		Thread.sleep(5000);
+		logger.info("cross icon has been clicked");
+		logger.info("detailed anaytics of asset are viewed in vendor account after partner viewed&downloaded the png asset");
+		driver.findElement(By.xpath(properties.getProperty("crossicon_click"))).click(); //click on cross icon in parnter info page
+			
+	}
+	
+	
+	//view detailed anaytics of pdf asset in vendor account after partner viewed and downloaded the asset in partner account
+		@Test (priority = 8)
+		public void viewanalyticsvendorpdf() throws InterruptedException, IOException {		
+			Thread.sleep(3000);
+			driver.findElement(By.xpath(properties.getProperty("Content_leftmenu"))).click(); //click on left side content menu
+			Thread.sleep(5000);
+			driver.findElement(By.xpath(properties.getProperty("ManageMyAssets"))).click();	//click on managemyasset
+			Thread.sleep(5000);		
+			driver.findElement(By.xpath(properties.getProperty("Searchbar"))).sendKeys("pdf"); //search with pdf
+			Thread.sleep(3000);
+			driver.findElement(By.xpath(properties.getProperty("Searchclick"))).click();
+			Thread.sleep(5000);
+			driver.findElement(By.xpath(properties.getProperty("viewanalytics_icon_pdf"))).click(); //click on analytics icon agaisnt to asset
+			Thread.sleep(3000);	
+			logger.info("analytics icon has been clicked against to pdf asset");
+			driver.findElement(By.xpath(properties.getProperty("viewanalytics_partner"))).click(); // click analytics of partner
+			Thread.sleep(3000);
+			logger.info("analytics icon has been clicked against to partner-pdf");
+			driver.findElement(By.xpath(properties.getProperty("partner_only_view"))).click(); //click on view button in analytics
+			Thread.sleep(5000);	
+			logger.info("displayed only viewed pdf assets");	
+			driver.findElement(By.xpath(properties.getProperty("partner_only_download"))).click(); //click on download button in analytics
+			Thread.sleep(5000);	
+			logger.info("displayed only downloaded pdf assets");
+			driver.findElement(By.xpath(properties.getProperty("searchloc"))).sendKeys("India"); //search with India
+			Thread.sleep(3000);
+			driver.findElement(By.xpath(properties.getProperty("Searchclick"))).click();
+			Thread.sleep(5000);
+			logger.info("searched with India");
+			driver.findElement(By.xpath(properties.getProperty("crossicon_click"))).click(); //click on cross icon in detailed anayltics page
+			Thread.sleep(5000);
+			logger.info("cross icon has been clicked");
+			logger.info("detailed anaytics of pdf asset are viewed in vendor account after partner viewed&downloaded the pdf asset");
+			driver.findElement(By.xpath(properties.getProperty("crossicon_click"))).click(); //click on cross icon in parnter info page
+				
+		}
 
 
 }

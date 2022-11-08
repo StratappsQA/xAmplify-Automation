@@ -17,7 +17,7 @@ public class DesignPDF {
 			.readPropertyFile("D:\\git\\xAmplify-Automation\\src\\main\\resources\\AssetLibrary.properties");
 	final Logger logger = LogManager.getLogger(DesignPDF.class);
 
-	//create pdf asset and publish to partner
+	//creating pdf asset and publish to partner
 	@Test
 	public void designpdf() throws InterruptedException
 	{
@@ -61,7 +61,7 @@ public class DesignPDF {
 				Thread.sleep(5000);	
 				driver.findElement(By.xpath(properties.getProperty("Searchclick"))).click(); 
 				Thread.sleep(5000);	
-				driver.findElement(By.xpath(properties.getProperty("publish_click"))).click(); //click on publish link
+				driver.findElement(By.xpath(properties.getProperty("publish_click_pdf"))).click(); //click on publish link
 				Thread.sleep(5000);
 				driver.findElement(By.xpath(properties.getProperty("Searchbar_publish"))).sendKeys("automatedPartner");
 				Thread.sleep(5000);
@@ -85,9 +85,6 @@ public class DesignPDF {
 				driver.findElement(By.xpath(properties.getProperty("cross_icon_publish"))).click();
 				logger.info("cross icon clicked");		
 				
-
-
-
 
 	}
 

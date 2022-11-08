@@ -21,7 +21,7 @@ public class AddTracks {
 	final Logger logger = LogManager.getLogger(AddTracks.class);
 
 	
-	//adding track to unpublish and delete 
+	// adding track to view and delete in vendor account
 	@Test (priority = 0)
 	public void addingtrack() throws InterruptedException, IOException {	
 		Thread.sleep(3000);
