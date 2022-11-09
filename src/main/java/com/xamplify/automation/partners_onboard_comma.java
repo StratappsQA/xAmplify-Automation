@@ -117,12 +117,6 @@ public class partners_onboard_comma {
 		driver.findElement(By.xpath(properties.getProperty("jobtitle"))).sendKeys("Job Title");// enter data for
 																								// jobtitle field
 
-		/*
-		 * DatabaseQueries data = new DatabaseQueries(); String query1 =
-		 * properties.getProperty("query.getPartnersEmailidsBBOrganizationId");//
-		 * .replaceAll(":emailId",properties.getProperty("user.name"));
-		 */
-
 		driver.findElement(By.id(properties.getProperty("emailid_1")))
 				.sendKeys(properties.getProperty("oneatatimeemailid"));
 		Thread.sleep(5000);
@@ -149,9 +143,6 @@ public class partners_onboard_comma {
 																										// country field
 		countries.selectByValue("India");
 
-		// countries.selectByIndex(1);
-		// JavascriptExecutor js = (JavascriptExecutor) driver;
-		// js.executeScript("window.scrollTo(0, document.body.scrollHeight)");
 		driver.findElement(By.xpath(properties.getProperty("countrycode"))).sendKeys("+1 551-227-8922");// enter data
 																										// for
 																										// mobilenumber
@@ -173,16 +164,15 @@ public class partners_onboard_comma {
 		driver.findElement(By.xpath(properties.getProperty("teammembergroup"))).click();
 		Thread.sleep(5000);
 
-		// Select objSelect = new
-		// Select(driver.findElement(By.xpath(properties.getProperty("option"))));
-		// objSelect.selectByIndex(1);
 		driver.findElement(By.xpath(properties.getProperty("option"))).click();
 		Thread.sleep(2000);
 
 		driver.findElement(By.xpath(properties.getProperty("checkbox"))).click();
-		/*Thread.sleep(2000);
-
-		driver.findElement(By.xpath(properties.getProperty("proceed"))).click();*/
+		/*
+		 * Thread.sleep(2000);
+		 * 
+		 * driver.findElement(By.xpath(properties.getProperty("proceed"))).click();
+		 */
 		Thread.sleep(5000);
 
 		driver.findElement(By.xpath(properties.getProperty("continue"))).click();
@@ -206,8 +196,6 @@ public class partners_onboard_comma {
 		WebDriverWait wait = new WebDriverWait(driver, 30);
 
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("copyFromClipBoard")));
-		// logger.debug("Starting creating partner using copy from clipboard - comma
-		// separated");
 
 		driver.findElement(By.id("copyFromClipBoard")).click();// click copy from clipboard
 		Select delimiter = new Select(
@@ -303,22 +291,22 @@ public class partners_onboard_comma {
 		driver.findElement(By.xpath(properties.getProperty("checkbox"))).click();
 		Thread.sleep(2000);
 
-		/*driver.findElement(By.xpath(properties.getProperty("proceed"))).click();
-		Thread.sleep(4000);*/
+		
 
 		driver.findElement(By.xpath(properties.getProperty("continue"))).click();
-		
-Thread.sleep(8000);
+
+		Thread.sleep(8000);
 	}
+
 	@Test(priority = 7, enabled = true)
 	public void copy_from_clipboard_tab() throws InterruptedException, SQLException, IOException
 
 	{
-		
+
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("window.scrollBy(0,-300)");
 		Thread.sleep(3000);
-		
+
 		driver.findElement(By.xpath("//*[@id='copyFromClipBoard']/span/..")).click();// click copy from clipboard
 		Select delimiter = new Select(
 				driver.findElement(By.xpath("//div[@class='col-xs-6']//select[@class='opts form-control']")));
@@ -406,21 +394,14 @@ Thread.sleep(8000);
 		driver.findElement(By.xpath(properties.getProperty("team_member_group"))).click();
 		Thread.sleep(3000);
 
-		// Select objSelect = new
-		// Select(driver.findElement(By.xpath(properties.getProperty("option"))));
-		// objSelect.selectByIndex(1);
 		driver.findElement(By.xpath(properties.getProperty("option"))).click();
 		Thread.sleep(2000);
 
 		driver.findElement(By.xpath(properties.getProperty("checkbox"))).click();
 		Thread.sleep(2000);
 
-		/*driver.findElement(By.xpath(properties.getProperty("proceed"))).click();
-		Thread.sleep(2000);*/
-
 		driver.findElement(By.xpath(properties.getProperty("save1"))).click();
 		Thread.sleep(5000);
 	}
-
 
 }

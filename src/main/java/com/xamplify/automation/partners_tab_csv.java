@@ -79,18 +79,16 @@ public class partners_tab_csv {
 
 	}
 
-	
-
 	@Test(priority = 9, enabled = true)
 	public void onboard_icons() throws Throwable {
 		Thread.sleep(8000);
-		partners_onboard_comma onboard= new partners_onboard_comma();
+		partners_onboard_comma onboard = new partners_onboard_comma();
 		onboard.Signinprocess();
 		Thread.sleep(5000);
-		
+
 		driver.findElement(By.xpath(properties.getProperty("resendemail"))).click();
 		Thread.sleep(3000);
-		
+
 		driver.findElement(By.xpath(properties.getProperty("editpartner"))).click();
 		Thread.sleep(3000);
 		driver.findElement(By.xpath(properties.getProperty("companyid"))).clear();
@@ -99,7 +97,7 @@ public class partners_tab_csv {
 				.sendKeys("newcompany name" + "_" + System.currentTimeMillis());
 		Thread.sleep(3000);
 		driver.findElement(By.xpath(properties.getProperty("updatepartner"))).click();
-		
+
 		Thread.sleep(5000);
 
 		driver.findElement(By.xpath(properties.getProperty("deletepartneronboard"))).click();
@@ -150,7 +148,7 @@ public class partners_tab_csv {
 		Thread.sleep(1000);
 		driver.findElement(By.xpath(properties.getProperty("searchmanage"))).sendKeys(Keys.ENTER);
 		Thread.sleep(5000);
-		
+
 		driver.findElement(By.xpath(properties.getProperty("copyandsave"))).click();
 		Thread.sleep(2000);
 		driver.findElement(By.xpath(properties.getProperty("copyandsavename"))).clear();
@@ -170,7 +168,7 @@ public class partners_tab_csv {
 		Thread.sleep(2000);
 		driver.findElement(By.xpath(properties.getProperty("closing"))).click();
 		Thread.sleep(3000);
-		
+
 		driver.findElement(By.xpath(properties.getProperty("editlist"))).click();
 		Thread.sleep(2000);
 		driver.findElement(By.xpath(properties.getProperty("editinglist"))).click();
@@ -205,7 +203,7 @@ public class partners_tab_csv {
 		Thread.sleep(3000);
 		driver.findElement(By.xpath(properties.getProperty("searchmanage"))).clear();
 		Thread.sleep(2000);
-		//driver.findElement(By.xpath(properties.getProperty("searchmanage")))
+		// driver.findElement(By.xpath(properties.getProperty("searchmanage")))
 		driver.findElement(By.xpath(properties.getProperty("searchmanage"))).sendKeys("harish");
 		Thread.sleep(3000);
 		driver.findElement(By.xpath(properties.getProperty("searchmanage"))).sendKeys(Keys.ENTER);
@@ -213,26 +211,7 @@ public class partners_tab_csv {
 		driver.findElement(By.xpath(properties.getProperty("deletemanage"))).click();
 		Thread.sleep(3000);
 		driver.findElement(By.xpath(properties.getProperty("deletemanagelist"))).click();
-		
-		
-	}
-	@Test(priority = 12, enabled = true)
-	public void pagenation() throws Throwable
-
-	{
-		Thread.sleep(3000);
-		partners_onboard_comma onboard= new partners_onboard_comma();
-		onboard.Signinprocess();
 		Thread.sleep(5000);
-		JavascriptExecutor js = (JavascriptExecutor) driver;
-		js.executeScript("scroll(0, 2000)");
-		Thread.sleep(3000);
-		driver.findElement(By.xpath(properties.getProperty("pagenation2"))).click();
-		Thread.sleep(3000);
-		driver.findElement(By.xpath(properties.getProperty("pagenation_last"))).click();
-		Thread.sleep(3000);
-		driver.findElement(By.xpath(properties.getProperty("pagenation_first"))).click();
-
 	}
 
 }
