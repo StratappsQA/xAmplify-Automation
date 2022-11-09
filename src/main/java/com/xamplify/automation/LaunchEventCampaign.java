@@ -54,8 +54,8 @@ public class LaunchEventCampaign {
 		}
 
 		logger.info("Event Campaign Launched Successfully");
-		driver.navigate().refresh();
-		Thread.sleep(6000);
+		
+		Thread.sleep(4000);
 
 	}
 }
