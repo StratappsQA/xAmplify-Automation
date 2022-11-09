@@ -145,6 +145,7 @@ public class AccessSharedAssetInPartner {
 	}
 	
 	
+	
   //view,edit and download pdf asset file in partner account
 	@Test (priority = 1)
 	public void sharedassetpdf() throws InterruptedException, IOException {
@@ -191,7 +192,7 @@ public class AccessSharedAssetInPartner {
 		Thread.sleep(5000);	
 		logger.info("displayed only downloaded pdf assets");
 		driver.findElement(By.xpath(properties.getProperty("crossicon_click"))).click(); //click on cross icon in detailed anayltics page
-		Thread.sleep(3000);
+		Thread.sleep(4000);
 		logger.info("cross icon has been clicked and page is redirected to all asstes");
 		
 	}

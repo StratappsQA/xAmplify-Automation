@@ -21,7 +21,7 @@ public class ManagePlaybooks {
 
 
 	//clicking on preview&edit and performing actions 
-	@Test (priority=0)
+	@Test (priority=0,enabled=false)
 	public void preview_edit_pb() throws InterruptedException, IOException {	
 		Thread.sleep(5000);
 		driver.findElement(By.xpath(properties.getProperty("Content_leftmenu1"))).click(); //click on left side content menu
@@ -75,7 +75,7 @@ public class ManagePlaybooks {
 	}
 
 	//clicking on view 
-	@Test (priority=1)
+	@Test (priority=1,enabled=false)
 	public void view_pb() throws InterruptedException, IOException {	
 		Thread.sleep(5000);
 		driver.findElement(By.xpath(properties.getProperty("Content_leftmenu1"))).click(); //click on left side content menu
@@ -105,7 +105,7 @@ public class ManagePlaybooks {
 
 
 	//clicking on analytics
-	@Test (priority=2)
+	@Test (priority=2,enabled=false)
 	public void analytics_pb() throws InterruptedException, IOException {	
 		Thread.sleep(3000);
 		driver.findElement(By.xpath(properties.getProperty("Content_leftmenu1"))).click(); //click on left side content menu
@@ -143,7 +143,7 @@ public class ManagePlaybooks {
 
 
 	//clicking on delete 
-	@Test (priority=3)
+	@Test (priority=3,enabled=false)
 	public void delete() throws InterruptedException, IOException {	
 		Thread.sleep(5000);
 		driver.findElement(By.xpath(properties.getProperty("Content_leftmenu1"))).click(); //click on left side content menu
@@ -172,7 +172,7 @@ public class ManagePlaybooks {
 	//to view analytics in vendor account after track is been viewed and downloaded in partner account
 	@Test (priority=4)
 	public void analytics_playbook_vendor() throws InterruptedException, IOException {	
-		Thread.sleep(3000);
+		Thread.sleep(6000);
 		driver.findElement(By.xpath(properties.getProperty("Content_leftmenu1"))).click(); //click on left side content menu
 		Thread.sleep(5000);
 		driver.findElement(By.xpath(properties.getProperty("manage_playbooks"))).click(); //click on add tracks

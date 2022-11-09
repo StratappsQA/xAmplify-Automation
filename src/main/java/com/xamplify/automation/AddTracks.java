@@ -24,7 +24,7 @@ public class AddTracks {
 	// adding track to view and delete in vendor account
 	@Test (priority = 0)
 	public void addingtrack() throws InterruptedException, IOException {	
-		Thread.sleep(3000);
+		Thread.sleep(5000);
 		driver.findElement(By.xpath(properties.getProperty("Content_leftmenu1"))).click(); //click on left side content menu
 		Thread.sleep(5000);
 		driver.findElement(By.xpath(properties.getProperty("Add_tracks"))).click(); //click on add tracks

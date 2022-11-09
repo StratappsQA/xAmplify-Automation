@@ -26,7 +26,7 @@ public class ManageAssetVideoFile {
 	//sorting order for assets  
 	@Test (priority=0)
 	public void assetsorting() throws InterruptedException, IOException {	    	   
-		Thread.sleep(5000);
+		Thread.sleep(6000);
 		driver.findElement(By.xpath(properties.getProperty("Content_leftmenu"))).click(); //click on left side content menu
 		Thread.sleep(5000);
 		driver.findElement(By.xpath(properties.getProperty("ManageMyAssets"))).click(); //click on manage assets
@@ -50,7 +50,7 @@ public class ManageAssetVideoFile {
 
 
 	//grid and list view  -- successfull
-	@Test (priority=1)
+	@Test (priority=1,enabled=false)
 	public void gridlistview() throws InterruptedException
 	{
 		Thread.sleep(5000);
@@ -125,7 +125,7 @@ public class ManageAssetVideoFile {
 	}
 
 	//search asset and view asset  
-	@Test (priority=2)
+	@Test (priority=2,enabled=false)
 	public void viewassetvideo() throws InterruptedException 	
 	{
 		Thread.sleep(5000);
@@ -199,7 +199,7 @@ public class ManageAssetVideoFile {
 
 
 	//search asset and download asset 
-	@Test (priority=4)
+	@Test (priority=4,enabled=false)
 	public void downloadassetvideo() throws InterruptedException 	
 	{
 		Thread.sleep(5000);
@@ -261,7 +261,7 @@ public class ManageAssetVideoFile {
 
 
 	//search asset and createcompaign -- successfull
-	@Test (priority=6)
+	@Test (priority=6,enabled=false)
 	public void createcompaign() throws InterruptedException
 	{
 		Thread.sleep(5000);
@@ -278,16 +278,15 @@ public class ManageAssetVideoFile {
 		logger.info("Redirected to create compaign page-not creaing campaign");
 		driver.findElement(By.xpath(properties.getProperty("Content_leftmenu"))).click();
 		Thread.sleep(5000);	
-
 		driver.findElement(By.xpath(properties.getProperty("unsave_compaign"))).click();
 		Thread.sleep(5000);	
 		logger.info("compaign page closed");
-
+		Thread.sleep(3000);	
 	}
 
 
 	//search asset and analytics -- succesfull
-	@Test (priority=7)
+	@Test (priority=7,enabled=false)
 	public void viewanalyticsvideo() throws InterruptedException
 	{
 		Thread.sleep(5000);
@@ -310,7 +309,7 @@ public class ManageAssetVideoFile {
 	@Test (priority=8)
 	public void deleteassetvideo() throws InterruptedException
 	{
-		Thread.sleep(5000);
+		Thread.sleep(6000);
 		driver.findElement(By.xpath(properties.getProperty("Content_leftmenu"))).click(); //click on left side content menu
 		Thread.sleep(5000);
 		driver.findElement(By.xpath(properties.getProperty("ManageMyAssets"))).click();		

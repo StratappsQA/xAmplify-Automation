@@ -21,7 +21,7 @@ public class AccessSharedTrackInPartner {
 	//view and download track in partner account
 	@Test 
 	public void view_track_partner() throws InterruptedException, IOException {	
-		Thread.sleep(3000);
+		Thread.sleep(5000);
 		driver.findElement(By.xpath(properties.getProperty("Content_leftmenu1"))).click(); //click on left side content menu in partner account
 		Thread.sleep(5000);
 		driver.findElement(By.xpath(properties.getProperty("access_sharedtrack"))).click(); //click on access shared tracks

@@ -25,7 +25,7 @@ public class UploadAssetVideo {
 	//uploading MP4 file - video asset
 	@Test (priority=0)
 	public void uploadMP4() throws InterruptedException, IOException {	
-		Thread.sleep(3000);
+		Thread.sleep(5000);
 		driver.findElement(By.xpath(properties.getProperty("Content_leftmenu"))).click(); //click on left side content menu
 		Thread.sleep(5000);
 		driver.findElement(By.xpath(properties.getProperty("DesignUpload"))).click(); //click on design/upload

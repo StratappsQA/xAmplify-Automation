@@ -24,7 +24,7 @@ public class ManageAssetPNG {
 
 
 	//sorting order of assets 
-	@Test (priority=0)
+	@Test (priority=0,enabled=false)
 	public void assetsorting() throws InterruptedException, IOException 
 	{	    	
 		Thread.sleep(5000);
@@ -51,7 +51,7 @@ public class ManageAssetPNG {
 
 
 	//grid and list view  
-	@Test (priority=1)
+	@Test (priority=1,enabled=false)
 	public void gridlistview() throws InterruptedException
 	{
 		Thread.sleep(5000);
@@ -126,7 +126,7 @@ public class ManageAssetPNG {
 
 
 	//search asset and view asset and download asset --succesfull
-	@Test (priority=3)
+	@Test (priority=3,enabled=false)
 	public void viewasset() throws InterruptedException 	
 	{
 
@@ -153,7 +153,7 @@ public class ManageAssetPNG {
 	
 
 	//search asset and click on analytics -- succesfull
-	@Test (priority=2)
+	@Test (priority=2,enabled=false)
 	public void viewanalytics() throws InterruptedException
 	{
 		Thread.sleep(5000);
@@ -179,7 +179,7 @@ public class ManageAssetPNG {
 
 
 	//search asset and publish asset to partner -- succesfull
-	@Test (priority=4)
+	@Test (priority=4,enabled=false)
 	public void publishasset() throws InterruptedException
 	{
 		Thread.sleep(5000);
@@ -268,7 +268,7 @@ public class ManageAssetPNG {
 	}
 
 	//search asset and Delete asset -- succesfull
-	@Test (priority=6)
+	@Test (priority=6,enabled=false)
 	public void deleteasset() throws InterruptedException
 	{
 
@@ -290,11 +290,11 @@ public class ManageAssetPNG {
 	
 	//view detailed anaytics of png asset in vendor account after partner viewed and downloaded the asset in partner account
 	@Test (priority = 7)
-	public void viewanalyticsvendorpng() throws InterruptedException, IOException {	
-		
-		Thread.sleep(5000);
+	public void viewanalyticsvendorpng() throws InterruptedException, IOException 
+	{	
+		Thread.sleep(7000);
 		driver.findElement(By.xpath(properties.getProperty("Content_leftmenu"))).click(); //click on left side content menu
-		Thread.sleep(5000);
+		Thread.sleep(6000);
 		driver.findElement(By.xpath(properties.getProperty("ManageMyAssets"))).click();	//click on managemyasset
 		Thread.sleep(5000);		
 		driver.findElement(By.xpath(properties.getProperty("Searchbar"))).sendKeys("partnerasset"); //search with partnerasset
@@ -331,9 +331,9 @@ public class ManageAssetPNG {
 	//view detailed anaytics of pdf asset in vendor account after partner viewed and downloaded the asset in partner account
 		@Test (priority = 8)
 		public void viewanalyticsvendorpdf() throws InterruptedException, IOException {		
-			Thread.sleep(3000);
+			Thread.sleep(8000);
 			driver.findElement(By.xpath(properties.getProperty("Content_leftmenu"))).click(); //click on left side content menu
-			Thread.sleep(5000);
+			Thread.sleep(6000);
 			driver.findElement(By.xpath(properties.getProperty("ManageMyAssets"))).click();	//click on managemyasset
 			Thread.sleep(5000);		
 			driver.findElement(By.xpath(properties.getProperty("Searchbar"))).sendKeys("pdf"); //search with pdf

@@ -29,7 +29,7 @@ public class UploadAssetFile {
 	//uploading png file asset 
 	@Test (priority = 0)
 	public void uploadasset_png() throws InterruptedException, IOException {	
-		Thread.sleep(3000);
+		Thread.sleep(4000);
 		driver.findElement(By.xpath(properties.getProperty("Content_leftmenu"))).click(); //click on left side content menu
 		Thread.sleep(5000);
 		driver.findElement(By.xpath(properties.getProperty("DesignUpload"))).click(); //click on design/upload
@@ -599,6 +599,50 @@ public class UploadAssetFile {
 		driver.findElement(By.xpath(properties.getProperty("cross_icon_publish"))).click();
 		logger.info("cross icon clicked");		
 	}	
+	
+	
+	//uploading asset through webcam 
+		@Test (priority = 11,enabled=false)
+		public void assetthroughwebcam() throws InterruptedException, IOException {	
+			Thread.sleep(5000);
+			driver.findElement(By.xpath(properties.getProperty("Content_leftmenu"))).click(); //click on left side content menu
+			Thread.sleep(5000);
+			driver.findElement(By.xpath(properties.getProperty("DesignUpload"))).click(); //click on design/upload
+			Thread.sleep(3000);
+			driver.findElement(By.xpath(properties.getProperty("Upload"))).click(); // click on upload
+			Thread.sleep(5000);
+			driver.findElement(By.xpath(properties.getProperty("webcam_icon"))).click(); // click on webcam icon
+			Thread.sleep(5000);
+			driver.findElement(By.xpath(properties.getProperty("description_webcam"))).sendKeys("uploading webcam recorded video"); // entering message in the description field
+			Thread.sleep(5000);
+			driver.findElement(By.xpath(properties.getProperty("camera_icon_click_webcam"))).click(); // click on camera icon to record
+			Thread.sleep(5000);
+			driver.findElement(By.xpath(properties.getProperty("recordbutton_click"))).click(); // click on record icon -- start recording
+			Thread.sleep(15000);
+			driver.findElement(By.xpath(properties.getProperty("recordbutton_click"))).click(); // click on record icon- to stop the recording
+			Thread.sleep(5000);
+			driver.findElement(By.xpath(properties.getProperty("uploadbutton_webcam"))).click(); // click on upload button
+			Thread.sleep(5000);
+			logger.info("video has been recorded and uploaded");
+			driver.findElement(By.xpath(properties.getProperty("Name"))).sendKeys(properties.getProperty("recordedvideo_name")+ "_" + System.currentTimeMillis());
+			Thread.sleep(5000);
+			driver.findElement(By.xpath(properties.getProperty("folder_dropdown_click1"))).click(); //click on folder dropdown
+			Thread.sleep(5000);
+			driver.findElement(By.xpath(properties.getProperty("folder_selection1"))).click(); //select folder
+			Thread.sleep(5000);
+			driver.findElement(By.xpath(properties.getProperty("tag_select"))).click();
+			Thread.sleep(5000);
+			driver.switchTo().frame(0);
+			driver.findElement(By.xpath(properties.getProperty("Descriptionclick"))).click();
+			driver.findElement(By.xpath(properties.getProperty("Descriptionclick"))).sendKeys("Asset_Description");
+			Thread.sleep(5000);
+			driver.switchTo().defaultContent();
+			driver.findElement(By.xpath(properties.getProperty("Submit"))).click();
+			Thread.sleep(5000);
+			logger.info("video uploaded through webcam succesfully as a video asset");
+			
+		}
+	
 }
 
 
