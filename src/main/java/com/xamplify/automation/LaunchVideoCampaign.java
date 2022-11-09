@@ -53,7 +53,7 @@ public class LaunchVideoCampaign {
 
 		logger.info("Video Campaign launched Successfully");
 
-		Thread.sleep(8000);
+		Thread.sleep(9000);
 	}
 	
 }
