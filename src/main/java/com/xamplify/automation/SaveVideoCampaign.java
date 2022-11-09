@@ -80,6 +80,8 @@ logger.info("Spam Check");
 		System.out.println(" video Campaign failed");
 		}
 			
+		
+		Thread.sleep(8000);
 logger.info("Video Campaign Saved Successfully");				
 		}
 

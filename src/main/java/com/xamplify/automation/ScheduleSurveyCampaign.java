@@ -88,7 +88,7 @@ final Logger logger = LogManager.getLogger(ScheduleSurveyCampaign.class);
 		Thread.sleep(5000);
 		
 logger.info("Survey Campaign Scheduled Successfully");	 	
-	 	String Result1 = "Campaign Scheduled successfully";
+	 	String Result1 = "Campaign scheduled successfully";
 	 	
 	 	if(Result1.equals(s_schedule)) {
 	 		//Thread.sleep(2000);
