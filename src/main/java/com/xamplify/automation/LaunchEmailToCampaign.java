@@ -1,45 +1,35 @@
 package com.xamplify.automation;
 
 import java.sql.SQLException;
-
 import java.util.Properties;
-
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.AfterTest;
 import org.testng.annotations.Test;
 
-public class LaunchEmailCampaign {
-
-//public class LaunchEmailCampaign extends AutoResponseEmailCampaign {
-
-	// @AfterMethod
-	// [for auto responses...comment @AfterTest annotation and use @Aftermethod ,
-	// extends AutoResponsesEmail]
+public class LaunchEmailToCampaign {
 
 	WebDriver driver = Instance.getInstance();
 
 	Properties properties = PropertiesFile
 			.readPropertyFile("D:\\git\\xAmplify-Automation\\src\\main\\resources\\Campaign.properties");
 
-	final Logger logger = LogManager.getLogger(LaunchEmailCampaign.class);
+	final Logger logger = LogManager.getLogger(LaunchEmailToCampaign.class);
 
 	@Test
 
-	public void elaunch() throws InterruptedException, SQLException
+	public void e_to_launch() throws InterruptedException, SQLException
 
 	{
 		Thread.sleep(4000);
-		EmailCampaign e1 = new EmailCampaign();
-		e1.ecampaign();
+		EmailToCampaign e1 = new EmailToCampaign();
+		e1.email_to_campaign();
 		Thread.sleep(5000);
 
-		AutoResponseEmailcampaign ar_e = new AutoResponseEmailcampaign();
-		ar_e.autoResponsesEmail();
+//		AutoResponseEmailcampaign ar_e = new AutoResponseEmailcampaign();
+//		ar_e.autoResponsesEmail();
 
 		Thread.sleep(3000);
 
@@ -68,8 +58,6 @@ public class LaunchEmailCampaign {
 		}
 
 		logger.info("Email Campaign Launched Successfully");
-		
-		Thread.sleep(8000);
 
 	}
 }
