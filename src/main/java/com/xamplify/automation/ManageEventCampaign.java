@@ -47,7 +47,7 @@ public class ManageEventCampaign {
 
 		driver.findElement(By.xpath(properties.getProperty("meve_gear_icon"))).click(); // click on the gear icon
 
-		Thread.sleep(5000);
+		Thread.sleep(7000);
 
 		driver.findElement(By.xpath(properties.getProperty("meve_editicon"))).click(); // click on the edit icon
 		Thread.sleep(3000);
@@ -259,7 +259,7 @@ public class ManageEventCampaign {
 
 		Actions action21 = new Actions(driver);
 		action21.moveToElement(w).perform();
-		Thread.sleep(7000);
+		Thread.sleep(8000);
 		driver.findElement(By.xpath(properties.getProperty("meve_hover_canceleventicon"))).click();
 		Thread.sleep(5000);
 
