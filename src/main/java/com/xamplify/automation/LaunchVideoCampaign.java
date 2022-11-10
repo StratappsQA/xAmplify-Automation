@@ -17,14 +17,14 @@ public class LaunchVideoCampaign {
 
 	WebDriver driver = Instance.getInstance();
 	Properties properties = PropertiesFile
-			.readPropertyFile("D:\\git\\xAmplify-Automation\\src\\main\\resources\\Campaign.properties");
+			.readPropertyFile("D:\\git\\xAmplifyproject\\xAmplify-Automation\\src\\main\\resources\\Campaign.properties");
 
 	final Logger logger = LogManager.getLogger(LaunchVideoCampaign.class);
 
 	@Test
 
 	public void vlaunch() throws InterruptedException, SQLException {
-		Thread.sleep(5000);
+		Thread.sleep(7000);
 		VideoCampaign vc = new VideoCampaign();
 		vc.vdecampaign();
 		Thread.sleep(4000);
@@ -53,7 +53,7 @@ public class LaunchVideoCampaign {
 
 		logger.info("Video Campaign launched Successfully");
 
-		Thread.sleep(9000);
+		Thread.sleep(15000);
 	}
 	
 }

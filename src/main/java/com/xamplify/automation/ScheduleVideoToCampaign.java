@@ -16,7 +16,7 @@ public class ScheduleVideoToCampaign {
 	
 	WebDriver driver = Instance.getInstance();
 
-	Properties properties = PropertiesFile.readPropertyFile("D:\\git\\xAmplify-Automation\\src\\main\\resources\\Campaign.properties");
+	Properties properties = PropertiesFile.readPropertyFile("D:\\git\\xAmplifyproject\\xAmplify-Automation\\src\\main\\resources\\Campaign.properties");
 	
 final Logger logger = LogManager.getLogger(ScheduleVideoToCampaign.class);
 
@@ -104,6 +104,7 @@ final Logger logger = LogManager.getLogger(ScheduleVideoToCampaign.class);
 			System.out.println(" video Campaign schedule failed");
 		}
 		
+		Thread.sleep(9000);
 		
 logger.info("Video To Campaign Scheduled Successfully");
 	}

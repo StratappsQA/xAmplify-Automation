@@ -17,7 +17,7 @@ public class ScheduleEmailToCampaign {
 	WebDriver driver = Instance.getInstance();
 
 	Properties properties = PropertiesFile
-			.readPropertyFile("D:\\git\\xAmplify-Automation\\src\\main\\resources\\Campaign.properties");
+			.readPropertyFile("D:\\git\\xAmplifyproject\\xAmplify-Automation\\src\\main\\resources\\Campaign.properties");
 
 	final Logger logger = LogManager.getLogger(ScheduleEmailToCampaign.class);
 
@@ -90,6 +90,7 @@ public class ScheduleEmailToCampaign {
 			System.out.println(" Email Campaign schedule failed");
 		}
 
+		Thread.sleep(9000);
 		logger.info("Email Campaign Scheduled Successfully");
 
 	}

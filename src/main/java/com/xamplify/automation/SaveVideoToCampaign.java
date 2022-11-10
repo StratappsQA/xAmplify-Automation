@@ -12,7 +12,7 @@ import org.testng.annotations.Test;
 public class SaveVideoToCampaign {
 
 	WebDriver driver = Instance.getInstance();
-	 Properties properties = PropertiesFile.readPropertyFile("D:\\git\\xAmplify-Automation\\src\\main\\resources\\Campaign.properties");
+	 Properties properties = PropertiesFile.readPropertyFile("D:\\git\\xAmplifyproject\\xAmplify-Automation\\src\\main\\resources\\Campaign.properties");
 
 
 final Logger logger = LogManager.getLogger(SaveVideoToCampaign.class);
@@ -75,7 +75,7 @@ logger.info("Spam Check");
 		} else {
 		System.out.println(" video Campaign failed");
 		}
-			
+			Thread.sleep(10000);
 logger.info("Video Campaign Saved Successfully");				
 		}
 

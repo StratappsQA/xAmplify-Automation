@@ -24,13 +24,13 @@ public class EmailToCampaign {
 	WebDriver driver = Instance.getInstance();
 
 	Properties properties = PropertiesFile
-			.readPropertyFile("D:\\git\\xAmplify-Automation\\src\\main\\resources\\Campaign.properties");
+			.readPropertyFile("D:\\git\\xAmplifyproject\\xAmplify-Automation\\src\\main\\resources\\Campaign.properties");
 
 	final Logger logger = LogManager.getLogger(EmailToCampaign.class);
 
 	@Test
 	public void email_to_campaign() throws InterruptedException, SQLException {
-		WebDriverWait wait = new WebDriverWait(driver, 50);
+		WebDriverWait wait = new WebDriverWait(driver, 80);
 		WebElement campele = wait.until(ExpectedConditions
 				.visibilityOfElementLocated(By.xpath(properties.getProperty("email_to_campaignhover"))));
 		campele.click(); // hover on campaign
@@ -170,7 +170,7 @@ public class EmailToCampaign {
 		
 logger.info("Selected the Email Template");
 		driver.findElement(By.xpath(properties.getProperty("email_to_next3"))).click();							//next page
-		Thread.sleep(5000);
+		Thread.sleep(7000);
 		
 	}
 }

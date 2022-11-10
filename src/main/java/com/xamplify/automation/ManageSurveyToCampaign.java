@@ -20,7 +20,7 @@ public class ManageSurveyToCampaign {
 
 	WebDriver driver = Instance.getInstance();
 	Properties properties = PropertiesFile
-			.readPropertyFile("D:\\git\\xAmplify-Automation\\src\\main\\resources\\ManageCampaigns.properties");
+			.readPropertyFile("D:\\git\\xAmplifyproject\\xAmplify-Automation\\src\\main\\resources\\ManageCampaigns.properties");
 	final Logger logger = LogManager.getLogger(SurveyCampaign.class);
 
 	@Test
@@ -459,6 +459,8 @@ public class ManageSurveyToCampaign {
 				.findElement(By.xpath(properties.getProperty("click_survey_to_manage_campaigns")));
 		Thread.sleep(2000);
 		ManageCampaign.click();
+		
+		Thread.sleep(6000);
 
 		logger.info("Manage Survey To campaign Analytics Completed");
 	}

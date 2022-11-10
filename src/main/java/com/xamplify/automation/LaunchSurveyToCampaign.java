@@ -14,7 +14,7 @@ public class LaunchSurveyToCampaign {
 
 	WebDriver driver = Instance.getInstance();
 	Properties properties = PropertiesFile
-			.readPropertyFile("D:\\git\\xAmplify-Automation\\src\\main\\resources\\Campaign.properties");
+			.readPropertyFile("D:\\git\\xAmplifyproject\\xAmplify-Automation\\src\\main\\resources\\Campaign.properties");
 
 	final Logger logger = LogManager.getLogger(LaunchSurveyToCampaign.class);
 
@@ -56,6 +56,7 @@ public class LaunchSurveyToCampaign {
 
 			System.out.println("Survey To Campaign Launched failed");
 		}
+		Thread.sleep(7000);
 	}
 
 }

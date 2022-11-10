@@ -17,7 +17,7 @@ public class ScheduleSurveyToCampaign {
 
 	WebDriver driver = Instance.getInstance();
 	Properties properties = PropertiesFile
-			.readPropertyFile("D:\\git\\xAmplify-Automation\\src\\main\\resources\\Campaign.properties");
+			.readPropertyFile("D:\\git\\xAmplifyproject\\xAmplify-Automation\\src\\main\\resources\\Campaign.properties");
 	final Logger logger = LogManager.getLogger(ScheduleSurveyToCampaign.class);
 
 	@Test
@@ -93,6 +93,7 @@ public class ScheduleSurveyToCampaign {
 			System.out.println("Survey To Campaign Scheduled failed");
 		}
 
+		Thread.sleep(10000);
 	}
 
 }

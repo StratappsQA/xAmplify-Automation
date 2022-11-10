@@ -12,7 +12,7 @@ import org.testng.annotations.Test;
 public class Logout {
 
 	WebDriver driver = Instance.getInstance();
-	Properties properties = PropertiesFile.readPropertyFile("D:\\git\\xAmplify-Automation\\src\\main\\resources\\Logout.properties");
+	Properties properties = PropertiesFile.readPropertyFile("D:\\git\\xAmplifyproject\\xAmplify-Automation\\src\\main\\resources\\Logout.properties");
 	final Logger logger = LogManager.getLogger(Login.class);
 	
 	

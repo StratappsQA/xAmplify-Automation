@@ -12,7 +12,7 @@ import org.testng.annotations.Test;
 public class SaveRedistributionSurveyCampaign {
 	WebDriver driver = Instance.getInstance();
 	Properties properties = PropertiesFile
-			.readPropertyFile("D:\\git\\xAmplify-Automation\\src\\main\\resources\\RedistributionCampaign.properties");
+			.readPropertyFile("D:\\git\\xAmplifyproject\\xAmplify-Automation\\src\\main\\resources\\RedistributionCampaign.properties");
 	final Logger logger = LogManager.getLogger(SaveRedistributionSurveyCampaign.class);
 
 	@Test

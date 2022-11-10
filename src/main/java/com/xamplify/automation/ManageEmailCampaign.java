@@ -19,7 +19,7 @@ public class ManageEmailCampaign {
 
 	WebDriver driver = Instance.getInstance();
 	Properties properties = PropertiesFile
-			.readPropertyFile("D:\\git\\xAmplify-Automation\\src\\main\\resources\\ManageCampaigns.properties");
+			.readPropertyFile("D:\\git\\xAmplifyproject\\xAmplify-Automation\\src\\main\\resources\\ManageCampaigns.properties");
 	final Logger logger = LogManager.getLogger(ManageEmailCampaign.class);
 
 	@Test
@@ -99,14 +99,16 @@ public class ManageEmailCampaign {
 		  Thread.sleep(3000);
 		  
 		  
-		  WebElement ed_email = driver.findElement(By.xpath(properties.getProperty( "manage_email_camp_selected_date"))); // Select // date // on // Calendar
-		  
-		  ed_email.click();
-		  
-		  Thread.sleep(6000);
-		  
-		  logger.info("Selected the End date ");
-		  
+			/*
+			 * WebElement ed_email = driver.findElement(By.xpath(properties.getProperty(
+			 * "manage_email_camp_selected_date"))); // Select // date // on // Calendar
+			 * 
+			 * ed_email.click();
+			 * 
+			 * Thread.sleep(6000);
+			 * 
+			 * logger.info("Selected the End date ");
+			 */
 		  driver.findElement(By.xpath(properties.getProperty(
 		  "manage_email_camp_save_changes"))).click();
 		  Thread.sleep(3000);
@@ -672,7 +674,7 @@ Thread.sleep(2000);
 		  logger.info("Clicked on email_open_history_by_template icon");
 		  driver.findElement(By.xpath(properties.getProperty("e_managecamp1_click"))).
 		  click(); 
-		  Thread.sleep(3000);
+		  Thread.sleep(6000);
 		  driver.findElement(By.xpath(properties.getProperty("manage_email_tab"))).
 		  click(); // Click on Email Tab 
 		  Thread.sleep(5000);
@@ -716,14 +718,14 @@ Thread.sleep(2000);
 		WebElement email_camp_redistributionicon = driver
 				.findElement(By.xpath(properties.getProperty("number_of_email_Camp_redistribution_camp"))); // click no.of redistribution campaign
 		email_camp_redistributionicon.click();
-		Thread.sleep(4000);
+		Thread.sleep(5000);
 		
 		
 		Actions a1 = new Actions(driver); // scroll Up a page
 		  a1.sendKeys(Keys.PAGE_UP).build().perform(); 
 		Thread.sleep(5000);
 		driver.findElement(By.xpath(properties.getProperty("goto_home"))).click(); //Click Home
-		Thread.sleep(3000);
+		Thread.sleep(7000);
 		logger.info("Manage Email Campaign completed");
 	}
 

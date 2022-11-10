@@ -19,7 +19,7 @@ import org.openqa.selenium.By;
 
 	public class ManagePageCampaign {
 		WebDriver driver = Instance.getInstance();
-		Properties properties = PropertiesFile.readPropertyFile("D:\\git\\xAmplify-Automation\\src\\main\\resources\\ManageCampaigns.properties");
+		Properties properties = PropertiesFile.readPropertyFile("D:\\git\\xAmplifyproject\\xAmplify-Automation\\src\\main\\resources\\ManageCampaigns.properties");
 		final Logger logger = LogManager.getLogger(ManagePageCampaign.class);
 
 		
@@ -27,7 +27,7 @@ import org.openqa.selenium.By;
 		public void sortby_previewdelete() throws InterruptedException {
 			Thread.sleep(5000);
 
-			WebDriverWait wait = new WebDriverWait(driver, 50);// Wait till the element is not visible
+			WebDriverWait wait = new WebDriverWait(driver, 90);// Wait till the element is not visible
 
 			WebElement mpcam = wait
 					.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(properties.getProperty("page_hover"))));
@@ -158,7 +158,7 @@ import org.openqa.selenium.By;
 			Thread.sleep(3000);
 
 			
-			driver.findElement(By.xpath(properties.getProperty("page_gearicon"))).click();// gear icon
+			driver.findElement(By.xpath(properties.getProperty("page_camp_gearicon1"))).click();// gear icon
 			Thread.sleep(3000);
 			logger.info("Click on Copy");
 			driver.findElement(By.linkText("Copy Campaign")).click();// copy campaign
@@ -218,7 +218,7 @@ import org.openqa.selenium.By;
 			Thread.sleep(3000);
 
 			pagetext.sendKeys(Keys.ENTER);
-			Thread.sleep(3000);
+			Thread.sleep(7000);
 
 			WebElement we1 = driver.findElement(By.xpath(properties.getProperty("page_hover_cmpgnbasedreports")));// hover
 																													// on
@@ -257,7 +257,7 @@ import org.openqa.selenium.By;
 			Thread.sleep(3000);
 
 			WebElement p_recipients_search = driver.findElement(By.xpath(properties.getProperty("page_recipients_search")));
-			p_recipients_search.sendKeys("gayatri");// send data into search bar
+			p_recipients_search.sendKeys("Mounika");// send data into search bar
 			Thread.sleep(2000);
 			p_recipients_search.sendKeys(Keys.ENTER); // entered in search bar
 			Thread.sleep(5000);
@@ -289,7 +289,7 @@ import org.openqa.selenium.By;
 
 			driver.findElement(By.xpath(properties.getProperty("page_clck_managecampaigns"))).click();// click on manage
 																										// campaigns
-			Thread.sleep(3000);
+			Thread.sleep(8000);
 			
 			logger.info("Manage Page Campaigns Completed");
 

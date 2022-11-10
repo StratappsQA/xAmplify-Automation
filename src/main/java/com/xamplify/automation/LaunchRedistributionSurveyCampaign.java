@@ -16,7 +16,7 @@ public class LaunchRedistributionSurveyCampaign {
 
 	WebDriver driver = Instance.getInstance();
 	Properties properties = PropertiesFile
-			.readPropertyFile("D:\\git\\xAmplify-Automation\\src\\main\\resources\\RedistributionCampaign.properties");
+			.readPropertyFile("D:\\git\\xAmplifyproject\\xAmplify-Automation\\src\\main\\resources\\RedistributionCampaign.properties");
 
 	final Logger logger = LogManager.getLogger(LaunchRedistributionSurveyCampaign.class);
 
@@ -52,6 +52,7 @@ public class LaunchRedistributionSurveyCampaign {
 
 			System.out.println("Survey Campaign Redistribution failed");
 		}
+		Thread.sleep(6000);
 
 	}
 

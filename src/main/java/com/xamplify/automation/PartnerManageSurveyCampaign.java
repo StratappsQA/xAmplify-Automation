@@ -19,7 +19,7 @@ public class PartnerManageSurveyCampaign {
 
 	WebDriver driver = Instance.getInstance();
 	Properties properties = PropertiesFile
-			.readPropertyFile("D:\\git\\xAmplify-Automation\\src\\main\\resources\\RedistributionCampaign.properties");
+			.readPropertyFile("D:\\git\\xAmplifyproject\\xAmplify-Automation\\src\\main\\resources\\RedistributionCampaign.properties");
 	final Logger logger = LogManager.getLogger(PartnerManageSurveyCampaign.class);
 
 	@Test
@@ -736,6 +736,7 @@ public class PartnerManageSurveyCampaign {
 
 		logger.info("Manage Redistributed Survey Campaign Successfully Completed");
 
+		Thread.sleep(9000);
 	}
 
 }

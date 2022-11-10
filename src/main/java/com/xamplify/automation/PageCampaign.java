@@ -26,7 +26,7 @@ public class PageCampaign {
 	
 
 	 WebDriver driver = Instance.getInstance();
-	 Properties properties = PropertiesFile.readPropertyFile("D:\\git\\xAmplify-Automation\\src\\main\\resources\\Campaign.properties");//properties file
+	 Properties properties = PropertiesFile.readPropertyFile("D:\\git\\xAmplifyproject\\xAmplify-Automation\\src\\main\\resources\\Campaign.properties");//properties file
 	 
 final Logger logger = LogManager.getLogger(PageCampaign.class);
 	 
@@ -35,7 +35,7 @@ final Logger logger = LogManager.getLogger(PageCampaign.class);
 	public void pcampaign() throws InterruptedException, SQLException {
 		
 
-		WebDriverWait wait = new WebDriverWait(driver, 60);// Wait till the element is not visible
+		WebDriverWait wait = new WebDriverWait(driver, 90);// Wait till the element is not visible
 		
 		logger.info("Mouse over the Page campaign");
 		WebElement pcampele = wait.until(

@@ -18,7 +18,7 @@ public class SaveSurveyCampaign {
 	WebDriver driver = Instance.getInstance();
 
 	Properties properties = PropertiesFile
-			.readPropertyFile("D:\\git\\xAmplify-Automation\\src\\main\\resources\\Campaign.properties");
+			.readPropertyFile("D:\\git\\xAmplifyproject\\xAmplify-Automation\\src\\main\\resources\\Campaign.properties");
 
 	final Logger logger = LogManager.getLogger(SaveSurveyCampaign.class);
 
@@ -81,7 +81,10 @@ public class SaveSurveyCampaign {
 			Thread.sleep(2000);
 
 			System.out.println("Survey Campaign Saved failed");
+	
 		}
+		
+		Thread.sleep(10000);
 	}
 
 }

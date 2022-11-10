@@ -25,14 +25,14 @@ import org.testng.annotations.Test;
 public class VideoCampaign {
 	
 	WebDriver driver = Instance.getInstance();
-	Properties properties = PropertiesFile.readPropertyFile("D:\\git\\xAmplify-Automation\\src\\main\\resources\\Campaign.properties");
+	Properties properties = PropertiesFile.readPropertyFile("D:\\git\\xAmplifyproject\\xAmplify-Automation\\src\\main\\resources\\Campaign.properties");
 final Logger logger = LogManager.getLogger(VideoCampaign.class);
 	
 	@Test(priority = 8, enabled = true)
 
 	public void vdecampaign() throws InterruptedException, SQLException {
 	
-		WebDriverWait waitv = new WebDriverWait(driver, 50);
+		WebDriverWait waitv = new WebDriverWait(driver, 80);
 
 		// Wait till the element is not visible
 		WebElement campele = waitv.until(
@@ -191,10 +191,10 @@ logger.info("Given the data in Campaign details page");
 		Thread.sleep(3000);
 		vd.selectByValue("1");
 
-		Thread.sleep(3000);
+		Thread.sleep(6000);
 
-		driver.findElement(By.cssSelector(properties.getProperty("select_video1"))).click();
-		Thread.sleep(2000);
+		driver.findElement(By.xpath(properties.getProperty("select_video1"))).click();
+		Thread.sleep(5000);
 
 		driver.findElement(By.xpath(properties.getProperty("video_next2"))).click();// click next
 		Thread.sleep(2000);

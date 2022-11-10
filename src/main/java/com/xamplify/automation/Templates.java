@@ -26,7 +26,7 @@ public class Templates {
 	private static final TimeUnit Seconds = null;
 	static WebDriver driver = Instance.getInstance();
 	static Properties properties = PropertiesFile
-			.readPropertyFile("D:\\git\\xAmplify-Automation\\src\\main\\resources\\Partners.properties");
+			.readPropertyFile("D:\\git\\xAmplifyproject\\xAmplify-Automation\\src\\main\\resources\\Partners.properties");
 	final Logger logger = LogManager.getLogger(Templates.class);
 
 

@@ -24,7 +24,7 @@ import org.testng.annotations.Test;
 public class SchedulePageCampaign {
 
 	WebDriver driver = Instance.getInstance();
-	Properties properties = PropertiesFile.readPropertyFile("D:\\git\\xAmplify-Automation\\src\\main\\resources\\Campaign.properties");// properties file
+	Properties properties = PropertiesFile.readPropertyFile("D:\\git\\xAmplifyproject\\xAmplify-Automation\\src\\main\\resources\\Campaign.properties");// properties file
 
 final Logger logger = LogManager.getLogger(SchedulePageCampaign.class);
 	 
@@ -89,7 +89,7 @@ final Logger logger = LogManager.getLogger(SchedulePageCampaign.class);
 		
 logger.info("Page Campaign Scheduled Successfully");
 		
-		
+		Thread.sleep(10000);
 		
 
 	}

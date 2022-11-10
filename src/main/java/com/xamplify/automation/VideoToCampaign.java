@@ -21,14 +21,14 @@ import org.testng.annotations.Test;
 public class VideoToCampaign {
 	WebDriver driver = Instance.getInstance();
 	Properties properties = PropertiesFile
-			.readPropertyFile("D:\\git\\xAmplify-Automation\\src\\main\\resources\\Campaign.properties");
+			.readPropertyFile("D:\\git\\xAmplifyproject\\xAmplify-Automation\\src\\main\\resources\\Campaign.properties");
 	final Logger logger = LogManager.getLogger(VideoToCampaign.class);
 
 	@Test
 
 	public void vde_to_campaign() throws InterruptedException, SQLException {
 
-		WebDriverWait waitv = new WebDriverWait(driver, 50);
+		WebDriverWait waitv = new WebDriverWait(driver, 80);
 
 		// Wait till the element is not visible
 		WebElement campele = waitv.until(
@@ -239,6 +239,7 @@ public class VideoToCampaign {
 		driver.findElement(By.xpath(properties.getProperty("v_to_camp_email_template_next"))).click();
 		Thread.sleep(5000);
 		logger.info("Selected the Template");
+		Thread.sleep(8000);
 	}
 
 }

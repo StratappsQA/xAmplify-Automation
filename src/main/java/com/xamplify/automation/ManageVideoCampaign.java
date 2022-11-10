@@ -20,7 +20,7 @@ public class ManageVideoCampaign {
 
 	WebDriver driver = Instance.getInstance();
 	Properties properties = PropertiesFile
-			.readPropertyFile("D:\\git\\xAmplify-Automation\\src\\main\\resources\\ManageCampaigns.properties");
+			.readPropertyFile("D:\\git\\xAmplifyproject\\xAmplify-Automation\\src\\main\\resources\\ManageCampaigns.properties");
 	final Logger logger = LogManager.getLogger(ManageVideoCampaign.class);
 
 	@Test
@@ -776,7 +776,7 @@ public class ManageVideoCampaign {
 
 		logger.info("Clicked on email_open_history_by_template icon");
 		driver.findElement(By.xpath(properties.getProperty("mv_camp_click"))).click();
-		Thread.sleep(3000);
+		Thread.sleep(6000);
 		driver.findElement(By.xpath(properties.getProperty("mv_video_tab"))).click(); // Click on Video Tab
 		Thread.sleep(5000);
 		logger.info("Clicked on the Video tab");
@@ -796,7 +796,7 @@ public class ManageVideoCampaign {
 		eml_downloadhistory__sort1.selectByValue("3: Object");
 		Thread.sleep(2000);
 		eml_downloadhistory__sort1.selectByValue("5: Object");
-		Thread.sleep(2000);
+		Thread.sleep(5000);
 
 		driver.findElement(By.xpath(properties.getProperty("mv_show_download_search_click"))).sendKeys("Automated");
 		Thread.sleep(3000);
@@ -822,7 +822,7 @@ public class ManageVideoCampaign {
 		  av1.sendKeys(Keys.PAGE_UP).build().perform(); 
 		Thread.sleep(5000);
 		driver.findElement(By.xpath(properties.getProperty("mv_goto_home"))).click(); //Click Home
-		Thread.sleep(3000);
+		Thread.sleep(9000);
 		
 		logger.info("Manage Video Campaign completed");
 

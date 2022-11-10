@@ -24,7 +24,7 @@ public class SurveyCampaign {
 	WebDriver driver = Instance.getInstance();
 
 	Properties properties = PropertiesFile
-			.readPropertyFile("D:\\git\\xAmplify-Automation\\src\\main\\resources\\Campaign.properties");
+			.readPropertyFile("D:\\git\\xAmplifyproject\\xAmplify-Automation\\src\\main\\resources\\Campaign.properties");
 
 	final Logger logger = LogManager.getLogger(SurveyCampaign.class);
 
@@ -32,7 +32,7 @@ public class SurveyCampaign {
 
 	public void scampaign() throws InterruptedException, SQLException {
 
-		WebDriverWait wait = new WebDriverWait(driver, 50);
+		WebDriverWait wait = new WebDriverWait(driver, 80);
 
 		// Wait till the element is not visible
 
@@ -57,7 +57,7 @@ public class SurveyCampaign {
 		js.executeScript("window.scrollTo(0,document.body.scrollHeight)");
 		Thread.sleep(5000);
 
-		WebDriverWait waitc = new WebDriverWait(driver, 50);
+		WebDriverWait waitc = new WebDriverWait(driver, 80);
 
 		WebElement openscamp = waitc.until(
 				ExpectedConditions.visibilityOfElementLocated(By.xpath(properties.getProperty("survey_opencampaign")))); // select

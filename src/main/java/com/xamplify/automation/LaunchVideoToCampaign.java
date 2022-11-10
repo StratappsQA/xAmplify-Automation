@@ -13,7 +13,7 @@ public class LaunchVideoToCampaign {
 
 	WebDriver driver = Instance.getInstance();
 	Properties properties = PropertiesFile
-			.readPropertyFile("D:\\git\\xAmplify-Automation\\src\\main\\resources\\Campaign.properties");
+			.readPropertyFile("D:\\git\\xAmplifyproject\\xAmplify-Automation\\src\\main\\resources\\Campaign.properties");
 
 	final Logger logger = LogManager.getLogger(LaunchVideoToCampaign.class);
 
@@ -47,6 +47,7 @@ public class LaunchVideoToCampaign {
 			System.out.println(" Video Campaign failed");
 		}
 
+		Thread.sleep(8000);
 		logger.info("Video Campaign launched Successfully");
 
 	}

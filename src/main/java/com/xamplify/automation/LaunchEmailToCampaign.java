@@ -14,7 +14,7 @@ public class LaunchEmailToCampaign {
 	WebDriver driver = Instance.getInstance();
 
 	Properties properties = PropertiesFile
-			.readPropertyFile("D:\\git\\xAmplify-Automation\\src\\main\\resources\\Campaign.properties");
+			.readPropertyFile("D:\\git\\xAmplifyproject\\xAmplify-Automation\\src\\main\\resources\\Campaign.properties");
 
 	final Logger logger = LogManager.getLogger(LaunchEmailToCampaign.class);
 
@@ -23,7 +23,7 @@ public class LaunchEmailToCampaign {
 	public void e_to_launch() throws InterruptedException, SQLException
 
 	{
-		Thread.sleep(4000);
+		Thread.sleep(6000);
 		EmailToCampaign e1 = new EmailToCampaign();
 		e1.email_to_campaign();
 		Thread.sleep(5000);
@@ -56,6 +56,7 @@ public class LaunchEmailToCampaign {
 
 			System.out.println(" Email Campaign launch failed");
 		}
+		Thread.sleep(10000);
 
 		logger.info("Email Campaign Launched Successfully");
 

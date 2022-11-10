@@ -25,7 +25,7 @@ public class ManageSurveyCampaign {
 
 	WebDriver driver = Instance.getInstance();
 	Properties properties = PropertiesFile
-			.readPropertyFile("D:\\git\\xAmplify-Automation\\src\\main\\resources\\ManageCampaigns.properties");
+			.readPropertyFile("D:\\git\\xAmplifyproject\\xAmplify-Automation\\src\\main\\resources\\ManageCampaigns.properties");
 	final Logger logger = LogManager.getLogger(SurveyCampaign.class);
 
 	@Test
@@ -40,7 +40,7 @@ public class ManageSurveyCampaign {
 
 		Actions mcamp_action = new Actions(driver);
 		mcamp_action.moveToElement(mscamp).perform();
-		Thread.sleep(5000);
+		Thread.sleep(8000);
 		WebElement manage_campele = driver.findElement(By.xpath(properties.getProperty("managecampaigns"))); // click on
 																												// manage
 																												// campaign
@@ -48,7 +48,7 @@ public class ManageSurveyCampaign {
 		mcamp_action.click();
 		mcamp_action.perform();
 
-		Thread.sleep(4000);
+		Thread.sleep(6000);
 
 		driver.findElement(By.xpath(properties.getProperty("survey_tab"))).click(); // Click on Survey Tab
 		Thread.sleep(5000);
@@ -679,7 +679,7 @@ public class ManageSurveyCampaign {
 		Thread.sleep(3000);
 		logger.info("Clicked on email_open_history_by_template icon");
 		driver.findElement(By.xpath(properties.getProperty("mcamp_click"))).click();
-		Thread.sleep(3000);
+		Thread.sleep(6000);
 		driver.findElement(By.xpath(properties.getProperty("survey_tab"))).click(); // Click on Survey Tab
 		Thread.sleep(5000);
 		logger.info("Clicked on the Survey tab");
@@ -688,7 +688,7 @@ public class ManageSurveyCampaign {
 		Thread.sleep(3000);
 		logger.info("Clicked on the Show download history icon");
 		driver.findElement(By.xpath(properties.getProperty("mcamp1_click"))).click();
-		Thread.sleep(3000);
+		Thread.sleep(6000);
 		driver.findElement(By.xpath(properties.getProperty("survey_tab"))).click(); // Click on Survey Tab
 		Thread.sleep(5000);
 		logger.info("Clicked on the Survey tab");
@@ -697,23 +697,15 @@ public class ManageSurveyCampaign {
 		Thread.sleep(5000);
 		logger.info("Clicked on Number of redistributed campaign icon");
 		
-		WebElement rdc = driver.findElement(By.xpath(properties.getProperty("red_camp_analytics")));
-		if(rdc.isEnabled())
-		{
-			rdc.click();
-			Thread.sleep(3000);
-		}
-		
-		else
-		{
-			System.out.println("redistribution campaign icon is disabled");
-			Thread.sleep(3000);
-		}
-		
+		Actions a1 = new Actions(driver); // scroll Up a page
+		  a1.sendKeys(Keys.PAGE_UP).build().perform(); 
+		Thread.sleep(5000);
+		driver.findElement(By.xpath(properties.getProperty("goto_home_s"))).click(); //Click Home
+		Thread.sleep(3000);
 	
 		logger.info("Manage Survey Campaign completed");
 		
-		Thread.sleep(6000);
+		Thread.sleep(8000);
 		
 
 	}

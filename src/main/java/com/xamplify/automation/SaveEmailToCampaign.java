@@ -17,7 +17,7 @@ public class SaveEmailToCampaign {
 	WebDriver driver = Instance.getInstance();
 
 	Properties properties = PropertiesFile
-			.readPropertyFile("D:\\git\\xAmplify-Automation\\src\\main\\resources\\Campaign.properties");
+			.readPropertyFile("D:\\git\\xAmplifyproject\\xAmplify-Automation\\src\\main\\resources\\Campaign.properties");
 	
 
 	final Logger logger = LogManager.getLogger(SaveEmailToCampaign.class);
@@ -93,6 +93,7 @@ public class SaveEmailToCampaign {
 
 		logger.info("Email Campaign saved Successfully");
 
+		Thread.sleep(10000);
 	}
 
 }
