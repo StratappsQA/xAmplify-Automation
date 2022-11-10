@@ -150,7 +150,7 @@ public class VideoToCampaign {
 
 		Thread.sleep(3000);
 
-		driver.findElement(By.cssSelector(properties.getProperty("v_to_camp_select_video1"))).click();
+		driver.findElement(By.xpath(properties.getProperty("v_to_camp_select_video1"))).click();
 		Thread.sleep(2000);
 
 		driver.findElement(By.xpath(properties.getProperty("v_to_camp__next2"))).click();// click next

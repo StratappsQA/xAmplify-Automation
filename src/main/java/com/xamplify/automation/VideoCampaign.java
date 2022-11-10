@@ -264,6 +264,7 @@ logger.info("Selected the Partnerlist");
 				ExpectedConditions.visibilityOfElementLocated(By.xpath(properties.getProperty("select_template")))); // select
 																														// template
 		v10.click();
+		Thread.sleep(2000);
 
 		WebDriverWait waitv11 = new WebDriverWait(driver, 50);
 		WebElement v11 = waitv11.until(ExpectedConditions

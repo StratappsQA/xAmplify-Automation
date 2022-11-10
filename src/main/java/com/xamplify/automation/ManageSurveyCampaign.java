@@ -85,7 +85,7 @@ public class ManageSurveyCampaign {
 
 		Actions a = new Actions(driver); // scroll down a page
 		a.sendKeys(Keys.PAGE_DOWN).build().perform();
-		Thread.sleep(5000);
+		Thread.sleep(7000);
 
 		driver.findElement(By.xpath(properties.getProperty("gear_icon_t"))).click(); // Click on gear icon
 		Thread.sleep(3000);
