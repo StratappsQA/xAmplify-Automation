@@ -78,7 +78,7 @@ public class Partner_ManageVideoCampaign {
 
 	public void partneracc_manage_vdecampaign_edit_updatefolder() throws InterruptedException, SQLException {
 
-		Thread.sleep(4000);
+		Thread.sleep(5000);
 		driver.findElement(By.xpath(properties.getProperty("partneracc_manage_video_gearicon"))).click(); // click on
 																											// gear icon
 		Thread.sleep(4000);
