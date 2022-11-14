@@ -44,7 +44,7 @@ final Logger logger = LogManager.getLogger(PageCampaign.class);
 
 		Actions pcamp_action = new Actions(driver);
 		pcamp_action.moveToElement(pcampele).perform();
-		Thread.sleep(5000);
+		Thread.sleep(8000);
 		WebElement create_pcampele = driver.findElement(By.xpath(properties.getProperty("page_createcampaign"))); //click on create campaign
 		pcamp_action.moveToElement(create_pcampele);
 		pcamp_action.click();

@@ -258,13 +258,14 @@ logger.info("Selected the Partnerlist");
 																										// search after
 																										// data entered
 		v71.click();
+		Thread.sleep(3000);
 
-		WebDriverWait waitv10 = new WebDriverWait(driver, 60);
-		WebElement v10 = waitv10.until(
+		WebDriverWait waitv_sel_temp = new WebDriverWait(driver, 60);
+		WebElement v_temp_select = waitv_sel_temp.until(
 				ExpectedConditions.visibilityOfElementLocated(By.xpath(properties.getProperty("select_template")))); // select
 																														// template
-		v10.click();
-		Thread.sleep(2000);
+		v_temp_select.click();
+		Thread.sleep(4000);
 
 		WebDriverWait waitv11 = new WebDriverWait(driver, 50);
 		WebElement v11 = waitv11.until(ExpectedConditions

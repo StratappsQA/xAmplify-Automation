@@ -48,10 +48,10 @@ public class ManageSurveyCampaign {
 		mcamp_action.click();
 		mcamp_action.perform();
 
-		Thread.sleep(6000);
+		Thread.sleep(9000);
 
 		driver.findElement(By.xpath(properties.getProperty("survey_tab"))).click(); // Click on Survey Tab
-		Thread.sleep(5000);
+		Thread.sleep(7000);
 		logger.info("Clicked on the Survey tab");
 		driver.findElement(By.xpath(properties.getProperty("gear_icon"))).click(); // Click on gear icon
 		Thread.sleep(3000);
