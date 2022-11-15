@@ -19,7 +19,7 @@ public class RedistributeEmailCampaign {
 
 	@Test
 	public void hoverRedistributecampaigns_email() throws InterruptedException {
-		Thread.sleep(6000);
+		Thread.sleep(7000);
 
 		WebElement ele = driver.findElement(By.linkText("Campaign"));
 		Actions act = new Actions(driver);

@@ -1,7 +1,7 @@
 package com.xamplify.automation;
 
-import java.sql.SQLException;
 import java.util.Properties;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
@@ -20,7 +20,7 @@ public class RedistributeVideoCampaign {
 
 	@Test
 	public void hoverRedistributecampaigns() throws InterruptedException {
-		Thread.sleep(6000);
+		Thread.sleep(7000);
 
 		WebElement ele = driver.findElement(By.linkText("Campaign"));
 		Actions act = new Actions(driver);

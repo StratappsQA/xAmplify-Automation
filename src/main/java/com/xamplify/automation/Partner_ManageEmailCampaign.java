@@ -16,7 +16,7 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 
-public class Partner_ManageEmailCampaign {
+public class Partner_ManageEmailCampaign extends ExtentReport {
 
 	WebDriver driver = Instance.getInstance();
 
@@ -61,7 +61,7 @@ public class Partner_ManageEmailCampaign {
 		
 		driver.findElement(By.xpath(properties.getProperty("partneracc_manage_email_tab"))).click(); // click on email
 		
-		Thread.sleep(5000);
+		Thread.sleep(7000);
 		
 		logger.info("Email tab clicked successfully");
 
@@ -92,7 +92,7 @@ public class Partner_ManageEmailCampaign {
 
 	public void partneracc_manage_email_campaign_edit_updatefolder() throws InterruptedException, SQLException {
 
-		Thread.sleep(4000);
+		Thread.sleep(7000);
 		driver.findElement(By.xpath(properties.getProperty("partneracc_manage_email_gearicon"))).click(); // click on
 																											// gear icon
 		Thread.sleep(4000);
@@ -129,7 +129,7 @@ public class Partner_ManageEmailCampaign {
 																											// analytics
 																											// icon
 
-		Thread.sleep(4000);
+		Thread.sleep(7000);
 
 		
 		driver.findElement(By.xpath(properties.getProperty("partneracc_m_email_analyticsicon_Emailinfo"))).click(); // click on email info

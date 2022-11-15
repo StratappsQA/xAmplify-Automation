@@ -14,7 +14,7 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 
-public class LaunchRedistributeEmailCampaign {
+public class LaunchRedistributeEmailCampaign extends ExtentReport{
 	WebDriver driver = Instance.getInstance();
 	Properties properties = PropertiesFile.readPropertyFile(
 			"D:\\Workspace2\\xAmplify-Automation\\src\\main\\resources\\RedistributionCampaign.properties");// properties
@@ -25,7 +25,7 @@ public class LaunchRedistributeEmailCampaign {
 	@Test
 	public void launchemail_Redistributecampaign() throws InterruptedException {
 	
-		Thread.sleep(3000);
+		Thread.sleep(4000);
 
 		RedistributeEmailCampaign launch_rec=new RedistributeEmailCampaign();
 		launch_rec.hoverRedistributecampaigns_email();
