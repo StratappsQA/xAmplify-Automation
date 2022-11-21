@@ -22,7 +22,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-public class PageCampaign {
+public class PageCampaign extends ExtentReportsClass{
 	
 
 	 WebDriver driver = Instance.getInstance();

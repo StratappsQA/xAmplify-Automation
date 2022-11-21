@@ -15,7 +15,7 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 
-public class PartnerManageSurveyCampaign {
+public class PartnerManageSurveyCampaign extends ExtentReportsClass{
 
 	WebDriver driver = Instance.getInstance();
 	Properties properties = PropertiesFile
@@ -26,14 +26,14 @@ public class PartnerManageSurveyCampaign {
 
 	public void manage_redsurveycamp() throws InterruptedException {
 
-		WebDriverWait wait = new WebDriverWait(driver, 50); // Wait till the element is not visible
+		WebDriverWait wait = new WebDriverWait(driver, 90); // Wait till the element is not visible
 		WebElement s_element = wait.until(ExpectedConditions
 				.visibilityOfElementLocated(By.xpath(properties.getProperty("re_Surveycampaignhover"))));// Hover the
 																											// Campaign
 																											// module
 		s_element.click();
 		logger.info("Hover the campaign module");
-		Thread.sleep(5000);
+		Thread.sleep(7000);
 
 		driver.findElement(By.xpath(properties.getProperty("click_resurvey_manage_camp"))).click();// Click on Manage
 																									// campaigns
@@ -50,7 +50,7 @@ public class PartnerManageSurveyCampaign {
 		driver.findElement(By.xpath(properties.getProperty("click_rs_edit_update"))).click();
 		Thread.sleep(3000);
 		driver.findElement(By.xpath(properties.getProperty("click_rs_close"))).click();
-		Thread.sleep(3000);
+		Thread.sleep(6000);
 
 		driver.findElement(By.xpath(properties.getProperty("click_dropdownarrow"))).click();
 		Thread.sleep(3000);
@@ -81,7 +81,7 @@ public class PartnerManageSurveyCampaign {
 																								// Campaigns
 		Thread.sleep(3000);
 
-		driver.findElement(By.xpath(properties.getProperty("re_survey_tab"))).click(); // Survey tab
+		driver.findElement(By.xpath(properties.getProperty("resurvey_click_survey_tab"))).click(); // Survey tab
 		Thread.sleep(5000);
 		driver.findElement(By.xpath(properties.getProperty("click_drpdown_to_delete"))).click(); // delete
 		Thread.sleep(4000);
@@ -91,7 +91,7 @@ public class PartnerManageSurveyCampaign {
 		driver.findElement(By.xpath(properties.getProperty("click_yes_del"))).click();
 		Thread.sleep(3000);
 
-		driver.findElement(By.xpath(properties.getProperty("re_survey_tab"))).click();
+		driver.findElement(By.xpath(properties.getProperty("resurvey_click_survey_tab"))).click();
 		Thread.sleep(5000);
 		logger.info("click on Analytics icon under manage Campaigns");
 		driver.findElement(By.xpath(properties.getProperty("click_re_Survey_Analytics"))).click(); // Click on Analytics
@@ -375,53 +375,46 @@ public class PartnerManageSurveyCampaign {
 		Thread.sleep(5000);
 
 		logger.info("Click on Select pipeline Dropdown");
+		
 		WebDriverWait wait_pipeline_dropdwn = new WebDriverWait(driver, 50);
 		WebElement sel_pipeline = wait_pipeline_dropdwn.until(ExpectedConditions
 				.visibilityOfElementLocated(By.xpath(properties.getProperty("click_pipeline_dropdown")))); // Select
-																											// pipeline
-																											// stage
-																											// dropdown
-
+																											// pipeline dropdown
+		
 		Select pipeline = new Select(sel_pipeline);
 
-		pipeline.selectByVisibleText("Converted");
-		Thread.sleep(2000);
+		pipeline.selectByVisibleText("Default Lead Pipeline");
+		Thread.sleep(4000);
+		
+		logger.info("Click on Select pipeline stage Dropdown");
+		WebDriverWait wait_pipeline_stage_dropdwn = new WebDriverWait(driver, 50);
+		WebElement sel_pipeline_stage = wait_pipeline_dropdwn.until(ExpectedConditions
+				.visibilityOfElementLocated(By.xpath(properties.getProperty("click_pipeline_stage_dropdown"))));// Select pipeline stage dropdown
+		
+		Select pipeline_stage = new Select(sel_pipeline_stage);
 
-//		pipeline.selectByVisibleText("Opened");
-//		Thread.sleep(2000);
-//		pipeline.selectByVisibleText("Contacted");
-//		Thread.sleep(2000);
+		pipeline_stage.selectByVisibleText("Converted");
+		Thread.sleep(2000);
 
 		logger.info("click on Firstname");
 		WebElement lead_firstname = driver.findElement(By.xpath(properties.getProperty("re_survey_leadfirstname"))); // First
-																														// name
+		lead_firstname.sendKeys(" "+" FName");																												// name
+		Thread.sleep(2000);
 
-		if (lead_firstname.isDisplayed()) {
-
-			System.out.println("There is a firstname");
-		}
-
-		else {
-			// lead_firstname.clear();
-			Thread.sleep(2000);
-			lead_firstname.sendKeys(properties.getProperty("leadfirstname"));
-			Thread.sleep(2000);
-		}
+	
 
 		logger.info("click on Lastname");
 
 		WebElement lead_lastname = driver.findElement(By.xpath(properties.getProperty("re_survey_leadlastname"))); // Lastname
 
-		if (lead_lastname.isDisplayed()) {
-			System.out.println("There is a Lastname");
+		lead_lastname.sendKeys(" "+" LName");
+		Thread.sleep(3000);
+		logger.info("click on Company");
+		WebElement lead_company = driver.findElement(By.xpath(properties.getProperty("re_survey_leadcompany"))); // company
 
-		} else {
-
-//		lead_lastname.clear();
-			Thread.sleep(2000);
-			lead_lastname.sendKeys(properties.getProperty("leadlastname"));
-			Thread.sleep(2000);
-		}
+		lead_company.sendKeys(" "+" cName");
+		Thread.sleep(3000);
+		
 		logger.info("click on Address");
 		WebElement address = driver.findElement(By.xpath(properties.getProperty("click_on_address"))); // Address
 		address.clear();
@@ -480,11 +473,11 @@ public class PartnerManageSurveyCampaign {
 
 			logger.info("click on Register Deal button");
 			driver.findElement(By.xpath(properties.getProperty("click_on_register_deal_button"))).click();
-			Thread.sleep(3000);
+			Thread.sleep(1000);
 
-			WebDriverWait wait_dealpipeline_dropdwn = new WebDriverWait(driver, 50);
+			WebDriverWait wait_dealpipeline_dropdwn = new WebDriverWait(driver, 30);
 			WebElement sel_deal_pipeline = wait_dealpipeline_dropdwn.until(ExpectedConditions
-					.visibilityOfElementLocated(By.xpath(properties.getProperty("click_pipeline_dropdown")))); // Select
+					.visibilityOfElementLocated(By.xpath(properties.getProperty("click_dealpipeline_stage_dropdown")))); // Select
 																												// pipeline
 																												// Stage
 																												// dropdown
@@ -497,7 +490,7 @@ public class PartnerManageSurveyCampaign {
 			Thread.sleep(3000);
 
 			driver.findElement(By.xpath(properties.getProperty("click_on_deal_title")))
-					.sendKeys("Automation_deal" + "_" + System.currentTimeMillis()); // Click on deal_title
+					.sendKeys(" " + " Automation_deal"); // Click on deal_title
 			Thread.sleep(3000);
 
 			WebDriverWait wait_dealtypedropdown = new WebDriverWait(driver, 50);
@@ -518,8 +511,8 @@ public class PartnerManageSurveyCampaign {
 																										// dealamount
 			Thread.sleep(8000);
 			driver.findElement(By.xpath(properties.getProperty("click_estimate_date"))).click();
-			Thread.sleep(7000);
-			driver.findElement(By.xpath(properties.getProperty("select_estimate_date1"))).click();
+			Thread.sleep(15000);
+			driver.findElement(By.xpath(properties.getProperty("re_survey_deal_select_estimate_date1"))).click();
 			Thread.sleep(5000);
 			driver.findElement(By.xpath(properties.getProperty("click_on_save_deal"))).click();// Deal Registered.
 			Thread.sleep(5000);
@@ -652,9 +645,9 @@ public class PartnerManageSurveyCampaign {
 																											// filter
 			Thread.sleep(3000);
 			driver.findElement(By.xpath(properties.getProperty("re_survey_apply_filter_cross"))).click();
-			Thread.sleep(3000);
+			Thread.sleep(6000);
 			logger.info("Click on Deal downlaod");
-			driver.findElement(By.xpath(properties.getProperty("re_survey_click_download_deal"))).click();
+			driver.findElement(By.xpath(properties.getProperty("re_survey_camp_click_download_deal"))).click();
 			Thread.sleep(5000);
 			driver.findElement(By.xpath(properties.getProperty("re_survey_deals_close"))).click();
 			Thread.sleep(3000);
@@ -669,8 +662,8 @@ public class PartnerManageSurveyCampaign {
 		driver.findElement(By.xpath(properties.getProperty("click_navigation_breadcrumb"))).click(); // Click on MAnage
 																										// Campaign
 																										// navigation
-		Thread.sleep(3000);
-		driver.findElement(By.xpath(properties.getProperty("re_survey_tab"))).click(); // Survey tab
+		Thread.sleep(7000);
+		driver.findElement(By.xpath(properties.getProperty("resurvey_click_survey_tab"))).click(); // Survey tab
 		Thread.sleep(5000);
 
 		logger.info("Click on Grid View");

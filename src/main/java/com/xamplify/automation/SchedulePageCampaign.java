@@ -21,7 +21,7 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.Test;
 
-public class SchedulePageCampaign {
+public class SchedulePageCampaign extends ExtentReportsClass{
 
 	WebDriver driver = Instance.getInstance();
 	Properties properties = PropertiesFile.readPropertyFile("D:\\git\\xAmplifyproject\\xAmplify-Automation\\src\\main\\resources\\Campaign.properties");// properties file
@@ -78,13 +78,19 @@ final Logger logger = LogManager.getLogger(SchedulePageCampaign.class);
 		driver.findElement(By.xpath(properties.getProperty("p_schedulelast"))).click();//schedule
 		Thread.sleep(5000);
 
-		String s=driver.findElement(By.xpath(properties.getProperty("p_response_msg"))).getText();  //response message
-		System.out.println(s);
+		String page_schedule=driver.findElement(By.xpath(properties.getProperty("p_response_msg"))).getText();  //response message
+		System.out.println(page_schedule);
+		String expectedtitle = "Campaign scheduled successfully";
 		
-		
-		
-		
-		
+		if (expectedtitle.equals(page_schedule)) {
+			Thread.sleep(2000);
+
+			System.out.println(" Page Campaign scheduled successfully");
+		} else {
+			Thread.sleep(2000);
+
+			System.out.println(" Page Campaign schedule failed");
+		}
 		
 		
 logger.info("Page Campaign Scheduled Successfully");
