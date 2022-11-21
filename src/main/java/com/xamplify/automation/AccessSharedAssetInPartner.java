@@ -24,14 +24,14 @@ public class AccessSharedAssetInPartner {
 
 	//view and download png asset file in partner account
 	@Test (priority = 0)
-	public void sharedasset() throws InterruptedException, IOException {
-		Thread.sleep(3000);
+	public void sharedasset_png() throws InterruptedException, IOException {
+		Thread.sleep(6000);
 		driver.findElement(By.xpath(properties.getProperty("Content_leftmenu"))).click(); //click on left side content menu
-		Thread.sleep(3000);
+		Thread.sleep(7000);
 		driver.findElement(By.xpath(properties.getProperty("access_sharedasset"))).click(); //click on access shared asset
-		Thread.sleep(3000);
+		Thread.sleep(7000);
 		driver.findElement(By.xpath(properties.getProperty("Searchbar"))).sendKeys("partnerasset"); //search with partnerasset 
-		Thread.sleep(3000);	
+		Thread.sleep(5000);	
 		driver.findElement(By.xpath(properties.getProperty("Searchclick"))).click(); //click on search icon
 		Thread.sleep(5000);	
 		driver.findElement(By.xpath(properties.getProperty("partner_asset_view"))).click();  //click on view icon of shared asset
@@ -91,7 +91,7 @@ public class AccessSharedAssetInPartner {
 			System.out.println(" folder list view icon is disabled");
 		}
 		logger.info("assets viewed in folderlist view");
-		
+
 		//clickng on folder grid view
 		WebElement foldergridview = driver.findElement(By.xpath(properties.getProperty("foldergridclick")));
 		if(foldergridview.isEnabled())
@@ -142,19 +142,21 @@ public class AccessSharedAssetInPartner {
 		values.selectByVisibleText("Published On(DESC)");
 		logger.info("sorted in Published On(DESC) order");
 		logger.info("sorting succesfully completed");
+		logger.info("partner-png asset file has been viewed and downloaded in partner account");
+
 	}
-	
-	
-	
-  //view,edit and download pdf asset file in partner account
+
+
+
+	//view,edit and download pdf asset file in partner account
 	@Test (priority = 1)
-	public void sharedassetpdf() throws InterruptedException, IOException {
-		Thread.sleep(3000);
+	public void sharedasset_pdf() throws InterruptedException, IOException {
+		Thread.sleep(7000);
 		driver.findElement(By.xpath(properties.getProperty("Content_leftmenu"))).click(); //click on left side content menu
-		Thread.sleep(3000);
+		Thread.sleep(7000);
 		driver.findElement(By.xpath(properties.getProperty("access_sharedasset"))).click(); //click on access shared asset
-		Thread.sleep(3000);
-		driver.findElement(By.xpath(properties.getProperty("Searchbar"))).sendKeys("pdf"); //search with partnerasset 
+		Thread.sleep(5000);
+		driver.findElement(By.xpath(properties.getProperty("Searchbar"))).sendKeys("pdf"); //search with pdf 
 		Thread.sleep(3000);	
 		driver.findElement(By.xpath(properties.getProperty("Searchclick"))).click(); //click on search icon
 		Thread.sleep(5000);	
@@ -194,8 +196,9 @@ public class AccessSharedAssetInPartner {
 		driver.findElement(By.xpath(properties.getProperty("crossicon_click"))).click(); //click on cross icon in detailed anayltics page
 		Thread.sleep(4000);
 		logger.info("cross icon has been clicked and page is redirected to all asstes");
-		
+		logger.info("partner-pdf asset file has been viewed and downloaded in partner account");
+
 	}
-	
+
 }
 

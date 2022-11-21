@@ -6,6 +6,7 @@ import java.util.Properties;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.Test;
 
@@ -39,21 +40,35 @@ public class AccessSharedTrackInPartner {
 		Thread.sleep(5000);
 		driver.findElement(By.xpath(properties.getProperty("asset_crossicon"))).click(); //click on view button of asset
 		Thread.sleep(5000);
-		logger.info("asset viewed succesfully");	
+		logger.info("asset viewed successfully");	
 		driver.findElement(By.xpath(properties.getProperty("form_view_icon"))).click(); //click on view icon of form
 		Thread.sleep(5000);
-		driver.findElement(By.xpath(properties.getProperty("form_cross_icon"))).click(); //click on cross icon after form viewed
+		logger.info("quiz-form viewed successfully");
+
+		//submitting form by providing mandatory data in the quiz form
+		driver.findElement(By.xpath(properties.getProperty("quizform_email"))).sendKeys(properties.getProperty("quizform_email_id")); // entering email id
 		Thread.sleep(5000);
-		logger.info("form viewed succesfully");
+		driver.findElement(By.xpath(properties.getProperty("quizform_biganimal"))).click(); 
+		Thread.sleep(5000);
+		driver.findElement(By.xpath(properties.getProperty("quizform_largestcity"))).click(); 
+		Thread.sleep(5000);
+		driver.findElement(By.xpath(properties.getProperty("quizform_valves"))).click(); 
+		Thread.sleep(5000);
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("window.scrollBy(0,550)", "");
+		driver.findElement(By.xpath(properties.getProperty("quizform_submitbutton"))).click(); 
+		Thread.sleep(5000);
+		//driver.findElement(By.xpath(properties.getProperty("form_cross_icon"))).click(); //click on cross icon after form viewed
+		//Thread.sleep(5000);
+		logger.info("quiz-form submitted successfully");
 		driver.findElement(By.xpath(properties.getProperty("asset_viewicon_click"))).click(); //click on view icon of track
 		Thread.sleep(5000);
 		//click on download
 		driver.findElement(By.xpath(properties.getProperty("asset_download_button"))).click(); //click on download button of track
 		Thread.sleep(5000);
-		logger.info("asset downloaded succesfully");
-		
-		logger.info("track has been viewed and downloaded in partner account");
-		
+		logger.info("asset downloaded succesfully");	
+		logger.info("partner-track has been viewed and downloaded in partner account");
+
 	}
 
 }

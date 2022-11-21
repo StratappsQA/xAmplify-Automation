@@ -19,17 +19,17 @@ public class UploadAssetVideo {
 			.readPropertyFile("D:\\git\\xAmplify-Automation\\src\\main\\resources\\AssetLibrary.properties");
 	final Logger logger = LogManager.getLogger(UploadAssetVideo.class);
 
-	
-	
-	
+
+
+
 	//uploading MP4 file - video asset
 	@Test (priority=0)
 	public void uploadMP4() throws InterruptedException, IOException {	
-		Thread.sleep(5000);
+		Thread.sleep(7000);
 		driver.findElement(By.xpath(properties.getProperty("Content_leftmenu"))).click(); //click on left side content menu
-		Thread.sleep(5000);
+		Thread.sleep(7000);
 		driver.findElement(By.xpath(properties.getProperty("DesignUpload"))).click(); //click on design/upload
-		Thread.sleep(3000);
+		Thread.sleep(5000);
 		driver.findElement(By.xpath(properties.getProperty("Upload"))).click(); // click on upload
 		Thread.sleep(5000);
 		driver.findElement(By.xpath(properties.getProperty("BrowseButton"))).click(); //click on Browse
@@ -83,13 +83,13 @@ public class UploadAssetVideo {
 
 
 	//uploading AVI file 
-	@Test (priority=1,enabled=false)
+	@Test (priority=1)
 	public void uploadaAVI() throws InterruptedException, IOException {	
-		Thread.sleep(3000);
+		Thread.sleep(7000);
 		driver.findElement(By.xpath(properties.getProperty("Content_leftmenu"))).click(); //click on left side content menu
-		Thread.sleep(5000);
+		Thread.sleep(7000);
 		driver.findElement(By.xpath(properties.getProperty("DesignUpload"))).click(); //click on design/upload
-		Thread.sleep(3000);
+		Thread.sleep(5000);
 		driver.findElement(By.xpath(properties.getProperty("Upload"))).click(); // click on upload
 		Thread.sleep(5000);
 		driver.findElement(By.xpath(properties.getProperty("BrowseButton"))).click(); //click on Browse
@@ -106,15 +106,23 @@ public class UploadAssetVideo {
 		Thread.sleep(5000);
 		driver.findElement(By.xpath(properties.getProperty("Name"))).sendKeys(properties.getProperty("avi_name")+ "_" + System.currentTimeMillis());
 		Thread.sleep(5000);
-		driver.switchTo().frame(0);
-		driver.findElement(By.xpath(properties.getProperty("Descriptionclick"))).click();
-		driver.findElement(By.xpath(properties.getProperty("Descriptionclick"))).sendKeys("Asset_Description");
-		Thread.sleep(5000);
 		driver.findElement(By.xpath(properties.getProperty("folder_dropdown_click1"))).click(); //click on folder dropdown
 		Thread.sleep(5000);
 		driver.findElement(By.xpath(properties.getProperty("folder_selection1"))).click(); //select folder
 		Thread.sleep(5000);
+		driver.findElement(By.xpath(properties.getProperty("tag_plusicon"))).click();
+		Thread.sleep(5000);
+		driver.findElement(By.xpath(properties.getProperty("tag_text_click"))).click();
+		WebElement enter=driver.findElement(By.xpath(properties.getProperty("tag_text_click")));
+		enter.sendKeys(properties.getProperty("tag_name")+ "_" + System.currentTimeMillis());
+		enter.sendKeys(Keys.ENTER);
+		driver.findElement(By.xpath(properties.getProperty("tag_savebutton"))).click();
+		Thread.sleep(5000);
 		driver.findElement(By.xpath(properties.getProperty("tag_select"))).click();
+		Thread.sleep(5000);
+		driver.switchTo().frame(0);
+		driver.findElement(By.xpath(properties.getProperty("Descriptionclick"))).click();
+		driver.findElement(By.xpath(properties.getProperty("Descriptionclick"))).sendKeys("Asset_Description");
 		Thread.sleep(5000);
 		driver.switchTo().defaultContent();
 		driver.findElement(By.xpath(properties.getProperty("Submit"))).click();
@@ -130,12 +138,13 @@ public class UploadAssetVideo {
 	}
 
 	//upload MOV file	
-	@Test (priority=2,enabled=false)
+	@Test (priority=2)
 	public void uploadMOV() throws InterruptedException, IOException {	
+		Thread.sleep(7000);
 		driver.findElement(By.xpath(properties.getProperty("Content_leftmenu"))).click(); //click on left side content menu
-		Thread.sleep(5000);
+		Thread.sleep(7000);
 		driver.findElement(By.xpath(properties.getProperty("DesignUpload"))).click(); //click on design/upload
-		Thread.sleep(3000);
+		Thread.sleep(5000);
 		driver.findElement(By.xpath(properties.getProperty("Upload"))).click(); // click on upload
 		Thread.sleep(5000);
 		driver.findElement(By.xpath(properties.getProperty("BrowseButton"))).click(); //click on Browse
@@ -155,6 +164,14 @@ public class UploadAssetVideo {
 		driver.findElement(By.xpath(properties.getProperty("folder_dropdown_click1"))).click(); //click on folder dropdown
 		Thread.sleep(5000);
 		driver.findElement(By.xpath(properties.getProperty("folder_selection1"))).click(); //select folder
+		Thread.sleep(5000);
+		driver.findElement(By.xpath(properties.getProperty("tag_plusicon"))).click();
+		Thread.sleep(5000);
+		driver.findElement(By.xpath(properties.getProperty("tag_text_click"))).click();
+		WebElement enter=driver.findElement(By.xpath(properties.getProperty("tag_text_click")));
+		enter.sendKeys(properties.getProperty("tag_name")+ "_" + System.currentTimeMillis());
+		enter.sendKeys(Keys.ENTER);
+		driver.findElement(By.xpath(properties.getProperty("tag_savebutton"))).click();
 		Thread.sleep(5000);
 		driver.findElement(By.xpath(properties.getProperty("tag_select"))).click();
 		Thread.sleep(5000);
@@ -178,12 +195,13 @@ public class UploadAssetVideo {
 	}			
 
 	//upload MKV file -
-	@Test (priority=3,enabled=false)
+	@Test (priority=3)
 	public void uploadMKV() throws InterruptedException, IOException {	
+		Thread.sleep(7000);
 		driver.findElement(By.xpath(properties.getProperty("Content_leftmenu"))).click(); //click on left side content menu
-		Thread.sleep(5000);
+		Thread.sleep(7000);
 		driver.findElement(By.xpath(properties.getProperty("DesignUpload"))).click(); //click on design/upload
-		Thread.sleep(3000);
+		Thread.sleep(5000);
 		driver.findElement(By.xpath(properties.getProperty("Upload"))).click(); // click on upload
 		Thread.sleep(5000);
 		driver.findElement(By.xpath(properties.getProperty("BrowseButton"))).click(); //click on Browse
@@ -203,6 +221,14 @@ public class UploadAssetVideo {
 		driver.findElement(By.xpath(properties.getProperty("folder_dropdown_click1"))).click(); //click on folder dropdown
 		Thread.sleep(5000);
 		driver.findElement(By.xpath(properties.getProperty("folder_selection1"))).click(); //select folder
+		Thread.sleep(5000);
+		driver.findElement(By.xpath(properties.getProperty("tag_plusicon"))).click();
+		Thread.sleep(5000);
+		driver.findElement(By.xpath(properties.getProperty("tag_text_click"))).click();
+		WebElement enter=driver.findElement(By.xpath(properties.getProperty("tag_text_click")));
+		enter.sendKeys(properties.getProperty("tag_name")+ "_" + System.currentTimeMillis());
+		enter.sendKeys(Keys.ENTER);
+		driver.findElement(By.xpath(properties.getProperty("tag_savebutton"))).click();
 		Thread.sleep(5000);
 		driver.findElement(By.xpath(properties.getProperty("tag_select"))).click();
 		Thread.sleep(5000);
