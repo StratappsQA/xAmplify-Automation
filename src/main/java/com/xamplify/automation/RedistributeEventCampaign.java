@@ -274,13 +274,85 @@ driver.findElement(By.xpath(properties.getProperty("partneracc_m_eve_invites_who
 
 Thread.sleep(5000);
 
-driver.findElement(By.xpath(properties.getProperty("partneracc_m_eve_invites_whohaventopned_remainder_msg"))).sendKeys("Please open the email[Reamidner]");
+driver.findElement(By.xpath(properties.getProperty("partneracc_m_eve_invites_whohaventopned_remainder_msg"))).sendKeys("Please open the email[Remaidner]");
 Thread.sleep(5000);
 
 
 driver.findElement(By.xpath(properties.getProperty("partneracc_m_eve_invites_whohaventopned_remainder_send"))).click();
 
 logger.info("Clicked on Send Remainderbutton  successfully");
+
+Thread.sleep(5000);
+
+
+
+driver.findElement(By.xpath(properties.getProperty("partneracc_m_eve_invites_Notyet"))).click();
+Thread.sleep(5000);
+
+
+WebElement evesearch=driver.findElement(By.xpath(properties.getProperty("partneracc_m_eve_invites_Notyet_search")));
+evesearch.sendKeys("gayatri");
+evesearch.sendKeys(Keys.ENTER);
+
+Thread.sleep(7000);
+
+
+
+driver.findElement(By.xpath(properties.getProperty("partneracc_m_eve_invites_Notyet_export"))).click();
+Thread.sleep(5000);
+
+
+
+
+driver.findElement(By.xpath(properties.getProperty("partneracc_m_eve_invites_Notyet_excel"))).click();
+Thread.sleep(5000);
+
+logger.info("Export to excel done successfully");
+
+
+
+
+
+
+WebElement invite_total=driver.findElement(By.xpath(properties.getProperty("partneracc_m_eve_invites_total")));
+
+if(invite_total.isDisplayed()) {
+
+	invite_total.click();
+
+System.out.println("inside");
+
+
+driver.findElement(By.xpath(properties.getProperty("partneracc_m_eve_invites_total_download"))).click();
+Thread.sleep(5000);
+
+logger.info("Download icon successfully in Total tile");
+
+
+WebElement eve_tot_search=driver.findElement(By.xpath(properties.getProperty("partneracc_m_eve_invites_Total_search")));
+eve_tot_search.sendKeys("gayatri");
+eve_tot_search.sendKeys(Keys.ENTER);
+
+Thread.sleep(7000);
+
+}
+else {
+	logger.info("Unable to click due to count is '0' ");
+	
+	
+}
+Thread.sleep(5000);
+
+driver.findElement(By.xpath(properties.getProperty("partneracc_m_eve_emailid_click"))).click();
+Thread.sleep(5000);
+
+driver.findElement(By.xpath(properties.getProperty("partneracc_m_eve_emailid_registerlead"))).click();
+Thread.sleep(5000);
+
+
+
+
+
 
 
 
