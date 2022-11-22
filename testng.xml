@@ -5,9 +5,6 @@
     <classes>
     <class name="com.xamplify.automation.Login"/>
    
-     <!--<class name="com.xamplify.automation.LaunchEmailCampaign"/> -->
-     <class name="com.xamplify.automation.LaunchVideoCampaign"/> 
-   
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->
