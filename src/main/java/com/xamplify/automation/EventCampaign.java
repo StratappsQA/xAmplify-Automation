@@ -63,10 +63,12 @@ public class EventCampaign {
 		driver.findElement(By.xpath(properties.getProperty("eve_subjectline"))).sendKeys("subjectLine_eve"); // subjectline
 		Thread.sleep(3000);
 
-		Actions a = new Actions(driver); // scroll down a page
-		a.sendKeys(Keys.PAGE_DOWN).build().perform();
-
-		Thread.sleep(3000);
+		/*
+		 * Actions a = new Actions(driver); // scroll down a page
+		 * a.sendKeys(Keys.PAGE_DOWN).build().perform();
+		 * 
+		 * Thread.sleep(3000);
+		 */
 
 		WebDriverWait wait3 = new WebDriverWait(driver, 50);
 		WebElement w3 = wait3
@@ -100,6 +102,7 @@ public class EventCampaign {
 		driver.findElement(By.xpath(properties.getProperty("eve_selectform"))).click(); // select the form
 
 		Thread.sleep(2000);
+		logger.info("Selected the form");
 		driver.findElement(By.xpath(properties.getProperty("eve_closeform"))).click(); // close the form
 		Thread.sleep(6000);
 
@@ -112,11 +115,16 @@ public class EventCampaign {
 
 		w.click();
 
-		Thread.sleep(3000);
+		Thread.sleep(5000);
 		driver.findElement(By.id("allDay")).click();
 		logger.info("Selected the Event date ");
 
 		Thread.sleep(4000);
+		
+		 Actions a = new Actions(driver); // scroll down a page
+		 a.sendKeys(Keys.PAGE_DOWN).build().perform();
+		 
+		  Thread.sleep(3000);
 
 		WebElement drpCountry = driver.findElement(By.xpath(properties.getProperty("timezone_select_country"))); // select
 																													// the

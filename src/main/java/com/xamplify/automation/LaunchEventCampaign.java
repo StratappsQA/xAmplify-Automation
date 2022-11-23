@@ -32,18 +32,20 @@ public class LaunchEventCampaign {
 		 * call for autoresponses ar_eve1.autoResponsesevent();
 		 */
 		  Thread.sleep(4000);
+		  
+		
 		
 		driver.findElement(By.xpath(properties.getProperty("eve_now"))).click(); // click NOW
 		Thread.sleep(3000);
 
 		driver.findElement(By.xpath(properties.getProperty("eve_launch"))).click(); // click LAUNCH
 
-		Thread.sleep(4000);
+		Thread.sleep(6000);
 
 		String eve_launch = driver.findElement(By.xpath(properties.getProperty("eve_response_msg"))).getText(); // response
 		// message
 
-		Thread.sleep(3000);
+		Thread.sleep(6000);
 
 		String expectedtitle = "Campaign launched successfully";
 

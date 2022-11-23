@@ -24,30 +24,69 @@ public class ManageEventCampaign {
 	final Logger logger = LogManager.getLogger(ManageEventCampaign.class);
 
 	@Test(priority = 1, enabled = true)
+	
+
+	public void manage_event_copy() throws InterruptedException, SQLException {
+
+	
+		Thread.sleep(8000);
+		  
+		  driver.findElement(By.xpath(properties.getProperty("meve_gear_icon"))).click();
+		  // click on the gear icon
+		  
+		  Thread.sleep(6000);
+		  
+		  driver.findElement(By.xpath(properties.getProperty("meve_copycampaign"))).
+		  click(); // click on the copy campaign // icon
+		  
+		  Thread.sleep(3000);
+		  
+		  driver.findElement(By.xpath(properties.getProperty("meve_copy_saveas"))).
+		  click(); // click on the save the // copycampaign
+		  
+		  Thread.sleep(8000); 
+		  logger.info("Copied Event campaign successfully");
+		  
+		  Thread.sleep(6000);
+
+		  
+		  driver.findElement(By.xpath(properties.getProperty("meve_gear_icon"))).click();
+		  // click on the gear icon
+		  
+		  Thread.sleep(6000);
+		  
+		  
+		  
+		  driver.findElement(By.xpath(properties.getProperty("meve_editicon"))).click(); // click on the edit icon
+			Thread.sleep(4000);
+		  
+		  driver.findElement(By.xpath("//h5[contains(text(),'Launch')]")).click();
+		  Thread.sleep(4000);
+		  
+			driver.findElement(By.xpath(properties.getProperty("eve_now"))).click(); // click NOW
+			Thread.sleep(3000);
+
+			driver.findElement(By.xpath(properties.getProperty("eve_launch"))).click(); // click LAUNCH
+
+			Thread.sleep(4000);
+		  
+		  
+		  
+		  }
+		 
+	
+	
+	@Test(priority = 2, enabled = true)
+	
 	public void manage_event_editdelete() throws InterruptedException, SQLException {
 
-		/*
-		 * WebDriverWait wait = new WebDriverWait(driver, 50);// Wait till the element
-		 * is not visible
-		 * 
-		 * WebElement mevecam = wait.until(ExpectedConditions
-		 * .visibilityOfElementLocated(By.xpath(properties.getProperty(
-		 * "manage_eve_campaignhover")))); mevecam.click(); // hover on campaign Actions
-		 * mevecamp_action = new Actions(driver);
-		 * mevecamp_action.moveToElement(mevecam).perform(); Thread.sleep(5000);
-		 * 
-		 * WebElement manage_eve_cam =
-		 * driver.findElement(By.xpath(properties.getProperty("manage_eventcampaign")));
-		 * // manage // campaign mevecamp_action.moveToElement(manage_eve_cam);
-		 * mevecamp_action.click(); mevecamp_action.perform(); 
-		 */
-		Thread.sleep(5000);
+		Thread.sleep(12000);
 		driver.findElement(By.xpath(properties.getProperty("manage_event_tab"))).click();// click on the eventtab
 		Thread.sleep(6000);
 
 		driver.findElement(By.xpath(properties.getProperty("meve_gear_icon"))).click(); // click on the gear icon
 
-		Thread.sleep(7000);
+		Thread.sleep(9000);
 
 		driver.findElement(By.xpath(properties.getProperty("meve_editicon"))).click(); // click on the edit icon
 		Thread.sleep(3000);
@@ -66,37 +105,14 @@ public class ManageEventCampaign {
 		driver.findElement(By.xpath(properties.getProperty("meve_close"))).click(); // close the window
 		Thread.sleep(5000);
 
-		driver.findElement(By.xpath(properties.getProperty("meve_gear_icon"))).click(); // click on the gear icon
-
-		Thread.sleep(6000);
-
-		driver.findElement(By.xpath(properties.getProperty("meve_copycampaign"))).click(); // click on the copy campaign
-																							// icon
-
-		Thread.sleep(3000);
-
-		driver.findElement(By.xpath(properties.getProperty("meve_copy_saveas"))).click(); // click on the save the
-																							// copycampaign
-
-		Thread.sleep(7000);
-		logger.info("Copied Event campaign successfully");
-
-		driver.findElement(By.xpath(properties.getProperty("meve_gear_icon2"))).click(); // click on the gear icon
-
-		Thread.sleep(3000);
-
-		driver.findElement(By.xpath(properties.getProperty("meve_delete"))).click(); // click on the delete icon
-
-		Thread.sleep(5000);
-
-		driver.findElement(By.xpath(properties.getProperty("meve_delete_yes"))).click(); // click on yes delete icon
-
-		Thread.sleep(6000);
-		logger.info("Copied Event Campaign Deleted Successfully");
-
+		
+		
+		
 	}
+	
+	
 
-	@Test(priority = 2, enabled = true)
+	@Test(priority = 3, enabled = true)
 //	@Test(dependsOnMethods = { "manage_event_editdelete" })
 	public void manage_eve_sndpreview_previewdelete() throws InterruptedException, SQLException {
 
@@ -192,7 +208,7 @@ public class ManageEventCampaign {
 		Thread.sleep(6000);
 	}
 
-	@Test(priority = 3, enabled = true)
+	@Test(priority = 4, enabled = true)
 	
 	public void manage_eve_grid_cancel() throws InterruptedException, SQLException {
 
@@ -273,12 +289,12 @@ public class ManageEventCampaign {
 		Thread.sleep(3000);
 		driver.findElement(By.xpath(properties.getProperty("meve_cancel_event"))).click(); // click on the cancel event
 																							// button
-		Thread.sleep(58000);
+		Thread.sleep(63000);
 		logger.info("Event has been cancelled successfully");
 
 	}
 
-	@Test(priority = 4, enabled = true)
+	@Test(priority = 5, enabled = true)
 	// @Test(dependsOnMethods = { "manage_eve_grid_cancel" })
 	public void manage_eve_archieve() throws InterruptedException, SQLException {
 
