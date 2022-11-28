@@ -11,6 +11,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class RedistributeEventCampaign extends ExtentReport {
@@ -366,6 +367,9 @@ Thread.sleep(5000);
 
 
 
+
+
+
 driver.findElement(By.xpath(properties.getProperty("partneracc_m_eve_invites_Notyet"))).click();
 Thread.sleep(5000);
 
@@ -381,9 +385,6 @@ Thread.sleep(7000);
 driver.findElement(By.xpath(properties.getProperty("partneracc_m_eve_invites_Notyet_export"))).click();
 Thread.sleep(5000);
 
-
-
-
 driver.findElement(By.xpath(properties.getProperty("partneracc_m_eve_invites_Notyet_excel"))).click();
 Thread.sleep(5000);
 
@@ -397,29 +398,44 @@ logger.info("Export to excel done successfully");
 
 
 
+WebElement invite_leads=driver.findElement(By.xpath(properties.getProperty("partneracc_m_eve_invites_leads")));
+
+
+if(invite_leads.isEnabled())
+{
+	
+
+	logger.info("Leads tile clicked Successfully");
+
+	Thread.sleep(4000);
+
+
+}
+
+else { 
+	logger.info("Unable to click leads tile  due to count is '0' ");
+  
+  
+  } Thread.sleep(5000);
+
+
 
 
 WebElement invite_total=driver.findElement(By.xpath(properties.getProperty("partneracc_m_eve_invites_total")));
 
-  
 
 
-	if(invite_total.equals(0)) {
+//System.out.println(invite_total.isEnabled());
+	
+	if(invite_total.isEnabled())
+	{
+		
 
+		logger.info("Total tile clicked Successfully");
 
-   
-System.out.println("test");
-	
-	
-	
-	
-	
-	
-	
-System.out.println("inside");
-Thread.sleep(5000);
+		Thread.sleep(4000);
 
-
+	
 driver.findElement(By.xpath(properties.getProperty("partneracc_m_eve_invites_total_download"))).click();
 Thread.sleep(5000);
 
@@ -432,22 +448,53 @@ eve_tot_search.sendKeys(Keys.ENTER);
 
 Thread.sleep(7000);
 
+
+
 driver.findElement(By.xpath(properties.getProperty("partneracc_m_eve_invites_total_cls"))).click();
 Thread.sleep(5000);
 
+	}
 
+else { 
+	logger.info("Unable to click Total tile due to count is '0' ");
+  
+  
+  } Thread.sleep(5000);
+  
+  driver.findElement(By.xpath(properties.getProperty("partneracc_m_eve_invites_total_cls"))).click();
+  Thread.sleep(5000);
+ 
 
-}
-else {
-	logger.info("Unable to click due to count is '0' ");
-	
-	
-}
+  
+  WebElement eve_analytics=driver.findElement(By.xpath(properties.getProperty("partneracc_m_eve_Campaignanalytics")));
+  eve_analytics.sendKeys("gayatri");
+  eve_analytics.sendKeys(Keys.ENTER);
+  Thread.sleep(5000);
+ 
+  
+  
+  
+  
+
+  
+  
+driver.findElement(By.xpath(properties.getProperty("partneracc_m_eve_Campaignanalytics_gearicon"))).click();
 Thread.sleep(5000);
+  
 
 
 
+driver.findElement(By.xpath(properties.getProperty("partneracc_m_eve_Campaignanalytics_gearicon_excel"))).click();
+Thread.sleep(5000);
+  
 
+logger.info("Download excel successfully in Campaign Analytics section");
+
+
+  
+  
+  
+  
 driver.findElement(By.xpath(properties.getProperty("partneracc_m_eve_emailid_click"))).click();
 Thread.sleep(5000);
 
@@ -589,9 +636,8 @@ else {
 
 }
 
+
 }
-
-
 
 
 
