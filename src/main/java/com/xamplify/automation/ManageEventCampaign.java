@@ -23,7 +23,7 @@ public class ManageEventCampaign {
 			.readPropertyFile("D:\\git\\xAmplify-Automation\\src\\main\\resources\\ManageEventCampaign.properties");
 	final Logger logger = LogManager.getLogger(ManageEventCampaign.class);
 
-	@Test(priority = 1, enabled = true)
+	@Test(priority = 1, enabled = false)
 	
 
 	public void manage_event_copy() throws InterruptedException, SQLException {
@@ -76,11 +76,11 @@ public class ManageEventCampaign {
 		 
 	
 	
-	@Test(priority = 2, enabled = true)
+	@Test(priority = 2, enabled = false)
 	
 	public void manage_event_editdelete() throws InterruptedException, SQLException {
 
-		Thread.sleep(12000);
+		Thread.sleep(13000);
 		driver.findElement(By.xpath(properties.getProperty("manage_event_tab"))).click();// click on the eventtab
 		Thread.sleep(6000);
 
@@ -112,7 +112,7 @@ public class ManageEventCampaign {
 	
 	
 
-	@Test(priority = 3, enabled = true)
+	@Test(priority = 3, enabled = false)
 //	@Test(dependsOnMethods = { "manage_event_editdelete" })
 	public void manage_eve_sndpreview_previewdelete() throws InterruptedException, SQLException {
 
@@ -208,7 +208,7 @@ public class ManageEventCampaign {
 		Thread.sleep(6000);
 	}
 
-	@Test(priority = 4, enabled = true)
+	@Test(priority = 4, enabled = false)
 	
 	public void manage_eve_grid_cancel() throws InterruptedException, SQLException {
 
@@ -294,7 +294,7 @@ public class ManageEventCampaign {
 
 	}
 
-	@Test(priority = 5, enabled = true)
+	@Test(priority = 5, enabled = false)
 	// @Test(dependsOnMethods = { "manage_eve_grid_cancel" })
 	public void manage_eve_archieve() throws InterruptedException, SQLException {
 
@@ -353,6 +353,206 @@ public class ManageEventCampaign {
 
 		Thread.sleep(7000);
 		logger.info("Back to active campaigns page ");
+		
+	}
+	
+	
+		
+		
+		
+		
+		
+		
+		
+	@Test(priority = 6, enabled = true)
+	public void manage_eve_analyticsreports() throws InterruptedException, SQLException {
 
+		
+	{
+		
+		
+		
+		driver.navigate().to("https://xamplify.co/home/campaigns/manage");
+		Thread.sleep(6000);
+		
+		
+		
+		
+		
+		
+		
+		
+		System.out.println("aa");
+		
+		
+		
+		driver.findElement(By.xpath(properties.getProperty("meve_cbreports"))).click();
+
+		Thread.sleep(7000);
+		
+
+		
+		
+		driver.findElement(By.xpath(properties.getProperty("m_eve_preview_emlinfo"))).click();
+
+		logger.info("Clicked on emailinfo  successfully");
+		Thread.sleep(7000);
+
+		driver.findElement(By.xpath(properties.getProperty("m_eve_preview_emlinfo_cls"))).click();
+
+		logger.info("emailinfo closed successfully");
+
+		Thread.sleep(6000);
+
+		driver.findElement(By.xpath(properties.getProperty("m_eve_preview_listinfo"))).click();
+
+		logger.info("Clicked on listinfo  successfully");
+
+		Thread.sleep(5000);
+
+		driver.findElement(By.xpath(properties.getProperty("m_eve_preview_listinfo_cls"))).click();
+
+		logger.info("listinfo closed successfully");
+
+		driver.findElement(By.xpath(properties.getProperty("m_eve_invites"))).click();
+
+		logger.info("Clicked on invites  successfully");
+
+		Thread.sleep(5000);
+
+		driver.findElement(By.xpath(properties.getProperty("m_eve_invites_opened"))).click();
+
+		logger.info("Clicked on invites opened  successfully");
+
+		Thread.sleep(5000);
+
+		driver.findElement(By.xpath(properties.getProperty("m_eve_invites_whohaventopned"))).click();
+
+		logger.info("Clicked on who havent opened tab  successfully");
+
+		Thread.sleep(5000);
+
+		driver.findElement(By.xpath(properties.getProperty("m_eve_invites_whohaventopned_remainder")))
+				.click();
+
+		logger.info("Clicked on remainder icon  successfully");
+
+		Thread.sleep(6000);
+
+		driver.findElement(
+				By.xpath(properties.getProperty("m_eve_invites_whohaventopned_remainder_subject")))
+				.sendKeys("subject");
+
+		Thread.sleep(5000);
+
+		driver.findElement(By.xpath(properties.getProperty("m_eve_invites_whohaventopned_remainder_msg")))
+				.sendKeys("Please open the email[Remainder from vendor]");
+		Thread.sleep(5000);
+
+		driver.findElement(By.xpath(properties.getProperty("m_eve_invites_whohaventopned_remainder_send")))
+				.click();
+
+		logger.info("Clicked on Send Remainderbutton  successfully");
+
+		Thread.sleep(5000);
+
+		driver.findElement(By.xpath(properties.getProperty("m_eve_invites_Notyet"))).click();
+		Thread.sleep(5000);
+
+		WebElement evesearch = driver
+				.findElement(By.xpath(properties.getProperty("m_eve_invites_Notyet_search")));
+		evesearch.sendKeys("gayatri");
+		evesearch.sendKeys(Keys.ENTER);
+
+		Thread.sleep(7000);
+
+		driver.findElement(By.xpath(properties.getProperty("m_eve_invites_Notyet_export"))).click();
+		Thread.sleep(5000);
+
+		driver.findElement(By.xpath(properties.getProperty("m_eve_invites_Notyet_excel"))).click();
+		Thread.sleep(5000);
+
+		logger.info("Export to excel done successfully");
+
+		Thread.sleep(5000);
+
+		WebElement invite_yes = driver.findElement(By.xpath(properties.getProperty("m_eve_invites_yes")));
+
+		if (invite_yes.isEnabled()) {
+
+			logger.info("Yes tile clicked Successfully");
+
+			Thread.sleep(4000);
+
+		}
+
+		else {
+			logger.info("Unable to click Yes tile  due to count is '0' ");
+
+		}
+		Thread.sleep(5000);
+
+		WebElement invite_leads = driver
+				.findElement(By.xpath(properties.getProperty("m_eve_invites_leads")));
+
+		if (invite_leads.isEnabled()) {
+
+			logger.info("Leads tile clicked Successfully");
+
+			Thread.sleep(4000);
+
+		}
+
+		else {
+			logger.info("Unable to click leads tile  due to count is '0' ");
+
+		}
+		Thread.sleep(5000);
+
+		WebElement invite_total = driver
+				.findElement(By.xpath(properties.getProperty("m_eve_invites_total")));
+
+//System.out.println(invite_total.isEnabled());
+
+		if (invite_total.isEnabled()) {
+
+			logger.info("Total tile clicked Successfully");
+
+			Thread.sleep(4000);
+
+			driver.findElement(By.xpath(properties.getProperty("m_eve_invites_total_download"))).click();
+			Thread.sleep(5000);
+
+			logger.info("Download icon successfully in Total tile");
+
+			WebElement eve_tot_search = driver
+					.findElement(By.xpath(properties.getProperty("m_eve_invites_total_search")));
+			eve_tot_search.sendKeys("gayatri");
+			eve_tot_search.sendKeys(Keys.ENTER);
+
+			Thread.sleep(7000);
+
+			driver.findElement(By.xpath(properties.getProperty("m_eve_invites_total_cls"))).click();
+			Thread.sleep(5000);
+
+		}
+
+		else {
+			logger.info("Unable to click Total tile due to count is '0' ");
+
+		}
+		Thread.sleep(5000);
+
+		driver.findElement(By.xpath(properties.getProperty("m_eve_invites_total_cls"))).click();
+		Thread.sleep(5000);
+
+		
+		
+		
+	}
+		
+		
+	
+		
 	}
 }
