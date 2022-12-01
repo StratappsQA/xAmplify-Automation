@@ -9,6 +9,7 @@ import java.util.Properties;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -78,13 +79,19 @@ public class TeamMember_Partner {
 		}
 
 		Thread.sleep(6000);
-		WebElement tm_saved_grid = driver.findElement(By.xpath(properties.getProperty("Success_message_grid_TM")));	
-		String actualresult_tm = tm_saved_grid.getText();
+		String actualresult_tm=driver.findElement(By.xpath(properties.getProperty("Success_message_grid_TM"))).getText();
+		Thread.sleep(3000);
 		String expectedresult_tm = "Team Member added successfully.";				
-		Assert.assertEquals(actualresult_tm, expectedresult_tm);
-		Thread.sleep(5000);
-		logger.info("Team member has been created through Add button option");
-		logger.info("Assertion successfull for team member creation");				
+		if(expectedresult_tm.equals(actualresult_tm))
+		{
+			System.out.println("Team member is created");
+		}
+		else
+		{
+			System.out.println("Team member creation is failed");
+		}
+		logger.info("Team member has been created through Add button option-partner");
+		Thread.sleep(3000);			
 	}
 
 	@Test (priority=2,enabled=true)
@@ -110,13 +117,19 @@ public class TeamMember_Partner {
 		driver.findElement(By.xpath(properties.getProperty("Save_button_TM"))).click(); //click on update button 
 		Thread.sleep(7000);
 		logger.info("update button has been clicked");
-		WebElement tm_updated_grid = driver.findElement(By.xpath(properties.getProperty("Success_message_grid_TM")));	
-		String actualresult_tm = tm_updated_grid.getText();
-		String expectedresult_tm = "Team member details updated succesfully.";				
-		Assert.assertEquals(actualresult_tm, expectedresult_tm);
-		Thread.sleep(5000);
-		logger.info("Team member has been updated successfully");
-		logger.info("Assertion successfull for team member updation");			
+		
+		String actualresult_tm = driver.findElement(By.xpath(properties.getProperty("Success_message_grid_TM"))).getText();	
+		String expectedresult_tm = "Team member details updated succesfully.";
+		if(expectedresult_tm.equals(actualresult_tm))
+		{
+			System.out.println("Team member is updated");
+		}
+		else
+		{
+			System.out.println("Team member updation is failed");
+		}
+		logger.info("Team member has been updated successfully-partner");
+		Thread.sleep(3000);		
 	}
 
 	@Test (priority=3,enabled=true)
@@ -134,13 +147,21 @@ public class TeamMember_Partner {
 		driver.findElement(By.xpath(properties.getProperty("yes_popup_TM"))).click(); //click on yes on popup 
 		Thread.sleep(5000);
 		logger.info("email icon has been clicked");
-		WebElement tm_updated_grid = driver.findElement(By.xpath(properties.getProperty("Success_message_grid_TM")));	
-		String actualresult_tm = tm_updated_grid.getText();
-		String expectedresult_tm = "Invitation sent successfully.";				
-		Assert.assertEquals(actualresult_tm, expectedresult_tm);
-		Thread.sleep(5000);
-		logger.info("Invitaion has been sent to team member successfully");
-		logger.info("Assertion successfull for team member invitation");	
+		
+		String actualresult_tm = driver.findElement(By.xpath(properties.getProperty("Success_message_grid_TM"))).getText();	
+		Thread.sleep(3000);
+		String expectedresult_tm = "Invitation sent successfully.";
+		if(expectedresult_tm.equals(actualresult_tm))
+		{
+			System.out.println("Invitation is sent to email");
+		}
+		else
+		{
+			System.out.println("Invitation sent is failed");
+		}
+		logger.info("Invitaion has been sent to team member successfully-partner");
+
+		Thread.sleep(3000);	
 	}
 
 	@Test (priority=4,enabled=true)
@@ -159,60 +180,124 @@ public class TeamMember_Partner {
 		driver.findElement(By.xpath(properties.getProperty("yes_popup_TM"))).click(); //click on yes on popup 
 		Thread.sleep(5000);
 		logger.info("cliked on yes in pop up");	
-		WebElement tm_updated_grid = driver.findElement(By.xpath(properties.getProperty("Success_message_grid_TM")));	
-		String actualresult1 = tm_updated_grid.getText();
+		String actualresult1 = driver.findElement(By.xpath(properties.getProperty("Success_message_grid_TM"))).getText();	
+	
 		if(actualresult1.contains("deleted successfully."))
 		{
-			logger.info("Team member has been deleted successfully");		
-
+			System.out.println("Team member is deleted");		
 		}
 		else
 		{
-			logger.info("team member is not deleted");
+			System.out.println("team member is not deleted");
 
 		}	
-		logger.info("Assertion successfull for team member deletion");	
+		logger.info("Team member has been deleted successfully-partner");	
 
 	}
 
 
-	@Test (priority=5,enabled=false)
-	public void UploadCSV_TM_partner() throws InterruptedException, IOException
+	//to upload csc file we have to use two java files (RandomEmailGeneration and ProductModel)
+	@Test (priority=5,enabled=true)
+	public void uploadCSV_TM_partner() throws InterruptedException, IOException, InvalidFormatException
 	{
 		Thread.sleep(7000);
 		driver.findElement(By.xpath(properties.getProperty("Team_leftmenu"))).click(); //click on Team left menu
 		Thread.sleep(8000);
 		driver.findElement(By.xpath(properties.getProperty("download_CSV_TM"))).click(); //click on  download csv template
-		Thread.sleep(12000);
+		Thread.sleep(3000);
 		logger.info("TeamMember-CSV template has been downloaded");
-		Actions action=new Actions(driver);
-		WebElement uploadcsv=driver.findElement(By.xpath(properties.getProperty("upload_CSV_TM")));  //click on upload csv button
-		action.moveToElement(uploadcsv).click().perform();
+
+		TeamMember_Vendor obj = new TeamMember_Vendor(); //calling RandomEmailGeneration class in this class(email id updation in csv file will happen in randomemailgeneration class) 
+		((RandomEmailGeneration) obj).main(null);
+
+		WebElement uploadcsv=driver.findElement(By.xpath(properties.getProperty("upload_CSV_TM"))); //click on upload csv button
 		Thread.sleep(6000);
-		Runtime.getRuntime().exec("D:\\Selenium\\TeamMember_CSV.exe"); //uploading csv file
-		logger.info("TeamMember-CSV template has been uploaded");
+		logger.info("clicked on upload button");
+		uploadcsv.sendKeys("D:\\git\\Teammember_CSV.csv");			
+		Thread.sleep(5000);
+
+		String actualresult = driver.findElement(By.xpath(properties.getProperty("Success_message_grid_TM_CSV"))).getText();	
+		if(actualresult.contains("duplicate "))
+		{
+			logger.info("Team member mail ids are not uploaded, duplicate mail ids may exists");
+		}		
+		else
+		{
+			logger.info("Team member mail ids are uploaded through CSV file");
+		}
+
 		Thread.sleep(6000);
-		Select group1 = new Select(driver.findElement(By.xpath(properties.getProperty("TM_group_dropdown_click_CSV"))));//click on team member group dropdown
-		driver.findElement(By.xpath(properties.getProperty("TM_group_dropdown_click_CSV"))).click();
+		Select group1 = new Select(driver.findElement(By.xpath(properties.getProperty("TM_group_dropdown_click_CSV1"))));//click on team member group dropdown
+		driver.findElement(By.xpath(properties.getProperty("TM_group_dropdown_click_CSV1"))).click();
 		Thread.sleep(6000);
-		group1.selectByVisibleText("Partner Account Manager");  //selecting partner account manager from the dropdown
+		group1.selectByVisibleText("Channel Account Manager");  //selecting channel account manager from the dropdown-team member1
 		Thread.sleep(6000);
 		logger.info("selected 'Channel Account Manager' group from  the dropdown-while uploading CSV");
+		Select group2 = new Select(driver.findElement(By.xpath(properties.getProperty("TM_group_dropdown_click_CSV2"))));//click on team member group dropdown
+		driver.findElement(By.xpath(properties.getProperty("TM_group_dropdown_click_CSV2"))).click();
+		Thread.sleep(6000);
+		group2.selectByVisibleText("Partner Account Manager");  //selecting partner account manager from the dropdown-team member2
+		Thread.sleep(6000);
+		logger.info("selected 'Partner Account Manager' group from  the dropdown-while uploading CSV");
 		driver.findElement(By.xpath(properties.getProperty("Save_button_TM"))).click(); //click on save button 
 		Thread.sleep(6000);
-		WebElement tm_saved_grid = driver.findElement(By.xpath(properties.getProperty("Success_message_grid_TM")));	
-		String actualresult_tm = tm_saved_grid.getText();
-		String expectedresult_tm = "Team Member added successfully.";				
-		Assert.assertEquals(actualresult_tm, expectedresult_tm);
-		Thread.sleep(5000);
-		logger.info("Team member has been created by uploading CSV file");
-		logger.info("Assertion successfull for team member creation by CSV upload");		
+		
+		
+		String actualresult_tm=driver.findElement(By.xpath(properties.getProperty("Success_message_grid_TM"))).getText();
+		Thread.sleep(3000);
+		String expectedresult_tm = "Team Members added successfully.";				
+		if(expectedresult_tm.equals(actualresult_tm))
+		{
+			System.out.println("Team members are created");
+		}
+		else
+		{
+			System.out.println("Team members creation is failed");
+		}
+		logger.info("Team members have been created through upload CSV option-partner");
+		Thread.sleep(3000);
 	}
 
+
+
+
+
+	@Test (priority=6,enabled=true)
+	public void view_avabliablemodules_partner() throws InterruptedException
+	{
+		Thread.sleep(7000);
+		driver.findElement(By.xpath(properties.getProperty("Team_leftmenu"))).click(); //click on Team left menu
+		Thread.sleep(7000);
+		driver.findElement(By.xpath(properties.getProperty("Search_field_TM"))).sendKeys("Channel"); //search with Channel
+		Thread.sleep(7000);
+		driver.findElement(By.xpath(properties.getProperty("Search_icon_TM"))).click(); //click on search icon
+		Thread.sleep(5000);
+		driver.findElement(By.xpath(properties.getProperty("Preview_icon_tmgroup"))).click(); //click on preview icon of channel account manager
+		Thread.sleep(10000);
+		logger.info("Displayed the avaliable modules in channel account manager team member group-partner");
+		driver.findElement(By.xpath(properties.getProperty("close_button_modules"))).click(); //click on close button
+		Thread.sleep(7000);
+		logger.info("close button has been clicked");
+		
+		//view avaliable modules of partner account manager
+		driver.findElement(By.xpath(properties.getProperty("Search_field_TM"))).clear();
+		driver.findElement(By.xpath(properties.getProperty("Search_field_TM"))).sendKeys("Partner"); //search with partner
+		Thread.sleep(7000);
+		driver.findElement(By.xpath(properties.getProperty("Search_icon_TM"))).click(); //click on search icon
+		Thread.sleep(5000);
+		driver.findElement(By.xpath(properties.getProperty("Preview_icon_tmgroup"))).click(); //click on preview icon of partner account manager
+		Thread.sleep(10000);
+		logger.info("Displayed the avaliable modules in partner account manager team member group-partner");
+		driver.findElement(By.xpath(properties.getProperty("close_button_modules"))).click(); //click on close button
+		Thread.sleep(7000);
+		logger.info("close button has been clicked");
+		driver.findElement(By.xpath(properties.getProperty("Search_field_TM"))).clear();
+
+
+	}
+
+
 }
-
-
-
 
 
 
