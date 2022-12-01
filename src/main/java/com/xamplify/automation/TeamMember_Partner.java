@@ -141,11 +141,11 @@ public class TeamMember_Partner {
 		driver.findElement(By.xpath(properties.getProperty("Search_field_TM"))).sendKeys("autoteammember"); //search with autoteammember
 		Thread.sleep(7000);
 		driver.findElement(By.xpath(properties.getProperty("Search_icon_TM"))).click(); //click on search icon
-		Thread.sleep(5000);
+		Thread.sleep(6000);
 		driver.findElement(By.xpath(properties.getProperty("Email_icon_TM"))).click(); //click on email icon 
-		Thread.sleep(5000);
+		Thread.sleep(6000);
 		driver.findElement(By.xpath(properties.getProperty("yes_popup_TM"))).click(); //click on yes on popup 
-		Thread.sleep(5000);
+		Thread.sleep(6000);
 		logger.info("email icon has been clicked");
 		
 		String actualresult_tm = driver.findElement(By.xpath(properties.getProperty("Success_message_grid_TM"))).getText();	
@@ -230,9 +230,9 @@ public class TeamMember_Partner {
 		Select group1 = new Select(driver.findElement(By.xpath(properties.getProperty("TM_group_dropdown_click_CSV1"))));//click on team member group dropdown
 		driver.findElement(By.xpath(properties.getProperty("TM_group_dropdown_click_CSV1"))).click();
 		Thread.sleep(6000);
-		group1.selectByVisibleText("Channel Account Manager");  //selecting channel account manager from the dropdown-team member1
+		group1.selectByVisibleText("Partner Account Manager");  //selecting partner account manager from the dropdown-team member1
 		Thread.sleep(6000);
-		logger.info("selected 'Channel Account Manager' group from  the dropdown-while uploading CSV");
+		logger.info("selected 'Partner Account Manager' group from  the dropdown-while uploading CSV");
 		Select group2 = new Select(driver.findElement(By.xpath(properties.getProperty("TM_group_dropdown_click_CSV2"))));//click on team member group dropdown
 		driver.findElement(By.xpath(properties.getProperty("TM_group_dropdown_click_CSV2"))).click();
 		Thread.sleep(6000);
@@ -268,19 +268,8 @@ public class TeamMember_Partner {
 		Thread.sleep(7000);
 		driver.findElement(By.xpath(properties.getProperty("Team_leftmenu"))).click(); //click on Team left menu
 		Thread.sleep(7000);
-		driver.findElement(By.xpath(properties.getProperty("Search_field_TM"))).sendKeys("Channel"); //search with Channel
-		Thread.sleep(7000);
-		driver.findElement(By.xpath(properties.getProperty("Search_icon_TM"))).click(); //click on search icon
-		Thread.sleep(5000);
-		driver.findElement(By.xpath(properties.getProperty("Preview_icon_tmgroup"))).click(); //click on preview icon of channel account manager
-		Thread.sleep(10000);
-		logger.info("Displayed the avaliable modules in channel account manager team member group-partner");
-		driver.findElement(By.xpath(properties.getProperty("close_button_modules"))).click(); //click on close button
-		Thread.sleep(7000);
-		logger.info("close button has been clicked");
 		
 		//view avaliable modules of partner account manager
-		driver.findElement(By.xpath(properties.getProperty("Search_field_TM"))).clear();
 		driver.findElement(By.xpath(properties.getProperty("Search_field_TM"))).sendKeys("Partner"); //search with partner
 		Thread.sleep(7000);
 		driver.findElement(By.xpath(properties.getProperty("Search_icon_TM"))).click(); //click on search icon
