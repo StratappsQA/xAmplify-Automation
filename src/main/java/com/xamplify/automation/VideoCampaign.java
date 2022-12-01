@@ -22,7 +22,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-public class VideoCampaign {
+public class VideoCampaign extends ExtentReportsClass{
 	
 	WebDriver driver = Instance.getInstance();
 	Properties properties = PropertiesFile.readPropertyFile("D:\\git\\xAmplifyproject\\xAmplify-Automation\\src\\main\\resources\\Campaign.properties");
@@ -63,7 +63,7 @@ logger.info("Click on create Campaign");																										// campaign
 		while (resultSet.next()) {
 			campaignNames.add(resultSet.getString("campaign_name").toLowerCase());
 		}
-		String campaignNameFromProp = properties.getProperty("ewrite_campaign").toLowerCase();
+		String campaignNameFromProp = properties.getProperty("vwrite_campaign").toLowerCase();
 
 		driver.findElement(By.id(properties.getProperty("vcampaignName")))
 				.sendKeys(properties.getProperty("vwrite_campaign"));
