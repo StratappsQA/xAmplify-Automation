@@ -28,7 +28,7 @@ public class Opportunities extends ExtentReportsClass {
 
 	public void partner_opportunities() throws InterruptedException {
 
-		WebDriverWait opportunities_wait = new WebDriverWait(driver, 50);
+		WebDriverWait opportunities_wait = new WebDriverWait(driver, 90);
 		WebElement Opportunities_module = opportunities_wait.until(
 				ExpectedConditions.visibilityOfElementLocated(By.xpath(properties.getProperty("hover_opportunities"))));
 		Opportunities_module.click();
@@ -272,10 +272,10 @@ public class Opportunities extends ExtentReportsClass {
 	
 		@Test(priority = 5, enabled = true)
 		
-		public void campaignview_filter_download_functionalities() throws InterruptedException {
+		public void lead_campaignview_filter_download_functionalities() throws InterruptedException {
 		
-		WebElement campaign_view_icon = driver.findElement(By.xpath(properties.getProperty("click_campaign_view_icon"))); //campaign view
-		campaign_view_icon.click();
+		WebElement lead_campaign_view_icon = driver.findElement(By.xpath(properties.getProperty("click_campaign_view_icon"))); //campaign view
+		lead_campaign_view_icon.click();
 		Thread.sleep(3000);
 		
 		driver.findElement(By.xpath(properties.getProperty("click_viewleads_for_this_campaign"))).click(); //viewleads for this campaign
@@ -533,7 +533,7 @@ public class Opportunities extends ExtentReportsClass {
 			
 			Select edit_stg_dprdown = new Select(driver.findElement(By.xpath(properties.getProperty("edit_stage_drpdown")))); //edit stage drpdown
 			edit_stg_dprdown.selectByVisibleText("Approved");
-			Thread.sleep(3000);
+			Thread.sleep(5000);
 			driver.findElement(By.xpath(properties.getProperty("click_update_deal"))).click();
 			Thread.sleep(6000);
 			
@@ -546,7 +546,9 @@ public class Opportunities extends ExtentReportsClass {
 			Thread.sleep(6000);
 			
 			logger.info("Click on comment icon");
-			driver.findElement(By.xpath(properties.getProperty("click_deal_comment_icon"))).sendKeys("Hi vendor, I'm a new deal from your partner");
+			driver.findElement(By.xpath(properties.getProperty("click_deal_comment_icon"))).click();
+			Thread.sleep(4000);
+			driver.findElement(By.xpath(properties.getProperty("deal_comment_textbox"))).sendKeys("Hi vendor, I'm a new deal from your partner");
 			Thread.sleep(4000);
 			driver.findElement(By.xpath(properties.getProperty("click_deal_comment_submit"))).click(); //comment submitted
 			Thread.sleep(4000);
@@ -570,11 +572,144 @@ public class Opportunities extends ExtentReportsClass {
 			logger.info("Deal Status Updated Successfully");
 			
 			
+		}
+		
+		
+		@Test(priority = 9, enabled = true)
+		public void deal_campaignview_filter_download_functionalities() throws InterruptedException {
 			
+			WebElement deal_campaign_view_icon = driver.findElement(By.xpath(properties.getProperty("click_manage_deal_camp_view"))); //campaign view
+			deal_campaign_view_icon.click();
+			Thread.sleep(5000);
+			
+			driver.findElement(By.xpath(properties.getProperty("click_viewdeals_for_this_campaign"))).click(); //viewdeals for this campaign
+			Thread.sleep(3000);
+			driver.findElement(By.xpath(properties.getProperty("click_deal_campview_search"))).sendKeys("mounika"); //search data
+			Thread.sleep(3000);
+			driver.findElement(By.xpath(properties.getProperty("click_deal_campview_searchicon"))).click();
+			Thread.sleep(3000);
+			driver.findElement(By.xpath(properties.getProperty("clear_deal_campview_search"))).click();
+			Thread.sleep(3000);
+			
+			logger.info("Click on filter icon under campaign view -deals");
 
+			WebElement campview_filter_icon = driver.findElement(By.xpath(properties.getProperty("click_deal_campview_filter"))); //filter icon
+			campview_filter_icon.click();
+			Thread.sleep(4000);
+			
+			Select deal_staus_drpdown_campview_filter = new Select(driver.findElement(By.xpath(properties.getProperty("click_dealstaus_drpdown_campview_filter"))));
+			deal_staus_drpdown_campview_filter.selectByValue("Opened");
+			Thread.sleep(3000);
+			
+			driver.findElement(By.xpath(properties.getProperty("click_dealcampview_filter_button"))).click();
+			Thread.sleep(3000);
+			
+			driver.findElement(By.xpath(properties.getProperty("close_apply_dealfilters_campview"))).click();
+			Thread.sleep(4000);
+			
+			logger.info("Click on download icon under campaign view -deals");
+
+			driver.findElement(By.xpath(properties.getProperty("click_campview_Deals_downloadicon"))).click(); //download
+			Thread.sleep(4000);
+			
+			
+			logger.info("Click on view lead icon under campaign view ");
+			driver.findElement(By.xpath(properties.getProperty("click_deal_campview_viewdeal_icon"))).click();
+			Thread.sleep(3000);
+			driver.findElement(By.xpath(properties.getProperty("click_deal_campview_viewdeal_icon_close"))).click();
+			Thread.sleep(3000);
+			
+			driver.findElement(By.xpath(properties.getProperty("deal_Campview_click"))).click();
+			Thread.sleep(3000);
+			
+			logger.info("Click on edit icon under campaign view ");
+			driver.findElement(By.xpath(properties.getProperty("click_deal_campview_edit_icon"))).click();
+			Thread.sleep(3000);
+			Select campview_edit_stagedrpdown = new Select(driver.findElement(By.xpath(properties.getProperty("click_dealcampview_edit_stagedrpdown"))));
+			campview_edit_stagedrpdown.selectByValue("4555");
+			Thread.sleep(3000);
+			
+			
+			driver.findElement(By.xpath(properties.getProperty("click_campview_deal_update"))).click();
+			Thread.sleep(4000);
+			logger.info("deal updated Successfully in CAMPAIGN VIEW");
+			
+			logger.info("Click on list view");
+			driver.findElement(By.xpath(properties.getProperty("click_deals_listview"))).click();
+			Thread.sleep(3000);
+			
+			logger.info("Click on filter icon ");
+			WebElement lead_filter_func = driver.findElement(By.xpath(properties.getProperty("click_deals_filtericon")));
+			lead_filter_func.click();
+			Thread.sleep(4000);
+			
+			Select company_select = new Select(driver.findElement(By.xpath(properties.getProperty("click_added_for_company"))));
+			company_select.selectByValue("810");
+			Thread.sleep(3000);
+			
+			Select dealstatusdrpdown_filter_func = new Select(driver.findElement(By.xpath(properties.getProperty("click_deal_statusdrpdown_filter_func"))));
+			dealstatusdrpdown_filter_func.selectByValue("Approved");
+			Thread.sleep(3000);
+			
+			driver.findElement(By.xpath(properties.getProperty("click_deal_filter_button"))).click();
+			Thread.sleep(4000);
+			driver.findElement(By.xpath(properties.getProperty("click_deal_apply_filter_close"))).click();
+			Thread.sleep(3000);
+			
+		
+			driver.findElement(By.xpath(properties.getProperty("click_download_total_deals"))).click();
+			Thread.sleep(4000);
+			logger.info("Total leads downloaded Successfully");
 			
 			
 		}
+		
+		@Test(priority = 10, enabled = true)
+		public void deal_categories() throws InterruptedException {
+			
+			
+			Thread.sleep(4000);
+			Actions a1 = new Actions(driver); // scroll up a page
+			  a1.sendKeys(Keys.PAGE_UP).build().perform(); 
+			Thread.sleep(5000);
+			
+			logger.info("Click on Won Deals");
+			WebElement wondeals = driver.findElement(By.xpath(properties.getProperty("won_Deals_click")));
+			wondeals.click();
+			Thread.sleep(4000);
+			
+			logger.info("Click on Won Deals");
+			WebElement lostdeals = driver.findElement(By.xpath(properties.getProperty("lost_Deals_click")));
+			lostdeals.click();
+			Thread.sleep(4000);
+			
+			logger.info("Click on Won Deals");
+			WebElement totaldeals = driver.findElement(By.xpath(properties.getProperty("total_Deals_click")));
+			totaldeals.click();
+			Thread.sleep(4000);
+			
+			
+			 JavascriptExecutor jse3 = (JavascriptExecutor) driver;
+			  jse3.executeScript("window.scrollTo(0,document.body.scrollHeight)");
+			  Thread.sleep(3000);
+			  
+			  Select pagination_drpdown1 = new Select( driver.findElement(By.xpath(properties.getProperty("click_on_pagination1"))));
+				pagination_drpdown1.selectByValue("1: Object");
+				Thread.sleep(6000);
+				
+				JavascriptExecutor jse4 = (JavascriptExecutor) driver;
+				  jse4.executeScript("window.scrollTo(document.body.scrollHeight,0)");
+				  Thread.sleep(3000);
+				  
+				  driver.findElement(By.xpath(properties.getProperty("goto_home_page"))).click();
+				  Thread.sleep(9000);
+			  
+			  logger.info("Manage Deals completed");
+			  logger.info("Opportunities module completed");
+			
+		}
+		
+		 
 	}
 
 
