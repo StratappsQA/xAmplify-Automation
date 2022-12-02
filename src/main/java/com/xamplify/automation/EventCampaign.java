@@ -1,8 +1,8 @@
 package com.xamplify.automation;
 
+import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.Calendar;
-import java.util.Date;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
 
@@ -56,7 +56,7 @@ public class EventCampaign {
 
 		logger.info("Selected the Event campaign");
 		Thread.sleep(4000);
-
+		
 		driver.findElement(By.id(properties.getProperty("event_tittle")))
 				.sendKeys(properties.getProperty("eve_name") + "_" + System.currentTimeMillis());
 
