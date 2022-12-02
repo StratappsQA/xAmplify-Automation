@@ -121,7 +121,7 @@ public class RedistributeEventCampaign extends ExtentReport {
 		logger.info("Clicked on the send preview email option successfully");
 
 		WebElement sndata = driver.findElement(By.xpath(properties.getProperty("partneracc_m_eve_senddata")));
-		sndata.sendKeys("agayatri@stratapps.com");  //send data
+		sndata.sendKeys("agayatri@stratapps.com"); // send data
 		sndata.sendKeys(Keys.ENTER);
 
 		Thread.sleep(7000);
@@ -131,7 +131,8 @@ public class RedistributeEventCampaign extends ExtentReport {
 
 		Thread.sleep(4000);
 
-		driver.findElement(By.xpath(properties.getProperty("partneracc_m_eve_sendbutton"))).click(); //click on the send button
+		driver.findElement(By.xpath(properties.getProperty("partneracc_m_eve_sendbutton"))).click(); // click on the
+																										// send button
 		Thread.sleep(4000);
 
 		driver.findElement(By.xpath(properties.getProperty("partneracc_m_eve_closebutton"))).click();
