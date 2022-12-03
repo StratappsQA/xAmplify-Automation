@@ -19,13 +19,13 @@ public class VendorOpportunities extends ExtentReportsClass {
 	Properties properties = PropertiesFile.readPropertyFile(
 			"D:\\git\\xAmplifyproject\\xAmplify-Automation\\src\\main\\resources\\VendorOpportunities.properties");
 	final Logger logger = LogManager.getLogger(VendorOpportunities.class);
-	
-	@Test(priority = 1, enabled= true)
-	public void vendor_opportunities() throws InterruptedException{
-		
+
+	@Test(priority = 1, enabled = true)
+	public void vendor_opportunities_manage_leads() throws InterruptedException {
+
 		WebDriverWait vendor_opportunities_wait = new WebDriverWait(driver, 90);
-		WebElement Ven_Opportunities_module = vendor_opportunities_wait.until(
-				ExpectedConditions.visibilityOfElementLocated(By.xpath(properties.getProperty("hover_opportunities_module"))));
+		WebElement Ven_Opportunities_module = vendor_opportunities_wait.until(ExpectedConditions
+				.visibilityOfElementLocated(By.xpath(properties.getProperty("hover_opportunities_module"))));
 		Ven_Opportunities_module.click();
 
 		logger.info("Hovered on Opportunities module");
@@ -41,27 +41,28 @@ public class VendorOpportunities extends ExtentReportsClass {
 
 		Thread.sleep(6000);
 	}
-	
+
 	@Test(priority = 2, enabled = true)
 	public void manage_leads() throws InterruptedException {
-		
+
 		Thread.sleep(6000);
 
 		logger.info("click on search");
-		WebElement manage_leads_Seach = driver.findElement(By.xpath(properties.getProperty("click_manage_leads_search_box")));
+		WebElement manage_leads_Seach = driver
+				.findElement(By.xpath(properties.getProperty("click_manage_leads_search_box")));
 		manage_leads_Seach.sendKeys("mounika");
 		Thread.sleep(4000);
 		driver.findElement(By.xpath(properties.getProperty("click_manage_leads_search_icon"))).click();
 		Thread.sleep(3000);
 		driver.findElement(By.xpath(properties.getProperty("clear_search_lead_data"))).click();
 		Thread.sleep(3000);
-		
+
 		logger.info("click on View lead icon");
 		driver.findElement(By.xpath(properties.getProperty("click_manage_view_lead"))).click();
 		Thread.sleep(4000);
 		driver.findElement(By.xpath(properties.getProperty("close_manage_view_lead"))).click();
 		Thread.sleep(4000);
-		
+
 		logger.info("click on comments icon");
 		driver.findElement(By.xpath(properties.getProperty("click_ml_comments_icon"))).click();
 		Thread.sleep(4000);
@@ -71,23 +72,31 @@ public class VendorOpportunities extends ExtentReportsClass {
 		Thread.sleep(4000);
 		driver.findElement(By.xpath(properties.getProperty("close_ml_comment_section"))).click();
 		Thread.sleep(4000);
-		
+	}
+	
+	@Test(priority = 3, enabled = true)
+	public void maage_leads_campaignview() throws InterruptedException {
+
+		Thread.sleep(3000);
 		logger.info("click on Campaign_view");
 		driver.findElement(By.xpath(properties.getProperty("click_ml_campaign_view"))).click();
 		Thread.sleep(3000);
-		driver.findElement(By.xpath(properties.getProperty("click_ml_campaignview_Viewleads_for_this_campaign"))).click();
+		driver.findElement(By.xpath(properties.getProperty("click_ml_campaignview_Viewleads_for_this_campaign")))
+				.click();
 		Thread.sleep(4000);
-		driver.findElement(By.xpath(properties.getProperty("click_ml_campaign_view_search_partner"))).sendKeys("Automated");
+		driver.findElement(By.xpath(properties.getProperty("click_ml_campaign_view_search_partner")))
+				.sendKeys("Automated");
 		Thread.sleep(3000);
 		driver.findElement(By.xpath(properties.getProperty("click_ml_campaign_view_search_icon_partner"))).click();
 		Thread.sleep(3000);
-		driver.findElement(By.xpath(properties.getProperty("click_ml_campaign_view_search_partner_data_close"))).click();
+		driver.findElement(By.xpath(properties.getProperty("click_ml_campaign_view_search_partner_data_close")))
+				.click();
 		Thread.sleep(6000);
-		
+
 		JavascriptExecutor jse = (JavascriptExecutor) driver;
-		  jse.executeScript("window.scrollTo(document.body.scrollHeight,300)");
-		  Thread.sleep(5000);
-		
+		jse.executeScript("window.scrollTo(document.body.scrollHeight,300)");
+		Thread.sleep(5000);
+
 		logger.info("click on Number of leads icon");
 		driver.findElement(By.xpath(properties.getProperty("click_ml_number_of_leads_icon"))).click();
 		Thread.sleep(3000);
@@ -95,42 +104,96 @@ public class VendorOpportunities extends ExtentReportsClass {
 		Thread.sleep(3000);
 		driver.findElement(By.xpath(properties.getProperty("click_ml_campaignview_ViewLead_close"))).click();
 		Thread.sleep(3000);
-		
+
 		logger.info("click on comments icon");
 		driver.findElement(By.xpath(properties.getProperty("click_ml_campaignview_comments_icon"))).click();
 		Thread.sleep(3000);
-		driver.findElement(By.xpath(properties.getProperty("click_ml_campaignview_commentstextbox"))).sendKeys("Hello Lead");
+		driver.findElement(By.xpath(properties.getProperty("click_ml_campaignview_commentstextbox")))
+				.sendKeys("Hello Lead");
 		Thread.sleep(3000);
 		driver.findElement(By.xpath(properties.getProperty("click_ml_campaignview_comments_submit"))).click();
 		Thread.sleep(3000);
 		driver.findElement(By.xpath(properties.getProperty("click_ml_campaignview_comments_close"))).click();
 		Thread.sleep(3000);
-		
+
 		logger.info("click on filter in campaign view");
-		
-		WebElement Campaogn_view_filter = driver.findElement(By.xpath(properties.getProperty("click_ml_campaign_view_filter")));
+
+		WebElement Campaogn_view_filter = driver
+				.findElement(By.xpath(properties.getProperty("click_ml_campaign_view_filter")));
 		Campaogn_view_filter.click();
 		Thread.sleep(3000);
-		
-		
-		
+
 		logger.info("click on status dropdown");
-		
-		Select manage_leads_campaignview_status_drpdown = new Select(driver.findElement(By.xpath(properties.getProperty("click_manage_leads_campaignview_status_drpdown"))));
+
+		Select manage_leads_campaignview_status_drpdown = new Select(
+				driver.findElement(By.xpath(properties.getProperty("click_manage_leads_campaignview_status_drpdown"))));
 		manage_leads_campaignview_status_drpdown.selectByValue("Converted");
 		Thread.sleep(5000);
-		
+
 		driver.findElement(By.xpath(properties.getProperty("click_ml_campaignview_filterbutton"))).click();
 		Thread.sleep(5000);
+		driver.findElement(By.xpath(properties.getProperty("close_ml_campaignview_filter"))).click();
+		Thread.sleep(5000);
+
+		logger.info("Click on Download - Campaign view");
+		driver.findElement(By.xpath(properties.getProperty("click_ml_campaignview_download_leads"))).click();
+		Thread.sleep(5000);
+
+		driver.findElement(By.xpath(properties.getProperty("close_ml_campaignview"))).click();
+		Thread.sleep(5000);
+	}
+	
+	@Test(priority = 4, enabled = true)
+	public void manage_leads_filter_and_download_func() throws InterruptedException
+	{
 		
+		Thread.sleep(3000);
+		logger.info("Click on List view");
+		driver.findElement(By.xpath(properties.getProperty("click_ml_listview"))).click();
+		Thread.sleep(5000);
+
+		logger.info("click on manage leads filter button");
+		WebElement manage_leads_filtericon = driver.findElement(By.xpath(properties.getProperty("click_manageleads_filter_icon")));
+		manage_leads_filtericon.click();
+		Thread.sleep(4000);
 		
+		Select manageleads_status_drpdown = new Select(driver.findElement(By.xpath(properties.getProperty("click_manageleads_status_drpdown"))));
+		manageleads_status_drpdown.selectByValue("Converted");
+		Thread.sleep(3000);
 		
+		driver.findElement(By.xpath(properties.getProperty("click_manageleads_filter_button"))).click();
+		Thread.sleep(3000);
+		driver.findElement(By.xpath(properties.getProperty("close_manageleads_filter"))).click();
+		Thread.sleep(3000);
 		
+		logger.info("Click on Download Icon");
+		driver.findElement(By.xpath(properties.getProperty("click_manageleads_Download_icon"))).click();
+		Thread.sleep(3000);
+		
+		logger.info("Leads Downloaded Successfully");
 		
 	}
-
-		
-		
 	
+	@Test(priority = 5, enabled = true)
+	public void vendor_opportunities_manage_deals() throws InterruptedException {
+
+		WebDriverWait vendor_opportunities_wait = new WebDriverWait(driver, 50);
+		WebElement Ven_Opportunities_module1 = vendor_opportunities_wait.until(ExpectedConditions
+				.visibilityOfElementLocated(By.xpath(properties.getProperty("hover_opportunities_module1"))));
+		Ven_Opportunities_module1.click();
+
+		logger.info("Hovered on Opportunities module");
+		Thread.sleep(3000);
+
+		Actions opp_action = new Actions(driver);
+		opp_action.moveToElement(Ven_Opportunities_module1).perform();
+		Thread.sleep(3000);
+
+		logger.info("Click on Manage Deals");
+		WebElement manage_leads = driver.findElement(By.xpath(properties.getProperty("click_vendor_manage_deals")));
+		manage_leads.click();
+
+		Thread.sleep(6000);
+	}
 
 }
