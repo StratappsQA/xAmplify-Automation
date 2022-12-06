@@ -21,22 +21,24 @@ public class RandomEmailGeneration {
 		headers.add("Last Name");
 
 		//generating random email ids , first name and last names
-		String generatemail=RandomStringUtils.randomAlphabetic(7);
+		String generatemail=RandomStringUtils.randomAlphabetic(6);
 		String emailid=generatemail+"@gmail.com";	 
-		String generatemail2=RandomStringUtils.randomAlphabetic(7);
+		String generatemail2=RandomStringUtils.randomAlphabetic(6);
 		String emailid2=generatemail2+"@gmail.com";   
 		System.out.println("email id1 is:" +emailid);
 		System.out.println("email id2 is:" +emailid);
+		
 		String generatefname1=RandomStringUtils.randomAlphabetic(3);
-		String fname1=generatefname1+"_Fname";
+		String fname1=generatefname1+"_autoFN";
 		String generatefname2=RandomStringUtils.randomAlphabetic(3);
-		String fname2=generatefname2+"_Fname";
+		String fname2=generatefname2+"__autoFN";
 		System.out.println("firstname1 is:" +fname1);
 		System.out.println("firstname2 is:" +fname2);
+		
 		String generatelname1=RandomStringUtils.randomAlphabetic(3);
-		String lname1=generatelname1+"_Lname";
+		String lname1=generatelname1+"_autoLN";
 		String generatelname2=RandomStringUtils.randomAlphabetic(3);
-		String lname2=generatelname2+"_Lname";
+		String lname2=generatelname2+"_autoLN";
 		System.out.println("lastname1 is:" +lname1);
 		System.out.println("lastname2 is:" +lname2);
 
