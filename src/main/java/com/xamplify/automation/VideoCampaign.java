@@ -101,14 +101,7 @@ logger.info("Click on create Campaign");																										// campaign
 		Thread.sleep(2000);
 		driver.findElement(By.xpath(properties.getProperty("vnotifyme_video"))).click();// notify video is played
 		Thread.sleep(2000);
-		/*
-		 * driver.findElement(By.xpath(properties.getProperty("vpushleads2marketo"))).
-		 * click();//push to marketo toggle on Thread.sleep(5000);
-		 * driver.findElement(By.xpath(properties.getProperty("marketovideo"))).click();
-		 * //select marketo check box
-		 * driver.findElement(By.xpath(properties.getProperty("hubspotvideo"))).click();
-		 * //select hub spot check box Thread.sleep(3000);
-		 */
+		
 
 		WebDriverWait waitv2 = new WebDriverWait(driver, 30);// Wait till the element is not visible
 
@@ -116,54 +109,14 @@ logger.info("Click on create Campaign");																										// campaign
 				.visibilityOfElementLocated(By.xpath(properties.getProperty("vcampaign_next_button1"))));
 		wvnext1.click();
 logger.info("Given the data in Campaign details page");
-		/*
-		 * for (int i = 0; i <= 8; i++) {
-		 * driver.findElement(By.xpath(properties.getProperty("v_pagenation_nxt"))).
-		 * click();
-		 * 
-		 * Thread.sleep(5000); }
-		 */
-
-		/*
-		 * JavascriptExecutor js = (JavascriptExecutor) driver;
-		 * js.executeScript("window.scrollTo(0,document.body.scrollHeight)");
-		 * Thread.sleep(5000);
-		 * 
-		 * WebElement eg1 =
-		 * driver.findElement(By.xpath(properties.getProperty("vpagintionlist")));
-		 * List<WebElement> links1 = eg1.findElements(By.tagName("li")); for (int j = 1;
-		 * j <= links1.size()-5; j++) { System.out.println(j);
-		 * System.out.println(links1.size());
-		 * System.out.println(links1.get(j).getText());
-		 * 
-		 * 
-		 * WebElement
-		 * c2=driver.findElement(By.xpath(properties.getProperty("v_pagenation_nxt")));
-		 * Thread.sleep(10000); c2.click(); Thread.sleep(9000); System.out.println(j
-		 * +"clicked");
-		 * 
-		 * 
-		 * }
-		 * 
-		 */
+		
 
 		Thread.sleep(7000);
 
 		driver.findElement(By.xpath(properties.getProperty("goto_top"))).click();// go to top arrow
 		Thread.sleep(5000);
 		
-		/*
-		         * JavascriptExecutor js = (JavascriptExecutor) driver;
-		         * js.executeScript("window.scrollTo(document.body.scrollHeight,600)");
-		         * Thread.sleep(7000);
-
-
-
-		/*
-		 * JavascriptExecutor js = (JavascriptExecutor) driver;
-		 * js.executeScript("window.scrollTo(document.body.scrollHeight,500)");
-		 * Thread.sleep(3000);
-		 */
+		
 		driver.findElement(By.xpath(properties.getProperty("v_search_video"))).sendKeys("po3412CHANDRAYAAN2TEASE");// enter
 																													// data
 																													// in
@@ -238,14 +191,7 @@ logger.info("Selected the Video");
 		driver.findElement(By.xpath(properties.getProperty("select_next3"))).click();// click next
 		Thread.sleep(5000);
 logger.info("Selected the Partnerlist");
-		/*
-		 * driver.findElement(By.xpath(properties.getProperty("clck_tmplt2"))).click();
-		 * Thread.sleep(7000);
-		 * driver.findElement(By.xpath(properties.getProperty("clck_tmplt3"))).click();
-		 * Thread.sleep(5000);
-		 * driver.findElement(By.xpath(properties.getProperty("clck_tmplt4"))).click();
-		 * Thread.sleep(5000);
-		 */
+		
 
 		WebElement v7 = driver.findElement(By.xpath(properties.getProperty("search_template")));
 		v7.sendKeys("cobranding");// send data through search bar in template
