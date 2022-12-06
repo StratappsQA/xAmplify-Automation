@@ -110,19 +110,8 @@ public class VideoToCampaign extends ExtentReportsClass{
 		driver.findElement(By.xpath(properties.getProperty("goto_top"))).click();// go to top arrow
 		Thread.sleep(3000);
 
-		/*
-		 *          * JavascriptExecutor js = (JavascriptExecutor) driver;          *
-		 * js.executeScript("window.scrollTo(document.body.scrollHeight,600)");        
-		 *  * Thread.sleep(7000);
-		 * 
-		 * 
-		 * 
-		 * /* JavascriptExecutor js = (JavascriptExecutor) driver;
-		 * js.executeScript("window.scrollTo(document.body.scrollHeight,500)");
-		 * Thread.sleep(3000);
-		 */
-		driver.findElement(By.xpath(properties.getProperty("v_to_search_video"))).sendKeys("po3412CHANDRAYAAN2TEASE");// enter
-																													// data
+		
+		driver.findElement(By.xpath(properties.getProperty("v_to_search_video"))).sendKeys("po3412CHANDRAYAAN2TEASE");// enter 																													// data
 																													// in
 																													// the
 																													// search
@@ -193,14 +182,7 @@ public class VideoToCampaign extends ExtentReportsClass{
 		driver.findElement(By.xpath(properties.getProperty("v_to_camp_select_next3"))).click();// click next
 		Thread.sleep(5000);
 		logger.info("Selected the Partnerlist");
-		/*
-		 * driver.findElement(By.xpath(properties.getProperty("clck_tmplt2"))).click();
-		 * Thread.sleep(7000);
-		 * driver.findElement(By.xpath(properties.getProperty("clck_tmplt3"))).click();
-		 * Thread.sleep(5000);
-		 * driver.findElement(By.xpath(properties.getProperty("clck_tmplt4"))).click();
-		 * Thread.sleep(5000);
-		 */
+		
 
 		WebElement v_to_1 = driver.findElement(By.xpath(properties.getProperty("v_to_camp_search_template")));
 		v_to_1.sendKeys("video");// send data through search bar in template
