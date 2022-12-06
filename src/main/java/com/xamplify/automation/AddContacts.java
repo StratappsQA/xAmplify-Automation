@@ -3,6 +3,8 @@ import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
 import java.util.Properties;
+import java.util.Random;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
@@ -59,8 +61,20 @@ public class AddContacts extends ExtentReportsClass{
 			driver.findElement(By.xpath(properties.getProperty("c_oneatatimelist"))).click(); //one at a time click
 			Thread.sleep(5000);
 		
-			driver.findElement(By.xpath(properties.getProperty("c_oat_emailfield"))).sendKeys("Testcontact@analytify.com");
+		WebElement emailText=driver.findElement(By.xpath(properties.getProperty("c_oat_emailfield")));
+		//.sendKeys("Testcontact@analytify.com");
+			
+			
+			Random randomGenerator = new Random();  
+			int randomInt = randomGenerator.nextInt(1000);  
+			emailText.sendKeys("gayatri"+ randomInt +"@gmail.com");	
 			Thread.sleep(3000);
+			
+			
+			
+			
+			
+			
 
 			driver.findElement(By.id("firstName")).sendKeys("automate_fname");
 			Thread.sleep(3000);
