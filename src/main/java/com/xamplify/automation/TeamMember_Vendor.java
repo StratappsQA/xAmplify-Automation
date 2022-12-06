@@ -1,6 +1,7 @@
 package com.xamplify.automation;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import java.io.IOException;
@@ -28,7 +29,7 @@ public class TeamMember_Vendor extends RandomEmailGeneration {
 	final Logger logger = LogManager.getLogger(TeamMember_Vendor.class);
 
 
-	@Test (priority=1,enabled=true)
+	@Test (priority=1,enabled=false)
 	public void add_teammember_vendor() throws InterruptedException, SQLException
 	{
 		Thread.sleep(7000);
@@ -86,17 +87,18 @@ public class TeamMember_Vendor extends RandomEmailGeneration {
 		if(expectedresult_tm.equals(actualresult_tm))
 		{
 			System.out.println("Team member is created");
+			logger.info("Team member has been created through Add button option-vendor");
+
 		}
 		else
 		{
 			System.out.println("Team member creation is failed");
 		}
-		logger.info("Team member has been created through Add button option-vendor");
 		Thread.sleep(3000);
 	}
 
 
-	@Test (priority=2,enabled=true)
+	@Test (priority=2,enabled=false)
 	public void edit_teammember_vendor() throws InterruptedException
 	{
 		Thread.sleep(7000);
@@ -125,16 +127,17 @@ public class TeamMember_Vendor extends RandomEmailGeneration {
 		if(expectedresult_tm.equals(actualresult_tm))
 		{
 			System.out.println("Team member is updated");
+			logger.info("Team member has been updated successfully-vendor");
+
 		}
 		else
 		{
 			System.out.println("Team member updation is failed");
 		}
-		logger.info("Team member has been updated successfully-vendor");
 		Thread.sleep(3000);
 	}
 
-	@Test (priority=3,enabled=true)
+	@Test (priority=3,enabled=false)
 	public void send_invitation_teammember_vendor() throws InterruptedException
 	{
 		Thread.sleep(7000);
@@ -155,17 +158,18 @@ public class TeamMember_Vendor extends RandomEmailGeneration {
 		if(expectedresult_tm.equals(actualresult_tm))
 		{
 			System.out.println("Invitation is sent to email");
+			logger.info("Invitaion has been sent to team member successfully-vendor");
+
 		}
 		else
 		{
 			System.out.println("Invitation sent is failed");
 		}
-		logger.info("Invitaion has been sent to team member successfully-vendor");
 
 		Thread.sleep(3000);	
 	}
 
-	@Test (priority=4,enabled=true)
+	@Test (priority=4,enabled=false)
 	public void delete_teammember_vendor() throws InterruptedException
 	{
 		Thread.sleep(7000);
@@ -184,14 +188,15 @@ public class TeamMember_Vendor extends RandomEmailGeneration {
 		String actualresult1 = driver.findElement(By.xpath(properties.getProperty("Success_message_grid_TM"))).getText();			
 		if(actualresult1.contains("deleted successfully."))
 		{
-			System.out.println("Team member is deleted");		
+			System.out.println("Team member is deleted");	
+			logger.info("Team member has been deleted successfully-vendor");	
+
 		}
 		else
 		{
 			System.out.println("team member is not deleted");
 
 		}	
-		logger.info("Team member has been deleted successfully-vendor");	
 	}
 
 
@@ -248,12 +253,12 @@ public class TeamMember_Vendor extends RandomEmailGeneration {
 		if(expectedresult_tm.equals(actualresult_tm))
 		{
 			System.out.println("Team members are created");
+			logger.info("Team members have been created through upload CSV option-vendor");
 		}
 		else
 		{
 			System.out.println("Team members creation is failed");
 		}
-		logger.info("Team members have been created through upload CSV option-vendor");
 		Thread.sleep(3000);
 	}
 
@@ -261,7 +266,7 @@ public class TeamMember_Vendor extends RandomEmailGeneration {
 
 
 
-	@Test (priority=6,enabled=true)
+	@Test (priority=6,enabled=false)
 	public void view_avabliablemodules_vendor() throws InterruptedException
 	{
 		Thread.sleep(7000);
@@ -277,7 +282,7 @@ public class TeamMember_Vendor extends RandomEmailGeneration {
 		driver.findElement(By.xpath(properties.getProperty("close_button_modules"))).click(); //click on close button
 		Thread.sleep(7000);
 		logger.info("close button has been clicked");
-		
+
 		//view avaliable modules of sales account manager
 		driver.findElement(By.xpath(properties.getProperty("Search_field_TM"))).clear();
 		driver.findElement(By.xpath(properties.getProperty("Search_field_TM"))).sendKeys("Sales"); //search with Sales
@@ -294,7 +299,10 @@ public class TeamMember_Vendor extends RandomEmailGeneration {
 
 
 
-	}
+	} 
+
+
+
 
 
 }

@@ -85,12 +85,13 @@ public class TeamMember_Partner {
 		if(expectedresult_tm.equals(actualresult_tm))
 		{
 			System.out.println("Team member is created");
+			logger.info("Team member has been created through Add button option-partner");
+
 		}
 		else
 		{
 			System.out.println("Team member creation is failed");
 		}
-		logger.info("Team member has been created through Add button option-partner");
 		Thread.sleep(3000);			
 	}
 
@@ -123,12 +124,13 @@ public class TeamMember_Partner {
 		if(expectedresult_tm.equals(actualresult_tm))
 		{
 			System.out.println("Team member is updated");
+			logger.info("Team member has been updated successfully-partner");
+
 		}
 		else
 		{
 			System.out.println("Team member updation is failed");
 		}
-		logger.info("Team member has been updated successfully-partner");
 		Thread.sleep(3000);		
 	}
 
@@ -154,12 +156,13 @@ public class TeamMember_Partner {
 		if(expectedresult_tm.equals(actualresult_tm))
 		{
 			System.out.println("Invitation is sent to email");
+			logger.info("Invitaion has been sent to team member successfully-partner");
+
 		}
 		else
 		{
 			System.out.println("Invitation sent is failed");
 		}
-		logger.info("Invitaion has been sent to team member successfully-partner");
 
 		Thread.sleep(3000);	
 	}
@@ -184,14 +187,15 @@ public class TeamMember_Partner {
 	
 		if(actualresult1.contains("deleted successfully."))
 		{
-			System.out.println("Team member is deleted");		
+			System.out.println("Team member is deleted");
+			logger.info("Team member has been deleted successfully-partner");	
+
 		}
 		else
 		{
 			System.out.println("team member is not deleted");
 
 		}	
-		logger.info("Team member has been deleted successfully-partner");	
 
 	}
 
@@ -249,12 +253,13 @@ public class TeamMember_Partner {
 		if(expectedresult_tm.equals(actualresult_tm))
 		{
 			System.out.println("Team members are created");
+			logger.info("Team members have been created through upload CSV option-partner");
+
 		}
 		else
 		{
 			System.out.println("Team members creation is failed");
 		}
-		logger.info("Team members have been created through upload CSV option-partner");
 		Thread.sleep(3000);
 	}
 
@@ -283,7 +288,13 @@ public class TeamMember_Partner {
 		driver.findElement(By.xpath(properties.getProperty("Search_field_TM"))).clear();
 
 
-	}
+	} 
+	
+	
+	
+	
+	
+	
 
 
 }
