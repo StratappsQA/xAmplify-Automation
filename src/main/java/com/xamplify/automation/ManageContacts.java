@@ -1,6 +1,8 @@
 package com.xamplify.automation;
 
+import java.io.FileWriter;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
 import java.util.Random;
@@ -232,13 +234,7 @@ DatabaseQueries mcon_all_data= new DatabaseQueries();
 		mc_all_actions1.build().perform();
 		Thread.sleep(1000);
 
-				
-
-
-
-
-
-
+			
 
 driver.findElement(By.xpath(properties.getProperty("mc_alltile_filter_savechanges"))).click(); // click on saveas button
 Thread.sleep(5000);
@@ -248,31 +244,6 @@ Thread.sleep(5000);
 
 logger.info("List Saved successfully for filter option within the ALL Tile[Manage Contacts]");
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-		
 
 driver.findElement(By.xpath(properties.getProperty("mc_validtile"))).click(); // 
 Thread.sleep(8000);
@@ -322,7 +293,7 @@ Thread.sleep(5000);
 
 
 driver.findElement(By.xpath(properties.getProperty("mc_validtile_filter_clear"))).click(); // click on saveas button
-Thread.sleep(9000);
+Thread.sleep(11000);
 
 
 logger.info("Filter option filtered and cleared within the Valid Tile[Manage Contacts]");
@@ -364,19 +335,303 @@ Thread.sleep(2000);
 validsort.selectByValue("5: Object");
 Thread.sleep(2000);
 validsort.selectByValue("6: Object");
-Thread.sleep(2000);
 
+
+
+logger.info("Sortby functionality done successfully within the Valid Tile[Manage Contacts]");
+	
+	
+Thread.sleep(8000);
+
+
+WebElement undeliverabletile=driver.findElement(By.xpath(properties.getProperty("mc_undeliverabletile")));
+Thread.sleep(5000);
 
 	
+if(undeliverabletile.isEnabled()) {
+	
+	undeliverabletile.click();
+	
+	WebElement undeliverabletilesort=driver.findElement(By.xpath(properties.getProperty("mc_undeliverabletile_sortby")));
+	Select undeliverable=new Select(undeliverabletilesort);
+	undeliverable.selectByValue("0: Object");
+	Thread.sleep(5000);
+	undeliverable.selectByValue("1: Object");
+	Thread.sleep(5000);
+	undeliverable.selectByValue("2: Object");
+	Thread.sleep(5000);
+	undeliverable.selectByValue("3: Object");
+	Thread.sleep(5000);
+	undeliverable.selectByValue("4: Object");
+	Thread.sleep(5000);
+	undeliverable.selectByValue("5: Object");
+	Thread.sleep(5000);
+	undeliverable.selectByValue("6: Object");
+	Thread.sleep(5000);
+	
+
+	
+}
+else {
+	logger.info("Unable to click on undeliverable tile due to count '0'[Manage Contacts]");
+
+}
+
+	
+	
+	WebElement unsubscribetile=driver.findElement(By.xpath(properties.getProperty("mc_unsubscribetile")));
+	Thread.sleep(5000);
+
+		
+	if(unsubscribetile.isEnabled()) {
+		
+		unsubscribetile.click();
+		
+	
+	
+
+	}
+	
+	else {
+		logger.info("Unable to click on unsubscribe tile due to count '0'[Manage Contacts]");
+
+	}
+	
+	driver.get("https://xamplify.co/home/contacts/manage");
+	
+	
+	}
+	
+	
+	@Test(priority = 3, enabled = true)
+	public void managecontacts_edit_add() throws InterruptedException {
+
+	
+
+		
+		Thread.sleep(4000);
+
+		driver.findElement(By.xpath(properties.getProperty("mcon_editicon"))).click(); // click on the edit icon
+		Thread.sleep(3000);
+
+		driver.findElement(By.xpath(properties.getProperty("mcon_editicon_addcon"))).click(); // click on the one at a
+																								// time
+		Thread.sleep(3000);
+
+		WebElement mcon_oat = driver.findElement(By.id("email1"));
+
+		Random randomGenerator = new Random();
+		int randomInt = randomGenerator.nextInt(1000);
+		mcon_oat.sendKeys("gayatri_Automate" + randomInt + "@gmail.com");
+		Thread.sleep(3000);
+
+		driver.findElement(By.id("firstName")).sendKeys("automate_fname");
+		Thread.sleep(3000);
+
+		driver.findElement(By.id("lastName")).sendKeys("automate_lname");
+		Thread.sleep(3000);
+
+		driver.findElement(By.id("company")).sendKeys("automate_company");
+		Thread.sleep(4000);
+
+		WebElement mc_ele_legal = driver.findElement(By.xpath(properties.getProperty("mcon_editicon_legalbasis")));// click
+																												// legal
+		// basis field
+		// to get the
+		// list
+
+		Actions mc_actions1 = new Actions(driver);
+		mc_actions1.moveToElement(mc_ele_legal);
+		mc_actions1.click();
+
+		mc_actions1.sendKeys("Legitimate interest - prospect/lead");
+		mc_actions1.sendKeys(Keys.ENTER);
+		mc_actions1.build().perform();
+		Thread.sleep(1000);
+
+		mc_actions1.sendKeys("Legitimate interest - existing customer");
+		mc_actions1.sendKeys(Keys.ENTER);
+		mc_actions1.build().perform();
+		Thread.sleep(1000);
+		mc_actions1.sendKeys("Legitimate interest - other");
+		
+		Thread.sleep(1000);
+		driver.findElement(By.id("title")).sendKeys("automate_title");
+		  
+		  Thread.sleep(2000);
+		
+		driver.findElement(By.xpath(properties.getProperty("mcon_editicon_submit"))).click(); // click on the edit icon
+		Thread.sleep(3000);
+
+
+		driver.findElement(By.xpath(properties.getProperty("mcon_editicon_accept"))).click(); // click on the edit icon
+		Thread.sleep(3000);
+
+	
+		logger.info("Contact Added Successfully through 'ONE AT A TIME' within the Edit icon[Manage Contacts]");
+
 	}
 	
 	
 	
 	
 	
-	
-	
-	
-	
 
-}
+	@Test(priority = 4, enabled = true)
+	public void managecontacts_edit_filter_save() throws InterruptedException, SQLException {
+
+			driver.findElement(By.xpath(properties.getProperty("mcon_editicon"))).click(); // click on the edit icon
+			Thread.sleep(3000);
+
+		
+		
+			driver.findElement(By.xpath(properties.getProperty("mcon_editicon_filter"))).click(); // click on t
+			Thread.sleep(3000);
+
+			
+			
+
+		WebElement condrop=	driver.findElement(By.xpath(properties.getProperty("mcon_editicon_filter_selectfield")));
+			 // click on t
+			Thread.sleep(3000);
+
+			
+			
+			
+			Select field=new Select(condrop);
+			field.selectByVisibleText("Email Id");
+			Thread.sleep(3000);
+			
+			
+			
+			
+			WebElement condrop2=driver.findElement(By.xpath(properties.getProperty("mcon_editicon_filter_selectcondition")));
+			
+			Thread.sleep(3000);
+
+			
+			
+			
+			Select field2=new Select(condrop2);
+			field2.selectByVisibleText("Contains");
+			Thread.sleep(3000);
+			
+			  
+			driver.findElement(By.xpath(properties.getProperty("mcon_editicon_filter_sendvalue"))).sendKeys("gayatri"); // click on the edit icon
+			Thread.sleep(3000);
+
+			
+			
+			driver.findElement(By.xpath(properties.getProperty("mcon_editicon_filter_submit"))).click(); // click on saveas button
+			Thread.sleep(5000);
+
+			
+			logger.info("Data Filtered successfully within the Edit icon[Manage Contacts]");
+
+			
+
+		driver.findElement(By.name("campaignContact[]")).click(); // select contact checkbox
+		driver.findElement(By.xpath(properties.getProperty("mcon_edit_saveclick"))).click(); // click on saveas button
+		Thread.sleep(5000);
+
+		
+		  DatabaseQueries mcon_data= new DatabaseQueries();
+			String mcon_query = properties.getProperty("query.getcontactlistnames");
+			List<String> contactNames = mcon_data.listNames(mcon_query, "user_list_name");
+			String contactNameFromProp = properties.getProperty("mcon_savelist_validation").toLowerCase();
+
+			
+			
+			if (contactNames.indexOf(contactNameFromProp) > -1) {
+				driver.findElement(By.xpath(properties.getProperty("mcon_savelist_validation"))).clear();
+				
+			}
+				
+				driver.findElement(By.xpath(properties.getProperty("mcon_savelist_validation")))
+						.sendKeys(properties.getProperty("mcon_savelist_validation_text")+"_"+System.currentTimeMillis());
+				Thread.sleep(3000);
+			
+		
+		
+		
+		
+		WebElement mcon_legal = driver.findElement(By.xpath(properties.getProperty("mcon_editicon_legalbasis")));// click
+																											// legal
+		// basis field
+		// to get the
+		// list
+
+		Actions actions4 = new Actions(driver);
+		actions4.moveToElement(mcon_legal);
+		actions4.click();
+
+		actions4.sendKeys("Legitimate interest - existing customer");
+		actions4.sendKeys(Keys.ENTER);
+		actions4.build().perform();
+		
+		
+		
+		
+		driver.findElement(By.xpath(properties.getProperty("mcon_edit_toggleon"))).click(); // click on the save
+		// button
+Thread.sleep(5000);
+		
+
+		driver.findElement(By.xpath(properties.getProperty("mcon_edit_savechanges"))).click(); // click on the save
+																								// button
+		Thread.sleep(5000);
+		driver.findElement(By.xpath(properties.getProperty("mcon_copy&saveicon"))).click(); // click on the copy and
+																							// save icon
+		Thread.sleep(5000);
+		driver.findElement(By.xpath(properties.getProperty("mcon_copysave_saveas_click"))).click(); // click on
+																									// savechanges
+																									// button
+		Thread.sleep(5000);
+
+		driver.findElement(By.xpath(properties.getProperty("mcon_downloadicon"))).click(); // click on the download icon
+		Thread.sleep(5000);
+
+		logger.info("Downloaded successfully");
+
+		driver.findElement(By.xpath(properties.getProperty("mcon_deleteicon"))).click(); // click on the delete icon
+		Thread.sleep(5000);
+
+		driver.findElement(By.xpath(properties.getProperty("mcon_yesdeleteicon"))).click(); // click on the yes delete
+																							// button
+		Thread.sleep(5000);
+
+		String del_contact = driver.findElement(By.id("responseMessage")).getText();
+		// System.out.println(del_contact);
+
+		Assert.assertEquals(del_contact, "Your contact list has been deleted successfully.");
+
+		logger.info("Contact List Deleted successfully");
+
+	}
+
+
+
+
+
+
+
+
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+}	
