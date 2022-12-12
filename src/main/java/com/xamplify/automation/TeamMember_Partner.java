@@ -118,7 +118,7 @@ public class TeamMember_Partner {
 		driver.findElement(By.xpath(properties.getProperty("Save_button_TM"))).click(); //click on update button 
 		Thread.sleep(7000);
 		logger.info("update button has been clicked");
-		
+
 		String actualresult_tm = driver.findElement(By.xpath(properties.getProperty("Success_message_grid_TM"))).getText();	
 		String expectedresult_tm = "Team member details updated succesfully.";
 		if(expectedresult_tm.equals(actualresult_tm))
@@ -149,7 +149,7 @@ public class TeamMember_Partner {
 		driver.findElement(By.xpath(properties.getProperty("yes_popup_TM"))).click(); //click on yes on popup 
 		Thread.sleep(6000);
 		logger.info("email icon has been clicked");
-		
+
 		String actualresult_tm = driver.findElement(By.xpath(properties.getProperty("Success_message_grid_TM"))).getText();	
 		Thread.sleep(3000);
 		String expectedresult_tm = "Invitation sent successfully.";
@@ -184,7 +184,7 @@ public class TeamMember_Partner {
 		Thread.sleep(5000);
 		logger.info("cliked on yes in pop up");	
 		String actualresult1 = driver.findElement(By.xpath(properties.getProperty("Success_message_grid_TM"))).getText();	
-	
+
 		if(actualresult1.contains("deleted successfully."))
 		{
 			System.out.println("Team member is deleted");
@@ -217,7 +217,7 @@ public class TeamMember_Partner {
 		WebElement uploadcsv=driver.findElement(By.xpath(properties.getProperty("upload_CSV_TM"))); //click on upload csv button
 		Thread.sleep(6000);
 		logger.info("clicked on upload button");
-		uploadcsv.sendKeys("D:\\git\\Teammember_CSV.csv");			
+		uploadcsv.sendKeys("D:\\Selenium\\files\\Teammember_CSV.csv");			
 		Thread.sleep(5000);
 
 		String actualresult = driver.findElement(By.xpath(properties.getProperty("Success_message_grid_TM_CSV"))).getText();	
@@ -245,8 +245,8 @@ public class TeamMember_Partner {
 		logger.info("selected 'Partner Account Manager' group from  the dropdown-while uploading CSV");
 		driver.findElement(By.xpath(properties.getProperty("Save_button_TM"))).click(); //click on save button 
 		Thread.sleep(6000);
-		
-		
+
+
 		String actualresult_tm=driver.findElement(By.xpath(properties.getProperty("Success_message_grid_TM"))).getText();
 		Thread.sleep(3000);
 		String expectedresult_tm = "Team Members added successfully.";				
@@ -273,7 +273,7 @@ public class TeamMember_Partner {
 		Thread.sleep(7000);
 		driver.findElement(By.xpath(properties.getProperty("Team_leftmenu"))).click(); //click on Team left menu
 		Thread.sleep(7000);
-		
+
 		//view avaliable modules of partner account manager
 		driver.findElement(By.xpath(properties.getProperty("Search_field_TM"))).sendKeys("Partner"); //search with partner
 		Thread.sleep(7000);
@@ -289,12 +289,7 @@ public class TeamMember_Partner {
 
 
 	} 
-	
-	
-	
-	
-	
-	
+
 
 
 }

@@ -49,7 +49,7 @@ public class RandomEmailGeneration {
 		ProductModel row2 = new ProductModel(emailid2,fname2,lname2); //for second row 
 		products.add(row2);
 
-		File file = new File("D:\\git\\Teammember_CSV.csv");  //In which location csv file need to be saved
+		File file = new File("D:\\Selenium\\files\\Teammember_CSV.csv");  //In which location csv file need to be saved
 		try (PrintWriter writer = new PrintWriter(file))
 		{
 			//write header
@@ -66,7 +66,7 @@ public class RandomEmailGeneration {
 
 	}
 
-	//to display headers in separate columns
+    //to display headers in separate columns
 	private static String writeHeader(List<String> headers) {
 		StringBuilder result = new StringBuilder();
 		headers.stream().forEach(item->result.append(item).append(DELIMITER));
