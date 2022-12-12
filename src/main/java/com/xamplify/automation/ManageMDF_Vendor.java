@@ -35,7 +35,7 @@ public class ManageMDF_Vendor {
 		Thread.sleep(5000);
 		driver.findElement(By.xpath(properties.getProperty("edit_icon_MDF"))).click(); //click on edit icon against to automatedpartner to add mdf amount
 		Thread.sleep(5000);
-		driver.findElement(By.xpath(properties.getProperty("enteramount_MDF"))).sendKeys("1000"); //enter 100 in enter amount field
+		driver.findElement(By.xpath(properties.getProperty("enteramount_MDF"))).sendKeys("10000"); //enter 100 in enter amount field
 		Thread.sleep(7000);	
 		driver.findElement(By.xpath(properties.getProperty("description_MDF"))).sendKeys("Adding mdf funds"); //enter description
 		Thread.sleep(7000);
@@ -55,7 +55,7 @@ public class ManageMDF_Vendor {
 		Thread.sleep(6000);
 		dropdown_mdf.selectByVisibleText("Remove Funds");  //selecting remove funds from the dropdown
 		Thread.sleep(6000);
-		driver.findElement(By.xpath(properties.getProperty("enteramount_MDF"))).sendKeys("100"); //enter 100 in enter amount field
+		driver.findElement(By.xpath(properties.getProperty("enteramount_MDF"))).sendKeys("8000"); //enter 80 in enter amount field
 		Thread.sleep(7000);	
 		driver.findElement(By.xpath(properties.getProperty("description_MDF"))).sendKeys("Removing mdf funds"); //enter description
 		Thread.sleep(7000);

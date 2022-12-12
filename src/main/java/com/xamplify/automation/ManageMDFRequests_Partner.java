@@ -19,7 +19,7 @@ public class ManageMDFRequests_Partner {
 
 	Properties properties = PropertiesFile.readPropertyFile("D:\\git\\MDF-xAmplify\\src\\main\\resources\\MDF.properties");
 
-	final Logger logger = LogManager.getLogger(ManageMDF_Vendor.class);
+	final Logger logger = LogManager.getLogger(ManageMDFRequests_Partner.class);
 
 	@Test (priority=1,enabled=true)
 	public void add_request_partner() throws InterruptedException
@@ -35,6 +35,7 @@ public class ManageMDFRequests_Partner {
 		driver.findElement(By.xpath(properties.getProperty("Search_icon_MDF"))).click(); //click on search icon
 		Thread.sleep(5000);
 		System.out.println("searched with automated vendor");
+		
 		//add request to partner
 		driver.findElement(By.xpath(properties.getProperty("add_request_MDF"))).click(); //click on add request icon
 		Thread.sleep(5000); 
@@ -144,7 +145,7 @@ public class ManageMDFRequests_Partner {
 		Thread.sleep(4000);
 		logger.info("page moved to upload document grid and clicked on upload button");	
 		WebElement document=driver.findElement(By.xpath(properties.getProperty("choosefile_icon_mdf"))); //click on choose file icon
-		document.sendKeys("D:\\git\\MDF_Document.csv"); // windows file upload with file path
+		document.sendKeys("D:\\Selenium\\files\\MDF_Document.csv"); // windows file upload with file path
 		driver.findElement(By.xpath(properties.getProperty("description_document"))).sendKeys("Description"); //enter description to document
 		Thread.sleep(4000);
 		driver.findElement(By.xpath(properties.getProperty("afteruploaddocument_button"))).click(); //click on upload button after file has been selected
