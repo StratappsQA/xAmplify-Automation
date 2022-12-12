@@ -446,11 +446,12 @@ public class AddContacts extends ExtentReportsClass{
 				
 				Thread.sleep(1000);
 				logger.info("Contact Added Successfully through 'COPY LIST FROM CLIPBOARD, TABSEPARATED'");
+			
 		 }
 		
 		
-		//@Test(priority =3, enabled = false)
-		@Test(dependsOnMethods = { "copyclipboard_tab_contacts" })
+		@Test(priority =3, enabled = true)
+		//@Test(dependsOnMethods = { "copyclipboard_tab_contacts" })
 		
 		public void uploadcsvcontacts() throws InterruptedException, IOException, SQLException {
 			Thread.sleep(5000);
