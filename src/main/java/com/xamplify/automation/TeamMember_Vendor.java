@@ -137,7 +137,7 @@ public class TeamMember_Vendor extends RandomEmailGeneration {
 		Thread.sleep(3000);
 	}
 
-	@Test (priority=3,enabled=false)
+	@Test (priority=3,enabled=true)
 	public void send_invitation_teammember_vendor() throws InterruptedException
 	{
 		Thread.sleep(7000);
