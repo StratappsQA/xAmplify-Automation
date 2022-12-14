@@ -31,6 +31,7 @@ public class UploadAssetFile {
 	final Logger logger = LogManager.getLogger(UploadAssetFile.class);
 
 
+	//In this class file we have all types of asset files (except video asset files)
 	//uploading png file asset 
 	@Test (priority = 0,enabled=true)
 	public void uploadasset_png() throws InterruptedException, IOException, AWTException {	
@@ -114,7 +115,7 @@ public class UploadAssetFile {
 			logger.info("Asset file(png) is not uploaded");
 		}
 		Thread.sleep(3000);                        
-		driver.findElement(By.xpath(properties.getProperty("Refresh"))).click(); //click on refresh icon file has been saved		
+		driver.findElement(By.xpath(properties.getProperty("Refresh"))).click(); //click on refresh icon 	
 		logger.info("Refresh icon has been clicked");
 	}
 
@@ -188,14 +189,21 @@ public class UploadAssetFile {
 		driver.switchTo().defaultContent();
 		driver.findElement(By.xpath(properties.getProperty("Submit"))).click();
 		Thread.sleep(5000);
-		logger.info("Asset mp3 uploaded succesfully");
-		WebElement success = driver.findElement(By.xpath(properties.getProperty("Success")));	
-		String actualresult = success.getText();
-		String expectedresult = "Uploaded Successfully";
-		Assert.assertEquals(actualresult, expectedresult);
-		logger.info("Assertion for uploadsucess message of uploading mp3 file");
-		Thread.sleep(5000);
-		driver.findElement(By.xpath(properties.getProperty("Refresh"))).click();
+		logger.info("clicked on submit button after filling all mandaoty fields");
+
+		String actualresult_asset=driver.findElement(By.xpath(properties.getProperty("Success"))).getText();
+		Thread.sleep(3000);
+		String expectedresult_asset = "Uploaded Successfully";                                
+		if(expectedresult_asset.equals(actualresult_asset))
+		{
+			logger.info("Asset file(mp3)uploaded successfully");      
+		}
+		else
+		{
+			logger.info("Asset file(mp3) is not uploaded");
+		}
+		Thread.sleep(3000);                        
+		driver.findElement(By.xpath(properties.getProperty("Refresh"))).click(); //click on refresh icon 	
 		logger.info("Refresh icon has been clicked");
 	}
 
@@ -268,14 +276,21 @@ public class UploadAssetFile {
 		driver.switchTo().defaultContent();
 		driver.findElement(By.xpath(properties.getProperty("Submit"))).click();
 		Thread.sleep(5000);
-		logger.info("Asset ppt uploaded succesfully");
-		WebElement success = driver.findElement(By.xpath(properties.getProperty("Success")));	
-		String actualresult = success.getText();
-		String expectedresult = "Uploaded Successfully";
-		Assert.assertEquals(actualresult, expectedresult);
-		logger.info("Assertion for uploadsucess message of uploading ppt file");
-		Thread.sleep(5000);
-		driver.findElement(By.xpath(properties.getProperty("Refresh"))).click();
+		logger.info("clicked on submit button after filling all mandaoty fields");
+
+		String actualresult_asset=driver.findElement(By.xpath(properties.getProperty("Success"))).getText();
+		Thread.sleep(3000);
+		String expectedresult_asset = "Uploaded Successfully";                                
+		if(expectedresult_asset.equals(actualresult_asset))
+		{
+			logger.info("Asset file(ppt)uploaded successfully");      
+		}
+		else
+		{
+			logger.info("Asset file(ppt) is not uploaded");
+		}
+		Thread.sleep(3000);                        
+		driver.findElement(By.xpath(properties.getProperty("Refresh"))).click(); //click on refresh icon 
 		logger.info("Refresh icon has been clicked");
 	}
 
@@ -348,14 +363,21 @@ public class UploadAssetFile {
 		driver.switchTo().defaultContent();
 		driver.findElement(By.xpath(properties.getProperty("Submit"))).click();
 		Thread.sleep(5000);
-		logger.info("Asset doc uploaded succesfully");
-		WebElement success = driver.findElement(By.xpath(properties.getProperty("Success")));	
-		String actualresult = success.getText();
-		String expectedresult = "Uploaded Successfully";
-		Assert.assertEquals(actualresult, expectedresult);
-		logger.info("Assertion for uploadsucess message of uploading doc file");
-		Thread.sleep(5000);
-		driver.findElement(By.xpath(properties.getProperty("Refresh"))).click();
+		logger.info("clicked on submit button after filling all mandaoty fields");
+
+		String actualresult_asset=driver.findElement(By.xpath(properties.getProperty("Success"))).getText();
+		Thread.sleep(3000);
+		String expectedresult_asset = "Uploaded Successfully";                                
+		if(expectedresult_asset.equals(actualresult_asset))
+		{
+			logger.info("Asset file(doc)uploaded successfully");      
+		}
+		else
+		{
+			logger.info("Asset file(doc) is not uploaded");
+		}
+		Thread.sleep(3000);                        
+		driver.findElement(By.xpath(properties.getProperty("Refresh"))).click(); //click on refresh icon 
 		logger.info("Refresh icon has been clicked");
 	}
 
@@ -428,14 +450,21 @@ public class UploadAssetFile {
 		driver.switchTo().defaultContent();
 		driver.findElement(By.xpath(properties.getProperty("Submit"))).click();
 		Thread.sleep(5000);
-		logger.info("Asset xls uploaded succesfully");	
-		WebElement success = driver.findElement(By.xpath(properties.getProperty("Success")));	
-		String actualresult = success.getText();
-		String expectedresult = "Uploaded Successfully";
-		Assert.assertEquals(actualresult, expectedresult);
-		logger.info("Assertion for uploadsucess message of uploading xls file");
-		Thread.sleep(5000);
-		driver.findElement(By.xpath(properties.getProperty("Refresh"))).click();
+		logger.info("clicked on submit button after filling all mandaoty fields");
+
+		String actualresult_asset=driver.findElement(By.xpath(properties.getProperty("Success"))).getText();
+		Thread.sleep(3000);
+		String expectedresult_asset = "Uploaded Successfully";                                
+		if(expectedresult_asset.equals(actualresult_asset))
+		{
+			logger.info("Asset file(xls)uploaded successfully");      
+		}
+		else
+		{
+			logger.info("Asset file(xls) is not uploaded");
+		}
+		Thread.sleep(3000);                        
+		driver.findElement(By.xpath(properties.getProperty("Refresh"))).click(); //click on refresh icon 
 		logger.info("Refresh icon has been clicked");
 	}
 
@@ -510,14 +539,21 @@ public class UploadAssetFile {
 		driver.switchTo().defaultContent();
 		driver.findElement(By.xpath(properties.getProperty("Submit"))).click();
 		Thread.sleep(5000);
-		logger.info("Asset gif uploaded succesfully");
-		WebElement success = driver.findElement(By.xpath(properties.getProperty("Success")));	
-		String actualresult = success.getText();
-		String expectedresult = "Uploaded Successfully";
-		Assert.assertEquals(actualresult, expectedresult);
-		logger.info("Assertion for uploadsucess message of uploading gif file");
-		Thread.sleep(5000);
-		driver.findElement(By.xpath(properties.getProperty("Refresh"))).click();
+		logger.info("clicked on submit button after filling all mandaoty fields");
+
+		String actualresult_asset=driver.findElement(By.xpath(properties.getProperty("Success"))).getText();
+		Thread.sleep(3000);
+		String expectedresult_asset = "Uploaded Successfully";                                
+		if(expectedresult_asset.equals(actualresult_asset))
+		{
+			logger.info("Asset file(gif)uploaded successfully");      
+		}
+		else
+		{
+			logger.info("Asset file(gif) is not uploaded");
+		}
+		Thread.sleep(3000);                        
+		driver.findElement(By.xpath(properties.getProperty("Refresh"))).click(); //click on refresh icon 
 		logger.info("Refresh icon has been clicked");
 	}
 
@@ -589,14 +625,21 @@ public class UploadAssetFile {
 		driver.switchTo().defaultContent();
 		driver.findElement(By.xpath(properties.getProperty("Submit"))).click();
 		Thread.sleep(5000);
-		logger.info("Asset jpg uploaded succesfully");
-		WebElement success = driver.findElement(By.xpath(properties.getProperty("Success")));	
-		String actualresult = success.getText();
-		String expectedresult = "Uploaded Successfully";
-		Assert.assertEquals(actualresult, expectedresult);
-		logger.info("Assertion for uploadsucess message of uploading jpg file");
-		Thread.sleep(5000);
-		driver.findElement(By.xpath(properties.getProperty("Refresh"))).click();
+		logger.info("clicked on submit button after filling all mandaoty fields");
+
+		String actualresult_asset=driver.findElement(By.xpath(properties.getProperty("Success"))).getText();
+		Thread.sleep(3000);
+		String expectedresult_asset = "Uploaded Successfully";                                
+		if(expectedresult_asset.equals(actualresult_asset))
+		{
+			logger.info("Asset file(jpg)uploaded successfully");      
+		}
+		else
+		{
+			logger.info("Asset file(jpg) is not uploaded");
+		}
+		Thread.sleep(3000);                        
+		driver.findElement(By.xpath(properties.getProperty("Refresh"))).click(); //click on refresh icon 
 		logger.info("Refresh icon has been clicked");
 	}
 
@@ -668,7 +711,7 @@ public class UploadAssetFile {
 		driver.switchTo().defaultContent();
 		driver.findElement(By.xpath(properties.getProperty("Submit"))).click();
 		Thread.sleep(5000);
-		logger.info("Asset zip uploaded succesfully");
+		logger.info("Asset zip uploaded successfully");
 		WebElement success = driver.findElement(By.xpath(properties.getProperty("Success")));	
 		String actualresult = success.getText();
 		String expectedresult = "Uploaded Successfully";
@@ -749,14 +792,21 @@ public class UploadAssetFile {
 		driver.switchTo().defaultContent();
 		driver.findElement(By.xpath(properties.getProperty("Submit"))).click();//click ob submit button
 		Thread.sleep(5000);
-		logger.info("Asset html uploaded succesfully");
-		WebElement success = driver.findElement(By.xpath(properties.getProperty("Success")));	
-		String actualresult = success.getText();
-		String expectedresult = "Uploaded Successfully";
-		Assert.assertEquals(actualresult, expectedresult);
-		logger.info("Assertion for uploadsucess message of uploading html file");
-		Thread.sleep(5000);
-		driver.findElement(By.xpath(properties.getProperty("Refresh"))).click();
+		logger.info("clicked on submit button after filling all mandaoty fields");
+
+		String actualresult_asset=driver.findElement(By.xpath(properties.getProperty("Success"))).getText();
+		Thread.sleep(3000);
+		String expectedresult_asset = "Uploaded Successfully";                                
+		if(expectedresult_asset.equals(actualresult_asset))
+		{
+			logger.info("Asset file(zip)uploaded successfully");      
+		}
+		else
+		{
+			logger.info("Asset file(zip) is not uploaded");
+		}
+		Thread.sleep(3000);                        
+		driver.findElement(By.xpath(properties.getProperty("Refresh"))).click(); //click on refresh icon 
 		logger.info("Refresh icon has been clicked");
 	}
 
@@ -829,14 +879,21 @@ public class UploadAssetFile {
 		driver.switchTo().defaultContent();
 		driver.findElement(By.xpath(properties.getProperty("Submit"))).click();
 		Thread.sleep(5000);
-		logger.info("Asset svg uploaded succesfully");
-		WebElement success = driver.findElement(By.xpath(properties.getProperty("Success")));	
-		String actualresult = success.getText();
-		String expectedresult = "Uploaded Successfully";
-		Assert.assertEquals(actualresult, expectedresult);
-		logger.info("Assertion for uploadsucess message of uploading svg file");
-		Thread.sleep(5000);
-		driver.findElement(By.xpath(properties.getProperty("Refresh"))).click();
+		logger.info("clicked on submit button after filling all mandaoty fields");
+
+		String actualresult_asset=driver.findElement(By.xpath(properties.getProperty("Success"))).getText();
+		Thread.sleep(3000);
+		String expectedresult_asset = "Uploaded Successfully";                                
+		if(expectedresult_asset.equals(actualresult_asset))
+		{
+			logger.info("Asset file(svg)uploaded successfully");      
+		}
+		else
+		{
+			logger.info("Asset file(svg) is not uploaded");
+		}
+		Thread.sleep(3000);                        
+		driver.findElement(By.xpath(properties.getProperty("Refresh"))).click(); //click on refresh icon 
 		logger.info("Refresh icon has been clicked");
 	}
 
@@ -909,14 +966,22 @@ public class UploadAssetFile {
 		driver.switchTo().defaultContent();
 		driver.findElement(By.xpath(properties.getProperty("Submit"))).click(); //click on submit 
 		Thread.sleep(5000);
-		logger.info("Asset png uploaded succesfully-partner");
-		WebElement success = driver.findElement(By.xpath(properties.getProperty("Success")));	
-		String actualresult = success.getText();
-		String expectedresult = "Uploaded Successfully";
-		Assert.assertEquals(actualresult, expectedresult);
-		logger.info("Assertion succesfull for success message of uploading png file ");
-		Thread.sleep(5000);
-		driver.findElement(By.xpath(properties.getProperty("Refresh"))).click(); //click on refresh icon file has been saved		
+		logger.info("clicked on submit button after filling all mandaoty fields");
+
+		String actualresult_asset=driver.findElement(By.xpath(properties.getProperty("Success"))).getText();
+		Thread.sleep(3000);
+		String expectedresult_asset = "Uploaded Successfully";                                
+		if(expectedresult_asset.equals(actualresult_asset))
+		{
+			logger.info("Asset file(png)uploaded successfully");      
+		}
+		else
+		{
+			logger.info("Asset file(png) is not uploaded");
+		}
+		Thread.sleep(3000);                        
+		driver.findElement(By.xpath(properties.getProperty("Refresh"))).click(); //click on refresh icon 
+		logger.info("Refresh icon has been clicked");
 		//search with the created partnerasset and publish to partner
 		Thread.sleep(5000);
 		driver.findElement(By.xpath(properties.getProperty("Searchbar"))).sendKeys("partnerasset");
@@ -935,17 +1000,26 @@ public class UploadAssetFile {
 		Thread.sleep(5000);
 		driver.findElement(By.xpath(properties.getProperty("submit_button"))).click();
 		Thread.sleep(5000);
-		logger.info("Assetfile-png published succesfully to view in partner account");
-		//Assertion 1st way for published asset
-		Thread.sleep(5000);
-		WebElement published = driver.findElement(By.xpath(properties.getProperty("published_page")));	
-		String actualresult2 = published.getText();
-		String expectedresult2 = "Published Successfully";				
-		Assert.assertEquals(actualresult2, expectedresult2);
-		logger.info("Assertion for published succesfull");	
-		Thread.sleep(5000);
+	
+		
+		logger.info("clicked on submit button after selecting partner to publish the asset");
+
+		String actualresult_asset1=driver.findElement(By.xpath(properties.getProperty("published_page"))).getText();
+		Thread.sleep(3000);
+		String expectedresult_asset1 = "Published Successfully";                                
+		if(expectedresult_asset1.equals(actualresult_asset1))
+		{
+			logger.info("Asset file(png) published to partner successfully");      
+		}
+		else
+		{
+			logger.info("Asset file(png) is not published to partner");
+		}
+		Thread.sleep(3000);                        
 		driver.findElement(By.xpath(properties.getProperty("cross_icon_publish"))).click();
-		logger.info("cross icon clicked");		
+		logger.info("cross icon has been clicked");	
+	
+			
 	}	
 
 
@@ -995,7 +1069,7 @@ public class UploadAssetFile {
 		driver.switchTo().defaultContent();
 		driver.findElement(By.xpath(properties.getProperty("Submit"))).click();
 		Thread.sleep(7000);
-		logger.info("video uploaded through webcam succesfully as a video asset");
+		logger.info("video uploaded through webcam successfully as a video asset");
 
 	}
 

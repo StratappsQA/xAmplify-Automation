@@ -25,7 +25,7 @@ public class ManageAssetPNG {
 
 
 	//sorting order of assets 
-	@Test (priority=0)
+	@Test (priority=0,enabled=true)
 	public void assetsorting_png() throws InterruptedException, IOException 
 	{	    	
 		Thread.sleep(7000);
@@ -52,7 +52,7 @@ public class ManageAssetPNG {
 
 
 	//grid and list view  
-	@Test (priority=1)
+	@Test (priority=1,enabled=true)
 	public void gridlistview_png() throws InterruptedException
 	{
 		Thread.sleep(8000);
@@ -133,7 +133,7 @@ public class ManageAssetPNG {
 
 
 	//search asset and view asset and download asset --succesfull
-	@Test (priority=2)
+	@Test (priority=2,enabled=true)
 	public void viewasset_png() throws InterruptedException 	
 	{
 
@@ -160,7 +160,7 @@ public class ManageAssetPNG {
 
 
 	//search asset and click on analytics -- succesfull
-	@Test (priority=3)
+	@Test (priority=3,enabled=true)
 	public void viewanalytics_png() throws InterruptedException
 	{
 		Thread.sleep(7000);
@@ -186,7 +186,7 @@ public class ManageAssetPNG {
 
 
 	//search asset and publish asset to partner
-	@Test (priority=4)
+	@Test (priority=4,enabled=true)
 	public void publishasset_png() throws InterruptedException
 	{
 		Thread.sleep(7000);
@@ -210,37 +210,29 @@ public class ManageAssetPNG {
 		driver.findElement(By.xpath(properties.getProperty("partner_select"))).click(); //select partner
 		Thread.sleep(6000);
 		driver.findElement(By.xpath(properties.getProperty("submit_button"))).click();
-		Thread.sleep(6000);
-		logger.info("Assetfile published succesfully");
-		//Assertion 1st way for published asset
-		Thread.sleep(6000);
-
-		WebElement published = driver.findElement(By.xpath(properties.getProperty("published_page")));	
-		String actualresult2 = published.getText();
-		String expectedresult2 = "Published Successfully";				
-		Assert.assertEquals(actualresult2, expectedresult2);
-		logger.info("Assertion for partnerasset published successfull");	
+		Thread.sleep(6000);		
+		logger.info("clicked on submit button");	
+		
+		String actualresult_asset=driver.findElement(By.xpath(properties.getProperty("published_page"))).getText();
+		Thread.sleep(3000);
+		String expectedresult_asset = "Published Successfully";                                
+		if(expectedresult_asset.equals(actualresult_asset))
+		{
+			logger.info("partner asset published successfully");      
+		}
+		else
+		{
+			logger.info("Error while publishing the asset to partner");
+		}
+		
 		Thread.sleep(6000);
 		driver.findElement(By.xpath(properties.getProperty("cross_icon_publish"))).click();
 		logger.info("cross icon has been clicked");
 
 	}
 
-	//Assertion 2nd way for published asset
-	//			String publish = driver.findElement(By.xpath(properties.getProperty("published_page"))).getText(); // success message
-	//			System.out.println(publish);			
-	//			String expectedtitle ="Published Successfully";
-	//			
-	//			if(expectedtitle.equals(publish))
-	//			{
-	//				System.out.println("Asset Published to partner succesfully");
-	//			}
-	//			else {
-	//				System.out.println("Asset is not published");
-	//			}
-
-	//search assset and edit png -- succesfull
-	@Test (priority=5)
+	//search assset and edit png 
+	@Test (priority=5,enabled=true)
 	public void editasset_png() throws InterruptedException
 	{
 
@@ -264,18 +256,28 @@ public class ManageAssetPNG {
 		Thread.sleep(8000); 
 		driver.switchTo().defaultContent();
 		driver.findElement(By.xpath(properties.getProperty("Update"))).click();
-		logger.info("Assetfile-png updated successfully with description");
+		Thread.sleep(3000); 
+		logger.info("clicked on update button");	
+		
+		String actualresult_asset=driver.findElement(By.xpath(properties.getProperty("Success"))).getText();
+		Thread.sleep(3000);
+		String expectedresult_asset = "Details Updated Successfully";                                
+		if(expectedresult_asset.equals(actualresult_asset))
+		{
+			logger.info("Assetfile-png updated successfully with description");      
+		}
+		else
+		{
+			logger.info("Error while updating asset file");
+		}
+		
 		Thread.sleep(6000);
-		WebElement success1 = driver.findElement(By.xpath(properties.getProperty("Success")));	
-		String actualresult1 = success1.getText();
-		String expectedresult1 = "Details Updated Successfully";
-		Assert.assertEquals(actualresult1, expectedresult1);
-		logger.info("update assertion for asset-png successfull");
+	
 
 	}
 
 	//search asset and Delete asset
-	@Test (priority=6)
+	@Test (priority=6,enabled=true)
 	public void deleteasset_png() throws InterruptedException
 	{
 
@@ -290,24 +292,30 @@ public class ManageAssetPNG {
 		Thread.sleep(4000);
 		driver.findElement(By.xpath(properties.getProperty("deleteicon_click"))).click(); //click on delete icon
 		Thread.sleep(4000);
+		logger.info("clicked on delete icon");	
 		driver.findElement(By.xpath(properties.getProperty("yes_on_deletepopup"))).click();
 		Thread.sleep(4000);
-		WebElement success = driver.findElement(By.xpath(properties.getProperty("asset_delete_grid")));	
-		String actualresult = success.getText();
-		if(actualresult.contains("Deleted Successfully"))
+		logger.info("clicked on yes on delete pop up");	
+		
+		String actualresult_asset=driver.findElement(By.xpath(properties.getProperty("asset_delete_grid"))).getText();
+		Thread.sleep(3000);
+		if(actualresult_asset.contains("Deleted Successfully"))
 		{
-			logger.info("Assetfile-png deleted succesfully");		
-
+			logger.info("Assetfile-png deleted succesfully");      
 		}
 		else
 		{
-			logger.info("Assetfile has been used in campaigns,it can't be deleted");		
-		}	
+			logger.info("Assetfile has been used in campaigns,it can't be deleted");
+		}
+		
+		Thread.sleep(6000);	
+		
+		
 	}
 
 
 	//view detailed anaytics of png asset in vendor account after partner viewed and downloaded the asset in partner account
-	@Test (priority = 7)
+	@Test (priority = 7,enabled=true)
 	public void viewanalyticsvendor_png() throws InterruptedException, IOException 
 	{	
 		Thread.sleep(7000);
@@ -350,7 +358,7 @@ public class ManageAssetPNG {
 
 
 	//view detailed anaytics of pdf asset in vendor account after partner viewed and downloaded the asset in partner account
-	@Test (priority = 8)
+	@Test (priority = 8,enabled=true)
 	public void viewanalyticsvendor_pdf() throws InterruptedException, IOException {		
 		Thread.sleep(8000);
 		driver.findElement(By.xpath(properties.getProperty("Content_leftmenu"))).click(); //click on left side content menu

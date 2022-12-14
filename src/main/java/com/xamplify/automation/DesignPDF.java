@@ -18,8 +18,9 @@ public class DesignPDF {
 			.readPropertyFile("D:\\git\\xAmplify-Automation\\src\\main\\resources\\AssetLibrary.properties");
 	final Logger logger = LogManager.getLogger(DesignPDF.class);
 
+	//Here we are uploading pdf file
 	//creating pdf asset and publish to partner
-	@Test
+	@Test 
 	public void designpdf() throws InterruptedException
 	{
 		Thread.sleep(7000);
@@ -58,17 +59,23 @@ public class DesignPDF {
 		Thread.sleep(5000);	
 		logger.info("pdf-name,description,folder and tag added");
 		driver.findElement(By.xpath(properties.getProperty("SavePDF"))).click(); //click on savepdf
-		logger.info("asset file-pdf saved successfully");
-		Thread.sleep(10000);
+		Thread.sleep(5000);	
+		logger.info("clicked on SavePDF button after filling all mandaoty fields");
 
-		//assertion for success message
-		WebElement success = driver.findElement(By.xpath(properties.getProperty("Success")));	
-		String actualresult = success.getText();
-		String expectedresult = "Template Added Successfully";
-		Assert.assertEquals(actualresult, expectedresult);
-		logger.info("Assertion successfull for success message of uploading pdf file");
-		Thread.sleep(5000);
-		driver.findElement(By.xpath(properties.getProperty("Refresh"))).click(); //click on refresh icon
+		String actualresult_asset=driver.findElement(By.xpath(properties.getProperty("Success"))).getText();
+		Thread.sleep(3000);
+		String expectedresult_asset = "Template Added Successfully";                                
+		if(expectedresult_asset.equals(actualresult_asset))
+		{
+			logger.info("PDF-Template added successfully");      
+		}
+		else
+		{
+			logger.info("PDF-Template not added successfully");
+		}
+		Thread.sleep(3000);                        
+		driver.findElement(By.xpath(properties.getProperty("Refresh"))).click(); //click on refresh icon 	
+		logger.info("Refresh icon has been clicked");		
 
 		//search with the created partnerasset and publish to partner
 		Thread.sleep(5000);
@@ -88,17 +95,22 @@ public class DesignPDF {
 		Thread.sleep(5000);
 		driver.findElement(By.xpath(properties.getProperty("submit_button"))).click();
 		Thread.sleep(5000);
-		logger.info("Assetfile-pdf published successfully");
-		//Assertion 1st way for published asset
-		Thread.sleep(5000);
-		WebElement published = driver.findElement(By.xpath(properties.getProperty("published_page")));	
-		String actualresult2 = published.getText();
-		String expectedresult2 = "Published Successfully";				
-		Assert.assertEquals(actualresult2, expectedresult2);
-		logger.info("Assertion for published pdf successfull");	
-		Thread.sleep(5000);
+		logger.info("clicked on Submit button after selecting partner");
+
+		String actualresult_asset2=driver.findElement(By.xpath(properties.getProperty("published_page"))).getText();
+		Thread.sleep(3000);
+		String expectedresult_asset2 = "Published Successfully";                                
+		if(expectedresult_asset2.equals(actualresult_asset2))
+		{
+			logger.info("PDF asset file published to partner successfully");      
+		}
+		else
+		{
+			logger.info("PDF asset file is not published");
+		}
+		Thread.sleep(3000);                        
 		driver.findElement(By.xpath(properties.getProperty("cross_icon_publish"))).click();
-		logger.info("cross icon has been clicked");		
+		logger.info("cross icon has been clicked");			
 
 
 	}

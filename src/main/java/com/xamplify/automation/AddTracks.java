@@ -22,7 +22,7 @@ public class AddTracks {
 
 
 	// adding track to view and delete in vendor account
-	@Test (priority = 0)
+	@Test (priority = 0,enabled=true)
 	public void addtrack_vendor() throws InterruptedException, IOException {	
 		Thread.sleep(5000);
 		driver.findElement(By.xpath(properties.getProperty("Content_leftmenu1"))).click(); //click on left side content menu
@@ -37,17 +37,14 @@ public class AddTracks {
 		Thread.sleep(5000);
 		driver.findElement(By.xpath(properties.getProperty("camera_icon"))).click(); //click on camera icon
 		Thread.sleep(8000);	
-		driver.findElement(By.xpath(properties.getProperty("select_image"))).sendKeys("D:\\images\\jpg_file.jpg"); //click on select image icon and uploa dimage
+		driver.findElement(By.xpath(properties.getProperty("select_image"))).sendKeys("D:\\Selenium\\files\\jpg_file.jpg"); //click on select image icon and uploa dimage
 		Thread.sleep(5000);
-		//Runtime.getRuntime().exec("D:\\Selenium\\track_featured_image.exe"); //upload featured image
-		//Thread.sleep(5000);
 		driver.findElement(By.xpath(properties.getProperty("save_changes"))).click(); //click on savechanges after selecting featured image
 		Thread.sleep(5000);
-		logger.info("image is uploaded");
+		logger.info("featured image is uploaded by using sendkeys");
 		driver.findElement(By.xpath(properties.getProperty("tag_plusicon_tc"))).click();
 		Thread.sleep(5000);
 		driver.findElement(By.xpath(properties.getProperty("tag_text_click_tp"))).click();
-		//	driver.findElement(By.xpath(properties.getProperty("tag_text_click"))).sendKeys(properties.getProperty("tag_name_tp"));
 		WebElement enter=driver.findElement(By.xpath(properties.getProperty("tag_text_click_tp")));
 		enter.sendKeys(properties.getProperty("tag_name_tp")+ "_" + System.currentTimeMillis());
 		enter.sendKeys(Keys.ENTER);
@@ -133,28 +130,33 @@ public class AddTracks {
 		driver.findElement(By.xpath(properties.getProperty("Search_publish"))).sendKeys("automatedPartner"); //select automatedPartner in search field
 		Thread.sleep(5000);
 		driver.findElement(By.xpath(properties.getProperty("Search_publish"))).sendKeys(Keys.ENTER);
-		Thread.sleep(5000);
-		//driver.findElement(By.xpath(properties.getProperty("searchicon_click"))).click();	//click on search icon	
-		//Thread.sleep(5000);		
+		Thread.sleep(5000);		
 		driver.findElement(By.xpath(properties.getProperty("arrow_click_track"))).click(); //select arrow of partner company
 		Thread.sleep(5000);
 		driver.findElement(By.xpath(properties.getProperty("partner_select_track"))).click(); //select partner
 		Thread.sleep(5000);
 		driver.findElement(By.xpath(properties.getProperty("save&publish_button"))).click(); //click on save&publish button
 		Thread.sleep(5000);
-		logger.info("track published to partner succesfully");	
-		//assertion for success message
-		WebElement published = driver.findElement(By.xpath(properties.getProperty("afterpublish_success")));	
-		String actualresult2 = published.getText();
-		String expectedresult2 = "Track created successfully";				
-		Assert.assertEquals(actualresult2, expectedresult2);
-		logger.info("Assertion for published succesfull");	
-		Thread.sleep(5000);
+		logger.info("clicked on save&publish button");	
+		
+		String actualresult_asset=driver.findElement(By.xpath(properties.getProperty("afterpublish_success"))).getText();
+		Thread.sleep(3000);
+		String expectedresult_asset = "Track created successfully";                                
+		if(expectedresult_asset.equals(actualresult_asset))
+		{
+			logger.info("Track published to partner successfully");      
+		}
+		else
+		{
+			logger.info("Error while publishing the track to partner");
+		}
+		Thread.sleep(3000);                        
+	
 	}	
 
 
 	//adding track to view and download in partner account
-	@Test (priority = 1)
+	@Test (priority = 1,enabled=true)
 	public void addtrack_partner() throws InterruptedException, IOException {	
 		Thread.sleep(3000);
 		driver.findElement(By.xpath(properties.getProperty("Content_leftmenu1"))).click(); //click on left side content menu
@@ -169,17 +171,14 @@ public class AddTracks {
 		Thread.sleep(5000);
 		driver.findElement(By.xpath(properties.getProperty("camera_icon"))).click(); //click on camera icon
 		Thread.sleep(8000);	
-		driver.findElement(By.xpath(properties.getProperty("select_image"))).sendKeys("D:\\images\\jpg_file.jpg"); //click on select image icon and uploa dimage
+		driver.findElement(By.xpath(properties.getProperty("select_image"))).sendKeys("D:\\Selenium\\files\\jpg_file.jpg"); //click on select image icon and uploa dimage
 		Thread.sleep(5000);
-		//Runtime.getRuntime().exec("D:\\Selenium\\track_featured_image.exe"); //upload featured image
-		//Thread.sleep(5000);
 		driver.findElement(By.xpath(properties.getProperty("save_changes"))).click(); //click on savechanges after selecting featured image
 		Thread.sleep(5000);
-		logger.info("image uploaded-partner track");
+		logger.info("featured image uploaded by using sendkeys-partner track");
 		driver.findElement(By.xpath(properties.getProperty("tag_plusicon_tc"))).click();
 		Thread.sleep(5000);
 		driver.findElement(By.xpath(properties.getProperty("tag_text_click_tp"))).click();
-		//	driver.findElement(By.xpath(properties.getProperty("tag_text_click"))).sendKeys(properties.getProperty("tag_name_tp"));
 		WebElement enter=driver.findElement(By.xpath(properties.getProperty("tag_text_click_tp")));
 		enter.sendKeys(properties.getProperty("tag_name_tp")+ "_" + System.currentTimeMillis());
 		enter.sendKeys(Keys.ENTER);
@@ -275,7 +274,22 @@ public class AddTracks {
 		Thread.sleep(5000);
 		driver.findElement(By.xpath(properties.getProperty("save&publish_button"))).click(); //click on save&publish button
 		Thread.sleep(5000);
-		logger.info("track published to partner successfully-partner track");	
+		logger.info("clicked on save&publish button");	
+		
+		String actualresult_asset=driver.findElement(By.xpath(properties.getProperty("afterpublish_success"))).getText();
+		Thread.sleep(3000);
+		String expectedresult_asset = "Track created successfully";                                
+		if(expectedresult_asset.equals(actualresult_asset))
+		{
+			logger.info("Track published to partner successfully-partner track");      
+		}
+		else
+		{
+			logger.info("Error while publishing the track to partner");
+		}
+		Thread.sleep(3000);  
+		
+		
 	}
 }
 

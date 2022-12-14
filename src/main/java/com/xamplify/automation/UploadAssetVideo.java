@@ -1,5 +1,10 @@
 package com.xamplify.automation;
 
+import java.awt.AWTException;
+import java.awt.Robot;
+import java.awt.Toolkit;
+import java.awt.datatransfer.StringSelection;
+import java.awt.event.KeyEvent;
 import java.io.IOException;
 import java.util.Properties;
 
@@ -22,9 +27,10 @@ public class UploadAssetVideo {
 
 
 
-	//uploading MP4 file - video asset
-	@Test (priority=0)
-	public void uploadMP4() throws InterruptedException, IOException {	
+	//In this class file we have all types of asset video files 
+	//uploading MP4 file 
+	@Test (priority=0,enabled=true)
+	public void uploadMP4() throws InterruptedException, IOException, AWTException {	
 		Thread.sleep(7000);
 		driver.findElement(By.xpath(properties.getProperty("Content_leftmenu"))).click(); //click on left side content menu
 		Thread.sleep(7000);
@@ -32,18 +38,42 @@ public class UploadAssetVideo {
 		Thread.sleep(5000);
 		driver.findElement(By.xpath(properties.getProperty("Upload"))).click(); // click on upload
 		Thread.sleep(5000);
+		
+		Robot robot = new Robot();	// use robot class to upload file -- create object	
 		driver.findElement(By.xpath(properties.getProperty("BrowseButton"))).click(); //click on Browse
-		Thread.sleep(5000);
-		Runtime.getRuntime().exec("D:\\Selenium\\asset_MP4.exe"); //uploading mp4 file
-		logger.info("asset mp4 file uploaded");
-		Thread.sleep(5000);
+		robot.setAutoDelay(3000);  // is equal to thread.sleep		 
+		//store the path of the file to be uploaded using stringselection class object
+		StringSelection filepath = new StringSelection("D:\\Selenium\\files\\MP4_file.mp4");  //create a stringselection object
+		//copy above path to clipboard
+		Toolkit.getDefaultToolkit().getSystemClipboard().setContents(filepath, null); // here path is avaliable in clipboard 		
+		robot.keyPress(KeyEvent.VK_CONTROL);// press ctrl
+		robot.keyPress(KeyEvent.VK_V);		// press V			
+		robot.keyRelease(KeyEvent.VK_V);	//release V	
+		robot.keyRelease(KeyEvent.VK_CONTROL);//relase ctrl				
+		robot.keyPress(KeyEvent.VK_ENTER);//press enter				
+		robot.keyRelease(KeyEvent.VK_ENTER); // release enter				
+		logger.info("mp4 video file uploaded using robot class");
+		Thread.sleep(5000);	
+		
+	//	Runtime.getRuntime().exec("D:\\Selenium\\asset_MP4.exe"); //uploading mp4 file using auto it
+		
 		driver.findElement(By.xpath(properties.getProperty("Thumbnail"))).click();
-		logger.info("thumbnail uploaded");
+		Thread.sleep(5000);		
+		StringSelection filepath1 = new StringSelection("D:\\Selenium\\files\\jpg_file.jpg");  //create a stringselection object
+		//copy above path to clipboard
+		Toolkit.getDefaultToolkit().getSystemClipboard().setContents(filepath1, null); // here path is avaliable in clipboard 		
+		robot.keyPress(KeyEvent.VK_CONTROL);// press ctrl
+		robot.keyPress(KeyEvent.VK_V);		// press V			
+		robot.keyRelease(KeyEvent.VK_V);	//release V	
+		robot.keyRelease(KeyEvent.VK_CONTROL);//relase ctrl				
+		robot.keyPress(KeyEvent.VK_ENTER);//press enter				
+		robot.keyRelease(KeyEvent.VK_ENTER); // release enter				
+		driver.findElement(By.xpath(properties.getProperty("Savechanges"))).click();  //click on save changes
 		Thread.sleep(5000);
-		Runtime.getRuntime().exec("D:\\Selenium\\Thumbnail.exe"); //upload thumbnail
-		Thread.sleep(5000);
-		driver.findElement(By.xpath(properties.getProperty("Savechanges"))).click(); //click on save chnages button
-		Thread.sleep(5000);
+		logger.info("thumbnail uploaded using robot class");	
+			
+	//	Runtime.getRuntime().exec("D:\\Selenium\\Thumbnail.exe"); //upload thumbnail
+		
 		driver.findElement(By.xpath(properties.getProperty("Name"))).sendKeys(properties.getProperty("mp4_name")+ "_" + System.currentTimeMillis());
 		Thread.sleep(5000);
 		driver.findElement(By.xpath(properties.getProperty("folder_dropdown_click1"))).click(); //click on folder dropdown
@@ -68,23 +98,30 @@ public class UploadAssetVideo {
 		driver.switchTo().defaultContent();
 		driver.findElement(By.xpath(properties.getProperty("Submit"))).click(); //click on submit
 		Thread.sleep(15000);
-		logger.info("Asset mp4 uploaded succesfully");
-		driver.findElement(By.xpath(properties.getProperty("Refresh"))).click();	//click on refresh icon		
-		Thread.sleep(5000);
+		logger.info("clicked on submit button after filling all mandaoty fields");
 
-		WebElement success = driver.findElement(By.xpath(properties.getProperty("Success")));	
-		String actualresult = success.getText();
-		String expectedresult = "Uploaded Successfully";
-		Assert.assertEquals(actualresult, expectedresult);
-		logger.info("Assertion succesfull for success message of mp4 file ");
+		String actualresult_asset=driver.findElement(By.xpath(properties.getProperty("Success"))).getText();
+		Thread.sleep(3000);
+		String expectedresult_asset = "Uploaded Successfully";                                
+		if(expectedresult_asset.equals(actualresult_asset))
+		{
+			logger.info("Asset file(mp4)uploaded successfully");      
+		}
+		else
+		{
+			logger.info("Asset file(mp4) is not uploaded");
+		}
+		Thread.sleep(3000);                        
+		driver.findElement(By.xpath(properties.getProperty("Refresh"))).click(); //click on refresh icon 	
+		logger.info("Refresh icon has been clicked");
 	}
 
 
 
 
 	//uploading AVI file 
-	@Test (priority=1)
-	public void uploadaAVI() throws InterruptedException, IOException {	
+	@Test (priority=1,enabled=true)
+	public void uploadaAVI() throws InterruptedException, IOException, AWTException {	
 		Thread.sleep(7000);
 		driver.findElement(By.xpath(properties.getProperty("Content_leftmenu"))).click(); //click on left side content menu
 		Thread.sleep(7000);
@@ -92,18 +129,42 @@ public class UploadAssetVideo {
 		Thread.sleep(5000);
 		driver.findElement(By.xpath(properties.getProperty("Upload"))).click(); // click on upload
 		Thread.sleep(5000);
+	
+		Robot robot = new Robot();	// use robot class to upload file -- create object	
 		driver.findElement(By.xpath(properties.getProperty("BrowseButton"))).click(); //click on Browse
+		robot.setAutoDelay(3000);  // is equal to thread.sleep		 
+		//store the path of the file to be uploaded using stringselection class object
+		StringSelection filepath = new StringSelection("D:\\Selenium\\files\\AVI_file.avi");  //create a stringselection object
+		//copy above path to clipboard
+		Toolkit.getDefaultToolkit().getSystemClipboard().setContents(filepath, null); // here path is avaliable in clipboard 		
+		robot.keyPress(KeyEvent.VK_CONTROL);// press ctrl
+		robot.keyPress(KeyEvent.VK_V);		// press V			
+		robot.keyRelease(KeyEvent.VK_V);	//release V	
+		robot.keyRelease(KeyEvent.VK_CONTROL);//relase ctrl				
+		robot.keyPress(KeyEvent.VK_ENTER);//press enter				
+		robot.keyRelease(KeyEvent.VK_ENTER); // release enter				
+		logger.info("avi video file uploaded using robot class");
+		Thread.sleep(5000);	
+			
+	//	Runtime.getRuntime().exec("D:\\Selenium\\asset_AVI.exe"); //uploading avi file
+		
+		driver.findElement(By.xpath(properties.getProperty("Thumbnail"))).click(); //click on thumbnail icon
+		Thread.sleep(5000);		
+		StringSelection filepath1 = new StringSelection("D:\\Selenium\\files\\jpg_file.jpg");  //create a stringselection object
+		//copy above path to clipboard
+		Toolkit.getDefaultToolkit().getSystemClipboard().setContents(filepath1, null); // here path is avaliable in clipboard 		
+		robot.keyPress(KeyEvent.VK_CONTROL);// press ctrl
+		robot.keyPress(KeyEvent.VK_V);		// press V			
+		robot.keyRelease(KeyEvent.VK_V);	//release V	
+		robot.keyRelease(KeyEvent.VK_CONTROL);//relase ctrl				
+		robot.keyPress(KeyEvent.VK_ENTER);//press enter				
+		robot.keyRelease(KeyEvent.VK_ENTER); // release enter				
+		driver.findElement(By.xpath(properties.getProperty("Savechanges"))).click();  //click on save changes
 		Thread.sleep(5000);
-		Runtime.getRuntime().exec("D:\\Selenium\\asset_AVI.exe"); //uploading avi file
-		logger.info("asset file uploaded");
-		Thread.sleep(5000);
-		driver.findElement(By.xpath(properties.getProperty("Thumbnail"))).click();
-		logger.info("thumbnail uploaded");
-		Thread.sleep(5000);
-		Runtime.getRuntime().exec("D:\\Selenium\\Thumbnail.exe"); //uploading thumbnail
-		Thread.sleep(5000);
-		driver.findElement(By.xpath(properties.getProperty("Savechanges"))).click();
-		Thread.sleep(5000);
+		logger.info("thumbnail uploaded using robot class");
+				
+		//Runtime.getRuntime().exec("D:\\Selenium\\Thumbnail.exe"); //uploading thumbnail
+		
 		driver.findElement(By.xpath(properties.getProperty("Name"))).sendKeys(properties.getProperty("avi_name")+ "_" + System.currentTimeMillis());
 		Thread.sleep(5000);
 		driver.findElement(By.xpath(properties.getProperty("folder_dropdown_click1"))).click(); //click on folder dropdown
@@ -127,19 +188,28 @@ public class UploadAssetVideo {
 		driver.switchTo().defaultContent();
 		driver.findElement(By.xpath(properties.getProperty("Submit"))).click();
 		Thread.sleep(10000);
-		logger.info("Asset AVI uploaded succesfully");
-		Thread.sleep(10000);
-		WebElement success = driver.findElement(By.xpath(properties.getProperty("Success")));	
-		String actualresult = success.getText();
-		String expectedresult = "Uploaded Successfully";
-		Assert.assertEquals(actualresult, expectedresult);
-		logger.info("Assertion for uploadsucess message of avi file");
-		driver.findElement(By.xpath(properties.getProperty("Refresh"))).click(); //click on refresh icon
+		
+		logger.info("clicked on submit button after filling all mandaoty fields");
+
+		String actualresult_asset=driver.findElement(By.xpath(properties.getProperty("Success"))).getText();
+		Thread.sleep(3000);
+		String expectedresult_asset = "Uploaded Successfully";                                
+		if(expectedresult_asset.equals(actualresult_asset))
+		{
+			logger.info("Asset file(avi)uploaded successfully");      
+		}
+		else
+		{
+			logger.info("Asset file(avi) is not uploaded");
+		}
+		Thread.sleep(3000);                        
+		driver.findElement(By.xpath(properties.getProperty("Refresh"))).click(); //click on refresh icon 	
+		logger.info("Refresh icon has been clicked");
 	}
 
 	//upload MOV file	
-	@Test (priority=2)
-	public void uploadMOV() throws InterruptedException, IOException {	
+	@Test (priority=2,enabled=true)
+	public void uploadMOV() throws InterruptedException, IOException, AWTException {	
 		Thread.sleep(7000);
 		driver.findElement(By.xpath(properties.getProperty("Content_leftmenu"))).click(); //click on left side content menu
 		Thread.sleep(7000);
@@ -147,18 +217,42 @@ public class UploadAssetVideo {
 		Thread.sleep(5000);
 		driver.findElement(By.xpath(properties.getProperty("Upload"))).click(); // click on upload
 		Thread.sleep(5000);
+	
+		Robot robot = new Robot();	// use robot class to upload file -- create object	
 		driver.findElement(By.xpath(properties.getProperty("BrowseButton"))).click(); //click on Browse
+		robot.setAutoDelay(3000);  // is equal to thread.sleep		 
+		//store the path of the file to be uploaded using stringselection class object
+		StringSelection filepath = new StringSelection("D:\\Selenium\\files\\MOV_file.mov");  //create a stringselection object
+		//copy above path to clipboard
+		Toolkit.getDefaultToolkit().getSystemClipboard().setContents(filepath, null); // here path is avaliable in clipboard 		
+		robot.keyPress(KeyEvent.VK_CONTROL);// press ctrl
+		robot.keyPress(KeyEvent.VK_V);		// press V			
+		robot.keyRelease(KeyEvent.VK_V);	//release V	
+		robot.keyRelease(KeyEvent.VK_CONTROL);//relase ctrl				
+		robot.keyPress(KeyEvent.VK_ENTER);//press enter				
+		robot.keyRelease(KeyEvent.VK_ENTER); // release enter				
+		logger.info("mov video file uploaded using robot class");
+		Thread.sleep(5000);	
+				
+		//Runtime.getRuntime().exec("D:\\Selenium\\asset_MOV.exe"); //uploading mov file
+	
+		driver.findElement(By.xpath(properties.getProperty("Thumbnail"))).click(); //click on thumbnail icon
+		Thread.sleep(5000);		
+		StringSelection filepath1 = new StringSelection("D:\\Selenium\\files\\jpg_file.jpg");  //create a stringselection object
+		//copy above path to clipboard
+		Toolkit.getDefaultToolkit().getSystemClipboard().setContents(filepath1, null); // here path is avaliable in clipboard 		
+		robot.keyPress(KeyEvent.VK_CONTROL);// press ctrl
+		robot.keyPress(KeyEvent.VK_V);		// press V			
+		robot.keyRelease(KeyEvent.VK_V);	//release V	
+		robot.keyRelease(KeyEvent.VK_CONTROL);//relase ctrl				
+		robot.keyPress(KeyEvent.VK_ENTER);//press enter				
+		robot.keyRelease(KeyEvent.VK_ENTER); // release enter				
+		driver.findElement(By.xpath(properties.getProperty("Savechanges"))).click();  //click on save changes
 		Thread.sleep(5000);
-		Runtime.getRuntime().exec("D:\\Selenium\\asset_MOV.exe"); //uploading mov file
-		logger.info("asset file uploaded");
-		Thread.sleep(5000);
-		driver.findElement(By.xpath(properties.getProperty("Thumbnail"))).click(); 
-		logger.info("thumbnail uploaded");
-		Thread.sleep(5000);
-		Runtime.getRuntime().exec("D:\\Selenium\\Thumbnail.exe"); //uploading thumbnail
-		Thread.sleep(5000);
-		driver.findElement(By.xpath(properties.getProperty("Savechanges"))).click();
-		Thread.sleep(5000);
+		logger.info("thumbnail uploaded using robot class");
+			
+		//Runtime.getRuntime().exec("D:\\Selenium\\Thumbnail.exe"); //uploading thumbnail
+		
 		driver.findElement(By.xpath(properties.getProperty("Name"))).sendKeys(properties.getProperty("mov_name")+ "_" + System.currentTimeMillis());
 		Thread.sleep(5000);
 		driver.findElement(By.xpath(properties.getProperty("folder_dropdown_click1"))).click(); //click on folder dropdown
@@ -181,22 +275,28 @@ public class UploadAssetVideo {
 		Thread.sleep(5000);
 		driver.switchTo().defaultContent();
 		driver.findElement(By.xpath(properties.getProperty("Submit"))).click();
-		Thread.sleep(10000);
-		logger.info("Asset MOV uploaded succesfully");
-		Thread.sleep(10000);
+		Thread.sleep(12000);
+		logger.info("clicked on submit button after filling all mandaoty fields");
 
-		WebElement success = driver.findElement(By.xpath(properties.getProperty("Success")));	
-		String actualresult = success.getText();
-		String expectedresult = "Uploaded Successfully";
-
-		Assert.assertEquals(actualresult, expectedresult);
-		logger.info("Assertion succesfull for uploadsucess message of mov file");
-		driver.findElement(By.xpath(properties.getProperty("Refresh"))).click(); //click on refresh icon
+		String actualresult_asset=driver.findElement(By.xpath(properties.getProperty("Success"))).getText();
+		Thread.sleep(3000);
+		String expectedresult_asset = "Uploaded Successfully";                                
+		if(expectedresult_asset.equals(actualresult_asset))
+		{
+			logger.info("Asset file(mov)uploaded successfully");      
+		}
+		else
+		{
+			logger.info("Asset file(mov) is not uploaded");
+		}
+		Thread.sleep(3000);                        
+		driver.findElement(By.xpath(properties.getProperty("Refresh"))).click(); //click on refresh icon 	
+		logger.info("Refresh icon has been clicked");
 	}			
 
-	//upload MKV file -
-	@Test (priority=3)
-	public void uploadMKV() throws InterruptedException, IOException {	
+	//upload MKV file 
+	@Test (priority=3,enabled=true)
+	public void uploadMKV() throws InterruptedException, IOException, AWTException {	
 		Thread.sleep(7000);
 		driver.findElement(By.xpath(properties.getProperty("Content_leftmenu"))).click(); //click on left side content menu
 		Thread.sleep(7000);
@@ -204,18 +304,42 @@ public class UploadAssetVideo {
 		Thread.sleep(5000);
 		driver.findElement(By.xpath(properties.getProperty("Upload"))).click(); // click on upload
 		Thread.sleep(5000);
+		
+		Robot robot = new Robot();	// use robot class to upload file -- create object	
 		driver.findElement(By.xpath(properties.getProperty("BrowseButton"))).click(); //click on Browse
+		robot.setAutoDelay(3000);  // is equal to thread.sleep		 
+		//store the path of the file to be uploaded using stringselection class object
+		StringSelection filepath = new StringSelection("D:\\Selenium\\files\\MKV_file.mkv");  //create a stringselection object
+		//copy above path to clipboard
+		Toolkit.getDefaultToolkit().getSystemClipboard().setContents(filepath, null); // here path is avaliable in clipboard 		
+		robot.keyPress(KeyEvent.VK_CONTROL);// press ctrl
+		robot.keyPress(KeyEvent.VK_V);		// press V			
+		robot.keyRelease(KeyEvent.VK_V);	//release V	
+		robot.keyRelease(KeyEvent.VK_CONTROL);//relase ctrl				
+		robot.keyPress(KeyEvent.VK_ENTER);//press enter				
+		robot.keyRelease(KeyEvent.VK_ENTER); // release enter				
+		logger.info("mkv video file uploaded using robot class");
 		Thread.sleep(5000);
-		Runtime.getRuntime().exec("D:\\Selenium\\asset_MKV.exe"); //uploading mkv file
-		logger.info("asset file uploaded");
+								
+		//Runtime.getRuntime().exec("D:\\Selenium\\asset_MKV.exe"); //uploading mkv file
+				
+		driver.findElement(By.xpath(properties.getProperty("Thumbnail"))).click(); //click on thumbnail icon
+		Thread.sleep(5000);		
+		StringSelection filepath1 = new StringSelection("D:\\Selenium\\files\\jpg_file.jpg");  //create a stringselection object
+		//copy above path to clipboard
+		Toolkit.getDefaultToolkit().getSystemClipboard().setContents(filepath1, null); // here path is avaliable in clipboard 		
+		robot.keyPress(KeyEvent.VK_CONTROL);// press ctrl
+		robot.keyPress(KeyEvent.VK_V);		// press V			
+		robot.keyRelease(KeyEvent.VK_V);	//release V	
+		robot.keyRelease(KeyEvent.VK_CONTROL);//relase ctrl				
+		robot.keyPress(KeyEvent.VK_ENTER);//press enter				
+		robot.keyRelease(KeyEvent.VK_ENTER); // release enter				
+		driver.findElement(By.xpath(properties.getProperty("Savechanges"))).click();  //click on save changes
 		Thread.sleep(5000);
-		driver.findElement(By.xpath(properties.getProperty("Thumbnail"))).click();
-		logger.info("thumbnail uploaded");
-		Thread.sleep(5000);
-		Runtime.getRuntime().exec("D:\\Selenium\\Thumbnail.exe"); //uploading thumbnail
-		Thread.sleep(5000);
-		driver.findElement(By.xpath(properties.getProperty("Savechanges"))).click(); //click on save changes
-		Thread.sleep(5000);
+		logger.info("thumbnail uploaded using robot class");
+						
+		//Runtime.getRuntime().exec("D:\\Selenium\\Thumbnail.exe"); //uploading thumbnail
+		
 		driver.findElement(By.xpath(properties.getProperty("Name"))).sendKeys(properties.getProperty("mkv_name")+ "_" + System.currentTimeMillis());
 		Thread.sleep(5000);
 		driver.findElement(By.xpath(properties.getProperty("folder_dropdown_click1"))).click(); //click on folder dropdown
@@ -238,16 +362,23 @@ public class UploadAssetVideo {
 		Thread.sleep(5000);
 		driver.switchTo().defaultContent();
 		driver.findElement(By.xpath(properties.getProperty("Submit"))).click();
-		Thread.sleep(10000);
-		logger.info("Asset MKV uploaded succesfully");
-		Thread.sleep(10000);
-		WebElement success = driver.findElement(By.xpath(properties.getProperty("Success")));	
-		String actualresult = success.getText();
-		String expectedresult = "Uploaded Successfully";
-		Thread.sleep(10000);
-		Assert.assertEquals(actualresult, expectedresult);
-		logger.info("Assertion for uploadsucess message of mkv file");
-		Thread.sleep(10000);
-		driver.findElement(By.xpath(properties.getProperty("Refresh"))).click(); //click on refresh icon
+		Thread.sleep(10000);		
+		logger.info("clicked on submit button after filling all mandaoty fields");
+
+		String actualresult_asset=driver.findElement(By.xpath(properties.getProperty("Success"))).getText();
+		Thread.sleep(3000);
+		String expectedresult_asset = "Uploaded Successfully";                                
+		if(expectedresult_asset.equals(actualresult_asset))
+		{
+			logger.info("Asset file(mkv)uploaded successfully");      
+		}
+		else
+		{
+			logger.info("Asset file(mkv) is not uploaded");
+		}
+		Thread.sleep(3000);                        
+		driver.findElement(By.xpath(properties.getProperty("Refresh"))).click(); //click on refresh icon 	
+		logger.info("Refresh icon has been clicked");
+		
 	}			
 }
