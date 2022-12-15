@@ -120,7 +120,7 @@ public class TeamMember_Partner {
 		logger.info("update button has been clicked");
 
 		String actualresult_tm = driver.findElement(By.xpath(properties.getProperty("Success_message_grid_TM"))).getText();	
-		String expectedresult_tm = "Team member details updated succesfully.";
+		String expectedresult_tm = "Team member details updated successfully.";
 		if(expectedresult_tm.equals(actualresult_tm))
 		{
 			System.out.println("Team member is updated");
