@@ -29,7 +29,7 @@ public class TeamMember_Vendor extends RandomEmailGeneration {
 	final Logger logger = LogManager.getLogger(TeamMember_Vendor.class);
 
 
-	@Test (priority=1,enabled=false)
+	@Test (priority=1,enabled=true)
 	public void add_teammember_vendor() throws InterruptedException, SQLException
 	{
 		Thread.sleep(7000);
@@ -98,7 +98,7 @@ public class TeamMember_Vendor extends RandomEmailGeneration {
 	}
 
 
-	@Test (priority=2,enabled=false)
+	@Test (priority=2,enabled=true)
 	public void edit_teammember_vendor() throws InterruptedException
 	{
 		Thread.sleep(7000);
@@ -137,7 +137,7 @@ public class TeamMember_Vendor extends RandomEmailGeneration {
 		Thread.sleep(3000);
 	}
 
-	@Test (priority=3,enabled=false)
+	@Test (priority=3,enabled=true)
 	public void send_invitation_teammember_vendor() throws InterruptedException
 	{
 		Thread.sleep(7000);
@@ -169,7 +169,7 @@ public class TeamMember_Vendor extends RandomEmailGeneration {
 		Thread.sleep(3000);	
 	}
 
-	@Test (priority=4,enabled=false)
+	@Test (priority=4,enabled=true)
 	public void delete_teammember_vendor() throws InterruptedException
 	{
 		Thread.sleep(7000);
@@ -217,7 +217,7 @@ public class TeamMember_Vendor extends RandomEmailGeneration {
 		WebElement uploadcsv=driver.findElement(By.xpath(properties.getProperty("upload_CSV_TM"))); //click on upload csv button
 		Thread.sleep(6000);
 		logger.info("clicked on upload button");
-		uploadcsv.sendKeys("D:\\git\\Teammember_CSV.csv");			
+		uploadcsv.sendKeys("D:\\Selenium\\files\\Teammember_CSV.csv");			
 		Thread.sleep(5000);
 
 		String actualresult = driver.findElement(By.xpath(properties.getProperty("Success_message_grid_TM_CSV"))).getText();	
@@ -266,7 +266,7 @@ public class TeamMember_Vendor extends RandomEmailGeneration {
 
 
 
-	@Test (priority=6,enabled=false)
+	@Test (priority=6,enabled=true)
 	public void view_avabliablemodules_vendor() throws InterruptedException
 	{
 		Thread.sleep(7000);
