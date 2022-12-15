@@ -13,8 +13,10 @@ public class Instance {
 	  public static WebDriver getInstance() 	  {
 		  if (driver == null) 
 		   {
-			  
+			 
+
 			WebDriverManager.chromedriver().setup();  
+
 		   	ChromeOptions options = new ChromeOptions();
 		   	options.addArguments("incognito");
 		   	options.addArguments("use-fake-ui-for-media-stream"); 

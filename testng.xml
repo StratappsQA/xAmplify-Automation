@@ -4,6 +4,18 @@
   <test thread-count="5" name="Test">
     <classes>
     <class name="com.xamplify.automation.Login"/>
+   
+     <!--<class name="com.xamplify.automation.LaunchEmailCampaign"/> -->
+<!--      <class name="com.xamplify.automation.LaunchVideoCampaign"/> 
+ -->   
+ 
+<!--  <class name="com.xamplify.automation.LaunchEventCampaign"/> 
+  <class name="com.xamplify.automation.SaveEventCampaign"/> -->
+    
+ <!--    <class name="com.xamplify.automation.ScheduleEventCampaign"/> -->
+  <class name="com.xamplify.automation.EventToCampagin"/> -->
+   
+
       
     </classes>
   </test> <!-- Test -->

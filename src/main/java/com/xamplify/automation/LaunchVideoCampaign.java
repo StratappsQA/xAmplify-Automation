@@ -28,12 +28,10 @@ public class LaunchVideoCampaign {
 		VideoCampaign vc = new VideoCampaign();
 		vc.vdecampaign();
 		Thread.sleep(4000);
-//		AutoresponsesVideoCampaign arv=new AutoresponsesVideoCampaign();
-//		arv.autoResponsesVideo();
-//		Thread.sleep(4000);
 
 		driver.findElement(By.xpath(properties.getProperty("video_now"))).click(); // click NOW
 		Thread.sleep(4000);
+
 
 		driver.findElement(By.xpath(properties.getProperty("video_launch"))).click(); // click LAUNCH
 
