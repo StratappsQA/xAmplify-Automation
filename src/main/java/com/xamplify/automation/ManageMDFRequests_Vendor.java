@@ -36,6 +36,7 @@ public class ManageMDFRequests_Vendor {
 		//click on (+) icon - and view details
 		driver.findElement(By.xpath(properties.getProperty("view_more_columns"))).click(); //click on view more columns icon ('+' icon against to request)
 		Thread.sleep(5000);
+		
 		//scroll down till webpage end
 		JavascriptExecutor js3 = (JavascriptExecutor) driver;
 		js3.executeScript("window.scrollTo(0, document.body.scrollHeight)");
