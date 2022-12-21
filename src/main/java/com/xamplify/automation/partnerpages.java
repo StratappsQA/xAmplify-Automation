@@ -17,7 +17,7 @@ import org.testng.annotations.Test;
 public class partnerpages {
 	WebDriver driver = Instance.getInstance();
 	Properties properties = PropertiesFile.readPropertyFile(
-			"D:\\git\\Partnerpages\\xAmplify-Automation\\src\\main\\resources\\partnerpages.properties");
+			"D:\\GitHub\\xAmplify-Automation\\src\\main\\resources\\partnerpages.properties");
 	final Logger logger = LogManager.getLogger(PartnerLogin.class);
 
 	@Test(priority = 1, enabled = true)
