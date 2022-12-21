@@ -17,7 +17,7 @@ import org.testng.annotations.Test;
 public class Sharedleads {
 	WebDriver driver = Instance.getInstance();
 	Properties properties = PropertiesFile.readPropertyFile(
-			"D:\\git\\Sharedleads\\xAmplify-Automation\\src\\main\\resources\\Sharedleads");
+			"D:\\GitHub\\xAmplify-Automation\\src\\main\\resources\\Sharedleads");
 	final Logger logger = LogManager.getLogger(PartnerLogin.class);
 
 	@Test(priority = 3, enabled = true)
