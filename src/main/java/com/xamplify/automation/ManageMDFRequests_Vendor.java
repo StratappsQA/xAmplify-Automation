@@ -122,12 +122,19 @@ public class ManageMDFRequests_Vendor {
 		js7.executeScript("window.scrollTo(document.body.scrollHeight,0)");
 		logger.info("Scrolled up in the web page");
 		Thread.sleep(7000);
+		driver.findElement(By.xpath(properties.getProperty("download_button_document"))).click(); //click on download documents grid
+		Thread.sleep(4000);
+		driver.findElement(By.xpath(properties.getProperty("downloadicon_document"))).click(); //click on download icon against to uploaded document
+		Thread.sleep(4000);
+		logger.info("document has been downloaded successfully");		
 		driver.findElement(By.xpath(properties.getProperty("cross_icon_view_timeline"))).click(); //click on cross icon
 		Thread.sleep(5000);	
 		driver.findElement(By.xpath(properties.getProperty("cross_icon_view_timeline"))).click(); //click on cross icon
 		Thread.sleep(5000);	
 		logger.info("view timeline option has been selected and viewed the history of the request");
 		
+		
+			
 		//click on view history icon 
 		driver.findElement(By.xpath(properties.getProperty("Search_field_MDF"))).sendKeys(actualresult_tm1); //search with request title
 		Thread.sleep(5000);
@@ -143,9 +150,21 @@ public class ManageMDFRequests_Vendor {
 		js7.executeScript("window.scrollTo(document.body.scrollHeight,0)");
 		logger.info("Scrolled up in the web page");
 		Thread.sleep(7000);
+		driver.findElement(By.xpath(properties.getProperty("download_button_document"))).click(); //click on download documents grid
+		Thread.sleep(4000);
+		driver.findElement(By.xpath(properties.getProperty("downloadicon_document"))).click(); //click on download icon against to uploaded document
+		Thread.sleep(4000);
+		logger.info("document has been downloaded successfully");
 		driver.findElement(By.xpath(properties.getProperty("cross_icon_view_timeline"))).click(); //click on cross icon
 		Thread.sleep(4000);	
 		logger.info("clicked on view history icon - viewed the history of the request");
+		
+		
+		
+		
+		
+		
+		
 		//add and view comments 
 		driver.findElement(By.xpath(properties.getProperty("Search_field_MDF"))).sendKeys(actualresult_tm1); //search with request title
 		Thread.sleep(5000);
@@ -164,7 +183,7 @@ public class ManageMDFRequests_Vendor {
 	
 
 	//if allocated amount is greater than mdf amount
-	@Test (priority=2,enabled=true)
+	@Test (priority=2,enabled=false)
 	public void allocation_amount_update() throws InterruptedException
 	{
 		Thread.sleep(7000);
