@@ -19,7 +19,7 @@ public class Opportunities extends ExtentReportsClass {
 
 	WebDriver driver = Instance.getInstance();
 	Properties properties = PropertiesFile.readPropertyFile(
-			"D:\\git\\xAmplifyproject\\xAmplify-Automation\\src\\main\\resources\\Opportunities.properties");
+			"D:\\GitHub\\xAmplify-Automation\\src\\main\\resources\\Opportunities.properties");
 	final Logger logger = LogManager.getLogger(Opportunities.class);
 
 	@Test(priority = 1, enabled = true)

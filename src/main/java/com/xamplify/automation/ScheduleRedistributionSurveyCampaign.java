@@ -17,7 +17,7 @@ public class ScheduleRedistributionSurveyCampaign {
 
 	WebDriver driver = Instance.getInstance();
 	Properties properties = PropertiesFile
-			.readPropertyFile("D:\\git\\xAmplifyproject\\xAmplify-Automation\\src\\main\\resources\\RedistributionCampaign.properties");
+			.readPropertyFile("D:\\GitHub\\xAmplify-Automation\\src\\main\\resources\\RedistributionCampaign.properties");
 	final Logger logger = LogManager.getLogger(ScheduleRedistributionSurveyCampaign.class);
 
 	@Test

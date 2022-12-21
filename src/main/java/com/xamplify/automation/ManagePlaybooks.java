@@ -16,7 +16,7 @@ public class ManagePlaybooks {
 	//This class need to run in vendor account
 	WebDriver driver = Instance.getInstance();
 	Properties properties = PropertiesFile
-			.readPropertyFile("D:\\git\\xAmplify-Automation\\src\\main\\resources\\TrackBuilder.properties");
+			.readPropertyFile("D:\\GitHub\\xAmplify-Automation\\src\\main\\resources\\TrackBuilder.properties");
 	final Logger logger = LogManager.getLogger(ManagePlaybooks.class);
 
 

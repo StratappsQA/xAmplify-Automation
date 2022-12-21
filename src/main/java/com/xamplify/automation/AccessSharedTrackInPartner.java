@@ -15,7 +15,7 @@ public class AccessSharedTrackInPartner {
 
 	WebDriver driver = Instance.getInstance();
 	Properties properties = PropertiesFile
-			.readPropertyFile("D:\\git\\xAmplify-Automation\\src\\main\\resources\\TrackBuilder.properties");
+			.readPropertyFile("D:\\GitHub\\xAmplify-Automation\\src\\main\\resources\\TrackBuilder.properties");
 	final Logger logger = LogManager.getLogger(AccessSharedTrackInPartner.class);
 
 

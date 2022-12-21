@@ -27,7 +27,7 @@ public class ScheduleEmailCampaign{
 
 	WebDriver driver = Instance.getInstance();
 
-	Properties properties = PropertiesFile.readPropertyFile("D:\\git\\xAmplifyproject\\xAmplify-Automation\\src\\main\\resources\\Campaign.properties");
+	Properties properties = PropertiesFile.readPropertyFile("D:\\GitHub\\xAmplify-Automation\\src\\main\\resources\\Campaign.properties");
 	
 	
 final Logger logger = LogManager.getLogger(ScheduleEmailCampaign.class);

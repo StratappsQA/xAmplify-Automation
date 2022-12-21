@@ -14,7 +14,7 @@ public class LaunchEmailToCampaign {
 	WebDriver driver = Instance.getInstance();
 
 	Properties properties = PropertiesFile
-			.readPropertyFile("D:\\git\\xAmplifyproject\\xAmplify-Automation\\src\\main\\resources\\Campaign.properties");
+			.readPropertyFile("D:\\GitHub\\xAmplify-Automation\\src\\main\\resources\\Campaign.properties");
 
 	final Logger logger = LogManager.getLogger(LaunchEmailToCampaign.class);
 

@@ -13,7 +13,7 @@ public class ManageMDFRequests_Vendor {
 
 	WebDriver driver = Instance.getInstance();
 
-	Properties properties = PropertiesFile.readPropertyFile("D:\\git\\MDF-xAmplify\\src\\main\\resources\\MDF.properties");
+	Properties properties = PropertiesFile.readPropertyFile("D:\\GitHub\\xAmplify-Automation\\src\\main\\resources\\MDF.properties");
 
 	final Logger logger = LogManager.getLogger(ManageMDFRequests_Vendor.class);
 

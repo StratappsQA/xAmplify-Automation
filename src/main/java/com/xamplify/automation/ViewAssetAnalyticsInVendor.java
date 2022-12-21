@@ -13,7 +13,7 @@ public class ViewAssetAnalyticsInVendor {
 
 	WebDriver driver = Instance.getInstance();
 	Properties properties = PropertiesFile
-			.readPropertyFile("D:\\git\\xAmplify-Automation\\src\\main\\resources\\AssetLibrary.properties");
+			.readPropertyFile("D:\\GitHub\\xAmplify-Automation\\src\\main\\resources\\AssetLibrary.properties");
 	final Logger logger = LogManager.getLogger(ViewAssetAnalyticsInVendor.class);
 
 	

@@ -22,7 +22,7 @@ public class TeamMember_Partner {
 
 	WebDriver driver = Instance.getInstance();
 
-	Properties properties = PropertiesFile.readPropertyFile("D:\\git\\TeamMember-xAmplify\\src\\main\\resources\\TeamMember.properties");
+	Properties properties = PropertiesFile.readPropertyFile("D:\\GitHub\\xAmplify-Automation\\src\\main\\resources\\TeamMember.properties");
 
 	final Logger logger = LogManager.getLogger(TeamMember_Partner.class);
 

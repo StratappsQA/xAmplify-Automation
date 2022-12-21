@@ -25,7 +25,7 @@ public class ManageSurveyCampaign {
 
 	WebDriver driver = Instance.getInstance();
 	Properties properties = PropertiesFile
-			.readPropertyFile("D:\\git\\xAmplifyproject\\xAmplify-Automation\\src\\main\\resources\\ManageCampaigns.properties");
+			.readPropertyFile("D:\\GitHub\\xAmplify-Automation\\src\\main\\resources\\ManageCampaigns.properties");
 
 	final Logger logger = LogManager.getLogger(SurveyCampaign.class);
 

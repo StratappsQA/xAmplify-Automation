@@ -9,7 +9,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.Test;
 
-public class LaunchEventCampaign extends ExtentReport {
+public class LaunchEventCampaign extends ExtentReportsClass {
 
 	WebDriver driver = Instance.getInstance();
 

@@ -15,7 +15,7 @@ import org.testng.annotations.Test;
 public class SchedulePageToCampaign extends ExtentReportsClass {
 	
 	WebDriver driver = Instance.getInstance();
-	Properties properties = PropertiesFile.readPropertyFile("D:\\git\\xAmplifyproject\\xAmplify-Automation\\src\\main\\resources\\Campaign.properties");// properties file
+	Properties properties = PropertiesFile.readPropertyFile("D:\\GitHub\\xAmplify-Automation\\src\\main\\resources\\Campaign.properties");// properties file
 
 final Logger logger = LogManager.getLogger(SchedulePageToCampaign.class);
 	 

@@ -23,7 +23,7 @@ public class AddContacts extends ExtentReportsClass{
 
 		WebDriver driver = Instance.getInstance();
 
-		Properties properties = PropertiesFile.readPropertyFile("D:\\git\\gayatriContactswrkspace\\xAmplify-Automation\\src\\main\\resources\\AddContacts.properties");
+		Properties properties = PropertiesFile.readPropertyFile("D:\\GitHub\\xAmplify-Automation\\src\\main\\resources\\AddContacts.properties");
 		
 	final Logger logger = LogManager.getLogger(AddContacts.class);
 		
