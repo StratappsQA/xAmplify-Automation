@@ -17,7 +17,7 @@ import org.testng.annotations.Test;
 public class ScheduleSurveyCampaign {
 	
 	WebDriver driver = Instance.getInstance();
-	Properties properties= PropertiesFile.readPropertyFile("D:\\git\\xAmplify-Automation\\src\\main\\resources\\Campaign.properties");
+	Properties properties= PropertiesFile.readPropertyFile("D:\\git\\xAmplifyproject\\xAmplify-Automation\\src\\main\\resources\\Campaign.properties");
 final Logger logger = LogManager.getLogger(ScheduleSurveyCampaign.class);
 
 
@@ -88,7 +88,7 @@ final Logger logger = LogManager.getLogger(ScheduleSurveyCampaign.class);
 		Thread.sleep(5000);
 		
 logger.info("Survey Campaign Scheduled Successfully");	 	
-	 	String Result1 = "Campaign Scheduled successfully";
+	 	String Result1 = "Campaign scheduled successfully";
 	 	
 	 	if(Result1.equals(s_schedule)) {
 	 		//Thread.sleep(2000);
@@ -100,7 +100,7 @@ logger.info("Survey Campaign Scheduled Successfully");
 	 		System.out.println("Survey Campaign Scheduled failed");
 	 		}
 		
-		
+		Thread.sleep(10000);
 
 
 }

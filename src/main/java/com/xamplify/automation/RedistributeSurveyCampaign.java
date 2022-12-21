@@ -19,7 +19,8 @@ public class RedistributeSurveyCampaign {
 	WebDriver driver = Instance.getInstance();
 
 	Properties properties = PropertiesFile
-			.readPropertyFile("D:\\git\\xAmplify-Automation\\src\\main\\resources\\RedistributionCampaign.properties");
+			.readPropertyFile("D:\\git\\xAmplifyproject\\xAmplify-Automation\\src\\main\\resources\\RedistributionCampaign.properties");
+
 
 	final Logger logger = LogManager.getLogger(RedistributeSurveyCampaign.class);
 
@@ -34,17 +35,22 @@ public class RedistributeSurveyCampaign {
 		logger.info("Hover the campaign module");
 		Thread.sleep(3000);
 
-		driver.findElement(By.xpath(properties.getProperty("click_redstribute_campaign"))).click();
+		driver.findElement(By.xpath(properties.getProperty("click_redstribute_campaign"))).click(); // click on
+																									// Redistribute
+																									// campaign
 		Thread.sleep(3000);
-		driver.findElement(By.xpath(properties.getProperty("re_survey_tab"))).click();
+		driver.findElement(By.xpath(properties.getProperty("re_survey_tab"))).click(); // Survey tab
 		Thread.sleep(3000);
 		logger.info("Click on Preview Icon");
-		driver.findElement(By.xpath(properties.getProperty("re_survey_preview_icon"))).click();
+		driver.findElement(By.xpath(properties.getProperty("re_survey_preview_icon"))).click(); // Click on Preview Icon
 		Thread.sleep(5000);
 		driver.findElement(By.xpath(properties.getProperty("re_survey_preview_close"))).click();
 		Thread.sleep(3000);
 		logger.info("click on Redistribute campaign icon");
-		WebElement redistribute_camp = driver.findElement(By.xpath(properties.getProperty("red_survey_camp_icon")));
+
+		WebElement redistribute_camp = driver.findElement(By.xpath(properties.getProperty("red_survey_camp_icon"))); // Redistribute
+																														// Survey
+																														// Campaign
 		redistribute_camp.click();
 		Thread.sleep(3000);
 
@@ -56,7 +62,8 @@ public class RedistributeSurveyCampaign {
 
 		logger.info("click on Subject line");
 
-		WebElement subjectline = driver.findElement(By.xpath(properties.getProperty("re_survey_subline")));
+		WebElement subjectline = driver.findElement(By.xpath(properties.getProperty("re_survey_subline"))); // Subject
+																											// Line
 		subjectline.clear();
 		Thread.sleep(3000);
 		subjectline.sendKeys("subject for redistributed survey campaign-");
@@ -64,19 +71,23 @@ public class RedistributeSurveyCampaign {
 
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("window.scrollTo(0,document.body.scrollHeight)");
-		Thread.sleep(5000);
+		Thread.sleep(3000);
 
 		logger.info("Click on Search box");
-		driver.findElement(By.xpath(properties.getProperty("select_contact_list"))).click();
+		driver.findElement(By.xpath(properties.getProperty("select_contact_list"))).click(); // Select Contact List
 		Thread.sleep(3000);
 
 		WebElement search_list = driver.findElement(By.xpath(properties.getProperty("click_serach_box")));
-		search_list.sendKeys("Automate");
+		search_list.sendKeys("mounika");
+		Thread.sleep(2000);
 		search_list.click();
+		Thread.sleep(3000);
 		logger.info("Click on checkbox to select the contact list");
 		driver.findElement(By.xpath(properties.getProperty("check_contact_list"))).click();
 		Thread.sleep(3000);
-
-		
+		driver.findElement(By.xpath(properties.getProperty("contact_list_preview"))).click(); // Contact list preview
+		Thread.sleep(3000);
+		driver.findElement(By.xpath(properties.getProperty("contact_list_preview_close"))).click();
+		Thread.sleep(3000);
 	}
 }

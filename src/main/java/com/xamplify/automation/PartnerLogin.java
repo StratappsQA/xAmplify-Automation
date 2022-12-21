@@ -11,7 +11,7 @@ import org.testng.annotations.Test;
 public class PartnerLogin {
 
 	WebDriver driver = Instance.getInstance();
-	Properties properties = PropertiesFile.readPropertyFile("D:\\git\\xAmplify-Automation\\src\\main\\resources\\PartnerLogin.properties");
+	Properties properties = PropertiesFile.readPropertyFile("D:\\git\\xAmplifyproject\\xAmplify-Automation\\src\\main\\resources\\PartnerLogin.properties");
 final Logger logger = LogManager.getLogger(PartnerLogin.class);
 
 
@@ -36,8 +36,9 @@ public void SigninProcess() throws InterruptedException, SQLException {
 	driver.findElement(By.xpath(properties.getProperty("password"))).sendKeys("Xamplify@11");
 	Thread.sleep(1000);
 	driver.findElement(By.xpath(properties.getProperty("sign_into_sandbox"))).click();
-	Thread.sleep(2000);
+	Thread.sleep(8000);
 logger.info("Successfully log into the application");
 	}
+
 
 }

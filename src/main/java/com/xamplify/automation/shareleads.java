@@ -256,6 +256,7 @@ package com.xamplify.automation;
 			driver.findElement(By.xpath("//span[@class='dropdown-toggle']")).click();
 			Thread.sleep(2000);
 			driver.findElement(By.xpath("(//a[@id='delete_button'])[2]")).click();
+			Thread.sleep(7000);
 	}
 		
 		

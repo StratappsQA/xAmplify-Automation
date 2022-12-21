@@ -17,7 +17,7 @@ public class ScheduleRedistributionSurveyCampaign {
 
 	WebDriver driver = Instance.getInstance();
 	Properties properties = PropertiesFile
-			.readPropertyFile("D:\\git\\xAmplify-Automation\\src\\main\\resources\\RedistributionCampaign.properties");
+			.readPropertyFile("D:\\git\\xAmplifyproject\\xAmplify-Automation\\src\\main\\resources\\RedistributionCampaign.properties");
 	final Logger logger = LogManager.getLogger(ScheduleRedistributionSurveyCampaign.class);
 
 	@Test
@@ -25,12 +25,13 @@ public class ScheduleRedistributionSurveyCampaign {
 	public void re_surveyschedule() throws InterruptedException, SQLException {
 		Thread.sleep(3000);
 		RedistributeSurveyCampaign rs1 = new RedistributeSurveyCampaign();
-		rs1.redistribute_scampaign();
+		rs1.redistribute_scampaign(); //Method Calling
 		Thread.sleep(3000);
 
-		driver.findElement(By.xpath(properties.getProperty("click_on_schedule"))).click();
+		logger.info("Click on Schedule");
+		driver.findElement(By.xpath(properties.getProperty("click_on_schedule"))).click(); // Schedule
 		Thread.sleep(3000);
-		driver.findElement(By.xpath(properties.getProperty("click_date_schedule"))).click();
+		driver.findElement(By.xpath(properties.getProperty("click_date_schedule"))).click(); // Select date
 		Thread.sleep(3000);
 
 		WebElement select_schd_re_survey_date = driver
@@ -74,18 +75,19 @@ public class ScheduleRedistributionSurveyCampaign {
 		Thread.sleep(5000);
 
 		logger.info("Survey Redistribution Campaign Scheduled Successfully");
-		
+
 		String Result1 = "Campaign scheduled successfully";
 
 		if (Result1.equals(rs_schedule)) {
 			// Thread.sleep(2000);
 			System.out.println("Survey Redistribution Campaign Scheduled Successfully");
-		} 
-		else {
+		} else {
 			Thread.sleep(2000);
 
 			System.out.println("Survey Redistribution Campaign Scheduled failed");
 		}
+		Thread.sleep(9000);
+
 
 	}
 }

@@ -9,7 +9,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.Test;
 
-public class LaunchEventCampaign {
+public class LaunchEventCampaign extends ExtentReport {
 
 	WebDriver driver = Instance.getInstance();
 
@@ -32,18 +32,20 @@ public class LaunchEventCampaign {
 		 * call for autoresponses ar_eve1.autoResponsesevent();
 		 */
 		  Thread.sleep(4000);
+		  
+		
 		
 		driver.findElement(By.xpath(properties.getProperty("eve_now"))).click(); // click NOW
 		Thread.sleep(3000);
 
 		driver.findElement(By.xpath(properties.getProperty("eve_launch"))).click(); // click LAUNCH
 
-		Thread.sleep(4000);
+		Thread.sleep(6000);
 
 		String eve_launch = driver.findElement(By.xpath(properties.getProperty("eve_response_msg"))).getText(); // response
 		// message
 
-		Thread.sleep(3000);
+		Thread.sleep(6000);
 
 		String expectedtitle = "Campaign launched successfully";
 
@@ -54,8 +56,8 @@ public class LaunchEventCampaign {
 		}
 
 		logger.info("Event Campaign Launched Successfully");
-		driver.navigate().refresh();
-		Thread.sleep(6000);
+		
+		Thread.sleep(4000);
 
 	}
 }
