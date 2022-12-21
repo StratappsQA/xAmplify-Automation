@@ -187,7 +187,7 @@ public class ManageMDFRequests_Vendor {
 	@Test (priority=2,enabled=true)
 	public void allocation_amount_update() throws InterruptedException
 	{
-		Thread.sleep(7000);
+		Thread.sleep(6000);
 		driver.findElement(By.xpath(properties.getProperty("MDF_leftmenu"))).click(); //click on MDF left menu
 		Thread.sleep(7000);
 		driver.findElement(By.xpath(properties.getProperty("Manage_MDFRequest_Vendor"))).click(); //click on manage mdf requests in vendor account 
