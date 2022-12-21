@@ -183,7 +183,7 @@ public class ManageMDFRequests_Vendor {
 	
 
 	//if allocated amount is greater than mdf amount
-	@Test (priority=2,enabled=false)
+	@Test (priority=2,enabled=true)
 	public void allocation_amount_update() throws InterruptedException
 	{
 		Thread.sleep(7000);
