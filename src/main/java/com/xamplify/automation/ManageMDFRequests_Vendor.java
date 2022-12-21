@@ -36,6 +36,7 @@ public class ManageMDFRequests_Vendor {
 		//click on (+) icon - and view details
 		driver.findElement(By.xpath(properties.getProperty("view_more_columns"))).click(); //click on view more columns icon ('+' icon against to request)
 		Thread.sleep(5000);
+		
 		//scroll down till webpage end
 		JavascriptExecutor js3 = (JavascriptExecutor) driver;
 		js3.executeScript("window.scrollTo(0, document.body.scrollHeight)");
@@ -122,12 +123,19 @@ public class ManageMDFRequests_Vendor {
 		js7.executeScript("window.scrollTo(document.body.scrollHeight,0)");
 		logger.info("Scrolled up in the web page");
 		Thread.sleep(7000);
+		driver.findElement(By.xpath(properties.getProperty("download_button_document"))).click(); //click on download documents grid
+		Thread.sleep(4000);
+		driver.findElement(By.xpath(properties.getProperty("downloadicon_document"))).click(); //click on download icon against to uploaded document
+		Thread.sleep(4000);
+		logger.info("document has been downloaded successfully");		
 		driver.findElement(By.xpath(properties.getProperty("cross_icon_view_timeline"))).click(); //click on cross icon
 		Thread.sleep(5000);	
 		driver.findElement(By.xpath(properties.getProperty("cross_icon_view_timeline"))).click(); //click on cross icon
 		Thread.sleep(5000);	
 		logger.info("view timeline option has been selected and viewed the history of the request");
 		
+		
+			
 		//click on view history icon 
 		driver.findElement(By.xpath(properties.getProperty("Search_field_MDF"))).sendKeys(actualresult_tm1); //search with request title
 		Thread.sleep(5000);
@@ -143,9 +151,21 @@ public class ManageMDFRequests_Vendor {
 		js7.executeScript("window.scrollTo(document.body.scrollHeight,0)");
 		logger.info("Scrolled up in the web page");
 		Thread.sleep(7000);
+		driver.findElement(By.xpath(properties.getProperty("download_button_document"))).click(); //click on download documents grid
+		Thread.sleep(4000);
+		driver.findElement(By.xpath(properties.getProperty("downloadicon_document"))).click(); //click on download icon against to uploaded document
+		Thread.sleep(4000);
+		logger.info("document has been downloaded successfully");
 		driver.findElement(By.xpath(properties.getProperty("cross_icon_view_timeline"))).click(); //click on cross icon
 		Thread.sleep(4000);	
 		logger.info("clicked on view history icon - viewed the history of the request");
+		
+		
+		
+		
+		
+		
+		
 		//add and view comments 
 		driver.findElement(By.xpath(properties.getProperty("Search_field_MDF"))).sendKeys(actualresult_tm1); //search with request title
 		Thread.sleep(5000);
@@ -167,7 +187,7 @@ public class ManageMDFRequests_Vendor {
 	@Test (priority=2,enabled=true)
 	public void allocation_amount_update() throws InterruptedException
 	{
-		Thread.sleep(7000);
+		Thread.sleep(6000);
 		driver.findElement(By.xpath(properties.getProperty("MDF_leftmenu"))).click(); //click on MDF left menu
 		Thread.sleep(7000);
 		driver.findElement(By.xpath(properties.getProperty("Manage_MDFRequest_Vendor"))).click(); //click on manage mdf requests in vendor account 
