@@ -1,0 +1,17 @@
+sharedleads=/html/body/app-root/app-home/div/app-leftsidebar/div/div/ul/li[4]/a/span[1]
+search=//*[@id="manageContacts"]/div/div/div/div/div/div/div/div[3]/div[2]/div/div/div[2]/div/input
+select=//*[@id="manageContacts"]/div/div/div/div/div/div/div/div[3]/div[2]/div/div/div[1]/select
+icon=//*[@id="partner_contact_list"]/tbody/tr/td[7]/div/a/i
+search1=//*[@id="manageContacts"]/div[1]/div/div/div/div[4]/div/div/div[2]/div[1]/div/div/div[2]/div/div/div/div[2]/div/input
+select1=//*[@id="manageContacts"]/div[1]/div/div/div/div[4]/div/div/div[2]/div[1]/div/div/div[2]/div/div/div/div[1]/select
+all_tile_edit=//*[@id="manageContacts"]/div[1]/div/div/div/div[2]/div/div[3]/div[1]/button/span
+valid=(//*[@id="manageContacts"]//button/div[2]/div[2])[2]
+undeliverable=(//*[@id="manageContacts"]//button/div[2]/div[2])[3]
+unsubscribe=(//*[@id="manageContacts"]//button/div[2]/div[2])[4]
+managesharedleads=//*[@id="manageContacts"]/app-edit-contacts/div[1]/ul/li[2]/a
+manageall=(//*[@id="manageContacts"]//button)[1]
+valid_tile=(//*[@id="manageContacts"]//button)[2]
+unsubscribe_tile=(//*[@id="manageContacts"]//button)[3]
+undeliverable_tile=(//*[@id="manageContacts"]//button)[4]
+campaignanalytics=//a/i[@class="fa fa-line-chart"]
+close=//a[@class="close-circle xamp-margin-left-icon"]
