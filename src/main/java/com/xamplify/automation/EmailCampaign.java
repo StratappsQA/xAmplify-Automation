@@ -29,7 +29,7 @@ public class EmailCampaign {
 
 	WebDriver driver = Instance.getInstance();
 
-	Properties properties = PropertiesFile.readPropertyFile("D:\\git\\xAmplify-Automation\\src\\main\\resources\\Campaign.properties");
+	Properties properties = PropertiesFile.readPropertyFile("D:\\GitHub\\xAmplify-Automation\\src\\main\\resources\\Campaign.properties");
 	
 final Logger logger = LogManager.getLogger(EmailCampaign.class);
 	
@@ -41,7 +41,7 @@ final Logger logger = LogManager.getLogger(EmailCampaign.class);
 		//driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
 
 
-		WebDriverWait wait = new WebDriverWait(driver, 50);
+		WebDriverWait wait = new WebDriverWait(driver, 80);
 
 		// Wait till the element is not visible
 

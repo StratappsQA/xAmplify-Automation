@@ -159,8 +159,7 @@ public class shareleads {
 		driver.findElement(By.xpath("//*[@id='sample_editable_1_new']")).click();
 		Thread.sleep(3000);
 		driver.findElement(By.xpath("//*[@id='tcModal']//button[2]")).click();
-
-	}
+}
 
 	@Test(priority = 7, enabled = true)
 	public void addoneatatime2() throws InterruptedException {

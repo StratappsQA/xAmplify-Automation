@@ -19,7 +19,7 @@ import org.testng.annotations.Test;
 public class ScheduleVideoCampaign {
 	WebDriver driver = Instance.getInstance();
 
-	Properties properties = PropertiesFile.readPropertyFile("D:\\git\\xAmplify-Automation\\src\\main\\resources\\Campaign.properties");
+	Properties properties = PropertiesFile.readPropertyFile("D:\\GitHub\\xAmplify-Automation\\src\\main\\resources\\Campaign.properties");
 	
 final Logger logger = LogManager.getLogger(ScheduleVideoCampaign.class);
 
@@ -102,7 +102,7 @@ final Logger logger = LogManager.getLogger(ScheduleVideoCampaign.class);
 			System.out.println(" video Campaign schedule failed");
 		}
 		
-		
+		Thread.sleep(10000);
 logger.info("Video Campaign Scheduled Successfully");
 	}
 

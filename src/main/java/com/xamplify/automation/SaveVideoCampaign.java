@@ -16,7 +16,7 @@ import org.testng.annotations.Test;
 
 public class SaveVideoCampaign  {
 	 WebDriver driver = Instance.getInstance();
-	 Properties properties = PropertiesFile.readPropertyFile("D:\\git\\xAmplify-Automation\\src\\main\\resources\\Campaign.properties");
+	 Properties properties = PropertiesFile.readPropertyFile("D:\\GitHub\\xAmplify-Automation\\src\\main\\resources\\Campaign.properties");
 
 
 final Logger logger = LogManager.getLogger(SaveVideoCampaign.class);
@@ -25,7 +25,7 @@ final Logger logger = LogManager.getLogger(SaveVideoCampaign.class);
 		public void vsave() throws InterruptedException, SQLException
 		{
 						
-						Thread.sleep(5000);
+						Thread.sleep(7000);
 						VideoCampaign vs= new VideoCampaign();
 						vs.vdecampaign();
 						
@@ -80,6 +80,8 @@ logger.info("Spam Check");
 		System.out.println(" video Campaign failed");
 		}
 			
+		
+		Thread.sleep(10000);
 logger.info("Video Campaign Saved Successfully");				
 		}
 

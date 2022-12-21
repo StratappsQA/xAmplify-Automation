@@ -15,12 +15,12 @@ import org.testng.annotations.Test;
 public class LaunchPageCampaign {
 
 	WebDriver driver = Instance.getInstance();
-	Properties properties = PropertiesFile.readPropertyFile("D:\\git\\xAmplify-Automation\\src\\main\\resources\\Campaign.properties");// properties file
+	Properties properties = PropertiesFile.readPropertyFile("D:\\GitHub\\xAmplify-Automation\\src\\main\\resources\\Campaign.properties");// properties file
 final Logger logger = LogManager.getLogger(LaunchPageCampaign.class);
 
 	@Test
 	public void page_launch() throws InterruptedException, SQLException {
-		Thread.sleep(4000);
+		Thread.sleep(6000);
 		PageCampaign pc1 = new PageCampaign();
 	     pc1.pcampaign();
 		driver.findElement(By.xpath(properties.getProperty("p_now"))).click();// click on now
@@ -42,7 +42,7 @@ final Logger logger = LogManager.getLogger(LaunchPageCampaign.class);
 		else {
 			System.out.println(" Page Campaign failed");
 		}
-		
+		Thread.sleep(7000);
 		
 logger.info("Page Campaign Launched Successfully");
 		

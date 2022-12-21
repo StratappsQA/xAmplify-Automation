@@ -4,6 +4,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
+
 public class Instance {
 
 	public static WebDriver driver;
@@ -11,8 +13,10 @@ public class Instance {
 	  public static WebDriver getInstance() 	  {
 		  if (driver == null) 
 		   {
-			  
-			System.setProperty("webdriver.chrome.driver","D:\\Selenium\\chromedriver.exe");
+			 
+
+			WebDriverManager.chromedriver().setup();  
+
 		   	ChromeOptions options = new ChromeOptions();
 		   	options.addArguments("incognito");
 		   	options.addArguments("use-fake-ui-for-media-stream"); 

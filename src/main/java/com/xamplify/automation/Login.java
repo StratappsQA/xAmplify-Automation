@@ -12,7 +12,7 @@ import org.testng.annotations.Test;
 public class Login {
 	
 	WebDriver driver = Instance.getInstance();
-	Properties properties = PropertiesFile.readPropertyFile("D:\\git\\xAmplify-Automation\\src\\main\\resources\\Login.properties");
+	Properties properties = PropertiesFile.readPropertyFile("D:\\GitHub\\xAmplify-Automation\\src\\main\\resources\\Login.properties");
 	final Logger logger = LogManager.getLogger(Login.class);
 	
 	

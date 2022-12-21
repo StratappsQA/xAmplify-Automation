@@ -22,11 +22,11 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-public class PageCampaign {
+public class PageCampaign extends ExtentReportsClass{
 	
 
 	 WebDriver driver = Instance.getInstance();
-	 Properties properties = PropertiesFile.readPropertyFile("D:\\git\\xAmplify-Automation\\src\\main\\resources\\Campaign.properties");//properties file
+	 Properties properties = PropertiesFile.readPropertyFile("D:\\GitHub\\xAmplify-Automation\\src\\main\\resources\\Campaign.properties");//properties file
 	 
 final Logger logger = LogManager.getLogger(PageCampaign.class);
 	 
@@ -35,7 +35,7 @@ final Logger logger = LogManager.getLogger(PageCampaign.class);
 	public void pcampaign() throws InterruptedException, SQLException {
 		
 
-		WebDriverWait wait = new WebDriverWait(driver, 60);// Wait till the element is not visible
+		WebDriverWait wait = new WebDriverWait(driver, 90);// Wait till the element is not visible
 		
 		logger.info("Mouse over the Page campaign");
 		WebElement pcampele = wait.until(
@@ -44,7 +44,7 @@ final Logger logger = LogManager.getLogger(PageCampaign.class);
 
 		Actions pcamp_action = new Actions(driver);
 		pcamp_action.moveToElement(pcampele).perform();
-		Thread.sleep(5000);
+		Thread.sleep(8000);
 		WebElement create_pcampele = driver.findElement(By.xpath(properties.getProperty("page_createcampaign"))); //click on create campaign
 		pcamp_action.moveToElement(create_pcampele);
 		pcamp_action.click();
