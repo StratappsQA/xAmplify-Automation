@@ -32,13 +32,11 @@ public class SurveyToCampaign {
 	public void scampaign() throws InterruptedException, SQLException {
 
 		WebDriverWait wait = new WebDriverWait(driver, 80);
-
 		// Wait till the element is not visible
 
 		WebElement scamp = wait.until(
 				ExpectedConditions.visibilityOfElementLocated(By.xpath(properties.getProperty("campaignhover"))));
 		scamp.click(); // hover on campaign
-
 		Actions camp_action = new Actions(driver);
 		camp_action.moveToElement(scamp).perform();
 		Thread.sleep(5000);
@@ -144,8 +142,7 @@ public class SurveyToCampaign {
 		Thread.sleep(3000);
 		driver.findElement(By.xpath(properties.getProperty("s_to_camp_next1"))).click(); // click on Next
 		Thread.sleep(3000);
-
-		logger.info("Goto Email_Template_Section");
+  	logger.info("Goto Email_Template_Section");
 		WebElement s_search = driver.findElement(By.xpath(properties.getProperty("s_to_camp_search_template")));// search
 																												// bar
 		s_search.sendKeys("Survey");
@@ -171,8 +168,6 @@ public class SurveyToCampaign {
 		Thread.sleep(4000);
 		driver.findElement(By.xpath(properties.getProperty("s_to_camp_next2"))).click(); // click on Next
 		Thread.sleep(3000);
-
 		logger.info("Goto Launch_Section");
-
 	}
 }

@@ -56,6 +56,7 @@ logger.info("Click on create Campaign");																										// campaign
 		driver.findElement(By.xpath(properties.getProperty("openvideocampaign"))).click();// open campagin
 		Thread.sleep(3000);
 
+		//from here duplicate
 		List<String> campaignNames = new ArrayList<String>();
 		String query = properties.getProperty("query.getCampaignNamesByOrganizationId").replaceAll(":emailId",
 				properties.getProperty("user.name"));
@@ -77,7 +78,7 @@ logger.info("Click on create Campaign");																										// campaign
 		System.out.println(vcampaignName.getAttribute("value"));
 
 		Thread.sleep(2000);
-
+		
 		//String getcampaignname = vcampaignName.getAttribute("value");
 
 

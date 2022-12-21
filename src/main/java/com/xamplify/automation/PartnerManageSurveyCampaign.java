@@ -732,4 +732,5 @@ public class PartnerManageSurveyCampaign extends ExtentReportsClass{
 		Thread.sleep(9000);
 	}
 
+
 }

@@ -21,7 +21,6 @@ public class ScheduleSurveyToCampaign {
 	final Logger logger = LogManager.getLogger(ScheduleSurveyToCampaign.class);
 
 	@Test
-
 	public void s_to_camp_Schedule() throws InterruptedException, SQLException
 
 	{
@@ -39,7 +38,6 @@ public class ScheduleSurveyToCampaign {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("window.scrollTo(0,document.body.scrollHeight)");// scroll down
 		Thread.sleep(3000);
-
 		driver.findElement(By.xpath(properties.getProperty("s_to_camp_date_field"))).click();// click on date field
 		Thread.sleep(4000);
 		driver.findElement(By.xpath(properties.getProperty("s_to_camp_date_select"))).click();// Select date
@@ -54,7 +52,6 @@ public class ScheduleSurveyToCampaign {
 		int minutes = calendar.get(Calendar.MINUTE);
 		System.out.println(hours);
 		System.out.println(minutes);
-
 		if (hours < 12) {
 			driver.findElement(By.xpath(properties.getProperty("s_to_camp_date_hour_select"))).sendKeys("1");
 			Thread.sleep(5000);
@@ -66,15 +63,13 @@ public class ScheduleSurveyToCampaign {
 			driver.findElement(By.xpath(properties.getProperty("s_to_camp_date_minute_select"))).sendKeys("59");
 			Thread.sleep(5000);
 		}
-
-		WebElement country_drpdwn = driver.findElement(By.xpath(properties.getProperty("s_to_camp_country")));
+    WebElement country_drpdwn = driver.findElement(By.xpath(properties.getProperty("s_to_camp_country")));
 		Select country1 = new Select(country_drpdwn);
 		Thread.sleep(5000);
 		country1.selectByVisibleText("India");// Select India
 		Thread.sleep(6000);
 		driver.findElement(By.xpath(properties.getProperty("s_to_camp_schedule_click"))).click();
 		Thread.sleep(8000);
-
 		String s_to_camp_schedule = driver.findElement(By.xpath(properties.getProperty("s_to_camp_response_msg")))
 				.getText(); // response
 		// message

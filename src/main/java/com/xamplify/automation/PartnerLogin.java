@@ -22,7 +22,7 @@ public void OpeningtheBrowser() throws InterruptedException {
 	driver.get(properties.getProperty("baseurl_p"));
 	driver.manage().window().maximize();
 	Thread.sleep(3000);
-logger.info("Successfully open the Web application");
+    logger.info("Successfully open the Web application");
 	
 }
 

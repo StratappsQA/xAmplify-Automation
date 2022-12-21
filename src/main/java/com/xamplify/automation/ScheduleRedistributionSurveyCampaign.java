@@ -88,5 +88,6 @@ public class ScheduleRedistributionSurveyCampaign {
 		}
 		Thread.sleep(9000);
 
+
 	}
 }

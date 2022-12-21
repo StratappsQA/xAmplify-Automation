@@ -6,17 +6,21 @@ import java.util.Properties;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
+
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
+
 import org.testng.annotations.Test;
 
 public class LaunchRedistributionSurveyCampaign {
 
 	WebDriver driver = Instance.getInstance();
 	Properties properties = PropertiesFile
+
 			.readPropertyFile("D:\\git\\xAmplifyproject\\xAmplify-Automation\\src\\main\\resources\\RedistributionCampaign.properties");
+
 
 	final Logger logger = LogManager.getLogger(LaunchRedistributionSurveyCampaign.class);
 
@@ -52,7 +56,9 @@ public class LaunchRedistributionSurveyCampaign {
 
 			System.out.println("Survey Campaign Redistribution failed");
 		}
-		Thread.sleep(6000);
+
+	Thread.sleep(6000);
+
 
 	}
 

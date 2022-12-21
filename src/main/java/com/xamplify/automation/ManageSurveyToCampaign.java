@@ -21,13 +21,16 @@ public class ManageSurveyToCampaign {
 	WebDriver driver = Instance.getInstance();
 	Properties properties = PropertiesFile
 			.readPropertyFile("D:\\git\\xAmplifyproject\\xAmplify-Automation\\src\\main\\resources\\ManageCampaigns.properties");
+
 	final Logger logger = LogManager.getLogger(SurveyCampaign.class);
 
 	@Test
 
 	public void manage_surveyTocampaign() throws InterruptedException, SQLException {
 
+
 		WebDriverWait wait = new WebDriverWait(driver, 80); // Wait till the element is not visible
+
 
 		WebElement mscamp = wait.until(
 				ExpectedConditions.visibilityOfElementLocated(By.xpath(properties.getProperty("campaignhover"))));
@@ -68,12 +71,15 @@ public class ManageSurveyToCampaign {
 		driver.findElement(By.xpath(properties.getProperty("update_button"))).click();// click on update
 		Thread.sleep(2000);
 		driver.findElement(By.xpath(properties.getProperty("click_close"))).click();
+
 		// click on close button
+
 		Thread.sleep(4000);
 
 		logger.info("click on Gear icon");
 		driver.findElement(By.xpath(properties.getProperty("tocamp_gearicon"))).click();
 		Thread.sleep(3000);
+
 		driver.findElement(By.xpath(properties.getProperty("click_copy_campaign"))).click(); // Copy campaign
 		Thread.sleep(3000);
 		driver.findElement(By.xpath(properties.getProperty("click_save_changes"))).click();// click on Save Changes.
@@ -87,21 +93,25 @@ public class ManageSurveyToCampaign {
 		logger.info("click on Gear icon");
 		driver.findElement(By.xpath(properties.getProperty("tocamp_gearicon1"))).click();
 		Thread.sleep(3000);
+
 		driver.findElement(By.xpath(properties.getProperty("click_Preview"))).click(); // Preview
+
 		Thread.sleep(5000);
 
 		driver.findElement(By.xpath(properties.getProperty("click_close_preview"))).click();
 		Thread.sleep(5000);
-
 		logger.info("click on Gear icon");
 		driver.findElement(By.xpath(properties.getProperty("tocamp_gearicon1"))).click();
 		Thread.sleep(3000);
+
 		driver.findElement(By.xpath(properties.getProperty("click_archieve_camp"))).click(); // Archieve
+
 		Thread.sleep(3000);
 		driver.findElement(By.xpath(properties.getProperty("click_archieved_campaigns"))).click();
 		Thread.sleep(3000);
 		driver.findElement(By.xpath(properties.getProperty("t_gearicon"))).click();
 		Thread.sleep(3000);
+
 		driver.findElement(By.xpath(properties.getProperty("click_unarchieve_camp"))).click(); // Unarchieve
 		Thread.sleep(3000);
 		driver.findElement(By.xpath(properties.getProperty("click_active_campaigns"))).click();
@@ -113,6 +123,7 @@ public class ManageSurveyToCampaign {
 		logger.info("Click on Campaign based reports");
 		driver.findElement(By.xpath(properties.getProperty("To_Campaign_based_reports"))).click(); // Campaign based
 																									// reports
+
 		Thread.sleep(5000);
 		logger.info("Click on recepients tile");
 		driver.findElement(By.xpath(properties.getProperty("Survey_To_recepients"))).click();
@@ -142,8 +153,10 @@ public class ManageSurveyToCampaign {
 		Thread.sleep(3000);
 		driver.findElement(By.xpath(properties.getProperty("survey_to_camp_analytics_export_excel_click"))).click();
 		Thread.sleep(3000);
+
 		driver.findElement(
 				By.xpath(properties.getProperty("survey_to_camp_analytics_Survey_Total_Email_Sent_cross_click")))
+
 				.click();
 		Thread.sleep(3000);
 
@@ -184,7 +197,6 @@ public class ManageSurveyToCampaign {
 					ExpectedConditions.visibilityOfElementLocated(By.xpath(properties.getProperty("time_dropdown")))); // select
 																														// time
 																														// dropdown
-
 			Thread.sleep(2000);
 
 			Select w_t2 = new Select(wait_time1);
@@ -236,7 +248,6 @@ public class ManageSurveyToCampaign {
 					ExpectedConditions.visibilityOfElementLocated(By.xpath(properties.getProperty("time_dropdown")))); // select
 																														// time
 																														// dropdown
-
 			Thread.sleep(2000);
 
 			Select w_t2 = new Select(wait_time2);
@@ -284,7 +295,6 @@ public class ManageSurveyToCampaign {
 					ExpectedConditions.visibilityOfElementLocated(By.xpath(properties.getProperty("time_dropdown1")))); // select
 																														// time
 																														// dropdown
-
 			Thread.sleep(2000);
 
 			Select w_t3 = new Select(w_time3);
@@ -314,6 +324,7 @@ public class ManageSurveyToCampaign {
 		}
 
 		logger.info("Click on ClickThrough rate Tile");
+
 
 		WebElement clickthroughrate = driver.findElement(By.xpath(properties.getProperty("click_clickthroughrate")));
 		Thread.sleep(3000);
@@ -366,12 +377,12 @@ public class ManageSurveyToCampaign {
 		Thread.sleep(3000);
 
 		if (survey_to_softbounce.isEnabled()) {
+
 			survey_to_softbounce.click();
 			Thread.sleep(3000);
 			driver.findElement(By.xpath(properties.getProperty("suvey_to_softbounce_close"))).click();
 			Thread.sleep(3000);
 		}
-
 		else {
 
 			System.out.println("Softbounce count is Zero");
@@ -389,7 +400,6 @@ public class ManageSurveyToCampaign {
 			driver.findElement(By.xpath(properties.getProperty("suvey_to_unsubscribe_close"))).click();
 			Thread.sleep(3000);
 		}
-
 		else {
 
 			System.out.println("unsubscribe count is Zero");
@@ -418,23 +428,19 @@ public class ManageSurveyToCampaign {
 		Thread.sleep(2000);
 		survey_eml_sort1.selectByValue("4: Object");
 		Thread.sleep(2000);
-
 		WebElement survey_to_analytics_search = driver
 				.findElement(By.xpath(properties.getProperty("survey_to_analytics_search")));
 		survey_to_analytics_search.sendKeys("mounika");
 		survey_to_analytics_search.sendKeys(Keys.ENTER);
 		Thread.sleep(3000);
-
 		survey_to_analytics_search.clear();
 		Thread.sleep(2000);
 		driver.findElement(By.xpath(properties.getProperty("survey_to_analytics_cross"))).click();
 		Thread.sleep(3000);
-
-		driver.findElement(By.xpath(properties.getProperty("survey_to_export_excel"))).click();
+    driver.findElement(By.xpath(properties.getProperty("survey_to_export_excel"))).click();
 		Thread.sleep(3000);
 		driver.findElement(By.xpath(properties.getProperty("survey_to_click_export_Excel"))).click();
 		Thread.sleep(3000);
-
 		Actions a1 = new Actions(driver);
 		a1.sendKeys(Keys.PAGE_UP).build().perform();
 
@@ -449,12 +455,10 @@ public class ManageSurveyToCampaign {
 		Thread.sleep(2000);
 		driver.findElement(By.xpath(properties.getProperty("click_preview_on_email_info_close"))).click();
 		Thread.sleep(3000);
-
 		driver.findElement(By.xpath(properties.getProperty("click_lists_details"))).click();
 		Thread.sleep(4000);
 		driver.findElement(By.xpath(properties.getProperty("click_lists_details_close"))).click();
 		Thread.sleep(3000);
-
 		WebElement ManageCampaign = driver
 				.findElement(By.xpath(properties.getProperty("click_survey_to_manage_campaigns")));
 		Thread.sleep(2000);
@@ -463,6 +467,7 @@ public class ManageSurveyToCampaign {
 		Thread.sleep(6000);
 
 		logger.info("Manage Survey To campaign Analytics Completed");
+
 	}
 
 }

@@ -3,7 +3,15 @@
 <suite name="Suite">
   <test thread-count="5" name="Test">
     <classes>
-    <class name="com.xamplify.automation.Login"/>
+    <class name="com.xamplify.automation.Login"/> 
+    <class name="com.xamplify.automation.UploadAssetFile"/> 
+<!--         <class name="com.xamplify.automation.UploadAssetVideo"/> -->
+<!--                 <class name="com.xamplify.automation.DesignPDF"/> -->
+
+<!--             <class name="com.xamplify.automation.ManageMyAssets"/> -->
+        
+    
+    
    
      <!--<class name="com.xamplify.automation.LaunchEmailCampaign"/> -->
 <!--      <class name="com.xamplify.automation.LaunchVideoCampaign"/> 
@@ -12,11 +20,11 @@
 <!--  <class name="com.xamplify.automation.LaunchEventCampaign"/> 
   <class name="com.xamplify.automation.SaveEventCampaign"/> -->
     
+
  <!--    <class name="com.xamplify.automation.ScheduleEventCampaign"/> -->
   <class name="com.xamplify.automation.EventToCampagin"/> -->
    
 
-      
-    </classes>
+   </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

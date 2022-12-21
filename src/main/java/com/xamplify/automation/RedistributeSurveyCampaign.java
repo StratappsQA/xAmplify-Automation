@@ -21,6 +21,7 @@ public class RedistributeSurveyCampaign {
 	Properties properties = PropertiesFile
 			.readPropertyFile("D:\\git\\xAmplifyproject\\xAmplify-Automation\\src\\main\\resources\\RedistributionCampaign.properties");
 
+
 	final Logger logger = LogManager.getLogger(RedistributeSurveyCampaign.class);
 
 	@Test
@@ -46,6 +47,7 @@ public class RedistributeSurveyCampaign {
 		driver.findElement(By.xpath(properties.getProperty("re_survey_preview_close"))).click();
 		Thread.sleep(3000);
 		logger.info("click on Redistribute campaign icon");
+
 		WebElement redistribute_camp = driver.findElement(By.xpath(properties.getProperty("red_survey_camp_icon"))); // Redistribute
 																														// Survey
 																														// Campaign
@@ -87,6 +89,5 @@ public class RedistributeSurveyCampaign {
 		Thread.sleep(3000);
 		driver.findElement(By.xpath(properties.getProperty("contact_list_preview_close"))).click();
 		Thread.sleep(3000);
-
 	}
 }

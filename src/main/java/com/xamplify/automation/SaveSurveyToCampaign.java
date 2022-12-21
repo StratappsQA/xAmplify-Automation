@@ -15,7 +15,7 @@ import org.testng.annotations.Test;
 
 public class SaveSurveyToCampaign {
 
-	WebDriver driver = Instance.getInstance();
+WebDriver driver = Instance.getInstance();
 
 	Properties properties = PropertiesFile
 			.readPropertyFile("D:\\git\\xAmplifyproject\\xAmplify-Automation\\src\\main\\resources\\Campaign.properties");

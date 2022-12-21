@@ -11,7 +11,6 @@ import org.openqa.selenium.WebDriver;
 import org.testng.annotations.Test;
 
 public class LaunchSurveyToCampaign {
-
 	WebDriver driver = Instance.getInstance();
 	Properties properties = PropertiesFile
 			.readPropertyFile("D:\\git\\xAmplifyproject\\xAmplify-Automation\\src\\main\\resources\\Campaign.properties");
@@ -60,3 +59,4 @@ public class LaunchSurveyToCampaign {
 	}
 
 }
+
