@@ -4,13 +4,18 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+
+import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
+import java.util.Random;
 
+import org.apache.commons.lang3.RandomStringUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
@@ -217,7 +222,7 @@ public class TeamMember_Vendor extends RandomEmailGeneration {
 		WebElement uploadcsv=driver.findElement(By.xpath(properties.getProperty("upload_CSV_TM"))); //click on upload csv button
 		Thread.sleep(6000);
 		logger.info("clicked on upload button");
-		uploadcsv.sendKeys("D:\\Selenium\\files\\Teammember_CSV.csv");			
+		uploadcsv.sendKeys("D:\\GitHub\\xAmplify-Automation\\Teammember_CSV.csv");			
 		Thread.sleep(5000);
 
 		String actualresult = driver.findElement(By.xpath(properties.getProperty("Success_message_grid_TM_CSV"))).getText();	
@@ -302,6 +307,10 @@ public class TeamMember_Vendor extends RandomEmailGeneration {
 	} 
 
 
+	
+	
+	
+	
 
 
 
