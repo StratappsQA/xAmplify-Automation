@@ -27,8 +27,7 @@ public class ManageContacts extends ExtentReportsClass {
 
 	static WebDriver driver = Instance.getInstance();
 
-	static Properties properties = PropertiesFile.readPropertyFile(
-			"D:\\git\\gayatriContactswrkspace\\xAmplify-Automation\\src\\main\\resources\\ManageContacts.properties");
+	static Properties properties = PropertiesFile.readPropertyFile("D:\\git\\gayatriContactswrkspace\\xAmplify-Automation\\src\\main\\resources\\ManageContacts.properties");
 
 	final Logger logger = LogManager.getLogger(ManageContacts.class);
 
@@ -52,53 +51,52 @@ public class ManageContacts extends ExtentReportsClass {
 		WebDriverWait wait_mcon2 = new WebDriverWait(driver, 50);
 		// Wait till the element is not visible
 		WebElement mcon2 = wait_mcon2.until(
-				ExpectedConditions.visibilityOfElementLocated(By.xpath(properties.getProperty("managecontacts"))));// hover
-																													// on
-																													// contacts
+				ExpectedConditions.visibilityOfElementLocated(By.xpath(properties.getProperty("managecontacts"))));// click on manage contacts
 
 		mcon2.click();
 
 		Thread.sleep(5000);
 
-		driver.findElement(By.xpath(properties.getProperty("mcon_formcon"))).click(); // click on the edit icon
+		driver.findElement(By.xpath(properties.getProperty("mcon_formcon"))).click(); // click on the Form Contacts tab
 		Thread.sleep(3000);
 
 		logger.info("Form Contacts button clicked successfully[Manage Contacts]");
 
 		
-		  driver.findElement(By.xpath(properties.getProperty("mcon_ALL"))).click(); //click on the edit icon
+		  driver.findElement(By.xpath(properties.getProperty("mcon_ALL"))).click(); //click on the All tab
 		  Thread.sleep(3000);
 		  
 		  logger.info("ALL Contacts button clicked successfully[Manage Contacts]");
 		  
-		  driver.findElement(By.xpath(properties.getProperty("mcon_grid"))).click(); //click on the edit icon
+		  driver.findElement(By.xpath(properties.getProperty("mcon_grid"))).click(); 
 		  Thread.sleep(3000);
 		  
 		  logger.info("Grid View icon clicked successfully[Manage Contacts]");
 		  
 		  WebElement mcon_sort =
-		  driver.findElement(By.xpath(properties.getProperty("mcon_grid_sortby"))); //click on the // edit icon 
+		  driver.findElement(By.xpath(properties.getProperty("mcon_grid_sortby"))); 
 		  Thread.sleep(3000);
 		  
 		  Select mconsort = new Select(mcon_sort);
 		  
-		  mconsort.selectByValue("1: Object"); Thread.sleep(2000);
+		  mconsort.selectByValue("1: Object");
+		  Thread.sleep(2000);
 		  mconsort.selectByValue("2: Object"); Thread.sleep(2000);
 		  mconsort.selectByValue("3: Object"); Thread.sleep(2000);
 		  mconsort.selectByValue("4: Object"); Thread.sleep(4000); 
-		  WebElement mcon_search =driver.findElement(By.xpath(properties.getProperty("mcon_grid_search")));
+		  WebElement mcon_search =driver.findElement(By.xpath(properties.getProperty("mcon_grid_search")));   //click for the search field
 		  mcon_search.sendKeys("Automate");
 		  mcon_search.sendKeys(Keys.ENTER);
 		  Thread.sleep(3000);
 		  
-		  driver.findElement(By.xpath(properties.getProperty(
-		  "mcon_grid_search_insidelist"))).click(); // click on the // edit icon
+		  driver.findElement(By.xpath(properties.getProperty( "mcon_grid_search_insidelist"))).click(); 
 		  Thread.sleep(3000); 
 		  logger.info("Searched successfully[Manage Contacts]");
-		  driver.findElement(By.xpath(properties.getProperty("mcon_grid_search_close"))).click(); // click on the edit // icon Thread.sleep(3000);
+		  driver.findElement(By.xpath(properties.getProperty("mcon_grid_search_close"))).click(); // click for the close
+		  Thread.sleep(3000);
 		 
 
-		driver.findElement(By.xpath(properties.getProperty("mcon_MyContacts"))).click(); // click on the edit icon
+		driver.findElement(By.xpath(properties.getProperty("mcon_MyContacts"))).click(); // click on the My Contacts tab
 		Thread.sleep(3000);
 
 	}
@@ -115,18 +113,18 @@ public class ManageContacts extends ExtentReportsClass {
 
 		Thread.sleep(6000);
 
-		driver.findElement(By.xpath(properties.getProperty("mc_alltile_filter"))).click(); // click on t
+		driver.findElement(By.xpath(properties.getProperty("mc_alltile_filter"))).click(); // click on the filter icon
 		Thread.sleep(3000);
 
 		WebElement condrop = driver.findElement(By.xpath(properties.getProperty("mc_alltile_filter_selectfield")));
-		// click on t
+		// click on the select field in the dropdown
 		Thread.sleep(3000);
 
 		Select field = new Select(condrop);
 		field.selectByVisibleText("Company");
 		Thread.sleep(3000);
 
-		WebElement condrop2 = driver.findElement(By.xpath(properties.getProperty("mc_alltile_filter_selectcondition")));
+		WebElement condrop2 = driver.findElement(By.xpath(properties.getProperty("mc_alltile_filter_selectcondition"))); //click on the select condition
 
 		Thread.sleep(3000);
 
@@ -135,24 +133,24 @@ public class ManageContacts extends ExtentReportsClass {
 		Thread.sleep(3000);
 
 		driver.findElement(By.xpath(properties.getProperty("mc_alltile_filter_sendvalue")))
-				.sendKeys("automate_company"); // click on the edit icon
+				.sendKeys("automate_company"); 
 		Thread.sleep(3000);
 
-		driver.findElement(By.xpath(properties.getProperty("mc_alltile_filter_submit"))).click(); // click on saveas
-																									// button
+		driver.findElement(By.xpath(properties.getProperty("mc_alltile_filter_submit"))).click(); // click on submit
+																									
 		Thread.sleep(5000);
 
 		logger.info("Data Filtered successfully within the ALL Tile[Manage Contacts]");
 
-		driver.findElement(By.id("checkAllExistingContacts")).click();
+		driver.findElement(By.id("checkAllExistingContacts")).click(); //select checkbox for all the contacts
 
 		Thread.sleep(5000);
-		driver.findElement(By.xpath(properties.getProperty("mc_alltile_filter_gearicon"))).click(); // click on saveas
-																									// button
+		driver.findElement(By.xpath(properties.getProperty("mc_alltile_filter_gearicon"))).click(); // click on gear icon
+																									
 		Thread.sleep(5000);
 
-		driver.findElement(By.xpath(properties.getProperty("mc_alltile_filter_saveas"))).click(); // click on saveas
-																									// button
+		driver.findElement(By.xpath(properties.getProperty("mc_alltile_filter_saveas"))).click(); // click on saveas button
+																									
 		Thread.sleep(5000);
 
 		driver.findElement(By.xpath(properties.getProperty("list_allvalidation"))).sendKeys("filterchck");
@@ -187,19 +185,19 @@ public class ManageContacts extends ExtentReportsClass {
 		Thread.sleep(1000);
 
 		driver.findElement(By.xpath(properties.getProperty("mc_alltile_filter_savechanges"))).click(); // click on
-																										// saveas button
+																										// save button
 		Thread.sleep(5000);
 
 		logger.info("List Saved successfully for filter option within the ALL Tile[Manage Contacts]");
 
-		driver.findElement(By.xpath(properties.getProperty("mc_validtile"))).click(); //
+		driver.findElement(By.xpath(properties.getProperty("mc_validtile"))).click(); //click on the valid tile
 		Thread.sleep(9000);
 
-		driver.findElement(By.xpath(properties.getProperty("mc_validtile_filter"))).click(); //
+		driver.findElement(By.xpath(properties.getProperty("mc_validtile_filter"))).click(); //click on the filter icon
 		Thread.sleep(3000);
 
-		WebElement condrop_2 = driver.findElement(By.xpath(properties.getProperty("mc_validtile_filter_selectfield")));
-		// click on
+		WebElement condrop_2 = driver.findElement(By.xpath(properties.getProperty("mc_validtile_filter_selectfield"))); //click on the select field
+		
 		Thread.sleep(3000);
 
 		Select field_2 = new Select(condrop_2);
@@ -207,7 +205,7 @@ public class ManageContacts extends ExtentReportsClass {
 		Thread.sleep(3000);
 
 		WebElement con_drop2 = driver
-				.findElement(By.xpath(properties.getProperty("mc_validtile_filter_selectcondition")));
+				.findElement(By.xpath(properties.getProperty("mc_validtile_filter_selectcondition")));  //click on the select condition
 
 		Thread.sleep(3000);
 
@@ -215,32 +213,29 @@ public class ManageContacts extends ExtentReportsClass {
 		con_field_2.selectByVisibleText("=");
 		Thread.sleep(3000);
 
-		driver.findElement(By.xpath(properties.getProperty("mc_validtile_filter_sendvalue"))).sendKeys("98941234"); // click
-																													// on
-																													// the
-																													// edit
-																													// icon
+		driver.findElement(By.xpath(properties.getProperty("mc_validtile_filter_sendvalue"))).sendKeys("98941234"); 
+																													
 		Thread.sleep(3000);
 
-		driver.findElement(By.xpath(properties.getProperty("mc_validtile_filter_submit"))).click(); // click on saveas
-																									// button
+		driver.findElement(By.xpath(properties.getProperty("mc_validtile_filter_submit"))).click(); // click on submit
+																									
 		Thread.sleep(5000);
 
-		driver.findElement(By.xpath(properties.getProperty("mc_validtile_filter_clear"))).click(); // click on saveas
-																									// button
+		driver.findElement(By.xpath(properties.getProperty("mc_validtile_filter_clear"))).click(); // click on clear
+																									
 		Thread.sleep(11000);
 
 		logger.info("Filter option filtered and cleared within the Valid Tile[Manage Contacts]");
 
-		driver.findElement(By.xpath(properties.getProperty("mc_validtile_filter_gearicon"))).click(); //
+		driver.findElement(By.xpath(properties.getProperty("mc_validtile_filter_gearicon"))).click(); //click on the gear icon
 		Thread.sleep(5000);
 
-		driver.findElement(By.xpath(properties.getProperty("mc_validtile_filter_export"))).click(); //
+		driver.findElement(By.xpath(properties.getProperty("mc_validtile_filter_export"))).click(); //click on the export 
 		Thread.sleep(5000);
 
 		logger.info("Export to Excel done successfully within the Valid Tile[Manage Contacts]");
 
-		WebElement valid_sorty = driver.findElement(By.xpath(properties.getProperty("mc_validtile_sortby")));
+		WebElement valid_sorty = driver.findElement(By.xpath(properties.getProperty("mc_validtile_sortby")));  //click on the sortby dropdown
 
 		Thread.sleep(5000);
 
@@ -265,7 +260,7 @@ public class ManageContacts extends ExtentReportsClass {
 
 		Thread.sleep(8000);
 
-		WebElement undeliverabletile = driver.findElement(By.xpath(properties.getProperty("mc_undeliverabletile")));
+		WebElement undeliverabletile = driver.findElement(By.xpath(properties.getProperty("mc_undeliverabletile")));  //click for undeliverable tile
 		Thread.sleep(5000);
 
 		if (undeliverabletile.isEnabled()) {
@@ -273,7 +268,7 @@ public class ManageContacts extends ExtentReportsClass {
 			undeliverabletile.click();
 
 			WebElement undeliverabletilesort = driver
-					.findElement(By.xpath(properties.getProperty("mc_undeliverabletile_sortby")));
+					.findElement(By.xpath(properties.getProperty("mc_undeliverabletile_sortby")));  //sortby
 			Select undeliverable = new Select(undeliverabletilesort);
 			undeliverable.selectByValue("0: Object");
 			Thread.sleep(5000);
@@ -295,7 +290,7 @@ public class ManageContacts extends ExtentReportsClass {
 
 		}
 
-		WebElement unsubscribetile = driver.findElement(By.xpath(properties.getProperty("mc_unsubscribetile")));
+		WebElement unsubscribetile = driver.findElement(By.xpath(properties.getProperty("mc_unsubscribetile"))); //click for unsubscribe tile
 		Thread.sleep(5000);
 
 		if (unsubscribetile.isEnabled()) {
@@ -367,10 +362,10 @@ public class ManageContacts extends ExtentReportsClass {
 
 		Thread.sleep(2000);
 
-		driver.findElement(By.xpath(properties.getProperty("mcon_editicon_submit"))).click(); // click on the edit icon
+		driver.findElement(By.xpath(properties.getProperty("mcon_editicon_submit"))).click(); // click on submit
 		Thread.sleep(3000);
 
-		driver.findElement(By.xpath(properties.getProperty("mcon_editicon_accept"))).click(); // click on the edit icon
+		driver.findElement(By.xpath(properties.getProperty("mcon_editicon_accept"))).click(); // click on the accept
 		Thread.sleep(3000);
 
 		logger.info("Contact Added Successfully through 'ONE AT A TIME' within the Edit icon[Manage Contacts]");
@@ -383,11 +378,11 @@ public class ManageContacts extends ExtentReportsClass {
 		driver.findElement(By.xpath(properties.getProperty("mcon_editicon"))).click(); // click on the edit icon
 		Thread.sleep(3000);
 
-		driver.findElement(By.xpath(properties.getProperty("mcon_editicon_filter"))).click(); // click on t
+		driver.findElement(By.xpath(properties.getProperty("mcon_editicon_filter"))).click(); // click on the filter icon
 		Thread.sleep(3000);
 
 		WebElement condrop = driver.findElement(By.xpath(properties.getProperty("mcon_editicon_filter_selectfield")));
-		// click on t
+		// select the field in the dropdown
 		Thread.sleep(3000);
 
 		Select field = new Select(condrop);
@@ -395,7 +390,7 @@ public class ManageContacts extends ExtentReportsClass {
 		Thread.sleep(3000);
 
 		WebElement condrop2 = driver
-				.findElement(By.xpath(properties.getProperty("mcon_editicon_filter_selectcondition")));
+				.findElement(By.xpath(properties.getProperty("mcon_editicon_filter_selectcondition")));  //select the condition 
 
 		Thread.sleep(3000);
 
@@ -410,8 +405,8 @@ public class ManageContacts extends ExtentReportsClass {
 																													// icon
 		Thread.sleep(3000);
 
-		driver.findElement(By.xpath(properties.getProperty("mcon_editicon_filter_submit"))).click(); // click on saveas
-																										// button
+		driver.findElement(By.xpath(properties.getProperty("mcon_editicon_filter_submit"))).click(); // click on submit
+																										
 		Thread.sleep(5000);
 
 		logger.info("Data Filtered successfully within the Edit icon[Manage Contacts]");
@@ -448,7 +443,7 @@ public class ManageContacts extends ExtentReportsClass {
 		actions4.sendKeys(Keys.ENTER);
 		actions4.build().perform();
 
-		driver.findElement(By.xpath(properties.getProperty("mcon_edit_toggleon"))).click(); // click on the save
+		driver.findElement(By.xpath(properties.getProperty("mcon_edit_toggleon"))).click(); // click on the toggle
 		// button
 		Thread.sleep(5000);
 
@@ -525,12 +520,12 @@ public class ManageContacts extends ExtentReportsClass {
 		actions2.build().perform();
 		Thread.sleep(1000);
 
-		driver.findElement(By.xpath(properties.getProperty("mupload_csv_action"))).click();
+		driver.findElement(By.xpath(properties.getProperty("mupload_csv_action"))).click();  //click on the action button
 		Thread.sleep(3000);
-		driver.findElement(By.xpath(properties.getProperty("mupload_csv_save"))).click();
+		driver.findElement(By.xpath(properties.getProperty("mupload_csv_save"))).click();  //click on the save button
 		Thread.sleep(2000);
 
-		driver.findElement(By.xpath(properties.getProperty("mupload_csv_accept"))).click();
+		driver.findElement(By.xpath(properties.getProperty("mupload_csv_accept"))).click();  //click on the accept
 		Thread.sleep(2000);
 		logger.info("contact added in the within the contact list through copy from clipboard");
 
@@ -544,7 +539,7 @@ public class ManageContacts extends ExtentReportsClass {
 		driver.findElement(By.xpath(properties.getProperty("mcon_editicon"))).click(); // click on the edit icon
 		Thread.sleep(9000);
 
-		String csv = "D:\\Selenium\\files\\UPLOAD_USER_LIST.csv";
+		String csv = "D:\\GitHub\\xAmplify-Automation\\UPLOAD_USER_LIST.csv";
 		CSVWriter writer = new CSVWriter(new FileWriter(csv));
 
 		Random randomGenerator = new Random();
@@ -583,12 +578,12 @@ public class ManageContacts extends ExtentReportsClass {
 		mc_all_actions_legal.build().perform();
 		Thread.sleep(1000);
 
-		driver.findElement(By.xpath(properties.getProperty("mupload_csv_action"))).click();
+		driver.findElement(By.xpath(properties.getProperty("mupload_csv_action"))).click(); //click on the action
 		Thread.sleep(3000);
-		driver.findElement(By.xpath(properties.getProperty("mupload_csv_save"))).click();
+		driver.findElement(By.xpath(properties.getProperty("mupload_csv_save"))).click(); //click on the save 
 		Thread.sleep(2000);
 
-		driver.findElement(By.xpath(properties.getProperty("mupload_csv_accept"))).click();
+		driver.findElement(By.xpath(properties.getProperty("mupload_csv_accept"))).click(); //click on the accept
 		Thread.sleep(2000);
 		logger.info("contact added in the within the contact list through csv");
 
@@ -602,10 +597,10 @@ public class ManageContacts extends ExtentReportsClass {
 		driver.findElement(By.xpath(properties.getProperty("mcon_editicon"))).click(); // click on the edit icon
 		Thread.sleep(5000);
 
-		driver.findElement(By.xpath(properties.getProperty("mcon_edit_del"))).click(); // click on the edit icon
+		driver.findElement(By.xpath(properties.getProperty("mcon_edit_del"))).click(); // click on the delete button
 		Thread.sleep(5000);
 
-		driver.findElement(By.xpath(properties.getProperty("mcon_edit_del_yes"))).click(); // click on the edit icon
+		driver.findElement(By.xpath(properties.getProperty("mcon_edit_del_yes"))).click(); // click on the yes 
 		Thread.sleep(5000);
 		logger.info("Deleted contact within the contact list");
 		driver.get("https://xamplify.co/home/contacts/manage");

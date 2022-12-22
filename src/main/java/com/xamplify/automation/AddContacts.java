@@ -219,7 +219,7 @@ public class AddContacts extends ExtentReportsClass{
 
 			// Wait till the element is not visible
 			WebElement acon11 = wait_acon1.until(
-					ExpectedConditions.visibilityOfElementLocated(By.xpath(properties.getProperty("Addcontacts"))));// hover
+					ExpectedConditions.visibilityOfElementLocated(By.xpath(properties.getProperty("Addcontacts"))));// click on add contacts
 			acon11.click();
 			
 			
@@ -343,7 +343,7 @@ public class AddContacts extends ExtentReportsClass{
 
 				// Wait till the element is not visible
 				WebElement acon12 = wait_acon2.until(
-						ExpectedConditions.visibilityOfElementLocated(By.xpath(properties.getProperty("Addcontacts"))));// hover
+						ExpectedConditions.visibilityOfElementLocated(By.xpath(properties.getProperty("Addcontacts"))));// click on add contacts
 				acon12.click();
 				
 				
@@ -372,7 +372,7 @@ public class AddContacts extends ExtentReportsClass{
 				
 				Thread.sleep(3000);
 
-				driver.findElement(By.xpath(properties.getProperty("verifybutton"))).click();
+				driver.findElement(By.xpath(properties.getProperty("verifybutton"))).click();  //click on the verify button
 				Thread.sleep(3000);
 
 				WebElement ele12 = driver.findElement(By.xpath(properties.getProperty("contact_legalbasis")));// click legal
@@ -434,9 +434,9 @@ public class AddContacts extends ExtentReportsClass{
 					
 				  
 				
-				driver.findElement(By.id("sample_editable_1_new")).click();
+				driver.findElement(By.id("sample_editable_1_new")).click();   
 				Thread.sleep(1000);
-				driver.findElement(By.xpath(properties.getProperty("con_accept"))).click();
+				driver.findElement(By.xpath(properties.getProperty("con_accept"))).click(); //click on the accpet
 				Thread.sleep(2000);
 				String contact = driver.findElement(By.id("responseMessage")).getText();
 				//System.out.println(contact);
@@ -469,13 +469,13 @@ public class AddContacts extends ExtentReportsClass{
 			WebElement contacts = driver.findElement(By.xpath(properties.getProperty("hovercontacts")));
 			actions.moveToElement(contacts).build().perform();
 			Thread.sleep(4000);
-			driver.findElement(By.xpath(properties.getProperty("Addcontacts"))).click();
+			driver.findElement(By.xpath(properties.getProperty("Addcontacts"))).click(); //click on the add contacts
 			Thread.sleep(5000);
 
-			driver.findElement(By.id("uploadCSV")).click();
+			driver.findElement(By.id("uploadCSV")).click();   //click on the upload csv
 			Thread.sleep(8000);
 
-			Runtime.getRuntime().exec("D:\\Selenium\\files\\uploadcsvcontacts.exe");
+			Runtime.getRuntime().exec("D:\\GitHub\\xAmplify-Automation\\uploadcsvcontacts.exe");
 			Thread.sleep(10000);
 
 			WebElement ele11 = driver.findElement(By.xpath(properties.getProperty("contact_legalbasis")));// click legal
@@ -526,11 +526,11 @@ public class AddContacts extends ExtentReportsClass{
 			  
 			  
 			
-				driver.findElement(By.id("sample_editable_1_new")).click();
+				driver.findElement(By.id("sample_editable_1_new")).click();   
 				Thread.sleep(4000);
 
 				Thread.sleep(1000);
-				driver.findElement(By.xpath(properties.getProperty("con_accept"))).click();
+				driver.findElement(By.xpath(properties.getProperty("con_accept"))).click();  //click on the accept
 
 				Thread.sleep(4000);
 				String contact = driver.findElement(By.id("responseMessage")).getText();
