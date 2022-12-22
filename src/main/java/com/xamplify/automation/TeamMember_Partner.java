@@ -217,7 +217,7 @@ public class TeamMember_Partner {
 		WebElement uploadcsv=driver.findElement(By.xpath(properties.getProperty("upload_CSV_TM"))); //click on upload csv button
 		Thread.sleep(6000);
 		logger.info("clicked on upload button");
-		uploadcsv.sendKeys("D:\\Selenium\\files\\Teammember_CSV.csv");			
+		uploadcsv.sendKeys("D:\\GitHub\\xAmplify-Automation\\Teammember_CSV.csv");			
 		Thread.sleep(5000);
 
 		String actualresult = driver.findElement(By.xpath(properties.getProperty("Success_message_grid_TM_CSV"))).getText();	
