@@ -29,7 +29,7 @@ public class AddContacts extends ExtentReportsClass{
 		
 		
 		
-		@Test(priority = 1, enabled = true)
+		@Test(priority = 1, enabled = false)
 	
 		public void con_oneatatime() throws InterruptedException, SQLException {
 			
@@ -194,8 +194,8 @@ public class AddContacts extends ExtentReportsClass{
 		}
 		
 		
-		//@Test(priority =2, enabled = true)
-		@Test(dependsOnMethods = { "con_oneatatime" })
+		@Test(priority =2, enabled = false)
+		//@Test(dependsOnMethods = { "con_oneatatime" })
 		
 		public void copyclipboard_comma_contacts () throws InterruptedException, SQLException {
 			Thread.sleep(6000);
@@ -319,7 +319,9 @@ public class AddContacts extends ExtentReportsClass{
 		}
 		
 		
-		@Test(dependsOnMethods = { "copyclipboard_comma_contacts" })
+		//@Test(dependsOnMethods = { "copyclipboard_comma_contacts" })
+		
+		@Test(priority=3, enabled=false)
 		
 		 public void copyclipboard_tab_contacts () throws InterruptedException, SQLException {
 				Thread.sleep(6000);
@@ -470,13 +472,19 @@ public class AddContacts extends ExtentReportsClass{
 			actions.moveToElement(contacts).build().perform();
 			Thread.sleep(4000);
 			driver.findElement(By.xpath(properties.getProperty("Addcontacts"))).click();
-			Thread.sleep(5000);
+			Thread.sleep(6000);
 
-			driver.findElement(By.id("uploadCSV")).click();
-			Thread.sleep(8000);
+			WebElement con_uploadcsv=driver.findElement(By.xpath(properties.getProperty("upload_csvclick")));  //click for upload csv
+			
+			Thread.sleep(7000);
 
-			Runtime.getRuntime().exec("D:\\Selenium\\files\\uploadcsvcontacts.exe");
-			Thread.sleep(10000);
+			/*
+			 * Runtime.getRuntime().exec("D:\\Selenium\\files\\uploadcsvcontacts.exe");
+			 * Thread.sleep(10000);
+			 */
+			
+			con_uploadcsv.sendKeys("D:\\GitHub\\xAmplify-Automation\\UPLOAD_USER_LIST _EMPTY (9).csv");	
+			Thread.sleep(6000);
 
 			WebElement ele11 = driver.findElement(By.xpath(properties.getProperty("contact_legalbasis")));// click legal
 																											// basis field

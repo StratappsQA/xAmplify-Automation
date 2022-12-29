@@ -544,7 +544,7 @@ public class ManageContacts extends ExtentReportsClass {
 		driver.findElement(By.xpath(properties.getProperty("mcon_editicon"))).click(); // click on the edit icon
 		Thread.sleep(9000);
 
-		String csv = "D:\\Selenium\\files\\UPLOAD_USER_LIST.csv";
+		String csv = "D:\\GitHub\\xAmplify-Automation\\UPLOAD_USER_LIST.csv";
 		CSVWriter writer = new CSVWriter(new FileWriter(csv));
 
 		Random randomGenerator = new Random();
