@@ -37,7 +37,7 @@ public class AddPlaybooks {
 		Thread.sleep(5000);
 		driver.findElement(By.xpath(properties.getProperty("camera_icon_playbook"))).click(); //click on camera icon
 		Thread.sleep(5000);	
-		driver.findElement(By.xpath(properties.getProperty("select_image"))).sendKeys("D:\\Selenium\\files\\jpg_file.jpg"); //click on select image icon and uploa dimage
+		driver.findElement(By.xpath(properties.getProperty("select_image"))).sendKeys("D:\\GitHub\\xAmplify-Automation\\jpg_file.jpg"); //click on select image icon and uploa dimage
 		Thread.sleep(5000);
 		driver.findElement(By.xpath(properties.getProperty("save_changes"))).click(); //click on savechanges after selecting featured image
 		Thread.sleep(5000);
@@ -160,7 +160,7 @@ public class AddPlaybooks {
 		Thread.sleep(5000);
 		driver.findElement(By.xpath(properties.getProperty("camera_icon_playbook"))).click(); //click on camera icon
 		Thread.sleep(5000);	
-		driver.findElement(By.xpath(properties.getProperty("select_image"))).sendKeys("D:\\Selenium\\files\\jpg_file.jpg"); //click on select image icon and uploa dimage
+		driver.findElement(By.xpath(properties.getProperty("select_image"))).sendKeys("D:\\GitHub\\xAmplify-Automation\\jpg_file.jpg"); //click on select image icon and uploa dimage
 		Thread.sleep(5000);
 		driver.findElement(By.xpath(properties.getProperty("save_changes"))).click(); //click on savechanges after selecting featured image
 		Thread.sleep(5000);

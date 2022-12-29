@@ -43,7 +43,7 @@ public class UploadAssetVideo {
 		driver.findElement(By.xpath(properties.getProperty("BrowseButton"))).click(); //click on Browse
 		robot.setAutoDelay(3000);  // is equal to thread.sleep		 
 		//store the path of the file to be uploaded using stringselection class object
-		StringSelection filepath = new StringSelection("D:\\Selenium\\files\\MP4_file.mp4");  //create a stringselection object
+		StringSelection filepath = new StringSelection("D:\\GitHub\\xAmplify-Automation\\MP4_file.mp4");  //create a stringselection object
 		//copy above path to clipboard
 		Toolkit.getDefaultToolkit().getSystemClipboard().setContents(filepath, null); // here path is avaliable in clipboard 		
 		robot.keyPress(KeyEvent.VK_CONTROL);// press ctrl
@@ -59,7 +59,7 @@ public class UploadAssetVideo {
 		
 		driver.findElement(By.xpath(properties.getProperty("Thumbnail"))).click();
 		Thread.sleep(5000);		
-		StringSelection filepath1 = new StringSelection("D:\\Selenium\\files\\jpg_file.jpg");  //create a stringselection object
+		StringSelection filepath1 = new StringSelection("D:\\GitHub\\xAmplify-Automation\\jpg_file.jpg");  //create a stringselection object
 		//copy above path to clipboard
 		Toolkit.getDefaultToolkit().getSystemClipboard().setContents(filepath1, null); // here path is avaliable in clipboard 		
 		robot.keyPress(KeyEvent.VK_CONTROL);// press ctrl
@@ -134,7 +134,7 @@ public class UploadAssetVideo {
 		driver.findElement(By.xpath(properties.getProperty("BrowseButton"))).click(); //click on Browse
 		robot.setAutoDelay(3000);  // is equal to thread.sleep		 
 		//store the path of the file to be uploaded using stringselection class object
-		StringSelection filepath = new StringSelection("D:\\Selenium\\files\\AVI_file.avi");  //create a stringselection object
+		StringSelection filepath = new StringSelection("D:\\GitHub\\xAmplify-Automation\\AVI_file.avi");  //create a stringselection object
 		//copy above path to clipboard
 		Toolkit.getDefaultToolkit().getSystemClipboard().setContents(filepath, null); // here path is avaliable in clipboard 		
 		robot.keyPress(KeyEvent.VK_CONTROL);// press ctrl
@@ -150,7 +150,7 @@ public class UploadAssetVideo {
 		
 		driver.findElement(By.xpath(properties.getProperty("Thumbnail"))).click(); //click on thumbnail icon
 		Thread.sleep(5000);		
-		StringSelection filepath1 = new StringSelection("D:\\Selenium\\files\\jpg_file.jpg");  //create a stringselection object
+		StringSelection filepath1 = new StringSelection("D:\\GitHub\\xAmplify-Automation\\jpg_file.jpg");  //create a stringselection object
 		//copy above path to clipboard
 		Toolkit.getDefaultToolkit().getSystemClipboard().setContents(filepath1, null); // here path is avaliable in clipboard 		
 		robot.keyPress(KeyEvent.VK_CONTROL);// press ctrl
@@ -222,7 +222,7 @@ public class UploadAssetVideo {
 		driver.findElement(By.xpath(properties.getProperty("BrowseButton"))).click(); //click on Browse
 		robot.setAutoDelay(3000);  // is equal to thread.sleep		 
 		//store the path of the file to be uploaded using stringselection class object
-		StringSelection filepath = new StringSelection("D:\\Selenium\\files\\MOV_file.mov");  //create a stringselection object
+		StringSelection filepath = new StringSelection("D:\\GitHub\\xAmplify-Automation\\MOV_file.mov");  //create a stringselection object
 		//copy above path to clipboard
 		Toolkit.getDefaultToolkit().getSystemClipboard().setContents(filepath, null); // here path is avaliable in clipboard 		
 		robot.keyPress(KeyEvent.VK_CONTROL);// press ctrl
@@ -238,7 +238,7 @@ public class UploadAssetVideo {
 	
 		driver.findElement(By.xpath(properties.getProperty("Thumbnail"))).click(); //click on thumbnail icon
 		Thread.sleep(5000);		
-		StringSelection filepath1 = new StringSelection("D:\\Selenium\\files\\jpg_file.jpg");  //create a stringselection object
+		StringSelection filepath1 = new StringSelection("D:\\GitHub\\xAmplify-Automation\\jpg_file.jpg");  //create a stringselection object
 		//copy above path to clipboard
 		Toolkit.getDefaultToolkit().getSystemClipboard().setContents(filepath1, null); // here path is avaliable in clipboard 		
 		robot.keyPress(KeyEvent.VK_CONTROL);// press ctrl
@@ -309,7 +309,7 @@ public class UploadAssetVideo {
 		driver.findElement(By.xpath(properties.getProperty("BrowseButton"))).click(); //click on Browse
 		robot.setAutoDelay(3000);  // is equal to thread.sleep		 
 		//store the path of the file to be uploaded using stringselection class object
-		StringSelection filepath = new StringSelection("D:\\Selenium\\files\\MKV_file.mkv");  //create a stringselection object
+		StringSelection filepath = new StringSelection("D:\\GitHub\\xAmplify-Automation\\MKV_file.mkv");  //create a stringselection object
 		//copy above path to clipboard
 		Toolkit.getDefaultToolkit().getSystemClipboard().setContents(filepath, null); // here path is avaliable in clipboard 		
 		robot.keyPress(KeyEvent.VK_CONTROL);// press ctrl
@@ -325,7 +325,7 @@ public class UploadAssetVideo {
 				
 		driver.findElement(By.xpath(properties.getProperty("Thumbnail"))).click(); //click on thumbnail icon
 		Thread.sleep(5000);		
-		StringSelection filepath1 = new StringSelection("D:\\Selenium\\files\\jpg_file.jpg");  //create a stringselection object
+		StringSelection filepath1 = new StringSelection("D:\\GitHub\\xAmplify-Automation\\jpg_file.jpg");  //create a stringselection object
 		//copy above path to clipboard
 		Toolkit.getDefaultToolkit().getSystemClipboard().setContents(filepath1, null); // here path is avaliable in clipboard 		
 		robot.keyPress(KeyEvent.VK_CONTROL);// press ctrl
