@@ -189,7 +189,7 @@ public class EventCampaign {
 		search.sendKeys("Event");
 		search.sendKeys(Keys.ENTER);
 
-		Thread.sleep(4000);
+		Thread.sleep(8000);
 
 		driver.findElement(By.xpath(properties.getProperty("eve_select_template"))).click(); // select the template
 
