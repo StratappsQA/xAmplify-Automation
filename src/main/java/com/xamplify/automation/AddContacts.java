@@ -29,7 +29,7 @@ public class AddContacts extends ExtentReportsClass{
 		
 		
 		
-		@Test(priority = 1, enabled = false)
+		@Test(priority = 1, enabled = true)
 	
 		public void con_oneatatime() throws InterruptedException, SQLException {
 			
@@ -194,7 +194,7 @@ public class AddContacts extends ExtentReportsClass{
 		}
 		
 		
-		@Test(priority =2, enabled = false)
+		@Test(priority =2, enabled = true)
 		//@Test(dependsOnMethods = { "con_oneatatime" })
 		
 		public void copyclipboard_comma_contacts () throws InterruptedException, SQLException {
@@ -321,7 +321,7 @@ public class AddContacts extends ExtentReportsClass{
 		
 		//@Test(dependsOnMethods = { "copyclipboard_comma_contacts" })
 		
-		@Test(priority=3, enabled=false)
+		@Test(priority=3, enabled=true)
 		
 		 public void copyclipboard_tab_contacts () throws InterruptedException, SQLException {
 				Thread.sleep(6000);
@@ -452,7 +452,7 @@ public class AddContacts extends ExtentReportsClass{
 		 }
 		
 		
-		@Test(priority =3, enabled = true)
+		@Test(priority =4, enabled = true)
 		//@Test(dependsOnMethods = { "copyclipboard_tab_contacts" })
 		
 		public void uploadcsvcontacts() throws InterruptedException, IOException, SQLException {
