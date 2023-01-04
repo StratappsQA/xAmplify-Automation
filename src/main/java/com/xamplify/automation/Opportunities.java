@@ -598,7 +598,7 @@ public class Opportunities extends ExtentReportsClass {
 
 		Select deal_staus_drpdown_campview_filter = new Select(
 				driver.findElement(By.xpath(properties.getProperty("click_dealstaus_drpdown_campview_filter"))));
-		deal_staus_drpdown_campview_filter.selectByValue("Opened");
+		deal_staus_drpdown_campview_filter.selectByVisibleText("Opened");
 		Thread.sleep(3000);
 
 		driver.findElement(By.xpath(properties.getProperty("click_dealcampview_filter_button"))).click();
