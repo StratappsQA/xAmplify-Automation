@@ -5,7 +5,10 @@ import java.sql.Date;
 import java.sql.SQLException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
-
+import java.util.Properties;
+import java.util.concurrent.TimeUnit;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
@@ -18,29 +21,15 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 public class Templates {
-	static WebDriver driver;
-
-	@BeforeClass
-	public void setup() {
-
-		System.setProperty("webdriver.chrome.driver", "C:\\Users\\mharish\\Desktop\\New folder (2)\\chromedriver.exe");
-		driver = new ChromeDriver();
-		driver.manage().window().maximize();
-		driver.get("https://xamplify.co/login");
-	}
-
-	@Test(priority = 1, enabled = true)
-	public void login() throws InterruptedException {
-		Thread.sleep(5000);
-
-		driver.findElement(By.xpath("//input[@placeholder='Email']")).sendKeys("automated_vendor@analytify.com");
-		driver.findElement(By.xpath("//input[@placeholder='Password']")).sendKeys("Xamplify@11");
-		driver.findElement(By.cssSelector("button[type*='submit']")).click();
-	}
+	private static final TimeUnit Seconds = null;
+	static WebDriver driver = Instance.getInstance();
+	static Properties properties = PropertiesFile
+			.readPropertyFile("D:\\GitHub\\xAmplify-Automation\\src\\main\\resources\\Partners.properties");
+	final Logger logger = LogManager.getLogger(Templates.class);
 
 	@Test(priority = 2, enabled = true)
 	public void design() throws InterruptedException {
-		Thread.sleep(3000);
+		Thread.sleep(10000);
 		driver.findElement(By.xpath("/html/body/app-root/app-home/div/app-leftsidebar/div/div/ul/li[5]/a/span[1]"))
 				.click();
 		Thread.sleep(3000);
@@ -837,13 +826,13 @@ public class Templates {
 		action.moveToElement(ele).perform();
 		Thread.sleep(2000);
 		driver.findElement(By.xpath("//*[@id='emailTemplateListDiv_27705']/div/div[2]/a[1]")).click();
-		Thread.sleep(2000);
+		Thread.sleep(7000);
 		driver.findElement(By.xpath("//*[@id='email_spam_check']/div/div/div[1]/button")).click();
-		Thread.sleep(2000);
+		Thread.sleep(8000);
 		action.moveToElement(ele).perform();
 		Thread.sleep(2000);
 		driver.findElement(By.xpath("//*[@id='emailTemplateListDiv_27705']/div/div[2]/a[3]/i")).click();
-		Thread.sleep(2000);
+		Thread.sleep(3000);
 		driver.findElement(By.xpath("(//i[@class='fa fa-times'])[2]")).click();
 		Thread.sleep(3000);
 		action.moveToElement(ele).perform();
@@ -857,15 +846,11 @@ public class Templates {
 		driver.switchTo().defaultContent();
 		Thread.sleep(3000);
 		driver.findElement(By.xpath("//div/input[@value='Update']")).click();
-		Thread.sleep(2000);
-		driver.findElement(By.xpath("//*[@id='emailTemplateListDiv_27705']/div/div[2]/a[3]/i")).click();
-		Thread.sleep(2000);
-		driver.findElement(By.xpath("(//i[@class='fa fa-times'])[2]")).click();
 	}
 
 	@Test(priority = 19, enabled = true)
 	public void gridview_video_cobranding() throws InterruptedException {
-		Thread.sleep(3000);
+	Thread.sleep(8000);
 		driver.findElement(By.xpath("/html/body/app-root/app-home/div/app-leftsidebar/div/div/ul/li[5]/a/span[1]"))
 				.click();
 		Thread.sleep(2000);
@@ -917,7 +902,7 @@ public class Templates {
 
 	@Test(priority = 20, enabled = true)
 	public void gridview_Event() throws InterruptedException {
-		Thread.sleep(3000);
+	Thread.sleep(8000);
 		driver.findElement(By.xpath("/html/body/app-root/app-home/div/app-leftsidebar/div/div/ul/li[5]/a/span[1]"))
 				.click();
 		Thread.sleep(2000);
@@ -972,8 +957,8 @@ public class Templates {
 
 	@Test(priority = 21, enabled = true)
 	public void gridview_Event_Cobranding() throws InterruptedException {
-		Thread.sleep(3000);
-		driver.findElement(By.xpath("/html/body/app-root/app-home/div/app-leftsidebar/div/div/ul/li[5]/a/span[1]"))
+	Thread.sleep(8000);
+	driver.findElement(By.xpath("/html/body/app-root/app-home/div/app-leftsidebar/div/div/ul/li[5]/a/span[1]"))
 				.click();
 		Thread.sleep(2000);
 		driver.findElement(By.xpath(
@@ -1023,8 +1008,8 @@ public class Templates {
 
 	@Test(priority = 22, enabled = true)
 	public void folder_gridview() throws InterruptedException {
-		Thread.sleep(3000);
-		driver.findElement(By.xpath("/html/body/app-root/app-home/div/app-leftsidebar/div/div/ul/li[5]/a/span[1]"))
+	Thread.sleep(8000);
+	driver.findElement(By.xpath("/html/body/app-root/app-home/div/app-leftsidebar/div/div/ul/li[5]/a/span[1]"))
 				.click();
 		Thread.sleep(2000);
 		driver.findElement(By.xpath(
@@ -1091,9 +1076,8 @@ public class Templates {
 
 	@Test(priority = 23, enabled = true)
 	public void folder_gridview_video() throws InterruptedException {
-		Thread.sleep(3000);
-
-		driver.findElement(By.xpath("(//ul/li[@class='filter'])[2]")).click();
+	Thread.sleep(8000);
+	driver.findElement(By.xpath("(//ul/li[@class='filter'])[2]")).click();
 		Thread.sleep(3000);
 		driver.findElement(By.xpath(
 				"/html/body/app-root/app-home/div/div/app-manage-template/div/div[3]/div/div/div[1]/div/div[2]/div/div/div[2]/div/input"))
@@ -1136,8 +1120,7 @@ public class Templates {
 
 	@Test(priority = 24, enabled = true)
 	public void folder_gridview_EmailCobranding() throws InterruptedException {
-		Thread.sleep(3000);
-
+	Thread.sleep(8000);
 		driver.findElement(By.xpath("(//ul/li[@class='filter'])[4]")).click();
 		Thread.sleep(3000);
 		driver.findElement(By.xpath(
@@ -2390,5 +2373,4 @@ public class Templates {
 		driver.findElement(By.xpath("//div/input[@value='Update']")).click();
 driver.quit();
 }
-
 }

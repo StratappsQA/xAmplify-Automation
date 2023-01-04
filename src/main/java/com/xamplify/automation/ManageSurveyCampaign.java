@@ -25,14 +25,17 @@ public class ManageSurveyCampaign {
 
 	WebDriver driver = Instance.getInstance();
 	Properties properties = PropertiesFile
-			.readPropertyFile("D:\\git\\xAmplify-Automation\\src\\main\\resources\\ManageCampaigns.properties");
+			.readPropertyFile("D:\\GitHub\\xAmplify-Automation\\src\\main\\resources\\ManageCampaigns.properties");
+
 	final Logger logger = LogManager.getLogger(SurveyCampaign.class);
 
 	@Test
 
 	public void manage_scampaign() throws InterruptedException, SQLException {
 
-		WebDriverWait wait = new WebDriverWait(driver, 50); // Wait till the element is not visible
+
+		WebDriverWait wait = new WebDriverWait(driver, 90); // Wait till the element is not visible
+
 
 		WebElement mscamp = wait.until(
 				ExpectedConditions.visibilityOfElementLocated(By.xpath(properties.getProperty("campaignhover"))));
@@ -40,7 +43,9 @@ public class ManageSurveyCampaign {
 
 		Actions mcamp_action = new Actions(driver);
 		mcamp_action.moveToElement(mscamp).perform();
-		Thread.sleep(5000);
+
+		Thread.sleep(8000);
+
 		WebElement manage_campele = driver.findElement(By.xpath(properties.getProperty("managecampaigns"))); // click on
 																												// manage
 																												// campaign
@@ -48,10 +53,12 @@ public class ManageSurveyCampaign {
 		mcamp_action.click();
 		mcamp_action.perform();
 
-		Thread.sleep(4000);
+
+		Thread.sleep(9000);
 
 		driver.findElement(By.xpath(properties.getProperty("survey_tab"))).click(); // Click on Survey Tab
-		Thread.sleep(5000);
+		Thread.sleep(7000);
+
 		logger.info("Clicked on the Survey tab");
 		driver.findElement(By.xpath(properties.getProperty("gear_icon"))).click(); // Click on gear icon
 		Thread.sleep(3000);
@@ -85,7 +92,8 @@ public class ManageSurveyCampaign {
 
 		Actions a = new Actions(driver); // scroll down a page
 		a.sendKeys(Keys.PAGE_DOWN).build().perform();
-		Thread.sleep(5000);
+
+		Thread.sleep(7000);
 
 		driver.findElement(By.xpath(properties.getProperty("gear_icon_t"))).click(); // Click on gear icon
 		Thread.sleep(3000);
@@ -93,14 +101,16 @@ public class ManageSurveyCampaign {
 		Thread.sleep(3000);
 		driver.findElement(By.xpath(properties.getProperty("campaign_end_date"))).click();
 		Thread.sleep(3000);
-
-		WebElement wd = driver.findElement(By.xpath(properties.getProperty("selected_date")));
-
-		wd.click();
-
-		Thread.sleep(4000);
-
-		logger.info("Selected the End date ");
+		
+		 //WebElement wd =
+		 //driver.findElement(By.xpath(properties.getProperty("selected_date")));
+		 
+		 //wd.click();
+		 
+		 //Thread.sleep(4000);
+		 
+		 //logger.info("Selected the End date ");
+		
 
 		driver.findElement(By.xpath(properties.getProperty("save_changes"))).click();
 		Thread.sleep(3000);
@@ -126,26 +136,28 @@ public class ManageSurveyCampaign {
 		sort1.selectByVisibleText("Email ID(A-Z)");
 		Thread.sleep(3000);
 
-		sort1.selectByVisibleText("Email ID(Z-A)");
-		Thread.sleep(3000);
 
-		sort1.selectByVisibleText("First Name(ASC)");
-		Thread.sleep(3000);
+//		sort1.selectByVisibleText("Email ID(Z-A)");
+//		Thread.sleep(3000);
+//
+//		sort1.selectByVisibleText("First Name(ASC)");
+//		Thread.sleep(3000);
+//
+//		sort1.selectByVisibleText("First Name(DESC)");
+//		Thread.sleep(3000);
+//
+//		sort1.selectByVisibleText("Last Name(ASC)");
+//		Thread.sleep(3000);
+//
+//		sort1.selectByVisibleText("Last Name(DESC)");
+//		Thread.sleep(3000);
+//
+//		sort1.selectByVisibleText("Company Name (Z-A)");
+//		Thread.sleep(3000);
+//
+//		sort1.selectByVisibleText("Company Name (A-Z)");
+//		Thread.sleep(3000);
 
-		sort1.selectByVisibleText("First Name(DESC)");
-		Thread.sleep(3000);
-
-		sort1.selectByVisibleText("Last Name(ASC)");
-		Thread.sleep(3000);
-
-		sort1.selectByVisibleText("Last Name(DESC)");
-		Thread.sleep(3000);
-
-		sort1.selectByVisibleText("Company Name (Z-A)");
-		Thread.sleep(3000);
-
-		sort1.selectByVisibleText("Company Name (A-Z)");
-		Thread.sleep(3000);
 
 		WebDriverWait search1 = new WebDriverWait(driver, 50);
 		WebElement sr1 = search1.until(ExpectedConditions
@@ -156,28 +168,44 @@ public class ManageSurveyCampaign {
 		driver.findElement(By.xpath(properties.getProperty("survey_previewdelete_search"))).sendKeys(Keys.ENTER);// click
 																													// enter
 		Thread.sleep(3000);
+		
+		driver.findElement(By.xpath(properties.getProperty("click_delete_under_preview&Delete"))).click(); //delete partner
+		Thread.sleep(3000);
 
+		driver.findElement(By.xpath(properties.getProperty("click_on_yes_delete"))).click();
+		Thread.sleep(3000);
+		
 		driver.findElement(By.xpath(properties.getProperty("ManageCamp_breadcrump"))).click();// click on manage
 																								// campaigns
 		Thread.sleep(3000);
-
-		driver.findElement(By.xpath(properties.getProperty("gear_icon_t"))).click(); // Click on gear icon
-		Thread.sleep(3000);
+		
 		driver.findElement(By.xpath(properties.getProperty("survey_tab"))).click(); // Click on Survey Tab
 		Thread.sleep(5000);
 		
-		logger.info("Click on Preview");
 		
-		driver.findElement(By.xpath(properties.getProperty("preview"))).click();
+		
+		JavascriptExecutor jsp = (JavascriptExecutor) driver;
+		jsp.executeScript("window.scrollTo(document.body.scrollHeight,200)");
+		Thread.sleep(5000);
+		driver.findElement(By.xpath(properties.getProperty("gear_icon_t"))).click(); // Click on gear icon
+		Thread.sleep(3000);
+		logger.info("Click on Preview");
+
+		driver.findElement(By.xpath(properties.getProperty("click_preview_camp"))).click();
 		Thread.sleep(5000);
 
 		driver.findElement(By.xpath(properties.getProperty("preview_close"))).click();
-		Thread.sleep(5000);
-		driver.findElement(By.xpath(properties.getProperty("survey_tab"))).click(); // Click on Survey Tab
-		Thread.sleep(5000);
-		logger.info("Click on Archieve Campaigns");
+		Thread.sleep(8000);
+//		driver.findElement(By.xpath(properties.getProperty("survey_tab"))).click(); // Click on Survey Tab
+//		Thread.sleep(7000);
+//		
+//		JavascriptExecutor jsp1 = (JavascriptExecutor) driver;
+//		jsp1.executeScript("window.scrollTo(document.body.scrollHeight,200)");
+//		Thread.sleep(5000);
+	
 		driver.findElement(By.xpath(properties.getProperty("gear_icon_t"))).click(); // Click on gear icon
 		Thread.sleep(3000);
+		logger.info("Click on Archieve Campaigns");
 		driver.findElement(By.cssSelector(properties.getProperty("archieve_campaign"))).click();
 		Thread.sleep(3000);
 		driver.findElement(By.xpath(properties.getProperty("archieved_campaign_button"))).click();// click on archieved
@@ -191,7 +219,7 @@ public class ManageSurveyCampaign {
 		driver.findElement(By.xpath(properties.getProperty("active_campaigns_botton"))).click();// click on active
 																								// campaigns button
 		Thread.sleep(4000);
-		
+
 		driver.findElement(By.xpath(properties.getProperty("survey_tab"))).click(); // Click on Survey Tab
 		Thread.sleep(5000);
 
@@ -493,32 +521,19 @@ public class ManageSurveyCampaign {
 			driver.findElement(By.xpath(properties.getProperty("lead_clear"))).click();
 			Thread.sleep(3000);
 
-			logger.info("Click on filter");
-			driver.findElement(By.xpath(properties.getProperty("click_filter"))).click(); // Click on filter
-			Thread.sleep(3000);
 
-			driver.findElement(By.xpath(properties.getProperty("select_from_date"))).click(); // Select From date
-			Thread.sleep(7000);
-
-			driver.findElement(By.xpath(properties.getProperty("choose_from_date"))).click(); // Select From date
-			Thread.sleep(7000);
-
-//				WebElement fromdate = driver.findElement(By.xpath(properties.getProperty("choose_from_date")));
-//				fromdate.click();// Select From date
-//				Thread.sleep(5000);
-//				
-//				WebDriverWait select_date = new WebDriverWait(driver, 50);
-//				WebElement select_dt = select_date
-//						.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(properties.getProperty("choose_from_date"))));  //select time dropdown
-//	
-//				select_dt.click();
-//				Thread.sleep(5000);
+//			logger.info("Click on filter");
+//			driver.findElement(By.xpath(properties.getProperty("click_filter"))).click(); // Click on filter
+//			Thread.sleep(3000);
+//
+//			driver.findElement(By.xpath(properties.getProperty("select_from_date"))).click(); // Select From date
+//			Thread.sleep(7000);
+//
+//			driver.findElement(By.xpath(properties.getProperty("choose_from_date"))).click(); // Select From date
+//			Thread.sleep(7000);
 
 //			
 
-//				
-//				
-//						
 			driver.findElement(By.xpath(properties.getProperty("select_to_date"))).click(); // Select To date
 			Thread.sleep(3000);
 
@@ -577,8 +592,9 @@ public class ManageSurveyCampaign {
 			driver.findElement(By.xpath(properties.getProperty("check_d_filter"))).click(); // Click on filter
 			Thread.sleep(3000);
 
-			driver.findElement(By.xpath(properties.getProperty("select_from_date_deal"))).click(); // Select From date
-			Thread.sleep(5000);
+//			driver.findElement(By.xpath(properties.getProperty("select_from_date_deal"))).click(); // Select From date
+//			Thread.sleep(5000);
+
 
 //				driver.findElement(By.xpath(properties.getProperty("choose_from_date1"))).click();
 //				Thread.sleep(5000);
@@ -588,23 +604,8 @@ public class ManageSurveyCampaign {
 //				jse1.executeScript("arguments[0].click();",from_date1 );
 //				Thread.sleep(7000);
 
-//				WebDriverWait select_date = new WebDriverWait(driver, 60);
-//				WebElement select_dt = select_date
-//						.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(properties.getProperty("choose_from_date1"))));  //select time dropdown
-//	
-//				select_dt.click();
-//				
-
-//				WebElement choose_from_date1 = driver.findElement(By.xpath(properties.getProperty("choose_from_date1")));
-//				choose_from_date1.click();
-			// Select From date
 
 //				driver.findElement(By.xpath(properties.getProperty("select_to_date_deal"))).click(); // Select To date
-//				Thread.sleep(7000);
-//				
-//				WebElement to_date1 = driver.findElement(By.xpath(properties.getProperty("choose_to_date1")));
-//				JavascriptExecutor jse2 = (JavascriptExecutor) driver;
-//				jse2.executeScript("arguments[0].click();",to_date1 );
 //				Thread.sleep(7000);
 
 //				driver.findElement(By.xpath(properties.getProperty("choose_to_date1"))).click(); // Select To date
@@ -694,7 +695,9 @@ public class ManageSurveyCampaign {
 		Thread.sleep(3000);
 		logger.info("Clicked on email_open_history_by_template icon");
 		driver.findElement(By.xpath(properties.getProperty("mcamp_click"))).click();
-		Thread.sleep(3000);
+
+		Thread.sleep(6000);
+
 		driver.findElement(By.xpath(properties.getProperty("survey_tab"))).click(); // Click on Survey Tab
 		Thread.sleep(5000);
 		logger.info("Clicked on the Survey tab");
@@ -703,19 +706,29 @@ public class ManageSurveyCampaign {
 		Thread.sleep(3000);
 		logger.info("Clicked on the Show download history icon");
 		driver.findElement(By.xpath(properties.getProperty("mcamp1_click"))).click();
-		Thread.sleep(3000);
+
+		Thread.sleep(6000);
+
 		driver.findElement(By.xpath(properties.getProperty("survey_tab"))).click(); // Click on Survey Tab
 		Thread.sleep(5000);
 		logger.info("Clicked on the Survey tab");
 		driver.findElement(By.xpath(properties.getProperty("no_red_camp"))).click();// Clicked on Number of
 																					// redistributed campaign icon
-		Thread.sleep(3000);
+
+		Thread.sleep(5000);
 		logger.info("Clicked on Number of redistributed campaign icon");
-		driver.findElement(By.xpath(properties.getProperty("red_camp_analytics"))).click();
+		
+		Actions a1 = new Actions(driver); // scroll Up a page
+		  a1.sendKeys(Keys.PAGE_UP).build().perform(); 
+		Thread.sleep(5000);
+		driver.findElement(By.xpath(properties.getProperty("goto_home_s"))).click(); //Click Home
 		Thread.sleep(3000);
-		driver.findElement(By.xpath(properties.getProperty("mcamp2_click"))).click();
-		Thread.sleep(3000);
+	
 		logger.info("Manage Survey Campaign completed");
+		
+		Thread.sleep(8000);
+		
+
 
 	}
 

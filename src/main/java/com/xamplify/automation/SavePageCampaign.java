@@ -14,7 +14,7 @@ import org.testng.annotations.Test;
 public class SavePageCampaign {
 
 	WebDriver driver = Instance.getInstance();
-	Properties properties = PropertiesFile.readPropertyFile("D:\\git\\xAmplify-Automation\\src\\main\\resources\\Campaign.properties");// properties file
+	Properties properties = PropertiesFile.readPropertyFile("D:\\GitHub\\xAmplify-Automation\\src\\main\\resources\\Campaign.properties");// properties file
 
 final Logger logger = LogManager.getLogger(SavePageCampaign.class);
 	@Test
@@ -41,6 +41,7 @@ final Logger logger = LogManager.getLogger(SavePageCampaign.class);
 			System.out.println(" Page Campaign failed");
 		}
 		
+		Thread.sleep(10000);
 logger.info("Page Campaign Launched Successfully");
 	}
 }

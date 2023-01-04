@@ -14,7 +14,7 @@ public class LaunchToeventcampagin {
 	WebDriver driver = Instance.getInstance();
 
 	Properties properties = PropertiesFile.readPropertyFile(
-			"D:\\git\\xAmplify-Automation\\src\\main\\resources\\EventCampaign.properties");
+			"D:\\GitHub\\xAmplify-Automation\\src\\main\\resources\\EventCampaign.properties");
 
 	final Logger logger = LogManager.getLogger(LaunchToeventcampagin.class);
 
