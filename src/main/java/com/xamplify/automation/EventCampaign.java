@@ -27,6 +27,7 @@ public class EventCampaign {
 
 	final Logger logger = LogManager.getLogger(EventCampaign.class);
 
+	//@Test (priority=178,enabled=true)
 	@Test
 	public void event_campaign() throws InterruptedException, SQLException {
 

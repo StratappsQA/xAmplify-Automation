@@ -32,7 +32,7 @@ public class ManageContacts extends ExtentReportsClass {
 
 	final Logger logger = LogManager.getLogger(ManageContacts.class);
 
-	@Test(priority = 1, enabled = true)
+	@Test(priority = 208, enabled = true)
 	public void managecontacts_sortby() throws InterruptedException, SQLException {
 
 		WebDriverWait wait_mcon = new WebDriverWait(driver, 50);
@@ -103,7 +103,7 @@ public class ManageContacts extends ExtentReportsClass {
 
 	}
 
-	@Test(priority = 2, enabled = true)
+	@Test(priority = 209, enabled = true)
 	public void managecontacts_alltiles() throws InterruptedException, SQLException {
 
 		WebDriverWait wait_atile = new WebDriverWait(driver, 60);
@@ -313,7 +313,7 @@ public class ManageContacts extends ExtentReportsClass {
 
 	}
 
-	@Test(priority = 3, enabled = true)
+	@Test(priority = 210, enabled = true)
 	public void managecontacts_edit_add() throws InterruptedException {
 
 		Thread.sleep(4000);
@@ -377,7 +377,7 @@ public class ManageContacts extends ExtentReportsClass {
 
 	}
 
-	@Test(priority = 4, enabled = true)
+	@Test(priority = 211, enabled = true)
 	public void managecontacts_edit_filter_save() throws InterruptedException, SQLException {
 
 		driver.findElement(By.xpath(properties.getProperty("mcon_editicon"))).click(); // click on the edit icon
@@ -484,7 +484,7 @@ public class ManageContacts extends ExtentReportsClass {
 
 	}
 
-	@Test(priority = 5, enabled = true)
+	@Test(priority = 212, enabled = true)
 	public void manage_Edit_commaseparated() throws InterruptedException, SQLException, IOException {
 
 		Thread.sleep(5000);
@@ -536,7 +536,7 @@ public class ManageContacts extends ExtentReportsClass {
 
 	}
 
-	@Test(priority = 6, enabled = true)
+	@Test(priority = 213, enabled = true)
 	public void manage_Edit_uploadcsv() throws InterruptedException, SQLException, IOException {
 
 		Thread.sleep(5000);
@@ -594,7 +594,7 @@ public class ManageContacts extends ExtentReportsClass {
 
 	}
 
-	@Test(priority = 7, enabled = true)
+	@Test(priority = 214, enabled = true)
 	public void mcon_Edit_delete() throws InterruptedException, SQLException, IOException {
 
 		Thread.sleep(5000);

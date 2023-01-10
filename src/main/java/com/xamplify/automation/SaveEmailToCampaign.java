@@ -22,8 +22,8 @@ public class SaveEmailToCampaign {
 
 	final Logger logger = LogManager.getLogger(SaveEmailToCampaign.class);
 
-	@Test
-	public void esave() throws InterruptedException, SQLException {
+	@Test (priority=154,enabled=true)
+	public void e_tosave() throws InterruptedException, SQLException {
 
 		Thread.sleep(4000);
 

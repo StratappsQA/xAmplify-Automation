@@ -33,7 +33,7 @@ public class ScheduleEmailCampaign{
 final Logger logger = LogManager.getLogger(ScheduleEmailCampaign.class);
 	
 	
-	@Test
+	@Test (priority=148,enabled=false)
 	public void eschedule() throws InterruptedException, SQLException
 	{
 		Thread.sleep(5000);

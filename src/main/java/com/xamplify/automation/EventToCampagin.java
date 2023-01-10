@@ -27,6 +27,7 @@ public class EventToCampagin {
 	
 	
 	
+	//@Test (priority=188,enabled=false)
 	@Test
 	public void event_Tocampaign() throws InterruptedException, SQLException {
 

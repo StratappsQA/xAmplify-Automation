@@ -23,7 +23,7 @@ public class SaveEmailCampaign {
 
 	final Logger logger = LogManager.getLogger(SaveEmailCampaign.class);
 
-	@Test
+	@Test (priority=149,enabled=true)
 	public void esave() throws InterruptedException, SQLException {
 
 		Thread.sleep(4000);

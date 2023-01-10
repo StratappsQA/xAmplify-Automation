@@ -24,7 +24,7 @@ public class LaunchRedistributionSurveyCampaign {
 
 	final Logger logger = LogManager.getLogger(LaunchRedistributionSurveyCampaign.class);
 
-	@Test
+	@Test (priority = 248, enabled = true)
 
 	public void re_surveylaunch() throws InterruptedException, SQLException {
 		Thread.sleep(3000);

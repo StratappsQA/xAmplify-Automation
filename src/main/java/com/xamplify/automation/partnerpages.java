@@ -20,7 +20,7 @@ public class partnerpages {
 			"D:\\GitHub\\xAmplify-Automation\\src\\main\\resources\\partnerpages.properties");
 	final Logger logger = LogManager.getLogger(PartnerLogin.class);
 
-	@Test(priority = 1, enabled = true)
+	@Test(priority = 222, enabled = true)
 	public void clickpages() throws InterruptedException {
 		WebDriverWait wait = new WebDriverWait(driver, 80);
 
@@ -31,7 +31,7 @@ public class partnerpages {
 		pages.click(); // hover on campaign
 	}
 
-	@Test(priority = 2, enabled = true)
+	@Test(priority = 223, enabled = true)
 	public void pages_list() throws InterruptedException {
 		WebDriverWait wait = new WebDriverWait(driver, 80);
 		Thread.sleep(3000);
@@ -59,7 +59,7 @@ public class partnerpages {
 
 	}
 
-	@Test(priority = 3, enabled = true)
+	@Test(priority = 224, enabled = true)
 	public void pages_grid() throws InterruptedException {
 		WebDriverWait wait = new WebDriverWait(driver, 80);
 
@@ -97,7 +97,7 @@ public class partnerpages {
 		driver.findElement(By.xpath(properties.getProperty("managepages"))).click();
 	}
 
-	@Test(priority = 4, enabled = true)
+	@Test(priority = 225, enabled = true)
 	public void pages_foler_grid_list() throws InterruptedException {
 		WebDriverWait wait = new WebDriverWait(driver, 80);
 		Thread.sleep(4000);
@@ -132,7 +132,7 @@ public class partnerpages {
 
 	}
 
-	@Test(priority = 5, enabled = true)
+	@Test(priority = 226, enabled = true)
 	public void pages_foler_grid_grid() throws InterruptedException {
 		WebDriverWait wait = new WebDriverWait(driver, 80);
 		Thread.sleep(4000);
@@ -182,7 +182,7 @@ public class partnerpages {
 
 	}
 
-	@Test(priority = 6, enabled = true)
+	@Test(priority = 227, enabled = true)
 	public void pages_foler_list_list() throws InterruptedException {
 		WebDriverWait wait = new WebDriverWait(driver, 80);
 		driver.findElement(By.xpath(properties.getProperty("gridview_list_click"))).click();
@@ -208,7 +208,7 @@ public class partnerpages {
 
 	}
 
-	@Test(priority = 7, enabled = true)
+	@Test(priority = 228, enabled = true)
 	public void pages_folder_list_grid() throws InterruptedException {
 		WebDriverWait wait = new WebDriverWait(driver, 80);
 		WebElement ele = driver.findElement(By.xpath(properties.getProperty("mouseoverongrid")));
@@ -229,15 +229,12 @@ public class partnerpages {
 		driver.findElement(By.xpath(properties.getProperty("gridclose1"))).click();
 	}
 
-	@Test(priority = 8, enabled = true)
+	@Test(priority = 229, enabled = true)
 	public void private_pages() throws InterruptedException {
 		WebDriverWait wait = new WebDriverWait(driver, 80);
 		Thread.sleep(4000);
 		clickpages();
-		/*
-		 * driver.findElement(By.xpath(properties.getProperty("home"))).click();
-		 * Thread.sleep(3000);
-		 */
+		
 
 		Thread.sleep(3000);
 		driver.findElement(By.xpath(properties.getProperty("private"))).click();
@@ -255,7 +252,7 @@ public class partnerpages {
 
 	}
 
-	@Test(priority = 9, enabled = true)
+	@Test(priority = 230, enabled = true)
 	public void private_grid() throws InterruptedException {
 		WebDriverWait wait = new WebDriverWait(driver, 80);
 		Thread.sleep(8000);
@@ -282,7 +279,7 @@ public class partnerpages {
 
 	}
 
-	@Test(priority = 10, enabled = true)
+	@Test(priority = 231, enabled = true)
 	public void private_folder_grid_list() throws InterruptedException {
 		WebDriverWait wait = new WebDriverWait(driver, 80);
 		Thread.sleep(8000);
@@ -315,7 +312,7 @@ public class partnerpages {
 
 	}
 
-	@Test(priority = 11, enabled = true)
+	@Test(priority = 232, enabled = true)
 	public void private_folder_grid_grid() throws InterruptedException {
 		WebDriverWait wait = new WebDriverWait(driver, 80);
 		Thread.sleep(8000);
@@ -345,7 +342,7 @@ public class partnerpages {
 
 	}
 
-	@Test(priority = 12, enabled = true)
+	@Test(priority = 233, enabled = true)
 	public void pages_private_folder_list_list() throws InterruptedException {
 		WebDriverWait wait = new WebDriverWait(driver, 80);
 		Thread.sleep(6000);
@@ -366,7 +363,7 @@ public class partnerpages {
 
 	}
 
-	@Test(priority = 13, enabled = true)
+	@Test(priority = 234, enabled = true)
 	public void pages_folder_list_grid_list() throws InterruptedException {
 		WebDriverWait wait = new WebDriverWait(driver, 80);
 		driver.findElement(By.xpath(properties.getProperty("expandlistgrid"))).click();

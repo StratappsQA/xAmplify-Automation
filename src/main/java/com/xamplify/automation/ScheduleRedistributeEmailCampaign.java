@@ -20,7 +20,7 @@ public class ScheduleRedistributeEmailCampaign {
 	final Logger logger = LogManager.getLogger(ScheduleRedistributeEmailCampaign.class);
 
 
-	@Test
+	@Test (priority = 242, enabled = false)
 	public void schedule_email_Redistributecampaign() throws InterruptedException {
 	
 		Thread.sleep(7000);

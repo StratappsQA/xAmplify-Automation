@@ -12,8 +12,6 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.Test;
 
 
-//public class SaveVideoCampaign extends VideoCampaign {
-
 public class SaveVideoCampaign  {
 	 WebDriver driver = Instance.getInstance();
 	 Properties properties = PropertiesFile.readPropertyFile("D:\\GitHub\\xAmplify-Automation\\src\\main\\resources\\Campaign.properties");
@@ -21,7 +19,7 @@ public class SaveVideoCampaign  {
 
 final Logger logger = LogManager.getLogger(SaveVideoCampaign.class);
 
-		@Test
+		@Test (priority=140,enabled=true)
 		public void vsave() throws InterruptedException, SQLException
 		{
 						
@@ -30,10 +28,11 @@ final Logger logger = LogManager.getLogger(SaveVideoCampaign.class);
 						vs.vdecampaign();
 						
 						Thread.sleep(4000);
-						/*
-						 * AutoresponsesVideo arv2=new AutoresponsesVideo(); arv2.autoResponsesVideo();
-						 * Thread.sleep(4000);
-						 */
+						
+						  //AutoresponsesVideoCampaign arv2=new AutoresponsesVideoCampaign(); 
+						  //arv2.autoResponsesVideo();
+						  //Thread.sleep(4000);
+						 
 
 						
 						

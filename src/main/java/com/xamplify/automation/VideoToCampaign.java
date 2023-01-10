@@ -24,8 +24,8 @@ public class VideoToCampaign extends ExtentReportsClass{
 			.readPropertyFile("D:\\GitHub\\xAmplify-Automation\\src\\main\\resources\\Campaign.properties");
 	final Logger logger = LogManager.getLogger(VideoToCampaign.class);
 
+	//@Test (priority=142,enabled=true)
 	@Test
-
 	public void vde_to_campaign() throws InterruptedException, SQLException {
 
 		WebDriverWait waitv = new WebDriverWait(driver, 80);

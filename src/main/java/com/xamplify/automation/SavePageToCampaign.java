@@ -15,7 +15,8 @@ public class SavePageToCampaign extends ExtentReportsClass{
 	Properties properties = PropertiesFile.readPropertyFile("D:\\GitHub\\xAmplify-Automation\\src\\main\\resources\\Campaign.properties");// properties file
 
 final Logger logger = LogManager.getLogger(SavePageToCampaign.class);
-	@Test
+	
+@Test (priority=167,enabled=true)
 	public void page_to_campsave() throws InterruptedException, SQLException {
 		Thread.sleep(4000);
 

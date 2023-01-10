@@ -27,7 +27,8 @@ public class PagePrivateCampaign extends ExtentReportsClass{
 final Logger logger = LogManager.getLogger(PagePrivateCampaign.class);
 	 
 
-	 @Test
+	 //@Test (priority=162,enabled=true)
+@Test
 	public void page_privatecampaign() throws InterruptedException, SQLException {
 		
 

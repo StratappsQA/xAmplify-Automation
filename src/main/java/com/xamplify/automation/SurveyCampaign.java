@@ -28,8 +28,8 @@ public class SurveyCampaign {
 
 	final Logger logger = LogManager.getLogger(SurveyCampaign.class);
 
+	//@Test (priority=168,enabled=true)
 	@Test
-
 	public void scampaign() throws InterruptedException, SQLException {
 
 		WebDriverWait wait = new WebDriverWait(driver, 80);

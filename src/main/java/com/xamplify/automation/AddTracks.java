@@ -22,7 +22,7 @@ public class AddTracks {
 
 
 	// adding track to view and delete in vendor account
-	@Test (priority = 0,enabled=true)
+	@Test (priority = 30,enabled=true)
 	public void addtrack_vendor() throws InterruptedException, IOException {	
 		Thread.sleep(5000);
 		driver.findElement(By.xpath(properties.getProperty("Content_leftmenu1"))).click(); //click on left side content menu
@@ -156,7 +156,7 @@ public class AddTracks {
 
 
 	//adding track to view and download in partner account
-	@Test (priority = 1,enabled=true)
+	@Test (priority = 31,enabled=true)
 	public void addtrack_partner() throws InterruptedException, IOException {	
 		Thread.sleep(3000);
 		driver.findElement(By.xpath(properties.getProperty("Content_leftmenu1"))).click(); //click on left side content menu

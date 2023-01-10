@@ -16,8 +16,8 @@ public class LaunchSurveyToCampaign {
 			.readPropertyFile("D:\\GitHub\\xAmplify-Automation\\src\\main\\resources\\Campaign.properties");
 
 	final Logger logger = LogManager.getLogger(LaunchSurveyToCampaign.class);
-
-	@Test
+ 
+	@Test (priority=175,enabled=true)
 
 	public void s_to_camp_launch() throws InterruptedException, SQLException
 

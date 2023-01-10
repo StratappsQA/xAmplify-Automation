@@ -27,7 +27,7 @@ public class TeamMember_Partner {
 	final Logger logger = LogManager.getLogger(TeamMember_Partner.class);
 
 
-	@Test (priority=1,enabled=true)
+	@Test (priority=256,enabled=true)
 	public void add_teammember_partner() throws InterruptedException, SQLException
 	{
 		Thread.sleep(7000);
@@ -95,7 +95,7 @@ public class TeamMember_Partner {
 		Thread.sleep(3000);			
 	}
 
-	@Test (priority=2,enabled=true)
+	@Test (priority=257,enabled=true)
 	public void edit_teammember_partner() throws InterruptedException
 	{
 		Thread.sleep(7000);
@@ -134,7 +134,7 @@ public class TeamMember_Partner {
 		Thread.sleep(3000);		
 	}
 
-	@Test (priority=3,enabled=true)
+	@Test (priority=258,enabled=true)
 	public void send_invitation_teammember_partner() throws InterruptedException
 	{
 		Thread.sleep(7000);
@@ -167,7 +167,7 @@ public class TeamMember_Partner {
 		Thread.sleep(3000);	
 	}
 
-	@Test (priority=4,enabled=true)
+	@Test (priority=259,enabled=true)
 	public void delete_teammember_partner() throws InterruptedException
 	{
 		Thread.sleep(7000);
@@ -201,7 +201,7 @@ public class TeamMember_Partner {
 
 
 	//to upload csc file we have to use two java files (RandomEmailGeneration and ProductModel)
-	@Test (priority=5,enabled=true)
+	@Test (priority=260,enabled=true)
 	public void uploadCSV_TM_partner() throws InterruptedException, IOException, InvalidFormatException
 	{
 		Thread.sleep(7000);
@@ -267,7 +267,7 @@ public class TeamMember_Partner {
 
 
 
-	@Test (priority=6,enabled=true)
+	@Test (priority=261,enabled=true)
 	public void view_avabliablemodules_partner() throws InterruptedException
 	{
 		Thread.sleep(7000);

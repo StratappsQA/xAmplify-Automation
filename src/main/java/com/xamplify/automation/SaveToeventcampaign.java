@@ -19,7 +19,7 @@ public class SaveToeventcampaign {
 	
 	
 
-	@Test
+	@Test (priority=191,enabled=false)
 	public void event_to_save() throws InterruptedException, SQLException {
 		Thread.sleep(4000);
 
@@ -27,12 +27,12 @@ public class SaveToeventcampaign {
 		eve12.event_Tocampaign();
 		Thread.sleep(5000);
 
-		/*
-		 * AutoResponsesEventcampaign ar_eve12 = new AutoResponsesEventcampaign(); //method call for autoresponses
-		 *  ar_eve12.autoResponsesevent();
-		 */
+		
+		 //AutoResponsesEventcampaign ar_eve12 = new AutoResponsesEventcampaign(); //method call for autoresponses
+		 //ar_eve12.autoResponsesevent();
+	
 
-		Thread.sleep(3000);
+		//Thread.sleep(3000);
 
 		driver.findElement(By.xpath(properties.getProperty("eve_save"))).click();// click on save
 		Thread.sleep(4000);

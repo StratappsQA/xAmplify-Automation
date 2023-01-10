@@ -28,6 +28,7 @@ public class EmailToCampaign {
 
 	final Logger logger = LogManager.getLogger(EmailToCampaign.class);
 
+	//@Test (priority=151,enabled=true)
 	@Test
 	public void email_to_campaign() throws InterruptedException, SQLException {
 		WebDriverWait wait = new WebDriverWait(driver, 80);

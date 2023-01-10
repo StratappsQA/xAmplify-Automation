@@ -26,7 +26,7 @@ public class partners_onboard_comma {
 	final Logger logger = LogManager.getLogger(partners_onboard_comma.class);
 
 	@Test(priority = 3, enabled = true)
-	public void Signinprocess() throws InterruptedException, SQLException {
+	public void HoverPartners() throws InterruptedException, SQLException {
 
 		logger.info("Moving to onboarding partners");
 		WebElement partners = driver.findElement(By.xpath(properties.getProperty("hoverpartner")));// hover to partners

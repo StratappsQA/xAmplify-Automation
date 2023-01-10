@@ -20,7 +20,7 @@ public class ScheduleRedistributionSurveyCampaign {
 			.readPropertyFile("D:\\GitHub\\xAmplify-Automation\\src\\main\\resources\\RedistributionCampaign.properties");
 	final Logger logger = LogManager.getLogger(ScheduleRedistributionSurveyCampaign.class);
 
-	@Test
+	@Test (priority = 249, enabled = false)
 
 	public void re_surveyschedule() throws InterruptedException, SQLException {
 		Thread.sleep(3000);

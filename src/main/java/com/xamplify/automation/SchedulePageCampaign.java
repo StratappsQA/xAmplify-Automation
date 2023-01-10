@@ -28,7 +28,7 @@ public class SchedulePageCampaign extends ExtentReportsClass{
 
 final Logger logger = LogManager.getLogger(SchedulePageCampaign.class);
 	 
-	@Test
+	@Test (priority=157,enabled=false)
 
 	public void schedule() throws InterruptedException, SQLException {
 

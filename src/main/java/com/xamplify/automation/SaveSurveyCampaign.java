@@ -22,7 +22,7 @@ public class SaveSurveyCampaign {
 
 	final Logger logger = LogManager.getLogger(SaveSurveyCampaign.class);
 
-	@Test
+	@Test (priority=169,enabled=true)
 
 	public void sSave() throws InterruptedException, SQLException
 

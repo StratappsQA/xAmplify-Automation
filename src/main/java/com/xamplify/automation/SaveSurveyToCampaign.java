@@ -22,7 +22,7 @@ WebDriver driver = Instance.getInstance();
 
 	final Logger logger = LogManager.getLogger(SaveSurveyToCampaign.class);
 
-	@Test
+	@Test (priority=174,enabled=true)
 
 	public void s_to_camp_Save() throws InterruptedException, SQLException
 

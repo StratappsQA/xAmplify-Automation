@@ -87,7 +87,7 @@ public class partners_tab_csv {
 	public void onboard_icons() throws Throwable {
 		Thread.sleep(8000);
 		partners_onboard_comma onboard = new partners_onboard_comma();
-		onboard.Signinprocess();
+		onboard.HoverPartners();
 		Thread.sleep(5000);
 
 		driver.findElement(By.xpath(properties.getProperty("resendemail"))).click();
@@ -219,3 +219,4 @@ public class partners_tab_csv {
 	}
 
 }
+ 

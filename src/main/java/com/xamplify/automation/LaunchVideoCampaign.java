@@ -21,14 +21,19 @@ public class LaunchVideoCampaign {
 
 	final Logger logger = LogManager.getLogger(LaunchVideoCampaign.class);
 
-	@Test
+	@Test(priority=138,enabled=true)
 
 	public void vlaunch() throws InterruptedException, SQLException {
 		Thread.sleep(7000);
 		VideoCampaign vc = new VideoCampaign();
 		vc.vdecampaign();
 		Thread.sleep(4000);
-
+		
+		  //AutoresponsesVideoCampaign arv2=new AutoresponsesVideoCampaign(); 
+		  //arv2.autoResponsesVideo();
+		  //Thread.sleep(4000);
+		
+		
 		driver.findElement(By.xpath(properties.getProperty("video_now"))).click(); // click NOW
 		Thread.sleep(4000);
 

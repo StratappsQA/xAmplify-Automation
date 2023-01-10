@@ -15,9 +15,9 @@ public class PartnerLogin {
 final Logger logger = LogManager.getLogger(PartnerLogin.class);
 
 
-@Test(priority=1,enabled=true)
+@Test(priority=202,enabled=false)
 
-public void OpeningtheBrowser() throws InterruptedException {
+public void Partner_OpeningtheBrowser() throws InterruptedException {
 	
 	driver.get(properties.getProperty("baseurl_p"));
 	driver.manage().window().maximize();
@@ -26,9 +26,9 @@ public void OpeningtheBrowser() throws InterruptedException {
 	
 }
 
-@Test (priority=2,enabled=true)
+@Test (priority=203,enabled=true)
 
-public void SigninProcess() throws InterruptedException, SQLException {
+public void Partner_SigninProcess() throws InterruptedException, SQLException {
 
 	
 	driver.findElement(By.xpath(properties.getProperty("username"))).sendKeys("automated_partner@analytify.com");
@@ -37,7 +37,7 @@ public void SigninProcess() throws InterruptedException, SQLException {
 	Thread.sleep(1000);
 	driver.findElement(By.xpath(properties.getProperty("sign_into_sandbox"))).click();
 	Thread.sleep(8000);
-logger.info("Successfully log into the application");
+    logger.info("Successfully log into the application");
 	}
 
 

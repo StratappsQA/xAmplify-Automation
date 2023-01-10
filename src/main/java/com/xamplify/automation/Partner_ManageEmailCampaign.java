@@ -24,7 +24,7 @@ public class Partner_ManageEmailCampaign extends ExtentReportsClass {
 			"D:\\GitHub\\xAmplify-Automation\\src\\main\\resources\\Partner_ManageCampaigns.properties");
 	final Logger logger = LogManager.getLogger(Partner_ManageVideoCampaign.class);
 
-	@Test(priority = 1, enabled = true)
+	@Test(priority = 244, enabled = true)
 
 	public void partneracc_manage_emlcampaign() throws InterruptedException, SQLException {
 
@@ -54,7 +54,7 @@ public class Partner_ManageEmailCampaign extends ExtentReportsClass {
 		logger.info("Manage Campaigns clicked successfully");
 	}
 	
-	@Test(priority = 2, enabled = true)
+	@Test(priority = 245, enabled = true)
 
 	public void partneracc_manage_emlcampaign_draft_delete() throws InterruptedException, SQLException {
 
@@ -88,7 +88,7 @@ public class Partner_ManageEmailCampaign extends ExtentReportsClass {
 
 	}
 		
-	@Test(priority = 3, enabled = true)
+	@Test(priority = 246, enabled = true)
 
 	public void partneracc_manage_email_campaign_edit_updatefolder() throws InterruptedException, SQLException {
 
@@ -121,7 +121,7 @@ public class Partner_ManageEmailCampaign extends ExtentReportsClass {
 
 	}
 										
-	@Test(priority = 4, enabled=true)
+	@Test(priority = 247, enabled=true)
 
 	public void partneracc_manage_email_campaign_analytics() throws InterruptedException, SQLException {
 

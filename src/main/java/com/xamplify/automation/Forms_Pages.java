@@ -28,7 +28,7 @@ public class Forms_Pages {
 			"D:\\git\\Formsandpages\\xAmplify-Automation\\src\\main\\resources\\Forms_Pages.properties");
 	final Logger logger = LogManager.getLogger(Forms_Pages.class);
 
-	@Test(priority = 2, enabled = true)
+	@Test(priority = 88, enabled = true)
 	public void design_general() throws InterruptedException {
 		Thread.sleep(15000);
 		driver.findElement(By.xpath(properties.getProperty("design_click")))//
@@ -97,7 +97,7 @@ public class Forms_Pages {
 
 	}
 
-	@Test(priority = 3, enabled = true)
+	@Test(priority = 89, enabled = true)
 	public void design_quiz() throws InterruptedException {
 		Thread.sleep(3000);
 		driver.findElement(By.xpath(properties.getProperty("design_quiz_click"))).click();
@@ -158,7 +158,7 @@ public class Forms_Pages {
 		Thread.sleep(2000);
 	}
 
-	@Test(priority = 4, enabled = true)
+	@Test(priority = 90, enabled = true)
 	public void design_survey() throws InterruptedException {
 		Thread.sleep(3000);
 		driver.findElement(By.xpath(properties.getProperty("design_survey_click"))).click();
@@ -223,7 +223,7 @@ public class Forms_Pages {
 
 	}
 
-	@Test(priority = 5, enabled = true)
+	@Test(priority = 91, enabled = true)
 	public void design_Manage_Forms_List() throws InterruptedException {
 		Thread.sleep(3000);
 		driver.findElement(By.xpath(properties.getProperty("manage_forms_list"))).click();
@@ -290,7 +290,7 @@ public class Forms_Pages {
 
 	}
 
-	@Test(priority = 6, enabled = true)
+	@Test(priority = 92, enabled = true)
 	public void design_Manage_Forms_List_quiz() throws InterruptedException {
 		Thread.sleep(15000);
 		driver.findElement(By.xpath(properties.getProperty("Manage_Forms_List_quiz_click")))
@@ -362,7 +362,7 @@ public class Forms_Pages {
 
 	}
 
-	@Test(priority = 7, enabled = true)
+	@Test(priority = 93, enabled = true)
 	public void design_Manage_Forms_List_survey() throws InterruptedException {
 		Thread.sleep(15000);
 		driver.findElement(By.xpath(properties.getProperty("Manage_Forms_List_survey_click"))).click();
@@ -432,7 +432,7 @@ public class Forms_Pages {
 
 	}
 
-	@Test(priority = 8, enabled = true)
+	@Test(priority = 94, enabled = true)
 	public void design_Manage_Forms_Grid_Regular() throws InterruptedException {
 		Thread.sleep(15000);
 		driver.findElement(By.xpath(properties.getProperty("design_Manage_Forms_Grid_Regular_click"))).click();
@@ -480,7 +480,7 @@ public class Forms_Pages {
 
 	}
 
-	@Test(priority = 9, enabled = true)
+	@Test(priority = 95, enabled = true)
 	public void design_Manage_Forms_Grid_quiz() throws InterruptedException {
 		Thread.sleep(15000);
 		driver.findElement(By.xpath(properties.getProperty("design_Manage_Forms_Grid_quiz_click"))).click();
@@ -530,7 +530,7 @@ public class Forms_Pages {
 
 	}
 
-	@Test(priority = 10, enabled = true)
+	@Test(priority = 96, enabled = true)
 	public void design_Manage_Forms_Grid_survey() throws InterruptedException {
 		Thread.sleep(15000);
 		driver.findElement(By.xpath(properties.getProperty("design_Manage_Forms_Grid_survey_click"))).click();
@@ -580,7 +580,7 @@ public class Forms_Pages {
 
 	}
 
-	@Test(priority = 11, enabled = true)
+	@Test(priority = 97, enabled = true)
 	public void design_Manage_Forms_Folder_Gridview_Regular() throws InterruptedException {
 		Thread.sleep(20000);
 		driver.findElement(By.xpath(properties.getProperty("Folder_Gridview_Regular_click")))
@@ -620,7 +620,7 @@ public class Forms_Pages {
 
 	}
 
-	@Test(priority = 12, enabled = true)
+	@Test(priority = 98, enabled = true)
 	public void design_Manage_Forms_Folder_Gridview_quiz() throws InterruptedException {
 		Thread.sleep(20000);
 		driver.findElement(By.xpath(properties.getProperty("Folder_Gridview_quiz_click")))
@@ -646,7 +646,7 @@ public class Forms_Pages {
 
 	}
 
-	@Test(priority = 13, enabled = true)
+	@Test(priority = 99, enabled = true)
 	public void design_Manage_Forms_Folder_Gridview_survey() throws InterruptedException {
 		Thread.sleep(15000);
 		driver.findElement(By.xpath(properties.getProperty("Folder_Gridview_survey_click"))).click();
@@ -673,7 +673,7 @@ public class Forms_Pages {
 
 	}
 
-	@Test(priority = 14, enabled = true)
+	@Test(priority = 100, enabled = true)
 	public void design_Manage_Forms_Folder_Gridview_Gridview_Regular() throws InterruptedException {
 		Thread.sleep(15000);
 		driver.findElement(By.xpath(properties.getProperty("Forms_Folder_Gridview_Gridview_Regular")))
@@ -717,7 +717,7 @@ public class Forms_Pages {
 
 	}
 
-	@Test(priority = 15, enabled = true)
+	@Test(priority = 101, enabled = true)
 	public void design_Manage_Forms_Folder_Gridview_Gridview_quiz() throws InterruptedException {
 		Thread.sleep(15000);
 
@@ -762,7 +762,7 @@ public class Forms_Pages {
 
 	}
 
-	@Test(priority = 16, enabled = true)
+	@Test(priority = 102, enabled = true)
 	public void design_Manage_Forms_Folder_Gridview_Gridview_survey() throws InterruptedException {
 		Thread.sleep(15000);
 
@@ -816,7 +816,7 @@ public class Forms_Pages {
 
 	}
 
-	@Test(priority = 17, enabled = true)
+	@Test(priority = 103, enabled = true)
 	public void design_Manage_Forms_Folder_list_view_list_view_regular() throws InterruptedException {
 		Thread.sleep(10000);
 		driver.findElement(By.xpath(properties.getProperty("Manage_Forms_Folder_list_view_list_view_regular_click")))
@@ -843,7 +843,7 @@ public class Forms_Pages {
 
 	}
 
-	@Test(priority = 18, enabled = true)
+	@Test(priority = 104, enabled = true)
 	public void design_Manage_Forms_Folder_list_view_list_view_quiz() throws InterruptedException {
 		Thread.sleep(15000);
 		driver.findElement(By.xpath(properties.getProperty("Forms_Folder_list_view_list_view_quiz_click")))
@@ -880,7 +880,7 @@ public class Forms_Pages {
 
 	}
 
-	@Test(priority = 19, enabled = true)
+	@Test(priority = 105, enabled = true)
 	public void design_Manage_Forms_Folder_list_view_list_view_Survey() throws InterruptedException {
 		Thread.sleep(20000);
 		driver.findElement(By.xpath(properties.getProperty("Forms_Folder_list_view_list_view_survey_click"))).click();
@@ -913,7 +913,7 @@ public class Forms_Pages {
 				.click();
 	}
 
-	@Test(priority = 20, enabled = true)
+	@Test(priority = 106, enabled = true)
 	public void design_Manage_Forms_Folder_list_view_Grid_view_regular() throws InterruptedException {
 		Thread.sleep(20000);
 		driver.findElement(By.xpath(properties.getProperty("Forms_Folder_list_view_Grid_view_regular_click")))
@@ -968,7 +968,7 @@ public class Forms_Pages {
 
 	}
 
-	@Test(priority = 21, enabled = true)
+	@Test(priority = 107, enabled = true)
 	public void design_Manage_Forms_Folder_list_view_Grid_view_quiz() throws InterruptedException {
 		Thread.sleep(25000);
 		driver.findElement(By.xpath(properties.getProperty("Forms_Folder_list_view_Grid_view_quiz_click"))).click();
@@ -1007,7 +1007,7 @@ public class Forms_Pages {
 
 	}
 
-	@Test(priority = 22, enabled = true)
+	@Test(priority = 108, enabled = true)
 	public void design_Manage_Forms_Folder_list_view_Grid_view_survey() throws InterruptedException {
 		Thread.sleep(20000);
 		driver.findElement(By.xpath(properties.getProperty("Forms_Folder_list_view_Grid_view_survey_click"))).click();
@@ -1046,7 +1046,7 @@ public class Forms_Pages {
 
 	}
 
-	@Test(priority = 23, enabled = true)
+	@Test(priority = 109, enabled = true)
 	public void design_reg_public() throws InterruptedException {
 		Thread.sleep(15000);
 		driver.findElement(By.xpath(properties.getProperty("designPages_click"))).click();
@@ -1115,7 +1115,7 @@ public class Forms_Pages {
 
 	}
 
-	@Test(priority = 24, enabled = true)
+	@Test(priority = 110, enabled = true)
 	public void design_reg_private() throws InterruptedException {
 		Thread.sleep(10000);
 		driver.findElement(By.xpath(properties.getProperty("designPages_private_click"))).click();
@@ -1179,7 +1179,7 @@ public class Forms_Pages {
 
 	}
 
-	@Test(priority = 25, enabled = true)
+	@Test(priority = 111, enabled = true)
 	public void design_cobranded_private() throws InterruptedException {
 		Thread.sleep(10000);
 		driver.findElement(By.xpath(properties.getProperty("designcoPages_private_click"))).click();
@@ -1241,7 +1241,7 @@ public class Forms_Pages {
 
 	}
 
-	@Test(priority = 26, enabled = true)
+	@Test(priority = 112, enabled = true)
 	public void design_cobranded_public() throws InterruptedException {
 		Thread.sleep(8000);
 		driver.findElement(By.xpath(properties.getProperty("cobranded_public_click"))).click();
@@ -1301,7 +1301,7 @@ public class Forms_Pages {
 
 	}
 
-	@Test(priority = 27, enabled = true)
+	@Test(priority = 113, enabled = true)
 	public void Manage_Regular_public() throws InterruptedException {
 		Thread.sleep(20000);
 
@@ -1335,7 +1335,7 @@ public class Forms_Pages {
 
 	}
 
-	@Test(priority = 28, enabled = true)
+	@Test(priority = 114, enabled = true)
 	public void Manage_Regular_private() throws InterruptedException {
 		Thread.sleep(20000);
 		driver.findElement(By.xpath(properties.getProperty("manage_regpri_tab"))).click();
@@ -1365,7 +1365,7 @@ public class Forms_Pages {
 		driver.findElement(By.xpath(properties.getProperty("manage_regpri_actionssaveyes"))).click();
 	}
 
-	@Test(priority = 29, enabled = true)
+	@Test(priority = 115, enabled = true)
 	public void Manage_Regular_Cobranded_private() throws InterruptedException {
 		Thread.sleep(20000);
 
@@ -1397,7 +1397,7 @@ public class Forms_Pages {
 		driver.findElement(By.xpath(properties.getProperty("manage_cobrandpri_actionssaveyes"))).click();
 	}
 
-	@Test(priority = 30, enabled = true)
+	@Test(priority = 116, enabled = true)
 	public void Manage_Regular_Cobranded_public() throws InterruptedException {
 		Thread.sleep(20000);
 		driver.findElement(By.xpath(properties.getProperty("manage_cobrandpub_tab"))).click();
@@ -1428,7 +1428,7 @@ public class Forms_Pages {
 
 	}
 
-	@Test(priority = 31, enabled = true)
+	@Test(priority = 117, enabled = true)
 	public void Gridview_Manage_regular_public() throws InterruptedException {
 		Thread.sleep(20000);
 		driver.findElement(By.xpath(properties.getProperty("gridreg_pub_click"))).click();
@@ -1472,7 +1472,7 @@ public class Forms_Pages {
 
 	}
 
-	@Test(priority = 32, enabled = true)
+	@Test(priority = 118, enabled = true)
 	public void Gridview_Manage_regular_private() throws InterruptedException {
 		Thread.sleep(20000);
 		driver.findElement(By.xpath(properties.getProperty("gridreg_pri_click"))).click();
@@ -1516,7 +1516,7 @@ public class Forms_Pages {
 
 	}
 
-	@Test(priority = 33, enabled = true)
+	@Test(priority = 119, enabled = true)
 	public void Gridview_Manage_Cobranded_public() throws InterruptedException {
 		Thread.sleep(20000);
 		driver.findElement(By.xpath(properties.getProperty("gridreg_copublic_click"))).click();
@@ -1560,7 +1560,7 @@ public class Forms_Pages {
 
 	}
 
-	@Test(priority = 34, enabled = true)
+	@Test(priority = 120, enabled = true)
 	public void Gridview_Manage_Cobranded_private() throws InterruptedException {
 		Thread.sleep(20000);
 		driver.findElement(By.xpath(properties.getProperty("gridreg_copriv_click"))).click();
@@ -1603,7 +1603,7 @@ public class Forms_Pages {
 		driver.findElement(By.xpath(properties.getProperty("gridreg_copriv_update"))).click();
 	}
 
-	@Test(priority = 35, enabled = true)
+	@Test(priority = 121, enabled = true)
 	public void Folder_Gridview_Manage_regular_public() throws InterruptedException {
 		Thread.sleep(20000);
 		driver.findElement(By.xpath(properties.getProperty("folder_grireg_public_click"))).click();
@@ -1647,7 +1647,7 @@ public class Forms_Pages {
 
 	}
 
-	@Test(priority = 36, enabled = true)
+	@Test(priority = 122, enabled = true)
 	public void Folder_Gridview_Manage_regular_private() throws InterruptedException {
 		Thread.sleep(20000);
 
@@ -1679,7 +1679,7 @@ public class Forms_Pages {
 
 	}
 
-	@Test(priority = 37, enabled = true)
+	@Test(priority = 123, enabled = true)
 	public void Folder_Gridview_Manage_cobranded_public() throws InterruptedException {
 		Thread.sleep(20000);
 		driver.findElement(By.xpath(properties.getProperty("folder_grico_pub_tab"))).click();
@@ -1710,7 +1710,7 @@ public class Forms_Pages {
 
 	}
 
-	@Test(priority = 38, enabled = true)
+	@Test(priority = 124, enabled = true)
 	public void Folder_Gridview_Manage_cobranded_private() throws InterruptedException {
 		Thread.sleep(20000);
 		driver.findElement(By.xpath(properties.getProperty("folder_grico_pri_tab"))).click();
@@ -1741,7 +1741,7 @@ public class Forms_Pages {
 
 	}
 
-	@Test(priority = 39, enabled = true)
+	@Test(priority = 125, enabled = true)
 	public void Folder_Gridview_grid_Manage_regular_public() throws InterruptedException {
 		Thread.sleep(20000);
 		driver.findElement(By.xpath(properties.getProperty("gri_gri_reg_pub"))).click();
@@ -1785,7 +1785,7 @@ public class Forms_Pages {
 
 	}
 
-	@Test(priority = 40, enabled = true)
+	@Test(priority = 126, enabled = true)
 	public void Folder_Gridview_grid_Manage_regular_private() throws InterruptedException {
 		Thread.sleep(20000);
 		driver.findElement(By.xpath(properties.getProperty("gri_gri_reg_pri"))).click();
@@ -1829,7 +1829,7 @@ public class Forms_Pages {
 		driver.findElement(By.xpath(properties.getProperty("gri_gri_reg_pri_saveyes"))).click();
 	}
 
-	@Test(priority = 41, enabled = true)
+	@Test(priority = 127, enabled = true)
 	public void Folder_Gridview_grid_Manage_regular_cobrandedpublic() throws InterruptedException {
 		Thread.sleep(20000);
 		driver.findElement(By.xpath(properties.getProperty("gri_gri_co_pub"))).click();
@@ -1873,7 +1873,7 @@ public class Forms_Pages {
 
 	}
 
-	@Test(priority = 42, enabled = true)
+	@Test(priority = 128, enabled = true)
 	public void Folder_Gridview_grid_Manage_regular_cobrandedprivate() throws InterruptedException {
 		Thread.sleep(20000);
 		driver.findElement(By.xpath(properties.getProperty("gri_gri_co_pri"))).click();
@@ -1917,7 +1917,7 @@ public class Forms_Pages {
 
 	}
 
-	@Test(priority = 43, enabled = true)
+	@Test(priority = 129, enabled = true)
 	public void Folder_listview_grid_Manage_regular_regularpublic() throws InterruptedException {
 		Thread.sleep(20000);
 		driver.findElement(By.xpath(properties.getProperty("list_gri_reg_pub"))).click();
@@ -1954,7 +1954,7 @@ public class Forms_Pages {
 
 	}
 
-	@Test(priority = 44, enabled = true)
+	@Test(priority = 130, enabled = true)
 	public void Folder_listview_grid_Manage_regular_regularprivate() throws InterruptedException {
 		Thread.sleep(20000);
 
@@ -1992,7 +1992,7 @@ public class Forms_Pages {
 
 	}
 
-	@Test(priority = 45, enabled = true)
+	@Test(priority = 131, enabled = true)
 	public void Folder_listview_grid_Manage_regular_cobrandedpublic() throws InterruptedException {
 		Thread.sleep(20000);
 		driver.findElement(By.xpath(properties.getProperty("list_gri_co_pub"))).click();
@@ -2030,7 +2030,7 @@ public class Forms_Pages {
 
 	}
 
-	@Test(priority = 46, enabled = true)
+	@Test(priority = 132, enabled = true)
 	public void Folder_listview_grid_Manage_regular_cobrandedprivate() throws InterruptedException {
 		Thread.sleep(20000);
 		driver.findElement(By.xpath(properties.getProperty("list_gri_co_pri"))).click();
@@ -2068,7 +2068,7 @@ public class Forms_Pages {
 
 	}
 
-	@Test(priority = 47, enabled = true)
+	@Test(priority = 133, enabled = true)
 	public void Folder_gridview_grid_Manage_regular_public() throws InterruptedException {
 		Thread.sleep(20000);
 		driver.findElement(By.xpath(properties.getProperty("grid_grid_reg_pub"))).click();
@@ -2119,7 +2119,7 @@ public class Forms_Pages {
 
 	}
 
-	@Test(priority = 48, enabled = true)
+	@Test(priority = 134, enabled = true)
 	public void Folder_gridview_grid_Manage_regular_private() throws InterruptedException {
 		Thread.sleep(20000);
 		driver.findElement(By.xpath(properties.getProperty("grid_grid_reg_pri"))).click();
@@ -2170,7 +2170,7 @@ public class Forms_Pages {
 
 	}
 
-	@Test(priority = 49, enabled = true)
+	@Test(priority = 135, enabled = true)
 	public void Folder_gridview_grid_Manage_cobranded_public() throws InterruptedException {
 		Thread.sleep(20000);
 		driver.findElement(By.xpath(properties.getProperty("grid_grid_co_pub"))).click();
@@ -2221,7 +2221,7 @@ public class Forms_Pages {
 
 	}
 
-	@Test(priority = 50, enabled = true)
+	@Test(priority = 136, enabled = true)
 	public void Folder_gridview_grid_Manage_cobranded_private() throws InterruptedException {
 		Thread.sleep(20000);
 		driver.findElement(By.xpath(properties.getProperty("grid_grid_co_pri"))).click();

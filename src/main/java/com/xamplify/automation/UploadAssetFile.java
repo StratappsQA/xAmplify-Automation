@@ -33,7 +33,7 @@ public class UploadAssetFile {
 
 	//In this class file we have all types of asset files (except video asset files)
 	//uploading png file asset 
-	@Test (priority = 0,enabled=true)
+	@Test (priority = 12,enabled=true)
 	public void uploadasset_png() throws InterruptedException, IOException, AWTException {	
 		Thread.sleep(6000);
 		driver.findElement(By.xpath(properties.getProperty("Content_leftmenu"))).click(); //click on left side content menu
@@ -121,7 +121,7 @@ public class UploadAssetFile {
 
 
 	//uploading mp3 file
-	@Test (priority = 1,enabled=true)
+	@Test (priority = 13,enabled=true)
 	public void uploadasset_mp3() throws InterruptedException, IOException, AWTException {	
 		Thread.sleep(6000);
 		driver.findElement(By.xpath(properties.getProperty("Content_leftmenu"))).click(); //click on left side content menu
@@ -209,7 +209,7 @@ public class UploadAssetFile {
 
 
 	//uploading ppt file
-	@Test (priority = 2,enabled=true)
+	@Test (priority = 14,enabled=true)
 	public void uploadasset_ppt() throws InterruptedException, IOException, AWTException {	
 		Thread.sleep(6000);
 		driver.findElement(By.xpath(properties.getProperty("Content_leftmenu"))).click(); //click on left side content menu
@@ -296,7 +296,7 @@ public class UploadAssetFile {
 
 
 	//uploading doc file (word file)
-	@Test (priority = 3,enabled=true)
+	@Test (priority = 15,enabled=true)
 	public void uploadasset_doc() throws InterruptedException, IOException, AWTException {	
 		Thread.sleep(6000);
 		driver.findElement(By.xpath(properties.getProperty("Content_leftmenu"))).click(); //click on left side content menu
@@ -383,7 +383,7 @@ public class UploadAssetFile {
 
 
 	//uploading xls file
-	@Test (priority = 4,enabled=true)
+	@Test (priority = 16,enabled=true)
 	public void uploadasset_xls() throws InterruptedException, IOException, AWTException {	
 		Thread.sleep(6000);
 		driver.findElement(By.xpath(properties.getProperty("Content_leftmenu"))).click(); //click on left side content menu
@@ -472,7 +472,7 @@ public class UploadAssetFile {
 
 
 	//uploading gif file
-	@Test (priority = 5,enabled=true)
+	@Test (priority = 17,enabled=true)
 	public void uploadasset_gif() throws InterruptedException, IOException, AWTException {	
 		Thread.sleep(6000);
 		driver.findElement(By.xpath(properties.getProperty("Content_leftmenu"))).click(); //click on left side content menu
@@ -558,7 +558,7 @@ public class UploadAssetFile {
 	}
 
 	//uploading jpg file
-	@Test (priority = 6,enabled=true)
+	@Test (priority = 18,enabled=true)
 	public void uploadasset_jpg() throws InterruptedException, IOException, AWTException {	
 		Thread.sleep(6000);
 		driver.findElement(By.xpath(properties.getProperty("Content_leftmenu"))).click(); //click on left side content menu
@@ -644,7 +644,7 @@ public class UploadAssetFile {
 	}
 
 	//uploading zip file
-	@Test (priority = 7,enabled=true)
+	@Test (priority = 19,enabled=true)
 	public void uploadasset_zip() throws InterruptedException, IOException, AWTException {	
 		Thread.sleep(6000);
 		driver.findElement(By.xpath(properties.getProperty("Content_leftmenu"))).click(); //click on left side content menu
@@ -723,7 +723,7 @@ public class UploadAssetFile {
 	}
 
 	//uploading html file
-	@Test (priority = 8,enabled=true)
+	@Test (priority = 20,enabled=true)
 	public void uploadasset_html() throws InterruptedException, IOException, AWTException {	
 		Thread.sleep(6000);
 		driver.findElement(By.xpath(properties.getProperty("Content_leftmenu"))).click(); //click on left side content menu
@@ -812,7 +812,7 @@ public class UploadAssetFile {
 
 
 	//uploading svg file
-	@Test (priority = 9,enabled=true)
+	@Test (priority = 21,enabled=true)
 	public void uploadasset_svg() throws InterruptedException, IOException, AWTException {	
 		Thread.sleep(6000);
 		driver.findElement(By.xpath(properties.getProperty("Content_leftmenu"))).click(); //click on left side content menu
@@ -899,7 +899,7 @@ public class UploadAssetFile {
 
 
 	//uploading asset (png)to view&downlod in partner account 
-	@Test (priority = 10,enabled=true)
+	@Test (priority = 22,enabled=true)
 	public void assetpng_partner() throws InterruptedException, IOException, AWTException {	
 		Thread.sleep(6000);
 		driver.findElement(By.xpath(properties.getProperty("Content_leftmenu"))).click(); //click on left side content menu
@@ -1024,7 +1024,7 @@ public class UploadAssetFile {
 
 
 	//uploading asset through webcam 
-	@Test (priority = 11,enabled=true)
+	@Test (priority = 23,enabled=true)
 	public void assetthroughwebcam() throws InterruptedException, IOException {	
 		Thread.sleep(6000);
 		driver.findElement(By.xpath(properties.getProperty("Content_leftmenu"))).click(); //click on left side content menu
@@ -1074,7 +1074,7 @@ public class UploadAssetFile {
 	}
 
 	//uploading asset through box account
-	@Test (priority = 12,enabled=true)
+	@Test (priority = 24,enabled=true)
 	public void assetthroughbox() throws InterruptedException, IOException {	
 		Thread.sleep(6000);
 		driver.findElement(By.xpath(properties.getProperty("Content_leftmenu"))).click(); //click on left side content menu

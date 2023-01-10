@@ -19,19 +19,8 @@ public class Logout {
 	
 	
 
-//@Test(priority=1,enabled=true)
-//public void Openingthebrowser() throws InterruptedException {
-//	
-//logger.info("Opening the WebApplication");
-//Thread.sleep(3000);
-//driver.get(properties.getProperty("baseUrl"));
-//driver.manage().window().maximize();
-//Thread.sleep(3000);
-//logger.info("Successfully Opened the Web Application");
-//
-//}
 
-@Test(priority=1,enabled=true)
+@Test(priority=201,enabled=true)
 
 
 public void Logoutprocess() throws InterruptedException, SQLException {
@@ -43,7 +32,7 @@ public void Logoutprocess() throws InterruptedException, SQLException {
 	driver.findElement(By.xpath(properties.getProperty("click_logout_button"))).click();
 	Thread.sleep(6000);
 	logger.info("Successfully Logout to the application");
-	
+	Thread.sleep(10000);
 }
 
 }

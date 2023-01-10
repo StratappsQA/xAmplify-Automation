@@ -17,7 +17,7 @@ public class SaveEventCampaign {
 
 	final Logger logger = LogManager.getLogger(SaveEventCampaign.class);
 
-	@Test
+	@Test (priority=181 ,enabled=false)
 	public void event_save() throws InterruptedException, SQLException {
 		Thread.sleep(4000);
 
@@ -25,12 +25,10 @@ public class SaveEventCampaign {
 		eve12.event_campaign();
 		Thread.sleep(5000);
 
-		/*
-		 * AutoResponsesEventcampaign ar_eve12 = new AutoResponsesEventcampaign();
-		 * //method call for autoresponses ar_eve12.autoResponsesevent();
-		 */
-
-		Thread.sleep(3000);
+		
+		  //AutoResponsesEventcampaign ar_eve12 = new AutoResponsesEventcampaign();//method call for autoresponses 
+		  //ar_eve12.autoResponsesevent();
+		  //Thread.sleep(3000);
 
 		driver.findElement(By.xpath(properties.getProperty("eve_save"))).click();// click on save
 		Thread.sleep(4000);

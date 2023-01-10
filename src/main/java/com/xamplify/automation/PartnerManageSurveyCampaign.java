@@ -22,7 +22,7 @@ public class PartnerManageSurveyCampaign extends ExtentReportsClass{
 			.readPropertyFile("D:\\GitHub\\xAmplify-Automation\\src\\main\\resources\\RedistributionCampaign.properties");
 	final Logger logger = LogManager.getLogger(PartnerManageSurveyCampaign.class);
 
-	@Test
+	@Test (priority = 251, enabled = true)
 
 	public void manage_redsurveycamp() throws InterruptedException {
 

@@ -18,7 +18,7 @@ public class LaunchPageCampaign {
 	Properties properties = PropertiesFile.readPropertyFile("D:\\GitHub\\xAmplify-Automation\\src\\main\\resources\\Campaign.properties");// properties file
 final Logger logger = LogManager.getLogger(LaunchPageCampaign.class);
 
-	@Test
+	@Test (priority=156,enabled=true)
 	public void page_launch() throws InterruptedException, SQLException {
 		Thread.sleep(6000);
 		PageCampaign pc1 = new PageCampaign();

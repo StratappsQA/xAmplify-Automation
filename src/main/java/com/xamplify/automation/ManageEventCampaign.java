@@ -19,7 +19,7 @@ public class ManageEventCampaign extends ExtentReportsClass {
 			.readPropertyFile("D:\\git\\xAmplify-Automation\\src\\main\\resources\\ManageEventCampaign.properties");
 	final Logger logger = LogManager.getLogger(ManageEventCampaign.class);
 
-	@Test(priority = 1, enabled = true)
+	@Test(priority = 182, enabled = true)
 
 	public void manage_event_copy() throws InterruptedException, SQLException {
 
@@ -61,7 +61,7 @@ public class ManageEventCampaign extends ExtentReportsClass {
 
 	}
 
-	@Test(priority = 2, enabled = true)
+	@Test(priority = 183, enabled = true)
 
 	public void manage_event_editdelete() throws InterruptedException, SQLException {
 
@@ -93,7 +93,7 @@ public class ManageEventCampaign extends ExtentReportsClass {
 
 	}
 
-	@Test(priority = 3, enabled = true) 
+	@Test(priority = 184, enabled = true) 
 //	@Test(dependsOnMethods = { "manage_event_editdelete" })
 	public void manage_eve_sndpreview_previewdelete() throws InterruptedException, SQLException {
 
@@ -188,7 +188,7 @@ public class ManageEventCampaign extends ExtentReportsClass {
 		Thread.sleep(6000);
 	}
 
-	@Test(priority = 4, enabled = true)
+	@Test(priority = 185, enabled = true)
 
 	public void manage_eve_grid_cancel() throws InterruptedException, SQLException {
 
@@ -274,7 +274,7 @@ public class ManageEventCampaign extends ExtentReportsClass {
 
 	}
 
-	@Test(priority = 5, enabled = true)
+	@Test(priority = 186, enabled = true)
 	// @Test(dependsOnMethods = { "manage_eve_grid_cancel" })
 	public void manage_eve_archieve() throws InterruptedException, SQLException {
 
@@ -334,7 +334,7 @@ public class ManageEventCampaign extends ExtentReportsClass {
 
 	}
 
-	@Test(priority = 6, enabled = true)
+	@Test(priority = 187, enabled = true)
 	public void manage_eve_analyticsreports() throws InterruptedException, SQLException {
 
 		{

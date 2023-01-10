@@ -20,7 +20,7 @@ public class AccessSharedTrackInPartner {
 
 
 	//view and download track in partner account
-	@Test (enabled=true)
+	@Test (priority= 218, enabled=true)
 	public void view_track_partner() throws InterruptedException, IOException {	
 		Thread.sleep(5000);
 		driver.findElement(By.xpath(properties.getProperty("Content_leftmenu1"))).click(); //click on left side content menu in partner account

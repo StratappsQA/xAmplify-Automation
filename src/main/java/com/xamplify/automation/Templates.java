@@ -25,7 +25,7 @@ public class Templates {
 			.readPropertyFile("D:\\GitHub\\xAmplify-Automation\\src\\main\\resources\\Templates.properties");
 	final Logger logger = LogManager.getLogger(Templates.class);
 
-	@Test(priority = 2, enabled = true)
+	@Test(priority = 44, enabled = true)
 	public void design() throws InterruptedException {
 		Thread.sleep(10000);
 		driver.findElement(By.xpath(properties.getProperty("design"))).click();
@@ -34,7 +34,7 @@ public class Templates {
 
 	}
 
-	@Test(priority = 3, enabled = true)
+	@Test(priority = 45, enabled = true)
 	public void design1() throws InterruptedException {
 		Thread.sleep(15000);
 		driver.findElement(By.xpath(properties.getProperty("emailfilter"))).click();
@@ -82,7 +82,7 @@ public class Templates {
 		driver.findElement(By.xpath(properties.getProperty("emailtemplate_delete_yes"))).click();
 	}
 
-	@Test(priority = 4, enabled = true)
+	@Test(priority = 46, enabled = true)
 	public void video() throws InterruptedException {
 		Thread.sleep(15000);
 		driver.findElement(By.xpath(properties.getProperty("designup"))).click();
@@ -135,7 +135,7 @@ public class Templates {
 		driver.findElement(By.xpath(properties.getProperty("video_template_delete_yes"))).click();
 	}
 
-	@Test(priority = 5, enabled = true)
+	@Test(priority = 47, enabled = true)
 	public void emailcobranding() throws InterruptedException {
 		Thread.sleep(15000);
 
@@ -192,7 +192,7 @@ public class Templates {
 
 	}
 
-	@Test(priority = 6, enabled = true)
+	@Test(priority = 48, enabled = true)
 	public void videocobranding() throws InterruptedException {
 		Thread.sleep(15000);
 		driver.findElement(By.xpath(properties.getProperty("design"))).click();
@@ -245,7 +245,7 @@ public class Templates {
 
 	}
 
-	@Test(priority = 7, enabled = true)
+	@Test(priority = 49, enabled = true)
 	public void event() throws InterruptedException {
 		Thread.sleep(15000);
 		driver.findElement(By.xpath(properties.getProperty("design"))).click();
@@ -298,7 +298,7 @@ public class Templates {
 
 	}
 
-	@Test(priority = 8, enabled = true)
+	@Test(priority = 50, enabled = true)
 	public void eveco() throws InterruptedException {
 		Thread.sleep(15000);
 		driver.findElement(By.xpath(properties.getProperty("design"))).click();
@@ -352,7 +352,7 @@ public class Templates {
 
 	}
 
-	@Test(priority = 9, enabled = true)
+	@Test(priority = 51, enabled = true)
 	public void managetemplates() throws InterruptedException {
 
 		Thread.sleep(15000);
@@ -361,7 +361,7 @@ public class Templates {
 		driver.findElement(By.xpath(properties.getProperty("manage_templates"))).click();
 	}
 
-	@Test(priority = 10, enabled = true)
+	@Test(priority = 52, enabled = true)
 	public void managetemplates_Email() throws InterruptedException {
 		Thread.sleep(10000);
 		managetemplates();
@@ -398,7 +398,7 @@ public class Templates {
 
 	}
 
-	@Test(priority = 11, enabled = true)
+	@Test(priority = 53, enabled = true)
 	public void managetemplates_video() throws InterruptedException {
 		Thread.sleep(10000);
 		managetemplates();
@@ -435,7 +435,7 @@ public class Templates {
 
 	}
 
-	@Test(priority = 12, enabled = true)
+	@Test(priority = 54, enabled = true)
 	public void Email_cobranding() throws InterruptedException {
 
 		Thread.sleep(10000);
@@ -471,7 +471,7 @@ public class Templates {
 		driver.findElement(By.xpath(properties.getProperty("manageemailco_template_preview_close"))).click();
 	}
 
-	@Test(priority = 13, enabled = true)
+	@Test(priority = 55, enabled = true)
 	public void Video_Cobranding() throws InterruptedException {
 
 		Thread.sleep(10000);
@@ -509,7 +509,7 @@ public class Templates {
 		driver.findElement(By.xpath(properties.getProperty("managevideoco_template_preview_close"))).click();
 	}
 
-	@Test(priority = 14, enabled = true)
+	@Test(priority = 56, enabled = true)
 	public void Event() throws InterruptedException {
 
 		Thread.sleep(10000);
@@ -548,7 +548,7 @@ public class Templates {
 		driver.findElement(By.xpath(properties.getProperty("manageevent_close"))).click();
 	}
 
-	@Test(priority = 15, enabled = true)
+	@Test(priority = 57, enabled = true)
 	public void Event_cobranding() throws InterruptedException {
 
 		Thread.sleep(10000);
@@ -587,7 +587,7 @@ public class Templates {
 		driver.findElement(By.xpath(properties.getProperty("manageeventco_preview_close"))).click();
 	}
 
-	@Test(priority = 16, enabled = true)
+	@Test(priority = 58, enabled = true)
 	public void gridview_email() throws InterruptedException {
 		Thread.sleep(10000);
 		driver.findElement(By.xpath(properties.getProperty("design"))).click();
@@ -635,7 +635,7 @@ public class Templates {
 
 	}
 
-	@Test(priority = 17, enabled = true)
+	@Test(priority = 59, enabled = true)
 	public void gridview_video() throws InterruptedException {
 		Thread.sleep(10000);
 		driver.findElement(By.xpath(properties.getProperty("design"))).click();
@@ -682,7 +682,7 @@ public class Templates {
 
 	}
 
-	@Test(priority = 18, enabled = true)
+	@Test(priority = 60, enabled = true)
 	public void gridview_Email_cobranding() throws InterruptedException {
 		Thread.sleep(10000);
 		driver.findElement(By.xpath(properties.getProperty("design"))).click();
@@ -726,7 +726,7 @@ public class Templates {
 
 	}
 
-	@Test(priority = 19, enabled = true)
+	@Test(priority = 61, enabled = true)
 	public void gridview_video_cobranding() throws InterruptedException {
 		Thread.sleep(10000);
 		driver.findElement(By.xpath(properties.getProperty("design"))).click();
@@ -771,7 +771,7 @@ public class Templates {
 
 	}
 
-	@Test(priority = 20, enabled = true)
+	@Test(priority = 62, enabled = true)
 	public void gridview_Event() throws InterruptedException {
 		Thread.sleep(10000);
 		driver.findElement(By.xpath(properties.getProperty("design"))).click();
@@ -819,7 +819,7 @@ public class Templates {
 
 	}
 
-	@Test(priority = 21, enabled = true)
+	@Test(priority = 63, enabled = true)
 	public void gridview_Event_Cobranding() throws InterruptedException {
 		Thread.sleep(10000);
 		driver.findElement(By.xpath(properties.getProperty("design"))).click();
@@ -863,7 +863,7 @@ public class Templates {
 
 	}
 
-	@Test(priority = 22, enabled = true)
+	@Test(priority = 64, enabled = true)
 	public void folder_gridview() throws InterruptedException {
 		Thread.sleep(10000);
 		driver.findElement(By.xpath(properties.getProperty("design"))).click();
@@ -914,7 +914,7 @@ public class Templates {
 
 	}
 
-	@Test(priority = 23, enabled = true)
+	@Test(priority = 65, enabled = true)
 	public void folder_gridview_video() throws InterruptedException {
 		Thread.sleep(10000);
 
@@ -949,7 +949,7 @@ public class Templates {
 
 	}
 
-	@Test(priority = 24, enabled = true)
+	@Test(priority = 66, enabled = true)
 	public void folder_gridview_EmailCobranding() throws InterruptedException {
 		Thread.sleep(10000);
 
@@ -985,7 +985,7 @@ public class Templates {
 
 	}
 
-	@Test(priority = 25, enabled = true)
+	@Test(priority = 67, enabled = true)
 	public void folder_gridview_VideoCobranding() throws InterruptedException {
 		Thread.sleep(10000);
 
@@ -1021,7 +1021,7 @@ public class Templates {
 
 	}
 
-	@Test(priority = 26, enabled = true)
+	@Test(priority = 68, enabled = true)
 	public void folder_gridview_Event() throws InterruptedException {
 		Thread.sleep(10000);
 
@@ -1057,7 +1057,7 @@ public class Templates {
 
 	}
 
-	@Test(priority = 27, enabled = true)
+	@Test(priority = 69, enabled = true)
 	public void folder_gridview_EventCobranding() throws InterruptedException {
 		Thread.sleep(10000);
 		driver.findElement(By.xpath(properties.getProperty("folder_grid_list_eventco_tab"))).click();
@@ -1093,7 +1093,7 @@ public class Templates {
 
 	}
 
-	@Test(priority = 28, enabled = true)
+	@Test(priority = 70, enabled = true)
 	public void folder_gridview_grid_Email() throws InterruptedException {
 		Thread.sleep(10000);
 		driver.findElement(By.xpath(properties.getProperty("design"))).click();
@@ -1156,7 +1156,7 @@ public class Templates {
 
 	}
 
-	@Test(priority = 29, enabled = true)
+	@Test(priority = 71, enabled = true)
 	public void folder_gridview_grid_video() throws InterruptedException {
 		Thread.sleep(10000);
 
@@ -1204,7 +1204,7 @@ public class Templates {
 
 	}
 
-	@Test(priority = 30, enabled = true)
+	@Test(priority = 72, enabled = true)
 	public void folder_gridview_grid_EmailCobranding() throws InterruptedException {
 		Thread.sleep(10000);
 
@@ -1251,7 +1251,7 @@ public class Templates {
 
 	}
 
-	@Test(priority = 31, enabled = true)
+	@Test(priority = 73, enabled = true)
 	public void folder_gridview_grid_VideoCobranding() throws InterruptedException {
 		Thread.sleep(15000);
 
@@ -1298,7 +1298,7 @@ public class Templates {
 
 	}
 
-	@Test(priority = 32, enabled = true)
+	@Test(priority = 74, enabled = true)
 	public void folder_gridview_grid_Event() throws InterruptedException {
 		Thread.sleep(10000);
 
@@ -1345,7 +1345,7 @@ public class Templates {
 
 	}
 
-	@Test(priority = 33, enabled = true)
+	@Test(priority = 75, enabled = true)
 	public void folder_gridview_grid_EventCobranding() throws InterruptedException {
 		Thread.sleep(10000);
 
@@ -1393,7 +1393,7 @@ public class Templates {
 		driver.findElement(By.xpath(properties.getProperty("folder_grid"))).click();
 	}
 
-	@Test(priority = 34, enabled = true)
+	@Test(priority = 76, enabled = true)
 	public void folder_gridview_list_Email() throws InterruptedException {
 		Thread.sleep(15000);
 		driver.findElement(By.xpath(properties.getProperty("folder_listview"))).click();
@@ -1432,7 +1432,7 @@ public class Templates {
 
 	}
 
-	@Test(priority = 35, enabled = true)
+	@Test(priority = 77, enabled = true)
 	public void folder_gridview_list_Video() throws InterruptedException {
 		Thread.sleep(10000);
 		driver.findElement(By.xpath(properties.getProperty("design1"))).click();
@@ -1474,7 +1474,7 @@ public class Templates {
 
 	}
 
-	@Test(priority = 36, enabled = true)
+	@Test(priority = 78, enabled = true)
 	public void folder_gridview_list_EmailCobranding() throws InterruptedException {
 		Thread.sleep(10000);
 		driver.findElement(By.xpath(properties.getProperty("design1"))).click();
@@ -1514,7 +1514,7 @@ public class Templates {
 
 	}
 
-	@Test(priority = 37, enabled = true)
+	@Test(priority = 79, enabled = true)
 	public void folder_gridview_list_VideoCobranding() throws InterruptedException {
 		Thread.sleep(10000);
 		driver.findElement(By.xpath(properties.getProperty("design1"))).click();
@@ -1556,7 +1556,7 @@ public class Templates {
 
 	}
 
-	@Test(priority = 38, enabled = true)
+	@Test(priority = 80, enabled = true)
 	public void folder_gridview_list_Event() throws InterruptedException {
 		Thread.sleep(10000);
 		driver.findElement(By.xpath(properties.getProperty("design1"))).click();
@@ -1599,7 +1599,7 @@ public class Templates {
 
 	}
 
-	@Test(priority = 39, enabled = true)
+	@Test(priority = 81, enabled = true)
 	public void folder_gridview_list_EventCobranding() throws InterruptedException {
 		Thread.sleep(10000);
 		driver.findElement(By.xpath(properties.getProperty("design1"))).click();
@@ -1641,7 +1641,7 @@ public class Templates {
 		Thread.sleep(5000);
 	}
 
-	@Test(priority = 40, enabled = true)
+	@Test(priority = 82, enabled = true)
 	public void folder_gridview_list_grid_Email() throws InterruptedException {
 		Thread.sleep(10000);
 		driver.findElement(By.xpath(properties.getProperty("design1"))).click();
@@ -1695,7 +1695,7 @@ public class Templates {
 		driver.findElement(By.xpath(properties.getProperty("folder_list_gridview_email_update"))).click();
 	}
 
-	@Test(priority = 41, enabled = true)
+	@Test(priority = 83, enabled = true)
 	public void folder_gridview_list_grid_Video() throws InterruptedException {
 		Thread.sleep(10000);
 		driver.findElement(By.xpath(properties.getProperty("design1"))).click();
@@ -1750,7 +1750,7 @@ public class Templates {
 
 	}
 
-	@Test(priority = 42, enabled = true)
+	@Test(priority = 84, enabled = true)
 	public void folder_gridview_list_grid_EmailCobranding() throws InterruptedException {
 		Thread.sleep(10000);
 		driver.findElement(By.xpath(properties.getProperty("design1"))).click();
@@ -1806,7 +1806,7 @@ public class Templates {
 
 	}
 
-	@Test(priority = 43, enabled = true)
+	@Test(priority = 85, enabled = true)
 	public void folder_gridview_list_grid_videoCobranding() throws InterruptedException {
 		Thread.sleep(10000);
 		driver.findElement(By.xpath(properties.getProperty("design1"))).click();
@@ -1863,7 +1863,7 @@ public class Templates {
 
 	}
 
-	@Test(priority = 44, enabled = true)
+	@Test(priority = 86, enabled = true)
 	public void folder_gridview_list_grid_Event() throws InterruptedException {
 		Thread.sleep(10000);
 		driver.findElement(By.xpath(properties.getProperty("design1"))).click();
@@ -1919,7 +1919,7 @@ public class Templates {
 
 	}
 
-	@Test(priority = 45, enabled = true)
+	@Test(priority = 87, enabled = true)
 	public void folder_gridview_list_grid_EventCobranding() throws InterruptedException {
 		Thread.sleep(10000);
 		driver.findElement(By.xpath(properties.getProperty("design1"))).click();

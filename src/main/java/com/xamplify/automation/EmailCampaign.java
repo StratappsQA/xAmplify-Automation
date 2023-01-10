@@ -33,7 +33,8 @@ public class EmailCampaign {
 	
 final Logger logger = LogManager.getLogger(EmailCampaign.class);
 	
-	@Test
+	//@Test(priority=146,enabled=true)
+     @Test
 	public void ecampaign() throws InterruptedException, SQLException {
 		//driver.get("https://xamplify.co/home/dashboard/welcome");
 

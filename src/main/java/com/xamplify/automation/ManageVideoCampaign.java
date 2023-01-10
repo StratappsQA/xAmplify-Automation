@@ -23,7 +23,7 @@ public class ManageVideoCampaign {
 			.readPropertyFile("D:\\GitHub\\xAmplify-Automation\\src\\main\\resources\\ManageCampaigns.properties");
 	final Logger logger = LogManager.getLogger(ManageVideoCampaign.class);
 
-	@Test
+	@Test (priority=141,enabled=true)
 
 	public void manage_videocampaign() throws InterruptedException, SQLException {
 

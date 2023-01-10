@@ -21,7 +21,7 @@ public class shareleads {
 			.readPropertyFile("D:\\GitHub\\xAmplify-Automation\\src\\main\\resources\\shareleads.properties");
 	final Logger logger = LogManager.getLogger(shareleads.class);
 
-	@Test(priority = 2, enabled = true)
+	@Test(priority = 34, enabled = true)
 	public void movingtoshareleads() throws InterruptedException {
 		Thread.sleep(3000);
 		WebElement ele = driver.findElement(By.xpath(properties.getProperty("hover_shareleads")));//1
@@ -36,7 +36,7 @@ public class shareleads {
 				.click();
 	}
 
-	@Test(priority = 3, enabled = true)
+	@Test(priority = 35, enabled = true)
 	public void addoneatatime() throws InterruptedException {
 		Thread.sleep(5000);
 		driver.findElement(By.xpath(properties.getProperty("click_in_listname"))).click();
@@ -81,13 +81,13 @@ public class shareleads {
 		driver.findElement(By.xpath(properties.getProperty("one_at_a_time_last_button"))).click();
 	}
 
-	@Test(priority = 4, enabled = true)
+	@Test(priority = 36, enabled = true)
 	public void addoneatatime1() throws InterruptedException {
 		Thread.sleep(6000);
 		movingtoshareleads();
 	}
 
-	@Test(priority = 5, enabled = true)
+	@Test(priority = 37, enabled = true)
 	public void Copy_list_from_clipboard() throws InterruptedException, SQLException, IOException
 
 	{
@@ -125,7 +125,7 @@ public class shareleads {
 
 	}
 
-	@Test(priority = 6, enabled = true)
+	@Test(priority = 38, enabled = true)
 	public void addcsv() throws InterruptedException, IOException {
 		Thread.sleep(5000);
 		movingtoshareleads();
@@ -149,12 +149,12 @@ public class shareleads {
 
 	}
 
-	@Test(priority = 7, enabled = true)
+	@Test(priority = 39, enabled = true)
 	public void addoneatatime2() throws InterruptedException {
 		movingtoshareleads();
 	}
 
-	@Test(priority = 8, enabled = true)
+	@Test(priority = 40, enabled = true)
 	public void Copy_list_from_clipboard_commaseperated() throws InterruptedException, SQLException, IOException
 
 	{
@@ -199,7 +199,7 @@ public class shareleads {
 
 	}
 
-	@Test(priority = 9, enabled = true)
+	@Test(priority = 41, enabled = true)
 	public void manage_shareleads() throws InterruptedException {
 		Thread.sleep(3000);
 		WebElement ele = driver
@@ -211,7 +211,7 @@ public class shareleads {
 				By.xpath(properties.getProperty("manageshareleads_click"))).click();
 	}
 
-	@Test(priority = 10, enabled =true)
+	@Test(priority = 42, enabled =true)
 	public void manage_shareleads_op() throws InterruptedException {
 		Thread.sleep(3000);
 		WebElement textbox2 = driver.findElement(
@@ -258,7 +258,7 @@ public class shareleads {
 		driver.findElement(By.xpath(properties.getProperty("manageshareleads_input_click_click4"))).click();
 	}
 
-	@Test(priority = 11, enabled = true)
+	@Test(priority = 43, enabled = true)
 	public void tiles() throws InterruptedException {
 		Thread.sleep(3000);
 		driver.findElement(By.xpath(properties.getProperty("tiles_click1")))

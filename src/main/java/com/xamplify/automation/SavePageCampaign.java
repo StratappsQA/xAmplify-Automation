@@ -17,7 +17,8 @@ public class SavePageCampaign {
 	Properties properties = PropertiesFile.readPropertyFile("D:\\GitHub\\xAmplify-Automation\\src\\main\\resources\\Campaign.properties");// properties file
 
 final Logger logger = LogManager.getLogger(SavePageCampaign.class);
-	@Test
+	
+@Test (priority=158,enabled=true)
 	public void page_save() throws InterruptedException, SQLException {
 		Thread.sleep(4000);
 

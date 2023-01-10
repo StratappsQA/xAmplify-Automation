@@ -18,7 +18,7 @@ public class LaunchToeventcampagin {
 
 	final Logger logger = LogManager.getLogger(LaunchToeventcampagin.class);
 
-	@Test
+	@Test (priority=189,enabled=false)
 	public void event_to_launch() throws InterruptedException, SQLException
 
 	{

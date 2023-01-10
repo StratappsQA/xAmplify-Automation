@@ -20,7 +20,7 @@ public class Sharedleads {
 			"D:\\GitHub\\xAmplify-Automation\\src\\main\\resources\\Sharedleads.properties");
 	final Logger logger = LogManager.getLogger(PartnerLogin.class);
 
-	@Test(priority = 3, enabled = true)
+	@Test(priority = 220, enabled = true)
 	public void sharedleads() throws InterruptedException, SQLException {
 		Thread.sleep(5000);
 
@@ -100,8 +100,8 @@ Select se1 = new Select(driver.findElement(By.xpath(properties.getProperty("sele
 	    	 Thread.sleep(3000);
 	     }
 	}
-		 @Test(priority = 4, enabled = true)
-			public void managesharedleads() throws InterruptedException, SQLException {
+		 @Test(priority = 221, enabled = true)
+	public void managesharedleads() throws InterruptedException, SQLException {
 				Thread.sleep(5000);
 		 driver.findElement(By.xpath(properties.getProperty("managesharedleads"))).click();
 		 Thread.sleep(5000);

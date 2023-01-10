@@ -21,7 +21,7 @@ public class RedistributeEventCampaign extends ExtentReportsClass {
 																											// file
 	final Logger logger = LogManager.getLogger(RedistributeEventCampaign.class);
 
-	@Test(priority = 1, enabled = true)
+	@Test(priority = 252, enabled = true)
 	public void hoverRedistributecampaigns_event() throws InterruptedException {
 		Thread.sleep(7000);
 
@@ -109,7 +109,7 @@ public class RedistributeEventCampaign extends ExtentReportsClass {
 
 	}
 
-	@Test(priority = 2, enabled = true)
+	@Test(priority = 253, enabled = true)
 	public void pac_manage_sendpreviewemail() throws InterruptedException, SQLException {
 
 		driver.findElement(By.xpath(properties.getProperty("partner_manage_eve_gearicon"))).click();
@@ -141,7 +141,7 @@ public class RedistributeEventCampaign extends ExtentReportsClass {
 		logger.info("Clicked on the close option successfully");
 	}
 
-	@Test(priority = 3, enabled = true)
+	@Test(priority = 254, enabled = true)
 	public void pac_manage_Inivitemore() throws InterruptedException, SQLException {
 
 		driver.findElement(By.xpath(properties.getProperty("partner_manage_eve_gearicon"))).click();
@@ -170,7 +170,7 @@ public class RedistributeEventCampaign extends ExtentReportsClass {
 
 	}
 
-	@Test(priority = 4, enabled = true)
+	@Test(priority = 255, enabled = true)
 	public void pac_manage_preview_analytics() throws InterruptedException, SQLException {
 
 		driver.get("https://xamplify.co/home/campaigns/manage");

@@ -17,7 +17,7 @@ public class SaveVideoToCampaign {
 
 final Logger logger = LogManager.getLogger(SaveVideoToCampaign.class);
 
-		@Test
+		@Test (priority=145,enabled=true)
 		public void v_to_save() throws InterruptedException, SQLException
 		{
 						
@@ -26,10 +26,11 @@ final Logger logger = LogManager.getLogger(SaveVideoToCampaign.class);
 						v2cam.vde_to_campaign();
 						
 						Thread.sleep(4000);
-						/*
-						 * AutoresponsesVideo arv2=new AutoresponsesVideo(); arv2.autoResponsesVideo();
-						 * Thread.sleep(4000);
-						 */
+						
+						//AutoResponsesVideoToCampaign arv2=new AutoResponsesVideoToCampaign(); 
+						 //arv2.autoResponsesVideo2camp();
+						 //Thread.sleep(4000);
+					
 
 						
 						

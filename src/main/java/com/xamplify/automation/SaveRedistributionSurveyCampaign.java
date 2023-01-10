@@ -15,7 +15,7 @@ public class SaveRedistributionSurveyCampaign {
 			.readPropertyFile("D:\\GitHub\\xAmplify-Automation\\src\\main\\resources\\RedistributionCampaign.properties");
 	final Logger logger = LogManager.getLogger(SaveRedistributionSurveyCampaign.class);
 
-	@Test
+	@Test (priority = 250, enabled = true)
 
 	public void re_surveysave() throws InterruptedException, SQLException {
 		Thread.sleep(3000);

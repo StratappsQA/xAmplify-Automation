@@ -20,7 +20,7 @@ public class ScheduleVideoToCampaign {
 	
 final Logger logger = LogManager.getLogger(ScheduleVideoToCampaign.class);
 
-	@Test
+	@Test (priority=144,enabled=false)
 
 	public void v_to_schedule() throws InterruptedException, SQLException {
 

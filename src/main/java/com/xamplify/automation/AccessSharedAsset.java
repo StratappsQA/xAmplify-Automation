@@ -18,7 +18,7 @@ public class AccessSharedAsset {
 	final Logger logger = LogManager.getLogger(AccessSharedAsset.class);
 
 	
-	@Test (priority = 1,enabled = true)
+	@Test (priority = 215,enabled = true)
 	public void sharedasset() throws InterruptedException, IOException {	
 		driver.findElement(By.xpath(properties.getProperty("Content_leftmenu"))).click(); //click on left side content menu
 		Thread.sleep(3000);

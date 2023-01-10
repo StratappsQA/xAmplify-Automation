@@ -23,7 +23,7 @@ public class Partner_ManageVideoCampaign extends ExtentReportsClass {
 			"D:\\GitHub\\xAmplify-Automation\\src\\main\\resources\\Partner_ManageCampaigns.properties");
 	final Logger logger = LogManager.getLogger(Partner_ManageVideoCampaign.class);
 
-	@Test(priority = 1, enabled = true)
+	@Test(priority = 238, enabled = true)
 
 	public void partneracc_manage_vdecampaign_draft_delete() throws InterruptedException, SQLException {
 
@@ -73,7 +73,7 @@ public class Partner_ManageVideoCampaign extends ExtentReportsClass {
 
 	}
 
-	@Test(priority = 2, enabled = true)
+	@Test(priority = 239, enabled = true)
 
 	public void partneracc_manage_vdecampaign_edit_updatefolder() throws InterruptedException, SQLException {
 
@@ -106,7 +106,7 @@ public class Partner_ManageVideoCampaign extends ExtentReportsClass {
 
 	}
 
-	@Test(priority = 3, enabled=true)
+	@Test(priority = 240, enabled=true)
 
 	public void partneracc_manage_vdecampaign_analytics() throws InterruptedException, SQLException {
 

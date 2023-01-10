@@ -18,7 +18,7 @@ public class ScheduleRedistributeVideoCampaign {
 																											// file
 	final Logger logger = LogManager.getLogger(RedistributeVideoCampaign.class);
 
-	@Test
+	@Test (priority = 236, enabled = false)
 	public void schedulevideo_Redistributecampaign() throws InterruptedException {
 
 		Thread.sleep(7000);

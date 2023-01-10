@@ -22,7 +22,7 @@ public class LaunchRedistributeEmailCampaign extends ExtentReportsClass{
 	final Logger logger = LogManager.getLogger(LaunchRedistributeEmailCampaign.class);
 
 
-	@Test
+	@Test (priority = 241, enabled = true)
 	public void launchemail_Redistributecampaign() throws InterruptedException {
 	
 		Thread.sleep(4000);

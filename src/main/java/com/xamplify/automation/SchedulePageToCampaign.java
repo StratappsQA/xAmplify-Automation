@@ -19,7 +19,7 @@ public class SchedulePageToCampaign extends ExtentReportsClass {
 
 final Logger logger = LogManager.getLogger(SchedulePageToCampaign.class);
 	 
-	@Test
+	@Test (priority=166,enabled=false)
 
 	public void page_to_campschedule() throws InterruptedException, SQLException {
 

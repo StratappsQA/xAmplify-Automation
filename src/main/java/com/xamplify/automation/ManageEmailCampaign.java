@@ -22,7 +22,7 @@ public class ManageEmailCampaign {
 			.readPropertyFile("D:\\GitHub\\xAmplify-Automation\\src\\main\\resources\\ManageCampaigns.properties");
 	final Logger logger = LogManager.getLogger(ManageEmailCampaign.class);
 
-	@Test
+	@Test (priority=150,enabled=true)
 
 	public void manage_email_camp() throws InterruptedException {
 

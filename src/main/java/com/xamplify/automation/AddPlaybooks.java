@@ -22,7 +22,7 @@ public class AddPlaybooks {
 
 
 	//playbook creation to edit and delete in vendor account
-	@Test (priority=0,enabled=true)
+	@Test (priority=32,enabled=true)
 	public void add_playbook_vendor() throws InterruptedException, IOException {	
 		Thread.sleep(6000);
 		driver.findElement(By.xpath(properties.getProperty("Content_leftmenu1"))).click(); //click on left side content menu
@@ -145,7 +145,7 @@ public class AddPlaybooks {
 
 
 	//playbook to view and download in partner account
-	@Test (priority=1,enabled=true)
+	@Test (priority=33,enabled=true)
 	public void add_playbook_partner() throws InterruptedException, IOException {	
 		Thread.sleep(5000);
 		driver.findElement(By.xpath(properties.getProperty("Content_leftmenu1"))).click(); //click on left side content menu

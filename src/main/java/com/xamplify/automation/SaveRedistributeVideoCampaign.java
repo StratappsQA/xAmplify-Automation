@@ -15,7 +15,7 @@ public class SaveRedistributeVideoCampaign extends ExtentReportsClass {
 																											// file
 	final Logger logger = LogManager.getLogger(RedistributeVideoCampaign.class);
 
-	@Test
+	@Test (priority = 237, enabled = true)
 	public void savevideo_Redistributecampaign() throws InterruptedException {
 
 		Thread.sleep(7000);

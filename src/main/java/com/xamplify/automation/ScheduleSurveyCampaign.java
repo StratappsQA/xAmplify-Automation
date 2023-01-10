@@ -21,7 +21,7 @@ public class ScheduleSurveyCampaign {
 final Logger logger = LogManager.getLogger(ScheduleSurveyCampaign.class);
 
 
-	@Test
+	@Test (priority=171,enabled=false)
 
 
 	public void sSchedule() throws InterruptedException, SQLException

@@ -21,7 +21,7 @@ public class ManageMDFRequests_Partner {
 
 	final Logger logger = LogManager.getLogger(ManageMDFRequests_Partner.class);
 
-	@Test (priority=1,enabled=true)
+	@Test (priority=262,enabled=true)
 	public void add_request_partner() throws InterruptedException
 	{
 		//add requests in partner account
@@ -80,7 +80,7 @@ public class ManageMDFRequests_Partner {
 
 	}
 
-	@Test (priority=2,enabled=true)
+	@Test (priority=263,enabled=true)
 	public void view_requests_partner() throws InterruptedException
 	{
 		//view requests in partner account
@@ -167,7 +167,7 @@ public class ManageMDFRequests_Partner {
 	}
 
 
-	@Test (priority=3,enabled=true)
+	@Test (priority=264,enabled=true)
 	public void Sorting_order_mdf_partner() throws InterruptedException
 	{	
 		Thread.sleep(7000);

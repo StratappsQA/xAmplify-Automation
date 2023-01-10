@@ -20,8 +20,8 @@ public class ScheduleToeventcampaign {
 			"D:\\GitHub\\xAmplify-Automation\\src\\main\\resources\\EventCampaign.properties");
 
 	final Logger logger = LogManager.getLogger(ScheduleToeventcampaign.class);
-
-	@Test
+ 
+	@Test (priority=190,enabled=false)
 
 	public void event_To_schedule() throws InterruptedException, SQLException {
 

@@ -29,7 +29,7 @@ public class ManageSurveyCampaign {
 
 	final Logger logger = LogManager.getLogger(SurveyCampaign.class);
 
-	@Test
+	@Test (priority=172,enabled=true)
 
 	public void manage_scampaign() throws InterruptedException, SQLException {
 

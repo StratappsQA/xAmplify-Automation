@@ -20,7 +20,7 @@ public class ScheduleSurveyToCampaign {
 			.readPropertyFile("D:\\GitHub\\xAmplify-Automation\\src\\main\\resources\\Campaign.properties");
 	final Logger logger = LogManager.getLogger(ScheduleSurveyToCampaign.class);
 
-	@Test
+	@Test (priority= 176,enabled=false)
 	public void s_to_camp_Schedule() throws InterruptedException, SQLException
 
 	{

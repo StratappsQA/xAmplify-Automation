@@ -22,7 +22,7 @@ public class Opportunities extends ExtentReportsClass {
 			"D:\\GitHub\\xAmplify-Automation\\src\\main\\resources\\Opportunities.properties");
 	final Logger logger = LogManager.getLogger(Opportunities.class);
 
-	@Test(priority = 1, enabled = true)
+	@Test(priority = 265, enabled = true)
 
 	public void partner_opportunities() throws InterruptedException {
 
@@ -45,7 +45,7 @@ public class Opportunities extends ExtentReportsClass {
 		Thread.sleep(6000);
 	}
 
-	@Test(priority = 2, enabled = true)
+	@Test(priority = 266, enabled = true)
 
 	public void addlead_form() throws InterruptedException {
 
@@ -122,7 +122,7 @@ public class Opportunities extends ExtentReportsClass {
 
 	}
 
-	@Test(priority = 3, enabled = true)
+	@Test(priority = 267, enabled = true)
 
 	public void registered_deal_form() throws InterruptedException {
 
@@ -212,7 +212,7 @@ public class Opportunities extends ExtentReportsClass {
 
 	}
 
-	@Test(priority = 4, enabled = true)
+	@Test(priority = 268, enabled = true)
 
 	public void lead_Actions() throws InterruptedException {
 
@@ -264,7 +264,7 @@ public class Opportunities extends ExtentReportsClass {
 
 	}
 
-	@Test(priority = 5, enabled = true)
+	@Test(priority = 269, enabled = true)
 
 	public void lead_campaignview_filter_download_functionalities() throws InterruptedException {
 
@@ -351,7 +351,7 @@ public class Opportunities extends ExtentReportsClass {
 
 	}
 
-	@Test(priority = 6, enabled = true)
+	@Test(priority = 270, enabled = true)
 	public void lead_categories() throws InterruptedException
 
 	{
@@ -396,7 +396,7 @@ public class Opportunities extends ExtentReportsClass {
 
 	}
 
-	@Test(priority = 7, enabled = true)
+	@Test(priority = 271, enabled = true)
 
 	public void add_Deal_form() throws InterruptedException {
 
@@ -508,7 +508,7 @@ public class Opportunities extends ExtentReportsClass {
 
 	}
 
-	@Test(priority = 8, enabled = true)
+	@Test(priority = 272, enabled = true)
 	public void Deal_Actions() throws InterruptedException {
 
 		Thread.sleep(3000);
@@ -569,7 +569,7 @@ public class Opportunities extends ExtentReportsClass {
 
 	}
 
-	@Test(priority = 9, enabled = true)
+	@Test(priority = 273, enabled = true)
 	public void deal_campaignview_filter_download_functionalities() throws InterruptedException {
 
 		WebElement deal_campaign_view_icon = driver
@@ -663,7 +663,7 @@ public class Opportunities extends ExtentReportsClass {
 
 	}
 
-	@Test(priority = 10, enabled = true)
+	@Test(priority = 274, enabled = true)
 	public void deal_categories() throws InterruptedException {
 
 		Thread.sleep(4000);

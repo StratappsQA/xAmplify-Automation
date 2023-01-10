@@ -20,7 +20,7 @@ public class DesignPDF {
 
 	//Here we are uploading pdf file
 	//creating pdf asset and publish to partner
-	@Test 
+	@Test (priority=29,enabled=true)
 	public void designpdf() throws InterruptedException
 	{
 		Thread.sleep(7000);

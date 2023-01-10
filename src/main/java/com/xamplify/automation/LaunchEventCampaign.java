@@ -18,7 +18,7 @@ public class LaunchEventCampaign extends ExtentReportsClass {
 
 	final Logger logger = LogManager.getLogger(LaunchEventCampaign.class);
 
-	@Test
+	@Test (priority=179,enabled=true)
 	public void event_launch() throws InterruptedException, SQLException
 
 	{
@@ -27,11 +27,11 @@ public class LaunchEventCampaign extends ExtentReportsClass {
 		eve1.event_campaign();
 		Thread.sleep(4000);
 
-		/*
-		 * AutoResponsesEventcampaign ar_eve1=new AutoResponsesEventcampaign(); //method
-		 * call for autoresponses ar_eve1.autoResponsesevent();
-		 */
-		  Thread.sleep(4000);
+		
+		  //AutoResponsesEventcampaign ar_eve1=new AutoResponsesEventcampaign(); //method call for autoresponses 
+		  //ar_eve1.autoResponsesevent();
+		 
+		  //Thread.sleep(4000);
 		  
 		
 		

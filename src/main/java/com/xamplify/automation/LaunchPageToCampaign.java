@@ -15,7 +15,7 @@ public class LaunchPageToCampaign extends ExtentReportsClass {
 	Properties properties = PropertiesFile.readPropertyFile("D:\\GitHub\\xAmplify-Automation\\src\\main\\resources\\Campaign.properties");// properties file
 final Logger logger = LogManager.getLogger(LaunchPageToCampaign.class);
 
-	@Test
+	@Test (priority=165,enabled=true)
 	public void page_to_launch() throws InterruptedException, SQLException {
 		Thread.sleep(6000);
 		PageToCampaign pc2 = new PageToCampaign();

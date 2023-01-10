@@ -23,7 +23,7 @@ public class AccessSharedAssetInPartner {
 
 
 	//view and download png asset file in partner account
-	@Test (priority = 0,enabled=true)
+	@Test (priority = 216,enabled=true)
 	public void sharedasset_png() throws InterruptedException, IOException {
 		Thread.sleep(6000);
 		driver.findElement(By.xpath(properties.getProperty("Content_leftmenu"))).click(); //click on left side content menu
@@ -149,7 +149,7 @@ public class AccessSharedAssetInPartner {
 
 
 	//view,edit and download pdf asset file in partner account
-	@Test (priority = 1,enabled=true)
+	@Test (priority = 217,enabled=true)
 	public void sharedasset_pdf() throws InterruptedException, IOException {
 		Thread.sleep(7000);
 		driver.findElement(By.xpath(properties.getProperty("Content_leftmenu"))).click(); //click on left side content menu

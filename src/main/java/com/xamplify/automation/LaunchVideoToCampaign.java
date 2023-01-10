@@ -17,7 +17,7 @@ public class LaunchVideoToCampaign {
 
 	final Logger logger = LogManager.getLogger(LaunchVideoToCampaign.class);
 
-	@Test
+	@Test (priority=143,enabled=true)
 
 	public void v_to_launch() throws InterruptedException, SQLException {
 		Thread.sleep(5000);

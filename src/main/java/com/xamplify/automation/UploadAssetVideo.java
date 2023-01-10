@@ -29,7 +29,7 @@ public class UploadAssetVideo {
 
 	//In this class file we have all types of asset video files 
 	//uploading MP4 file 
-	@Test (priority=0,enabled=true)
+	@Test (priority=25,enabled=true)
 	public void uploadMP4() throws InterruptedException, IOException, AWTException {	
 		Thread.sleep(7000);
 		driver.findElement(By.xpath(properties.getProperty("Content_leftmenu"))).click(); //click on left side content menu
@@ -120,7 +120,7 @@ public class UploadAssetVideo {
 
 
 	//uploading AVI file 
-	@Test (priority=1,enabled=true)
+	@Test (priority=26,enabled=true)
 	public void uploadaAVI() throws InterruptedException, IOException, AWTException {	
 		Thread.sleep(7000);
 		driver.findElement(By.xpath(properties.getProperty("Content_leftmenu"))).click(); //click on left side content menu
@@ -208,7 +208,7 @@ public class UploadAssetVideo {
 	}
 
 	//upload MOV file	
-	@Test (priority=2,enabled=true)
+	@Test (priority=27,enabled=true)
 	public void uploadMOV() throws InterruptedException, IOException, AWTException {	
 		Thread.sleep(7000);
 		driver.findElement(By.xpath(properties.getProperty("Content_leftmenu"))).click(); //click on left side content menu
@@ -295,7 +295,7 @@ public class UploadAssetVideo {
 	}			
 
 	//upload MKV file 
-	@Test (priority=3,enabled=true)
+	@Test (priority=28,enabled=true)
 	public void uploadMKV() throws InterruptedException, IOException, AWTException {	
 		Thread.sleep(7000);
 		driver.findElement(By.xpath(properties.getProperty("Content_leftmenu"))).click(); //click on left side content menu

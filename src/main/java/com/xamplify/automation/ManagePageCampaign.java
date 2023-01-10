@@ -23,7 +23,7 @@ import org.openqa.selenium.By;
 		final Logger logger = LogManager.getLogger(ManagePageCampaign.class);
 
 		
-		@Test(priority = 410, enabled = true)
+		@Test(priority = 159, enabled = true)
 		public void sortby_previewdelete() throws InterruptedException {
 			Thread.sleep(5000);
 
@@ -133,8 +133,8 @@ import org.openqa.selenium.By;
 
 		}
 
-		// @Test(priority = 411, enabled = true)
-		@Test(dependsOnMethods = { "sortby_previewdelete" })
+		@Test(priority = 160, enabled = true)
+		//@Test(dependsOnMethods = { "sortby_previewdelete" })
 		public void search_Copy_Edit_Preview_Delete() throws InterruptedException {
 
 			Thread.sleep(5000);
@@ -203,8 +203,8 @@ import org.openqa.selenium.By;
 
 		}
 
-		// @Test(priority = 413, enabled = true)
-		@Test(dependsOnMethods = { "search_Copy_Edit_Preview_Delete" })
+		@Test(priority = 161, enabled = true)
+		//@Test(dependsOnMethods = { "search_Copy_Edit_Preview_Delete" })
 		public void grid_Analytics() throws InterruptedException {
 
 			WebDriverWait waitgrid = new WebDriverWait(driver, 50);

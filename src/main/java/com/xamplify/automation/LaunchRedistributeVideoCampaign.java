@@ -24,7 +24,7 @@ public class LaunchRedistributeVideoCampaign extends ExtentReportsClass {
 	final Logger logger = LogManager.getLogger(LaunchRedistributeVideoCampaign.class);
 
 
-	@Test
+	@Test(priority = 235,enabled = true)
 	public void launchvideo_Redistributecampaign() throws InterruptedException {
 	
 		Thread.sleep(3000);
@@ -59,7 +59,7 @@ public class LaunchRedistributeVideoCampaign extends ExtentReportsClass {
 
 
 	@Test(dependsOnMethods = { "launchvideo_Redistributecampaign" })
-
+  
 	public void register_videolead_campaign() throws InterruptedException 
 	
 	{
@@ -91,7 +91,7 @@ public class LaunchRedistributeVideoCampaign extends ExtentReportsClass {
 		
 	}
 	
-	//@Test(priority = 3 , enabled=false)
+	
 	@Test(dependsOnMethods = { "register_videolead_campaign" })
 
 	public void video_fillLeadRegistrationForm_deal() throws InterruptedException

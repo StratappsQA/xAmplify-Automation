@@ -18,7 +18,7 @@ public class LaunchSurveyCampaign {
 
 	final Logger logger = LogManager.getLogger(LaunchSurveyCampaign.class);
 
-	@Test
+	@Test (priority= 170,enabled=true)
 
 	public void slaunch() throws InterruptedException, SQLException
 

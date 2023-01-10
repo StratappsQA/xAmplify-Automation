@@ -15,7 +15,7 @@ public class PartnerLogout {
 	Properties properties = PropertiesFile.readPropertyFile("D:\\GitHub\\xAmplify-Automation\\src\\main\\resources\\PartnerLogout.properties");
 	final Logger logger = LogManager.getLogger(PartnerLogout.class);
 	
-	@Test(priority=1,enabled=true)
+	@Test(priority=275,enabled=true)
 
 
 	public void PartnerLogoutprocess() throws InterruptedException, SQLException {
@@ -27,6 +27,23 @@ public class PartnerLogout {
 		driver.findElement(By.xpath(properties.getProperty("click_logout_button"))).click();
 		Thread.sleep(6000);
 		logger.info("Successfully Partner Logout to the application");
+		
+	}
+	
+	@Test(priority=276,enabled=true)
+
+
+	public void Vendor_Signinprocess() throws InterruptedException, SQLException {
+
+		logger.info("Signing up to the application");
+		Thread.sleep(3000);
+		driver.findElement(By.xpath(properties.getProperty("username"))).sendKeys("automated_vendor@analytify.com");
+		Thread.sleep(1000);
+		driver.findElement(By.xpath(properties.getProperty("password"))).sendKeys("Xamplify@11");
+		Thread.sleep(1000);
+		driver.findElement(By.xpath(properties.getProperty("signin"))).click();
+		Thread.sleep(6000);
+		logger.info("Successfully Signedup to the application_vendor after signing out from partner account");
 		
 	}
 }

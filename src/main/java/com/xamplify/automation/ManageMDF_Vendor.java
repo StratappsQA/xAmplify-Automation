@@ -20,7 +20,7 @@ public class ManageMDF_Vendor {
 
 	final Logger logger = LogManager.getLogger(ManageMDF_Vendor.class);
 
-	@Test (priority=1,enabled=true)
+	@Test (priority=192,enabled=true)
 	public void Add_MDF_Amount_vendor() throws InterruptedException
 	{
 		//add funds
@@ -88,7 +88,7 @@ public class ManageMDF_Vendor {
 
 
 
-	@Test (priority=2,enabled=true)
+	@Test (priority=193,enabled=true)
 	public void Sorting_order_mdf_vendor() throws InterruptedException
 	{	
 		Thread.sleep(7000);
@@ -132,7 +132,7 @@ public class ManageMDF_Vendor {
 
 
 
-	@Test (priority=3,enabled=true)
+	@Test (priority=194,enabled=true)
 	public void edit_mdf_form_vendor() throws InterruptedException
 	{
 		//add fields in mdf form

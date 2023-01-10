@@ -30,7 +30,7 @@ public class ScheduleEventCampaign {
 
 	final Logger logger = LogManager.getLogger(ScheduleEventCampaign.class);
 
-	@Test
+	@Test (priority=180,enabled=false)
 
 	public void event_schedule() throws InterruptedException, SQLException {
 

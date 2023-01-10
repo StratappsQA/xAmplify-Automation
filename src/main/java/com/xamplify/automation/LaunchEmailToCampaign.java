@@ -18,7 +18,7 @@ public class LaunchEmailToCampaign {
 
 	final Logger logger = LogManager.getLogger(LaunchEmailToCampaign.class);
 
-	@Test
+	@Test (priority=152,enabled=true)
 
 	public void e_to_launch() throws InterruptedException, SQLException
 

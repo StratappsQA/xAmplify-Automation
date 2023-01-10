@@ -15,7 +15,7 @@ public class LaunchPagePrivateCampaign extends ExtentReportsClass{
 	Properties properties = PropertiesFile.readPropertyFile("D:\\GitHub\\xAmplify-Automation\\src\\main\\resources\\Campaign.properties");// properties file
 final Logger logger = LogManager.getLogger(LaunchPageCampaign.class);
 
-	@Test
+	@Test (priority=163,enabled=true)
 	public void page_launch() throws InterruptedException, SQLException {
 		Thread.sleep(6000);
 		PagePrivateCampaign pc1 = new PagePrivateCampaign();

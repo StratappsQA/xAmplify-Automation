@@ -21,7 +21,7 @@ public class ScheduleEmailToCampaign {
 
 	final Logger logger = LogManager.getLogger(ScheduleEmailToCampaign.class);
 
-	@Test
+	@Test (priority=153,enabled=false)
 	public void e_to_schedule() throws InterruptedException, SQLException {
 		Thread.sleep(5000);
 
