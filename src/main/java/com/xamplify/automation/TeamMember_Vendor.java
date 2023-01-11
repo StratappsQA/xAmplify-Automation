@@ -301,11 +301,25 @@ public class TeamMember_Vendor extends RandomEmailGeneration {
 		Thread.sleep(7000);
 		logger.info("close button has been clicked");
 		driver.findElement(By.xpath(properties.getProperty("Search_field_TM"))).clear();
-
+		Thread.sleep(6000);
 
 
 	} 
 
+	@Test(priority=201,enabled=true)
+
+
+	public void VendorLogoutprocess() throws InterruptedException, SQLException {
+
+		logger.info("Logging out to the application");
+		Thread.sleep(5000);
+		driver.findElement(By.xpath(properties.getProperty("click_userprofile_dropdown"))).click();
+		Thread.sleep(3000);
+		driver.findElement(By.xpath(properties.getProperty("click_logout_button"))).click();
+		Thread.sleep(6000);
+		logger.info("Successfully Logout to the application");
+		Thread.sleep(10000);
+	}
 
 	
 	

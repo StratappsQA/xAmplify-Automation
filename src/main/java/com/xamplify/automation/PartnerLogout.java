@@ -42,7 +42,7 @@ public class PartnerLogout {
 		driver.findElement(By.xpath(properties.getProperty("password"))).sendKeys("Xamplify@11");
 		Thread.sleep(1000);
 		driver.findElement(By.xpath(properties.getProperty("signin"))).click();
-		Thread.sleep(6000);
+		Thread.sleep(10000);
 		logger.info("Successfully Signedup to the application_vendor after signing out from partner account");
 		
 	}

@@ -1,30 +1,95 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Suite">
-  <test thread-count="5" name="Test">
-    <classes>
-    <class name="com.xamplify.automation.Login"/> 
-    <class name="com.xamplify.automation.UploadAssetFile"/> 
-<!--         <class name="com.xamplify.automation.UploadAssetVideo"/> -->
-<!--                 <class name="com.xamplify.automation.DesignPDF"/> -->
+ <test thread-count="5" name="xAmplify_Automation">
 
-<!--             <class name="com.xamplify.automation.ManageMyAssets"/> -->
-        
-    
-    
-   
-     <!--<class name="com.xamplify.automation.LaunchEmailCampaign"/> -->
-<!--      <class name="com.xamplify.automation.LaunchVideoCampaign"/> 
- -->   
- 
-<!--  <class name="com.xamplify.automation.LaunchEventCampaign"/> 
-  <class name="com.xamplify.automation.SaveEventCampaign"/> -->
-    
+<classes>
+         <class name="com.xamplify.automation.login"/> 
+		 <class name="com.xamplify.automation.partners_onboard_comma"/>
+		 <class name="com.xamplify.automation.partners_tab_csv"/>
+		 <class name="com.xamplify.automation.UploadAssetFile"/>
+		 <class name="com.xamplify.automation.UploadAssetVideo"/>
+		 <class name="com.xamplify.automation.DesignPDF"/>
+		 <class name="com.xamplify.automation.AddTracks"/>
+		 <class name="com.xamplify.automation.AddPlaybooks"/>
+		 <class name="com.xamplify.automation.shareleads"/>
+		 <class name="com.xamplify.automation.Templates"/>
+		 <class name="com.xamplify.automation.Forms_Pages"/>
+		 <class name="com.xamplify.automation.LaunchVideoCampaign"/>
+		 <class name="com.xamplify.automation.ScheduleVideoCampaign"/>
+		 <class name="com.xamplify.automation.SaveVideoCampaign"/>
+		 <class name="com.xamplify.automation.ManageVideoCampaign"/>
+		 <class name="com.xamplify.automation.LaunchVideoToCampaign"/>
+		 <class name="com.xamplify.automation.ScheduleVideoToCampaign"/>
+		 <class name="com.xamplify.automation.SaveVideoToCampaign"/>
+		 <class name="com.xamplify.automation.LaunchEmailCampaign"/>
+		 <class name="com.xamplify.automation.ScheduleEmailCampaign"/>
+		 <class name="com.xamplify.automation.SaveEmailCampaign"/>
+		 <class name="com.xamplify.automation.ManageEmailCampaign"/>
+		 <class name="com.xamplify.automation.LaunchEmailToCampaign"/>
+		 <class name="com.xamplify.automation.ScheduleEmailToCampaign"/>
+		 <class name="com.xamplify.automation.SaveEmailToCampaign"/>
+		 <class name="com.xamplify.automation.LaunchPageCampaign"/>
+		 <class name="com.xamplify.automation.SchedulePageCampaign"/>
+		 <class name="com.xamplify.automation.SavePageCampaign"/>
+		 <class name="com.xamplify.automation.ManagePageCampaign"/>
+		 <class name="com.xamplify.automation.LaunchPagePrivateCampaign"/>
+		 <class name="com.xamplify.automation.LaunchPageToCampaign"/>
+		 <class name="com.xamplify.automation.SchedulePageToCampaign"/>
+		 <class name="com.xamplify.automation.SavePageToCampaign"/>
+		 <class name="com.xamplify.automation.SaveSurveyCampaign"/>
+		 <class name="com.xamplify.automation.LaunchSurveyCampaign"/>
+		 <class name="com.xamplify.automation.ScheduleSurveyCampaign"/>
+		 <class name="com.xamplify.automation.ManageSurveyCampaign"/>
+		 <class name="com.xamplify.automation.SaveSurveyToCampaign"/>
+		 <class name="com.xamplify.automation.LaunchSurveyToCampaign"/>
+		 <class name="com.xamplify.automation.ScheduleSurveyToCampaign"/>
+		 <class name="com.xamplify.automation.ManageSurveyToCampaign"/>
+		 <class name="com.xamplify.automation.LaunchEventCampaign"/>
+		 <class name="com.xamplify.automation.ScheduleEventCampaign"/>
+		 <class name="com.xamplify.automation.SaveEventCampaign"/>
+		 <class name="com.xamplify.automation.ManageEventCampaign"/>
+		 <class name="com.xamplify.automation.LaunchToeventcampagin"/>
+		 <class name="com.xamplify.automation.ScheduleToeventcampaign"/>
+		 <class name="com.xamplify.automation.SaveToeventcampaign"/>
+		 <class name="com.xamplify.automation.ManageMDF_Vendor"/>
+		 <class name="com.xamplify.automation.TeamMember_Vendor"/>
+		 <class name="com.xamplify.automation.PartnerLogin"/>
+		 <class name="com.xamplify.automation.AddContacts"/>
+		 <class name="com.xamplify.automation.ManageContacts"/>
+		 <class name="com.xamplify.automation.AccessSharedAsset"/>
+		 <class name="com.xamplify.automation.AccessSharedAssetInPartner"/>
+		 <class name="com.xamplify.automation.AccessSharedTrackInPartner"/>
+		 <class name="com.xamplify.automation.AccessSharedPlaybookInPartner"/>
+		 <class name="com.xamplify.automation.Sharedleads"/>
+		 <class name="com.xamplify.automation.partnerpages"/>
+		 <class name="com.xamplify.automation.LaunchRedistributeVideoCampaign"/>
+		 <class name="com.xamplify.automation.ScheduleRedistributeVideoCampaign"/>
+		 <class name="com.xamplify.automation.SaveRedistributeVideoCampaign"/>
+		 <class name="com.xamplify.automation.Partner_ManageVideoCampaign"/>
+		 <class name="com.xamplify.automation.LaunchRedistributeEmailCampaign"/>
+		 <class name="com.xamplify.automation.ScheduleRedistributeEmailCampaign"/>
+		 <class name="com.xamplify.automation.SaveRedistributeEmailCampaign"/>
+		 <class name="com.xamplify.automation.Partner_ManageEmailCampaign"/>
+		 <class name="com.xamplify.automation.LaunchRedistributionSurveyCampaign"/>
+		 <class name="com.xamplify.automation.ScheduleRedistributionSurveyCampaign"/>
+		 <class name="com.xamplify.automation.SaveRedistributionSurveyCampaign"/>
+		 <class name="com.xamplify.automation.PartnerManageSurveyCampaign"/>
+		 <class name="com.xamplify.automation.RedistributeEventCampaign"/>
+		 <class name="com.xamplify.automation.TeamMember_Partner"/>
+		 <class name="com.xamplify.automation.ManageMDFRequests_Partner"/>
+		 <class name="com.xamplify.automation.Opportunities"/>
+		 <class name="com.xamplify.automation.PartnerLogout"/>
+		 <class name="com.xamplify.automation.VendorOpportunities"/>
+		 <class name="com.xamplify.automation.ManageAssetPNG"/>
+		 <class name="com.xamplify.automation.ViewAssetAnalyticsInVendor"/>
+		 <class name="com.xamplify.automation.ManageAssetVideoFile"/>
+		 <class name="com.xamplify.automation.ManageTracks"/>
+		 <class name="com.xamplify.automation.ViewTrackAnalyticsInVendor"/>
+		 <class name="com.xamplify.automation.ManagePlaybooks"/>
+		 <class name="com.xamplify.automation.ManageMDFRequests_Vendor"/>
+		 <class name="com.xamplify.automation.Logout"/>
+</classes>
 
- <!--    <class name="com.xamplify.automation.ScheduleEventCampaign"/> -->
-  <class name="com.xamplify.automation.EventToCampagin"/> -->
-   
-
-   </classes>
-  </test> <!-- Test -->
-</suite> <!-- Suite -->
+</test> 
+</suite> 
