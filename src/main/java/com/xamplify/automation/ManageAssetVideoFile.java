@@ -24,7 +24,7 @@ public class ManageAssetVideoFile {
 
 
 	//sorting order for assets  
-	@Test (priority=0,enabled=true)
+	@Test (priority=295,enabled=true)
 	public void assetsorting_mp4() throws InterruptedException, IOException {	    	   
 		Thread.sleep(8000);
 		driver.findElement(By.xpath(properties.getProperty("Content_leftmenu"))).click(); //click on left side content menu
@@ -50,7 +50,7 @@ public class ManageAssetVideoFile {
 
 
 	//grid and list view  -- successfull
-	@Test (priority=1,enabled=true)
+	@Test (priority=296,enabled=true)
 	public void gridlistview_mp4() throws InterruptedException
 	{
 		Thread.sleep(8000);
@@ -125,7 +125,7 @@ public class ManageAssetVideoFile {
 	}
 
 	//search asset and view asset  
-	@Test (priority=2,enabled=true)
+	@Test (priority=297,enabled=true)
 	public void viewassetvideo_mp4() throws InterruptedException 	
 	{
 		Thread.sleep(8000);
@@ -146,7 +146,7 @@ public class ManageAssetVideoFile {
 	}
 
 	//search assset and edit video 
-	@Test (priority=3,enabled=true)
+	@Test (priority=298,enabled=true)
 	public void editassetvideo_mp4() throws InterruptedException
 	{
 		Thread.sleep(7000);
@@ -203,7 +203,7 @@ public class ManageAssetVideoFile {
 
 
 	//search asset and download asset 
-	@Test (priority=4,enabled=true)
+	@Test (priority=299,enabled=true)
 	public void downloadassetvideo_mp4() throws InterruptedException 	
 	{
 		Thread.sleep(7000);
@@ -223,7 +223,7 @@ public class ManageAssetVideoFile {
 	}
 
 	//search asset and publish asset to partner 
-	@Test (priority=5,enabled=true)
+	@Test (priority=300,enabled=true)
 	public void publishassetvideo_mp4() throws InterruptedException
 	{
 		Thread.sleep(7000);
@@ -271,7 +271,7 @@ public class ManageAssetVideoFile {
 
 
 	//search asset and createcompaign -- successfull
-	@Test (priority=6,enabled=true)
+	@Test (priority=301,enabled=true)
 	public void createcompaign_mp4() throws InterruptedException
 	{
 		Thread.sleep(7000);
@@ -296,7 +296,7 @@ public class ManageAssetVideoFile {
 
 
 	//search asset and analytics -- succesfull
-	@Test (priority=7,enabled=true)
+	@Test (priority=302,enabled=true)
 	public void viewanalyticsvideo_mp4() throws InterruptedException
 	{
 		Thread.sleep(7000);
@@ -316,7 +316,7 @@ public class ManageAssetVideoFile {
 
 
 	//	search asset and Delete asset video-mp4
-	@Test (priority=8,enabled=true)
+	@Test (priority=303,enabled=true)
 	public void deleteassetvideo_mp4() throws InterruptedException
 	{
 		Thread.sleep(7000);

@@ -25,7 +25,7 @@ public class ManageAssetPNG {
 
 
 	//sorting order of assets 
-	@Test (priority=0,enabled=true)
+	@Test (priority=284,enabled=true)
 	public void assetsorting_png() throws InterruptedException, IOException 
 	{	    	
 		Thread.sleep(7000);
@@ -52,7 +52,7 @@ public class ManageAssetPNG {
 
 
 	//grid and list view  
-	@Test (priority=1,enabled=true)
+	@Test (priority=285,enabled=true)
 	public void gridlistview_png() throws InterruptedException
 	{
 		Thread.sleep(8000);
@@ -133,7 +133,7 @@ public class ManageAssetPNG {
 
 
 	//search asset and view asset and download asset --succesfull
-	@Test (priority=2,enabled=true)
+	@Test (priority=286,enabled=true)
 	public void viewasset_png() throws InterruptedException 	
 	{
 
@@ -160,7 +160,7 @@ public class ManageAssetPNG {
 
 
 	//search asset and click on analytics -- succesfull
-	@Test (priority=3,enabled=true)
+	@Test (priority=287,enabled=true)
 	public void viewanalytics_png() throws InterruptedException
 	{
 		Thread.sleep(7000);
@@ -186,7 +186,7 @@ public class ManageAssetPNG {
 
 
 	//search asset and publish asset to partner
-	@Test (priority=4,enabled=true)
+	@Test (priority=288,enabled=true)
 	public void publishasset_png() throws InterruptedException
 	{
 		Thread.sleep(7000);
@@ -232,7 +232,7 @@ public class ManageAssetPNG {
 	}
 
 	//search assset and edit png 
-	@Test (priority=5,enabled=true)
+	@Test (priority=289,enabled=true)
 	public void editasset_png() throws InterruptedException
 	{
 
@@ -277,7 +277,7 @@ public class ManageAssetPNG {
 	}
 
 	//search asset and Delete asset
-	@Test (priority=6,enabled=true)
+	@Test (priority=290,enabled=true)
 	public void deleteasset_png() throws InterruptedException
 	{
 
@@ -315,7 +315,7 @@ public class ManageAssetPNG {
 
 
 	//view detailed anaytics of png asset in vendor account after partner viewed and downloaded the asset in partner account
-	@Test (priority = 7,enabled=true)
+	@Test (priority = 291,enabled=true)
 	public void viewanalyticsvendor_png() throws InterruptedException, IOException 
 	{	
 		Thread.sleep(7000);
@@ -358,7 +358,7 @@ public class ManageAssetPNG {
 
 
 	//view detailed anaytics of pdf asset in vendor account after partner viewed and downloaded the asset in partner account
-	@Test (priority = 8,enabled=true)
+	@Test (priority = 292,enabled=true)
 	public void viewanalyticsvendor_pdf() throws InterruptedException, IOException {		
 		Thread.sleep(8000);
 		driver.findElement(By.xpath(properties.getProperty("Content_leftmenu"))).click(); //click on left side content menu

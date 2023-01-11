@@ -35,7 +35,7 @@ public class PartnerLogout {
 
 	public void Vendor_Signinprocess() throws InterruptedException, SQLException {
 
-		logger.info("Signing up to the application");
+		logger.info("Signing up to the application as an Vendor");
 		Thread.sleep(3000);
 		driver.findElement(By.xpath(properties.getProperty("username"))).sendKeys("automated_vendor@analytify.com");
 		Thread.sleep(1000);

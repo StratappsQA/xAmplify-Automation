@@ -20,7 +20,7 @@ public class Logout {
 	
 
 
-@Test(priority=201,enabled=true)
+@Test(priority=320,enabled=true)
 
 
 public void Logoutprocess() throws InterruptedException, SQLException {

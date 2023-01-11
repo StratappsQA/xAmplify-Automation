@@ -18,7 +18,7 @@ public class ViewAssetAnalyticsInVendor {
 
 	
 	//view detailed anaytics of png asset in vendor account after partner viewed and downloaded the asset in partner account
-	@Test (priority = 0, enabled=false)
+	@Test (priority = 293, enabled=true)
 	public void viewanalyticsvendorpng() throws InterruptedException, IOException {	
 		
 		Thread.sleep(3000);
@@ -59,7 +59,7 @@ public class ViewAssetAnalyticsInVendor {
 	
 	
 	//view detailed anaytics of pdf asset in vendor account after partner viewed and downloaded the asset in partner account
-		@Test (priority = 1)
+		@Test (priority = 294, enabled = true)
 		public void viewanalyticsvendorpdf() throws InterruptedException, IOException {		
 			Thread.sleep(3000);
 			driver.findElement(By.xpath(properties.getProperty("Content_leftmenu"))).click(); //click on left side content menu

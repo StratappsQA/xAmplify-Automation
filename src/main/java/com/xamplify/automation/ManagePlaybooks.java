@@ -21,7 +21,7 @@ public class ManagePlaybooks {
 
 
 	//clicking on preview&edit and performing actions 
-	@Test (priority=0,enabled=true)
+	@Test (priority=312,enabled=true)
 	public void preview_edit_playbook() throws InterruptedException, IOException {	
 		Thread.sleep(6000);
 		driver.findElement(By.xpath(properties.getProperty("Content_leftmenu1"))).click(); //click on left side content menu
@@ -86,7 +86,7 @@ public class ManagePlaybooks {
 
 
 	//clicking on view of vendorplaybook
-	@Test (priority=1,enabled=true)
+	@Test (priority=313,enabled=true)
 	public void view_playbook() throws InterruptedException, IOException {	
 		Thread.sleep(6000);
 		driver.findElement(By.xpath(properties.getProperty("Content_leftmenu1"))).click(); //click on left side content menu
@@ -117,7 +117,7 @@ public class ManagePlaybooks {
 
 
 	//clicking on analytics of vendorplaybook
-	@Test (priority=2,enabled=true)
+	@Test (priority=314,enabled=true)
 	public void analytics_playbook() throws InterruptedException, IOException {	
 		Thread.sleep(6000);
 		driver.findElement(By.xpath(properties.getProperty("Content_leftmenu1"))).click(); //click on left side content menu
@@ -138,7 +138,7 @@ public class ManagePlaybooks {
 
 
 	//unpublishing the published vendorplaybook 
-	@Test (priority=3,enabled=true)
+	@Test (priority=315,enabled=true)
 	public void unpublish_playbook() throws InterruptedException, IOException {	
 		Thread.sleep(7000);
 		driver.findElement(By.xpath(properties.getProperty("Content_leftmenu1"))).click(); //click on left side content menu
@@ -159,7 +159,7 @@ public class ManagePlaybooks {
 	}
 
 	//deleting the vendorplaybook
-	@Test (priority=4,enabled=true)
+	@Test (priority=316,enabled=true)
 	public void delete_vendorplaybook() throws InterruptedException, IOException {	
 		Thread.sleep(8000);
 		driver.findElement(By.xpath(properties.getProperty("Content_leftmenu1"))).click(); //click on left side content menu
@@ -195,7 +195,7 @@ public class ManagePlaybooks {
 
 
 	//to view analytics in vendor account after playbook has been viewed and downloaded in partner account
-	@Test (priority=5,enabled=true)
+	@Test (priority=317,enabled=true)
 	public void analytics_playbook_vendor() throws InterruptedException, IOException {	
 		Thread.sleep(6000);
 		driver.findElement(By.xpath(properties.getProperty("Content_leftmenu1"))).click(); //click on left side content menu

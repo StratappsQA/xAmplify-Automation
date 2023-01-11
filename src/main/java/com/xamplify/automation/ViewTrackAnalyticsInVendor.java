@@ -17,7 +17,7 @@ public class ViewTrackAnalyticsInVendor {
 			.readPropertyFile("D:\\GitHub\\xAmplify-Automation\\src\\main\\resources\\TrackBuilder.properties");
 	final Logger logger = LogManager.getLogger(ViewTrackAnalyticsInVendor.class);
 	
-	@Test 
+	@Test (priority = 311, enabled = true)
 	public void analytics_track_vendor() throws InterruptedException, IOException {	
 		Thread.sleep(3000);
 		driver.findElement(By.xpath(properties.getProperty("Content_leftmenu1"))).click(); //click on left side content menu

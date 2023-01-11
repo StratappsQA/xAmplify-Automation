@@ -21,7 +21,7 @@ public class VendorOpportunities extends ExtentReportsClass {
 			"D:\\GitHub\\xAmplify-Automation\\src\\main\\resources\\VendorOpportunities.properties");
 	final Logger logger = LogManager.getLogger(VendorOpportunities.class);
 
-	@Test(priority = 1, enabled = true)
+	@Test(priority = 277, enabled = true)
 	public void vendor_opportunities_manage_leads() throws InterruptedException {
 
 		WebDriverWait vendor_opportunities_wait = new WebDriverWait(driver, 90);
@@ -43,7 +43,7 @@ public class VendorOpportunities extends ExtentReportsClass {
 		Thread.sleep(6000);
 	}
 
-	@Test(priority = 2, enabled = true)
+	@Test(priority = 278, enabled = true)
 	public void manage_leads() throws InterruptedException {
 
 		Thread.sleep(6000);
@@ -75,7 +75,7 @@ public class VendorOpportunities extends ExtentReportsClass {
 		Thread.sleep(4000);
 	}
 
-	@Test(priority = 3, enabled = true)
+	@Test(priority = 279, enabled = true)
 	public void maage_leads_campaignview() throws InterruptedException {
 
 		Thread.sleep(3000);
@@ -144,7 +144,7 @@ public class VendorOpportunities extends ExtentReportsClass {
 		Thread.sleep(5000);
 	}
 
-	@Test(priority = 4, enabled = true)
+	@Test(priority = 280, enabled = true)
 	public void manage_leads_filter_and_download_func() throws InterruptedException {
 
 		Thread.sleep(3000);
@@ -210,7 +210,7 @@ public class VendorOpportunities extends ExtentReportsClass {
 
 	}
 
-	@Test(priority = 5, enabled = true)
+	@Test(priority = 281, enabled = true)
 	public void vendor_opportunities_manage_deals() throws InterruptedException {
 
 		WebDriverWait vendor_opportunities_wait = new WebDriverWait(driver, 50);
@@ -232,7 +232,7 @@ public class VendorOpportunities extends ExtentReportsClass {
 		Thread.sleep(6000);
 	}
 
-	@Test(priority = 6, enabled = true)
+	@Test(priority = 282, enabled = true)
 	public void manage_deals() throws InterruptedException {
 		Thread.sleep(2000);
 
@@ -292,7 +292,7 @@ public class VendorOpportunities extends ExtentReportsClass {
 
 	}
 
-	@Test(priority = 6, enabled = true)
+	@Test(priority = 283, enabled = true)
 	public void manage_deals_campaignview() throws InterruptedException {
 
 		Thread.sleep(2000);

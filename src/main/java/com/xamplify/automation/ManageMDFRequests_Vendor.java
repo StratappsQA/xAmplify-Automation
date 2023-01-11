@@ -17,7 +17,7 @@ public class ManageMDFRequests_Vendor {
 
 	final Logger logger = LogManager.getLogger(ManageMDFRequests_Vendor.class);
 
-	@Test (priority=1,enabled=true)
+	@Test (priority=318,enabled=true)
 	public void mdf_request_vendor() throws InterruptedException
 	{
 		Thread.sleep(7000);
@@ -184,7 +184,7 @@ public class ManageMDFRequests_Vendor {
 	
 
 	//if allocated amount is greater than mdf amount
-	@Test (priority=2,enabled=true)
+	@Test (priority=319,enabled=true)
 	public void allocation_amount_update() throws InterruptedException
 	{
 		Thread.sleep(6000);

@@ -23,7 +23,7 @@ public class ManageTracks {
 
 
 	//grid and list view , folder view 
-	@Test (priority=0,enabled=true)
+	@Test (priority=304,enabled=true)
 	public void gridlistview_track() throws InterruptedException
 	{
 		Thread.sleep(9000);
@@ -101,7 +101,7 @@ public class ManageTracks {
 	}
 	
 	//clicking on preview&edit against to vendortrack
-	@Test (priority=1,enabled=true) 
+	@Test (priority=305,enabled=true) 
 	public void preview_edit_track() throws InterruptedException, IOException {	
 		Thread.sleep(9000);
 		driver.findElement(By.xpath(properties.getProperty("Content_leftmenu1"))).click(); //click on left side content menu
@@ -164,7 +164,7 @@ public class ManageTracks {
 
 
 	//clicking on view against to vendortrack 
-	@Test (priority=2,enabled=true)
+	@Test (priority=306,enabled=true)
 	public void view_track() throws InterruptedException, IOException {	
 		Thread.sleep(6000);
 		driver.findElement(By.xpath(properties.getProperty("Content_leftmenu1"))).click(); //click on left side content menu
@@ -207,7 +207,7 @@ public class ManageTracks {
 	}
 
 	//clicking on analytics of vendortrack
-	@Test (priority=3,enabled=true)
+	@Test (priority=307,enabled=true)
 	public void analytics_track() throws InterruptedException, IOException {	
 		Thread.sleep(7000);
 		driver.findElement(By.xpath(properties.getProperty("Content_leftmenu1"))).click(); //click on left side content menu
@@ -229,7 +229,7 @@ public class ManageTracks {
 
 
 	//unpublishing the published vendortrack 
-	@Test (priority=4,enabled=true)
+	@Test (priority=308,enabled=true)
 	public void unpublish_track() throws InterruptedException, IOException {	
 		Thread.sleep(7000);
 		driver.findElement(By.xpath(properties.getProperty("Content_leftmenu1"))).click(); //click on left side content menu
@@ -252,7 +252,7 @@ public class ManageTracks {
 
 
 	//clicking on delete 
-	@Test (priority=5,enabled=true)
+	@Test (priority=309,enabled=true)
 	public void delete_track() throws InterruptedException, IOException {	
 		Thread.sleep(8000);
 		driver.findElement(By.xpath(properties.getProperty("Content_leftmenu1"))).click(); //click on left side content menu
@@ -288,7 +288,7 @@ public class ManageTracks {
 	}	
 
 	//to view analytics in vendor account after track is been viewed and downloaded in partner account
-	@Test (priority=6,enabled=true)
+	@Test (priority=310,enabled=true)
 	public void analytics_track_vendor() throws InterruptedException, IOException {	
 		Thread.sleep(7000);
 		driver.findElement(By.xpath(properties.getProperty("Content_leftmenu1"))).click(); //click on left side content menu
