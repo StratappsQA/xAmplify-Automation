@@ -88,7 +88,7 @@
 		 <class name="com.xamplify.automation.ViewTrackAnalyticsInVendor"/>
 		 <class name="com.xamplify.automation.ManagePlaybooks"/>
 		 <class name="com.xamplify.automation.ManageMDFRequests_Vendor"/>
-		 <class name="com.xamplify.automation.Logout"/>
+		 <class name="com.xamplify.automation.Logout"/> 
 </classes>
 
 </test> 
