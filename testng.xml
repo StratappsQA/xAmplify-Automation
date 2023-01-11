@@ -4,7 +4,7 @@
  <test thread-count="5" name="xAmplify_Automation">
 
 <classes>
-         <class name="com.xamplify.automation.login"/> 
+         <class name="com.xamplify.automation.Login"/> 
 		 <class name="com.xamplify.automation.partners_onboard_comma"/>
 		 <class name="com.xamplify.automation.partners_tab_csv"/>
 		 <class name="com.xamplify.automation.UploadAssetFile"/>
