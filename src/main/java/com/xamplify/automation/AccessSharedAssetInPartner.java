@@ -13,7 +13,7 @@ import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.Test;
 
 //this class need to run in partner account to view and download asset
-public class AccessSharedAssetInPartner {
+public class AccessSharedAssetInPartner extends ExtentReportsClass {
 
 
 	WebDriver driver = Instance.getInstance();

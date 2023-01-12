@@ -17,7 +17,7 @@ import org.openqa.selenium.support.ui.Select;
 
 import org.testng.annotations.Test;
 
-public class Templates {
+public class Templates extends ExtentReportsClass{
 
 	private static final TimeUnit Seconds = null;
 	static WebDriver driver = Instance.getInstance();

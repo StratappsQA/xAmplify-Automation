@@ -20,7 +20,7 @@ import org.testng.annotations.AfterTest;
 //public class ScheduleEmailCampaign extends EmailCampaign {
 import org.testng.annotations.Test;
 
-public class ScheduleEmailCampaign{
+public class ScheduleEmailCampaign extends ExtentReportsClass{
 	
 	//@AfterMethod 
 	//[for auto responses...comment @AfterTest annotation and use @Aftermethod , extends AutoResponsesEmail]

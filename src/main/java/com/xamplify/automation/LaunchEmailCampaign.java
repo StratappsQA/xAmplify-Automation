@@ -13,7 +13,7 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.Test;
 
-public class LaunchEmailCampaign {
+public class LaunchEmailCampaign extends ExtentReportsClass{
 
 //public class LaunchEmailCampaign extends AutoResponseEmailCampaign {
 

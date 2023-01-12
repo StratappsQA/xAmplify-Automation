@@ -10,7 +10,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.Test;
 
-public class RedistributeEmailCampaign {
+public class RedistributeEmailCampaign extends ExtentReportsClass {
 	WebDriver driver = Instance.getInstance();
 	Properties properties = PropertiesFile.readPropertyFile(
 			"D:\\GitHub\\xAmplify-Automation\\src\\main\\resources\\RedistributionCampaign.properties");// properties

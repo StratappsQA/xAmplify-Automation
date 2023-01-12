@@ -9,7 +9,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.Test;
 
-public class ManageMDFRequests_Vendor {
+public class ManageMDFRequests_Vendor extends ExtentReportsClass {
 
 	WebDriver driver = Instance.getInstance();
 

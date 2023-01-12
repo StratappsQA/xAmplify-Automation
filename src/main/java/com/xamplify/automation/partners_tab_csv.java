@@ -37,7 +37,7 @@ import org.testng.annotations.Test;
 import com.google.common.collect.Table.Cell;
 //import com.opencsv.CSVWriter;
 
-public class partners_tab_csv {
+public class partners_tab_csv extends ExtentReportsClass {
 	private static final TimeUnit Seconds = null;
 	static WebDriver driver = Instance.getInstance();
 	static Properties properties = PropertiesFile

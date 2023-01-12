@@ -14,7 +14,7 @@ import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.Test;
 
 
-public class Sharedleads {
+public class Sharedleads extends ExtentReportsClass{
 	WebDriver driver = Instance.getInstance();
 	Properties properties = PropertiesFile.readPropertyFile(
 			"D:\\GitHub\\xAmplify-Automation\\src\\main\\resources\\Sharedleads.properties");

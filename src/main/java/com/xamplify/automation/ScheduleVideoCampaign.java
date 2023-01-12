@@ -16,7 +16,7 @@ import org.testng.annotations.Test;
 
 //public class ScheduleVideoCampaign extends VideoCampaign {
 
-public class ScheduleVideoCampaign {
+public class ScheduleVideoCampaign extends ExtentReportsClass{
 	WebDriver driver = Instance.getInstance();
 
 	Properties properties = PropertiesFile.readPropertyFile("D:\\GitHub\\xAmplify-Automation\\src\\main\\resources\\Campaign.properties");

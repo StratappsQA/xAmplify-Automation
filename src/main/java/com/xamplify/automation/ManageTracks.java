@@ -12,7 +12,7 @@ import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class ManageTracks {
+public class ManageTracks extends ExtentReportsClass {
 
 
 	WebDriver driver = Instance.getInstance();

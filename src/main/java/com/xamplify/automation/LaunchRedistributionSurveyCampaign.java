@@ -14,7 +14,7 @@ import org.openqa.selenium.interactions.Actions;
 
 import org.testng.annotations.Test;
 
-public class LaunchRedistributionSurveyCampaign {
+public class LaunchRedistributionSurveyCampaign extends ExtentReportsClass {
 
 	WebDriver driver = Instance.getInstance();
 	Properties properties = PropertiesFile

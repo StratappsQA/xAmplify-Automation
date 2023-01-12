@@ -18,7 +18,7 @@ import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class TeamMember_Partner {
+public class TeamMember_Partner extends ExtentReportsClass{
 
 	WebDriver driver = Instance.getInstance();
 

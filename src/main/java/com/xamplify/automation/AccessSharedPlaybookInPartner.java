@@ -10,7 +10,7 @@ import org.openqa.selenium.WebDriver;
 import org.testng.annotations.Test;
 
 //This class need to run in parnter account
-public class AccessSharedPlaybookInPartner {
+public class AccessSharedPlaybookInPartner extends ExtentReportsClass {
 
 
 	WebDriver driver = Instance.getInstance();

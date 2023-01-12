@@ -12,7 +12,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.Test;
 
-public class ScheduleVideoToCampaign {
+public class ScheduleVideoToCampaign extends ExtentReportsClass{
 	
 	WebDriver driver = Instance.getInstance();
 

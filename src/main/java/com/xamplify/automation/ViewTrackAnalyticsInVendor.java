@@ -10,7 +10,7 @@ import org.openqa.selenium.WebDriver;
 import org.testng.annotations.Test;
 
 //this class need to run in vendor
-public class ViewTrackAnalyticsInVendor {
+public class ViewTrackAnalyticsInVendor extends ExtentReportsClass {
 
 	WebDriver driver = Instance.getInstance();
 	Properties properties = PropertiesFile

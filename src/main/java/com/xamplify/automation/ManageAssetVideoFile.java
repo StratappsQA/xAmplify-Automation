@@ -14,7 +14,7 @@ import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class ManageAssetVideoFile {
+public class ManageAssetVideoFile extends ExtentReportsClass {
 
 
 	WebDriver driver = Instance.getInstance();

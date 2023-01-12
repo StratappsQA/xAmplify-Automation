@@ -11,7 +11,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.Test;
 
-public class ManageMDF_Vendor {
+public class ManageMDF_Vendor extends ExtentReportsClass{
 
 
 	WebDriver driver = Instance.getInstance();

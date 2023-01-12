@@ -11,7 +11,7 @@ import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class ManagePlaybooks {
+public class ManagePlaybooks extends ExtentReportsClass{
 
 	//This class need to run in vendor account
 	WebDriver driver = Instance.getInstance();

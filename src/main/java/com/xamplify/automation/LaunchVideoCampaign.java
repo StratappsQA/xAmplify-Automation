@@ -11,9 +11,9 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.Test;
 
-//public class LaunchVideoCampaign extends VideoCampaign {
 
-public class LaunchVideoCampaign {
+
+public class LaunchVideoCampaign extends ExtentReportsClass{
 
 	WebDriver driver = Instance.getInstance();
 	Properties properties = PropertiesFile

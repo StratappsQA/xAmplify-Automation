@@ -17,7 +17,7 @@ import org.openqa.selenium.By;
 	import org.openqa.selenium.support.ui.WebDriverWait;
 	import org.testng.annotations.Test;
 
-	public class ManagePageCampaign {
+	public class ManagePageCampaign extends ExtentReportsClass {
 		WebDriver driver = Instance.getInstance();
 		Properties properties = PropertiesFile.readPropertyFile("D:\\GitHub\\xAmplify-Automation\\src\\main\\resources\\ManageCampaigns.properties");
 		final Logger logger = LogManager.getLogger(ManagePageCampaign.class);

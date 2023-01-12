@@ -12,7 +12,7 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.Test;
 
 
-public class SaveVideoCampaign  {
+public class SaveVideoCampaign  extends ExtentReportsClass{
 	 WebDriver driver = Instance.getInstance();
 	 Properties properties = PropertiesFile.readPropertyFile("D:\\GitHub\\xAmplify-Automation\\src\\main\\resources\\Campaign.properties");
 

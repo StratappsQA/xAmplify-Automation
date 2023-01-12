@@ -9,7 +9,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.Test;
 
-public class AccessSharedAsset {
+public class AccessSharedAsset extends ExtentReportsClass {
 	
 	
 	WebDriver driver = Instance.getInstance();

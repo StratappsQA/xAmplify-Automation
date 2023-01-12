@@ -14,7 +14,7 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.Test;
 
-public class SaveEmailCampaign {
+public class SaveEmailCampaign extends ExtentReportsClass{
 
 	WebDriver driver = Instance.getInstance();
 

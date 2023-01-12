@@ -11,7 +11,7 @@ import org.openqa.selenium.WebDriver;
 import org.testng.annotations.Test;
 
 //This class need to run in partner account
-public class AccessSharedTrackInPartner {
+public class AccessSharedTrackInPartner extends ExtentReportsClass {
 
 	WebDriver driver = Instance.getInstance();
 	Properties properties = PropertiesFile

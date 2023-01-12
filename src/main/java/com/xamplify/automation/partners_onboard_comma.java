@@ -19,7 +19,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class partners_onboard_comma {
+public class partners_onboard_comma extends ExtentReportsClass{
 	static WebDriver driver = Instance.getInstance();
 	static Properties properties = PropertiesFile
 			.readPropertyFile("D:\\GitHub\\xAmplify-Automation\\src\\main\\resources\\Partners.properties");
