@@ -214,7 +214,7 @@ public class EventCampaign {
 		driver.findElement(By.xpath(properties.getProperty("eve_template_editicon_close"))).click(); // close the
 																										// template
 
-		Thread.sleep(5000);
+		Thread.sleep(9000);
 		driver.findElement(By.xpath(properties.getProperty("eve_nextpage3"))).click(); // click on the next page
 
 	}

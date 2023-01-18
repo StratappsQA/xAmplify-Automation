@@ -46,10 +46,10 @@ public class ManageSurveyToCampaign extends ExtentReportsClass{
 		mcamp_action.click();
 		mcamp_action.perform();
 
-		Thread.sleep(4000);
+		Thread.sleep(8000);
 
 		driver.findElement(By.xpath(properties.getProperty("survey_tab"))).click(); // Click on Survey Tab
-		Thread.sleep(5000);
+		Thread.sleep(8000);
 		logger.info("Clicked on the Survey tab");
 
 		driver.findElement(By.xpath(properties.getProperty("tocamp_gearicon"))).click();
@@ -74,7 +74,7 @@ public class ManageSurveyToCampaign extends ExtentReportsClass{
 
 		// click on close button
 
-		Thread.sleep(4000);
+		Thread.sleep(8000);
 
 		logger.info("click on Gear icon");
 		driver.findElement(By.xpath(properties.getProperty("tocamp_gearicon"))).click();
@@ -88,7 +88,7 @@ public class ManageSurveyToCampaign extends ExtentReportsClass{
 		logger.info("campaign copied successfully");
 
 		driver.findElement(By.xpath(properties.getProperty("survey_tab"))).click(); // Click on Survey Tab
-		Thread.sleep(5000);
+		Thread.sleep(8000);
 
 		logger.info("click on Gear icon");
 		driver.findElement(By.xpath(properties.getProperty("tocamp_gearicon1"))).click();
@@ -99,7 +99,7 @@ public class ManageSurveyToCampaign extends ExtentReportsClass{
 		Thread.sleep(5000);
 
 		driver.findElement(By.xpath(properties.getProperty("click_close_preview"))).click();
-		Thread.sleep(5000);
+		Thread.sleep(8000);
 		logger.info("click on Gear icon");
 		driver.findElement(By.xpath(properties.getProperty("tocamp_gearicon1"))).click();
 		Thread.sleep(3000);
@@ -108,14 +108,14 @@ public class ManageSurveyToCampaign extends ExtentReportsClass{
 
 		Thread.sleep(3000);
 		driver.findElement(By.xpath(properties.getProperty("click_archieved_campaigns"))).click();
-		Thread.sleep(3000);
+		Thread.sleep(8000);
 		driver.findElement(By.xpath(properties.getProperty("t_gearicon"))).click();
 		Thread.sleep(3000);
 
 		driver.findElement(By.xpath(properties.getProperty("click_unarchieve_camp"))).click(); // Unarchieve
 		Thread.sleep(3000);
 		driver.findElement(By.xpath(properties.getProperty("click_active_campaigns"))).click();
-		Thread.sleep(3000);
+		Thread.sleep(8000);
 
 		driver.findElement(By.xpath(properties.getProperty("survey_tab"))).click(); // Click on Survey Tab
 		Thread.sleep(5000);

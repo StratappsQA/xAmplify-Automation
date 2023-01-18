@@ -113,7 +113,7 @@ public class ManageSurveyCampaign extends ExtentReportsClass {
 		
 
 		driver.findElement(By.xpath(properties.getProperty("save_changes"))).click();
-		Thread.sleep(3000);
+		Thread.sleep(8000);
 
 		driver.findElement(By.xpath(properties.getProperty("gear_icon_t"))).click(); // Click on gear icon
 		Thread.sleep(3000);

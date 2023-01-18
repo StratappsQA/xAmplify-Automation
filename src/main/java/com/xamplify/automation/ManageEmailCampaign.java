@@ -48,7 +48,7 @@ public class ManageEmailCampaign extends ExtentReportsClass {
 		logger.info("Clicked on manage Campaigns");
 		
 		  driver.findElement(By.xpath(properties.getProperty("manage_email_tab"))).click(); // Click on Email tab 
-		  Thread.sleep(3000);
+		  Thread.sleep(8000);
 		  logger.info("Clicked on Email tab");
 		  driver.findElement(By.xpath(properties.getProperty("manage_email_gearicon"))).click(); // Click on settings  icon.
 		  Thread.sleep(3000);
@@ -71,7 +71,7 @@ public class ManageEmailCampaign extends ExtentReportsClass {
 		  driver.findElement(By.xpath(properties.getProperty("manage_email_camp_update"))).click(); // click on Update 
 		  Thread.sleep(3000);
 		  driver.findElement(By.xpath(properties.getProperty("manage_email_camp_update_close"))).click();
-		  Thread.sleep(3000);
+		  Thread.sleep(8000);
 		  
 		  driver.findElement(By.xpath(properties.getProperty("manage_email_gearicon")))
 		  .click(); // Click on settings // icon. 
@@ -111,7 +111,7 @@ public class ManageEmailCampaign extends ExtentReportsClass {
 			 */
 		  driver.findElement(By.xpath(properties.getProperty(
 		  "manage_email_camp_save_changes"))).click();
-		  Thread.sleep(3000);
+		  Thread.sleep(8000);
 		  
 		  driver.findElement(By.xpath(properties.getProperty("manage_email_gearicon1"))).click(); // Click on settings // icon. 
 		  Thread.sleep(4000);
@@ -154,7 +154,7 @@ public class ManageEmailCampaign extends ExtentReportsClass {
 		  Thread.sleep(3000);
 		  
 		  driver.findElement(By.xpath(properties.getProperty("manage_email_tab"))).click(); // Click on Email tab 
-		  Thread.sleep(3000);
+		  Thread.sleep(8000);
 		  logger.info("Clicked on Email tab");
 		  driver.findElement(By.xpath(properties.getProperty("manage_email_gearicon1"))).click(); // Click on settings // icon. 
 		  Thread.sleep(3000);
@@ -164,7 +164,7 @@ public class ManageEmailCampaign extends ExtentReportsClass {
 		  email_camp_preview.click();
 		  Thread.sleep(6000);
 		  driver.findElement(By.xpath(properties.getProperty("manage_email_camp_preview_close"))).click();
-		  Thread.sleep(4000);
+		  Thread.sleep(8000);
 		  
 		  driver.findElement(By.xpath(properties.getProperty("manage_email_gearicon1"))).click(); // Click on settings // icon. 
 		  Thread.sleep(3000);
@@ -187,7 +187,7 @@ public class ManageEmailCampaign extends ExtentReportsClass {
 		  
 		  driver.findElement(By.xpath(properties.getProperty("manage_email_tab"))).
 		  click(); // Click on Email tab 
-		  Thread.sleep(3000);
+		  Thread.sleep(8000);
 		  logger.info("Clicked on Email tab");
 		  driver.findElement(By.xpath(properties.getProperty("manage_email_gearicon")))
 		  .click(); // Click on settings // icon. 

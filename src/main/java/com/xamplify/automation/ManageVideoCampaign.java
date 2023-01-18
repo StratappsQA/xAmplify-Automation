@@ -69,7 +69,7 @@ public class ManageVideoCampaign extends ExtentReportsClass{
 		driver.findElement(By.xpath(properties.getProperty("mv_update_button"))).click();// click on update
 		Thread.sleep(2000);
 		driver.findElement(By.xpath(properties.getProperty("mv_click_close"))).click();// click on close button
-		Thread.sleep(4000);
+		Thread.sleep(8000);
 		logger.info("click on Gear icon");
 		driver.findElement(By.xpath(properties.getProperty("mv_video_gear_icon1"))).click(); // Click on gear icon
 		Thread.sleep(5000);
@@ -78,7 +78,7 @@ public class ManageVideoCampaign extends ExtentReportsClass{
 		driver.findElement(By.xpath(properties.getProperty("mv_copy_campaign"))).click();// Click on Copy Campaign
 		Thread.sleep(2000);
 		driver.findElement(By.xpath(properties.getProperty("mv_click_save_changes"))).click();// click on Save Changes.
-		Thread.sleep(5000);
+		Thread.sleep(8000);
 		logger.info("campaign copied successfully");
 
 //		Actions a = new Actions(driver); // scroll down a page
@@ -104,7 +104,7 @@ public class ManageVideoCampaign extends ExtentReportsClass{
 		 */
 
 		driver.findElement(By.xpath(properties.getProperty("mv_save_changes"))).click();
-		Thread.sleep(3000);
+		Thread.sleep(8000);
 
 		driver.findElement(By.xpath(properties.getProperty("mv_video_gear_icon2"))).click(); // Click on gear icon
 		Thread.sleep(3000);

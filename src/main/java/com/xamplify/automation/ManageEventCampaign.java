@@ -23,7 +23,7 @@ public class ManageEventCampaign extends ExtentReportsClass {
 
 	public void manage_event_copy() throws InterruptedException, SQLException {
 
-		Thread.sleep(8000);
+		Thread.sleep(11000);
 
 		driver.findElement(By.xpath(properties.getProperty("meve_gear_icon"))).click();// click on the gear icon
 
@@ -40,7 +40,7 @@ public class ManageEventCampaign extends ExtentReportsClass {
 		Thread.sleep(8000);
 		logger.info("Copied Event campaign successfully");
 
-		Thread.sleep(6000);
+		Thread.sleep(10000);
 
 		driver.findElement(By.xpath(properties.getProperty("meve_gear_icon"))).click();// click on the gear icon
 
@@ -67,7 +67,7 @@ public class ManageEventCampaign extends ExtentReportsClass {
 
 		Thread.sleep(14000);
 		driver.findElement(By.xpath(properties.getProperty("manage_event_tab"))).click();// click on the eventtab
-		Thread.sleep(6000);
+		Thread.sleep(10000);
 
 		driver.findElement(By.xpath(properties.getProperty("meve_gear_icon"))).click(); // click on the gear icon
 
@@ -97,7 +97,7 @@ public class ManageEventCampaign extends ExtentReportsClass {
 //	@Test(dependsOnMethods = { "manage_event_editdelete" })
 	public void manage_eve_sndpreview_previewdelete() throws InterruptedException, SQLException {
 
-		Thread.sleep(6000);
+		Thread.sleep(10000);
 
 		driver.findElement(By.xpath(properties.getProperty("meve_gear_icon"))).click(); // click on the gear icon
 
@@ -197,7 +197,7 @@ public class ManageEventCampaign extends ExtentReportsClass {
 		Thread.sleep(5000);
 
 		driver.findElement(By.xpath(properties.getProperty("manage_event_tab"))).click();// click on the eventtab
-		Thread.sleep(5000);
+		Thread.sleep(10000);
 
 		WebElement wp = driver.findElement(By.xpath(properties.getProperty("meve_hover_previewicon"))); // hover to
 																										// previewevent

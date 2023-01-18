@@ -237,7 +237,7 @@ import org.openqa.selenium.By;
 																												// based
 																												// reports
 
-			Thread.sleep(5000);
+			Thread.sleep(8000);
 
 			driver.findElement(By.xpath(properties.getProperty("page_info_preview"))).click();// page info
 			Thread.sleep(6000);
