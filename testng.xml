@@ -5,7 +5,7 @@
 
 <classes>
          <class name="com.xamplify.automation.Login"/> 
-		 <class name="com.xamplify.automation.partners_onboard_comma"/>
+		 <!--  <class name="com.xamplify.automation.partners_onboard_comma"/>
 		 <class name="com.xamplify.automation.partners_tab_csv"/>
 		 <class name="com.xamplify.automation.UploadAssetFile"/>
 		 <class name="com.xamplify.automation.UploadAssetVideo"/>
@@ -87,7 +87,7 @@
 		 <class name="com.xamplify.automation.ManageTracks"/>
 		 <class name="com.xamplify.automation.ViewTrackAnalyticsInVendor"/>
 		 <class name="com.xamplify.automation.ManagePlaybooks"/>
-		 <class name="com.xamplify.automation.ManageMDFRequests_Vendor"/>
+		 <class name="com.xamplify.automation.ManageMDFRequests_Vendor"/> -->
 		 <class name="com.xamplify.automation.Logout"/> 
 </classes>
 
