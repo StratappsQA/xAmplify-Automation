@@ -20,7 +20,7 @@ public class ManageVideoCampaign extends ExtentReportsClass{
 
 	WebDriver driver = Instance.getInstance();
 	Properties properties = PropertiesFile
-			.readPropertyFile("D:\\GitHub\\xAmplify-Automation\\src\\main\\resources\\ManageCampaigns.properties");
+			.readPropertyFile("src/main/resources/ManageCampaigns.properties");
 	final Logger logger = LogManager.getLogger(ManageVideoCampaign.class);
 
 	@Test (priority=141,enabled=true)

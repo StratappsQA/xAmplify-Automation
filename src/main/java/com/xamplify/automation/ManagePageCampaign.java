@@ -19,7 +19,7 @@ import org.openqa.selenium.By;
 
 	public class ManagePageCampaign extends ExtentReportsClass {
 		WebDriver driver = Instance.getInstance();
-		Properties properties = PropertiesFile.readPropertyFile("D:\\GitHub\\xAmplify-Automation\\src\\main\\resources\\ManageCampaigns.properties");
+		Properties properties = PropertiesFile.readPropertyFile("src/main/resources/ManageCampaigns.properties");
 		final Logger logger = LogManager.getLogger(ManagePageCampaign.class);
 
 		

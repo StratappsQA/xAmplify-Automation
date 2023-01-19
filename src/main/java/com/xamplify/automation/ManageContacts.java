@@ -28,7 +28,7 @@ public class ManageContacts extends ExtentReportsClass {
 	static WebDriver driver = Instance.getInstance();
 
 	static Properties properties = PropertiesFile.readPropertyFile(
-			"D:\\GitHub\\xAmplify-Automation\\src\\main\\resources\\ManageContacts.properties");
+			"src/main/resources/ManageContacts.properties");
 
 	final Logger logger = LogManager.getLogger(ManageContacts.class);
 

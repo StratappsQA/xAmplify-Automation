@@ -22,7 +22,7 @@ import org.testng.annotations.Test;
 public class partners_onboard_comma extends ExtentReportsClass{
 	static WebDriver driver = Instance.getInstance();
 	static Properties properties = PropertiesFile
-			.readPropertyFile("D:\\GitHub\\xAmplify-Automation\\src\\main\\resources\\Partners.properties");
+			.readPropertyFile("src/main/resources/Partners.properties");
 	final Logger logger = LogManager.getLogger(partners_onboard_comma.class);
 
 	@Test(priority = 3, enabled = true)

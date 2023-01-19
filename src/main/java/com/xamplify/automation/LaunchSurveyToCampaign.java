@@ -13,7 +13,7 @@ import org.testng.annotations.Test;
 public class LaunchSurveyToCampaign extends ExtentReportsClass{
 	WebDriver driver = Instance.getInstance();
 	Properties properties = PropertiesFile
-			.readPropertyFile("D:\\GitHub\\xAmplify-Automation\\src\\main\\resources\\Campaign.properties");
+			.readPropertyFile("src/main/resources/Campaign.properties");
 
 	final Logger logger = LogManager.getLogger(LaunchSurveyToCampaign.class);
  

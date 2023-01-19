@@ -15,7 +15,7 @@ public class DesignPDF extends ExtentReportsClass{
 
 	WebDriver driver = Instance.getInstance();
 	Properties properties = PropertiesFile
-			.readPropertyFile("D:\\GitHub\\xAmplify-Automation\\src\\main\\resources\\AssetLibrary.properties");
+			.readPropertyFile("src/main/resources/AssetLibrary.properties");
 	final Logger logger = LogManager.getLogger(DesignPDF.class);
 
 	//Here we are uploading pdf file

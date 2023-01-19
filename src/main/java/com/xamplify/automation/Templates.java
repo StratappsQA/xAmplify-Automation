@@ -22,7 +22,7 @@ public class Templates extends ExtentReportsClass{
 	private static final TimeUnit Seconds = null;
 	static WebDriver driver = Instance.getInstance();
 	static Properties properties = PropertiesFile
-			.readPropertyFile("D:\\GitHub\\xAmplify-Automation\\src\\main\\resources\\Templates.properties");
+			.readPropertyFile("src/main/resources/Templates.properties");
 	final Logger logger = LogManager.getLogger(Templates.class);
 
 	@Test(priority = 44, enabled = true)

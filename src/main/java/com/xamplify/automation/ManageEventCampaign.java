@@ -16,7 +16,7 @@ public class ManageEventCampaign extends ExtentReportsClass {
 
 	WebDriver driver = Instance.getInstance();
 	Properties properties = PropertiesFile
-			.readPropertyFile("D:\\GitHub\\xAmplify-Automation\\src\\main\\resources\\ManageEventCampaign.properties");
+			.readPropertyFile("src/main/resources/ManageEventCampaign.properties");
 	final Logger logger = LogManager.getLogger(ManageEventCampaign.class);
 
 	@Test(priority = 182, enabled = true)

@@ -14,7 +14,7 @@ import org.testng.annotations.Test;
 public class ScheduleRedistributeVideoCampaign extends ExtentReportsClass{
 	WebDriver driver = Instance.getInstance();
 	Properties properties = PropertiesFile.readPropertyFile(
-			"D:\\GitHub\\xAmplify-Automation\\src\\main\\resources\\RedistributionCampaign.properties");// properties
+			"src/main/resources/RedistributionCampaign.properties");// properties
 																											// file
 	final Logger logger = LogManager.getLogger(RedistributeVideoCampaign.class);
 

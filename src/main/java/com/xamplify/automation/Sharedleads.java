@@ -17,7 +17,7 @@ import org.testng.annotations.Test;
 public class Sharedleads extends ExtentReportsClass{
 	WebDriver driver = Instance.getInstance();
 	Properties properties = PropertiesFile.readPropertyFile(
-			"D:\\GitHub\\xAmplify-Automation\\src\\main\\resources\\Sharedleads.properties");
+			"src/main/resources/Sharedleads.properties");
 	final Logger logger = LogManager.getLogger(PartnerLogin.class);
 
 	@Test(priority = 220, enabled = true)

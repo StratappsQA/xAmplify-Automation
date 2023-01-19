@@ -21,7 +21,7 @@ import org.testng.annotations.Test;
 public class VideoToCampaign extends ExtentReportsClass{
 	WebDriver driver = Instance.getInstance();
 	Properties properties = PropertiesFile
-			.readPropertyFile("D:\\GitHub\\xAmplify-Automation\\src\\main\\resources\\Campaign.properties");
+			.readPropertyFile("src/main/resources/Campaign.properties");
 	final Logger logger = LogManager.getLogger(VideoToCampaign.class);
 
 	//@Test (priority=142,enabled=true)

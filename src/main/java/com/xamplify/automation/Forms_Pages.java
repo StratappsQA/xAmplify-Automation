@@ -25,7 +25,7 @@ public class Forms_Pages extends ExtentReportsClass{
 
 	WebDriver driver = Instance.getInstance();
 	Properties properties = PropertiesFile.readPropertyFile(
-			"D:\\GitHub\\xAmplify-Automation\\src\\main\\resources\\Forms_Pages.properties");
+			"src/main/resources/Forms_Pages.properties");
 	final Logger logger = LogManager.getLogger(Forms_Pages.class);
 
 	@Test(priority = 88, enabled = true)

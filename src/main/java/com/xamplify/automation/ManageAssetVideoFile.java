@@ -19,7 +19,7 @@ public class ManageAssetVideoFile extends ExtentReportsClass {
 
 	WebDriver driver = Instance.getInstance();
 	Properties properties = PropertiesFile
-			.readPropertyFile("D:\\GitHub\\xAmplify-Automation\\src\\main\\resources\\AssetLibrary.properties");
+			.readPropertyFile("src/main/resources/AssetLibrary.properties");
 	final Logger logger = LogManager.getLogger(ManageAssetVideoFile.class);
 
 

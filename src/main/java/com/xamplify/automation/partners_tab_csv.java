@@ -41,7 +41,7 @@ public class partners_tab_csv extends ExtentReportsClass {
 	private static final TimeUnit Seconds = null;
 	static WebDriver driver = Instance.getInstance();
 	static Properties properties = PropertiesFile
-			.readPropertyFile("D:\\GitHub\\xAmplify-Automation\\src\\main\\resources\\Partners.properties");
+			.readPropertyFile("src/main/resources/Partners.properties");
 	final Logger logger = LogManager.getLogger(partners_tab_csv.class);
 
 	@Test(priority = 8, enabled = true)

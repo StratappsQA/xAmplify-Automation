@@ -19,7 +19,7 @@ public class AutoResponseEmailcampaign {
 
 	WebDriver driver = Instance.getInstance();
 
-	Properties properties = PropertiesFile.readPropertyFile("D:\\GitHub\\xAmplify-Automation\\src\\main\\resources\\Campaign.properties");
+	Properties properties = PropertiesFile.readPropertyFile("src/main/resources/Campaign.properties");
 
 final Logger logger = LogManager.getLogger(AutoResponseEmailcampaign.class);
 	@Test

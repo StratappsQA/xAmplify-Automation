@@ -15,7 +15,7 @@ public class AccessSharedPlaybookInPartner extends ExtentReportsClass {
 
 	WebDriver driver = Instance.getInstance();
 	Properties properties = PropertiesFile
-			.readPropertyFile("D:\\GitHub\\xAmplify-Automation\\src\\main\\resources\\TrackBuilder.properties");
+			.readPropertyFile("src/main/resources/TrackBuilder.properties");
 	final Logger logger = LogManager.getLogger(AccessSharedPlaybookInPartner.class);
 
 

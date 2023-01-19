@@ -18,7 +18,7 @@ import org.testng.annotations.Test;
 public class VendorOpportunities extends ExtentReportsClass {
 	WebDriver driver = Instance.getInstance();
 	Properties properties = PropertiesFile.readPropertyFile(
-			"D:\\GitHub\\xAmplify-Automation\\src\\main\\resources\\VendorOpportunities.properties");
+			"src/main/resources/VendorOpportunities.properties");
 	final Logger logger = LogManager.getLogger(VendorOpportunities.class);
 
 	@Test(priority = 277, enabled = true)

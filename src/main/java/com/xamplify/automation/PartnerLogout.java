@@ -12,7 +12,7 @@ import org.testng.annotations.Test;
 public class PartnerLogout extends ExtentReportsClass {
 
 	WebDriver driver = Instance.getInstance();
-	Properties properties = PropertiesFile.readPropertyFile("D:\\GitHub\\xAmplify-Automation\\src\\main\\resources\\PartnerLogout.properties");
+	Properties properties = PropertiesFile.readPropertyFile("src/main/resources/PartnerLogout.properties");
 	final Logger logger = LogManager.getLogger(PartnerLogout.class);
 	
 	@Test(priority=275,enabled=true)

@@ -18,7 +18,7 @@ public class shareleads extends ExtentReportsClass{
 
 	WebDriver driver = Instance.getInstance();
 	Properties properties = PropertiesFile
-			.readPropertyFile("D:\\GitHub\\xAmplify-Automation\\src\\main\\resources\\shareleads.properties");
+			.readPropertyFile("src/main/resources/shareleads.properties");
 	final Logger logger = LogManager.getLogger(shareleads.class);
 
 	@Test(priority = 34, enabled = true)
