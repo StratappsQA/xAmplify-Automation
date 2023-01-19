@@ -12,7 +12,7 @@ import org.testng.annotations.Test;
 public class Login extends ExtentReportsClass{
 	
 	WebDriver driver = Instance.getInstance();
-	Properties properties = PropertiesFile.readPropertyFile("/var/lib/jenkins/workspace/testing/src/main/resources/Login.properties");
+	Properties properties = PropertiesFile.readPropertyFile("src/main/resources/Login.properties");
 	final Logger logger = LogManager.getLogger(Login.class);
 	
 	
