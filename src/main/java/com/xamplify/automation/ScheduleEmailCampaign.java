@@ -115,7 +115,7 @@ final Logger logger = LogManager.getLogger(ScheduleEmailCampaign.class);
 		Thread.sleep(5000);
 		country1.selectByValue("103");
 		Thread.sleep(15000);
-		driver.findElement(By.xpath(properties.getProperty("email_schedulelast"))).click();
+		driver.findElement(By.xpath(properties.getProperty("email_schedulelast"))).click(); //scjedule
 		Thread.sleep(8000);
 		
 		String e_schedule = driver.findElement(By.xpath(properties.getProperty("e_response_msg"))).getText(); // response
