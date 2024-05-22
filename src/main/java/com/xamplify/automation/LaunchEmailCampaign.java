@@ -37,9 +37,10 @@ public class LaunchEmailCampaign {
 		e1.ecampaign();
 		Thread.sleep(5000);
 
-		AutoResponseEmailcampaign ar_e = new AutoResponseEmailcampaign();
-		ar_e.autoResponsesEmail();
-
+		/*
+		 * AutoResponseEmailcampaign ar_e = new AutoResponseEmailcampaign();
+		 * ar_e.autoResponsesEmail();
+		 */
 		Thread.sleep(3000);
 
 		driver.findElement(By.xpath(properties.getProperty("now_emailcampaign"))).click(); // click NOW

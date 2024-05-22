@@ -38,20 +38,19 @@ public class SaveEmailCampaign {
 
 		// Thread.sleep(3000);
 
-		driver.findElement(By.xpath(properties.getProperty("e_testmail"))).click();
-		// click on test mail
-
+		driver.findElement(By.xpath(properties.getProperty("e_testmail"))).click();// click on test mail
 		Thread.sleep(5000);
-		driver.findElement(By.xpath(properties.getProperty("e_mailid"))).sendKeys("agayatri@stratapps.com"); // send to
-																												// any
-																												// mail
-																												// id
-
+		
+		driver.findElement(By.xpath(properties.getProperty("e_mailid"))).sendKeys("chmounika@stratapps.com"); // send test email																																																			
 		Thread.sleep(5000);
-		driver.findElement(By.xpath(properties.getProperty("submit"))).click();
-		// submit
+		
+		driver.findElement(By.xpath(properties.getProperty("e_mailid_subject"))).sendKeys("Please check the template");																																																			
 		Thread.sleep(5000);
-		driver.findElement(By.xpath(properties.getProperty("ok"))).click(); // ok
+		
+		driver.findElement(By.xpath(properties.getProperty("e_sendtext"))).click();// submit
+		Thread.sleep(5000);
+		
+		driver.findElement(By.xpath(properties.getProperty("e_ok"))).click(); // ok
 		Thread.sleep(5000);
 
 		driver.findElement(By.xpath(properties.getProperty("espamcheck"))).click();
@@ -73,8 +72,10 @@ public class SaveEmailCampaign {
 		driver.findElement(By.xpath(properties.getProperty("esave_click"))).click(); // click SAVE
 		Thread.sleep(5000);
 
-		driver.findElement(By.xpath(properties.getProperty("esave"))).click(); // click to save campaign
-		Thread.sleep(8000);
+		/*
+		 * driver.findElement(By.xpath(properties.getProperty("esave"))).click(); //
+		 * click to save campaign Thread.sleep(8000);
+		 */
 
 		String e_save = driver.findElement(By.xpath(properties.getProperty("e_response_msg"))).getText(); // response
 		// message

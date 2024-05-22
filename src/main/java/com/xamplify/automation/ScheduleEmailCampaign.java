@@ -7,11 +7,13 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 import java.util.Properties;
+import java.util.Random;
 import java.util.TimeZone;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
@@ -43,23 +45,40 @@ final Logger logger = LogManager.getLogger(ScheduleEmailCampaign.class);
 		  Thread.sleep(5000);
 		 
 		  
-		 AutoResponseEmailcampaign ar_e12=new AutoResponseEmailcampaign();
-		  ar_e12.autoResponsesEmail();
-		  
+			/*
+			 * AutoResponseEmailcampaign ar_e12=new AutoResponseEmailcampaign();
+			 * ar_e12.autoResponsesEmail();
+			 */
 		  
 		 //Thread.sleep(3000);
 		
 
 		driver.findElement(By.xpath(properties.getProperty("email_schedule_click"))).click();
-		Thread.sleep(9000);
+		Thread.sleep(4000);
+		
+		JavascriptExecutor jsh = (JavascriptExecutor) driver; //Scroller
+		jsh.executeScript("window.scrollTo(document.body.scrollHeight,0)");
+		
+	
+					/*
+					 * List<WebElement> dates =
+					 * driver.findElements(By.xpath(properties.getProperty("nxt_mnth_clck"))); //
+					 * finding all the available dates in next month
+					 * 
+					 * int size = dates.size(); //getting the number of available dates.
+					 * 
+					 * Random random = new Random(); //generating a random number to select a random
+					 * date int randomIndex = random.nextInt(size); dates.get(randomIndex).click();
+					 * // selecting the random date Thread.sleep(4000);
+					 */
 		
 		
-		
-	        WebElement dateTable = driver.findElement(By.xpath(properties.getProperty("eselect_date")));
-	        dateTable.click();
-			Thread.sleep(9000);
-	        driver.findElement(By.xpath(properties.getProperty("evsch_date_click"))).click();
-			Thread.sleep(5000);
+		  WebElement dateTable =
+		  driver.findElement(By.xpath(properties.getProperty("eselect_date")));
+		  dateTable.click(); Thread.sleep(9000);
+		  driver.findElement(By.xpath(properties.getProperty("evsch_date_click"))).
+		  click(); Thread.sleep(5000);
+		 
 			
 			/*Date gd =	Calendar.getInstance().getTime();
 			
