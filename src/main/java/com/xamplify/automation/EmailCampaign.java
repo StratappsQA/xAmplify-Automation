@@ -190,7 +190,7 @@
 					.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(properties.getProperty("esearch_select_partnerlist_click"))));
 		w6.sendKeys("Active Master Partner List");//Search for partner list
 		w6.sendKeys(Keys.ENTER);  //Click on search
-		Thread.sleep(5000);
+		Thread.sleep(5000); //time
 	
 			
 	
