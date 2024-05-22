@@ -199,6 +199,7 @@
 			
 		driver.findElement(By.xpath(properties.getProperty("eclose_partnerpreview"))).click();			//close the selected partner preview list
 		Thread.sleep(5000);
+		
 			
 		driver.findElement(By.xpath(properties.getProperty("eselect_partnerlist"))).click();			//select the partner list
 		Thread.sleep(5000);
