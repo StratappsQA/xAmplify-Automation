@@ -4,7 +4,11 @@
   <test thread-count="5" name="Test">
     <classes>
     <class name="com.xamplify.automation.Login"/>
+    <class name="com.xamplify.automation.LaunchEmailCampaign"/>
+   <!-- <class name="com.xamplify.automation.ScheduleEmailCampaign"/>-->
       <!--  <class name="com.xamplify.automation.partners_onboard_comma"/> -->
+      
+       <class name="com.xamplify.automation.ManageEmailCampaign"/>
    
    
     </classes>
