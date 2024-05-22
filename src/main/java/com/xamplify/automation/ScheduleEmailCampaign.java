@@ -125,7 +125,6 @@ final Logger logger = LogManager.getLogger(ScheduleEmailCampaign.class);
 
 		
 	
-	
 	String expectedtitle = "Campaign scheduled successfully";
 
 	if (expectedtitle.equals(e_schedule)) {

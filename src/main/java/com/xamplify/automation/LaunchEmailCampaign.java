@@ -38,7 +38,7 @@ public class LaunchEmailCampaign {
 		Thread.sleep(5000);
 
 		/*
-		 * AutoResponseEmailcampaign ar_e = new AutoResponseEmailcampaign();
+		 * AutoResponseEmailcampaign ar_e = new AutoResponseEmailcampaign(); Autores
 		 * ar_e.autoResponsesEmail();
 		 */
 		Thread.sleep(3000);

@@ -190,14 +190,14 @@
 					.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(properties.getProperty("esearch_select_partnerlist_click"))));
 		w6.sendKeys("Active Master Partner List");//Search for partner list
 		w6.sendKeys(Keys.ENTER);  //Click on search
-		Thread.sleep(5000); //time
+		Thread.sleep(5000); 
 	
 			
 	
 		driver.findElement(By.xpath(properties.getProperty("epartnerlist_preview"))).click();			//preview of selected partner list
 		Thread.sleep(5000);
 			
-		driver.findElement(By.xpath(properties.getProperty("eclose_partnerpreview"))).click();			//close the selected partner preview list
+		driver.findElement(By.xpath(properties.getProperty("eclose_partnerpreview"))).click();		//close the selected partner preview list
 		Thread.sleep(5000);
 		
 			

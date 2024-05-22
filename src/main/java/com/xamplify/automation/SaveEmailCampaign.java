@@ -33,7 +33,7 @@ public class SaveEmailCampaign {
 
 		Thread.sleep(5000);
 
-		// AutoResponseEmailCampaign ar_e1=new AutoResponseEmailCampaign();
+		// AutoResponseEmailCampaign ar_e1=new AutoResponseEmailCampaign(); //
 		// ar_e1.autoResponsesEmail();
 
 		// Thread.sleep(3000);
