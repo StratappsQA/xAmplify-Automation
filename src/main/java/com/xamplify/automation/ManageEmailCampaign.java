@@ -43,13 +43,26 @@ public class ManageEmailCampaign {
 		m_emailcamp_action.click();
 		m_emailcamp_action.perform();
 
-		Thread.sleep(4000);
+		Thread.sleep(10000);
 
 		logger.info("Clicked on manage Campaigns");
-		driver.findElement(By.xpath(properties.getProperty("manage_email_tab"))).click(); // Click on Email tab
-		Thread.sleep(3000);
+		
+		WebDriverWait wait_etab = new WebDriverWait(driver, 80);
+		WebElement email_tab = wait.until(ExpectedConditions
+				.visibilityOfElementLocated(By.xpath(properties.getProperty("manage_email_tab"))));
+	
+		//WebElement email_tab = driver.findElement(By.xpath(properties.getProperty("manage_email_tab")));
+		Actions actions = new Actions(driver);
+		actions.moveToElement(email_tab).click().build().perform();
+		Thread.sleep(6000);
 		logger.info("Clicked on Email tab");
-		driver.findElement(By.xpath(properties.getProperty("manage_email_gearicon"))).click(); // Click on settings
+		
+		WebElement email_gearicon = driver.findElement(By.xpath(properties.getProperty("manage_email_gearicon")));
+		email_gearicon.click();
+//		Actions actions1 = new Actions(driver);
+//		actions1.moveToElement(email_gearicon).click().build().perform();
+		
+		//driver.findElement(By.xpath(properties.getProperty("manage_email_gearicon"))).click(); // Click on settings
 																								// icon.
 		Thread.sleep(3000);
 		logger.info("Click on Edit");
@@ -70,6 +83,21 @@ public class ManageEmailCampaign {
 
 		Select m_email_folder_dropdown = new Select(email_camp_folder_dropdown);
 		m_email_folder_dropdown.selectByValue("1106");
+		Thread.sleep(3000);
+		
+		
+		WebElement me_desc = driver.findElement(By.xpath(properties.getProperty("manage_description_box")));
+		me_desc.sendKeys("Hello Email Campaign");
+		Thread.sleep(3000);
+		
+		WebDriverWait wait3e = new WebDriverWait(driver, 50);
+		WebElement w3e = wait3e
+				.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(properties.getProperty("menotify"))));		//notify me email is opened
+		
+		w3e.click();
+		Thread.sleep(3000);
+		
+		driver.findElement(By.xpath(properties.getProperty("mlnotify"))).click(); //notify me when link is clicked
 		Thread.sleep(3000);
 
 		driver.findElement(By.xpath(properties.getProperty("manage_email_camp_update"))).click(); // click on Update

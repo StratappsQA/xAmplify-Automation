@@ -40,7 +40,7 @@ public class LaunchVideoCampaign {
 		Thread.sleep(6000);
 
 		logger.info("launch button Clicked");
-		String v_launch = driver.findElement(By.xpath(properties.getProperty("p_response_msg"))).getText(); // response
+		String v_launch = driver.findElement(By.xpath(properties.getProperty("v_response_msg"))).getText(); // response
 																											// message
 
 		String expectedtitle = "Campaign launched successfully";

@@ -40,16 +40,21 @@ final Logger logger = LogManager.getLogger(SaveVideoCampaign.class);
 			driver.findElement(By.xpath(properties.getProperty("v_testmail"))).click();//click on send test mail
 			Thread.sleep(5000);
 			
-			driver.findElement(By.xpath(properties.getProperty("v_mailid"))).sendKeys("gayatrialla11@gmail.com");//send data in the test mail field
-			driver.findElement(By.xpath(properties.getProperty("vsubmit"))).click();//click submit
+			driver.findElement(By.xpath(properties.getProperty("v_mailid"))).sendKeys("chmounika2630@gmail.com");
+			//send data in the test mail field
+			Thread.sleep(2000);
+			driver.findElement(By.xpath(properties.getProperty("v_subject_field"))).sendKeys("Please Have a Look");
+			Thread.sleep(2000);
+			driver.findElement(By.xpath(properties.getProperty("v_sendtestemail_button"))).click();//click submit
 			Thread.sleep(5000);
 			driver.findElement(By.xpath(properties.getProperty("vok"))).click();//click ok
 			Thread.sleep(5000);
 logger.info("Sended Test mail");			
 			
-			driver.findElement(By.xpath(properties.getProperty("vsave1"))).click();//click save
-			Thread.sleep(5000);
-			
+/*
+ * driver.findElement(By.xpath(properties.getProperty("vsave1"))).click();//
+ * click save Thread.sleep(5000);
+ */
 			driver.findElement(By.xpath(properties.getProperty("vsave_spamcheck"))).click();//click spam check
 			Thread.sleep(5000);
 		
@@ -62,9 +67,9 @@ logger.info("Sended Test mail");
 			
 logger.info("Spam Check");	
 			
-			driver.findElement(By.xpath(properties.getProperty("vsaved"))).click();//click on save 
+			driver.findElement(By.xpath(properties.getProperty("vsave1"))).click();//click on save 
 			Thread.sleep(5000);
-			String v_save = driver.findElement(By.xpath(properties.getProperty("e_response_msg"))).getText(); // response
+			String v_save = driver.findElement(By.xpath(properties.getProperty("v_save_response_msg"))).getText(); // response
 			// message
 
 			Thread.sleep(5000);

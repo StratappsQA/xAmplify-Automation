@@ -46,8 +46,8 @@ final Logger logger = LogManager.getLogger(ScheduleVideoCampaign.class);
 		dateTable.click();
 		Thread.sleep(7000);
 
-		WebElement we1 = driver.findElement(By.xpath(properties.getProperty("v_schdule_selectdate")));// click on select
-																										// date
+		WebElement we1 = driver.findElement(By.xpath(properties.getProperty("v_schdule_selectdate")));// click on select date
+																									
 		we1.click();
 		Thread.sleep(6000);
 
