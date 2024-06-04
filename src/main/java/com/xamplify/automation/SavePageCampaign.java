@@ -28,8 +28,10 @@ final Logger logger = LogManager.getLogger(SavePageCampaign.class);
 		driver.findElement(By.xpath(properties.getProperty("p_save"))).click();// click on save
 		Thread.sleep(4000);
 
-		driver.findElement(By.xpath(properties.getProperty("p_saved"))).click(); // click on save last button
-		Thread.sleep(6000);
+		/*
+		 * driver.findElement(By.xpath(properties.getProperty("p_saved"))).click(); //
+		 * click on save last button Thread.sleep(6000);
+		 */
 		String p_save = driver.findElement(By.xpath(properties.getProperty("p_response_msg"))).getText(); // response
 																											// message
 

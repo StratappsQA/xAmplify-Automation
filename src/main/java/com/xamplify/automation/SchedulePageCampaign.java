@@ -40,12 +40,14 @@ final Logger logger = LogManager.getLogger(SchedulePageCampaign.class);
 		System.out.println(1);
 		driver.findElement(By.xpath(properties.getProperty("p_schedule"))).click();// click on schedule
 		Thread.sleep(8000);
-		
-		driver.findElement(By.xpath(properties.getProperty("psch_click"))).click();// click on schedule button
-		Thread.sleep(2000);
+		 	
 		  driver.findElement(By.xpath(properties.getProperty("psch_date_click1"))).
 		  click(); Thread.sleep(5000);
 		 
+		  WebElement dateTable1 = driver.findElement(By.xpath(properties.getProperty("p_schdule_date")));// click on
+			// calendar
+		  dateTable1.click();
+Thread.sleep(7000);
 		logger.info("Click on the date");
 		
 		Calendar calendar = Calendar.getInstance();

@@ -35,10 +35,10 @@ final Logger logger = LogManager.getLogger(PageCampaign.class);
 	public void pcampaign() throws InterruptedException, SQLException {
 		
 
-		WebDriverWait wait = new WebDriverWait(driver, 60);// Wait till the element is not visible
+		WebDriverWait waitp = new WebDriverWait(driver, 60);// Wait till the element is not visible
 		
 		logger.info("Mouse over the Page campaign");
-		WebElement pcampele = wait.until(
+		WebElement pcampele = waitp.until(
 				ExpectedConditions.visibilityOfElementLocated(By.xpath(properties.getProperty("page_campaignhover"))));
 		pcampele.click(); // hover on campaign
 
@@ -74,7 +74,7 @@ logger.info("click on the page campaign");
 		}
 		
 		
-		 	driver.findElement(By.xpath(properties.getProperty("p_through_campaign"))).click();//through campaign
+		 	driver.findElement(By.xpath(properties.getProperty("p_public_campaign"))).click();//through campaign
 		 	Thread.sleep(2000);
 		    
 
@@ -83,26 +83,15 @@ logger.info("click on the page campaign");
 
 		    driver.findElement(By.xpath(properties.getProperty("p_preheader"))).sendKeys("page-preheader");//send data to pre header
 		 	Thread.sleep(2000);
-
-		    driver.findElement(By.xpath(properties.getProperty("p_Notify_Me_emailon"))).click();//notify me when email on
-		 	Thread.sleep(2000);
 		 	
-		    
-		    driver.findElement(By.xpath(properties.getProperty("p_Notify_Me_link_opened"))).click();//notify me when link opened
+		 	driver.findElement(By.xpath(properties.getProperty("p_co_logo_ON"))).
+			click();
 		 	Thread.sleep(2000);
+		
 logger.info("Given all the data in Campaign details page");
 
 		 	JavascriptExecutor js = (JavascriptExecutor) driver;
 			js.executeScript("window.scrollTo(document.body.scrollHeight,0)");//to scroll down the page
-		 	
-		 	driver.findElement(By.xpath(properties.getProperty("p_next1"))).click();//next page 
-		 	
-	 	
-		 	Thread.sleep(5000);
-		 	
-			
-
-		    driver.findElement(By.xpath(properties.getProperty("p_gototop"))).click();
 		 	
 		 	
 		 	WebDriverWait wait_dropdown = new WebDriverWait(driver, 50);
@@ -111,42 +100,74 @@ logger.info("Given all the data in Campaign details page");
 			Thread.sleep(2000);
 			
 		 	Select pdropdown = new Select(w_dropdown); 
-		 	pdropdown.selectByVisibleText("Count(DESC)");  //select count desc
+		 	pdropdown.selectByVisibleText("Created On(ASC)");  //select credated On DEsc
 		 	
 		 	Thread.sleep(4000);
 		 	
-		    driver.findElement(By.xpath(properties.getProperty("p_select_partnerlist"))).click();//select partner list
-		 	Thread.sleep(4000);
-
-		    driver.findElement(By.xpath(properties.getProperty("p_select_partnerlist_preview"))).click();//preview of the partner list
-		 	Thread.sleep(5000);
-
-		    driver.findElement(By.xpath(properties.getProperty("p_select_partnerlist_preview_close"))).click();//close the preview of partner list
-		 	Thread.sleep(4000);
-
-		    driver.findElement(By.xpath(properties.getProperty("p_next2"))).click();//next page
-		 	Thread.sleep(5000);
-logger.info("Selected the Partner List");
+		    
 		 	
-		 	 WebElement p_search=driver.findElement(By.xpath(properties.getProperty("p_search_template")));//search bar
-		 	 p_search.sendKeys("Manual");
+		 	 WebElement p_search=driver.findElement(By.xpath(properties.getProperty("p_search_page")));//search bar
+		 	 p_search.sendKeys("cobranded_Test");
 			 p_search.sendKeys(Keys.ENTER);
 			 	Thread.sleep(4000);
 
 			
-		    driver.findElement(By.xpath(properties.getProperty("p_select_template"))).click();//to select template
+		    driver.findElement(By.xpath(properties.getProperty("p_select_page"))).click();//to select page
 		 	Thread.sleep(4000);
 
-		    driver.findElement(By.xpath(properties.getProperty("p_select_template_preview"))).click();//preview of the template
+		    driver.findElement(By.xpath(properties.getProperty("p_select_page_preview"))).click();//preview of the template
 		 	Thread.sleep(4000);
+		 	
+		 	String originalWindow = driver.getWindowHandle();// store the current window handle
+			waitp.until(ExpectedConditions.numberOfWindowsToBe(2)); // wait for new tab to open
+			Thread.sleep(5000);
 
-		    driver.findElement(By.xpath(properties.getProperty("p_select_template_preview_close"))).click();//close the preview of the template
+			ArrayList<String> tabs = new ArrayList<>(driver.getWindowHandles()); // get all windows handle
+
+			driver.switchTo().window(tabs.get(1)); // switch to the new tab
+
+			Thread.sleep(3000);
+
+			/*
+			 * WebElement companylogoNewTab =
+			 * wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(properties.
+			 * getProperty("")))); companylogoNewTab.click(); //perform actions in new tab
+			 */
+			driver.close(); // switch back to original tab and close the new tab
+			driver.switchTo().window(tabs.get(0));
+			Thread.sleep(3000);
+
+
+		    driver.findElement(By.xpath(properties.getProperty("p_next"))).click();   //click on the next button
 		 	Thread.sleep(4000);
+logger.info("Selected the Page");
+
+			WebDriverWait wait_pdropdown = new WebDriverWait(driver, 50);
+			WebElement w_pdropdown = wait_pdropdown
+					.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(properties.getProperty("p_partner_dropdown"))));  //select dropdown
+			Thread.sleep(2000);
+
+			Select partdropdown = new Select(w_pdropdown); 
+			partdropdown.selectByVisibleText("Count(ASC)");  //select count ASC
+	
+			Thread.sleep(4000);
+			
+			WebElement search_partlist = driver.findElement(By.xpath(properties.getProperty("p_search_partnerlist")));
+			search_partlist.sendKeys("Active Master partner list");
+			search_partlist.sendKeys(Keys.ENTER);//select partner list
+			Thread.sleep(4000);
 
 
-		    driver.findElement(By.xpath(properties.getProperty("p_next3"))).click();   //click on the next button
-		 	Thread.sleep(4000);
-logger.info("Selected the Template");
+			driver.findElement(By.xpath(properties.getProperty("p_select_partnerlist"))).click();//select partner list
+			Thread.sleep(4000);
+
+			driver.findElement(By.xpath(properties.getProperty("p_select_partnerlist_preview"))).click();//preview of the partner list
+			Thread.sleep(5000);
+
+			driver.findElement(By.xpath(properties.getProperty("p_select_partnerlist_preview_close"))).click();//close the preview of partner list
+			Thread.sleep(4000);
+
+logger.info("Selected the Partner List");
 
 		   
 }
