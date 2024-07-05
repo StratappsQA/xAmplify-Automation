@@ -45,9 +45,11 @@ public class SaveSurveyCampaign {
 
 		driver.findElement(By.xpath(properties.getProperty("s_sendTextMail"))).click();
 		Thread.sleep(3000);
-		driver.findElement(By.xpath(properties.getProperty("s_sendTextBox"))).sendKeys("chmounika@stratapps.com");
+		driver.findElement(By.xpath(properties.getProperty("s_sendemailTextBox"))).sendKeys("chmounika@stratapps.com");
 		Thread.sleep(3000);
-		driver.findElement(By.xpath(properties.getProperty("s_sendTextSubmit"))).click();
+		driver.findElement(By.xpath(properties.getProperty("s_sendemail_Subject"))).sendKeys("Test email from mounika");
+		Thread.sleep(3000);
+		driver.findElement(By.xpath(properties.getProperty("s_sendTextbutton"))).click();
 		Thread.sleep(4000);
 		driver.findElement(By.xpath(properties.getProperty("s_sendTextMail_OK"))).click();
 		Thread.sleep(4000);

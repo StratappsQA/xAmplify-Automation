@@ -57,7 +57,6 @@ final Logger logger = LogManager.getLogger(ScheduleSurveyCampaign.class);
 		System.out.println(hours);
 		System.out.println(minutes);
 		
-
     	
 		if(hours < 12  )
 		{

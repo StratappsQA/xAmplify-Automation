@@ -46,7 +46,7 @@ public class LaunchSurveyCampaign {
 		String s_launch = driver.findElement(By.xpath(properties.getProperty("s_response_msg"))).getText(); // response
 																											// message
 		logger.info("Survey Campaign Launched Successfully");
-		String Result = "Campaign launched successfully";
+		String Result = "The campaign was successfully deployed. Please wait until the campaign is processed and launched. We will send you email updates in timely manner.";
 
 		if (Result.equals(s_launch)) {
 			// Thread.sleep(2000);
