@@ -30,7 +30,7 @@ public class shareleads {
 		// Creating object of an Actions class
 		Actions action = new Actions(driver);
 
-		// Performing the mouse hover action on the target element.
+		//  mouse hover action on the target element.
 		action.moveToElement(ele).perform();
 		driver.findElement(By.xpath(properties.getProperty("add_shareleads"))).click();
 	}
