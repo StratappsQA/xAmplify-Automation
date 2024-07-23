@@ -164,7 +164,7 @@ public class shareleads {
 		driver.findElement(By.xpath(properties.getProperty("sh_verify"))).click();
 		driver.findElement(By.xpath(properties.getProperty("sh_save"))).click();
 		driver.findElement(By.xpath(properties.getProperty("sh_comma_accept"))).click();
-
+       Thread.sleep(1000);
 	}
 
 	@Test(priority = 8, enabled = false)
