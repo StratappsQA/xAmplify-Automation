@@ -35,7 +35,7 @@ public class shareleads {
 		driver.findElement(By.xpath(properties.getProperty("add_shareleads"))).click();
 	}
 
-	@Test(priority = 2, enabled = true)
+	@Test(priority = 2, enabled = false)
 	public void add_oneatatime() throws InterruptedException {
 		Thread.sleep(2000);
 
@@ -85,7 +85,7 @@ public class shareleads {
 
 	}
 
-	@Test(priority = 3, enabled = true)
+	@Test(priority = 3, enabled = false)
 	public void Copy_list_from_clipboard() throws InterruptedException, SQLException, IOException
 
 	{
@@ -126,12 +126,7 @@ public class shareleads {
 
 	}
 
-	@Test(priority = 6, enabled = false)
-	public void addoneatatime2() throws InterruptedException {
-		hoveron_shareleads();
-	}
-
-	@Test(priority = 7, enabled = false)
+	@Test(priority = 7, enabled = true)
 	public void Copy_list_from_clipboard_commaseperated() throws InterruptedException, SQLException, IOException
 
 	{
@@ -141,39 +136,66 @@ public class shareleads {
 		// wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("copyFromClipBoard")));
 		// logger.debug("Starting creating partner using copy from clipboard - comma
 		// separated");
-
+		hoveron_shareleads();
 		driver.findElement(By.xpath("//*[@id='contactListName']")).click();
 		Thread.sleep(2000);
-		driver.findElement(By.xpath("//*[@id='contactListName']")).sendKeys("harish" + System.currentTimeMillis());
+		driver.findElement(By.xpath("//*[@id='contactListName']")).sendKeys("Autocoma" + System.currentTimeMillis());
 
 		driver.findElement(By.xpath("//*[@id='copyFromClipBoard']/span")).click();// click copy from clipboard
 		Thread.sleep(2000);
-		driver.findElement(By.xpath(("//*[@id='multiselectelement']/div/div/span[3]/input"))).click();
+		
+		
+		
+		driver.findElement(By.xpath(properties.getProperty("sh_tab_legalbasis"))).click();
+
+		driver.findElement(By.xpath(properties.getProperty("sh_tab_legalbasis")))
+				.sendKeys("Legitimate interest - existing customer");
+
+		driver.findElement(By.xpath(properties.getProperty("sh_tab_legalbasis"))).sendKeys(Keys.ENTER);
+
+		
+		
+		Select delimiter1 = new Select(driver.findElement(By.xpath(properties.getProperty("sh_dropdown"))));
+		delimiter1.selectByValue("CommaSeperated");
 		Thread.sleep(1000);
-		driver.findElement(By.xpath(("//*[@id='multiselectelement']/div/div/span[3]/input")))
-				.sendKeys("Legitimate interest - prospect/lead");// enter data for legal basis
-		WebElement textbox1 = driver.findElement(By.xpath("//*[@id='multiselectelement']/div/div/span[3]/input"));
-		textbox1.sendKeys(Keys.ENTER);
+		
+		
+		
+		/*
+		 * driver.findElement(By.xpath((
+		 * "//*[@id='multiselectelement']/div/div/span[3]/input"))).click();
+		 * Thread.sleep(1000); driver.findElement(By.xpath((
+		 * "//*[@id='multiselectelement']/div/div/span[3]/input")))
+		 * .sendKeys("Legitimate interest - prospect/lead");// enter data for legal
+		 * basis WebElement textbox1 = driver.findElement(By.xpath(
+		 * "//*[@id='multiselectelement']/div/div/span[3]/input"));
+		 * textbox1.sendKeys(Keys.ENTER);
+		 */
 
-		Select delimiter2 = new Select(driver.findElement(By.xpath(
-				"/html/body/app-root/app-home/div/div/app-add-contacts/div[1]/div[5]/div/form/div/div/div[5]/div/div[1]/div[1]/select")));
-		delimiter2.selectByValue("CommaSeperated");
+		
+		driver.findElement(By.xpath(properties.getProperty("sh_tab_textarea"))).click();
+		Thread.sleep(1000);
+		driver.findElement(By.xpath(properties.getProperty("sh_tab_textarea"))).sendKeys(("Gayatri,A,Stratapps,QAAutomationEngineer,"));
+		driver.findElement(By.xpath(properties.getProperty("sh_tab_textarea"))).sendKeys(("Gayatri") + "_" + System.currentTimeMillis());
+		driver.findElement(By.xpath(properties.getProperty("sh_tab_textarea"))).sendKeys("@getnada.com");
+		
+		driver.findElement(By.xpath(properties.getProperty("sh_tab_verify"))).click();
+		driver.findElement(By.xpath(properties.getProperty("sh_tabsave"))).click();
+		driver.findElement(By.xpath(properties.getProperty("sh_tab_accept"))).click();
 
-		driver.findElement(By.xpath(("//*[@id='copyFromclipTextArea']")))
-				.sendKeys(("harish,M,Stratapps,QAAutomationEngineer,"));
-		driver.findElement(By.xpath("//*[@id='copyFromclipTextArea']"))
-				.sendKeys(("harish") + "_" + System.currentTimeMillis());
-		driver.findElement(By.xpath("//*[@id='copyFromclipTextArea']")).sendKeys(("@getnada.com"));
+		
+		//driver.findElement(By.xpath("//*[@id='copyFromclipTextArea']")).sendKeys(("));
 		// driver.findElement(By.xpath(("//*[@id='copyFromclipTextArea']")))
 		// .sendKeys((",vertical,Telangana,partner,Accouts,Address,Hyderabad,telangana,500032,India,9086353738"));
-		driver.findElement(By.xpath(
-				"/html/body/app-root/app-home/div/div/app-add-contacts/div[1]/div[5]/div/form/div/div/div[5]/div/div[1]/div[2]/button"))
-				.click();
-		Thread.sleep(1000);
-		driver.findElement(By.xpath("//*[@id='sample_editable_1_new']")).click();
-		Thread.sleep(1000);
-		driver.findElement(By.xpath("//*[@id='tcModal']/div/div/div[3]/button[2]")).click();
-
+		/*
+		 * driver.findElement(By.xpath(
+		 * "/html/body/app-root/app-home/div/div/app-add-contacts/div[1]/div[5]/div/form/div/div/div[5]/div/div[1]/div[2]/button"
+		 * )) .click(); Thread.sleep(1000);
+		 * driver.findElement(By.xpath("//*[@id='sample_editable_1_new']")).click();
+		 * Thread.sleep(1000);
+		 * driver.findElement(By.xpath("//*[@id='tcModal']/div/div/div[3]/button[2]")).
+		 * click();
+		 */
 	}
 
 	@Test(priority = 8, enabled = false)
