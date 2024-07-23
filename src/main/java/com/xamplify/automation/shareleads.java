@@ -24,7 +24,7 @@ public class shareleads {
 
 	@Test(priority = 1, enabled = true)
 	public void hoveron_shareleads() throws InterruptedException {
-		Thread.sleep(2000);
+		Thread.sleep(5000);
 		WebElement ele = driver.findElement(By.xpath(properties.getProperty("hovershareleads")));
 
 		// Creating object of an Actions class
@@ -35,15 +35,16 @@ public class shareleads {
 		driver.findElement(By.xpath(properties.getProperty("add_shareleads"))).click();
 	}
 
-	@Test(priority = 2, enabled = true)
-	public void add_oneatatime() throws InterruptedException {
+	@Test(priority = 2, enabled = false)
+	public void shareleads_oneatatime() throws InterruptedException {
 		Thread.sleep(2000);
+		logger.debug("Starting creating partner using One at a time");
 
 		driver.findElement(By.xpath(properties.getProperty("sharelistname"))).click();
 		Thread.sleep(2000);
 		driver.findElement(By.xpath(properties.getProperty("sharelistname")))
 				.sendKeys("AutoSlist" + System.currentTimeMillis());
-		logger.info("starts onboarding share leads");
+		logger.info("starts onboarding share leads");    //enter list name
 		driver.findElement(By.xpath(properties.getProperty("sh_oneattime"))).click();
 		Thread.sleep(2000);
 		driver.findElement(By.xpath(properties.getProperty("sh_emailid"))).click();
@@ -76,42 +77,43 @@ public class shareleads {
 
 		driver.findElement(By.cssSelector(properties.getProperty("sh_zipcode"))).sendKeys("567890");
 
-		driver.findElement(By.xpath(properties.getProperty("sh_add"))).click();
-		driver.findElement(By.xpath(properties.getProperty("sh_save"))).click();
+		driver.findElement(By.xpath(properties.getProperty("sh_add"))).click();  //click on the add button
+		driver.findElement(By.xpath(properties.getProperty("sh_save"))).click(); //click on the save button
 
-		driver.findElement(By.xpath(properties.getProperty("sh_accept"))).click();
+		driver.findElement(By.xpath(properties.getProperty("sh_accept"))).click(); //click on the accept button
 
 		Thread.sleep(1000);
 
 	}
 
-	@Test(priority = 3, enabled = true)
-	public void Copy_list_from_clipboard() throws InterruptedException, SQLException, IOException
+	@Test(priority = 3, enabled = false)
+	public void Shareleads_Copy_list_from_clipboard_tab() throws InterruptedException, SQLException, IOException
 
 	{
 		Thread.sleep(2000);
 
 		hoveron_shareleads();
 		Thread.sleep(2000);
+		logger.debug("Starting creating partner using copy from clipboard - tab separated");
 
 		driver.findElement(By.xpath(properties.getProperty("sh_copyclipboard_tab"))).click();// click copy from
 																								// clipboard
 		Thread.sleep(1000);
 		driver.findElement(By.xpath(properties.getProperty("sharelistname"))).click();
 		driver.findElement(By.xpath(properties.getProperty("sharelistname")))
-				.sendKeys("Auto_tab_Slist" + System.currentTimeMillis());
+				.sendKeys("Auto_tab_Slist" + System.currentTimeMillis()); //enter list name
 		Thread.sleep(1000);
 		driver.findElement(By.xpath(properties.getProperty("sh_tab_legalbasis"))).click();
 
 		driver.findElement(By.xpath(properties.getProperty("sh_tab_legalbasis")))
-				.sendKeys("Legitimate interest - prospect/lead");
+				.sendKeys("Legitimate interest - prospect/lead");  //enter legal basis 
 
-		driver.findElement(By.xpath(properties.getProperty("sh_tab_legalbasis"))).sendKeys(Keys.ENTER);
+		driver.findElement(By.xpath(properties.getProperty("sh_tab_legalbasis"))).sendKeys(Keys.ENTER); //enter from keyboard
 
 		Select delimiter1 = new Select(driver.findElement(By.xpath(properties.getProperty("sh_dropdown"))));
-		delimiter1.selectByValue("TabSeperated");
+		delimiter1.selectByValue("TabSeperated");  //select tab separated in the drop down
 		Thread.sleep(1000);
-		driver.findElement(By.xpath(properties.getProperty("sh_tab_textarea"))).click();
+		driver.findElement(By.xpath(properties.getProperty("sh_tab_textarea"))).click();  //click on the textarea
 		Thread.sleep(1000);
 		((JavascriptExecutor) driver).executeScript(
 				"document.getElementById('copyFromclipTextArea').value='gayatri	A	Stratapps	QAAutomationEngineer	';");
@@ -120,14 +122,14 @@ public class shareleads {
 				.sendKeys(System.currentTimeMillis() + "gayatri@stratapps.com	");
 		Thread.sleep(2000);
 
-		driver.findElement(By.xpath(properties.getProperty("sh_verify"))).click();
-		driver.findElement(By.xpath(properties.getProperty("sh_save"))).click();
-		driver.findElement(By.xpath(properties.getProperty("sh_tab_accept"))).click();
-
+		driver.findElement(By.xpath(properties.getProperty("sh_verify"))).click();  //click on the verify button
+		driver.findElement(By.xpath(properties.getProperty("sh_save"))).click();  //click on the save button
+		driver.findElement(By.xpath(properties.getProperty("sh_tab_accept"))).click(); //click on the accept button
+		Thread.sleep(2000);
 	}
 
-	@Test(priority = 4, enabled = true)
-	public void Copy_list_from_clipboard_commaseperated() throws InterruptedException, SQLException, IOException
+	@Test(priority = 4, enabled = false)
+	public void shareleads_Copy_list_from_clipboard_comma() throws InterruptedException, SQLException, IOException
 
 	{
 		Thread.sleep(1000);
@@ -137,7 +139,7 @@ public class shareleads {
 		driver.findElement(By.xpath(properties.getProperty("sharelistname"))).click();
 		Thread.sleep(2000);
 		driver.findElement(By.xpath(properties.getProperty("sharelistname")))
-				.sendKeys("Autocoma" + System.currentTimeMillis());
+				.sendKeys("Autocoma" + System.currentTimeMillis());  //enter list name
 
 		driver.findElement(By.xpath(properties.getProperty("sh_copyclipboard_comma"))).click();
 		Thread.sleep(2000);
@@ -145,27 +147,58 @@ public class shareleads {
 		driver.findElement(By.xpath(properties.getProperty("sh_comma_legalbasis"))).click();
 
 		driver.findElement(By.xpath(properties.getProperty("sh_comma_legalbasis")))
-				.sendKeys("Legitimate interest - existing customer");
+				.sendKeys("Legitimate interest - existing customer"); //enter legal basis 
 
 		driver.findElement(By.xpath(properties.getProperty("sh_comma_legalbasis"))).sendKeys(Keys.ENTER);
 
 		Select delimiter2 = new Select(driver.findElement(By.xpath(properties.getProperty("sh_dropdown"))));
-		delimiter2.selectByValue("CommaSeperated");
+		delimiter2.selectByValue("CommaSeperated");  //select value form the drop down
 		Thread.sleep(1000);
 
 		driver.findElement(By.xpath(properties.getProperty("sh_comma_textarea"))).click();
 		Thread.sleep(1000);
 		driver.findElement(By.xpath(properties.getProperty("sh_comma_textarea")))
-				.sendKeys(("Gayatri,A,Stratapps,QAAutomationEngineer,"));
+				.sendKeys(("Gayatri,A,Stratapps,QAAutomationEngineer,"));  // enter the data in text area
 		driver.findElement(By.xpath(properties.getProperty("sh_comma_textarea")))
 				.sendKeys(("Gayatri") + "_" + System.currentTimeMillis());
 		driver.findElement(By.xpath(properties.getProperty("sh_comma_textarea"))).sendKeys("@getnada.com");
 
-		driver.findElement(By.xpath(properties.getProperty("sh_verify"))).click();
-		driver.findElement(By.xpath(properties.getProperty("sh_save"))).click();
-		driver.findElement(By.xpath(properties.getProperty("sh_comma_accept"))).click();
-       Thread.sleep(1000);
+		driver.findElement(By.xpath(properties.getProperty("sh_verify"))).click(); //click on the verify button
+		driver.findElement(By.xpath(properties.getProperty("sh_save"))).click();  //click on the save button
+		driver.findElement(By.xpath(properties.getProperty("sh_comma_accept"))).click(); //click on the accept button
+       Thread.sleep(2000);
 	}
+	
+	
+	@Test(priority = 5, enabled = true)
+	public void shareleads_uploadcsv() throws InterruptedException, SQLException, IOException
+
+	{
+		Thread.sleep(1000);
+
+		logger.debug("Starting creating partner using upload a csv");
+		hoveron_shareleads();
+	
+		driver.findElement(By.id("uploadCSV")).click();   //click on the upload csv
+		Thread.sleep(8000);
+	
+	
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 
 	@Test(priority = 8, enabled = false)
 	public void manage_shareleads() throws InterruptedException {
