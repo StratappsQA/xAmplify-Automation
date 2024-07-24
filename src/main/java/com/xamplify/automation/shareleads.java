@@ -3,7 +3,6 @@ package com.xamplify.automation;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.Properties;
-
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
@@ -170,6 +169,7 @@ public class shareleads {
 	}
 	
 	
+	@SuppressWarnings("deprecation")
 	@Test(priority = 5, enabled = true)
 	public void shareleads_uploadcsv() throws InterruptedException, SQLException, IOException
 
@@ -180,9 +180,23 @@ public class shareleads {
 		hoveron_shareleads();
 	
 		driver.findElement(By.id("uploadCSV")).click();   //click on the upload csv
-		Thread.sleep(8000);
+		Thread.sleep(5000);
 	
 	
+	Runtime.getRuntime().exec("D:\\git\\xAmplify-Automation\\Uploadshareleads.exe");  //by using auto it create and execute, copy the path here
+		
+	Thread.sleep(3000);
+	
+	driver.findElement(By.xpath(properties.getProperty("sh_csv_legalbasis"))).click();//click on the legal basis
+
+	driver.findElement(By.xpath(properties.getProperty("sh_csv_legalbasis")))
+			.sendKeys("Legitimate interest - existing customer"); //enter legal basis 
+
+	driver.findElement(By.xpath(properties.getProperty("sh_csv_legalbasis"))).sendKeys(Keys.ENTER); //click on the enter
+	Thread.sleep(2000);
+	
+	
+
 	}
 	
 	
