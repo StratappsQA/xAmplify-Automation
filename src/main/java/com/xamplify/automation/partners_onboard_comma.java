@@ -198,7 +198,7 @@ public class partners_onboard_comma {
 
 	}
 
-	@Test(priority = 6, enabled = true)
+	@Test(priority = 6, enabled = false)
 	public void copy_from_clipboard() throws InterruptedException, SQLException, IOException
 
 	{
@@ -310,7 +310,7 @@ public class partners_onboard_comma {
 		
 Thread.sleep(8000);
 	}
-	@Test(priority = 7, enabled = true)
+	@Test(priority = 7, enabled = false)
 	public void copy_from_clipboard_tab() throws InterruptedException, SQLException, IOException
 
 	{

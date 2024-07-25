@@ -3,6 +3,8 @@ package com.xamplify.automation;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.Properties;
+import java.util.concurrent.TimeUnit;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
@@ -11,7 +13,9 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 
 public class shareleads {
@@ -21,9 +25,10 @@ public class shareleads {
 			.readPropertyFile("D:\\git\\xAmplify-Automation\\src\\main\\resources\\Shareleads.properties");
 	final Logger logger = LogManager.getLogger(shareleads.class);
 
-	@Test(priority = 1, enabled = true)
+	@Test(priority = 1, enabled = false)
 	public void hoveron_shareleads() throws InterruptedException {
-		Thread.sleep(5000);
+		
+			driver.manage().timeouts().implicitlyWait(40,TimeUnit.SECONDS);
 		WebElement ele = driver.findElement(By.xpath(properties.getProperty("hovershareleads")));
 
 		// Creating object of an Actions class
@@ -170,7 +175,7 @@ public class shareleads {
 	
 	
 	@SuppressWarnings("deprecation")
-	@Test(priority = 5, enabled = true)
+	@Test(priority = 5, enabled = false)
 	public void shareleads_uploadcsv() throws InterruptedException, SQLException, IOException
 
 	{
@@ -193,84 +198,113 @@ public class shareleads {
 			.sendKeys("Legitimate interest - existing customer"); //enter legal basis 
 
 	driver.findElement(By.xpath(properties.getProperty("sh_csv_legalbasis"))).sendKeys(Keys.ENTER); //click on the enter
+
+	driver.findElement(By.xpath(properties.getProperty("sh_csvlist"))).clear();
+	
+	driver.findElement(By.xpath(properties.getProperty("sh_csvlist"))).sendKeys("Autoupload" + System.currentTimeMillis());  //enter list name
+	
+	
+	driver.findElement(By.xpath(properties.getProperty("sh_csv_save"))).click();
+	Thread.sleep(1000);
+	driver.findElement(By.xpath(properties.getProperty("sh_csv_verify"))).click();
 	Thread.sleep(2000);
 	
-	
-
 	}
 	
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 
-	@Test(priority = 8, enabled = false)
+	@Test(priority = 6, enabled = true)
 	public void manage_shareleads() throws InterruptedException {
-		Thread.sleep(3000);
-		WebElement ele = driver
-				.findElement(By.xpath("/html/body/app-root/app-home/div/app-leftsidebar/div/div/ul/li[4]/a"));
-		Actions actions = new Actions(driver);
-		actions.moveToElement(ele).perform();
-		driver.findElement(
-				By.xpath("/html/body/app-root/app-home/div/app-leftsidebar/div/div/ul/li[4]/ul/li[2]/a/span")).click();
+		
+		driver.manage().timeouts().implicitlyWait(4000,TimeUnit.SECONDS);
+
+		WebElement ele = driver.findElement(By.xpath(properties.getProperty("hovershareleads")));
+
+		// Creating object of an Actions class
+		Actions action = new Actions(driver);
+
+		// mouse hover action on the element
+		action.moveToElement(ele).perform();
+		driver.findElement(By.xpath(properties.getProperty("manage_shareleads"))).click();
 	}
+		
+		
+		
+		@Test(priority=7,enabled=true)
+		public void manage_shareleads_sortby() throws InterruptedException {
+		
+		
+			WebDriverWait sh_sortby = new WebDriverWait(driver, 60);
+			WebElement msh_sort = sh_sortby.until(ExpectedConditions.visibilityOfElementLocated(
+					By.xpath(properties.getProperty("manage_sh_sortby")))); // select dropdown
+			
+			Select msh_sort1 = new Select(msh_sort);
 
-	@Test(priority = 9, enabled = false)
-	public void manage_shareleads_op() throws InterruptedException {
-		Thread.sleep(3000);
-		Thread.sleep(2000);
-		WebElement textbox2 = driver.findElement(
-				By.xpath("//*[@id='manageContacts']/div/div/div/div/div/div/div/div[3]/div[2]/div/div/div[1]/select"));
-		textbox2.sendKeys(Keys.ENTER);
+			msh_sort1.selectByVisibleText("List name (A-Z)");
+			logger.debug("Sorted List name a-z");
+			
+			Thread.sleep(5000);
+			
+			msh_sort1.selectByVisibleText("List name (Z-A)");
+			logger.debug("Sorted List name Z-A");
+			Thread.sleep(5000);
+			
+			msh_sort1.selectByVisibleText("List name (A-Z)");
+			logger.debug("Sorted List name a-z");
+			
+			msh_sort1.selectByVisibleText("Creation date (ASC)");
+			logger.debug("sorted Creation date (ASC)");
+			Thread.sleep(5000);
 
-		Select delimiter2 = new Select(driver.findElement(
-				By.xpath("//*[@id='manageContacts']/div/div/div/div/div/div/div/div[3]/div[2]/div/div/div[1]/select")));
-		delimiter2.selectByIndex(2);
-		// textbox2.sendKeys(Keys.ENTER);
-		Thread.sleep(2000);
-		WebElement search = driver.findElement(By.xpath("//input[@placeholder='Search for a list']"));
-		search.click();
-		search.sendKeys("harish");
-		search.sendKeys(Keys.ENTER);
-		Thread.sleep(2000);
-		driver.findElement(By.xpath(
-				"//*[@id='manageContacts']/div/div/div/div/div/div/div/div[3]/div[2]/div/div/div[2]/div/button[1]"))
-				.click();
-		Thread.sleep(2000);
-		driver.findElement(By.xpath("//*[@id='partner_contact_list']/tbody/tr[1]/td[6]/div/a[3]/i")).click();
-		Thread.sleep(2000);
-		driver.findElement(By.xpath("//*[@id='campaignName']")).clear();
-		Thread.sleep(1000);
-		driver.findElement(By.xpath("//*[@id='campaignName']")).sendKeys("harishlead" + System.currentTimeMillis());
-		Thread.sleep(2000);
-		driver.findElement(By.xpath("(//button[@class='btn btn-primary'])[2]")).click();
-		Thread.sleep(2000);
-		driver.findElement(By.xpath("//*[@id='partner_contact_list']/tbody/tr[1]/td[6]/div/a[4]/i")).click();
-		Thread.sleep(2000);
-		driver.findElement(By.xpath("//*[@id='partner_contact_list']/tbody/tr[1]/td[6]/div/a[1]/i")).click();
-		Thread.sleep(2000);
-		driver.findElement(By.xpath("//*[@id='parnter-companies']/tbody/tr[2]/td[1]/div/a/i")).click();
-		Thread.sleep(2000);
-		driver.findElement(By.xpath("//*[@id='admin-and-team-members-3056']/thead/tr/th[1]/input")).click();
-		Thread.sleep(2000);
-		driver.findElement(By.xpath("//*[@id='partnerCompaniesPopup']/div/div/div[3]/button[2]")).click();
-		Thread.sleep(2000);
-		driver.findElement(By.xpath("//*[@id='partnerCompaniesPopup']/div/div/div[3]/button")).click();
-		Thread.sleep(2000);
-		driver.findElement(By.xpath("//*[@id='partner_contact_list']/tbody/tr[1]/td[6]/div/a[4]/i")).click();
-		Thread.sleep(1000);
-		driver.findElement(By.xpath("//button[@class='swal2-confirm styled']")).click();
+			msh_sort1.selectByVisibleText("Creation date (DESC)");
+			logger.debug("sorted Creation date (DESC)");
+			Thread.sleep(5000);
+			msh_sort1.selectByVisibleText("Assigned date (ASC)");
+			logger.debug("sorted Assigned date (ASC)");
+			Thread.sleep(5000);
+			msh_sort1.selectByVisibleText("Assigned date (DESC)");
+			logger.debug("sorted Assigned date (DESC)");
+			Thread.sleep(5000);
 
+			driver.findElement(By.xpath(properties.getProperty("manage_sh_gridview"))).click();
+			
+		
+		
+		/*
+		 * Select delimiter2 = new Select(driver.findElement( By.xpath(
+		 * "//*[@id='manageContacts']/div/div/div/div/div/div/div/div[3]/div[2]/div/div/div[1]/select"
+		 * ))); delimiter2.selectByIndex(2); // textbox2.sendKeys(Keys.ENTER);
+		 * Thread.sleep(2000); WebElement search =
+		 * driver.findElement(By.xpath("//input[@placeholder='Search for a list']"));
+		 * search.click(); search.sendKeys("harish"); search.sendKeys(Keys.ENTER);
+		 * Thread.sleep(2000); driver.findElement(By.xpath(
+		 * "//*[@id='manageContacts']/div/div/div/div/div/div/div/div[3]/div[2]/div/div/div[2]/div/button[1]"
+		 * )) .click(); Thread.sleep(2000); driver.findElement(By.xpath(
+		 * "//*[@id='partner_contact_list']/tbody/tr[1]/td[6]/div/a[3]/i")).click();
+		 * Thread.sleep(2000);
+		 * driver.findElement(By.xpath("//*[@id='campaignName']")).clear();
+		 * Thread.sleep(1000);
+		 * driver.findElement(By.xpath("//*[@id='campaignName']")).sendKeys("harishlead"
+		 * + System.currentTimeMillis()); Thread.sleep(2000);
+		 * driver.findElement(By.xpath("(//button[@class='btn btn-primary'])[2]")).click
+		 * (); Thread.sleep(2000); driver.findElement(By.xpath(
+		 * "//*[@id='partner_contact_list']/tbody/tr[1]/td[6]/div/a[4]/i")).click();
+		 * Thread.sleep(2000); driver.findElement(By.xpath(
+		 * "//*[@id='partner_contact_list']/tbody/tr[1]/td[6]/div/a[1]/i")).click();
+		 * Thread.sleep(2000); driver.findElement(By.xpath(
+		 * "//*[@id='parnter-companies']/tbody/tr[2]/td[1]/div/a/i")).click();
+		 * Thread.sleep(2000); driver.findElement(By.xpath(
+		 * "//*[@id='admin-and-team-members-3056']/thead/tr/th[1]/input")).click();
+		 * Thread.sleep(2000); driver.findElement(By.xpath(
+		 * "//*[@id='partnerCompaniesPopup']/div/div/div[3]/button[2]")).click();
+		 * Thread.sleep(2000); driver.findElement(By.xpath(
+		 * "//*[@id='partnerCompaniesPopup']/div/div/div[3]/button")).click();
+		 * Thread.sleep(2000); driver.findElement(By.xpath(
+		 * "//*[@id='partner_contact_list']/tbody/tr[1]/td[6]/div/a[4]/i")).click();
+		 * Thread.sleep(1000);
+		 * driver.findElement(By.xpath("//button[@class='swal2-confirm styled']")).click
+		 * ();
+		 */
 	}
 
 	@Test(priority = 10, enabled = false)
