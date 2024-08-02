@@ -251,6 +251,8 @@ public class shareleads {
 			
 			msh_sort1.selectByVisibleText("List name (A-Z)");
 			logger.debug("Sorted List name a-z");
+			Thread.sleep(5000);
+		
 			
 			msh_sort1.selectByVisibleText("Creation date (ASC)");
 			logger.debug("sorted Creation date (ASC)");
@@ -258,18 +260,58 @@ public class shareleads {
 
 			msh_sort1.selectByVisibleText("Creation date (DESC)");
 			logger.debug("sorted Creation date (DESC)");
+			
+			
+			
+			
+			driver.findElement(By.xpath(properties.getProperty("manage_sh_publishicon"))).click();
+			Thread.sleep(2000);
+
+			driver.findElement(By.xpath(properties.getProperty("manage_sh_publish_selectcom"))).click();
+			Thread.sleep(2000);
+
+			
+			driver.findElement(By.xpath(properties.getProperty("manage_sh_publish_selectall"))).click();
+
+			Thread.sleep(2000);
+
+			driver.findElement(By.xpath(properties.getProperty("manage_sh_publish_submit"))).click();
+			Thread.sleep(2000);
+
+			driver.findElement(By.xpath(properties.getProperty("manage_sh_publish_submit_close"))).click();
+
 			Thread.sleep(5000);
+
+			
+			driver.findElement(By.xpath(properties.getProperty("manage_sh_gridview"))).click();
+
+			Thread.sleep(5000);
+			
 			msh_sort1.selectByVisibleText("Assigned date (ASC)");
 			logger.debug("sorted Assigned date (ASC)");
 			Thread.sleep(5000);
 			msh_sort1.selectByVisibleText("Assigned date (DESC)");
 			logger.debug("sorted Assigned date (DESC)");
-			Thread.sleep(5000);
+			Thread.sleep(3000);
+	
+		WebElement sh_search=driver.findElement(By.xpath(properties.getProperty("manage_sh_grid_search")));
+			sh_search.sendKeys("List");
+			sh_search.sendKeys(Keys.ENTER);
+			Thread.sleep(3000);
 
-			driver.findElement(By.xpath(properties.getProperty("manage_sh_gridview"))).click();
+			
+			WebDriverWait wait = new WebDriverWait(driver, 30);
+			WebElement element = wait.until(ExpectedConditions.elementToBeClickable(By.xpath(properties.getProperty("manage_sh_gridview_preview"))));
+			element.click();
+			
+			
+			
+			driver.findElement(By.xpath(properties.getProperty("manage_sh_gridview_preview_cls"))).click();
+			driver.findElement(By.xpath(properties.getProperty("manage_sh_grid_search_expand"))).click();
+			
 			
 		
-		
+			
 		/*
 		 * Select delimiter2 = new Select(driver.findElement( By.xpath(
 		 * "//*[@id='manageContacts']/div/div/div/div/div/div/div/div[3]/div[2]/div/div/div[1]/select"
