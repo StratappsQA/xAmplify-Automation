@@ -1,12 +1,18 @@
 package com.xamplify.automation;
 
+import java.awt.AWTException;
+import java.awt.Robot;
+import java.awt.event.KeyEvent;
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.Iterator;
 import java.util.Properties;
+import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
@@ -27,8 +33,8 @@ public class shareleads {
 
 	@Test(priority = 1, enabled = false)
 	public void hoveron_shareleads() throws InterruptedException {
-		
-			driver.manage().timeouts().implicitlyWait(40,TimeUnit.SECONDS);
+
+		driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
 		WebElement ele = driver.findElement(By.xpath(properties.getProperty("hovershareleads")));
 
 		// Creating object of an Actions class
@@ -48,7 +54,7 @@ public class shareleads {
 		Thread.sleep(2000);
 		driver.findElement(By.xpath(properties.getProperty("sharelistname")))
 				.sendKeys("AutoSlist" + System.currentTimeMillis());
-		logger.info("starts onboarding share leads");    //enter list name
+		logger.info("starts onboarding share leads"); // enter list name
 		driver.findElement(By.xpath(properties.getProperty("sh_oneattime"))).click();
 		Thread.sleep(2000);
 		driver.findElement(By.xpath(properties.getProperty("sh_emailid"))).click();
@@ -81,10 +87,10 @@ public class shareleads {
 
 		driver.findElement(By.cssSelector(properties.getProperty("sh_zipcode"))).sendKeys("567890");
 
-		driver.findElement(By.xpath(properties.getProperty("sh_add"))).click();  //click on the add button
-		driver.findElement(By.xpath(properties.getProperty("sh_save"))).click(); //click on the save button
+		driver.findElement(By.xpath(properties.getProperty("sh_add"))).click(); // click on the add button
+		driver.findElement(By.xpath(properties.getProperty("sh_save"))).click(); // click on the save button
 
-		driver.findElement(By.xpath(properties.getProperty("sh_accept"))).click(); //click on the accept button
+		driver.findElement(By.xpath(properties.getProperty("sh_accept"))).click(); // click on the accept button
 
 		Thread.sleep(1000);
 
@@ -105,19 +111,20 @@ public class shareleads {
 		Thread.sleep(1000);
 		driver.findElement(By.xpath(properties.getProperty("sharelistname"))).click();
 		driver.findElement(By.xpath(properties.getProperty("sharelistname")))
-				.sendKeys("Auto_tab_Slist" + System.currentTimeMillis()); //enter list name
+				.sendKeys("Auto_tab_Slist" + System.currentTimeMillis()); // enter list name
 		Thread.sleep(1000);
 		driver.findElement(By.xpath(properties.getProperty("sh_tab_legalbasis"))).click();
 
 		driver.findElement(By.xpath(properties.getProperty("sh_tab_legalbasis")))
-				.sendKeys("Legitimate interest - prospect/lead");  //enter legal basis 
+				.sendKeys("Legitimate interest - prospect/lead"); // enter legal basis
 
-		driver.findElement(By.xpath(properties.getProperty("sh_tab_legalbasis"))).sendKeys(Keys.ENTER); //enter from keyboard
+		driver.findElement(By.xpath(properties.getProperty("sh_tab_legalbasis"))).sendKeys(Keys.ENTER); // enter from
+																										// keyboard
 
 		Select delimiter1 = new Select(driver.findElement(By.xpath(properties.getProperty("sh_dropdown"))));
-		delimiter1.selectByValue("TabSeperated");  //select tab separated in the drop down
+		delimiter1.selectByValue("TabSeperated"); // select tab separated in the drop down
 		Thread.sleep(1000);
-		driver.findElement(By.xpath(properties.getProperty("sh_tab_textarea"))).click();  //click on the textarea
+		driver.findElement(By.xpath(properties.getProperty("sh_tab_textarea"))).click(); // click on the textarea
 		Thread.sleep(1000);
 		((JavascriptExecutor) driver).executeScript(
 				"document.getElementById('copyFromclipTextArea').value='gayatri	A	Stratapps	QAAutomationEngineer	';");
@@ -126,9 +133,9 @@ public class shareleads {
 				.sendKeys(System.currentTimeMillis() + "gayatri@stratapps.com	");
 		Thread.sleep(2000);
 
-		driver.findElement(By.xpath(properties.getProperty("sh_verify"))).click();  //click on the verify button
-		driver.findElement(By.xpath(properties.getProperty("sh_save"))).click();  //click on the save button
-		driver.findElement(By.xpath(properties.getProperty("sh_tab_accept"))).click(); //click on the accept button
+		driver.findElement(By.xpath(properties.getProperty("sh_verify"))).click(); // click on the verify button
+		driver.findElement(By.xpath(properties.getProperty("sh_save"))).click(); // click on the save button
+		driver.findElement(By.xpath(properties.getProperty("sh_tab_accept"))).click(); // click on the accept button
 		Thread.sleep(2000);
 	}
 
@@ -143,7 +150,7 @@ public class shareleads {
 		driver.findElement(By.xpath(properties.getProperty("sharelistname"))).click();
 		Thread.sleep(2000);
 		driver.findElement(By.xpath(properties.getProperty("sharelistname")))
-				.sendKeys("Autocoma" + System.currentTimeMillis());  //enter list name
+				.sendKeys("Autocoma" + System.currentTimeMillis()); // enter list name
 
 		driver.findElement(By.xpath(properties.getProperty("sh_copyclipboard_comma"))).click();
 		Thread.sleep(2000);
@@ -151,29 +158,28 @@ public class shareleads {
 		driver.findElement(By.xpath(properties.getProperty("sh_comma_legalbasis"))).click();
 
 		driver.findElement(By.xpath(properties.getProperty("sh_comma_legalbasis")))
-				.sendKeys("Legitimate interest - existing customer"); //enter legal basis 
+				.sendKeys("Legitimate interest - existing customer"); // enter legal basis
 
 		driver.findElement(By.xpath(properties.getProperty("sh_comma_legalbasis"))).sendKeys(Keys.ENTER);
 
 		Select delimiter2 = new Select(driver.findElement(By.xpath(properties.getProperty("sh_dropdown"))));
-		delimiter2.selectByValue("CommaSeperated");  //select value form the drop down
+		delimiter2.selectByValue("CommaSeperated"); // select value form the drop down
 		Thread.sleep(1000);
 
 		driver.findElement(By.xpath(properties.getProperty("sh_comma_textarea"))).click();
 		Thread.sleep(1000);
 		driver.findElement(By.xpath(properties.getProperty("sh_comma_textarea")))
-				.sendKeys(("Gayatri,A,Stratapps,QAAutomationEngineer,"));  // enter the data in text area
+				.sendKeys(("Gayatri,A,Stratapps,QAAutomationEngineer,")); // enter the data in text area
 		driver.findElement(By.xpath(properties.getProperty("sh_comma_textarea")))
 				.sendKeys(("Gayatri") + "_" + System.currentTimeMillis());
 		driver.findElement(By.xpath(properties.getProperty("sh_comma_textarea"))).sendKeys("@getnada.com");
 
-		driver.findElement(By.xpath(properties.getProperty("sh_verify"))).click(); //click on the verify button
-		driver.findElement(By.xpath(properties.getProperty("sh_save"))).click();  //click on the save button
-		driver.findElement(By.xpath(properties.getProperty("sh_comma_accept"))).click(); //click on the accept button
-       Thread.sleep(2000);
+		driver.findElement(By.xpath(properties.getProperty("sh_verify"))).click(); // click on the verify button
+		driver.findElement(By.xpath(properties.getProperty("sh_save"))).click(); // click on the save button
+		driver.findElement(By.xpath(properties.getProperty("sh_comma_accept"))).click(); // click on the accept button
+		Thread.sleep(2000);
 	}
-	
-	
+
 	@SuppressWarnings("deprecation")
 	@Test(priority = 5, enabled = false)
 	public void shareleads_uploadcsv() throws InterruptedException, SQLException, IOException
@@ -183,40 +189,40 @@ public class shareleads {
 
 		logger.debug("Starting creating partner using upload a csv");
 		hoveron_shareleads();
-	
-		driver.findElement(By.id("uploadCSV")).click();   //click on the upload csv
+
+		driver.findElement(By.id("uploadCSV")).click(); // click on the upload csv
 		Thread.sleep(5000);
-	
-	
-	Runtime.getRuntime().exec("D:\\git\\xAmplify-Automation\\Uploadshareleads.exe");  //by using auto it create and execute, copy the path here
-		
-	Thread.sleep(3000);
-	
-	driver.findElement(By.xpath(properties.getProperty("sh_csv_legalbasis"))).click();//click on the legal basis
 
-	driver.findElement(By.xpath(properties.getProperty("sh_csv_legalbasis")))
-			.sendKeys("Legitimate interest - existing customer"); //enter legal basis 
+		Runtime.getRuntime().exec("D:\\git\\xAmplify-Automation\\Uploadshareleads.exe"); // by using auto it create and
+																							// execute, copy the path
+																							// here
 
-	driver.findElement(By.xpath(properties.getProperty("sh_csv_legalbasis"))).sendKeys(Keys.ENTER); //click on the enter
+		Thread.sleep(3000);
 
-	driver.findElement(By.xpath(properties.getProperty("sh_csvlist"))).clear();
-	
-	driver.findElement(By.xpath(properties.getProperty("sh_csvlist"))).sendKeys("Autoupload" + System.currentTimeMillis());  //enter list name
-	
-	
-	driver.findElement(By.xpath(properties.getProperty("sh_csv_save"))).click();
-	Thread.sleep(1000);
-	driver.findElement(By.xpath(properties.getProperty("sh_csv_verify"))).click();
-	Thread.sleep(2000);
-	
+		driver.findElement(By.xpath(properties.getProperty("sh_csv_legalbasis"))).click();// click on the legal basis
+
+		driver.findElement(By.xpath(properties.getProperty("sh_csv_legalbasis")))
+				.sendKeys("Legitimate interest - existing customer"); // enter legal basis
+
+		driver.findElement(By.xpath(properties.getProperty("sh_csv_legalbasis"))).sendKeys(Keys.ENTER); // click on the
+																										// enter
+
+		driver.findElement(By.xpath(properties.getProperty("sh_csvlist"))).clear();
+
+		driver.findElement(By.xpath(properties.getProperty("sh_csvlist")))
+				.sendKeys("Autoupload" + System.currentTimeMillis()); // enter list name
+
+		driver.findElement(By.xpath(properties.getProperty("sh_csv_save"))).click();
+		Thread.sleep(1000);
+		driver.findElement(By.xpath(properties.getProperty("sh_csv_verify"))).click();
+		Thread.sleep(2000);
+
 	}
-	
-	
 
 	@Test(priority = 6, enabled = true)
 	public void manage_shareleads() throws InterruptedException {
-		
-		driver.manage().timeouts().implicitlyWait(4000,TimeUnit.SECONDS);
+
+		driver.manage().timeouts().implicitlyWait(4000, TimeUnit.SECONDS);
 
 		WebElement ele = driver.findElement(By.xpath(properties.getProperty("hovershareleads")));
 
@@ -227,91 +233,125 @@ public class shareleads {
 		action.moveToElement(ele).perform();
 		driver.findElement(By.xpath(properties.getProperty("manage_shareleads"))).click();
 	}
+
+	@Test(priority = 7, enabled = true)
+	public void manage_shareleads_sortby() throws InterruptedException, AWTException {
+
+		WebDriverWait sh_sortby = new WebDriverWait(driver, 70);
+		WebElement msh_sort = sh_sortby.until(
+				ExpectedConditions.visibilityOfElementLocated(By.xpath(properties.getProperty("manage_sh_sortby")))); // select
+																														// dropdown
+
+		Select msh_sort1 = new Select(msh_sort);
+
+		msh_sort1.selectByVisibleText("List name (A-Z)");
+		logger.debug("Sorted List name a-z");
+		Thread.sleep(4000);
+
+		msh_sort1.selectByVisibleText("List name (Z-A)");
+		logger.debug("Sorted List name Z-A");
+
+		Thread.sleep(4000);
+
+		msh_sort1.selectByVisibleText("Creation date (ASC)");
+		logger.debug("sorted Creation date (ASC)");
+		Thread.sleep(4000);
+
+		msh_sort1.selectByVisibleText("Creation date (DESC)");
+		logger.debug("sorted Creation date (DESC)");
+
+		Thread.sleep(4000);
+
+		driver.findElement(By.xpath(properties.getProperty("manage_sh_gridview"))).click();
+
+		Thread.sleep(4000);
+
+		msh_sort1.selectByVisibleText("Assigned date (ASC)");
+		logger.debug("sorted Assigned date (ASC)");
+		Thread.sleep(5000);
+		msh_sort1.selectByVisibleText("Assigned date (DESC)");
+		logger.debug("sorted Assigned date (DESC)");
+		Thread.sleep(3000);
+
+		WebElement sh_search = driver.findElement(By.xpath(properties.getProperty("manage_sh_grid_search")));
+		sh_search.sendKeys("List");
+		sh_search.sendKeys(Keys.ENTER);
+		Thread.sleep(3000);
+
+		WebDriverWait wait = new WebDriverWait(driver, 40);
+		WebElement element = wait.until(ExpectedConditions
+				.elementToBeClickable(By.xpath(properties.getProperty("manage_sh_gridview_preview"))));
+		element.click();
+		Thread.sleep(2000);
+
+		driver.findElement(By.xpath(properties.getProperty("manage_sh_gridview_preview_cls"))).click();
+		Thread.sleep(2000);
+
+		driver.findElement(By.xpath(properties.getProperty("manage_sh_grid_search_expand"))).click();
+
+		WebElement dwnclck = driver.findElement(By.xpath(properties.getProperty("manage_sh_download")));
+		dwnclck.click();
+
+		try {
+			Robot robot = new Robot();
+			robot.keyPress(KeyEvent.VK_ALT);
+			Thread.sleep(1000);
+			robot.keyPress(KeyEvent.VK_S);
+			robot.keyRelease(KeyEvent.VK_ALT);
+			robot.keyRelease(KeyEvent.VK_S);
+		} catch (Exception ex) {
+			System.out.println(ex.getMessage());
+		}
+
+		logger.debug("download success");
+		
+		Thread.sleep(3000);
+
+		
+		WebElement sh_searchclr = driver.findElement(By.xpath(properties.getProperty("manage_sh_grid_search")));
+		sh_searchclr.click();
+		Thread.sleep(3000);
+
+		sh_searchclr.sendKeys(Keys.CLEAR);
+		sh_searchclr.sendKeys(Keys.ENTER);
+		Thread.sleep(3000);
+
 		
 		
-		
-		@Test(priority=7,enabled=true)
-		public void manage_shareleads_sortby() throws InterruptedException {
-		
-		
-			WebDriverWait sh_sortby = new WebDriverWait(driver, 60);
-			WebElement msh_sort = sh_sortby.until(ExpectedConditions.visibilityOfElementLocated(
-					By.xpath(properties.getProperty("manage_sh_sortby")))); // select dropdown
-			
-			Select msh_sort1 = new Select(msh_sort);
 
-			msh_sort1.selectByVisibleText("List name (A-Z)");
-			logger.debug("Sorted List name a-z");
-			
-			Thread.sleep(5000);
-			
-			msh_sort1.selectByVisibleText("List name (Z-A)");
-			logger.debug("Sorted List name Z-A");
-			Thread.sleep(5000);
-			
-			msh_sort1.selectByVisibleText("List name (A-Z)");
-			logger.debug("Sorted List name a-z");
-			Thread.sleep(5000);
-		
-			
-			msh_sort1.selectByVisibleText("Creation date (ASC)");
-			logger.debug("sorted Creation date (ASC)");
-			Thread.sleep(5000);
+		/*
+		 * driver.findElement(By.xpath(properties.getProperty("manage_sh_copy"))).click(
+		 * );
+		 * 
+		 * driver.findElement(By.xpath(properties.getProperty("manage_sh_copy_save"))).
+		 * click();
+		 * 
+		 * logger.debug("copy&save success");
+		 */
 
-			msh_sort1.selectByVisibleText("Creation date (DESC)");
-			logger.debug("sorted Creation date (DESC)");
-			
-			
-			
-			
-			driver.findElement(By.xpath(properties.getProperty("manage_sh_publishicon"))).click();
-			Thread.sleep(2000);
+		WebDriverWait wait_publish = new WebDriverWait(driver, 60);
+		WebElement element_pub = wait_publish.until(
+				ExpectedConditions.elementToBeClickable(By.xpath(properties.getProperty("manage_sh_publishicon"))));
+		element_pub.click();
 
-			driver.findElement(By.xpath(properties.getProperty("manage_sh_publish_selectcom"))).click();
-			Thread.sleep(2000);
+		logger.debug("clickk for publish icon");
 
-			
-			driver.findElement(By.xpath(properties.getProperty("manage_sh_publish_selectall"))).click();
+		Thread.sleep(2000);
 
-			Thread.sleep(2000);
+		driver.findElement(By.xpath(properties.getProperty("manage_sh_publish_selectcom"))).click();
+		Thread.sleep(2000);
 
-			driver.findElement(By.xpath(properties.getProperty("manage_sh_publish_submit"))).click();
-			Thread.sleep(2000);
+		driver.findElement(By.xpath(properties.getProperty("manage_sh_publish_selectall"))).click();
 
-			driver.findElement(By.xpath(properties.getProperty("manage_sh_publish_submit_close"))).click();
+		Thread.sleep(2000);
 
-			Thread.sleep(5000);
+		driver.findElement(By.xpath(properties.getProperty("manage_sh_publish_submit"))).click();
+		Thread.sleep(2000);
 
-			
-			driver.findElement(By.xpath(properties.getProperty("manage_sh_gridview"))).click();
+		driver.findElement(By.xpath(properties.getProperty("manage_sh_publish_submit_close"))).click();
 
-			Thread.sleep(5000);
-			
-			msh_sort1.selectByVisibleText("Assigned date (ASC)");
-			logger.debug("sorted Assigned date (ASC)");
-			Thread.sleep(5000);
-			msh_sort1.selectByVisibleText("Assigned date (DESC)");
-			logger.debug("sorted Assigned date (DESC)");
-			Thread.sleep(3000);
-	
-		WebElement sh_search=driver.findElement(By.xpath(properties.getProperty("manage_sh_grid_search")));
-			sh_search.sendKeys("List");
-			sh_search.sendKeys(Keys.ENTER);
-			Thread.sleep(3000);
+		Thread.sleep(5000);
 
-			
-			WebDriverWait wait = new WebDriverWait(driver, 30);
-			WebElement element = wait.until(ExpectedConditions.elementToBeClickable(By.xpath(properties.getProperty("manage_sh_gridview_preview"))));
-			element.click();
-			
-			
-			
-			driver.findElement(By.xpath(properties.getProperty("manage_sh_gridview_preview_cls"))).click();
-			driver.findElement(By.xpath(properties.getProperty("manage_sh_grid_search_expand"))).click();
-			
-			
-		
-			
 		/*
 		 * Select delimiter2 = new Select(driver.findElement( By.xpath(
 		 * "//*[@id='manageContacts']/div/div/div/div/div/div/div/div[3]/div[2]/div/div/div[1]/select"
