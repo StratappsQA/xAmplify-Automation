@@ -305,15 +305,13 @@ public class shareleads {
 
 		logger.debug("download success");
 		
-		Thread.sleep(3000);
+		Thread.sleep(2000);
 
 		
 		WebElement sh_searchclr = driver.findElement(By.xpath(properties.getProperty("manage_sh_grid_search")));
-		sh_searchclr.click();
-		Thread.sleep(3000);
-
+		
 		sh_searchclr.sendKeys(Keys.CLEAR);
-		sh_searchclr.sendKeys(Keys.ENTER);
+		//sh_searchclr.sendKeys(Keys.ENTER);
 		Thread.sleep(3000);
 
 		
