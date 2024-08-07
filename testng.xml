@@ -1,9 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<!DOCTYPE suite>
 <suite name="Suite">
   <test thread-count="5" name="Test">
     <classes>
-      <class name="com.xamplify.automation.Login"/>
+    <class name="com.xamplify.automation.Login"/>
+    <class name="com.xamplify.automation.LaunchEmailCampaign"/>
+   <!-- <class name="com.xamplify.automation.ScheduleEmailCampaign"/>-->
+      <!--  <class name="com.xamplify.automation.partners_onboard_comma"/> -->
+      
+       <class name="com.xamplify.automation.ManageEmailCampaign"/>
+   
+   
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->
