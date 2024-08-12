@@ -242,7 +242,7 @@ public class shareleads {
 				ExpectedConditions.visibilityOfElementLocated(By.xpath(properties.getProperty("manage_sh_sortby")))); // select
 																														// dropdown
 
-		Select msh_sort1 = new Select(msh_sort);
+		Select msh_sort1 = new Select(msh_sort); //sort by
 
 		msh_sort1.selectByVisibleText("List name (A-Z)");
 		logger.debug("Sorted List name a-z");
@@ -274,7 +274,7 @@ public class shareleads {
 		Thread.sleep(3000);
 
 		WebElement sh_search = driver.findElement(By.xpath(properties.getProperty("manage_sh_grid_search")));
-		sh_search.sendKeys("List");
+		sh_search.sendKeys("Auto");
 		sh_search.sendKeys(Keys.ENTER);
 		Thread.sleep(3000);
 
@@ -294,7 +294,7 @@ public class shareleads {
 
 		try {
 			Robot robot = new Robot();
-			robot.keyPress(KeyEvent.VK_ALT);
+			robot.keyPress(KeyEvent.VK_ALT);;
 			Thread.sleep(1000);
 			robot.keyPress(KeyEvent.VK_S);
 			robot.keyRelease(KeyEvent.VK_ALT);
@@ -304,28 +304,29 @@ public class shareleads {
 		}
 
 		logger.debug("download success");
-		
+
 		Thread.sleep(2000);
 
-		
 		WebElement sh_searchclr = driver.findElement(By.xpath(properties.getProperty("manage_sh_grid_search")));
+
+		sh_searchclr.sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.DELETE));
+		sh_searchclr.sendKeys(Keys.ENTER);
+
+		logger.debug("cleared text in search field");
 		
-		sh_searchclr.sendKeys(Keys.CLEAR);
-		//sh_searchclr.sendKeys(Keys.ENTER);
 		Thread.sleep(3000);
 
-		
-		
+		msh_sort1.selectByVisibleText("Creation date (DESC)");
+		logger.debug("sorted Creation date (DESC)");
 
-		/*
-		 * driver.findElement(By.xpath(properties.getProperty("manage_sh_copy"))).click(
-		 * );
-		 * 
-		 * driver.findElement(By.xpath(properties.getProperty("manage_sh_copy_save"))).
-		 * click();
-		 * 
-		 * logger.debug("copy&save success");
-		 */
+		Thread.sleep(5000);
+
+		
+		driver.findElement(By.xpath(properties.getProperty("manage_sh_copy"))).click();
+
+		driver.findElement(By.xpath(properties.getProperty("manage_sh_copy_save"))).click();
+
+		logger.debug("copy&save success");
 
 		WebDriverWait wait_publish = new WebDriverWait(driver, 60);
 		WebElement element_pub = wait_publish.until(
