@@ -242,7 +242,7 @@ public class shareleads {
 				ExpectedConditions.visibilityOfElementLocated(By.xpath(properties.getProperty("manage_sh_sortby")))); // select
 																														// dropdown
 
-		Select msh_sort1 = new Select(msh_sort); //sort by
+		Select msh_sort1 = new Select(msh_sort); // sort by
 
 		msh_sort1.selectByVisibleText("List name (A-Z)");
 		logger.debug("Sorted List name a-z");
@@ -294,7 +294,8 @@ public class shareleads {
 
 		try {
 			Robot robot = new Robot();
-			robot.keyPress(KeyEvent.VK_ALT);;
+			robot.keyPress(KeyEvent.VK_ALT);
+			;
 			Thread.sleep(1000);
 			robot.keyPress(KeyEvent.VK_S);
 			robot.keyRelease(KeyEvent.VK_ALT);
@@ -313,27 +314,24 @@ public class shareleads {
 		sh_searchclr.sendKeys(Keys.ENTER);
 
 		logger.debug("cleared text in search field");
-		
-		Thread.sleep(3000);
+
+		Thread.sleep(4000);
 
 		msh_sort1.selectByVisibleText("Creation date (DESC)");
 		logger.debug("sorted Creation date (DESC)");
 
-		Thread.sleep(5000);
+		Thread.sleep(7000);
 
-		
 		driver.findElement(By.xpath(properties.getProperty("manage_sh_copy"))).click();
 
 		driver.findElement(By.xpath(properties.getProperty("manage_sh_copy_save"))).click();
 
 		logger.debug("copy&save success");
+		Thread.sleep(7000);
 
-		WebDriverWait wait_publish = new WebDriverWait(driver, 60);
-		WebElement element_pub = wait_publish.until(
-				ExpectedConditions.elementToBeClickable(By.xpath(properties.getProperty("manage_sh_publishicon"))));
-		element_pub.click();
+		driver.findElement(By.xpath(properties.getProperty("manage_sh_publishicon"))).click();
 
-		logger.debug("clickk for publish icon");
+		logger.debug("click for publish icon");
 
 		Thread.sleep(2000);
 
@@ -346,6 +344,8 @@ public class shareleads {
 
 		driver.findElement(By.xpath(properties.getProperty("manage_sh_publish_submit"))).click();
 		Thread.sleep(2000);
+		logger.debug("click for published");
+
 
 		driver.findElement(By.xpath(properties.getProperty("manage_sh_publish_submit_close"))).click();
 
